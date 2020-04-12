@@ -15,6 +15,7 @@ The portfolio contains the following sections:
   * [J2ME](j2me/)
   * [java](java/)
   * [kaisub](kaisub/)
+  * [LunaHSMSign](LunaHSMSign/)
   * [Microbit](ubit/)
   * [Palm OS](palmos/)
   * [Pebble](pebble/)
