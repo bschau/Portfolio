@@ -8,6 +8,7 @@ The portfolio contains the following sections:
   * [Android](android/)
   * [c](c/)
   * [Commodore 64](c64/)
+  * [go](go/)
   * [iOS](ios/)
   * [J2ME](j2me/)
   * [kaisub](kaisub/)
