@@ -1,0 +1,20 @@
+#!/bin/sh
+mf=mfil$$
+trap 'rm -f $mf' 0
+
+#	create mail
+{
+	cat <<EOF
+To: brisse@brisse.dk
+From: tulle@dulle.dk
+Subject: Fakemail
+
+Spam
+Spam
+Spam
+EOF
+} >$mf
+
+#	off you go
+cat $mf | /usr/sbin/sendmail -vt
+exit 0

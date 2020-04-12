@@ -1,0 +1,47 @@
+#!/bin/ksh
+if test -s ../configure.in; then
+	cd ..
+	sd="$(grep SUBDIRS= configure.in 2>/dev/null)"
+else
+	echo "Cannot find ../configure.in" >&2
+fi
+
+eval $sd
+SUBDIRS="include $SUBDIRS"
+
+totc=0
+toth=0
+echo "Project size"
+echo "------------"
+echo
+for sd in $SUBDIRS; do
+	echo "${sd}:"
+
+	dd="$(wc -l $sd/*.c 2>/dev/null | grep -w total)"
+	if test "$dd"; then
+		set -- $dd
+		cl=$1
+		totc=$(($totc+$cl))
+	else
+		cl=0
+	fi
+
+	dd="$(wc -l $sd/*.h 2>/dev/null | grep -w total)"
+	if test "$dd"; then
+		set -- $dd
+		hl=$1
+		toth=$(($toth+$hl))
+	else
+		hl=0
+	fi
+
+	echo "  Lines, .c-files: $cl"
+	echo "  Lines, .h-files: $hl"
+	echo 
+done
+
+tl=$(($totc+$toth))
+echo "Lines, .c-files: $totc"
+echo "Lines, .h-files: $toth"
+echo "Lines, total:    $tl"
+exit 0

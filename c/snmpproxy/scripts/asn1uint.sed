@@ -1,0 +1,9 @@
+/BEncGaugeContent/ s/BEncAsnIntContent/BEncUAsnIntContent/
+/BDecGaugeContent/ s/BDecAsnIntContent/BDecUAsnIntContent/
+/PrintGauge/ s/PrintAsnInt/PrintUAsnInt/
+/BEncCounterContent/ s/BEncAsnIntContent/BEncUAsnIntContent/
+/BDecCounterContent/ s/BDecAsnIntContent/BDecUAsnIntContent/
+/PrintCounter/ s/PrintAsnInt/PrintUAsnInt/
+/BEncTimeTicksContent/ s/BEncAsnIntContent/BEncUAsnIntContent/
+/BDecTimeTicksContent/ s/BDecAsnIntContent/BDecUAsnIntContent/
+/PrintTimeTicks/ s/PrintAsnInt/PrintUAsnInt/

@@ -1,0 +1,6 @@
+INSTALLATION
+------------
+
+1) make initall
+2) make
+3) make install   (as root)

@@ -1,0 +1,3 @@
+#!/bin/ksh
+tail $1 /var/adm/syslog.dated/current/mail.log
+exit 0

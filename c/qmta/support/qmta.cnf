@@ -1,0 +1,17 @@
+commandtimeout 300
+logfacility LOG_MAIL
+inputconnections 100
+localmailto [CHANGE_THIS_TO_YOUR_EMAIL_ADDRESS]
+mailretry 30
+maxage 96
+maxload 10
+maxmailsize 2097152
+maxrecipients 100
+outputconnections 100
+relayname [CHANGE_THIS_TO_YOUR_RELAY]
+sleephard 300
+sleepqueue 5
+sleepsoft 180
+spooldirectory /var/spool/qmta
+sweepchilds 8
+user mta

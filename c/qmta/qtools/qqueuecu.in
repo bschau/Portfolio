@@ -1,0 +1,120 @@
+#!/bin/ksh
+QROOT=%%QROOT%%
+
+################################################################################
+#
+#	deletedxdirs
+#
+#	Delete Dxxxxxx directories.
+#
+function deletedxdirs
+{
+	ls -d D* >$tmpfile 2>/dev/null
+
+	if test ! -s $tmpfile; then
+		return
+	fi
+
+	while read ln; do
+		if test $ln -nt $ref; then
+			continue
+		fi
+
+		rm -rf $ln
+	done <$tmpfile
+}
+
+################################################################################
+#
+#	moveusfiles
+#
+#	Move Sxxxxxx files to sxxxxxx if valid rxxxxxx and mxxxxxx files are
+#	present.
+#
+function moveusfiles
+{
+	ls S* >$tmpfile 2>/dev/null
+
+	if test ! -s $tmpfile; then
+		return
+	fi
+
+	while read ln; do
+		if test $ln -nt $ref; then
+			continue
+		fi
+
+		rf="r${ln#S*}"
+		mf="m${ln#S*}"
+		status="bad"
+		if test -s "$ln"; then
+			if test -s "$rf"; then
+				if test -s "$mf"; then
+					status="good"
+				fi
+			fi
+		fi
+	
+		if test "$status" = "good"; then
+			mv $ln s${ln#S*}
+		else
+			rm -f $ln $rf $mf
+		fi
+	done <$tmpfile
+}
+
+################################################################################
+#
+#	main
+#
+if test "$(whoami)" != "root"; then
+	echo "Sorry! You must be root."
+	exit 1
+fi
+
+PATH=$QROOT/bin:/usr/bin:$PATH
+export PATH
+
+iam="$(basename $0)"
+tmpfile="$(mkstemp $QROOT/var/qqueuecu)"
+if test -z "$tmpfile"; then
+	echo "No tempfile .."
+	exit 1
+fi
+
+trap 'rm -f $tmpfile' 0
+
+spooldir="$(qcfgvar spooldirectory)"
+if test -d "$spooldir"; then
+	cd $spooldir
+else
+	echo "Cannot goto spooldirectory ($spooldir)"
+	exit 1
+fi
+
+#
+# build time controls
+#
+next="$QROOT/var/qqueue.next"
+ref="$QROOT/var/qqueue.ref"
+
+mv $next $ref 2>/dev/null
+touch $next
+
+#
+# pass one - rename all Sxxxxxx files with a valid rxxxxxx and mxxxxxx
+#
+moveusfiles
+
+#
+# pass two - delete all Dxxxxxx.
+#
+deletedxdirs
+
+#
+# pass three - delete all mxxxxxx and rxxxxxx files which doesn't have a
+# Sxxxxxx, sxxxxxx or cxxxxxx file.   Not implemented: reason - it is not
+# good pratice deleting valid files ...   Try to place it instead ...
+#
+
+exit 0

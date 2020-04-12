@@ -1,0 +1,44 @@
+#!/usr/bin/php -q
+<?php
+	define("MAXLINELENGTH", 256);	/* chars pr. line */
+	define("QMTACTL", "%%QROOT%%/bin/qmta");
+
+/*******************************************************************************
+*
+*	abortop
+*
+*	Aborts operation.
+*
+*	Input:
+*		txt - optional text to write.
+*/
+function abortop($txt)
+{
+	if (strlen($txt)>0)
+		echo "\n".$txt."\n";
+
+	flush();
+	exit;
+}
+
+/*******************************************************************************
+*
+*	main
+*
+*	To be called from 'inetd' as:
+*
+*	qmta stream tcp nowait.400 mta /path/qwebctl qwebctl
+*
+*	Remember to set 'qmta' to something sensible (eg. 10240)
+*	in /etc/services.
+*/
+
+	$fd=fopen("php://stdin", "r");
+	if ($fd==false)
+		abortop("-cannot open stdin");
+
+	$command=trim(fgets($fd, MAXLINELENGTH));
+	fclose($fd);
+	if (strlen(command)>0)
+		passthru(QMTACTL." ".$command);
+?>

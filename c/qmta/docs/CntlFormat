@@ -1,0 +1,13 @@
+Control File Format.
+
+Control	Argument
+A	Accessstamp (when this file should be accessed next)
+C	Timestamp (when this file was created)
+D	Dequeuestamp (when this file will be dequeued)
+M	Message type (M=0 received mail, M=1 created, ie. system, mail)
+F	From address
+
+
+Cycles
+
+S (recieving mail) -> s (ready for sweep) -> c (swept)
