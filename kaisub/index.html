@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KaiSub</title>
+	<link rel="icon" href="/favicon.png">
+  <link rel="manifest" href="/manifest.webapp">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+  <link rel="stylesheet" href="/site.css">
+	<script>
+if (navigator.userAgent.toLowerCase().includes('kaios')) {
+	window.location.replace('/v1/podcast.html');
+}
+	</script>
+</head>
+<!-- leah -->
+<body>
+  <div id="header">KaiSub</div>
+  <div id="wrapper">
+    <div id="logo-l">
+  	  <div id="phone">
+	  	  <img src="/img/nokia8110.png" width="149" height="400" alt="Nokia 8110" />
+		    <div id="app-fade">
+			    <img id="f3" src="/img/app-1.png" class="app-img" width="113" height="151" alt="Login" />
+			    <img id="f2" src="/img/app-2.png" class="app-img" width="113" height="141" alt="Episodes" />
+			    <img id="f1" src="/img/app-3.png" class="app-img" width="113" height="141" alt="Player" />
+		    </div>
+      </div>
+    </div>
+    <div id="logo-r">
+      <h1>What?</h1>
+      <p>What is KaiSub? KaiSub is a small KaiOS optimized web client for your <a href="http://www.subsonic.org/">Subsonic</a> server.</p>
+      <p>Open this site in the webbrowser on your <a href="https://www.kaiostech.com/meet-the-devices-that-are-powered-by-kaios/">KaiOS phone</a> to start the client.</p>
+      <p><br /></p>
+
+      <h1>Practical Info</h1>
+      <ul>
+        <li>The client only run in the webbrowser. From update v16 you can pin this site to the start screen for easy access.</li>
+        <li>No information is sent to the <a href="https://kaisub.net">KaiSub</a> server. All credentials are stored on your phone and only sent to your <b>Subsonic</b> server.</li>
+        <li>The client is currently only limited to play podcasts. Work on support for playlists and title-browsing are ongoing.</li>
+        <li>The client is limited in functionality on purpose - all administration of podcasts should be done on the server.</li>
+        <li>The client support both <code>http://</code> as well as <code>https://</code> URLs. But you should really consider enabling <code>https://</code> on your server.</li>
+      </ul>
+
+      <p><br /></p>
+      <h1>Roadmap</h1>
+      <p>This is work in progress. The client will evolve over time but there is no deadlines :-)</p>
+      <p>The list below is some of the ideas which I have in mind:</p>
+      <dl>
+        <dt class="strikken">v1 (2019-05-18)</dt>
+        <dd class="strikken">Initial release of Podcast functionality. Naive proof-of-concept type.</dd>
+
+        <dt>v2</dt>
+        <dd>Rewrite javascript to typescript and implement gulp to get a stable Podcast player. Fix whatever bugs v1 had.</dd>
+
+        <dt>v3</dt>
+        <dd>Playlists.</dd>
+
+        <dt>v4</dt>
+        <dd>Support for arbitrary browsing (artist, album and title).</dd>
+
+        <dt>v5</dt>
+        <dd>Internet Radio Stations.</dd>
+
+        <dt>v??</dt>
+        <dd>Website redesign .. yes, this site sucks. I am not a web-designer ... and it shows :-)</dd>
+      </dl>
+      <p><br /></p>
+      <p>The order of the above list can change. Also, when <b>v2</b> is released, the entire code base will be released as Open Source under the MIT release.</p>
+    </div>
+  </div>
+  <p style="clear: both"><br /></p>
+  <div id="footer">
+    <p><br /></p>
+    <p><br /></p>
+    <p><br /></p>
+    <p><br /></p>
+    <p>&copy; Brian Schau 2019+</p>
+    <p><br /></p>
+  </div>
+</body>
+</html>

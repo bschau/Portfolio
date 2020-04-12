@@ -9,6 +9,7 @@ The portfolio contains the following sections:
   * [Commodore 64](c64/)
   * [iOS](ios/)
   * [J2ME](j2me/)
+  * [kaisub](kaisub/)
   * [Palm OS](palmos/)
   * [Pebble](pebble/)
   * [Microbit](ubit/)
