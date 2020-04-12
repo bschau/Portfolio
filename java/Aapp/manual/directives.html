@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Aapp Manual - Directives</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<h1>Directives</h1> 
+	<p>This chapter covers all arithmetic operators, relational operators and other directives that Aapp understands.</p>
+
+	<h3>General Rules</h3>
+	<ul>
+		<li>True is 1, false is 0.</li>
+		<li>If you try to add two strings they will be concatenated: <code>"A" + "B" = "AB"</code>.</li>
+		<li>If you try to add a string and an integer the integer will be converted to a string and the two strings will be concatenated: <code>1 + "A" = "1A"</code>.</li>
+		<li>Adding two integers will have the expected outcome of one integer: <code>1 + 1 = 2</code>.</li>
+		<li>Doing other kinds of maths on strings will make Aapp exit with an error. Thus, this is illegal: <code>1 / "A"</code>.</li>
+		<li>Equality tests (==, !=, &lt;, &lt;=, &gt;=, &gt;) can be done on strings and integers of the same type. Comparing an integer to a string will fail.</li>
+		<li>Strings must be embedded in either single quotes (<code>'</code>) or double quotes (<code>"</code>).</li>
+	</ul>
+
+	<h3>Arithmetic Operators</h3>
+	<table>
+		<tr>
+			<th>op1 + op2</th>
+			<td>Add the two operands - see General Rules above for special cases.</td>
+		</tr>
+
+		<tr>
+			<th>op1 - op2</th>
+			<td>Subtract op2 from op1. Both must be integers.</td>
+		</tr>
+
+		<tr>
+			<th>op1 * op2</th>
+			<td>Multiply op1 with op2. Both must be integers.</td>
+		</tr>
+
+		<tr>
+			<th>op1 / op2</th>
+			<td>Divide op1 by op2. Both must be integers. An error is thrown if op2 is 0.</td>
+		</tr>
+
+		<tr>
+			<th>- op</th>
+			<td>Unary minus - negate op. Op must be an integer. Note there is currently no <code>+ op</code>.</td>
+		</tr>
+
+		<tr>
+			<th>( ... )</th>
+			<td>Standard paranthesis.</td>
+		</tr>
+
+		<tr>
+			<th>op1 &amp; op2</th>
+			<td>Calculates op1 AND op2.</td>
+		</tr>
+
+		<tr>
+			<th>op1 | op2</th>
+			<td>Calculates op1 OR op2.</td>
+		</tr>
+
+		<tr>
+			<th>op1 ^ op2</th>
+			<td>Calculates op1 XOR op2.</td>
+		</tr>
+	</table>
+
+	<h3>Relational Operators</h3>
+	<table>
+		<tr>
+			<th>! op</th>
+			<td>Not op. If op is non-zero, the result is 0. If op is zero the result is 1.</td>
+		</tr>
+
+		<tr>
+			<th>op1 (==, !=, &lt;, &lt;=, &gt;=, &gt;) op2</th>
+			<td>Equality test. Returns 1 the expression is true, 0 otherwise.</td>
+		</tr>
+
+		<tr>
+			<th>op1 &amp;&amp; op2</th>
+			<td>Returns 1 if both op1 and op2 are true, 0 otherwise.</td>
+		</tr>
+
+		<tr>
+			<th>op1 || op2</th>
+			<td>Returns 1 if either op1 or op2 are true, 0 otherwise.</td>
+		</tr>
+	</table>
+
+	<h3>String Concatenation</h3>
+	<p>There are two ways two concatenate strings:</p>
+	<ol>
+		<li>By adding (<code>+</code>) the strings.</li>
+		<li>By using the concatenation operator: (<code>##</code>): <code>"aa" ## "bb" = "aabb"</code>.</li>
+	</ol>
+
+	<h3>Variables Manipulation</h3>
+	<table>
+		<tr>
+			<th>define VARIABLE expression</th>
+			<td>Set VARIABLE to the value of expression. Expression can be a simple expression such as a string or integer or a compound expression consisting of a mix of strings, integers and any of the arithmetic or relational operators.</td>
+		</tr>
+
+		<tr>
+			<th>redef VARIABLE expression</th>
+			<td>Redefine a previous defined variable.</td>
+		</tr>
+
+		<tr>
+			<th>undef VARIABLE</th>
+			<td>Undefine a previous defined variable.</td>
+		</tr>
+
+		<tr>
+			<th>=VARIABLE</th>
+			<td>Insert the value of VARIABLE here.</td>
+		</tr>
+	</table>
+
+	<h3>Conditionals</h3>
+	<table>
+		<tr>
+			<th>if expression</th>
+			<td>Execute the following block if the expression is true.</td>
+		</tr>
+
+		<tr>
+			<th>ifdef VARIABLE</th>
+			<td>Execute the following block if the VARIABLE is defined.</td>
+		</tr>
+
+		<tr>
+			<th>ifndef VARIABLE</th>
+			<td>Execute the following block if the VARIABLE is not defined.</td>
+		</tr>
+
+		<tr>
+			<th>elif expression</th>
+			<td>If the previous <code>if</code> evaluted to false evaluate this expression and execute the following block if true.</td>
+		</tr>
+
+		<tr>
+			<th>else</th>
+			<td>If the previous <code>if</code>, <code>elif</code>, <code>ifdef</code> or <code>ifndef</code> evaluted to false execute this block.</td>
+		</tr>
+
+		<tr>
+			<th>endif</th>
+			<td>Terminate the previous <code>if</code>, <code>ifdef</code> or <code>ifndef</code> block.</td>
+		</tr>
+	</table>
+
+
+	<h3>File Operations</h3>
+	<table>
+		<tr>
+			<th>include FILE</th>
+			<td>Include the content of FILE here. FILE can be a string (<code>"include.j"</code>) or a variable:<br /><code>A = "include.j"</code><br /><code>include A</code><br />... will include the file "include.j". If a full path is not given the file will be searched for in the current directory and then in the directory list given by the <b>includes</b> attribute to Aapp.</td>
+		</tr>
+
+		<tr>
+			<th>run EXPRESSION</th>
+			<td>Evaluate EXPRESSION and then run an external command. If EXPRESSION evaluates to "ls -l /root" the ls command will be run with the arguments <code>-l /root</code>. The return code from the command is stored in the <b>$$</b> variable. Any output generated by the external command can be read from the <b>$_</b> variable.</td>
+		</tr>
+	</table>
+			
+	<h3>Miscellanous</h3>
+	<table>
+		<tr>
+			<th>echo EXPRESSION</th>
+			<td>Evaluate EXPRESSION and write the result to stdout.</td>
+		</tr>
+
+		<tr>
+			<th>end</th>
+			<td>Terminate parsing of this file.</td>
+		</tr>
+
+		<tr>
+			<th>rem COMMENT</th>
+			<td>Add a comment to the include file. The comment will not be carried over to the processed file. The comment spans to the rest of the line.</td>
+		</tr>
+	</table>
+		
+	<p><br /></p>
+	<div id="nav">
+		<p class="navl"><a href="usage.html">&lt;&lt; Usage</a></p>
+		<p class="navr"><a href="scope.html">Variable Scope &gt;&gt;</a></p>
+	</div>
+</body>
+</html>

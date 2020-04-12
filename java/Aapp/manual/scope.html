@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Aapp Manual - Variable Scope</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<h1>Variable Scope</h1>
+	<p>There are four variable scopes in Aapp. Three of these are read-only and the last is read/write.</p>
+	<p>The four scopes are (from innermost to outermost):</p>
+	<table>
+		<tr>
+			<th>local:</th>
+			<td>Inner scope. Variables in the local: scope can be set, read and deleted.</td>
+		</tr>
+
+		<tr>
+			<th>ant:</th>
+			<td>Properties defined in the Ant build files. These are read only.</td>
+		</tr>
+
+		<tr>
+			<th>rt:</th>
+			<td>The Java runtime variables (such as <code>os.name</code> and <code>os.user</code>). These are read only.</td>
+		</tr>
+
+		<tr>
+			<th>env:</th>
+			<td>Environment variables (such as <code>$PATH</code> and <code>$LOGNAME</code>). These are read only.</td>
+		</tr>
+	</table>
+
+	<p>If you try to redefine a <code>ant:</code>, <code>rt:</code> or <code>env:</code> variable the variable will be set in the <code>local:</code> scope.</p>
+	<p>F.ex. defining f.ex. <code>os.name</code> will create a copy of <code>os.name</code> in the <code>local:</code> scope so you will be able to:</p>
+	<pre class="code">
+        #=local:os.name
+        #=rt:os.name
+	</pre>
+	<p>... and get two different answers!</p>
+				
+
+	<p>If a scopeless variable is requested it will be looked for in the following scope order:</p>
+	<ol>
+		<li><code>local:</code>, if not found then in</li>
+		<li><code>ant:</code>, if not found then in</li>
+		<li><code>rt:</code>, if not found then in</li>
+		<li><code>env:</code>, if not found then an error is generated.</li>
+	</ol>
+
+	<p><br /></p>
+	<div id="nav">
+		<p class="navl"><a href="directives.html">&lt;&lt; Directives</a></p>
+		<p class="navr"><a href="example.html">Example &gt;&gt;</a></p>
+	</div>
+</body>
+</html>
