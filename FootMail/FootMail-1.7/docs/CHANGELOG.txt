@@ -1,0 +1,31 @@
+v1.7 (2006-01-15)
+	Added the "Check deleted box" option.
+
+v1.6 (2005-11-28)
+	Changed versioning from XrY to X.Y.
+	Fixed yet another redirection bug ...
+
+v1r5 (2005-06-17)
+	Fixed a redirection bug on Nokia 6230 when deleting mails.
+	Added the signature option.
+	Fixed another navigational error ...
+
+v1r4 (2005-06-14)
+	Fixed a bug where the delete command may run rampage.
+	Removed the "Filter" option on the view mail screen.
+	Fixed a bug where the from address wasn't transferred to the To: field
+	when replying to a mail.
+
+v1r3 (2005-06-12)
+	Cleaned up some navigation bugs. Also moved the Filter button to it's
+	own page.
+
+v1r2 (2005-06-09)
+	Added more accesskeys.
+	Removed the clean up menu item - clean up can now be done when
+	in the inbox.
+	Page length is more "natural" - if a lesser items exists to fill	
+	an entire page the page is now cut short.
+	
+v1r1 (2005-05-31)
+	Initial release.
