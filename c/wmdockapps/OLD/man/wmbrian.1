@@ -1,0 +1,33 @@
+.TH WMBRIAN 1L "15 November 2010"
+.SH NAME
+wmbrian \- Brians special dock application
+
+.SH SYNOPSIS
+.B wmbrian
+[\fI-B cmd\fR] [\fI-T cmd\fR] [\fI-W cmd\fR] [\fI-b battery\fR] [\fI-h\fR] [\fI-w interface\fR]
+
+.SH DESCRIPTION
+wmbrian is Brians special dock application. It shows the current wireless status, battery status and time. This is basically what I need on my laptop - so it's an all-in-one tool.
+
+.SH OPTIONS
+.TP
+\fB-B cmd\fR
+Command to run when the battery is clicked.
+.TP
+\fB-T cmd\fR
+Command to run when the time/clock is clicked.
+.TP
+\fB-W cmd\fR
+Command to run when the wireless signal strength indicator is clicked. Default is /usr/bin/wicd-client -n.
+.TP
+\fB-b battery\fR
+Which battery to monitor (BAT0, BAT1, ...). Default is BAT0.
+.TP
+\fB-h\fR
+Show a small help page.
+.TP
+\fB-w interface\fR
+Wireless interface to monitor. Default is wlan0.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

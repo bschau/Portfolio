@@ -1,0 +1,6 @@
+# This is a comment
+#
+
+left.command thunar /home/bsc
+left.blocking yes
+right.command thunar /www

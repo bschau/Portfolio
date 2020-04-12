@@ -1,0 +1,20 @@
+SOURCES	=	Main Output Parse XUtils ../common/Options ../common/StringBuilder ../common/Utils
+DEPS	=	../Include.h
+DST	=	lcdoc$(EXE)
+
+if $(OS) == WIN32
+	SOURCES	=	$(SOURCES) ../common/WinUtils
+endif
+
+ifndef BUILD
+	include ..$/Common.mk
+else
+	include ..$/..$/Common.mk
+endif
+
+clean:	Cclean
+	$(RM) scripts/*~
+
+distclean:	Cdistclean
+
+cdoc:	Cdoc

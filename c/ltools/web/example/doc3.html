@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>Utils.c</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<STYLE TYPE="text/css">
+body { font-family: Verdana, Arial, serif } table { border-spacing: 10px; } h1 {} td.left { vertical-align: top; } a.left { font-color: red; } td.right {} p.global {} p.entry { font-size: 1.1em; font-weight: bold; } div.signature { margin-left: 2cm; } p.desc { margin-left: 2cm; } p.right { font-weight: bold; margin-left: 2cm; } .npr { margin-left: 4cm; margin-top: -1em; } h3 { border: solid 1px; width: 100%; background-color: #87cefa; color: black; } code {} a.index {} a.selected { font-size: 1.1em; border: 1px solid black; }
+</STYLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR>
+<TD>&nbsp;</TD><TD><H1>Utils.c</H1></TD></TR>
+<TR><TD CLASS="left"><A HREF="index.html" CLASS="left"><I>Index</I></A><BR><A HREF="doc1.html" CLASS="left">Options.c</A>
+<BR><A HREF="doc2.html" CLASS="left">StringBuilder.c</A>
+<BR><A HREF="doc3.html" CLASS="selected">Utils.c</A>
+<BR><A HREF="doc4.html" CLASS="left">Main.c</A>
+<BR><A HREF="doc5.html" CLASS="left">Output.c</A>
+<BR><A HREF="doc6.html" CLASS="left">Parse.c</A>
+<BR><A HREF="doc7.html" CLASS="left">XUtils.c</A>
+</TD><TD CLASS="right">
+<P CLASS="global">Misc. utility functions.<H3>Functions</H3>
+<P CLASS="right"><A NAME="UAlloc"></A><P CLASS="entry">UAlloc<DIV CLASS="signature"><PRE>void * UAlloc (<BR>        void *ctx,<BR>        int cnt<BR>)</PRE></DIV><P CLASS="desc">Allocate and clear bytes.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>ctx</CODE> - Context (or NULL).<BR>
+<CODE>cnt</CODE> - Number of bytes to allocate.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">Memory.<P CLASS="right">Note:<P CLASS="npr">Caller must free memory after use.<A NAME="UInit"></A><P CLASS="entry">UInit<DIV CLASS="signature"><PRE>void UInit (<BR>        void (<BR>                *func<BR>) (<BR>                void *,<BR>                const char *,<BR>                ...<BR>)<BR>)</PRE></DIV><P CLASS="desc">Initialise error callback<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>cb</CODE> - Callback.<BR>
+</DIV>
+<A NAME="UStrDup"></A><P CLASS="entry">UStrDup<DIV CLASS="signature"><PRE>char * UStrDup (<BR>        void *ctx,<BR>        char *src<BR>)</PRE></DIV><P CLASS="desc">Duplicate a string.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>ctx</CODE> - Context (or NULL).<BR>
+<CODE>src</CODE> - Source string.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">String.<A NAME="UStrInStr"></A><P CLASS="entry">UStrInStr<DIV CLASS="signature"><PRE>char * UStrInStr (<BR>        char *haystack,<BR>        char *needle<BR>)</PRE></DIV><P CLASS="desc">Return pointer to string in string.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>haystack</CODE> - Where to find.<BR>
+<CODE>needle</CODE> - What to find.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">Pointer to first occurrence of needle in haystack or NULL if not found.<A NAME="UTrim"></A><P CLASS="entry">UTrim<DIV CLASS="signature"><PRE>char * UTrim (<BR>        char *src<BR>)</PRE></DIV><P CLASS="desc">Trim the input string.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>src</CODE> - Source string.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">Trimmed string.<P CLASS="right">Note:<P CLASS="npr">Trimming will be done in-place.</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

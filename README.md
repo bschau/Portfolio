@@ -6,6 +6,7 @@ The portfolio contains the following sections:
 
   * [Amiga](amiga/)
   * [Android](android/)
+  * [c](c/)
   * [Commodore 64](c64/)
   * [iOS](ios/)
   * [J2ME](j2me/)

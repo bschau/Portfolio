@@ -1,0 +1,17 @@
+#!/bin/bash
+#strace -f ./grab
+rm -f /tmp/grab.pid
+mkdir -p /tmp/grabs
+rm -f /tmp/grabs/*
+./grab -p /tmp/grab.pid -o /tmp/grabs
+i=0
+while test $i -lt 10; do
+	echo -n "."
+	i=$(($i+1))
+	sleep 1
+done
+
+kill $(cat /tmp/grab.pid)
+
+#sleep 4
+#evince /tmp/grabs/*.jpg

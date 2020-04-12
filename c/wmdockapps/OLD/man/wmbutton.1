@@ -1,0 +1,49 @@
+.TH WMBUTTON 1L "18 November 2010"
+.SH NAME
+wmbutton \- a dock application button which can run commands when pressed
+
+.SH SYNOPSIS
+.B wmbutton
+[\fI-h\fR]
+config-file
+
+.SH DESCRIPTION
+wmbutton creates a "button" dock application which, when pressed, can run a command.
+
+.SH OPTIONS
+.TP
+\fB-h\fR
+Help page.
+.TP
+\fBconfig-file\fR
+Path to configuration file.
+
+.SH CONFIGURATION FILE
+The following keys can be set in the configuration file:
+.TP
+\fBleft.command\fR
+The command to run when the left mouse button is pressed.
+.TP
+\fBleft.pixmap\fR
+The pixmap to show after the left button has been pressed.
+.TP
+\fBleft.blocking\fR
+Set to yes/1/true to only be able to run the command once.  Default is to run the command multiple times.
+.TP
+\fBright.command\fR
+The command to run when the right mouse button is pressed.
+.TP
+\fBright.pixmap\fR
+The pixmap to show after the right button has been pressed.
+.TP
+\fBright.blocking\fR
+Set to yes/1/true to only be able to run the command once.  Default is to run the command multiple times.
+.TP
+\fBpixmap\fR
+Button pixmap to show.
+
+.PP
+Button pixmaps must be 52 x 52 pixels.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

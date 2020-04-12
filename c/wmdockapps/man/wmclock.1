@@ -1,0 +1,36 @@
+.TH WMCLOCK 1L "27 December 2016"
+.SH NAME
+wmclock \- nice old-style analog watch as an dock application
+
+.SH SYNOPSIS
+.B wmclock
+[\fI-H\fR] [\fI-S\fR] [\fI-b bell file\fR] [\fI-h\fR] [\fI-s seconds\fR] [\fI-u micro seconds\fR]
+
+.SH DESCRIPTION
+wmclock is a dock application showing a nice old style analog watch. wmclock can sound a bell every half hour and on a full hour.
+
+.SH OPTIONS
+.TP
+\fB-H\fR
+Sound bell once every half hour.
+.TP
+\fB-S\fR
+Silent - do not sound the bell.
+.TP
+\fB-b bell file\fR
+Sound file to use as bell. Must be /dev/dsp compatible such as wav files.
+.TP
+\fB-h\fR
+Help page.
+.TP
+\fB-r rate\fR
+Rate of bell file.
+.TP
+\fB-s seconds\fR
+Seconds to delay between each bell.
+.TP
+\fB-u micro seconds\fR
+Micro seconds to delay between each bell.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

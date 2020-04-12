@@ -1,0 +1,22 @@
+.TH WMUTE-HELPER 1L "14 November 2010"
+.SH NAME
+wmmute-helper \- helper program for wmmute.
+
+.SH SYNOPSIS
+.B wmmute-helper
+level
+
+.SH OPTIONS
+.TP
+\fBlevel\fR
+Level to switch to (see below)
+
+.SH DESCRIPTION
+The wmmute-helper program, when invoked by wmmute, receives one parameter which is the level to switch to. The level is one of 4 values: 0 (mute), 1 (minimum), 2 (medium) and 3 (maximum).
+The wmmute-helper should set up whatever sound channels to whatever values is appropriate for the level.
+
+.SH SEE ALSO
+.BR wmmute(1)
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>
