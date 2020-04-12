@@ -11,6 +11,7 @@ The portfolio contains the following sections:
   * [J2ME](j2me/)
   * [Palm OS](palmos/)
   * [Pebble](pebble/)
+  * [VPSApps](VPSApps/)
 
 If you fancy any of the source code grab yourself a copy. All source code has been released under the MIT license.
 
