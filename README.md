@@ -6,6 +6,7 @@ The portfolio contains the following sections:
 
   * [Amiga](amiga/)
   * [Android](android/)
+  * [Azure](azure/)
   * [c](c/)
   * [Commodore 64](c64/)
   * [go](go/)
