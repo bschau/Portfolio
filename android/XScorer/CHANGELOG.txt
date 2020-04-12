@@ -1,0 +1,2 @@
+2017-08-08	v1.0	Brian Schau <brian@schau.dk>
+	* Initial release.

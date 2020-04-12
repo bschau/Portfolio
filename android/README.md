@@ -13,3 +13,4 @@ Android ... Apps written in Java.
 [![Kisa](img/kisa.png)](Kisa/)
 [![O Skole Mio](img/oskolemio.png)](OSkoleMio/)
 [![SchemingMind](img/schemingmind.png)](SchemingMind/)
+[![XScorer](img/xscorer.png)](XScorer/)
