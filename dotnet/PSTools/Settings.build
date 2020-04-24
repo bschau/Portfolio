@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="PSToolsSettings" basedir=".">
+	<property name="version" value="1.0" />
+	<property name="debug" value="true" overwrite="false" />
+	<property name="scenario" value="Fictivity" />
+	<property name="serverlist" value="../test/${scenario}-Servers.csv" />
+	<property name="testspec" value="../test/ServerSpecs.txt" />
+</project>
