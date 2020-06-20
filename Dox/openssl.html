@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>dox :: OpenSSL</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>OpenSSL</h1>
+	<h2>Remove password from .PFX file</h2>
+	<ul>
+		<li>PASSWORD is your current password</li>
+		<li>TEMPPASS is a temporary password only used in the conversion</li>
+		<li>PFXIn is the file you want to convert</li>
+		<li>PFXOut is the target file for the PKCS12 without passphrase</li>
+	</ul>
+
+	<p>First, extract the certificate:</p>
+<pre>openssl pkcs12 -clcerts -nokeys -in $PFXIn -out certificate.crt -password pass:$PASSWORD -passin pass:$PASSWORD</pre>
+
+	<p>Second, the CA certificate:</p>
+<pre>openssl pkcs12 -cacerts -nokeys -in $PFXIn -out ca-cert.ca -password pass:$PASSWORD -passin pass:$PASSWORD</pre>
+
+	<p>Now, the private key:</p>
+<pre>openssl pkcs12 -nocerts -in $PFXIn -out private.key -password pass:$PASSWORD -passin pass:$PASSWORD -passout pass:$TEMPPASS</pre>
+
+	<p>Now remove the passphrase:</p>
+<pre>openssl rsa -in private.key -out new.key -passin pass:$TEMPPASS</pre>
+
+	<p>Put things together for the new PKCS-File:</p>
+<pre>cat new.key certificate.crt ca-cert.ca &gt; pem.pem</pre>
+
+	<p>Create the new file:</p>
+<pre>openssl pkcs12 -export -nodes -CAfile ca-cert.ca -in pem.pem -out $PFXOut -passout pass:</pre>
+
+	<p>And ... cleanup:</p>
+<pre>rm -f ca-cert.ca certificate.crt $PFXIn private.key new.key pem.pem</pre>
+
+	<p>Now you have a new PKCS12 key file without passphrase on the private key part.</p>
+	<p><br /></p>
+
+	<h2>Add extra intermediate</h2>
+	<p>GlobalSign sometimes uses 2 intermediate certificates giving a chain of 4 certificates. If you need to add an extra certificate to the chain in an existing <code>.pkcs12/.pfx</code> file this is how you do it.</p>
+	<p>In the text below, <code>extended.cer</code> is the <b>GlobalSign Extended Validation CA - SHA256 - G3</b> certificate.</p>
+
+	<ul>
+		<li>PASSWORD is your current password</li>
+		<li>PFXIn is the file you want to convert</li>
+		<li>PFXOut is the target file for the PKCS12 without passphrase</li>
+	</ul>
+
+	<p>First, extract the certificate:</p>
+<pre>openssl pkcs12 -clcerts -nokeys -in $PFXIn -out certificate.crt -password pass:$PASSWORD -passin pass:$PASSWORD</pre>
+
+	<p>Second, the CA certificate:</p>
+<pre>openssl pkcs12 -cacerts -nokeys -in $PFXIn -out ca-cert.ca -password pass:$PASSWORD -passin pass:$PASSWORD</pre>
+
+	<p>Now, the private key:</p>
+<pre>openssl pkcs12 -nocerts -in $PFXIn -out private.key -password pass:$PASSWORD -passin pass:$PASSWORD -passout pass:$PASSWORD</pre>
+
+	<p>Create the new chain:</p>
+<pre>cat extended.cer ca-cert.ca &gt; chain.crt</pre>
+
+	<p>Combine to new <code>.pkcs12</code>:</p>
+<pre>openssl pkcs12 -export -out $PFXOut -inkey private.key -in certificate.crt -certfile chain.crt</pre>
+
+	<p>And ... cleanup:</p>
+<pre>rm -f extended.cer ca-cert.ca certificate.crt $PFXIn private.key</pre>
+
+	<p><br /></p>
+</body>
+</html>

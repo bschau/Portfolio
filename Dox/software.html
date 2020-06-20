@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>dox :: Software</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Software</h1>
+	<h2>Adobe</h2>
+	<h3>Cannot print a PDF from within Adobe Reader</h3>
+	<ol>
+		<li>Go to Edit &rarr; Preferences &rarr; Documents and set PDF/A mode to Never</li>
+		<li>Then go to Edit &rarr; Preferences &rarr; Security (enhanced) and deselect Enable protected mode at startup</li>
+	</ol>
+	<p><br /></p>
+
+	<h2>Apache</h2>
+	<h3>On debian 9, sudden exits</h3>
+	<p>Add to <code>/etc/apache2/apache2.conf</code>:</p>
+	<pre>
+Mutex posixsem</pre>
+
+	<h3>htaccess</h3>
+	<pre>
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.schau.dk/$1 [R,L]</pre>
+
+	<h3>Authentication</h3>
+	<h4>In virtual section</h4>
+	<pre>
+DirectoryIndex index.html index.php
+AllowOverride AuthConfig
+AuthType basic
+AuthName "Restricted Content"
+AuthUserFile /path/to/password-file
+AuthGroupFile /path/to/group-file
+Require group prv
+Satisfy all</pre>
+
+	<h4>Password-file</h4>
+	<pre>
+bs:$apr1$base64encodedstuff</pre>
+
+	<h4>Webgroup-file</h4>
+	<pre>
+prv: bs</pre>
+
+	<h3>Small Tinyurl Redirect</h3>
+	<p>Add to .conf file:</p>
+	<pre>
+RewriteEngine on
+RewriteMap shortlinks txt:/path/to/shortlinks-map.txt
+RewriteRule ^/(.+)$ ${shortlinks:$1} [R=temp,L]</pre>
+	<p>Create the <code>shortlinks-map.txt</code> file, such as:
+	<pre>
+0 https://www.schau.dk/</pre>
+	<p>First argument (<b>0</b>) is the shortlink (such as <b>http://url/0</b>). The rest of the line is the link which is redirected to.</p>
+	<p><br /></p>
+
+	<h2>Cups</h2>
+	<p>If remote printing doesn't work, try setting the print queue on the print-server to raw. Log on to the print-server and as root:</p>
+	<pre>
+lpadmin -p PRINTER_NAME -m raw</pre>
+	<p>... substitute <code>PRINTER_NAME</code> with the real printer name.</p>
+	<p><br /></p>
+
+	<h2>Ghostscript</h2>
+	<h3>Missing Font on Windows</h3>
+	<p>If you get the following error during conversion:</p>
+	<p><i>Can't find CID font "Arial".</i></p>
+	<p>... then the cure is easy:</p>
+	<ol>
+		<li>Launch the built-in fontviewer in Windows 10 (click the windows flag, type font and navigate from there).</li>
+		<li>Find the desired font (install it if necessary) and look up the installation path.</li>
+		<li>Then add to the <i>Substitutions</i> section in <code>cidfmap</code> in <code>\lib</code> in the Ghostscript installation folder:<br />
+<pre>
+/Arial &lt;&lt; /CSI [(Identity) 3] /Path (C:/Windows/Fonts/Arial.ttf) /SubfontID 0 /FileType /TrueType &gt;&gt;;
+</pre><br />
+... obviously substituting the <b>Arial</b> name with your font. Also note the use of forward slash ('/') as path delimiter.</li>
+	</ol>
+	<p><br /></p>
+
+	<h2>LibreOffice</h2>
+	<p>Install support for the danish language:</p>
+	<pre>
+sudo apt install libreoffice-l10n-da
+sudo apt install libreoffice-help-da
+sudo apt install hunspell
+sudo apt install hunspell-da</pre>
+	<p><br /></p>
+
+	<h2>MongoDB</h2>
+	<h3>Installation, Ubuntu 16.04</h3>
+	<p>Install directly from source. If a version of mongodb already exists on the system remove it using:</p>
+	<pre>
+apt remove mongodb</pre>
+	<p>... before proceeding with these instructions.</p>
+	<pre>
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+sudo apt update
+sudo apt install mongodb-org
+sudo systemctl start mongod
+sudo systemctl enable mongod</pre>
+
+	<h3>Create admin user</h3>
+	<p>Run this on a freshly installed MongoDB:</p>
+	<pre>
+mongo
+use admin
+db.createUser({user: "admin-user-name",pwd: "admin-password", roles: [ { role: "userAdminAnyDatabase", db: "admin" }]})</pre>
+
+	<h3>Enable authentication</h3>
+	<p>Open <code>/etc/mongod.conf</code> and uncomment the security property and add authentication:</p>
+	<pre>
+security:
+	authorization: "enabled"</pre>
+	<p>... then restart MongoDB: <code>sudo systemctl restart mongod</code></p>
+
+	<h3>Logon as authenticated user</h3>
+	<pre>
+mongo -u admin-user-name -p --authenticationDatabase admin</pre>
+	<p>... and enter password when prompted.</p>
+	<p><br /></p>
+
+	<h2>RDP</h2>
+	<h3>Disappearing cursor</h3>
+	<p>The mouse pointer often-times disappears when you move it over a text-field on the remote host. The cure:</p>
+	<ol>
+		<li>Open the <b>Control Panel</b> and select the <b>Mouse</b> applet.</li>
+		<li>Go to the <b>Pointers</b> tab, select the <i>Text Select</i> item and click <b>Browse...</b></li>
+		<li>Select the <i>beam_r.cur</i> item, click <b>Apply</b> and <b>OK</b>.</li>
+	</ol>
+
+	<h3>Export printer to RDP server host</h3>
+	<p>The printer on the client needs to be marked as shared and in your RDP you need to enable printer sharing.</p>
+	<h4>On client</h4>
+	<ol>
+		<li>Open <code>RegEdit</code>.</li>
+		<li>Navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64\Drivers</code> (assuming 64 bits systems here)</li>
+		<li>Lookup the <code>InfPath</code> for the printer in <code>Version-3</code> or <code>Version-4</code></li>
+		<li>Copy all files (and <code>.inf</code> file) to a folder somewhere on your RDP server host, ex. <code>c:\PrinterDrivers\MyPrinter</code>.</li>
+	</ol>
+
+	<h4>On RDP server host</h4>
+	<ol>
+		<li>Run <code>printui /s /t 2</code></li>
+		<li>Click <b>Add&rarr;Have Disk</b>, browse to <code>c:\PrinterDrivers\MyPrinter</code> (as step 4 above)</li>
+		<li>Install drivers</li>
+	</ol>
+	<p>The next time you connect to the RDP server host you should be able to print to your local printer from the RDP server host.</p>
+	<p><br /></p>
+
+	<h2>Subsonic</h2>
+	<h3>Enable HTTPS</h3>
+	<p>Create pkcs12:</p>
+	<pre>
+cat myserver.key myserver.crt intermediate.cer &gt; subsonic.crt
+openssl pkcs12 -in subsonic.crt -export -out subsonic.pkcs12
+# Remember your password, you will need it below!
+cp subsonic.pkcs12 /etc/ssl
+chmod 644 /etc/ssl/subsonic.pkcs12
+rm -f subsonic.crt</pre>
+
+	<p>Update <code>/etc/default/subsonic</code> to contain:</p>
+	<pre>
+SUBSONIC_ARGS="--https-port=4443 --port=4040 {Other Args, such as --max-memory}"</pre>
+
+	<p>Update <code>/usr/share/subsonic/subsonic.sh</code> around line 131, insert:</p>
+	<pre>
+-Dsubsonic.ssl.keystore=/etc/ssl/subsonic.pkcs12 
+-Dsubsonic.ssl.password=...password-from-above...</pre>
+
+	<p>Restart Subsonic and log on to <code>http://your-server:4040/</code> - you should be redirected to <code>https://your-server:4443/</code></p>
+	<p><br /></p>
+</body>
+</html>

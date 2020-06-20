@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Roboto|Noto+Serif');
+
+html { height: 100%; }
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+	width: 39em;
+}
+
+pre {
+	background-color: #eee;
+	padding: 0.5em 1em;
+	border-left: 2px solid #888;
+	overflow: scroll;
+	font-size: 12px;
+}
+
+code, tt {
+	font-family: 'Fira Code', monospace;
+}
+
+a, a:visited, a:hover, a:active {
+	font-weight: bold;
+	text-decoration: none;
+	color: #558;
+}
+
+a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: #99c;
+	border-bottom: 1px dotted #111;
+}
+
+h1 {
+	color: #5c6366;
+	font-family: 'Noto Serif', serif;
+}
+
+h2, h3, h4, h5, h6 {
+	color: #8F9699;
+	font-family: 'Noto Serif', serif;
+}
