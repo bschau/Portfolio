@@ -1,0 +1,23 @@
+#: archiver.php:33 archiver.php:78 archiver.php:96 archiver.php:181
+msgid   "Archive"
+msgstr  ""
+
+#: archiver.php:45
+msgid   "Archive Category"
+msgstr  ""
+
+#: archiver.php:23
+msgid   "Archiver"
+msgstr  ""
+
+#: archiver.php:69
+msgid   "Save Changes"
+msgstr  ""
+
+#: archiver.php:117
+msgid   "The post will not be archived if the above is not set."
+msgstr  ""
+
+#: archiver.php:114
+msgid   "day month year"
+msgstr  ""

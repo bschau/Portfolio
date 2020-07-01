@@ -1,0 +1,79 @@
+Gallery by ID
+=============
+
+Galleries in WordPress are quite limited. If you insert a gallery you insert all
+images for that page. Michael Fields tries to address this in his mf-gallery-shortcode plugin (which, unfortunately, have been pulled from the web).
+
+My plugin is heavily inspired by the work already done in media.php (the Gallery
+function) and by the work done by Michael Fields in his mf-gallery-shortcode
+plugin.
+
+
+
+Installation
+
+ 1. Download the plugin.
+ 2. Unpack it using gunzip or winzip.
+ 3. Copy the gallery_by_id.php file to your WordPress plugin folder.
+ 4. Log on to WordPress and activate the plugin.
+
+
+
+Usage
+
+ * Create a post or a page.
+ * Upload a bunch of pictures.
+ * Add a numeric value in the Menu Order field for each entry - lower numbered
+   entries are shown first.
+ * Somewhere on your post or page add the tag.
+ * Substitute the "..." with your entries separated by commas.
+
+
+
+Example
+
+ * I've uploaded 6 pictures to the media library for the current page.
+ * In the Menu Order field for the pictures I write 1 for the first picture,
+   2 for the second and so forth.
+ * On the current page I add to add the gallery. I could also just add to show
+   odd numbered pictures only.
+
+
+
+Synopsis
+
+ [ids=""] [css="full|size|none"]]
+ [STDOPTIONS] - standard options. Refer to the WordPress Codex for the <a href="http://codex.wordpress.org/Using_the_gallery_shortcode">gallery short code</a> for more information.
+
+ ids - a list of IDs to include in this gallery.
+ css - the amount of style sheet information to include:
+
+    full: include everything (default):
+
+    <style type='text/css'>
+        .gallery {
+            margin: auto;
+        }
+        .gallery-item {
+            float: left;
+            margin-top: 10px;
+            text-align: center;
+            width: 33%;
+        }
+        .gallery img {
+            border: 2px solid gray;
+        }
+        .gallery-caption {
+            margin-left: 0;
+        }
+    </style>
+
+    size: include only sizing information:
+
+    <style type='text/css'>
+        .gallery-item {
+            width: 33%;
+        }
+    </style>
+
+    none: include nothing
