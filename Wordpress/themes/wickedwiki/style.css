@@ -261,14 +261,6 @@ p { margin-top: 1em; }
 h1 { margin: 1em 0 1em 0; }
 h2, h3, h4, h5, h6 { margin: 0.5em 0 0.5em 0; }
 
-pre {
-	margin: 1em 0;
-	padding: 1em 2em;
-	border: 1px dotted #888;
-	background-color: #eee;
-	color: #000;
-}
-
 h3 { color: #248; }
 
 h4 { text-style: italic; }
