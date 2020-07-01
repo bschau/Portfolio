@@ -1,0 +1,14 @@
+HOST	= $(shell uname -n)
+ifeq ($(HOST),dharma)
+DST	=	/home/bs/Insync/SYS
+else
+$(error You must run this on dharma)
+endif
+
+all:	clean sync
+
+clean:
+	-find . -iname "*~" -exec rm -f {} \;
+
+sync:
+	rsync -avz --progress --delete --exclude=.git --exclude=.gitignore --exclude=*~ --exclude=Makefile . $(DST)

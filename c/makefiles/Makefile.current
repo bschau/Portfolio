@@ -1,0 +1,54 @@
+ifeq ($(OS),Windows_NT)
+CC	=	tcc
+CFLAGS	=	-c -Wall -DWIN32
+EXE	=	.exe
+else
+CC	=	gcc
+CFLAGS	=	-c -O2 -Wall -DLinux
+EXE	=	
+endif
+LDFLAGS	=
+DEPS	=	Makefile Include.h
+DST	=	lme
+
+all:	builddir $(DST)
+
+builddir:
+	test -d build || mkdir build
+	
+$(DST):	HashTable.o Main.o OS.o Options.o Parse.o Properties.o StringBuilder.o Utils.o
+	$(CC) $(LDFLAGS) -o $(DST)$(EXE) build/*.o
+
+HashTable.o:	HashTable.c $(DEPS)
+	$(CC) $(CFLAGS) HashTable.c -o build/HashTable.o
+
+Main.o:	Main.c $(DEPS)
+	$(CC) $(CFLAGS) Main.c -o build/Main.o
+
+OS.o:	OS.c $(DEPS)
+	$(CC) $(CFLAGS) OS.c -o build/OS.o
+
+Options.o:	Options.c $(DEPS)
+	$(CC) $(CFLAGS) Options.c -o build/Options.o
+
+Parse.o:	Parse.c $(DEPS)
+	$(CC) $(CFLAGS) Parse.c -o build/Parse.o
+
+Properties.o:	Properties.c $(DEPS)
+	$(CC) $(CFLAGS) Properties.c -o build/Properties.o
+
+StringBuilder.o:	StringBuilder.c $(DEPS)
+	$(CC) $(CFLAGS) StringBuilder.c -o build/StringBuilder.o
+
+Utils.o:	Utils.c $(DEPS)
+	$(CC) $(CFLAGS) Utils.c -o build/Utils.o
+
+.PHONY: clean
+clean:
+	rm -f build/*.o
+	rm -f $(DST) *~
+
+.PHONY: distclean
+distclean:	clean
+	rm -fr build
+	make -C test distclean
