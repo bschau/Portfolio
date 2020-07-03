@@ -1,0 +1,5 @@
+[MESSAGES CONTROL]
+disable=too-few-public-methods,locally-disabled,duplicate-code,bare-except,too-many-instance-attributes
+
+[REPORTS]
+reports=no
