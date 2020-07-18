@@ -9,6 +9,7 @@ The portfolio contains the following sections:
   * [Android](android/)
   * [Azure](azure/)
   * [c](c/)
+  * [Cloud Apps](CloudApps/)
   * [Commodore 64](c64/)
   * [Documents](Dox/)
   * [FootMail](FootMail/)
