@@ -1,0 +1,35 @@
+[
+{
+	"Name": "Android Authority",
+	"RssUrl": "https://www.androidauthority.com/feed/",
+	"WebUrl": "https://www.androidauthority.com/"
+},{
+	"Name": "DR Nyheder",
+	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
+	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "DR Sporten",
+	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/sporten",
+	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "Mobil.nu",
+	"RssUrl": "https://mobil.nu/feed",
+	"WebUrl": "https://mobil.nu/"
+},{
+	"Name": "OMG! Ubuntu!",
+	"RssUrl": "http://feeds.feedburner.com/d0od",
+	"WebUrl": "http://www.omgubuntu.co.uk/"
+},{
+	"Name": "PCWorld",
+	"RssUrl": "https://www.pcworld.com/index.rss",
+	"WebUrl": "https://www.pcworld.com/"
+},{
+	"Name": "The daily WTF",
+	"RssUrl": "http://syndication.thedailywtf.com/TheDailyWtf",
+	"WebUrl": "http://thedailywtf.com/"
+},{
+	"Name": "TV 2 Sporten",
+	"RssUrl": "https://feeds.services.tv2.dk/api/feeds/sport/rss",
+	"WebUrl": "https://sport.tv2.dk"
+}
+]

@@ -22,6 +22,7 @@ The portfolio contains the following sections:
   * [Microbit](ubit/)
   * [Palm OS](palmos/)
   * [Pebble](pebble/)
+  * [Python](python/)
   * [Recipies](opskrifter/)
   * [VPSApps](VPSApps/)
   * [Wordpress](Wordpress/)
