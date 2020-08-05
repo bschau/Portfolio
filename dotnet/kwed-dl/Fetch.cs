@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace kweddl
 {
-	public class Fetcher
+	public class Fetch
 	{
 		public async Task<byte[]> ExecuteAsync(string url)
 		{
