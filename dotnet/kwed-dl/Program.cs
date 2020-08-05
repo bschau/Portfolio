@@ -6,7 +6,6 @@ namespace kweddl
 {
 	class Program
 	{
-		static readonly char[] _invalidFileNameChars = Path.GetInvalidFileNameChars();
 		static string _home;
 		static string _hiddenPrefix;
 
@@ -16,13 +15,14 @@ namespace kweddl
 			{
 				const string baseDomain = "remix.kwed.org";
 				Initialize();
+				var saveMusic = new SaveMusic(_home);
 
 				var counterFile = Path.Combine(_home, $"{_hiddenPrefix}kwedrc");
 				var counter = new Counter(counterFile);
 				counter.Load();
 
-				var fetcher = new Fetcher();
-				var rssData = fetcher.ExecuteAsync($"http://{baseDomain}/rss.xml").Result;
+				var fetch = new Fetch();
+				var rssData = fetch.ExecuteAsync($"http://{baseDomain}/rss.xml").Result;
 				var items = new Rss().Parse(rssData);
 				var kwedItems = items.OrderBy(x => x.KwedId);
 
@@ -35,8 +35,8 @@ namespace kweddl
 					}
 
 					var url = $"http://{baseDomain}/download.php/{kwedId}";
-					var music = fetcher.ExecuteAsync(url).Result;
-					SaveMusic(kwedItem, music);
+					var music = fetch.ExecuteAsync(url).Result;
+					saveMusic.Execute(kwedItem, music);
 					counter.Set(kwedId);
 					counter.Save();
 				}
@@ -60,14 +60,6 @@ namespace kweddl
 				_hiddenPrefix = ".";
 				_home = Environment.GetEnvironmentVariable("HOME");
 			}
-		}
-
-		static void SaveMusic(KwedItem kwedItem, byte[] data)
-		{
-			var filename = new string(kwedItem.Title.Where(c => !_invalidFileNameChars.Contains(c)).ToArray());
-			var downloadTo = Path.Combine(_home, "Desktop");
-			filename = Path.Combine(downloadTo, $"{filename}.mp3");
-			File.WriteAllBytes(filename, data);
 		}
 	}
 }
