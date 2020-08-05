@@ -8,5 +8,5 @@ Latest tracks are downloaded to your desktop.
 
 I run this upon login using the Task Scheduler in windows.
 
-Requires .NET core 2.2 to run.
+Requires .NET core 3.1 to run.
 
