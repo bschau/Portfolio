@@ -4,6 +4,10 @@
 	"RssUrl": "https://www.androidauthority.com/feed/",
 	"WebUrl": "https://www.androidauthority.com/"
 },{
+	"Name": "Android Police",
+	"RssUrl": "https://www.androidpolice.com/feed",
+	"WebUrl": "https://www.androidpolice.com/"
+},{
 	"Name": "DR Nyheder",
 	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
 	"WebUrl": "https://www.dr.dk/"
@@ -11,6 +15,10 @@
 	"Name": "DR Sporten",
 	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/sporten",
 	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "GSM Arena",
+	"RssUrl": "https://www.gsmarena.com/rss-news-reviews.php3",
+	"WebUrl": "https://www.gsmarena.com/"
 },{
 	"Name": "Mobil.nu",
 	"RssUrl": "https://mobil.nu/feed",
