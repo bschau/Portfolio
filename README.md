@@ -10,7 +10,6 @@ The portfolio contains the following sections:
   * [AWS Lambda](AwsLambda/)
   * [Azure](azure/)
   * [c](c/)
-  * [Cloud Apps](CloudApps/)
   * [Commodore 64](c64/)
   * [Documents](Dox/)
   * [FootMail](FootMail/)
@@ -25,7 +24,6 @@ The portfolio contains the following sections:
   * [Pebble](pebble/)
   * [Python](python/)
   * [Recipies](opskrifter/)
-  * [VPSApps](VPSApps/)
   * [Wordpress](Wordpress/)
 
 If you fancy any of the source code grab yourself a copy. All source code has been released under the MIT license.

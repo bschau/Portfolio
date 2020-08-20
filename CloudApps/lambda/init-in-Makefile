@@ -1,9 +1,0 @@
-# Ubuntu 18.04
-init:
-	-rm -fr package
-	pip3 install --target=./package --system -r requirements.txt
-
-# Ubuntu 16.04 / 19.10
-init:
-	-rm -fr package
-	pip3 install --target=./package -r requirements.txt
