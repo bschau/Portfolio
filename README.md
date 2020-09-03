@@ -25,6 +25,7 @@ The portfolio contains the following sections:
   * [Python](python/)
   * [Recipies](opskrifter/)
   * [Wordpress](Wordpress/)
+  * [YoctoBasic](YoctoBasic/)
 
 If you fancy any of the source code grab yourself a copy. All source code has been released under the MIT license.
 
