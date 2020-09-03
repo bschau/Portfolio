@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Git :: bschau.github.io</title>
+	<link rel="icon" href="/balloons.png" sizes="32x32" />
+	<link rel="icon" href="/balloons.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="/balloons.png" />
+	<meta name="msapplication-TileImage" content="/balloons.png" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<!-- github -->
+<body>
+<div id="header">
+	<a href="index.html" class="header-link">Git</a>
+	<a href="mssql.html" class="header-link">MSSql</a>
+	<a href="cli.html" class="header-link">Cli</a>
+	<a href="dropbox.html" class="header-link">Dropbox</a>
+	<a href="devel.html" class="header-link">Devel</a>
+</div>
+<h1>Git</h1>
+<p>Ted Felix has a very nice guide about <a href="http://www.tedfelix.com/software/git-conflict-resolution.html">Conflict Resolution in Git</a>.</p>
+<h2>Revert uncommited changes</h2>
+<p>Revert changes to last commit:</p>
+<pre>git reset --hard
+git clean -fd     # '-f' = force, '-d' = remove directories</pre>
+<h2>Update local branch with remote</h2>
+<pre>git checkout branch-to-update
+git pull origin branch-to-update</pre>
+<h2>Delete branch</h2>
+<pre>git push origin :card-XXXX    # delete on remote
+git branch -D card-XXXX       # delete sandbox branch</pre>
+<h2>Fetch and track branch from Dingobats (dingobat) repository</h2>
+<pre>git remote add dingobat git@github.com:dingobat/eSignatur.git
+git fetch dingobat
+git checkout card-XXXX        # card-XXXX is now available to you</pre>
+<h2>Switching between branches with uncommitted changes</h2>
+<pre>git stash                   # save changes in this card
+git checkout card-XXXX      # new card
+.
+do work
+.
+commit
+git stash pop               # fetch previously stashed</pre>
+<p>Stash works independently from branches. However when you pop the stash, whatever popped must be able to merge.</p>
+<h2>If sandbox copy is f*cked up</h2>
+<pre>git checkout master
+git branch -D master
+git checkout -b master --track origin/master
+git checkout card-XXXX
+git rebase -i master
+.
+.
+.
+git push -f origin card-XXXX</pre>
+<h2>Ignore local files</h2>
+<pre>echo "UpgradeLog*" &gt;&gt; .gitignore
+echo "_UpgradeReport_Files/" &gt;&gt; .gitignore
+echo ".gitignore" &gt;&gt; .gitignore
+git update-index --assume-unchanged .gitignore</pre>
+<h2>New branch</h2>
+<pre>git checkout -b card-XXXX</pre>
+<p>If the new branch is dependent on other branch:</p>
+<pre>git checkout card-YYYY             # parent branch
+git rebase master
+git push -f origin card-YYYY       # card-YYY contains commits from master
+git checkout -b card-XXXX          # new branch</pre>
+<p>git rebase -i master and remove unwanted commits in card-XXXX from master. Use gitk to verify the commit chain.</p>
+<h2>Push to master</h2>
+<pre>git push -f origin card-XXXX       # omit -f on first push</pre>
+<h2>See previous version of file</h2>
+<pre>git show HEAD~1:./Index.cshmtl</pre>
+<p>The number (~1) after HEAD denotes which version. The file path after : must be full. However, to see version of a file in current directory full path is ./</p>
+<h2>Untrack file</h2>
+<pre>git update-index --assume-unchanged [path] ...
+git update-index --no-assume-unchanged [path]        # To start tracking the file again</pre>
+<h2>Update from master</h2>
+<pre>git checkout master                        # (if in branch)
+git pull --ff-only rovsing master
+git push origin master</pre>
+<h2>Maintenance</h2>
+<pre>git gc         # do once in a while (happens automatically in git gui)
+git fsck       # lengthy process</pre>
+<h2>Change commits</h2>
+<pre>git checkout master
+git pull
+git checkout card-XXXX
+git rebase -i master</pre>
+<p>Change the status from pick to edit on the commits you want to change.</p>
+<pre>do {
+  git gui                        # unstage or commit what needs to be changed
+  git rebase --continue
+} while (commits_present)
+git push -f origin card-XXXX</pre>
+<h2>Use multiple SSH keys</h2>
+<ol>
+<li><code>ssh-keygen</code>, give a name which doesn't clash with whatever identities you have in <code>.ssh</code>. Move the keypair to <code>~/.ssh</code>.</li>
+<li>Add the public key to your git account.</li>
+<li>Add to <code>~/.ssh/config</code>:
+<pre>Host git-for-other
+HostName github.com
+User git
+IdentityFile "/path/to/.ssh/other-identity-key"
+IdentitiesOnly yes</pre>
+</li>
+<li>Remove existing origin from repository:
+<pre>cd $REPOSITORY
+git remote remove origin</pre>
+</li>
+<li>Add new origin:
+<pre>git remote add origin git@git-for-other:git-user/Repository.git</pre>
+</li>
+</ol>
+<h2>Installation on Windows</h2>
+<p>Install the <a href="https://git-for-windows.github.io/">Git SDK</a> version. Then, after installation (in the prompt that opens):</p>
+<pre>pacman -S --needed --force rsync</pre>
+<p>(For rsync support :-)</p>
+<h2>Another way to add rsync in git bash</h2>
+<ol>
+<li>Download latest rsync from <a href="http://repo.msys2.org/msys/x86_64/">http://repo.msys2.org/msys/x86_64/</a></li>
+<li>Open git bash, extract rsync archive with: <code>xz -d rsync-x.y.z-x86_64.pkg.tar.xz</code></li>
+<li>Go to the root of your Git for Windows installation, mine is in <b>/c/opt/git-sdk-64</b>: <code>cd /c/opt/git-sdk-64</code></li>
+<li>Extract the rsync archive: <code>tar xf /c/Users/brian/Desktop/rsync-x.y.z-x86_64 --exclude=".*"</code> - substitute the path with the correct path to your download.</li>
+<li>rsync is now installed. Enjoy!</li>
+</ol>
+<h2>Remote deploy website</h2>
+<p>Create the following on webserver:</p>
+<pre>cd $HOME
+mkdir GitWebs.git
+cd GitWebs.git
+git init --bare</pre>
+<p>Copy this script to hooks/post-receive:</p>
+<pre>#!/bin/bash
+while read old new ref; do
+	echo "$ref" | grep "/master$"
+	if test $? -eq 0; then
+		echo "Deploying master branch to production ..."
+		git --work-tree="/home/gitwebs" --git-dir="/home/bs/GitWebs.git" checkout -f
+	else
+		echo "Not deploying $ref - only master will be deployed!"
+	fi
+done
+exit 0</pre>
+<p>Create Webs deployment directory (<code>mkdir /home/gitwebs</code>) and configure Apache to serve sites out of this directory.</p>
+<p>On development pc, checkout the raw Webs.git (<code>git clone bs@xxx:Webs.git</code>) directory. Populate this with the content to be served.</p>
+<p>Add remote: <code>git remote add prod bs@${server}:/home/bs/GitWebs.git</code></p>
+<p>To deploy: <code>git push origin prod</code></p>
+<p><br /></p>
+</body>
+</html>
+

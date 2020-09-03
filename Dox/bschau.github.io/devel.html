@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Devel :: bschau.github.io</title>
+	<link rel="icon" href="/balloons.png" sizes="32x32" />
+	<link rel="icon" href="/balloons.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="/balloons.png" />
+	<meta name="msapplication-TileImage" content="/balloons.png" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<!-- github -->
+<body>
+<div id="header">
+	<a href="index.html" class="header-link">Git</a>
+	<a href="mssql.html" class="header-link">MSSql</a>
+	<a href="cli.html" class="header-link">Cli</a>
+	<a href="dropbox.html" class="header-link">Dropbox</a>
+	<a href="devel.html" class="header-link">Devel</a>
+</div>
+<h1>Devel</h1>
+<h2>MS Unit Test</h2>
+<p>Add the <b>MsTest.TestAdapter</b> and <b>MsTest.TestFramework</b> nuget packages to your unittest solution.</p>
+<p>Then you can annotate your method with <code>DataTestMethod</code> and use <code>DataRow</code>'s to pass data to the method:</p>
+<pre>[TestClass]
+public class NumbersTests
+{
+    [DataRow(0, 0)]
+    [DataRow(1, 1)]
+    [DataRow(2, 1)]
+    [DataTestMethod]
+    public void VerifyThatTwoSelectedNumbersAreEqual(int number1, int number2)
+    {
+        Assert.AreEqual(number1, number2);
+    }
+}</pre>
+<p>Yep, fails in the 3rd test ...</p>
+
+<h2>Ionic Key/Value provider</h2>
+<pre>import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
+
+@Injectable()
+export class KeyValueProvider {
+	constructor(private storage: Storage) {
+	}
+
+	async get&lt;T&gt;(key: string) {
+		let payload = (await this.storage.get(key));
+		return payload as T;
+	}
+
+	async remove(key: string) {
+		await this.storage.remove(key);
+		return true;
+	}
+
+	async set(key: string, val: any) {
+		let payload = val;
+		await this.storage.set(key, payload);
+		return true;
+	}
+
+	async hasKey(key: string) {
+		const allKeys = await this.storage.keys();
+		const truthy = allKeys.some(k =&gt; k === key);
+		return truthy;
+	}
+}
+
+/* Use:
+async getMyValue(){
+	const value = this.keyValueProvider.get&lt;UserData&gt;('userData');
+	return value;
+}
+*/
+</pre>
+<p><br /></p>
+</body>
+</html>
+

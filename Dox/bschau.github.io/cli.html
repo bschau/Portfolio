@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>CLI :: bschau.github.io</title>
+	<link rel="icon" href="/balloons.png" sizes="32x32" />
+	<link rel="icon" href="/balloons.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="/balloons.png" />
+	<meta name="msapplication-TileImage" content="/balloons.png" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<!-- github -->
+<body>
+<div id="header">
+	<a href="index.html" class="header-link">Git</a>
+	<a href="mssql.html" class="header-link">MSSql</a>
+	<a href="cli.html" class="header-link">Cli</a>
+	<a href="dropbox.html" class="header-link">Dropbox</a>
+	<a href="devel.html" class="header-link">Devel</a>
+</div>
+<h1>CLI</h1>
+<h2>Let's Encrypt</h2>
+<ol>
+	<li>Stop apache2</li>
+	<li><code>certbot --authenticator standalone -d $domain.$tld,www.$domain.$tld certonly</code></li>
+</ol>
+
+<h2>NPM: Make packages local to user</h2>
+<pre>mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'</pre>
+<p>... add to profile:</p>
+<pre>NPM_PACKAGES="$HOME/.npm-global"
+PATH="$NPM_PACKAGES/bin:$PATH"
+export NPM_PACKAGES PATH</pre>
+
+<h2>go install: no install location for directory</h2>
+<p>When <code>go install</code> fails with</p>
+<p><i>"go install: no install location for directory"</i></p>
+<p>... then set <code>$GOBIN</code> to <code>$GOPATH/bin</code>.</p>
+
+<h2>OpenSSL</h2>
+<ul>
+	<li>PASSWORD is your current password</li>
+	<li>TEMPPASS is a temporary password only used in the conversion</li>
+	<li>PFXIn is the file you want to convert</li>
+	<li>PFXOut is the target file for the PKCS12 without passphrase</li>
+</ul>
+
+<h3>Remove password from .PFX file</h3>
+<pre>
+openssl pkcs12 -clcerts -nokeys -in $PFXIn -out certificate.crt -password pass:$PASSWORD -passin pass:$PASSWORD               # extract certificate
+openssl pkcs12 -cacerts -nokeys -in $PFXIn -out ca-cert.ca -password pass:$PASSWORD -passin pass:$PASSWORD                    # extract CA certificate
+openssl pkcs12 -nocerts -in $PFXIn -out private.key -password pass:$PASSWORD -passin pass:$PASSWORD -passout pass:$TEMPPASS   # extract private key
+openssl rsa -in private.key -out new.key -passin pass:$TEMPPASS                                                               # remove pass-phrase
+cat new.key certificate.crt ca-cert.ca &gt; pem.pem                                                                              # collect everything ...
+openssl pkcs12 -export -nodes -CAfile ca-cert.ca -in pem.pem -out $PFXOut -passout pass:                                      # ... and create PKCS12 file
+rm -f ca-cert.ca certificate.crt $PFXIn private.key new.key pem.pem                                                           # cleanup
+</pre>
+<h3>Add extra intermediate</h3>
+<pre>
+openssl pkcs12 -clcerts -nokeys -in $PFXIn -out certificate.crt -password pass:$PASSWORD -passin pass:$PASSWORD               # extract certificate
+openssl pkcs12 -cacerts -nokeys -in $PFXIn -out ca-cert.ca -password pass:$PASSWORD -passin pass:$PASSWORD                    # extract CA certificate
+openssl pkcs12 -nocerts -in $PFXIn -out private.key -password pass:$PASSWORD -passin pass:$PASSWORD -passout pass:$PASSWORD   # extract private key
+cat extended.cer ca-cert.ca &gt; chain.crt                                                                                       # create chain
+openssl pkcs12 -export -out $PFXOut -inkey private.key -in certificate.crt -certfile chain.crt                                # create PKCS12 file
+rm -f extended.cer ca-cert.ca certificate.crt $PFXIn private.key                                                              # cleanup
+</pre>
+
+<p><br /></p>
+</body>
+</html>
+
