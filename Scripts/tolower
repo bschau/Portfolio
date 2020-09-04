@@ -1,0 +1,9 @@
+#!/bin/bash
+for fil; do
+	lfil="$(echo $fil | tr '[A-Z]' '[a-z]')"
+	if test "$lfil" != "$fil"; then
+		echo "Renaming $fil -> $lfil ..."
+		mv "$fil" "$lfil"
+	fi
+done
+exit 0

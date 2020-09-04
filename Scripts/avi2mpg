@@ -1,0 +1,38 @@
+#!/bin/bash
+if test $# -eq 0; then
+	echo "Usage: avi2mpg -a | avi1.avi avi2.avi ... aviX.avi"
+	exit 1
+fi
+
+p="$(type -p ffmpeg)"
+if test -z "$p"; then
+	echo "ffmpeg not found in path" >&2
+	exit 1
+fi
+
+if test "$1" = "-a"; then
+	set -- $(ls *.[Aa][Vv][Ii])
+fi
+
+for avi; do
+	echo "Converting $avi from avi to mpg ..."
+	f=""
+	if test -s "$avi"; then
+		f="$avi"
+	else 
+		for e in avi AVI aVI AvI AVi avI aVi Avi; do
+			if test -s "${avi}.${e}"; then
+				f="${avi}.${e}"
+				break;
+			fi
+		done
+	fi
+
+	if test -z "$f"; then
+		echo "Cannot find $f ..."
+	else
+		ffmpeg -i "$f" -sameq -target pal-dvd "${avi%.*}.mpg"
+	fi
+done
+
+exit 0

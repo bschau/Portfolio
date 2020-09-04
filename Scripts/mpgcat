@@ -1,0 +1,43 @@
+#!/bin/bash
+if test $# -lt 2; then
+	echo "Usage: mpgcat output.mpg movie1 [movie2 ... movieX]" >&2
+	exit 1
+fi
+
+bins="ffmpeg mencoder"
+for b in $bins; do
+	p="$(type -p $b)"
+	if test -z "$p"; then
+		echo "$b not found in path" >&2
+		exit 1
+	fi
+done
+
+output="$1"
+shift
+srcs=""
+err="n"
+for s; do
+	if test -s "$s"; then
+		ext="$(echo ${s##*.} | tr 'A-Z' 'a-z')"
+		if test "$ext" = "3gp" -o "$ext" = "avi"; then
+			echo "Need to convert $ext file to mpg"
+			tmp="tmp_${s%.*}.mpg"
+			ffmpeg -i $s -sameq $tmp
+			if test -s "$tmp"; then
+				srcs="$srcs $tmp"
+			else
+				echo "Failed to convert $s to mpg ($tmp)" >&2
+				exit 1
+			fi
+		else
+			srcs="$srcs $s"
+		fi
+	else
+		echo "$s not found!" >&2
+		exit 1
+	fi
+done
+
+mencoder -oac copy -ovc copy -of mpeg -o $output $srcs
+exit 0

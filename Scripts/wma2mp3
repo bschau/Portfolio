@@ -1,0 +1,12 @@
+#!/bin/bash
+if test -z "$1"; then
+	echo "Usage: $0 track" >&2
+	exit 1
+fi
+
+track="$1"
+#mplayer -vo null -vc dummy -af resample=44100 -ao pcm:waveheader ${track}.wma
+#lame -m s audiodump.wav -o ${track}.mp3
+avconv -i "${track}.wma" -acodec libmp3lame -ab 256k "${track}.mp3"
+rm -f audiodump.wav
+exit 0

@@ -1,0 +1,4 @@
+/home/bs/.authenticator
+/home/bs/.ssh
+/home/bs/bin
+/home/bs/runtime

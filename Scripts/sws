@@ -1,0 +1,48 @@
+#!/bin/bash
+dryrun=""
+
+if test -s "${HOME}/.swsrc"; then
+	. "${HOME}/.swsrc"
+else
+	echo "${HOME}/.swsrc not found - place REMOTE={...} in ${HOME}/.swsrc" >&2
+	exit 1
+fi
+
+if test "$1" != "--for-real"; then
+	dryrun="--dry-run"
+	echo "Running in dry-run mode. Invoke this script with the --for-real argument"
+	echo "to actually perform the transfers:"
+	echo ""
+	echo "           sws --for-real"
+	echo ""
+	echo ""
+	echo "Press enter to continue ..."
+	read line
+fi
+
+function _locate_root
+{
+	cwd="$(pwd)"
+	while test "$cwd" != "/"; do
+		if test -s ".sws"; then
+			return
+		fi
+
+		cd ..
+		cwd="$(pwd)"
+	done
+
+	if test -s "/.sws"; then
+		echo "Cannot run sws in root of drive" >&2
+		exit 1
+	fi
+
+	echo ".sws file not found" >&2
+	exit 1
+}
+
+_locate_root
+site="$(basename $(pwd))"
+
+rsync $dryrun -rvz -zz --progress --omit-dir-times --size-only --delete --exclude="*~" --exclude=".sws" --exclude=".git" --exclude=".gitignore" --exclude="SWSHIDE*" --exclude="wm" . ${REMOTE}:/home/webs/$site
+exit $?

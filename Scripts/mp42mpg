@@ -1,0 +1,38 @@
+#!/bin/bash
+if test $# -eq 0; then
+	echo "Usage: mp42mpg -a | film1.mp4 film2.mp4 ... filmX.mp4"
+	exit 1
+fi
+
+p="$(type -p ffmpeg)"
+if test -z "$p"; then
+	echo "ffmpeg not found in path" >&2
+	exit 1
+fi
+
+if test "$1" = "-a"; then
+	set -- $(ls *.[Mm][Pp]4)
+fi
+
+for mp4; do
+	echo "Converting $mp4 from mp4 to mpg ..."
+	f=""
+	if test -s "$mp4"; then
+		f="$mp4"
+	else 
+		for e in mp4 MP4 Mp4 mP4; do
+			if test -s "${mp4}.${e}"; then
+				f="${mp4}.${e}"
+				break;
+			fi
+		done
+	fi
+
+	if test -z "$f"; then
+		echo "Cannot find $f ..."
+	else
+		ffmpeg -i "$f" -sameq -target pal-dvd "${mp4%.*}.mpg"
+	fi
+done
+
+exit 0

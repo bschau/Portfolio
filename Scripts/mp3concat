@@ -1,0 +1,18 @@
+#!/bin/bash
+if test $# -ne 1; then
+	echo "Usage: mp3concat folder-with-mp3s" >&2
+	exit 1
+fi
+
+folder="$1"
+if test "$folder" = "."; then
+	echo "Don't do that" >&2
+	exit 1
+fi
+output="$(basename $folder).mp3"
+tmpmp3="/tmp/mp3concat.mp3.$$"
+trap "rm -f $tmpmp3" 0
+
+cat $(find $folder -type f | grep -i '.mp3' | sort) > $tmpmp3
+avconv -i $tmpmp3 -acodec copy -b 256k ${output}
+exit $?
