@@ -1,12 +1,24 @@
 [
 {
+	"Name": "Ayende @ Rahien",
+	"RssUrl": "http://feeds.feedburner.com/AyendeRahien",
+	"WebUrl": "http://ayende.com/blog/"
+},{
 	"Name": "Android Authority",
 	"RssUrl": "https://www.androidauthority.com/feed/",
-	"WebUrl": "https://www.androidauthority.com/"
+	"WebUrl": "https://www.androidauthority.com"
 },{
 	"Name": "Android Police",
-	"RssUrl": "https://www.androidpolice.com/feed",
-	"WebUrl": "https://www.androidpolice.com/"
+	"RssUrl": "http://www.androidpolice.com/feed/",
+	"WebUrl": "https://www.androidpolice.com"
+},{
+	"Name": "Benjojo blog",
+	"RssUrl": "https://blog.benjojo.co.uk/rss.xml",
+	"WebUrl": "https://blog.benjojo.co.uk/"
+},{
+	"Name": "Computerworld",
+	"RssUrl": "https://www.computerworld.com/index.rss",
+	"WebUrl": "https://www.computerworld.com/"
 },{
 	"Name": "DR Nyheder",
 	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
@@ -17,7 +29,7 @@
 	"WebUrl": "https://www.dr.dk/"
 },{
 	"Name": "GSM Arena",
-	"RssUrl": "https://www.gsmarena.com/rss-news-reviews.php3",
+	"RssUrl": "http://www.gsmarena.com/rss-news-reviews.php3",
 	"WebUrl": "https://www.gsmarena.com/"
 },{
 	"Name": "Mobil.nu",
