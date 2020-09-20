@@ -7,7 +7,6 @@ The portfolio contains the following sections:
   * [.NET Core](dotnet/)
   * [Amiga](amiga/)
   * [Android](android/)
-  * [AWS Lambda](AwsLambda/)
   * [Azure](azure/)
   * [c](c/)
   * [Commodore 64](c64/)
