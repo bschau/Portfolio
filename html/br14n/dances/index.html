@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Dances</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="dances.css">
+</head>
+<body>
+	<h1>Dances</h1>
+	<div id="parent">
+		<div id="grid-container">
+			<div class="grid-ctrl">
+				<h2>Cos</h2>
+				<div class="left">
+					<label for="c_index_1" class="label">Index #1</label>
+					<input type="numeric" id="c_index_1" class="input" />
+					<br class="br" />
+				</div>
+				<div class="right">
+					<label for="c_index_2" class="label">Index #2</label>
+					<input type="numeric" id="c_index_2" class="input" />
+					<br class="br" />
+				</div>
+				<p><br style="clear: both" /></p>
+
+				<div class="slider-row">
+					<label for="c_speed_1" class="label">Speed #1</label>
+					<input type="range" min="1" max="15" value="1" step="1"
+						id="c_speed_1" class="slider"
+						data-adjust="8" />
+				</div>
+
+				<div class="slider-row">
+					<label for="c_speed_2" class="label">Speed #2</label>
+					<input type="range" min="1" max="15" value="1" step="1"
+						id="c_speed_2" class="slider"
+						data-adjust="8" />
+				</div>
+
+				<div class="slider-row">
+					<label for="c_stride" class="label">Stride</label>
+					<input type="range" min="0" max="63" value="1" step="1"
+						id="c_stride" class="slider"
+						data-adjust="0" />
+				</div>
+			</div>
+			<div class="grid-balls" id="dots"></div>
+			<div class="grid-ctrl">
+				<h2>Sin</h2>
+				<div class="left">
+					<label for="s_index_1" class="label">Index #1</label>
+					<input type="numeric" id="s_index_1" class="input" />
+					<br class="br" />
+				</div>
+				<div class="right">
+					<label for="s_index_2" class="label">Index #2</label>
+					<input type="numeric" id="s_index_2" class="input" />
+					<br class="br" />
+				</div>
+				<p><br style="clear: both" /></p>
+
+				<div class="slider-row">
+					<label for="s_speed_1" class="label">Speed #1</label>
+					<input type="range" min="1" max="15" value="1" step="1"
+						id="s_speed_1" class="slider"
+						data-adjust="8" />
+				</div>
+
+				<div class="slider-row">
+					<label for="s_speed_2" class="label">Speed #2</label>
+					<input type="range" min="1" max="15" value="1" step="1"
+						id="s_speed_2" class="slider"
+						data-adjust="8" />
+				</div>
+
+				<div class="slider-row">
+					<label for="s_stride" class="label">Stride</label>
+					<input type="range" min="0" max="63" value="1" step="1"
+						id="s_stride" class="slider"
+						data-adjust="0" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="footer">Use a modern browser, such as <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> to view this page.</p>
+	<div>
+		<div id="s0" class="sprite"></div>
+		<div id="s1" class="sprite"></div>
+		<div id="s2" class="sprite"></div>
+		<div id="s3" class="sprite"></div>
+		<div id="s4" class="sprite"></div>
+		<div id="s5" class="sprite"></div>
+		<div id="s6" class="sprite"></div>
+		<div id="s7" class="sprite"></div>
+	</div>
+	<script src="dances.js"></script>
+</body>
+</html>

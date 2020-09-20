@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Password generator</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Pronounceable Passwords</h1>
+	<p>Nothing is sent to the server. Everything runs client side.</p>
+	<p><br /></p>
+	<div id="pr-container">
+		<div id="pr-left">
+			<label for="count" class="label">Passwords:</label><br class="br" />
+			<input type="numeric" id="count" class="input" /><br class="br" />
+			<label for="length" class="label">Length:</label><br class="br" />
+			<input type="numeric" id="length" class="input" /><br class="br" />
+			<label for="digits" class="label">Digits:</label><br class="br" />
+			<input type="numeric" id="digits" class="input" /><br class="br" />
+			<p style="text-align: center">
+				<button onclick="clear_result(); return false">Clear</button>
+				&nbsp;
+				<button onclick="generate(); return false">Generate</button>
+			</p>
+		</div>
+		<div id="pr-right">
+			<p id="result"></p>
+		</div>
+	</div>
+	<p><br /></p>
+	<script type="text/javascript" src="pwd.js"></script>
+</body>
+</html>

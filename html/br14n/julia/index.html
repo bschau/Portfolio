@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Julia Set</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="julia.css">
+</head>
+<body>
+	<h1>Julia Set</h1>
+	<div id="parent">
+		<div id="left-canvas">
+			<div id="border">
+				<canvas width="500" height="500" id="canvas"></canvas>
+			</div>
+		</div>
+		<div id="right-controls">
+			<h3>Samples</h3>
+			<div class="button-wrapper">
+				<div class="button-border">
+					<a onclick="select(-0.7, 0.27015, 'red');" class="button">01</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(0.285, 0.01, 'blue');" class="button">02</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(-0.75, 0.4 , 'green');" class="button">03</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(-0.2, 0.9, 'grey');" class="button">04</a>
+				</div>
+			</div>	
+			<div class="button-wrapper">
+				<div class="button-border">
+					<a onclick="select(-0.4, 0.6, 'red');" class="button">05</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(0.285, 0, 'blue');" class="button">06</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(0.285, 0.01, 'green');" class="button">07</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(0.45, 0.1428, 'grey');" class="button">08</a>
+				</div>
+			</div>	
+			<div class="button-wrapper">
+				<div class="button-border">
+					<a onclick="select(-0.70716, -0.3842, 'red');" class="button">09</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(-0.835, -0.2321, 'blue');" class="button">10</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(-0.8, 0.156, 'green');" class="button">11</a>
+				</div>
+				<div class="button-border">
+					<a onclick="select(-0.7269, 0.1889, 'grey');" class="button">12</a>
+				</div>
+			</div>
+			<p style="clear: both"><br /></p>
+			<p>
+				<label for="realPart" class="label">Real part</label>
+				<input type="numeric" id="realPart" class="input" />
+			</p>
+			<p>
+				<label for="imaginaryPart" class="label">Imaginary part</label>
+				<input type="numeric" id="imaginaryPart" class="input" />
+			</p>
+			<p>
+				<div class="color-border">
+					<a onclick="run('red');" class="color-button">Red</a>
+				</div>
+				<div class="color-border">
+					<a onclick="run('green');" class="color-button">Green</a>
+				</div>
+				<div class="color-border">
+					<a onclick="run('blue');" class="color-button">Blue</a>
+				</div>
+				<div class="color-border">
+					<a onclick="run('grey');" class="color-button">Grey</a>
+				</div>
+			</p>
+		</div>
+	</div>
+	<script src="julia.js"></script>
+</body>
+</html>

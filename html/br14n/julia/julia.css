@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Roboto|Noto+Serif');
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	line-height: 18px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#parent {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#canvas {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+}
+
+#border {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(to right, #ddd, #444);
+    padding: 2px;
+}
+
+#left-canvas {
+    width: 510px;
+    float: left;
+}
+
+#right-controls {
+    width: 440px;
+    float: right;
+}
+
+.left {
+    width: 45%;
+    float: left;
+}
+
+.right {
+    width: 45%;
+    float: right;
+}
+
+input[type=numeric] {
+    width: 85%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+.button-wrapper {
+    width: 250px;
+}
+
+.button {
+    width: 36px;
+    height: 28px;
+    display: table-cell;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.button-border {
+    float: left;
+    width: 38px;
+    height: 30px;
+    background: linear-gradient(to right, #ddd, #444);
+    margin: 0.5em;
+    text-align: center;
+    line-height: 28px;
+    padding: 2px 0 0 1px;
+}
+
+.color-button {
+    width: 78px;
+    height: 28px;
+    display: table-cell;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.color-border {
+    float: left;
+    width: 80px;
+    height: 30px;
+    background: linear-gradient(to right, #ddd, #444);
+    margin: 0.5em;
+    text-align: center;
+    line-height: 28px;
+    padding: 2px 0 0 1px;
+}
