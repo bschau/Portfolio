@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Wallpapers
+Comment=Set a new wallpaper upon login
+Exec=/home/bs/Workspace/System/bin/set-wallpaper.sh
+Icon=/home/bs/Workspace/System/etc/set-wallpaper.png
+Terminal=false
+StartupNotify=false
+Categories=Desktop;
