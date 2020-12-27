@@ -267,6 +267,9 @@ h4 { text-style: italic; }
 
 ul, ol { list-style-position: inside; }
 
+li > ul { margin-left: 1em; }
+
+
 table {
 	margin-top: 1em;
 	background: #D3E4E5;
