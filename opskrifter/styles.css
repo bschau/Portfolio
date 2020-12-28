@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
-
 html {
 	height: 100%;
-	font-family: Signika, sans-serif;
+}
+
+body {
+	font-family: Arial, sans-serif;
 	font-size: 18px;
+	padding: 1em;
 }
