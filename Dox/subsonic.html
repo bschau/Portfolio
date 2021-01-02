@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Subsonic</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Subsonic</h1>
+	<h2>Enable HTTPS</h2>
+	<p>Create pkcs12:</p>
+	<pre>cat myserver.key myserver.crt intermediate.cer > subsonic.crt
+openssl pkcs12 -in subsonic.crt -export -out subsonic.pkcs12
+# Remember your password, you will need it below!
+cp subsonic.pkcs12 /etc/ssl
+chmod 644 /etc/ssl/subsonic.pkcs12
+rm -f subsonic.crt</pre>
+
+	<p>Update <code>/etc/default/subsonic</code> to contain:</p>
+	<pre>SUBSONIC_ARGS="--https-port=4443 --port=4040 {Other Args, such as --max-memory}"</pre>
+
+	<p>Update <code>/usr/share/subsonic/subsonic.sh</code> around line 131, insert:</p>
+	<pre>-Dsubsonic.ssl.keystore=/etc/ssl/subsonic.pkcs12
+-Dsubsonic.ssl.password=…password-from-above…</pre>
+
+	<p>Restart Subsonic and log on to <code>http://your-server:4040/</code> - you should be redirected to <code>https://your-server:4443/</code>.</p>
+</body>
+</html>
