@@ -29,6 +29,7 @@ int expression(void);
 
 /* keywords.c */
 void kw_clear(void);
+void kw_cls(void);
 void kw_end(void);
 void kw_for(void);
 void kw_gosub(void);

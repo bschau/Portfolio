@@ -49,6 +49,8 @@ void statement()
 
 	if (strncasecmp(ip, "clear", 5) == 0) {
 		kw_clear();
+	} else if (strncasecmp(ip, "cls", 3) == 0) {
+		kw_cls();
 	} else if (strncasecmp(ip, "end", 3) == 0) {
 		kw_end();
 	} else if (strncasecmp(ip, "for", 3) == 0) {

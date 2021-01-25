@@ -13,6 +13,17 @@ void kw_clear()
 }
 
 /**
+ * CLS
+ *
+ * Clear screen.
+ */
+void kw_cls()
+{
+	no_junk_eol(3);
+	printf("\033[2J\033[1;1H");
+}
+
+/**
  * END
  *
  * Ends execution.
