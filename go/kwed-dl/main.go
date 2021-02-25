@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"regexp"
 	"strconv"
@@ -31,7 +30,7 @@ func main() {
 
 	for _, melody := range melodies {
 		url := "http://" + baseDomain + "/download.php/" + strconv.Itoa(melody.SongID)
-		mp3 := fetch(url)
+		mp3 := FetchURL(url)
 		if mp3 == nil {
 			fmt.Fprintln(os.Stderr, "Failed to fetch", url)
 			continue
@@ -41,19 +40,8 @@ func main() {
 		ioutil.WriteFile(filename, mp3, 0644)
 		CounterRecord(melody.SongID)
 	}
-}
 
-func fetch(url string) []byte {
-	resp, err := http.Get(url)
-	if err != nil {
-		return nil
-	}
-	defer resp.Body.Close()
-	data, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return nil
-	}
-	return data
+	CounterSave()
 }
 
 func getTitle(melody KwedMelody) string {

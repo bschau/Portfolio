@@ -8,5 +8,5 @@ Latest tracks are downloaded to your desktop.
 
 I run this upon login using the Task Scheduler in windows.
 
-Developed using go v1.13.5.
+Developed using go v1.14.6.
 

@@ -12,11 +12,15 @@ import (
 
 // RssGetMelodies - get any unseen melodies from KWED rss feed
 func RssGetMelodies(baseDomain string) []KwedMelody {
-	channel, err := rss.Read("http://" + baseDomain + "/rss.xml")
+	feedXML, err := rss.Read("http://"+baseDomain+"/rss.xml", false)
 	if err != nil {
 		log.Fatal("Failed to retrieve rss from " + baseDomain + " err: " + err.Error())
 	}
 
+	channel, err := rss.Regular(feedXML)
+	if err != nil {
+		log.Fatal("Failed to regular from " + baseDomain + " err: " + err.Error())
+	}
 	counter := CounterGet()
 	var melodies []KwedMelody
 	for _, item := range channel.Item {

@@ -45,6 +45,10 @@ func CounterRecord(new int) {
 	}
 
 	counter = new
+}
+
+// CounterSave - save the counter file
+func CounterSave() {
 	cnt := strconv.Itoa(counter)
 	err := ioutil.WriteFile(CounterFile, []byte(cnt), 0644)
 	handleError(err)
