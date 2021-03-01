@@ -6,6 +6,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import requests
+import sendgrid
+from sendgrid.helpers.mail import Email
+from sendgrid.helpers.mail import Mail
+from sendgrid.helpers.mail import To
+from sendgrid.helpers.mail import Content
 
 
 class SendMail():
@@ -59,23 +64,46 @@ class SendMail():
                 html_file.write(body)
             return
 
-        text = "Please read this in a HTML mail user agent."
         if method == "smtp":
-            recipients = self.get_recipients('SMTP')
-            message = MIMEMultipart('alternative')
-            message['Subject'] = title
-            message['From'] = self.config['SMTP']['from']
-            message['To'] = ", ".join(recipients)
-            plain_text = MIMEText(text, 'plain')
-            html_text = MIMEText(body, 'html')
-            message.attach(plain_text)
-            message.attach(html_text)
-
-            mail = smtplib.SMTP('localhost')
-            mail.sendmail(message['From'], recipients, message.as_string())
-            mail.quit()
+            self.smtp_deliver(title, body)
             return
 
+        if method == "mailgun":
+            self.mailgun_deliver(title, body)
+            return
+
+        self.sendgrid_deliver(title, body)
+
+
+    def smtp_deliver(self, title, body):
+        """ Delivery email by SMTP.
+            Arguments:
+                title: mail title
+                body: body text
+        """
+        text = "Please read this in a HTML mail user agent."
+        recipients = self.get_recipients('SMTP')
+        message = MIMEMultipart('alternative')
+        message['Subject'] = title
+        message['From'] = self.config['SMTP']['from']
+        message['To'] = ", ".join(recipients)
+        plain_text = MIMEText(text, 'plain')
+        html_text = MIMEText(body, 'html')
+        message.attach(plain_text)
+        message.attach(html_text)
+
+        mail = smtplib.SMTP('localhost')
+        mail.sendmail(message['From'], recipients, message.as_string())
+        mail.quit()
+
+
+    def mailgun_deliver(self, title, body):
+        """ Delivery email by Sendgrid.
+            Arguments:
+                title: mail title
+                body: body text
+        """
+        text = "Please read this in a HTML mail user agent."
         requests.post(
             self.config['MAILGUN']['url'],
             auth=("api", self.config['MAILGUN']['auth']),
@@ -86,6 +114,21 @@ class SendMail():
                   "html": body
                  },
         )
+
+
+    def sendgrid_deliver(self, title, body):
+        """ Delivery email by Sendgrid.
+            Arguments:
+                title: mail title
+                body: body text
+        """
+        api_key = self.config['SENDGRID']['apikey']
+        from_email = Email(self.config['SMTP']['from'])
+        to_email = To(self.config['SMTP']['to'])
+        content = Content("text/html", body)
+        mail = Mail(from_email, to_email, title, content)
+        sendgrid_api = sendgrid.SendGridAPIClient(api_key=api_key)
+        sendgrid_api.client.mail.send.post(request_body=mail.get())
 
 
     def get_recipients(self, section):
