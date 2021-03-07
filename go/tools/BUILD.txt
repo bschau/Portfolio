@@ -1,0 +1,12 @@
+Before building linux binary on windows:
+    $env:GOOS="linux"
+
+
+Build binary:
+    go build -ldflags '-s'
+
+
+Install:
+    cd cmd
+    go install ./...
+
