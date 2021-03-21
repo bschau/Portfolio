@@ -1,4 +1,4 @@
-FUNCTION	=	eventor
+FUNCTION	=	kwed
 
 all:	clean lint
 
@@ -20,5 +20,5 @@ distclean:	clean
 
 deploy:	clean lint
 	(cd package; zip -r9 ../function.zip .)
-	zip -g function.zip $(FUNCTION).py mailgun.py events.json
+	zip -g function.zip $(FUNCTION).py sendmail.py
 	aws lambda update-function-code --function-name=$(FUNCTION) --zip-file=fileb://function.zip

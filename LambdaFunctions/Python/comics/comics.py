@@ -1,7 +1,7 @@
 """ comics """
 import time
 import urllib
-from mailgun import MailGun
+from sendmail import SendMail
 
 
 def handler(event, context):
@@ -40,27 +40,15 @@ class Comics():
         comics = self.fetch_dilbert()
         html = "{0}{1}".format(html, comics)
 
-        comics = self.fetch_explosm()
-        html = "{0}{1}".format(html, comics)
-
         url = 'https://www.comicskingdom.com/hagar-the-horrible/'
         comics = self.generic(ck_origin, ck_token, 'Hagar', url)
-        html = "{0}{1}".format(html, comics)
-
-        comics = self.fetch_ingemann()
-        html = "{0}{1}".format(html, comics)
-
-        comics = self.fetch_monkeyuser()
-        html = "{0}{1}".format(html, comics)
-
-        comics = self.fetch_xkcd()
         html = "{0}{1}".format(html, comics)
 
         url = 'https://www.comicskingdom.com/zits'
         comics = self.generic(ck_origin, ck_token, 'Zits', url)
         html = "{0}{1}".format(html, comics)
 
-        MailGun('Comics').deliver(title, page.format(html))
+        SendMail().deliver(title, page.format(html))
 
 
     @staticmethod
@@ -164,77 +152,6 @@ class Comics():
             return ""
 
 
-    def fetch_monkeyuser(self):
-        """ Add the Monkey User comics. """
-        try:
-            url = 'https://www.monkeyuser.com'
-            text = self.fetch(url)
-            pos = text.find('div class="content">')
-            pos = text.find('src', pos)
-            start_pos = pos + 5
-            end_pos = text.find('"', start_pos)
-            link = "{}".format(text[start_pos:end_pos])
-            html = self.header('Monkey User', url)
-            html = self.comics(html, link, 'Monkey User', 900)
-            return self.line_break(html)
-        except urllib.error.URLError:
-            return ""
-
-
-    def fetch_explosm(self):
-        """ Add the Explosm comics. """
-        try:
-            url = "http://explosm.net"
-            text = self.fetch(url)
-            html = self.header('Explosm', url)
-            pos = text.find("div id=\"comic-wrap\"")
-            if pos >= 0:
-                pos = text.find("flex-video", pos)
-                if pos >= 0:
-                    body = """
-<p>Today is a video. Click <a href=\"{0}\">here</a> to see it :-)</p>
-""".format(url)
-                    html = "{0}{1}".format(html, body)
-                    return self.line_break(html)
-
-            pos = text.find("img id=\"main-comic\" src")
-            start_pos = pos + 25
-            end_pos = text.find('"', start_pos)
-            link = '{}'.format(text[start_pos:end_pos])
-            if link.startswith('//'):
-                link = 'http:{}'.format(link)
-
-            html = self.comics(html, link, 'Explosm', 900)
-            return self.line_break(html)
-        except urllib.error.URLError:
-            return ""
-
-
-    def fetch_xkcd(self):
-        """ Add the XKCD comics. """
-        try:
-            url = 'http://xkcd.com'
-            text = self.fetch(url)
-            search = '<img src="'
-            pos = text.find('<div id="comic">')
-            pos = text.find(search, pos)
-            start_pos = pos + len(search)
-            end_pos = text.find('"', start_pos)
-
-            search = 'title="'
-            pos = text.find(search, end_pos)
-            title_start = pos + len(search)
-            title_end = text.find('"', title_start)
-            link = "http:{}".format(text[start_pos:end_pos])
-            alt = '{}'.format(text[title_start:title_end])
-            html = self.header('XKCD', url)
-            html = self.comics(html, link, 'XKCD')
-            html = self.line_break(html, alt)
-            return self.line_break(html)
-        except urllib.error.URLError:
-            return ""
-
-
     def generic(self, origin, token, title, url):
         """ Add the generic comics.
             Args:
@@ -254,35 +171,6 @@ class Comics():
             start_pos = pos + len(token) + 2
             end_pos = text.find('"', start_pos)
             link = '{}'.format(text[start_pos:end_pos])
-            html = self.header(title, url)
-            html = self.comics(html, link, title, 900)
-            return self.line_break(html)
-        except urllib.error.URLError:
-            return ""
-
-    def fetch_ingemann(self):
-        """ Fetch the Ingemann comic from Ekstrabladet. """
-        try:
-            ebroot = "https://ekstrabladet.dk"
-            text = self.fetch(ebroot + '/ingemann/')
-            search = "flex-item mar-l--b"
-            pos = text.find(search)
-            if pos < 0:
-                return ""
-            search = "a href"
-            start_pos = text.find(search, pos) + len(search) + 2
-            end_pos = text.find('"', start_pos)
-            url = ebroot + text[start_pos:end_pos]
-            text = self.fetch(url)
-            search = "image-container"
-            pos = text.find(search)
-            if pos < 0:
-                return ""
-            search = "src"
-            start_pos = text.find(search, pos) + len(search) + 2
-            end_pos = text.find('"', start_pos)
-            title = "Ingemann"
-            link = ebroot + text[start_pos:end_pos]
             html = self.header(title, url)
             html = self.comics(html, link, title, 900)
             return self.line_break(html)

@@ -1,4 +1,4 @@
-FUNCTION	=	comics
+FUNCTION	=	trellotodo
 
 all:	clean lint
 
@@ -20,5 +20,5 @@ distclean:	clean
 
 deploy:	clean lint
 	(cd package; zip -r9 ../function.zip .)
-	zip -g function.zip $(FUNCTION).py mailgun.py
+	zip -g function.zip $(FUNCTION).py sendmail.py
 	aws lambda update-function-code --function-name=$(FUNCTION) --zip-file=fileb://function.zip

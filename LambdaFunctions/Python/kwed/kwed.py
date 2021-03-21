@@ -11,7 +11,7 @@ import datetime
 from urllib.parse import quote
 from http.client import HTTPSConnection
 import feedparser
-from mailgun import MailGun
+from sendmail import SendMail
 
 
 def handler(event, context):
@@ -34,7 +34,7 @@ class Kwed():
     def execute(self):
         """ Run the handler. """
         cut_off = datetime.datetime.now() - datetime.timedelta(hours=25)
-        feedparser.USER_AGENT = 'kwed-lambda/2.0'
+        feedparser.USER_AGENT = 'kwed-lambda/3.0'
         rss = feedparser.parse('https://remix.kwed.org/rss.xml')
         if rss.bozo > 0:
             return
@@ -55,7 +55,7 @@ class Kwed():
             if title.startswith(prefix):
                 title = title[prefix_len:]
 
-            tid = int(item['link'].split('=')[-1])
+            tid = int(item['link'].split('/')[-1])
             url = self.get_download_url(tid)
 
             track_title = "".join(html_escape.get(c, c) for c in title)
@@ -67,7 +67,7 @@ class Kwed():
 
         title = self.title()
         page = self.page(title)
-        MailGun('KWED').deliver(title, page.format(html))
+        SendMail().deliver(title, page.format(html))
 
 
     @staticmethod

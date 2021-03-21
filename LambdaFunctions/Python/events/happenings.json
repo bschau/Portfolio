@@ -149,9 +149,19 @@
 			"Description": "Brian &amp; Charlotte"
 		},
 		{
+			"Date": "1942-12-01",
+			"Type": "Birthday",
+			"Description": "Helen"
+		},
+		{
 			"Date": "1996-12-09",
 			"Type": "Birthday",
 			"Description": "Kristian"
+		},
+		{
+			"Date": "1951-12-10",
+			"Type": "Birthday",
+			"Description": "Rene"
 		},
 		{
 			"Date": "1976-12-12",

@@ -1,9 +1,9 @@
-""" eventor """
+""" events """
 from collections import namedtuple
 import json
 from datetime import datetime, date, time
 from dateutil.parser import parse
-from mailgun import MailGun
+from sendmail import SendMail
 
 
 FUTURE = 7
@@ -18,15 +18,15 @@ def handler(event, context):
             event - event from AWS
             context - execution context
     """
-    Eventor().execute()
+    Events().execute()
 
     return {
         'message': 'OK'
     }
 
 
-class Eventor():
-    """ Eventor backbone. """
+class Events():
+    """ Events backbone. """
 
     def __init__(self):
         """ Initialize class. """
@@ -34,7 +34,7 @@ class Eventor():
 
 
     def execute(self):
-        """ Eventor backbone handler. """
+        """ Events backbone handler. """
         title = self.title()
         page = self.page(title)
         all_times = self.build_time_constants()
@@ -47,14 +47,14 @@ class Eventor():
                 html += '<p style="font-size: 20px">'
                 html += event.glyph + " " + event.text + "</p>"
 
-            MailGun('Eventor').deliver(title, page.format(html))
+            SendMail().deliver(title, page.format(html))
 
 
     @staticmethod
     def title():
         """ Get title of mail. """
         now = datetime.now()
-        return "Eventor {0}".format(now.strftime('%Y-%m-%d %H:%M:%S'))
+        return "Events {0}".format(now.strftime('%Y-%m-%d %H:%M:%S'))
 
 
     @staticmethod
@@ -92,7 +92,7 @@ class Eventor():
         """
         events = []
         this_yday = self.now.timetuple().tm_yday
-        with open("events.json") as json_file:
+        with open("happenings.json") as json_file:
             event_file = json.load(json_file)
             for source in event_file["Events"]:
                 event = self.get_event(times, this_yday, source, event_file)
@@ -147,4 +147,4 @@ class Eventor():
 
 
 if __name__ == '__main__':
-    Eventor().execute()
+    Events().execute()

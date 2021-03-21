@@ -3,7 +3,7 @@ import json
 import os
 import time
 import urllib
-from mailgun import MailGun
+from sendmail import SendMail
 
 
 def handler(event, context):
@@ -35,7 +35,7 @@ class Lichess():
                 html = self.games_to_html(games)
                 title = self.title()
                 page = self.page(title).format(html)
-                MailGun('Lichess').deliver(title, page)
+                SendMail().deliver(title, page)
 
 
     @staticmethod
