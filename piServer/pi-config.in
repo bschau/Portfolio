@@ -1,0 +1,75 @@
+# Please substitute all __USER__ below with a real username!
+#
+
+# Destination of the Raspbian boot filesystem once mounted as the user.
+# This is normally autodetected by the stage0.sh script.
+#BOOTFS="/media/__USER__/boot"
+
+# Destination of the Raspbian root filesystem once mounted as the user.
+# This is normally autodetected by the stage0.sh script.
+#ROOTFS="/media/__USER__/rootfs"
+
+# Set new overlay, override audio=on.
+#DT_OVERLAY="pi3-disable-wifi,pi-disable-bt"
+
+# Enable ETH0
+#ETH0="yes"
+#IP_ADDRESS="192.168.1.242/24"
+#ROUTERS="192.168.1.1"
+#DNS="192.168.1.1 8.8.8.8 8.8.4.4"
+
+# Hostname of your Pi server
+#HOSTNAME="tanya.schau.dk"
+
+# Enable SSH?
+#SSH="yes"
+
+# Use the supplied sshd_config file?
+#SSH_USE_SSHD_CONFIG="yes"
+
+# Which public key to use for user ('pi', temporarily, and user)
+#SSH_PUBLIC_KEY="/home/__USER__/.ssh/id_rsa.pub"
+
+# User account to SSH into
+#SSH_USER="bs"
+
+# Timezone for server
+#TIMEZONE="Europe/Copenhagen"
+
+# Enable Avahi?
+#ENABLE_AVAHI="no"
+
+# Enable bluetooth?
+#ENABLE_BLUETOOTH="no"
+
+# Disable these services
+#DISABLE_SERVICES="triggerhappy"
+
+# Which modules to blacklist on boot.
+#BLACKLIST_MODULES="hci_uart btbcm bluetooth cfg80211 rfkill"
+
+# Use external disk for tmp and log
+# Partitions must be labelled TMP and LOG
+#TMP_AND_LOG_ON_EXTERNAL_DISK="y"
+
+# Should temporary filesystems go to memory?
+# Set to "y" to enable below settings.
+#TMP_IN_MEM="n"
+
+# Size of memory mounted /tmp
+#TMP_MEMORY_SIZE="20"
+
+# Size of memory mounted /var/tmp
+#VAR_TMP_MEMORY_SIZE="20"
+
+# Size of memory mounted /var/log
+#VAR_LOG_MEMORY_SIZE="30"
+
+# Enable physical swap file
+#ENABLE_SWAPFILE="no"
+
+# Swappiness value
+#SWAPPINESS="0"
+
+# Extra packages to install
+#EXTRA_PACKAGES="vim-nox zip python3 python3-pip"
