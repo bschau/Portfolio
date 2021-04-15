@@ -1,3 +1,0 @@
-#!/bin/ksh
-ls -l /var/spool/qmta
-exit 0

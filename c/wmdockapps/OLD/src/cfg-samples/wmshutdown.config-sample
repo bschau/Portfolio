@@ -1,9 +1,0 @@
-# A comment :-)
-
-title Nedluk eller genstart?
-message Vil du lukke maskinen ned eller genstarte den?
-shutdown.button Nedluk
-reboot.button Genstart
-cancel.button Afbryd
-shutdown.command /usr/bin/zenity --info --text "shutdown"
-reboot.command /usr/bin/zenity --info --text "reboot"

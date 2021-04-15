@@ -1,4 +1,0 @@
-Aapp is currently maintained by:
-
-	Brian Schau
-	http://www.schau.com/
