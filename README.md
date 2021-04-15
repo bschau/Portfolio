@@ -10,7 +10,6 @@ The portfolio contains the following sections:
   * [Azure](azure/)
   * [c](c/)
   * [Commodore 64](c64/)
-  * [Documents](Dox/)
   * [FootMail](FootMail/)
   * [go](go/)
   * [iOS](ios/)
