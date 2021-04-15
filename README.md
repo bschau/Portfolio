@@ -24,7 +24,6 @@ The portfolio contains the following sections:
   * [Pebble](pebble/)
   * [Python](python/)
   * [Recipies](opskrifter/)
-  * [Scripts](Scripts/)
   * [Wordpress](Wordpress/)
   * [YoctoBasic](YoctoBasic/)
 
