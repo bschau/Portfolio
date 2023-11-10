@@ -1,0 +1,142 @@
+# Databases
+dbName1			@Tracker Tasks database
+dbName2			@Tracker Period Data database
+
+# Workdays
+monl			Mandag
+tuel			Tirsdag
+wedl			Onsdag
+thul			Torsdag
+fril			Fredag
+satl			Lørdag
+sunl			Søndag
+
+# Months
+jan			Jan
+feb			Feb
+mar			Mar
+apr			Apr
+may			Maj
+jun			Jun
+jul			Jul
+aug			Aug
+sep			Sep
+oct			Okt
+nov			Nov
+dec			Dec
+
+# Alerts
+errUnrec		Fatal fejl.
+errBackup		Sikkerhedskopi fejl.
+errThreadTitle		Tråd fejl.
+errThreadBody		Kan ikke starte tråden.
+errNoRebuildList	Kan ikke opbygge listen.
+errNoRootTitle		Ingen rod enhed valgt.
+errNoWRootBody		Du skal vælge den rod enhed hvor sikkerhedskopien \
+			skal gemmes.
+errNoRRootBody		Du skal vælge den rod enhed hvor sikkerhedskopien \
+			skal læses fra.
+errNoBackupTitle	Ingen sikkerhedskopier fundet.
+errNoBackupBody		Kan ikke finde nogen @Tracker sikkerhedskopi filer på \
+			de eksterne medier.
+errRestoreTitle		Gendannelses fejl.
+errRestoreBody		Kan ikke gendanne fra sikkerhedskopien.
+noDB			Kan ikke åbne databasen.
+noJSR75title		Ingen JSR-75.
+noJSR75body		Din mobiltelefon understøtter ikke at læse og skrive \
+			til et eksternt medie såsom et SD-, MMC eller M2-kort.
+noMainView		Kan ikke opbygge Hoved siden.
+noTasksListView 	Kan ikke opbygge Opgave siden.
+noRRecord		Kan ikke læse posten.
+noWRecord		Kan ikke skrive posten.
+noTasksList		Kan ikke opbygge Opgave listen.
+noMatchesTitle		Ingen data fundet.
+noMatchesBody		Der var ingen perioder der matchede de angivne \
+			kriterier.
+noSummarize		Kan ikke opsummere.
+noDelete		Kan ikke slette posten.
+noBackupTitle		Ingen rod enheder.
+noBackupBody		Intet eksternt kort isat.
+btrtDone		Status.
+btDone			Sikkerhedskopien oprettet.
+rtDone			Databaser genoprettet fra sikkerhedskopien.
+
+# Confirmations
+okToRestoreTitle	Ok at gendanne?
+okToRestoreBody		Er det ok at gendanne fra sikkerhedskopien? Dette vil \
+			overskrive alle dine periode data og opgaver.
+okToCopyPeriodTitle	Ok at kopiere?
+okToCopyPeriod1		Er det ok at kopiere data fra perioden
+okToCopyPeriod2		til den nuværende periode
+okToClearPeriodTitle	Ok at slette perioden?
+okToClearPeriodBody	Er det ok at slette perioden?
+Yes			Ja
+No			Nej
+
+# BackupThread
+btWrite			Kan ikke skrive til sikkerhedskopien
+btCreate		Kan ikke oprette sikkerhedskopi.
+btTasks			Kan ikke skrive opgavelisten til sikkerhedskopien.
+btPeriods		Kan ikke skrive periode data til sikkerhedskopien.
+
+# GUI
+cmdBack			Tilbage
+cmdCancel		Afbryd
+cmdOptions		Valg
+cmdSave			Gem
+cmdNew			Ny
+cmdDelete		Slet
+cmdSummarize		Opsummer
+cmdBackup		Kopier
+cmdRestore		Gendan
+
+gAboutTitle		Om
+gAboutVersion		Version
+gAboutURL		URL
+gEditCG			Opgaveliste
+gEditTask		Opgave
+gTasksListTitle		Opgaveliste
+gSummaryTitle		Opsummering
+gSummaryKeywords	Nøgleord
+gSummaryStart		Start dato
+gSummaryEnd		Slut dato
+gMainOptsBack		Tilbage
+gMainOptsCopy		Kopier forrige periode
+gMainOptsClear		Slet periode
+gMainOptsTools		Værktøjer
+gMainOptsAbout		Om
+gMainOptsExit		Afslut
+gToolsTasks		Opgaveliste
+gToolsSummary		Opsummering
+gToolsBackup		Opret sikkerhedskopi
+gToolsRestore		Gendan sikkerhedskopi
+gBackupTitle		Sikkerhedskopi
+gBackupTo		Lav kopi på
+gRestoreTitle		Gendan
+gRestoreFrom		Gendan fra
+
+# IOGUIThread
+ioPleaseWait		Vent venligst!
+ioTasks			opgaver
+ioPeriods		perioder
+
+# MainCanvas
+mcNoRecs		Ingen data.
+mcBackingUp		Sikkerhedkopierer ...
+mcRestoring		Gendanner ...
+
+# Record
+rNoPack			Kunne ikke samle Periode Data posten.
+rNoLoad			Kunne ikke hente Periode Data posten.
+
+# RestoreThread
+rtNoOpen		Kunne ikke åbne sikkerhedskopien.
+rtNotValid		Ikke en gyldig sikkerhedskopi.
+rtTasks			Kan ikke læse opgaver fra sikkerhedskopien.
+rtPeriods		Kan ikke læse periode data fra sikkerhedskopien.
+
+# SummaryResult
+srTime			Totalt tidsforbrug
+
+# Task
+tNoPack			Kan ikke samle Opgave posten.

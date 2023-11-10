@@ -1,0 +1,29 @@
+include TopMake.mk
+
+all:	distclean
+	compile
+	mkdir $(APPNAME)
+	cp src/MathAce.prc $(APPNAME)
+	cp Docs/* $(APPNAME)
+	zip -r $(APPNAME).zip $(APPNAME)/*
+
+compile:
+	lmake -C src initall
+	lmake -C src -DDEBUG=0
+
+clean:
+	lmake -C src clean
+	rm -fr $(APPNAME) $(APPNAME).zip
+	rm -f *~ Docs/*~
+
+distclean:	clean
+	lmake -C src distclean
+	find . -type f -name "*~" -exec rm -f {} \;
+
+archive:	distclean
+	dos2unix Docs/*
+	dos2unix src/*
+	dos2unix *
+	basename $(CWD)
+	C = $-
+	tar cjvf ../$(C).tar.bz2 ../$(C)

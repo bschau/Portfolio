@@ -1,0 +1,571 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.5"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+CATEGORIES ID defCatSentences "Unfiled" "Apostrophes" "Commas" "Homophones" "Plurals" "Spelling" "" "" "" "" "" "" "" "" "" ""
+BITMAP ID bBullet "gfx/bullet.bmp" COMPRESS
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Dictate was made by:\n\nCoding: Brian Schau\n\Icons: Tony Vincent\n\nPlease visit my website at:\n\nhttp://www.schau.com/\n\nOn the website you will find the latest version of Dictate and a user manual.\n\n\nDictate is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aPrimaryFunction
+CONFIRMATION
+DEFAULTBUTTON 0
+BEGIN
+	TITLE "Primary Function?"
+	MESSAGE "Who will primarily use this handheld?"
+	BUTTONS "Students" "Teachers"
+END
+
+ALERT ID aDeleteSentence
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Sentence?"
+	MESSAGE "Do you want to delete this sentence?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aGroupDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Group?"
+	MESSAGE "Do you want to delete this group?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aStopDictation
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Stop?"
+	MESSAGE "Do you want to stop this dictation?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNoSentences
+INFORMATION
+BEGIN
+	TITLE "No Sentences"
+	MESSAGE "There are no sentences attached to this group. You need at least one sentence to perform this action."
+	BUTTONS "OK"
+END
+
+ALERT ID aXRefExists
+INFORMATION
+BEGIN
+	TITLE "Is in Group"
+	MESSAGE "This sentence is already in the group."
+	BUTTONS "OK"
+END
+
+ALERT ID aSentenceImport
+INFORMATION
+BEGIN
+	TITLE "Import"
+	MESSAGE "Imported ^1 sentence^2 from Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aSentenceExport
+INFORMATION
+BEGIN
+	TITLE "Export"
+	MESSAGE "Exported ^1 sentence^2 to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aSetAsStudentDB
+INFORMATION
+BEGIN
+	TITLE "Copy To Student Database"
+	MESSAGE "^1 sentence^2 copied to Student database."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoSentencesGroup
+INFORMATION
+BEGIN
+	TITLE "No Sentences"
+	MESSAGE "There are no sentences in this group."
+	BUTTONS "OK"
+END
+
+ALERT ID aNewDictation
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Begin new dictation?"
+	MESSAGE "Do you want to begin a new dictation? This will erase any previous recorderd scores and answers."
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aInvalidEntry
+INFORMATION
+BEGIN
+	TITLE "Invalid Entry"
+	MESSAGE "You must enter a sentence in the field."
+	BUTTONS "OK"
+END
+
+ALERT ID aStudentAbort
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Abort?"
+	MESSAGE "Do you really want to abort?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aScoreSaved
+INFORMATION
+BEGIN
+	TITLE "Score Saved"
+	MESSAGE "Your score has been saved^1. After your next HotSync you can print out the score using Diploma."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoLastScore
+INFORMATION
+BEGIN
+	TITLE "No Last Score"
+	MESSAGE "No score found."
+	BUTTONS "OK"
+END
+
+ALERT ID aViewNoDatabase
+INFORMATION
+BEGIN
+	TITLE "No database?"
+	MESSAGE "It seems that the database for this group is missing so you cannot view the answers."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "IR Send Error"
+	MESSAGE "Cannot beam database."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRCannotRegister
+INFORMATION
+BEGIN	
+	TITLE "Cannot Register"
+	MESSAGE "Cannot register IR transmission. You cannot receive any Dictation Sentences."
+	BUTTONS "Bummer!"
+END
+
+ALERT ID aIRSocketError
+INFORMATION
+BEGIN
+	TITLE "IR Socket Error"
+	MESSAGE "Cannot accept incoming connection."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRImport
+INFORMATION
+BEGIN
+	TITLE "Sentences from IR"
+	MESSAGE "^1 sentence^2 received."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoAllSentences
+INFORMATION
+BEGIN
+	TITLE "Nothing to select"
+	MESSAGE "There is no sentences in this category to select."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Dictate"
+
+	LABEL "Dictate" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.5" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fTeacher AT (0 0 160 160)
+NOFRAME
+MENUID mTeacher
+BEGIN
+	TITLE "Dictate"
+
+	LABEL "Group List" AUTOID AT (CENTER 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+4 18) FONT 0
+	TABLE ID cTeacherTable AT (1 31 150 110) ROWS TeacherTableLines COLUMNS 2 COLUMNWIDTHS 10 138
+	SCROLLBAR ID cTeacherScrollBar AT (152 31 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE TeacherTableLines-1
+
+	BUTTON "New" ID cTeacherNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Sentences" ID cTeacherSentences AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mTeacher
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Become Student" ID mTeacherStudent
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mTeacherAbout
+	END
+END
+
+FORM ID fEditGroup AT (2 92 156 66)
+MODAL
+DEFAULTBUTTON cEditGroupCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Group"
+
+	LABEL "Enter group name:" AUTOID AT (4 16)
+	FIELD ID cEditGroupField AT (4 30 136 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS GroupNameLength AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (144 30)
+
+	BUTTON "OK" ID cEditGroupOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Cancel" ID cEditGroupCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Delete" ID cEditGroupDelete AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO) NONUSABLE
+	BUTTON "Beam" ID cEditGroupBeam AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fSentence AT (0 0 160 160)
+NOFRAME
+MENUID mSentence
+BEGIN
+	TITLE "Sentences"
+
+	POPUPTRIGGER "?" ID cSentencePopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cSentenceList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cSentencePopup cSentenceList
+
+	TABLE ID cSentenceTable AT (1 18 150 122) ROWS SentenceTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cSentenceScrollBar AT (152 18 7 122) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE SentenceTableLines-1
+
+	BUTTON "New" ID cSentenceNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Groups" ID cSentenceGroups AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mSentence
+BEGIN
+	PULLDOWN "Exchange"
+	BEGIN
+		MENUITEM "Import" ID mSentenceImport "I"
+		MENUITEM "Export" ID mSentenceExport "E"
+	END
+END
+
+FORM ID fEditSentence AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cEditSentenceCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Sentence"
+
+	POPUPTRIGGER "?" ID cEditSentencePopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cEditSentenceList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cEditSentencePopup cEditSentenceList
+
+	LABEL "Enter sentence:" AUTOID AT (1 16)
+	FIELD ID cEditSentenceField AT (1 30 150 100) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS SentenceLength AUTOSHIFT HASSCROLLBAR
+	SCROLLBAR ID cEditSentenceScrollBar AT (152 30 7 100) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 8
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "OK" ID cEditSentenceOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cEditSentenceCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Delete" ID cEditSentenceDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fGroup AT (0 0 160 160)
+NOFRAME
+MENUID mGroup
+BEGIN
+	TITLE "Group"
+
+	LIST "" ID cGroupList AT (1 18 130 121) VISIBLEITEMS GroupLines
+	BUTTON "+" ID cGroupAdd AT (137 18 20 12)
+	BUTTON "-" ID cGroupRemove AT (137 34 20 12)
+	BUTTON "\x08" ID cGroupUp AT (137 50 20 12) FONT 3
+	BUTTON "\x07" ID cGroupDown AT (137 66 20 12) FONT 3
+
+	BUTTON "Groups" ID cGroupGroups AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Beam" ID cGroupBeam AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Begin" ID cGroupDictate AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mGroup
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Copy to student database" ID mGroupStudent
+	END
+END
+
+FORM ID fAddSentence AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cAddSentenceCancel
+BEGIN
+	TITLE "Available Sentences"
+
+	TABLE ID cAddSentenceTable AT (4 18 140 110) ROWS AddSentenceLines COLUMNS 1 COLUMNWIDTHS 140
+	SCROLLBAR ID cAddSentenceScrollBar AT (146 18 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE AddSentenceLines-1
+
+	POPUPTRIGGER "?" ID cAddSentencePopup AT (RIGHT@154 BOTTOM@153 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cAddSentenceList AT (RIGHT@154 BOTTOM@153 80 AUTO) NONUSABLE
+	POPUPLIST ID cAddSentencePopup cAddSentenceList
+
+	BUTTON "Cancel" ID cAddSentenceCancel AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "All" ID cAddSentenceAll AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fTDictate AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Dictation"
+
+	LABEL "Group:" AUTOID AT (1 18)
+	FIELD ID cTDictateGroup AT (PREVRIGHT+4 18 124 12) NONEDITABLE MAXCHARS GroupNameLength FONT 1
+
+	LABEL "Read out this sentence:" AUTOID AT (1 36)
+
+	FIELD ID cTDictateField AT (1 50 150 88) NONEDITABLE MULTIPLELINES MAXCHARS SentenceLength HASSCROLLBAR 
+	SCROLLBAR ID cTDictateScrollBar AT (152 50 7 88) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 7
+
+	BUTTON "Stop" ID cTDictateStop AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "\x03" ID cTDictatePrev AT (PREVRIGHT+4 BOTTOM@159 AUTO 12) FONT 3 NONUSABLE
+	BUTTON "\x04" ID cTDictateNext AT (PREVRIGHT+4 BOTTOM@159 AUTO 12) FONT 3
+END
+
+FORM ID fSentenceImport AT (2 73 156 85)
+MODAL
+DEFAULTBUTTON cSentenceImportCancel
+BEGIN
+	TITLE "Import Sentences"
+
+	LABEL "Import from:" AUTOID AT (RIGHT@58 15)
+	POPUPTRIGGER "?" ID cSentenceImportPopupFrom AT (60 15 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cSentenceImportListFrom AT (60 15 100 AUTO) NONUSABLE
+	POPUPLIST ID cSentenceImportPopupFrom cSentenceImportListFrom
+
+	LABEL "Import to:" AUTOID AT (RIGHT@58 29)
+	POPUPTRIGGER "?" ID cSentenceImportPopupTo AT (60 29 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cSentenceImportListTo AT (60 29 100 AUTO) NONUSABLE
+	POPUPLIST ID cSentenceImportPopupTo cSentenceImportListTo
+
+	CHECKBOX "Delete sentences after import" ID cSentenceImportDelete AT (4 47 AUTO AUTO)
+
+	BUTTON "Import" ID cSentenceImportImport AT (4 BOTTOM@82 AUTO AUTO)
+	BUTTON "Cancel" ID cSentenceImportCancel AT (PREVRIGHT+4 BOTTOM@82 AUTO AUTO)
+END
+
+FORM ID fSentenceExport AT (2 73 156 85)
+MODAL
+DEFAULTBUTTON cSentenceExportCancel
+BEGIN
+	TITLE "Export Sentences"
+
+	LABEL "Export from:" AUTOID AT (RIGHT@58 15)
+	POPUPTRIGGER "?" ID cSentenceExportPopupFrom AT (60 15 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cSentenceExportListFrom AT (60 15 100 AUTO) NONUSABLE
+	POPUPLIST ID cSentenceExportPopupFrom cSentenceExportListFrom
+
+	LABEL "Export to:" AUTOID AT (RIGHT@58 29)
+	POPUPTRIGGER "?" ID cSentenceExportPopupTo AT (60 29 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cSentenceExportListTo AT (60 29 100 AUTO) NONUSABLE
+	POPUPLIST ID cSentenceExportPopupTo cSentenceExportListTo
+
+	CHECKBOX "Delete sentences after export" ID cSentenceExportDelete AT (4 47 AUTO AUTO)
+
+	BUTTON "Export" ID cSentenceExportExport AT (4 BOTTOM@82 AUTO AUTO)
+	BUTTON "Cancel" ID cSentenceExportCancel AT (PREVRIGHT+4 BOTTOM@82 AUTO AUTO)
+END
+
+FORM ID fStudent AT (0 0 160 160)
+NOFRAME
+MENUID mStudent
+BEGIN
+	TITLE "Dictate"
+
+	LABEL "Group List" AUTOID AT (CENTER 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+4 18) FONT 0
+	TABLE ID cStudentTable AT (1 31 150 121) ROWS StudentTableLines COLUMNS 2 COLUMNWIDTHS 10 138
+	SCROLLBAR ID cStudentScrollBar AT (152 31 7 121) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE StudentTableLines-1
+END
+
+MENU mStudent
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Last Score" ID mStudentLastScore
+		MENUITEM SEPARATOR
+		MENUITEM "Become Teacher" ID mStudentTeacher
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mStudentAbout
+	END
+END
+
+FORM ID fDictationDone AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Score"
+
+	LABEL "You scored:" AUTOID AT (CENTER 64)
+
+	BUTTON "View Answers" ID cDictationDoneView AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Groups" ID cDictationDoneGroups AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Save" ID cDictationDoneSave AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fSaveScore AT (2 48 156 110)
+MODAL
+DEFAULTBUTTON cSaveScoreCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Save Score"
+
+	LABEL "Your name:" AUTOID AT (4 18)
+	FIELD ID cSaveScoreName AT (4 32 140 12) EDITABLE MULTIPLELINES MAXCHARS HotSyncNameLength UNDERLINED AUTOSHIFT
+
+	CHECKBOX "Export to Memo Pad as well" ID cSaveScoreCheckbox AT (4 48 AUTO AUTO) LEFTANCHOR
+
+	LABEL "Category:" AUTOID AT (20 62)
+	POPUPTRIGGER "?" ID cSaveScorePopup AT (66 62 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cSaveScoreList AT (66 62 90 AUTO) NONUSABLE
+	POPUPLIST ID cSaveScorePopup cSaveScoreList
+
+	GRAFFITISTATEINDICATOR AT (140 95)
+
+	BUTTON "Save" ID cSaveScoreSave AT (4 BOTTOM@107 AUTO AUTO)
+	BUTTON "Cancel" ID cSaveScoreCancel AT (PREVRIGHT+4 BOTTOM@107 AUTO AUTO)
+END
+
+FORM ID fSDictate AT (0 0 160 160)
+NOFRAME
+MENUID mSDictate
+BEGIN
+	TITLE "Dictation"
+
+	LABEL "Group:" AUTOID AT (1 18)
+	FIELD ID cSDictateGroup AT (PREVRIGHT+4 18 124 12) NONEDITABLE MAXCHARS GroupNameLength FONT 1
+
+	LABEL "Enter sentence:" AUTOID AT (1 36)
+
+	FIELD ID cSDictateField AT (1 50 150 88) MULTIPLELINES MAXCHARS SentenceLength HASSCROLLBAR UNDERLINED
+	SCROLLBAR ID cSDictateScrollBar AT (152 50 7 88) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 7
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "Submit" ID cSDictateSubmit AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mSDictate
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Abort" ID mSDictateAbort
+	END
+
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+END
+
+FORM ID fViewAnswers AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Answers"
+
+	LABEL "Correct:" AUTOID AT (1 18)
+	FIELD ID cViewAnswersCorrectField AT (1 32 150 44) NONEDITABLE MULTIPLELINES MAXCHARS SentenceLength HASSCROLLBAR
+	SCROLLBAR ID cViewAnswersCorrectScrollBar AT (152 32 7 44) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 3
+
+	LABEL "Incorrect:" ID cViewAnswersYouLabel AT (1 80) NONUSABLE
+	FIELD ID cViewAnswersYouField AT (1 94 150 44) NONEDITABLE MULTIPLELINES MAXCHARS SentenceLength HASSCROLLBAR NONUSABLE
+	SCROLLBAR ID cViewAnswersYouScrollBar AT (152 94 7 44) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 3 NONUSABLE
+
+	BUTTON "Done" ID cViewAnswersDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "\x03" ID cViewAnswersPrev AT (PREVRIGHT+4 BOTTOM@159 AUTO 12) FONT 3 NONUSABLE
+	BUTTON "\x04" ID cViewAnswersNext AT (PREVRIGHT+4 BOTTOM@159 AUTO 12) FONT 3 NONUSABLE
+END
+
+FORM ID fWait AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Please wait ..."
+
+	LABEL "The dictation is over." AUTOID AT (CENTER 54)
+	LABEL "Please wait for your teacher" AUTOID AT (CENTER 70)
+	LABEL "to tell you to view your score." AUTOID AT (CENTER 82)
+
+	BUTTON "View Score" ID cWaitView AT (CENTER BOTTOM@159 AUTO AUTO)
+END

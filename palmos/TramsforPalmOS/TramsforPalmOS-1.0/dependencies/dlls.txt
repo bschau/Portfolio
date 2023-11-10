@@ -1,0 +1,5 @@
+The dll:
+
+	Instaide.dll
+
+must be placed in the root folder of TramsCvt.exe.

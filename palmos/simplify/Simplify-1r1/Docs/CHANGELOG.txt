@@ -1,0 +1,4 @@
+Changelog for Simplify
+
+v1r1 (2005-04-01)
+	First release of Simplify.

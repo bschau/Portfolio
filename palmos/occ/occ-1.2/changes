@@ -1,0 +1,11 @@
+Changelog for One Click Clipping (OCC).
+
+v1.2 (2002-12-13)
+	Added the ability to create OCCs in OCCMan.
+	Added '-h' (help text) switch to OCCMake.
+
+v1.1 (2002-03-01)
+	Fixed some memory leaks in OccMan.
+
+v1.0 (2002-02-19)
+	First release.

@@ -1,0 +1,10 @@
+I finally noticed that the "new" secure it was out!  I'm such a slacker.  Anyway, thanks for the much needed update.
+
+One minor bug so far:
+
+I can usually cause iSecur to reset by double-tapping on the blank "icon" space (where you click once to change the icon for an entry) under edit mode.  Not 100%, but it usually only takes a couple of tries.
+
+This is on a treo 650.
+
+Also, if I wanted to create my own icons to contribute to the project, what's the best way/format to do that in?
+

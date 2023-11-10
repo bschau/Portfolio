@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="background">#ffffffff</color>
+	<color name="text">#ff000000</color>
+	<color name="runtime">#ff0000dd</color>
+	<color name="timeleft">#ff00dd00</color>
+ </resources>

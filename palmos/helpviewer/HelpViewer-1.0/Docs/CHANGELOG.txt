@@ -1,0 +1,2 @@
+v1.0 (2007-04-11)
+	Initial release of Plua Help Viewer.

@@ -1,0 +1,34 @@
+Name Search
+
+The name search is a surname or a "surname givenname" search. Enter as much as possible of the surname or givenname and PFO will return the best matches.
+
+Examples:
+
+1. schau
+
+   Will return all persons with a surname starting with Schau.
+
+2. schau br
+
+   Will return all persons with a surname starting with Schau and a givenname starting with Br.
+
+
+
+Phone Search
+
+Enter a phone number (valid characters are: 0123456789+. ). PFO will lookup the person with that phone number.
+For short and fast entry, just use the numbers.
+
+Examples:
+
+1. +45 2333 7836
+
+   Will look up the person with +45 2333 7836 (me! :-)
+
+2. 4523337836
+
+   Will look up the same number.
+
+You must enter the full number.
+
+

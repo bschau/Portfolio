@@ -1,0 +1,21 @@
+SOURCES	=	ByteBuilder PDB Puzzle PuzzleCvt PuzzleParser
+DST	=	PuzzleCvt.exe
+MONO	=	y
+
+if $(OS) == "WIN32"
+	RM	=	del /q
+	RD	=	rmdir /q /s
+else
+	RM	=	rm -f
+	RD	=	rm -fr
+endif
+
+all:
+if $(MONO) == y
+	mcs -out:$(DST) -target:exe $(SOURCES).cs
+else
+	csc /out:$(DST) /target:exe /o $(SOURCES).cs
+endif
+
+clean:
+	$(RM) *~ $(DST) PlayTsunami.pdb

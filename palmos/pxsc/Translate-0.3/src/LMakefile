@@ -1,0 +1,30 @@
+DST	=	translate$(EXE)
+SOURCES	=	Main HashTable Options StringBuilder
+DEPS	=	..$/Include.h
+CFLAGS	=	-D$(OS) -I ..
+
+#if $(OS) == WIN32
+#	SOURCES	=	$(SOURCES) Windows
+#endif
+
+all:	
+	lmake -C build -f ../LMakefile build 
+
+initall:
+	test -d build || mkdir build
+
+build:
+	< $(SOURCES) > compile
+	depend $(DST) $(SOURCES).o || $(CC) $(CFLAGS) -o ..$/$(DST) $(SOURCES).o
+
+compile:
+	depend $<.o ..$/$<.c $(DEPS) || $(CC) $(CFLAGS) -c ..$/$<.c
+
+clean:
+	$(RM) build$/*.o
+	$(RM) $(DST)
+	$(RM) *~
+	$(RM) test$/*~
+
+distclean:	clean
+	$(RD) build

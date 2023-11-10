@@ -1,0 +1,57 @@
+#
+# This is the setup meta file for the TestConduit.   The TestConduit only runs:
+#
+# 1) When successfully installed (obviously).
+# 2) Configured to run - click on name in HotSync->Custom after installation.
+#    This will activate the conduit.
+# 3) If the Setup (Welcome) program (CreatorID = setp) is present on your
+#    device
+#
+
+# Only the CreatorID and Dll keys are mandatory for installation.
+# Only the CreatorID is mandatory for uninstallation.
+
+# Arguments:	Install optional application arguents to the conduit.
+#Arguments
+
+# CreatorID:	Creator ID of the handheld application (setp = Setup/Welcome).
+CreatorID	setp
+
+# Directory:	Where to store database files. Can be a full path or a relative
+#		path (to the HotSync directory).
+#Directory
+
+# DataFile:	Name of the database file on your PC.
+#DataFile
+
+# Description:	The title string in the Configure Conduit dialog.
+Description	Test Conduit
+
+# Dll:		Full path to the TestConduit.dll.  This must be the full path
+#		to where your conduit will permanently live.
+Dll		%YOU_NEED_TO_CHANGE_ME%\TestConduit.dll
+
+# Database:	Name of database on your handheld.
+#Database
+
+# Module:	Module entry (for Module conduits).
+#Module
+
+# Name:		Name of your Conduit.
+Name		Test
+
+# Priority:	Priority. Defaults to 2.
+#Priority
+
+# Type:		Type of conduit. Use module for a Module conduit. Any other
+#		value installs the conduit as an application conduit.
+#Type
+
+# User:		Username,
+#User
+
+# String[..]:	Install a string to the application configuration pool.
+String[MyString]	MyString is funny
+
+# DWord[..]:	Install a DWord to the application configuration pool.
+DWord[Hundred]		100

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>Diploma</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>Diploma Manual</H1>
+<H3>Introduction</H3>
+<P>Diploma is used to print out the scores store in the Dictate Score database.
+<P>After a student completes a dictation the student is given the option to save his/her score. On the next HotSync the score file is transferred to the desktop. The student opens Diploma, locates the database file, selects Print and the score is printed to one of the installed printers.
+
+<P><BR><P><H3>How to print a diploma</H3>
+<OL>
+<LI>Open Diploma. Select <B>Browse...</B> to locate the score file. The file is called <I>dIcT_Dictate Score.pdb</I> and is usually located in <TT>C:\Program Files\palmOne\{HotSyncId}\Backup</TT> (where {HotSyncId} is your HotSync name). Select the diploma template to use:
+<P><IMG SRC="main.jpg" WIDTH="560" HEIGHT="184" ALT="Main Screen"><BR>
+<LI>Click <B>Print</B> to print the diploma. If more than one score is present in the score file you are prompted for the score to use:
+<P><IMG SRC="select.jpg" WIDTH="206" HEIGHT="206" ALT="Select Score"><BR>
+<LI>The system wide default browser opens and presents you with your diploma. Depending on the browser you may or may not see the <I>Print</I> dialog. If not, just click the <I>Print</I> button to print your diploma:
+<P><IMG SRC="diploma.jpg" WIDTH="841" HEIGHT="633" ALT="Diploma"><BR>
+</OL>
+
+<P><BR><P><H3>Howto create a diploma</H3>
+<P>The diploma is based on a simple HTML file. The html file must be placed in the Diploma installation directory (typically <TT>c:\Program Files\Schau.Com\Dictate\Diploma\vXrY\</TT>).
+<P>The html file must be named as you want it to look in the drop down box and the file must end in <TT>.htm</TT>. F.ex., the Standard Diploma is called:
+<PRE>
+
+	Standard Diploma.htm
+
+</PRE>
+<P>When Diploma starts it searchs the installation directory for any <TT>.htm</TT> files. The suffix is stripped from the name and the name is added to the drop down list.
+<P>The html file can contain whatever information you want.  Diploma will search and replace the following strings:
+
+<TABLE>
+<TR><TH ALIGN="LEFT">Key</TH><TH>&nbsp;&nbsp;&nbsp;</TH><TH ALIGN="LEFT">Replacement</TH></TR>
+<TR><TD><TT>@@SCORE@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>The users score.</TD></TR>
+<TR><TD><TT>@@ROUND@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>Number of rounds in the dictation session.</TD></TR>
+<TR><TD><TT>@@NAME@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>User name.</TD></TR>
+<TR><TD><TT>@@GROUP@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>Group name.</TD></TR>
+<TR><TD><TT>@@PCT@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>Percentage ((score*100)/rounds).</TD></TR>
+<TR><TD><TT>@@YEAR@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>The year part of when the dictation was done.</TD></TR>
+<TR><TD><TT>@@MONTH@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>The month part of when the dictation was done.</TD></TR>
+<TR><TD><TT>@@DAY@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>The day part of when the dictation was done.</TD></TR>
+<TR><TD><TT>@@BASE@@</TT></TD><TD>&nbsp;&nbsp;&nbsp;</TD><TD>Base directory of the Diploma (used to locate graphics).</TD></TR>
+</TABLE>
+
+<P>The final page will be shown in the system wide default browser.
+<P>Have a look at the <TT>Standard Diploma.htm</TT> file for inspiration ...
+<P>The HTML page for the screenshot above can be <A HREF="bsc.html">viewed online</A>. <A HREF="StandardDiploma.zip">Download</A> the Standard Diploma template.
+
+<P><A HREF="/index.html">Home</A>
+</BODY>
+</HTML>

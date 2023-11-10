@@ -1,0 +1,5 @@
+Changelog for TTTXExportGUI
+
+v1r1 (2004-10-14)
+	First public release. V1R1 must be used in conjunction with the V1R3
+	and better release of tttxexport.

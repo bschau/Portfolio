@@ -1,0 +1,105 @@
+{
+    "author": "schau.dk",
+    "dependencies": {},
+    "keywords": [],
+    "name": "ray",
+    "pebble": {
+        "displayName": "Ray",
+        "enableMultiJS": false,
+        "messageKeys": {},
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/yellow-ray.png",
+                    "name": "YELLOW_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/turquiose-ray.png",
+                    "name": "TURQUOISE_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/red-ray.png",
+                    "name": "RED_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/purple-ray.png",
+                    "name": "PURPLE_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/pink-ray.png",
+                    "name": "PINK_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/overlay.png",
+                    "name": "OVERLAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/green-ray.png",
+                    "name": "GREEN_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/gray-ray.png",
+                    "name": "GRAY_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/brown-ray.png",
+                    "name": "BROWN_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/blue-ray.png",
+                    "name": "BLUE_RAY",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat5.png",
+                    "name": "BATTERY_5",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat4.png",
+                    "name": "BATTERY_4",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat3.png",
+                    "name": "BATTERY_3",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat2.png",
+                    "name": "BATTERY_2",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat1.png",
+                    "name": "BATTERY_1",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat0.png",
+                    "name": "BATTERY_0",
+                    "type": "png"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "3a63b7a4-cd6c-4869-8fbe-53fe150baa0f",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}

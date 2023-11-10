@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TripperLite" default="run-en" basedir=".">
+	<import file="meat.xml" />
+
+	<target name="clean">
+		<delete dir="${classes.d}" />
+		<delete dir="${final.d}" />
+		<delete verbose="true">
+			<fileset dir="${src.d}" defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+			<fileset dir="${resources.d}" defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="en">
+		<antcall target="package">
+			<param name="lang" value="en" />
+		</antcall>
+	</target>
+
+	<target name="run-en" depends="clean,en">
+		<wtkrun jadfile="${final.d}/${app.name}-en.jad" device="MediaControlSkin" wait="true"/>
+	</target>
+
+	<target name="da">
+		<antcall target="package">
+			<param name="lang" value="da" />
+		</antcall>
+	</target>
+
+	<target name="run-da" depends="clean,da">
+		<wtkrun jadfile="${final.d}/${app.name}-da.jad" device="MediaControlSkin" wait="true"/>
+	</target>
+
+	<target name="all">
+		<ant target="clean" />
+		<ant target="en" />
+		<ant target="da" />
+	</target>
+</project>

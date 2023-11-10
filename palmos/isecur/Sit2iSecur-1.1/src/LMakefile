@@ -1,0 +1,58 @@
+ifndef DEBUG
+	DEBUG	=	1
+endif
+APPNAME	=	Sit2iSecur
+DST	=	$(APPNAME).prc
+APPID	=	PPIT
+SOURCES	=	AES Blowfish DB MD5 PilotMain SHA256 UI fDone fMain fPasswords fReo
+DEPS	=	../Resources.h ../Include.h ../FormsData.rcp
+CC	=	m68k-palmos-gcc
+AS	=	m68k-palmos-as
+CFLAGS	=	-O2 -Wall -I .. 
+if $(DEBUG) == 1
+	SOURCES	=	$(SOURCES) Debug
+	CFLAGS	=	$(CFLAGS) -DDEBUG=1
+	ifdef SYS
+		CFLAGS	=	$(CFLAGS) -DSYS=$(SYS)
+	else
+		if $(OS) == "WIN32"
+			CFLAGS	=	$(CFLAGS) -DSYS=1
+		else
+			CFLAGS	=	$(CFLAGS) -DSYS=0
+		endif
+	endif
+else
+	SOURCES	=	$(SOURCES)
+endif
+
+all:
+	lmake -C build -f ../LMakefile build
+
+initall:
+	mkdir build
+	lmake -C ../GenTables
+	mkdir -p tables
+	../GenTables/GenTables$(EXE) tables
+
+build:	depend $(APPNAME)-sections.s ../$(APPNAME).def || multigen
+	exe
+	pilrc -q -I .. -allowEditID ../FormsData.rcp
+	build-prc -o ../$(DST) ../$(APPNAME).def *.bin *.ex
+
+multigen:
+	m68k-palmos-multigen ../$(APPNAME).def
+	$(AS) -o $(APPNAME)-sections.o $(APPNAME)-sections.s
+
+exe:
+	< $(SOURCES) > compile
+	depend code0000.exe $(SOURCES).o || $(CC) -T text_64k $(CFLAGS) -o $(APPNAME).ex $(APPNAME)-sections.ld $(APPNAME)-sections.o $(SOURCES).o $(LIBS)
+
+compile:
+	depend $<.o ../$<.c $(DEPS) || $(CC) $(CFLAGS) -c ../$<.c
+
+clean:
+	rm -f *~ build/* *.prc
+
+distclean:	clean
+	rm -fr build
+	rm -fr tables

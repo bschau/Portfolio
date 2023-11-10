@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="meat">
+	<property name="app.name" value="TripperLite" />
+	<property name="real.name" value="Tripper Lite" />
+	<property name="MIDletSuite" value="${app.name}" />
+	<property name="MIDlet_1_name" value="${real.name}" />
+	<property name="MIDlet_1_class" value="TripperLiteMIDlet" />
+	<property name="MicroEdition-Profile_version" value="MIDP-2.0" />
+	<property name="MicroEdition-Configuration_version" value="CLDC-1.0" />
+	<property name="JADversion" value="1.0" />
+
+	<property name="src.d" value="." />
+	<property name="classes.d" value="../temp/classes" />
+	<property name="prepped.d" value="../temp/prepped" />
+	<property name="final.d" value="../temp/final" />
+	<property name="incs.d" value="." />
+	<property name="resources.d" value="../resources" />
+
+	<property name="wtk.home" value="/opt/wtk-2.5.2" />
+	<property name="wtk.midpapi" value="${wtk.home}/lib/midpapi20.jar:${wtk.home}/lib/cldcapi11.jar" />
+
+	<!-- automagically add antenna WTK tasks ... -->
+	<taskdef classpath="${antenna.home}" resource="antenna.properties" />
+
+	<!-- add Aapp -->
+	<taskdef name="aapp" classname="com.schau.Aapp" classpath="/opt/Aapp/Aapp.jar" />
+
+	<target name="preprocess">
+		<mkdir dir="${prepped.d}" />
+		<aapp srcdir="${src.d}" dstdir="${prepped.d}" showversion="true" includes="${incs.d}" />
+	</target>
+
+	<target name="compile" depends="preprocess">
+		<echo message="Building for LANG: ${lang}" />
+		<mkdir dir="${classes.d}" />
+		<mkdir dir="${final.d}" />
+		<wtkbuild srcdir="${prepped.d}" destdir="${classes.d}" preverify="true" />
+	</target>
+
+	<target name="package" depends="compile">
+		<wtkjad jadfile="${final.d}/${MIDletSuite}-${lang}.jad"
+			jarfile="${final.d}/${MIDletSuite}-${lang}.jar"
+			name="${real.name}"
+			version="1.0"
+			vendor="schau.com">
+			<attribute name="MicroEdition-Profile" value="${MicroEdition-Profile_version}" />
+			<attribute name="MicroEdition-Configuration" value="${MicroEdition-Configuration_version}" />
+
+			<midlet name="${MIDlet_1_name}" class="${MIDlet_1_class}" icon="/icon.png" />
+		</wtkjad>
+
+	<!-- Preverification must be true if obfuscation is being done because
+	obfuscation removes the earlier preverification information.  -->
+		<wtkpackage basedir="${classes.d}"
+			jarfile="${final.d}/${MIDletSuite}-${lang}.jar"
+			jadfile="${final.d}/${MIDletSuite}-${lang}.jad"
+			config="${MicroEdition-Configuration_version}"
+			profile="${MicroEdition-Profile_version}"
+			obfuscate="false"
+			preverify="true">
+			<fileset dir="${resources.d}" />
+		</wtkpackage>
+	</target>
+</project>

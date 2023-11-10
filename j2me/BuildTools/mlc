@@ -1,0 +1,201 @@
+#!/bin/bash
+
+# Created and maintained by Brian Schau <brian@schau.com>
+
+# mlc is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+
+# mlc is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+
+# You should have received a copy of the GNU Lesser General Public
+# License along with mlc; if not, write to the Free
+# Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+# 02111-1307 USA.
+
+MIDletName=""
+MIDletVersion=""
+MIDletVendor=""
+MIDletJarUrl=""
+#MIDletJarSize=""
+
+MIDletDescription=""
+MIDletIcon=""
+MIDletInfoUrl=""
+MIDletDataSize=""
+MIDletInstallNotify=""
+MIDletDeleteConfirm=""
+
+MicroEditionProfile=""
+MicroEditionConfiguration=""
+
+ManifestExtra=""
+JadExtra=""
+MIDlets=""
+
+#
+# No-no below here
+#
+version="0.1"
+
+function usage()
+{
+	echo "MIDLet compiler version $version"
+	echo "Usage: mlc [options] j|m [jadfile]"
+	echo "  -f specfile   specification file"
+	echo "  -h            what you're reading"
+	echo "  -o outputdir  output directory"
+	echo "  -q            quite mode"
+	echo "  -V            MIDlet version (overrides Specfile)"
+}
+
+function error()
+{
+	echo $1 >&2
+	exit 1
+}
+
+# WriteEnvVar
+#
+# Write an environment variable $2 as $1.
+function WriteEnvVar()
+{
+	content="$(eval echo \$$2)"
+	if test "$content"; then
+		echo "${1}: $content"
+	fi
+}
+
+# CreateJadFile
+function CreateJadFile()
+{
+	test -z "$1" && error "Missing: jar file name"
+	jarFile="$1"
+	file="${jarFile##*/}"
+	jadFile="${file%.*}.jad"
+
+	test -z "$MIDletName" && error "MIDletName not set or empty"
+	test -z "$MIDletVersion" && error "MIDletVersion not set or empty"
+	test -z "$MIDletVendor" && error "MIDletVendor not set or empty"
+	test -z "$MIDletJarUrl" && error "MIDletJarUrl not set or empty"
+
+	test -z "$quiet" && echo "Creating $(pwd)/$jadFile"
+	{
+		WriteEnvVar "MIDlet-Name" MIDletName
+		WriteEnvVar "MIDlet-Version" MIDletVersion
+		WriteEnvVar "MIDlet-Vendor" MIDletVendor
+		WriteEnvVar "MIDlet-Jar-URL" MIDletJarUrl
+
+		set -- $(ls -l $jarFile)
+		echo "MIDlet-Jar-Size: $5"
+
+		# optionals
+		WriteEnvVar "MIDlet-Description" MIDletDescription
+		WriteEnvVar "MIDlet-Icon" MIDletIcon
+		WriteEnvVar "MIDlet-Info-URL" MIDletInfoUrl
+		WriteEnvVar "MIDlet-Data-Size" MIDletDataSize
+		WriteEnvVar "MIDlet-Install-Notify" MIDletInstallNotify
+		WriteEnvVar "MIDlet-Delete-Confirm" MIDletDeleteConfirm
+	
+		for m in $JadExtra; do
+			content="$(eval echo \$${m})"
+			if test -z "$content"; then
+				echo "JadExtra,${m}: no data" >&2
+			else
+				echo "$content"
+			fi
+		done
+	} >$jadFile
+}
+
+# CreateManifest
+function CreateManifest()
+{
+	test -z "$MIDletName" && error "MIDletName not set or empty"
+	test -z "$MIDletVersion" && error "MIDletVersion not set or empty"
+	test -z "$MIDletVendor" && error "MIDletVendor not set or empty"
+	test -z "$MIDlets" && error "MIDlets not set or empty"
+	test -z "$MicroEditionProfile" && error "MicroEditionProfile not set or empty"
+	test -z "$MicroEditionConfiguration" && error "MicroEditionConfiguration not set or empty"
+	mkdir -p META-INF || error "Cannot create META-INF directory"
+	cd META-INF
+
+	test -z "$quiet" && echo "Creating MANIFEST.MF in $(pwd)" 
+	{
+		echo "Manifest-Version: 1.0"
+		WriteEnvVar "MIDlet-Name" MIDletName
+		WriteEnvVar "MIDlet-Version" MIDletVersion
+		WriteEnvVar "MIDlet-Vendor" MIDletVendor
+		cnt=1
+		for m in $MIDlets; do
+			name="$(eval echo \$${m}Name)"
+			icon="$(eval echo \$${m}Icon)"
+			class="$(eval echo \$${m}Class)"
+			
+			echo "MIDlet-${cnt}: $name, $icon, $class"
+			cnt=$(($cnt+1))
+		done
+		WriteEnvVar "MicroEdition-Profile" MicroEditionProfile
+		WriteEnvVar "MicroEdition-Configuration" MicroEditionConfiguration
+		# optionals
+		WriteEnvVar "MIDlet-Description" MIDletDescription
+		WriteEnvVar "MIDlet-Icon" MIDletIcon
+		WriteEnvVar "MIDlet-Info-URL" MIDletInfoUrl
+		WriteEnvVar "MIDlet-Data-Size" MIDletDataSize
+
+		for m in $ManifestExtra; do
+			content="$(eval echo \$${m})"
+			if test -z "$content"; then
+				echo "ManifestExtra,${m}: no data" >&2
+			else
+				echo "$content"
+			fi
+		done
+	} >MANIFEST.MF
+}
+
+# Main
+OPTS=`getopt -o f:ho:qV: -n mlc -- "$@"` || exit 1
+eval set -- "$OPTS"
+
+specFile="Specfile"
+outputDir=""
+mVersion=""
+quiet=""
+
+while :; do
+	case "$1" in
+	-f)	specFile="$2"; shift 2;;
+	-h)	usage; exit 0;;
+	-o)	outputDir="$2"; shift 2;;
+	-q)	quiet="YES"; shift;;
+	-V)	mVersion="$2"; shift 2;;
+	--)	shift; break;;
+	*)	usage; exit 1;;
+	esac
+done
+
+if test -s "$specFile"; then
+	source $specFile
+fi
+
+if test "$mVersion"; then
+	MIDLetVersion="$mVersion"
+fi
+
+if test "$outputDir"; then
+	mkdir -p $outputDir
+	cd $outputDir
+fi
+
+case "$1" in
+j)	shift; CreateJadFile $1;;
+m)	CreateManifest;;
+*)	usage; exit 1;;
+esac
+
+exit 0

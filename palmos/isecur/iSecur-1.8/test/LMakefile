@@ -1,0 +1,42 @@
+APPNAME	=	Test
+DST	=	$(APPNAME).prc
+APPID	=	iSec
+SOURCES	=	Test
+DEPS	=	../Resources.h
+CC	=	m68k-palmos-gcc
+CFLAGS	=	-O2 -Wall -I .. -I ../../api/
+OBJS	=	$(SOURCES)
+
+all:
+	lmake -C build -f ../LMakefile build
+
+initall:
+	mkdir build
+
+build:	exe
+	resources
+
+resources:
+	ifdef LANGUAGE
+		form $(LANGUAGE)
+	else
+		form en
+	endif
+	build-prc -t 'appl' -o ../$(DST) -c $(APPID) -n 'Test' *.bin *.ex
+
+
+exe:
+	< $(SOURCES) > compile
+	depend code0000.exe $(SOURCES).o || $(CC) -T text_64k $(CFLAGS) -o $(APPNAME).ex $(OBJS).o $(LIBS)
+
+compile:
+	depend $<.o ../$<.c $(DEPS) || $(CC) $(CFLAGS) -c ../$<.c
+
+form:
+	pilrc -q -I .. -I ../../api -allowEditID ../FormsData.rcp
+
+clean:
+	rm -f *~ build/* *.prc
+
+distclean:	clean
+	rm -fr build

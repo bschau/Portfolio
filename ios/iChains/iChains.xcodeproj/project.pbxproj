@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1F11B2170F0AA294002B2921 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F11B2150F0AA294002B2921 /* GLView.m */; };
+		1F3B9A2D0EF2145700286867 /* iChainsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* iChainsAppDelegate.m */; };
+		1FF0216C0EF21FA500761551 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF0216B0EF21FA500761551 /* MainWindow.xib */; };
+		2D500B940D5A79C200DBA0E3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */; };
+		2D500B9A0D5A79CF00DBA0E3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */; };
+		4B0067DA1035EDDE00962CD0 /* TranquilTranceExpress.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B0067D91035EDDE00962CD0 /* TranquilTranceExpress.mp3 */; };
+		4B006CA710312B7D00C96E7E /* Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B006CA610312B7D00C96E7E /* Modal.m */; };
+		4B0176FA101FA6A9001B95D3 /* PrefsMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0176F9101FA6A9001B95D3 /* PrefsMgr.m */; };
+		4B0498810FF9590600DE5555 /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0498800FF9590600DE5555 /* intro.png */; };
+		4B177A901009B362005F0681 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B177A8F1009B362005F0681 /* AVFoundation.framework */; };
+		4B2C8CA2102162E6001A4B04 /* prefs.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2C8CA1102162E6001A4B04 /* prefs.png */; };
+		4B2DB2DD102B829A00B8ED96 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2DB2DC102B829A00B8ED96 /* CoreFoundation.framework */; };
+		4B405B56103B38E50058C40D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B405B55103B38E50058C40D /* Icon.png */; };
+		4B4298121052ABBF0046E450 /* SoundMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4298111052ABBF0046E450 /* SoundMgr.m */; };
+		4B489AB4102FDB5A0004E84A /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B489AB3102FDB5A0004E84A /* Utility.m */; };
+		4B78860410067A03005FDC76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B78860310067A03005FDC76 /* AudioToolbox.framework */; };
+		4B78866A100686F9005FDC76 /* buttonpress.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4B788668100686F9005FDC76 /* buttonpress.caf */; };
+		4B78866B100686F9005FDC76 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4B788669100686F9005FDC76 /* explosion.caf */; };
+		4B8A0016103B313600ED9915 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A0015103B313600ED9915 /* Default.png */; };
+		4B965613100A931E007D86E8 /* fire.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4B965612100A931E007D86E8 /* fire.caf */; };
+		4B976EA9100E68FA00E10D7D /* HiScoreMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B976EA8100E68FA00E10D7D /* HiScoreMgr.m */; };
+		4BC7B27E0FED60DF009CC98B /* ingamefont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC7B27C0FED60DF009CC98B /* ingamefont.png */; };
+		4BC7B27F0FED60DF009CC98B /* titlefont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC7B27D0FED60DF009CC98B /* titlefont.png */; };
+		4BCE5B750FEF438B00A2CFEB /* GfxMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE5B740FEF438B00A2CFEB /* GfxMgr.m */; };
+		4BD20C6C0FDC4DEA003A058A /* GameMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD20C6B0FDC4DEA003A058A /* GameMgr.m */; };
+		4BD20C740FDC4FC2003A058A /* StarsMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD20C730FDC4FC2003A058A /* StarsMgr.m */; };
+		4BDCF5150FEECC1A009A0D2B /* IntroMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDCF5140FEECC1A009A0D2B /* IntroMgr.m */; };
+		4BF575F81018F0C6007F3E4D /* NumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF575F71018F0C6007F3E4D /* NumberFormatter.m */; };
+		4BF850331015720100CF8C14 /* StateMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF850321015720100CF8C14 /* StateMgr.m */; };
+		4BF9193A0FDFFCEF0045D523 /* FontMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF919390FDFFCEF0045D523 /* FontMgr.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* iChains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChains.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F11B2150F0AA294002B2921 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLView.m; path = Classes/GLView.m; sourceTree = SOURCE_ROOT; };
+		1F11B2160F0AA294002B2921 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLView.h; path = Classes/GLView.h; sourceTree = SOURCE_ROOT; };
+		1F3B9A2B0EF2145700286867 /* iChainsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iChainsAppDelegate.m; path = Classes/iChainsAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		1F3B9A2C0EF2145700286867 /* iChainsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iChainsAppDelegate.h; path = Classes/iChainsAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		1F3B9A820EF2151B00286867 /* iChains_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iChains_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		1FF0216B0EF21FA500761551 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4B0067D91035EDDE00962CD0 /* TranquilTranceExpress.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = TranquilTranceExpress.mp3; path = resources/TranquilTranceExpress.mp3; sourceTree = "<group>"; };
+		4B006CA510312B7D00C96E7E /* Modal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Modal.h; sourceTree = "<group>"; };
+		4B006CA610312B7D00C96E7E /* Modal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Modal.m; sourceTree = "<group>"; };
+		4B0176F8101FA6A9001B95D3 /* PrefsMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsMgr.h; sourceTree = "<group>"; };
+		4B0176F9101FA6A9001B95D3 /* PrefsMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsMgr.m; sourceTree = "<group>"; };
+		4B0498800FF9590600DE5555 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro.png; path = resources/intro.png; sourceTree = "<group>"; };
+		4B177A8F1009B362005F0681 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4B2C8CA1102162E6001A4B04 /* prefs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs.png; path = resources/prefs.png; sourceTree = "<group>"; };
+		4B2DB2DC102B829A00B8ED96 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		4B405B55103B38E50058C40D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = resources/Icon.png; sourceTree = "<group>"; };
+		4B4298101052ABBF0046E450 /* SoundMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMgr.h; sourceTree = "<group>"; };
+		4B4298111052ABBF0046E450 /* SoundMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMgr.m; sourceTree = "<group>"; };
+		4B489AB2102FDB5A0004E84A /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		4B489AB3102FDB5A0004E84A /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		4B78860310067A03005FDC76 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4B788668100686F9005FDC76 /* buttonpress.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = buttonpress.caf; path = resources/buttonpress.caf; sourceTree = "<group>"; };
+		4B788669100686F9005FDC76 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion.caf; path = resources/explosion.caf; sourceTree = "<group>"; };
+		4B8A0015103B313600ED9915 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
+		4B965612100A931E007D86E8 /* fire.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = fire.caf; path = resources/fire.caf; sourceTree = "<group>"; };
+		4B976EA7100E68FA00E10D7D /* HiScoreMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiScoreMgr.h; sourceTree = "<group>"; };
+		4B976EA8100E68FA00E10D7D /* HiScoreMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiScoreMgr.m; sourceTree = "<group>"; };
+		4BC7B27C0FED60DF009CC98B /* ingamefont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ingamefont.png; path = resources/ingamefont.png; sourceTree = "<group>"; };
+		4BC7B27D0FED60DF009CC98B /* titlefont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlefont.png; path = resources/titlefont.png; sourceTree = "<group>"; };
+		4BCE5B730FEF438B00A2CFEB /* GfxMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GfxMgr.h; sourceTree = "<group>"; };
+		4BCE5B740FEF438B00A2CFEB /* GfxMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GfxMgr.m; sourceTree = "<group>"; };
+		4BD20C6A0FDC4DEA003A058A /* GameMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMgr.h; sourceTree = "<group>"; };
+		4BD20C6B0FDC4DEA003A058A /* GameMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMgr.m; sourceTree = "<group>"; };
+		4BD20C720FDC4FC2003A058A /* StarsMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarsMgr.h; sourceTree = "<group>"; };
+		4BD20C730FDC4FC2003A058A /* StarsMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarsMgr.m; sourceTree = "<group>"; };
+		4BDCF5130FEECC1A009A0D2B /* IntroMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroMgr.h; sourceTree = "<group>"; };
+		4BDCF5140FEECC1A009A0D2B /* IntroMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroMgr.m; sourceTree = "<group>"; };
+		4BF409870FFE291F00D51C7D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4BF575F61018F0C6007F3E4D /* NumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatter.h; sourceTree = "<group>"; };
+		4BF575F71018F0C6007F3E4D /* NumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatter.m; sourceTree = "<group>"; };
+		4BF850311015720100CF8C14 /* StateMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMgr.h; sourceTree = "<group>"; };
+		4BF850321015720100CF8C14 /* StateMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateMgr.m; sourceTree = "<group>"; };
+		4BF919380FDFFCEF0045D523 /* FontMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontMgr.h; sourceTree = "<group>"; };
+		4BF919390FDFFCEF0045D523 /* FontMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontMgr.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */,
+				2D500B940D5A79C200DBA0E3 /* OpenGLES.framework in Frameworks */,
+				2D500B9A0D5A79CF00DBA0E3 /* QuartzCore.framework in Frameworks */,
+				4B78860410067A03005FDC76 /* AudioToolbox.framework in Frameworks */,
+				4B177A901009B362005F0681 /* AVFoundation.framework in Frameworks */,
+				4B2DB2DD102B829A00B8ED96 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iChains.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				2D500B1D0D5A766B00DBA0E3 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1F3B9A820EF2151B00286867 /* iChains_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B405B55103B38E50058C40D /* Icon.png */,
+				4B8A0015103B313600ED9915 /* Default.png */,
+				4B0067D91035EDDE00962CD0 /* TranquilTranceExpress.mp3 */,
+				4B2C8CA1102162E6001A4B04 /* prefs.png */,
+				4B965612100A931E007D86E8 /* fire.caf */,
+				4B788668100686F9005FDC76 /* buttonpress.caf */,
+				4B788669100686F9005FDC76 /* explosion.caf */,
+				4B0498800FF9590600DE5555 /* intro.png */,
+				4BC7B27C0FED60DF009CC98B /* ingamefont.png */,
+				4BC7B27D0FED60DF009CC98B /* titlefont.png */,
+				1FF0216B0EF21FA500761551 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B2DB2DC102B829A00B8ED96 /* CoreFoundation.framework */,
+				4B177A8F1009B362005F0681 /* AVFoundation.framework */,
+				4B78860310067A03005FDC76 /* AudioToolbox.framework */,
+				1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */,
+				2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */,
+				2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4B4298101052ABBF0046E450 /* SoundMgr.h */,
+				4B4298111052ABBF0046E450 /* SoundMgr.m */,
+				4BCE5B730FEF438B00A2CFEB /* GfxMgr.h */,
+				4BCE5B740FEF438B00A2CFEB /* GfxMgr.m */,
+				1F3B9A2C0EF2145700286867 /* iChainsAppDelegate.h */,
+				1F3B9A2B0EF2145700286867 /* iChainsAppDelegate.m */,
+				1F11B2160F0AA294002B2921 /* GLView.h */,
+				1F11B2150F0AA294002B2921 /* GLView.m */,
+				4BD20C6A0FDC4DEA003A058A /* GameMgr.h */,
+				4BD20C6B0FDC4DEA003A058A /* GameMgr.m */,
+				4BD20C720FDC4FC2003A058A /* StarsMgr.h */,
+				4BD20C730FDC4FC2003A058A /* StarsMgr.m */,
+				4BF919380FDFFCEF0045D523 /* FontMgr.h */,
+				4BF919390FDFFCEF0045D523 /* FontMgr.m */,
+				4BDCF5130FEECC1A009A0D2B /* IntroMgr.h */,
+				4BDCF5140FEECC1A009A0D2B /* IntroMgr.m */,
+				4BF409870FFE291F00D51C7D /* Constants.h */,
+				4B976EA7100E68FA00E10D7D /* HiScoreMgr.h */,
+				4B976EA8100E68FA00E10D7D /* HiScoreMgr.m */,
+				4BF850311015720100CF8C14 /* StateMgr.h */,
+				4BF850321015720100CF8C14 /* StateMgr.m */,
+				4BF575F61018F0C6007F3E4D /* NumberFormatter.h */,
+				4BF575F71018F0C6007F3E4D /* NumberFormatter.m */,
+				4B0176F8101FA6A9001B95D3 /* PrefsMgr.h */,
+				4B0176F9101FA6A9001B95D3 /* PrefsMgr.m */,
+				4B489AB2102FDB5A0004E84A /* Utility.h */,
+				4B489AB3102FDB5A0004E84A /* Utility.m */,
+				4B006CA510312B7D00C96E7E /* Modal.h */,
+				4B006CA610312B7D00C96E7E /* Modal.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iChains */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iChains" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iChains;
+			productName = foo;
+			productReference = 1D6058910D05DD3D006BFB54 /* iChains.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iChains" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iChains */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FF0216C0EF21FA500761551 /* MainWindow.xib in Resources */,
+				4BC7B27E0FED60DF009CC98B /* ingamefont.png in Resources */,
+				4BC7B27F0FED60DF009CC98B /* titlefont.png in Resources */,
+				4B0498810FF9590600DE5555 /* intro.png in Resources */,
+				4B78866A100686F9005FDC76 /* buttonpress.caf in Resources */,
+				4B78866B100686F9005FDC76 /* explosion.caf in Resources */,
+				4B965613100A931E007D86E8 /* fire.caf in Resources */,
+				4B2C8CA2102162E6001A4B04 /* prefs.png in Resources */,
+				4B0067DA1035EDDE00962CD0 /* TranquilTranceExpress.mp3 in Resources */,
+				4B8A0016103B313600ED9915 /* Default.png in Resources */,
+				4B405B56103B38E50058C40D /* Icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1F3B9A2D0EF2145700286867 /* iChainsAppDelegate.m in Sources */,
+				1F11B2170F0AA294002B2921 /* GLView.m in Sources */,
+				4BD20C6C0FDC4DEA003A058A /* GameMgr.m in Sources */,
+				4BD20C740FDC4FC2003A058A /* StarsMgr.m in Sources */,
+				4BF9193A0FDFFCEF0045D523 /* FontMgr.m in Sources */,
+				4BDCF5150FEECC1A009A0D2B /* IntroMgr.m in Sources */,
+				4BCE5B750FEF438B00A2CFEB /* GfxMgr.m in Sources */,
+				4B976EA9100E68FA00E10D7D /* HiScoreMgr.m in Sources */,
+				4BF850331015720100CF8C14 /* StateMgr.m in Sources */,
+				4BF575F81018F0C6007F3E4D /* NumberFormatter.m in Sources */,
+				4B0176FA101FA6A9001B95D3 /* PrefsMgr.m in Sources */,
+				4B489AB4102FDB5A0004E84A /* Utility.m in Sources */,
+				4B006CA710312B7D00C96E7E /* Modal.m in Sources */,
+				4B4298121052ABBF0046E450 /* SoundMgr.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iChains_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = iChains;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = iChains;
+				PROVISIONING_PROFILE = "EBEC863F-005F-4159-B3A6-0998527D5534";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EBEC863F-005F-4159-B3A6-0998527D5534";
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		4B4409FE103E98B1007844D5 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "EBEC863F-005F-4159-B3A6-0998527D5534";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EBEC863F-005F-4159-B3A6-0998527D5534";
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Distribution;
+		};
+		4B4409FF103E98B1007844D5 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brian Schau";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = iChains;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3DAC9A90-B488-4EDE-BA32-27395CB1224D";
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Distribution;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				PRODUCT_NAME = iChains;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "EBEC863F-005F-4159-B3A6-0998527D5534";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EBEC863F-005F-4159-B3A6-0998527D5534";
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iChains" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				4B4409FF103E98B1007844D5 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iChains" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				4B4409FE103E98B1007844D5 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

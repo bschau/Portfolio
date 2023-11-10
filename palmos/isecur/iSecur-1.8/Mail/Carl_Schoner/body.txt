@@ -1,0 +1,61 @@
+Hi Brian,
+ 
+I will check it out and if I have suggestions for improvement, I will let you know. I used the older version for a while, but I only tinkered with it as I really didn't trust saving all my secrets on a palmtop. I am a DBA for a good sized educational institution, and we are almost paranoid about locking things down and not carrying passwords, pins, SSN's and the like around in laptops and PDA's. But this application looks really slick, so I am going to give it a try.
+ 
+Thanks again,
+ 
+Carl
+
+>>> Brian Schau <brian@schau.com> 12/14/2006 11:51 am >>>
+Hi Carl,
+
+
+That is great to hear.  When I read your previous mail I was thinking
+that perhaps you had toggled the Backup bit on the database.  However
+that should not break the system conduit - it should just skip it ...
+
+I am glad that it all works now.
+
+Please don't hesitate to write me if you have any other questions or
+if you have ideas for enhancements of iSecur ...
+
+Thanks for using iSecur.
+
+
+Kind regards,
+Brian
+
+
+--------- Original Message --------
+From: Carl Schoner <CSchoner@nocccd.edu>
+To: Brian Schau <brian@schau.com>
+Subject: Re: [iSecur] Hmmm ... I wonder why ...
+Date: 14/12/06 02:43
+
+>
+>
+>
+>
+> Hi Brian,
+> &nbsp;
+> I reinstalled the Palm desktop and this seems to have corrected the
+problem I was having. Thank you for r eplying to my original question. I am
+okay now.
+> &nbsp;
+> Carl&gt;&gt;&gt; Brian Schau &lt;brian@schau.com&gt; 12/14/2006 12:34 am
+&gt;&gt;&gt;Hi Carl,The name of the file is:iSec_iSecur Data.pdb... and it
+lives in your backup folder.Best regards,Brian--------- Original Message
+--------From: Carl Schoner &lt;CSchoner@nocccd.edu&gt;To: brian@schau.com
+&lt;brian@schau.com&gt;Subject: [iSecur] Hmmm ... I wonder why ...Date:
+13/12/06 08:00&gt; &gt; &gt; &gt; &gt; Dear Brian,&gt; &amp;nbsp;&gt; What
+is the name of the iSecure v1.4 database that gets hotsync'ed to thedesktop
+under Palm Desktop 5.4? I can't find it using iSecure v 1.4,although I know
+that for Secure_it v2r12 the data file isSecure_It_Secrets.pdb.&gt;
+&amp;nbsp;&gt; Thank you,&gt; &amp;nbsp;&gt; Carl&gt;
+________________________________________________Message s ent using UebiMiau
+2.7.9
+
+________________________________________________
+Message sent using UebiMiau 2.7.9
+
+

@@ -1,0 +1,10 @@
+# Command
+exit		Afslut
+
+# Error
+loadError	Kunne ikke hente logo
+noLogo		Intet Logo
+
+# Messages
+msg1		Halleluja! Det virker :-)
+msg2		Vælg 'Afslut' for at ... afslutte.

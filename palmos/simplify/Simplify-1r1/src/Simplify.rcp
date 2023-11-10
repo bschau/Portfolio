@@ -1,0 +1,138 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1r1"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Simplify was made by\n\nBrian Schau.\n\nPlease visit the website at:\n\nhttp://www.schau.com/s/simplify\n\nOn the website you will find the latest version of Simplify and a user manual.\n\n\nSimplify is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aGuessInvalid
+INFORMATION
+BEGIN
+	TITLE "Invalid guess"
+	MESSAGE "You must enter a value between 1 and 1000 in both fields."
+	BUTTONS "OK"
+END
+
+ALERT ID aRightOn
+INFORMATION
+BEGIN
+	TITLE "Excellent!"
+	MESSAGE "Well done! ^1/^2 is in fact the right answer."
+	BUTTONS "OK"
+END
+
+ALERT ID aAnswer
+INFORMATION
+BEGIN
+	TITLE "Wrong."
+	MESSAGE "Your guess is wrong. The correct fraction is ^1/^2."
+	BUTTONS "OK"
+END
+
+ALERT ID aReset
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Reset?"
+	MESSAGE "Do you really want to reset your score?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aChange
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Change?"
+	MESSAGE "Is it OK to change the size of the denominator? By doing so, your score will be reset."
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Simplify"
+
+	LABEL "Simplify" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1r1" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID mGame
+BEGIN
+	TITLE "Simplify"
+
+	POPUPTRIGGER "?" ID cGamePopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "Up to 20" "Up to 100" "Up to 200" "Up to 1000" ID cGameList AT (RIGHT@160 1 50 48) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST ID cGamePopup cGameList
+
+	FIELD ID cGameNumerator AT (88 39 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC
+	FIELD ID cGameDenominator AT (88 58 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC
+	BUTTON "Check" ID cGameCheck AT (CENTER BOTTOM@159 AUTO AUTO)
+	GRAFFITISTATEINDICATOR AT (147 147)
+END
+
+MENU mGame
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Reset" ID mGameReset
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mGameAbout
+	END
+END

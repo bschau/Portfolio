@@ -1,0 +1,136 @@
+#!/bin/bash
+
+# s30emul
+#
+# Start script for the Nokia Series 30 Emulator
+#
+# Created and maintained by Brian Schau <brian@schau.com>
+
+# s30emul is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+
+# s30emul is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+
+NOKIA="Nokia/Devices/Nokia_Series_30_MIDP_Concept_SDK_Beta_0_2"
+SEARCHPATH="$HOME/$NOKIA:/opt/$NOKIA:/usr/local/$NOKIA"
+
+function IsSDK()
+{
+	if test -d $1 -a -s $1/lib/classes.zip -a -s $1/tools/emulator.jar; then
+		return 1
+	fi
+
+	return 0
+}
+
+function FindSDK()
+{
+	if test "$S30EMUL_HOME"; then
+		IsSDK $S30EMUL_HOME
+		if test $? -eq 1; then
+			echo $S30EMUL_HOME
+			return
+		else
+			echo "S30EMUL_HOME set - but seems to point to an invalid SDK" >&2
+		fi
+	fi
+
+	oldIFS="$IFS";
+	IFS=":"
+	set -- $SEARCHPATH;
+	for p; do
+		IsSDK $p
+		if test $? -eq 1; then
+			echo $p
+			break;
+		fi
+	done
+
+	IFS="$oldIFS"
+}
+
+function Usage()
+{
+	echo "Usage: $0 [OPTIONS] file"
+	echo
+	echo "[OPTIONS]"
+	echo "  -d        Enable debugging"
+	echo "  -h        Help (this ..)"
+	echo "  -m home   SDK home"
+	echo "  -p port   Debug port (defaults to 4452)"
+	echo
+	echo "The S30 SDK is searched for in the following directories:"
+	echo
+	if test "$S30EMUL_HOME"; then
+		echo "+  $S30EMUL_HOME"
+	fi
+
+	IFS=":"
+	set -- $SEARCHPATH
+	for p; do
+		echo "+  $p"
+	done
+
+	if test -z "$S30EMUL_HOME"; then
+		echo
+		echo "Hint: Set S30EMUL_HOME to the correct path ..."
+	fi
+
+	exit 1
+}
+
+OPTS=`getopt -o dhm:p: -n s30emul -- "$@"` || exit 1
+eval set -- "$OPTS"
+
+debug=""
+port="4452"
+sdk=""
+while :; do
+	case "$1" in
+	-d)	debug="-debugger"; shift ;;
+	-h)	Usage ;;
+	-m)	sdk="$2"; shift 2 ;;
+	-p)	port="$2"; shift 2 ;;
+	--)	shift ; break;;
+	*)	Usage ;;
+	esac
+done
+
+if test -z "$1"; then
+	Usage
+fi
+
+if test -s "$1"; then
+	jad="$1"
+elif test -s "${1}.jad"; then
+	jad="${1}.jad"
+else
+	echo "$1 is not a valid .jad file!"
+	exit
+fi
+
+if test -z "$sdk"; then
+	sdk="$(FindSDK)"
+	if test -z "$sdk"; then
+		echo "Cannot find the Series 30 SDK"
+		exit 1
+	fi
+else
+	IsSDK $sdk
+	if test $? -eq 0; then
+		echo "Hmmm ... supplied S30EMUL_HOME seems to point to an invalid SDK"
+		exit 1
+	fi
+fi
+
+if test ! -z "$debug"; then
+	debug="$debug -dbg_port $port"
+fi
+
+java -classpath $CLASSPATH:$sdk/lib/classes.zip:$sdk/tools/emulator.jar -Demulator.home=$sdk com.nokia.phone.sdk.Emulator $debug -Xdescriptor $jad
+exit 0

@@ -1,0 +1,44 @@
+PuzzleCvt
+---------
+
+PuzzleCvt is used to convert a file containing puzzles for Griddler into a
+database file.  PuzzleCvt needs Mono or Microsoft .NET framework 1.1 installed
+to work.
+
+
+Usage
+-----
+
+
+	PuzzleCvt.exe puzzlefile title [output]
+
+
+Format
+------
+
+The puzzlefile contains one or more blocks containing:
+
+	Key		Description
+	[puzzle title]	Name of puzzle as shown in Griddler.
+	Author		The author/creator of this puzzle.
+	Site		Author website.
+	x		The clues on the X-axis.
+	y		The clues on the Y-axis.
+
+The author and site variables if omitted are copied from the previous block.
+Multiple clues in the same row/column are separated by commas.   Clues are
+separated by spaces.
+
+F.ex, the entry for a simple Mickey Mouse is:
+
+	## ##
+	#####
+	 ###
+
+	[Mickey Mouse]
+	Author me
+	Site http://www.schau.com
+	x 2 3 2 3 2
+	y 2,2 5 3
+
+Have a look in PlayTsunami.txt for examples.

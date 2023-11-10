@@ -1,0 +1,11 @@
+#fcPopup {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+	border: 1px solid #112233;
+	background-color: #eeddcc;
+	padding: 10px;
+	color: #332211;
+	visibility: hidden;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@color/background"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@color/background"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+		<Button android:id="@+id/backbutton"
+    	    	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_back"
+        		android:layout_gravity="left"
+        		android:onClick="onButtonClick" />
+    	<TextView android:id="@+id/titletext"
+    	    	android:layout_gravity="fill_horizontal|center"
+    			android:layout_height="fill_parent"
+    			android:layout_width="fill_parent"
+    			android:gravity="center"
+    			android:textSize="12pt"
+    			android:layout_weight="1" />
+  		<Button android:id="@+id/emailbutton"
+    	   		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_email"
+        		android:layout_gravity="right"
+        		android:onClick="onButtonClick" />
+	</LinearLayout>
+
+	<WebView android:id="@+id/aboutwebview"
+  	   	android:layout_width="fill_parent"
+  	   	android:layout_height="wrap_content" />
+</LinearLayout>

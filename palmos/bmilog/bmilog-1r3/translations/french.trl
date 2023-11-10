@@ -1,0 +1,217 @@
+# Globals
+strSelectDate		Select Date
+strWhatIsTitle		Qu'est-ce que l'IMC ?
+strWhatIsText		Qu'est-ce que l'Indice de Masse Corporelle (IMC)?\n\nL'IMC est une mesure objective qui peut vous aider à décider si votre poids vous convient ou non.\nL'IMC est un nombre calculé à partir de votre taille et de votre poids, plus précisément votre poids, et peut être utilisé pour déterminer si votre poids est inférieur, supérieur ou conforme à la norme.\nNB 1: le terme anglophone correspondant à IMC est BMI (Body Mass Index) d'où le nom du logiciel\nNB 2: par abus de langage on utilisera le terme poids alors qu'en toute rigueur il s'agit de masse.\n\n\n
+			Formule de l'IMC (m et kg):\n\n
+			   p (kg) / (t (m) * t (m))\n\n
+			Par ex. une personne pesant 90 kg et mesurant 180 cm :\n\n
+			   90 / (1.80 * 1.80) = 27\n\n
+			Son IMC est égal à 27.\n\n\n
+			Formule de l'IMC (livres(lbs) et pouces(')):\n\n
+			   (p (lbs) * 704.5) / (t (') * t ('))\n\n
+			Par ex. une personne pesant 198 livres et mesurant 5\"11' :\n\n
+			   (198 * 704.5) / (71 * 71) = 27\n\n
+			Son IMC est égal à 27.\n\n\n\n
+			Avertissment: ce journal IMC est fourni à titre d'information uniquement. Il ne saurait se substituer à un avis médical et peut ne pas représenter votre véritable situation médicale.\nIl ne tient pas compte de tous les facteurs possibles dans le calcul de votre poids idéal.\n
+			Par exemple, il a tendance à surévaluer la masse graisseuse auprès des individus à la forte musculature ou auprès des individus dont la taille est inférieure à 150 cm (5 feet), et peut sous-évaluer la masse graisseuse auprès des personnes ayant perdu une masse musculaire importante, comme les personnes âgées.\n\n
+			N'utilisez pas cette information pour réaliser des modifications importantes de votre régime, votre activité physique ou d'autres aspects de votre mode de vie sans avoir consulté votre médecin. Prenez contact avec votre médecin si vous avez des questions ou des inquiétudes concernant les résultats.\n\n\n
+strBMITableTitle	Table IMC utilisée
+strBMITableTextAmerican		\nIMC\n\n
+			0-19.9      Maigreur\n
+			20-24.9    Masse idéale\n
+			25-            Embonpoint\n\n
+			Un IMC compris entre 30 et 34.9 indique une obésité.\nUn IMC compris entre 35 et 39.9 indique une obésité importante.\nUn IMC compris supérieur à 40, obésité extrême.\n\n
+			Ceci est la table IMC américaine.\n\n
+strBMITableTextEuropean		\nIMC\n\n
+			0-18.4          Maigreur\n
+			18.5-24.9    Masse idéale\n
+			25-                Embonpoint\n\n
+			Un IMC compris entre 30 et 34.9 indique une obésité.\nEntre 35 et 39.9, obésité importante.\nSupérieur à 40, obésité extrême.\n\n
+			Ceci est la table IMC européenne.\n\n
+strCm			cm
+strFeet			\"
+strInch			'
+strKg			kg
+strLbs			lbs
+strAbout		BMILog a été développé par Brian Schau.\n\nMerci de visiter le site web:\n\nhttp://www.schau.com/bmilog\n\nSur le site vous trouverez la dernière version ainsi qu'une conduite pour Microsoft Windows.\n\nCe programme contient du code extrait de la librairie MathLib.\nLa librairie MathLib peut être trouvée ici:\n\nhttp://www.radiks.net/~rhuebner/mathlib.html\n\nCe programme a été traduit en français par:\n\nAntoine - freewarefrance.com\n\n\nCe programme est freeware, vous pouvez l'utiliser librement.\n\n
+# ANTOINE: 3 strings below and change the english text in strAbout above (starting with "This program has been ...")
+strName			Nom
+strDate			Date
+strBMI			IMC
+strFeetInch		\" '
+
+# Edit menu - sysEditMenuID
+EditMenuName		Edition
+EditMenuUndo		Annuler
+EditMenuCut		Couper
+EditMenuCopy		Copier
+EditMenuPaste		Coller
+EditMenuSelect		Sélectionner tout
+EditMenuKeyboard	Clavier
+EditMenuGraffiti	Graffiti
+
+# Main Menu
+QueryMenu		Calculer
+QueryFindHeight		Taille idéale
+QueryFindWeight		Poids idéal
+QueryConversion		Conversion
+OptionsMenu		Options
+OptionsPreferences	Préférences
+AboutMenu		A propos
+AboutBMITable		Table IMC utilisée
+AboutWhatIs		Qu'est-ce que l'IMC ?
+AboutAbout		A propos de BMILog
+
+# Alerts
+AlertButtonOK		OK
+AlertButtonYes		Oui
+AlertButtonNo		Non
+
+aBadRomTitle		PalmOS obsolète
+aBadRomText		La version de PalmOS de votre PDA est trop ancienne. Ce programme nécessite PalmOS 3.0 ou plus.
+
+aNoSuchFormTitle	Aucun formulaire
+aNoSuchFormText		Le programme a tenté d'initialiser un formulaire factice. Ce ne devrait pas se produire, prévenez le développeur !
+
+aNameExistsTitle	Nom existant
+aNameExistsText		Ce nom existe déjà. Merci de saisir un autre nom.
+
+aCannotOpenDatabaseTitle	Impossible d'ouvrir la base
+aCannotOpenDatabaseText	Impossible d'ouvrir la base de données ^1.
+
+aDeletePersonTitle	Supprime ?
+aDeletePersonText	Voulez-vous vraiment supprimer ^1?
+
+aNotNullTitle		Champ vide
+aNotNullText		Vous devez saisir un nom dans le champ.
+
+aKgCmHeightInvalidTitle	Taille non valide
+aKgCmHeightInvalidText	La taille doit être comprise entre 1 et 999.
+
+aWeightInvalidTitle	Masse invalide
+aWeightInvalidText	La poids doit être compris entre 1 et 999.
+
+aDeleteBMIEntryTitle	Supprimer l'entrée IMC ?
+aDeleteBMIEntryText	Voulez-vous vraiment supprimer l'entrée IMC sélectionnée ?
+
+aBMIInfoTitle		Info IMC
+aBMIInfoText		Le dernier IMC saisi est ^1.
+
+aFeetHeightInvalidTitle	Taille (feet) non valide
+aFeetHeightInvalidText	La taille (feet) doit être comprise entre 1 et 99
+
+aInchHeightInvalidTitle	Taille (inches) non invalide
+aInchHeightInvalidText	La taille (inches) doit être comprise entre 0 et 11
+
+aEitherKgOrLbsTitle	Seulement un ...
+aEitherKgOrLbsText	Vous ne pouvez seulement saisir un poids dans les deux champs
+
+aEitherCmOrFeetInchTitle	Seulement une ...
+aEitherCmOrFeetInchText	Vous ne pouvez seulement saisir une taille dans les deux champs
+
+aBMIExistsTitle		Entrée existante
+aBMIExistsText		Vous avez déjà enregistré une entrée IMC pour ce jour. Voulez-vous l'écraser ?
+
+# ANTOINE: 2 strings below
+aNothingToPrintTitle	Rien à imprimer
+aNothingToPrintText	Il n'y a rien à imprimer.
+
+# fMain
+fMTitle			BMI Logger
+fMButtonNew		Nouveau
+
+# fEditPerson
+fEPTitle		Editer individu
+fEPLabel		Nom
+fEPFormat		Format
+fEPOK			OK
+fEPCancel		Annuler
+fEPDelete		Supprimer
+
+# fHistory - both
+fHistoryTitle		Historique
+fHistoryName		Nom
+fHistoryDone		OK
+# ANTOINE: 1 string below
+fHistoryPrint		Imprimer
+fHistoryNew		Nouveau
+fHistoryDate		Date
+fHistoryCm		cm
+fHistoryKg		kg
+fHistoryLbs		lbs
+fHistoryFeetInch	\" \'
+fHistoryBMI		IMC
+
+# fHistoryEdit - both
+fHistoryEditTitle	Ajouter nouvelle entrée IMC
+fHistoryEditDate	Date
+fHistoryEditWeight	Masse
+fHistoryEditHeight	Taille
+fHistoryEditOK		OK
+fHistoryEditCancel	Annuler
+fHistoryEditCm		cm
+fHistoryEditKg		kg
+fHistoryEditFeet	\"
+fHistoryEditInch	\'
+fHistoryEditLbs		lbs
+
+# fAbout
+fAboutAbout		A propos
+fAboutVersion		Version
+fAboutDone		OK
+
+# fPreferences
+fPreferences		Préférences
+fPreferencesTable	Table IMC
+fPreferencesTable1	européenne
+fPreferencesTable2	américaine
+fPreferencesFormat1	kg et cm
+fPreferencesFormat2	lbs et feet/inches
+fPreferencesFormat	Format
+fPreferencesOK		OK
+fPreferencesCancel	Annuler
+
+# fAboutHelp
+fAboutHelpDone		OK
+
+# fConversion
+fConversionTitle	Conversion
+fConversion1		De feet/inch vers cm
+fConversion2		De cm vers feet/inch
+fConversion3		De lbs vers kg
+fConversion4		De kg vers lbs
+fConversionFeet		\"
+fConversionInch		'
+fConversionCm		cm
+fConversionLbs		lbs
+fConversionKg		kg
+fConversionDone		OK
+fConversionSolve	Résoudre
+fConversionClear	Effacer
+
+# fQueryFindHeight
+fQueryFindHeightTitle	Calculer taille idéale
+fQueryFindHeightTable	Table IMC
+fQueryFindHeightDone	OK
+fQueryFindHeightSolve	Résoudre
+fQueryFindHeightClear	Effacer
+fQueryFindHeightKg	kg
+fQueryFindHeightLbs	lbs
+fQueryFindHeightOptimal	Taille idéale
+fQueryFindHeightOptimalCm	cm
+fQueryFindHeightOptimalFeet	\"
+fQueryFindHeightOptimalInch	'
+
+# fQueryFindWeight
+fQueryFindWeightTitle	Calculer poids idéal
+fQueryFindWeightTable	Table IMC
+fQueryFindWeightDone	OK
+fQueryFindWeightSolve	Résoudre
+fQueryFindWeightClear	Effacer
+fQueryFindWeightCm	cm
+fQueryFindWeightFeetInch	feet/inches
+fQueryFindWeightFeet	\"
+fQueryFindWeightInch	'
+fQueryFindWeightOptimal	Poids idéal
+fQueryFindWeightOptimalKg	kg
+fQueryFindWeightOptimalLbs	lbs

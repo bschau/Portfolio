@@ -1,0 +1,72 @@
+{
+    "author": "Brian Schau",
+    "dependencies": {},
+    "keywords": [],
+    "name": "wwtimer",
+    "pebble": {
+        "displayName": "wwTimer",
+        "enableMultiJS": false,
+        "messageKeys": {},
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/stopwatch.png",
+                    "name": "IMAGE_STOPWATCH",
+                    "type": "png"
+                },
+                {
+                    "file": "images/stopbutton.png",
+                    "name": "IMAGE_STOP_BUTTON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/startbutton.png",
+                    "name": "IMAGE_START_BUTTON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/pausebutton.png",
+                    "name": "IMAGE_PAUSE_BUTTON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/menu_icon.png",
+                    "menuIcon": true,
+                    "name": "IMAGE_MENU_ICON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/eggtimer.png",
+                    "name": "IMAGE_EGGTIMER",
+                    "type": "png"
+                },
+                {
+                    "file": "images/buttonup.png",
+                    "name": "IMAGE_UP_BUTTON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/buttondown.png",
+                    "name": "IMAGE_DOWN_BUTTON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/addbutton.png",
+                    "name": "IMAGE_ADD_BUTTON",
+                    "type": "png"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt"
+        ],
+        "uuid": "310c61e3-9ba8-4b55-a45f-bb3009dcfd82",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "2.0.0"
+}

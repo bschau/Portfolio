@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="800px" height="800px" viewBox="0 0 800 800" zoomAndPan="enabled">
+	<rect x="0" y="0" width="800" height="800" fill="#dddddd" stroke="#cccccc" />
+
+	<rect x="100" y="0" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="300" y="0" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="500" y="0" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="700" y="0" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="0" y="100" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="200" y="100" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="400" y="100" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="600" y="100" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="100" y="200" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="300" y="200" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="500" y="200" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="700" y="200" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="0" y="300" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="200" y="300" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="400" y="300" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="600" y="300" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="100" y="400" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="300" y="400" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="500" y="400" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="700" y="400" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="0" y="500" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="200" y="500" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="400" y="500" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="600" y="500" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="100" y="600" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="300" y="600" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="500" y="600" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="700" y="600" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<rect x="0" y="700" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="200" y="700" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="400" y="700" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+	<rect x="600" y="700" width="100" height="100" fill="#aaaaaa" stroke="#aaaaaa" />
+
+	<path style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="M 22.5,11.625 L 22.5,6" id="path6570" />
+	<path style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="M 22.5,25 C 22.5,25 27,17.5 25.5,14.5 C 25.5,14.5 24.5,12 22.5,12 C 20.5,12 19.5,14.5 19.5,14.5 C 18,17.5 22.5,25 22.5,25" id="path5683" sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 11.5,37 C 17,40.5 27,40.5 32.5,37 L 32.5,30 C 32.5,30 41.5,25.5 38.5,19.5 C 34.5,13 25,16 22.5,23.5 L 22.5,27 L 22.5,23.5 C 19,16 9.5,13 6.5,19.5 C 3.5,25.5 11.5,29.5 11.5,29.5 L 11.5,37 z "
+       id="path5681"
+       sodipodi:nodetypes="cccccccccc" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 20,8 L 25,8"
+       id="path6572" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 11.5,29.5 C 17,27 27,27 32.5,30"
+       id="path6574"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 11.5,37 C 17,34.5 27,34.5 32.5,37"
+       id="path6576"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 11.5,33.5 C 17,31.5 27,31.5 32.5,33.5"
+       id="path6578"
+       sodipodi:nodetypes="cc" />
+</svg>

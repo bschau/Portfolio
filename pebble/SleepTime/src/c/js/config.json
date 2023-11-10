@@ -1,0 +1,29 @@
+[
+{
+	"type": "section",
+	"items": [
+	{
+		"type": "input",
+		"messageKey": "AppKeyNightStop2",
+		"label": "Day begins",
+		"defaultValue": "06:00",
+		"attributes": {
+			"type": "time"
+		}
+	},
+	{
+		"type": "input",
+		"messageKey": "AppKeyNightStart2",
+		"label": "Night begins",
+		"defaultValue": "19:30",
+		"attributes": {
+			"type": "time"
+		}
+	},
+	{
+		"type": "submit",
+		"defaultValue": "Save Settings"
+	}
+	]
+}
+]

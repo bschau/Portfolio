@@ -1,0 +1,38 @@
+archiver
+========
+
+Using Archiver you can expire posts on a given date.  The posts are moved to
+another category and marked as 'draft'.
+
+
+Installation
+
+ 1. Download the plugin.
+ 2. Unpack it using gunzip or winzip.
+ 3. Copy the entire archiver folder to your WordPress plugins folder.
+ 4. Log on to WordPress and activate the plugin.
+ 5. Go to Settings->Archiver and set the default category for archived posts.
+ 6. Add the following cronjob to your crontable:
+
+    0 0 * * * cd $(ARCHIVER); $(PHP) -f archiverrunner.php >/dev/null 2>&1
+
+    Where $(ARCHIVER) is the path to root of the archiver plugin and
+    $(PHP) is the path to the php executable.  F.ex. if php is located in
+    /usr/bin and archiver is in /var/www/domain/wordpress/wp-content/plugins
+    the above line would be (broken into multiple lines):
+
+    0 0 * * * cd /var/www/domain/wordpress/wp-content/plugins/archiver;
+        /usr/bin/php -f archiverrunner.php >/dev/null 2>&1
+
+    The cronjob should run one time pr. day. It will do the actual expiry of
+    posts - so run it as close to the end of the day or start of the day
+    (as above) for the best effect.
+
+
+Usage
+
+ * Create a post.
+ * Enter your content, set category etc.
+ * At the bottom of the page you'll find a new 'Archive' meta box.  Enter the
+   day, month and year of when the post should expire.  Leaving these fields
+   blank means that the post will never be expired.

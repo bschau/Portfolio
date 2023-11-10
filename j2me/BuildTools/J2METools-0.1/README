@@ -1,0 +1,46 @@
+J2METools
+=========
+
+This package contains a few scripts to start the various Nokia MIDP emulators,
+ a generic 'jdb' script and script to transfer a Jad/Jar filepair to "any"
+bluetooth enabled phone.
+
+
+Installation
+------------
+
+Short form:
+
+	./configure
+	make install (as root)
+
+
+All emulators needs a Nokia MIDP SDK.
+
+s30emul needs Nokia_Series_30_MIDP_Concept_SDK_Beta_0_2
+n6310i needs Nokia_6310i_MIDP_SDK_v1_1
+n6230 needs Nokia_6230_MIDP_Concept_SDK_Beta_0_2 (from NDS)
+n7210 needs Nokia_7210_MIDP_SDK_v1_0
+
+Specify the SDK using the -m switch or by setting the ${emulator name}_HOME
+environment variable (f.ex., setting S30EMUL_HOME for the s30emul script).
+
+Use  configure --help to get options. 
+
+Remember to add the following lines to /etc/profile.local (or .bashrc):
+
+${emulator}_HOME="/path/to/emulator/home"
+export ${emulator}_HOME
+
+On my system I have:
+
+nd=/opt/Nokia/Devices
+N6230_HOME=$nd/Nokia_6230_MIDP_Concept_SDK_Beta_0_2
+N6310I_HOME=$nd/Nokia_6310i_MIDP_SDK_v1_1
+N7210_HOME=$nd/Nokia_7210_MIDP_SDK_v1_0
+S30EMUL_HOME=$nd/Nokia_Series_30_MIDP_Concept_SDK_Beta_0_2
+export N6230_HOME N6310I_HOME N7210_HOME S30EMUL_HOME
+unset nd
+
+
+

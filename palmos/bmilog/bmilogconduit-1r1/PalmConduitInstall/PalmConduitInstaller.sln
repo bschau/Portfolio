@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConduitInstallDll", "ConduitInstallDll\ConduitInstallDll.vcproj", "{F975EE67-FB5D-4093-B243-9C2403AEA09B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PalmConduitInstaller", "PalmConduitInstaller\PalmConduitInstaller.vcproj", "{7232DA2B-D45B-4679-AD42-AF789929875D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{7232DA2B-D45B-4679-AD42-AF789929875D}.0 = {F975EE67-FB5D-4093-B243-9C2403AEA09B}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F975EE67-FB5D-4093-B243-9C2403AEA09B}.Debug.ActiveCfg = Debug|Win32
+		{F975EE67-FB5D-4093-B243-9C2403AEA09B}.Debug.Build.0 = Debug|Win32
+		{F975EE67-FB5D-4093-B243-9C2403AEA09B}.Release.ActiveCfg = Release|Win32
+		{F975EE67-FB5D-4093-B243-9C2403AEA09B}.Release.Build.0 = Release|Win32
+		{7232DA2B-D45B-4679-AD42-AF789929875D}.Debug.ActiveCfg = Debug|Win32
+		{7232DA2B-D45B-4679-AD42-AF789929875D}.Debug.Build.0 = Debug|Win32
+		{7232DA2B-D45B-4679-AD42-AF789929875D}.Release.ActiveCfg = Release|Win32
+		{7232DA2B-D45B-4679-AD42-AF789929875D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

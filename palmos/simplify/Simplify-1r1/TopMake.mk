@@ -1,0 +1,2 @@
+APPNAME=Simplify
+VERSION=1r1

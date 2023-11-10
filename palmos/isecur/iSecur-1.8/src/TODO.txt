@@ -1,0 +1,156 @@
+iSecur TODO
+-----------
+
+Someday this list will go online ...
+
+
+
+Unconfirmed
+-----------
+
+These are the bugs I haven't been able to reproduce myself.  Usually they are
+only reported by one single individual or they are only reproducable on real
+devices (eg. not in the simulator/emulator).
+I will try to verify the code which I belives to be the culprit.  However, I am
+always on the lookout for more data which can help me in identifying where the
+problem lies.
+
+* (BUG) On a further note, quickfind still has navigation problems as follows
+
+Steps
+1. Open isecur
+2. Press a letter for quickfind
+3. Press down on 5 way navigation key
+4. Record at top of displayed list is correctly highlighted
+5. Press another letter for quickfind
+6. Press down on 5 way navigation key
+7. Record after last quickfind (step 4) is highlighted instead of top of currently
+displayed list
+8. Move focus to category selection
+9. Press a letter for quickfind
+10. Press down on 5 way navigation key
+11. Record at top of displayed list is correctly highlighted
+12. Open any record
+13. Return to list of records
+
+Follow the above steps again and the correct highlighting no longer occurs
+after a quickfind.
+
+* (BUG) The annoying bug that deletes a record on exit seems to be partly fixed.
+Ie. when exit it does not delete the record (GOOD) but on return into 'isecur'
+it is in edit mode on a different record.
+
+* (BUG) I have IconDB with 221 Icons. Isecur show only first 216 icons (27*8).
+When i add to my Icon set next 3 (to be 224 - (28*80), Isecur stay show only
+216. I must create Icon set with 225 icons, to show my 224 icons.
+
+* (BUG) "When we enter the edit form, which field is the focus? the Title or the Secret? So that we can write down directly?" - 5 way nav ring apparently doesn't set focus correctly on certain devices.
+
+* (BUG) "Using the Scroll hard-button is confusing. First, I must tap the
+secret field. Then, when I push the scroll down hard-button, it scrolls
+once. Pushing the scroll-down HB again, the pointer move to title field.
+Again, it moves to secret field, and so on." - 5 way ...
+
+* (BUG) Import bug:
+"Here is how I get the problem:
+
+I start by exporting my templates from "Secure It" to Memos.
+I then delete the templates from Secure It.
+I then use Sit2iSecur to copy the Secure It database to iSecur.
+Then, from iSecur, I try to import the templates from Memos using
+the options:
+   "I/E" -> "Import"
+>From the Import screen I select the templates Category (where I exported the Secure It templates to Memos).
+I try clicking the "All" button at the bottom of the screen but it 
+does not work so I check the boxes to select all my 5 templates.
+I then click the "Import" button.
+The "import Settings" screen appears:
+    I select Import to: Templates
+    I DON'T select "Delete after import"
+    I DO select "Import as templates"
+
+I then click the "Import" button.
+
+The "Inport Status" box appears:
+   It says: "0 Memo(s) was succesfully imported."  
+
+I check iSecur and the templates have NOT been imported.
+
+PS: I have approximately 160 records in Secure It/iSecur"
+
+* (BUG) I wasn't able to use copy/paste commands (via tapping icon on appeared
+command bar) when entering data after loading a template.
+
+
+
+
+Confirmed
+---------
+
+These are the bugs I can reproduce on my devices and/or on the simulator or
+emulator.
+
+!!! FIXED !!! * (BUG) The 5 way key navigation still does not work when viewing
+!!! FIXED !!! a record (NOT in edit mode)
+
+!!! FIXED !!! * (BUG) "Ok, here's what happens.  When I first launch iSecur-1.6
+!!! FIXED !!! it prompts:- The iSecure database was not found so a new database
+!!! FIXED !!! will be created....etc, tap next.  Tap and drag your stylus...etc,
+!!! FIXED !!! Next screen says Enter new password, if I use the password
+!!! FIXED !!! generator or make up my own and confirm my E hangs and requires
+!!! FIXED !!! a reset."
+
+* (BUG) Moreover, I have a Tungsten C. I tested the "5 way up/down is page
+up/down" option that I never used before in iSecur. I found that, if I press
+up/down buttons of the central "joystick" of my T|C, nothing happens whatever
+the option was checked or not. I mean: when I press the button up/down of the
+joystick I can see a refresh of the screen but nothing happens: neither the
+selected item scrolls down one item nor one page. Is it a bug? I don't think
+I'm using any particular application which can conflicts with iSecur. 
+
+* (BUG) Only it would be nice if the "up/down" rocker would move up and down
+the list. (I have a Treo 650).
+
+* (BUG) Jeg kan ikke scrolle ned i min liste over secrets med min 5 way knap,
+uanset om jeg har slået "5 way op/ned..." funktionen til eller fra.
+Når jeg trykker nedad, kan jeg i kort blink se listen rykke 1 side ned, og så
+op til toppen igen. Er jeg bladret ned i listen med scroll-baren, og så trykker
+på "5-way" (op,ned,høje eller venstre) rykker listen helt til top igen.
+
+* (BUG) Screen refresh in non-english languages.  Category drop down destroys
+title and button on keyword screen destroys password generator button.
+
+* (BUG) Importing doesn't work: "It told me that was not able to import record
+from 178 to  188 (or similar). I don't understand why. I checked for all my
+records but apparently all of them were imported (I don't think to be able to
+check if all the fields were imported for each record, of course)."
+
+
+
+Enhancements
+------------
+
+* (RFE) I use DateBk. In this Icons is show as group of 1-13 in first collum,
+14-.. in next... Maybe if I remember OK, Agendust show icons as well,
+IconMgr too. Isecur show icons in rows, not in collums. Is possible change
+or set to select this order ? Is possible skip in icon view not as rows, but
+as pages ?
+
+* (RFE)  As well, if I type 2 or more letters within less than (say) two
+seconds, it would be nice if it would then jump down to entries starting
+with those letters. (it works for one now ). This seems to be the way
+"one-handed" lookups are going.
+
+* (RFE) Support for 320 x 480.
+
+* (RFE) You really need to make arrow buttons on icon selection form to scroll
+up/down the whole page not just one line (don't forget about 5-way navigation
+as well)
+
+!!! FIXED !!! * (RFE) Too many taps when logging in.  When tapping OK on the
+!!! FIXED !!! keyboard form the password form should be acknowledged as well.
+
+* (RFE) The icon set to be used must be selectable from the prefs screen.
+
+* BEFORE RELEASE: rework icon screen
+

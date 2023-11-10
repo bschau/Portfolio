@@ -1,0 +1,278 @@
+/*
+Theme Name: Sydhavshytten
+Theme URI: https://www.sydhavshytten.dk/
+Description: The theme driving sydhavshytten.dk.
+Author: Brian Schau
+Version: 1.0
+Tags: simple
+*/
+@import url('https://fonts.googleapis.com/css?family=Yellowtail|Noto+Serif|Noto+Sans');
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-size: 100%;
+}
+
+html {
+	overflow-y: scroll;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+body {
+	font-family: 'Noto Serif', serif;
+	font-size: 16px;
+	line-height: 20px;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+}
+
+.center {
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Noto Sans', sans-serif;
+	clear: both;
+}
+
+h1 {
+	font-size: 200%;
+	line-height: 200%
+}
+
+h2 {
+	font-size: 180%;
+	line-height: 180%
+}
+
+h3 {
+	font-size: 165%;
+	line-height: 165%
+}
+
+h4 {
+	font-size: 150%;
+	line-height: 150%
+}
+
+h5 {
+	font-size: 130%;
+	line-height: 130%
+}
+
+h6 {
+	font-size: 110%;
+	line-height: 110%
+}
+
+.icon-button {
+	border: 1px solid black;
+	padding: 0 0.5em;
+	border-radius: 8px;
+	vertical-align: bottom;
+	display: inline-block;
+	background-color: #cef;
+	font-size: 14px;
+}
+
+a.icon-button:hover {
+	background-color: #eef;
+}
+
+a, a:visited, a:hover, a:active {
+	font-weight: bold;
+	text-decoration: none;
+	color: #558;
+}
+					 
+a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: #99c;
+	border-bottom: 1px dotted #111;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*
+.alignleft, img.alignleft {
+	display: inline;
+	margin-right: 24px;
+}
+
+.alignright, img.alignright {
+	display: inline;
+	margin-left: 24px;
+}
+
+.aligncenter, img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+*/
+
+/* Logo */
+.logo {
+	font-family: Yellowtail, serif;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	font-size: 64px;
+}
+
+a.logo-link, a.logo-link:visited, a.logo-link:hover, a.logo-link:active {
+	font-weight: none;
+	text-decoration: none;
+	color: #115;
+}
+
+/* Header */
+.header-menu {
+	line-height: 24px;
+	text-align: center;
+}
+
+#searchform {
+	margin-top: 1em;
+}
+
+#search-text {
+	font-size: 18px;
+	color: #999;
+	border: none;
+	border-bottom: 1px solid #b8b8b8;
+	width: 30%;
+}
+
+/* post-entry */
+.entry {
+	float: left;
+	width: 29%;
+	padding: 1em;
+}
+
+.entry-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media screen and (max-width: 600px) {
+	.entry {
+		width: 100%;
+	}
+}
+
+.post-in-category-title {
+font-size: 80%;
+	text-align: right;
+}
+
+/* Footer */
+#footer {
+	clear: both;
+	text-align: center;
+	font-size: 9pt;
+	width: 100%;
+	height: 18px;
+	font-style: italic;
+}
+
+/* Page */
+#page { margin: 0 auto; }
+
+p { margin-top: 1em; }
+
+.page-content { padding: 0 2em; }
+
+/*
+table {
+	margin-top: 1em;
+	background: #D3E4E5;
+	border: 1px solid gray;
+	border-collapse: collapse;
+	color: #fff;
+	font-size: 12px;
+}
+
+caption {
+	border: 1px solid #5C443A;
+	color: #5C443A;
+	font-weight: bold;
+	letter-spacing: 20px;
+	padding: 6px 4px 8px 0px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+td, th {
+	color: #363636;
+	padding: .4em;
+}
+
+tr { border: 1px dotted gray; }
+
+thead th, tfoot th {
+	background: #5C443A;
+	color: #FFFFFF;
+	padding: 3px 10px 3px 10px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+tbody td a {
+	color: #363636;
+	text-decoration: none;
+}
+
+tbody td a:visited {
+	color: gray;
+	text-decoration: line-through;
+}
+
+tbody td a:hover { text-decoration: underline; }
+
+tbody th a {
+	color: #363636;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+tbody th a:hover { color: #363636; }
+
+tbody th, tbody td {
+	text-align: left;
+	vertical-align: top;
+}
+
+tfoot td {
+	background: #5C443A;
+	color: #FFFFFF;
+	padding-top: 3px;
+}
+
+tr:nth-child(odd) { background: #FFF }
+
+tbody tr:hover {
+	background: #99BCBF;
+	border: 1px solid #03476F;
+	color: #000000;
+}
+*/

@@ -1,0 +1,616 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of iSecur to get a feeling of how the various screens are laid out.
+# You can install iSecur to a Palm OS Simulator or Emulator and have the
+# english version running while translating the text.
+#
+# This is the default language file for the English language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Write your full name here <write your email address here>
+#
+
+# Default categories
+defCat1				Unfiled
+defCat2				Business
+defCat3				Credit Cards
+defCat4				Passwords
+defCat5				Personal
+
+# The string in the Help->About form
+# Feel free to add your name, like in: Translated by ...
+strAboutText			iSecur was made by Brian Schau\n\nThe nice application icons was created by Tony Vincent.\n\nThe small icons are provided by Leslie Franke (http://lesliefranke.com/).\n\nPlease visit my website at:\n\n   http://www.schau.com/\n\nOn the website you will find the latest version of iSecur and a user manual.\n\n\niSecur is released under the Gnu General Public License v2.\n
+
+# The next four strings are the error messages given on the login form.
+#
+# "Password Mismatch"		User are about to set a new password but has
+#				entered two differing passwords.
+# "Invalid Password"		User tried to login using a invalid password.
+# "Please Enter Password"	User tried to login using a blank password.
+# "Password Used Before"	User are about to set a new password but the
+#				password has been used before (the password is
+#				present on the retention list). 
+pwdFormStr1			Password Mismatch!
+pwdFormStr2			Invalid Password!
+pwdFormStr3			Please Enter Password!
+pwdFormStr4			Password Used Before!
+
+# Title written on the Login/Password form.
+pwdFormTitle1			Please Login ...
+pwdFormTitle2			Enter new password ...
+
+# If a secret without a title is shown, this string will be copied to the
+# title field.
+strShowDialog			Untitled
+
+# This is the strings for the Credit Card template. *Category is the name of
+# the template category. *Title is the title of the template. *Body is the
+# content of the template.
+# tmplCreditCardCategory must match defCat3 (above)
+tmplCreditCardCategory		Credit Cards
+tmplCreditCardTitle		[Credit Card]
+tmplCreditCardBody		Card Number: [Card Number]\nExpiry Date: [Expiry Date]\nName On Card: [Name On Card]\nControl Code: [Control Code]\n
+
+# This is the strings for the Password template. *Category is the name of
+# the template category. *Title is the title of the template. *Body is the
+# content of the template.
+# tmplPasswordCategory must match defCat4 (above)
+tmplPasswordCategory		Passwords
+tmplPasswordTitle		[System]
+tmplPasswordBody		Username: [Username]\nPassword: [Password]\n
+
+# These are the titles for the Import/Export form.
+ieActionImport			Import
+ieActionExport			Export
+
+# Alerts
+#
+# These are the generic alert buttons.
+abOK				OK
+abYes				Yes
+abNo				No
+
+#
+# All *T keys are the alert title.  All *B keys are the alert body text.
+# ^1, ^2 and ^3 sequences must be left intact.  The ^1 (/2/3) will be
+# substituted at runtime.
+# All *T should be short as they have to fit on one display text line.
+#
+# Shown if the users device is too old.
+aBadRomT			PalmOS Too Old
+aBadRomB			The PalmOS in this device is too old. PalmOS v3.5 or better is required to run this application.
+
+# Shown if the iSec_iSecur Data database cannot be opened.
+aCannotOpenDatabaseT		Database Error
+aCannotOpenDatabaseB		Cannot open ^1 database.
+
+# Shown if the password was successfully changed.
+aPasswordChangedT		Password Changed
+aPasswordChangedB		Your password has been changed. Use the new password the next time you log on.
+
+# If the user wishes to delete a record we ask for confirmation.
+aDeleteRecordT			Delete Secret?
+aDeleteRecordB			Delete this secret?
+
+# If the user wishes to delete all keywords on the keywords screen we ask for
+# confirmation.
+aClearAllT			Clear All Keywords?
+aClearAllB			Is it OK to clear all keywords?
+
+# If notifications are enabled but something goes wrong when setting up
+# notification.
+aNotificationErrorT		No Notifications
+aNotificationErrorB		Cannot setup notifications - log out when display blanks is disabled.
+
+# If the masks on the Password Generator form is all empty.
+aPwdGenErrorT			No Password
+aPwdGenErrorB			Cannot generate password as the Contains: selection is blank.
+
+# If the password generator generated a blank password (really, this should
+# never happen! :-)
+aPwdGenNoneT			No Password
+aPwdGenNoneB			There is no password to use.
+
+# When the user is reminded outside iSecur to change the password.
+aPwdChangeReminderT		Reminder
+aPwdChangeReminderB		Now would be a good time to change your password in iSecur. Would you like to do that now?
+
+# When the user is reminded to change the password.
+aPwdChangeT			Reminder
+aPwdChangeB			Time to change your password. Would you like to do that now?
+
+# If the user asks to set the Copy Prevention bit on the database but the
+# operation fails.
+aNoCopyPreventionT		Copy Prevention
+aNoCopyPreventionB		Failed to set/unset Copy Prevention bit.
+
+# If user tries to beam the database when the Copy Prevention bit is set.
+aCopyPrevBitSetT		Copy Prevention Bit Set
+aCopyPrevBitSetB		Cannot beam the database as the Copy Prevention Bit is set.
+
+# Infrared receive error.
+aIRSocketErrorT			IR Socket Error
+aIRSocketErrorB			Cannot accept incoming connection.
+
+# Something went wrong when we tried to beam the database.
+aIRSendErrorT			IR Send Error
+aIRSendErrorB			Cannot beam database.
+
+# Cannot receive iSecur database when iSecur is running ...
+aIRReceiveNotInAppT		Cannot Receive
+aIRReceiveNotInAppB		Cannot receive database while iSecur is running!
+
+# We got a secret by infrared but it disappeared.
+aNoRecByIDT			No Such Record
+aNoRecByIDB			Cannot find the record by its record ID.
+
+# The iSecurLet already exist.
+aSletAlreadyExistT		iSecurLet Exists
+aSletAlreadyExistB		An iSecurLet with that name already exist.
+
+# Cannot create the iSecurLet.
+aCannotCreateSletT		Cannot Create iSecurLet
+aCannotCreateSletB		Cannot create the iSecurLet.
+
+# The iSecurLet was successfully created.
+aSletCreatedT			Created
+aSletCreatedB			The iSecurLet was successfully created.
+
+# The user tapped an iSecurLet which is locked by the system.
+aCannotOpenSletT		Cannot Open
+aCannotOpenSletB		Cannot open the selected iSecurLet.
+
+# Do the user really want to delete this iSecurLet?
+aLetDeleteT			Delete iSecurLet?
+aLetDeleteB			Do you really want to delete this iSecurLet?
+
+# iSecurLet deletion failed.
+aLetDeleteErrorT		Cannot Delete iSecurLet
+aLetDeleteErrorB		Failed to delete the selected iSecurLet.
+
+# Whoops - user forgot to install iSecur-Library.
+aNoLibraryT			No Library
+aNoLibraryB			Cannot find the iSecur Library v1.0 - please install this before continuing!
+
+# The iSecurLet was successfully opened but the secret cannot be found - ask
+# user if the iSecurLet should be deleted.
+# NOTE: please keep the \n!
+aNoSuchLetT			No Such iSecurLet
+aNoSuchLetB			The secret pointed to by this iSecurLet does not exist.\nDo you want do delete the iSecurLet?
+
+# Should all iSecurLet which points to non-existing secrets be deleted?
+aPruneLetT			Remove iSecurLets?
+aPruneLetB			Do you want to remove all iSecurLets which points to non-existing secrets?
+
+# So, how many iSecurLets was deleted?
+aPruneStatusT			Status
+aPruneStatusB			^1 iSecurLet(s) deleted.
+
+# No iSecurLets deleted.
+aPruneNoneDeletedT		No iSecurLets Deleted
+aPruneNoneDeletedB		All iSecurLets points to valid data. No iSecurLets deleted.
+
+# Cannot send secret by infrared.
+aIRSendEntryErrorT		IR Send Error
+aIRSendEntryErrorB		Failed to beam ^1.
+
+# When receiving a secret iSecur must be running.
+aIRReceiveMustBeInAppT		Cannot Receive
+aIRReceiveMustBeInAppB		Cannot receive entry when iSecur is not running!
+
+# The user created a password using the password generator - however there is
+# no field to receive the password (on the edit form).
+aNoFocusT 			No Receiving Field
+aNoFocusB			There is no receiving field for the generated password. Please select the position where the password should go.
+
+# The user loads an fills in a template. The receiving secret already has some
+# text - should the new template content be added before or after the existing
+# text or should the new template content replace what's already there?
+aAddOrReplaceT 			Secret Not Empty
+aAddOrReplaceB			The receiving secret already contains some text. Do you want to add the following text before or after the original text or do you want the following text to replace the original text?
+# Buttons for the Add/Replace alert.
+aABRBefore			Before
+aABRAfter			After
+aABRReplace			Replace
+
+# There are no memos to import.
+aNothingToImportT 		Nothing To Import
+aNothingToImportB		There are no memos in Memo to import.
+
+# There are no secrets/templates to export.
+aNothingToExportT		Nothing To Export
+aNothingToExportB		There are no secrets or templates to export.
+
+# The user tapped import when no memos where selected.
+aImpNothingSelectedT 		Nothing Selected
+aImpNothingSelectedB		Please select one or more entries to import.
+
+# Import status.
+aImpImportedT			Import Status
+aImpImportedB			^1 Memo(s) was succesfully imported.
+
+# The user tapped export when no secrets/templates where selected.
+aExpNothingSelectedT		Nothing Selected
+aExpNothingSelectedB		Please select one or more entries to export.
+
+# Export status
+aExpExportedT 			Export Status
+aExpExportedB			^1 Secret(s) was succesfully exported.
+
+# User created a new database - set new password hint?
+aSetNewHintT 			Set Password Hint
+aSetNewHintB			Do you want to set a new password hint?
+
+# User recalled password hint - but it was no previously set.
+aNoPasswordHintT 		No Hint
+aNoPasswordHintB		There is no password hint set in the database.
+
+# User recalled password hint. NOTE: aPasswordHintB is fixed at ^1!
+aPasswordHintT 			Password Hint
+
+# Brian screwed up and released a debug version of iSecur. Debug versions can
+# only run on Palm OS Emulator/Simulator ...
+aNoPoseT 			Pose/Simulator
+aNoPoseB			Attempt to run a debug version of iSecur outside POSE or a simulator - cannot do that.
+
+#
+# Forms. These are the actual screens of iSecur.
+#
+
+# Generic form buttons
+fbDone				Done
+fbOK				OK
+fbCancel			Cancel
+fbLoad				Load
+fbDelete			Delete
+fbBeam				Beam
+fbEdit				Edit
+fbClear				Clear
+fbUse				Use
+fbGenerate			Generate
+fbPrune				Prune
+fbAll				All
+fbNone				None
+fbImport			Import
+fbExport			Export
+
+# The generic Edit menu.  The *T's are the menu item label, the *K's are the
+# shortcut keys.
+mEditT				Edit
+mEditUndoT			Undo
+mEditUndoK			U
+mEditCutT			Cut
+mEditCutK			X
+mEditCopyT			Copy
+mEditCopyK			C
+mEditPasteT			Paste
+mEditPasteK			P
+mEditSelectT			Select All
+mEditSelectK			S
+mEditKeyboardT			Keyboard
+mEditKeyboardK			K
+mEditGraffitiT			Graffiti
+mEditGraffitiK			G
+
+###############################################################################
+# The About form
+#
+
+fAboutTitle			About
+fAboutVersion			Version
+
+###############################################################################
+# The Main form
+#
+
+# New Secret button
+fMainNew			New
+
+# Load secret from template button.
+fMainLoad			Load
+
+# Filter entries
+fMainAll			All
+fMainSecrets			Secrets
+fMainTemplates			Templates
+
+# Main form menu headers
+mMainActions			Actions
+mMainImpExp			I/E
+mMainOptions			Options
+mMainHelp			Help
+
+# Entries in the Actions menu. *T is the actual text, *K is the short cut key.
+mActionsNewT			New
+mActionsNewK			N
+mActionsNewTmplT		New From Template
+mActionsNewTmplK		T
+mActionsBeamT			Beam Database
+mActionsManageT			Manage iSecurLets
+
+# Entries in the I/E menu.
+mIEImportT			Import
+mIEImportK			I
+mIEExportT			Export
+mIEExportK			E
+
+# Entries in the Options menu.
+mOptionsChangeT			Change Password
+mOptionsHintT			Password Hint
+mOptionsPrefsT			Preferences
+
+# Entries in the Help menu.
+mHelpAboutT			About
+
+###############################################################################
+# The New Database form
+#
+
+# The complete title will be: iSecur - New Database
+fNewDatabaseTitle		New Database
+
+# Line 1 will be shown in bold
+fNewDatabaseLine1		Welcome to iSecur
+fNewDatabaseLine2		The iSecure database was not found
+fNewDatabaseLine3		so a new database will be created.
+fNewDatabaseLine4		The database will be encrypted using
+fNewDatabaseLine5		a random key.
+fNewDatabaseLine6		On the next screen you will have to
+fNewDatabaseLine7		create the seed for the key by
+fNewDatabaseLine8		tapping and dragging your stylus on
+fNewDatabaseLine9		the screen.
+
+# Line10 to 12 is shown on 1 line ("Tap Next when ready ...")  "Next" is
+# shown in bold face.
+fNewDatabaseLine10		Tap
+# Line 11 is also used as the button label
+fNewDatabaseLine11		Next
+fNewDatabaseLine12		when ready ...
+
+###############################################################################
+# The Create Database form
+#
+
+fCreateDatabaseLine1		Tap and drag your stylus on this
+fCreateDatabaseLine2		screen. The coordinates will be
+fCreateDatabaseLine3		used to form the seed for the
+fCreateDatabaseLine4		encryption key.
+fCreateDatabaseLine5		Use a combination of wide and
+fCreateDatabaseLine6		narrow strokes.
+# Line 7 will be centered - keep it short!
+fCreateDatabaseLine7		Left:
+fCreateDatabaseLine8		When all ticks are gotten, you will
+fCreateDatabaseLine9		be prompted for a password - after
+fCreateDatabaseLine10		this the database will be created.
+
+###############################################################################
+# The Set Password/Enter Password form
+#
+
+fPasswordPwd			Password
+fPasswordConfirm		Confirm
+
+# The Actions menu
+mPasswordActionsT		Actions
+mPasswordActionsNewT		New Password
+mPasswordActionsNewK		N
+mPasswordActionsMaskT		Mask Password
+mPasswordActionsMaskK		M
+mPasswordActionsUnmaskT		Unmask Password
+mPasswordActionsUnmaskK		A
+
+###############################################################################
+# The Edit form
+#
+
+# Title of form
+fEditT				Edit
+
+# labels
+fEditTitle			Title
+fEditSecret			Secret
+fEditTemplate			Template
+fEditIcon			Icon
+
+# Menus
+mEditActions			Actions
+mEditLet			iSecurLet
+
+# Entries in the Actions menu
+mEditActionsGenT		Generate Password
+mEditActionsGenK		W
+mEditActionsLoadT		Load
+mEditActionsLoadK		L
+mEditActionsDeleteT		Delete
+mEditActionsDeleteK		D
+
+# Entries in the iSecurLet menu
+mEditLetCreateT			Create
+
+###############################################################################
+# The Icon form
+#
+
+# Title of form
+fIconTitle			Select Icon
+
+# The "No Icon" button
+bIconNone			No Icon
+
+###############################################################################
+# The Show form
+#
+
+# Title of form
+fShowTitle			Secret
+
+# Menus
+mShowActions			Actions
+mShowLet			iSecurLet
+
+# Entries in the Actions menu
+mShowActionsBeamT		Beam
+mShowActionsBeamK		B
+mShowActionsEditT		Edit
+mShowActionsEditK		E
+
+# Entries in the iSecurLet menu
+mShowLetCreateT			Create
+
+###############################################################################
+# The Preferences form
+#
+
+# The preferences form is a monster!  It currently is a multi page form made
+# up of three pages - in one form.
+
+# Title of form
+fPrfTitle			Preferences
+
+# These are the page names - shown in the drop down list in the upper right
+# corner
+dlPrfPage1			Password Policy
+dlPrfPage2			Log In/Out
+dlPrfPage3			Miscellaneous
+
+# Page 1: Password Policy
+
+# "Remember Last: ___ passwords"
+fPrf1RememberP			Remember last
+fPrf1RememberS			passwords
+
+# "X Remind me to change password
+#  every ___ days"
+fPrf1RemindChk			Remind me to change password
+fPrf1RemindP			every
+fPrf1RemindS			days
+
+# Page 2: Log In/Out
+fPrf2FailedLogins		Max failed logins
+
+# "X Delete database when Max failed
+#    logins are reached.
+fPrf2DeleteDB1			Delete database when Max failed
+fPrf2DeleteDB2			logins are reached
+
+fPrf2Logout			Log out when Power Off
+fPrf2Timeout			Log out when system times out
+fPrf2AutoPopup			Auto popup keyboard
+
+# Page 3: Miscellaneous
+
+fPrf3EditMode			Open secrets in Edit mode
+fPrf3EnableFind			Enable Find
+fPrf3EmptyClip			Empty Clipboard before exit
+fPrf3CopyPrevention		Set Copy Prevention bit
+fPrf3ListNew			Entry in list opens new
+fPrf3Stay			Edit secret: stay in category
+fPrf3Inherit			New template: inherit category
+fPrf35Way			5 way up/down is page up/down
+
+###############################################################################
+# The Template form
+#
+
+# Title of form
+fTmplTitle			Select Template
+
+# "Category" label
+fTmplCategory			Category
+
+###############################################################################
+# The Keywords form
+#
+
+# Title of form
+fKeywordsTitle			Enter Keywords
+
+###############################################################################
+# The Password Generator form
+#
+
+# Title of form
+fPwdGenTitle			Password Generator
+
+# Length, Contains and Password labels
+fPwdGenLength			Length
+fPwdGenContains			Contains
+fPwdGenPassword			Password
+
+###############################################################################
+# The iSecurLet Name form
+#
+
+# Title of form
+fLetNameTitle			iSecurLet Name
+
+# Label
+fLetName			iSecurLet Name
+
+###############################################################################
+# The Manage iSecurLets form
+#
+
+# Title of form
+fLetManTitle			Manage iSecurLets
+
+# This label is only shown if no iSecurLets are found
+fLetManNone			No iSecurLets found!
+
+###############################################################################
+# The Import/Export form
+#
+
+# No entries on the Import/Export form - but please keep this header anyway!
+
+###############################################################################
+# The Import Settings form
+#
+
+# Title of form
+fImpSetTitle			Import Settings
+
+fImpSetImportTo			Import to
+fImpSetDelete			Delete after import
+fImpSetTmpl			Import as templates
+fImpSetIcon			Icon
+
+###############################################################################
+# The Export Settings form
+#
+
+# Title of form
+fExpSetTitle			Export Settings
+
+fExpSetExportTo			Export to
+fExpSetDelete			Delete after export
+
+###############################################################################
+# The Password Hint form
+#
+
+# Title of form
+fPwdHintTitle			Password Hint
+
+fPwdHintLabel			Unencrypted password hint

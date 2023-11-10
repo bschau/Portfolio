@@ -1,0 +1,16 @@
+v1.5 (2006-03-01)
+	The main list now updates properly when changing categories.
+
+v1.4 (2006-02-16)
+	Changed versioning from vXrY to vX.Y.
+	Brushed up on the icons.
+	Fixed a subtle bug which made the TX crash from time to time.
+
+v1r3 (2005-10-27)
+	Made the creation of new files a bit more robust.
+
+v1r2 (2005-09-09)
+	Added support for Plua2.
+
+v1r1 (2005-07-04)
+	First public release.

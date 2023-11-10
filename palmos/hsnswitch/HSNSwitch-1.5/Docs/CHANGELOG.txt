@@ -1,0 +1,19 @@
+v1.5 (2005-09-22)
+	Changed versioning from 1rX to 1.X.
+	HSNSwitch can now also set HotSync ID for application launched from
+	card.
+
+v1r4 (2005-04-27)
+	Fixed a minor bug in v1r3 where the HotSync name came out wrong.
+	On the 'Available Applications' form you can enter a letter and the
+	list will scroll to that letter (Requested by Colin Quek).
+
+v1r3 (2005-04-27)
+	Application names can now be changed so that the '*' left by PowerRun
+	can be deleted (Requested by Colin Quek).
+
+v1r2 (2005-04-26)
+	Added support for the Tungsten E and GSM Treo 650 devices.
+
+v1r1 (2005-04-17)
+	First release of HSNSwitch.

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    android:stretchColumns="*">
+ 
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+ 
+        <TextView
+            android:textColor="@color/foreground"
+            android:layout_marginLeft="6dp"
+            android:text="@string/prefs_start_year">
+        </TextView>
+ 
+        <EditText
+            android:id="@+id/prefs_et_year"
+            android:layout_marginRight="6dp"
+            android:inputType="number" >
+        </EditText>
+    </TableRow>
+     
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+ 
+        <TextView
+            android:textColor="@color/foreground"
+            android:layout_marginLeft="6dp"
+            android:text="@string/prefs_start_month" >
+        </TextView>
+ 
+        <EditText
+            android:id="@+id/prefs_et_month"
+            android:layout_marginRight="6dp"
+            android:inputType="number" >
+        </EditText>
+    </TableRow>
+         
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+ 
+        <TextView
+            android:textColor="@color/foreground"
+            android:layout_marginLeft="6dp"
+            android:text="@string/prefs_vdo" >
+        </TextView>
+ 
+        <EditText
+            android:id="@+id/prefs_et_vdo"
+            android:layout_marginRight="6dp"
+            android:inputType="number">
+        </EditText>
+    </TableRow>
+         
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+ 
+        <TextView
+            android:textColor="@color/foreground"
+            android:layout_marginLeft="6dp"
+            android:text="@string/prefs_max_km_pr_year">
+        </TextView>
+ 
+        <EditText
+            android:id="@+id/prefs_et_maxkmpryear"
+            android:layout_marginRight="6dp"
+            android:inputType="number">
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        
+		<Button android:id="@+id/butok" 
+			android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_weight="1"
+            android:layout_marginLeft="6dp"
+            android:text="@string/button_save"
+            android:onClick="buttonOkClicked" />
+		<Button android:id="@+id/butcancel" 
+			android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+            android:layout_marginRight="6dp"
+            android:text="@string/button_cancel"
+            android:onClick="buttonCancelClicked" />
+	</TableRow>
+</TableLayout>

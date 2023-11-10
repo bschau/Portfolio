@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="about_text">(v%s - \u00A9 Brian Schau, &lt;u&gt;support&lt;/u&gt;)</string>
+	<string name="bi_contentdescription">Image icon</string>
+	<string name="bi_present">Present:</string>
+	<string name="bi_level">Level:</string>
+	<string name="bi_voltage">Voltage:</string>
+	<string name="bi_temperature">Temperature:</string>
+	<string name="bi_technology">Technology:</string>
+	<string name="bi_status">Status:</string>
+	<string name="bi_health">Health:</string>
+	<string name="bi_pluggedin">Plugged In:</string>
+	<string name="email_to">brian@schau.dk</string>
+	<string name="email_subject">[BatteryRightNow] Query</string>
+	<string name="email_body">[Please enter your query and then send this email, thanks!]</string>
+</resources>

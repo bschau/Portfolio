@@ -1,0 +1,76 @@
+ifndef DEBUG
+	DEBUG	=	1
+endif
+SYS	=	1
+ifdef BUILD
+	include ../../TopMake.mk
+endif
+APPNAME	=	iSecur
+DST	=	$(APPNAME).prc
+APPID	=	iSec
+SOURCES	=	AIBExtension DB Entropy Find IR PilotMain Random UI fAbout fCreateDatabase fEdit fIcon fIE fLetCreate fLetManage fKeywords fMain fNewDatabase fPassword fPasswordHint fPreferences fPwdGen fShow fTemplate Variables
+DEPS	=	../Resources.h ../Include.h
+CC	=	m68k-palmos-gcc
+AS	=	m68k-palmos-as
+CFLAGS	=	-O2 -Wall -I .. -I ../../library/ -I ../../api/
+LIBS	=	-lPalmOSGlue
+if $(DEBUG) == 1
+	OBJS	=	$(SOURCES) Debug
+	SOURCES	=	$(SOURCES) ../api/Debug
+	CFLAGS	=	$(CFLAGS) -DDEBUG=1
+	ifdef SYS
+		CFLAGS	=	$(CFLAGS) -DSYS=$(SYS)
+	else
+		if $(OS) == "WIN32"
+			CFLAGS	=	$(CFLAGS) -DSYS=1
+		else
+			CFLAGS	=	$(CFLAGS) -DSYS=0
+		endif
+	endif
+else
+	OBJS	=	$(SOURCES)
+endif
+
+all:
+	lmake -C build -DBUILD -f ../LMakefile build
+
+initall:
+	mkdir build
+
+build:	depend $(APPNAME)-sections.s ../$(APPNAME).def || multigen
+	exe
+	resources
+
+resources:
+	ifdef LANGUAGE
+		form $(LANGUAGE)
+	else
+		form English
+	endif
+	build-prc -o ../$(DST) ../$(APPNAME).def *.bin *.ex
+
+multigen:
+	m68k-palmos-multigen ../$(APPNAME).def
+	$(AS) -o $(APPNAME)-sections.o $(APPNAME)-sections.s
+
+exe:
+	< $(SOURCES) > compile
+	depend code0000.exe $(SOURCES).o || $(CC) -T text_64k $(CFLAGS) -o $(APPNAME).ex $(APPNAME)-sections.ld $(APPNAME)-sections.o $(OBJS).o $(LIBS)
+
+compile:
+	depend $<.o ../$<.c $(DEPS) || $(CC) $(CFLAGS) -c ../$<.c
+
+form:
+	if -s ../lang/$1.trl
+		translate -V VERSION=$(VERSION) -o FormsData-$1.rcp -d ../lang/English.trl ../FormsData.rcp ../lang/$1.trl
+		pilrc -q -I .. -I ../../api/ -allowEditID FormsData-$1.rcp
+	else
+		echo No such language $1
+		exit 1
+	endif
+
+clean:
+	rm -f *~ build/* *.prc data/*~ lang/*~
+
+distclean:	clean
+	rm -fr build

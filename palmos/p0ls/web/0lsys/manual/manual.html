@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>0L Systems User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>0L Systems User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>0L Systems is a simple implementation of a 0L System renderer. A 0L System, or more formally a L System, is a string rewriting system which produce a long string to be interpreted as commands for a LOGO turtle.
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of 0L Systems is no more different than installation of any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] 0L Systems.
+<LI>Unpack the <B>p0ls.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the <B>p0ls.zip</B> archive. Highlight the <B>p0ls.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a '0L Systems' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move 0L Systems to another category.
+
+<P><BR><P><BR>
+<H3>Theory</H3>
+<P>Welcome to the <B>boring</B> part - I will keep it short :)&nbsp;&nbsp;&nbsp;As said in the introduction a L System is a string rewriting system which, based on a user-defined <B>Axiom</B> and possible a set of <B>Production Rules</B>, generates a long commend string suitable for interpretation by a LOGO-like turtle.
+<P>Using 0L Systems or more advanced L Systems it is easy to create f.ex. advanced trees and bushes given a short Axiom and a few production rules.
+<P>So how does it work? Let me show you by using the classic Von Koch Snowflake curve as an example. The Von Koch Snowflake curve is shown on the frontpage in its sixth stage.
+<P>Imagine a simple LOGO turtle capable of these commands:
+<UL>
+<LI><B>F</B>&nbsp;&nbsp;&nbsp;&nbsp;draw a line forward.
+<LI><B >+</B>&nbsp;&nbsp;&nbsp;&nbsp;turn right by 60&deg;
+<LI><B>-</B>&nbsp;&nbsp;&nbsp;&nbsp;turn left by 60&deg;
+</UL>
+<P>We start out with a straight line. This is written as <B>F</B>. In all stages we substitute all straight lines with the sequence:
+<P>forward, turn left, forward, turn right twice, forward, turn left, forward
+<P>This, the <B>Production Rule</B>, is written as:
+<P CLASS="center"><B>F-F++F-F</B>
+<P>Formally:
+<P CLASS="center"><B>F&nbsp;&nbsp;-&gt;&nbsp;&nbsp;F-F++F-F</B>
+<P>After stage one our Axiom (<B>F</B>) becomes <B>F-F++F-F</B> - see picture <B>1</B> below.
+<P>The output from stage 1 is used as Axiom in stage 2. Again we substitute with the sequence above getting:
+<P CLASS="center"><B>F-F++F-F - F-F++F-F ++ F-F++F-F - F-F++F-F</B>
+<P>This is shown in picture <B>2</B> below.
+<P>The output from stage 2 is used as Axiom in stage 3. After substitution:
+<P CLASS="center">
+<TABLE BORDER="0">
+<TR><TD ALIGN="LEFT"><B>F-F++F-F - F-F++F-F ++ F-F++F-F - F-F++F-F -</B></TD></TR>
+<TR><TD ALIGN="LEFT"><B>F-F++F-F - F-F++F-F ++ F-F++F-F - F-F++F-F ++</B></TD></TR>
+<TR><TD ALIGN="LEFT"><B>F-F++F-F - F-F++F-F ++ F-F++F-F - F-F++F-F -</B></TD></TR>
+<TR><TD ALIGN="LEFT"><B>F-F++F-F - F-F++F-F ++ F-F++F-F - F-F++F-F</B></TD></TR>
+</TABLE>
+<P>... and so on. As you can see from the pictures below, the pictures are getting richer and richer on details.
+<P CLASS="center">
+<TABLE BORDER="0"><TR>
+<TD><P><B>1</B> - stage 1:<BR><IMG SRC="gfx/tut1.gif" WIDTH="160" HEIGHT="160" ALT="Von Koch Snowflake - stage 1"></TD><TD>&nbsp;&nbsp;&nbsp;</TD>
+<TD><P><B>2</B> - stage 2:<BR><IMG SRC="gfx/tut2.gif" WIDTH="160" HEIGHT="160" ALT="Von Koch Snowflake - stage 2"></TD><TD>&nbsp;&nbsp;&nbsp;</TD>
+<TD><P><B>3</B> - stage 3:<BR><IMG SRC="gfx/tut3.gif" WIDTH="160" HEIGHT="160" ALT="Von Koch Snowflake - stage 3"></TD>
+</TR>
+</TABLE>
+<P>A great deal of imagination is required for creating good-looking 0L Systems - try it and see for yourself :)
+
+<P><BR><P><BR>
+<H3>Turtle commands</H3>
+<P>The turtle understands a basic set of commands:
+<UL>
+<LI><B>F</B>&nbsp;&nbsp;&nbsp;&nbsp;draw a line forward.
+<LI><B>f</B>&nbsp;&nbsp;&nbsp;&nbsp;move a step forward.
+<LI><B>+</B>&nbsp;&nbsp;&nbsp;&nbsp;turn right by the number of degrees given on the Axiom form.
+<LI><B>-</B>&nbsp;&nbsp;&nbsp;&nbsp;turn left by the number of degrees given on the Axiom form.
+<LI><B>|</B>&nbsp;&nbsp;&nbsp;&nbsp;turn 180&deg; (turn back).
+<LI><B>[</B>&nbsp;&nbsp;&nbsp;&nbsp;save turtle state on stack (coordinates and direction).
+<LI><B>]</B>&nbsp;&nbsp;&nbsp;&nbsp;restore turtle state from stack (coordinates and direction).
+</UL>
+<P>... later versions will feature colour-commands. Can somebody please donate a M505? :)
+
+<P><BR><P><BR>
+<H3>Working with 0L Systems</H3>
+<P>When starting 0L Systems you are met with the Axiom form:<P><IMG SRC="gfx/axiom.gif" WIDTH="160" HEIGHT="160" ALT="Axiom form">
+<UL>
+<LI><I>Depth:</I> this is the number of iterations to be done. Depending on the version of the OS, amount of RAM and complexity of Axiom and Production Rules this can be as low as 3 or 4 and as high as 13 or 14 ... or even higher!
+<LI><I>Angle:</I> this is the angle to turn by a single <B>+</B> or <B>-</B> command.
+<LI><I>Axiom</I> this is where you enter the Axiom (* surprise, surprise *).
+</UL>
+<P>Press <I>Rules</I> to go to the <B>Production Rules</B> form. Press <I>Load</I> to load one of the default L Systems installed.
+<P>On the <B>Production Rules</B> form you enter the various production rules:<P><IMG SRC="gfx/production.gif" WIDTH="160" HEIGHT="160" ALT="Production Rules form">
+<P>You can override the meaning of the <B>F</B> and <B>f</B> commands - this is f.ex. done in the Von Koch Snowflake curve.
+<P>Press <I>Generate</I> to start rendering. Press <I>Axiom</I> to go back to the Axiom form - input written on the Axiom and Production Rules forms is saved between the forms. So you can switch back and forth between these forms without loosing input. Press <I>Clear</I> to clear all fields on the Production Rules form.
+<P>Rewriting of the string can take some time. While working the following view is shown:<BR><P><IMG SRC="gfx/working.gif" WIDTH="160" HEIGHT="160" ALT="Working ...">
+<P>Press <I>Cancel</I> to abort.
+<P>When the string has been rendered, you have the option to save the data used to create the string.
+
+<P><BR><P><BR>
+<H3>Hints</H3>
+<P>If you during string expansion gets the dreaded "Out of memory" box try to lower the <B>depth</B>.
+<P>Using the default 0L Systems as base for your own experiments seems like a good idea.
+<P>Strange <B>angles</B> usually results in strange drawings unless used in conjunction with the <B>push</B> and <B>pop</B> commands.
+
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>Download 0L Systems - <A HREF="http://www.schau.com/gz/palm/0lsys/p0ls.zip">www.schau.com/gz/palm/0lsys/p0ls.zip</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

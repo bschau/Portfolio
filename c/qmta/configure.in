@@ -1,0 +1,59 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(test/database.c)
+
+dnl BSC
+AC_SUBST(OSTYPE)dnl
+AC_SUBST(ARFLAGS)dnl
+AC_SUBST(SUBDIRS)dnl
+AC_SUBST(QROOT)dnl
+
+OSTYPE="OS`uname -s`"
+ARFLAGS="rc"
+SUBDIRS="libqmta qinputd qoutputd qscand qtools qmkdb test"
+QROOT="/dmo/qmta"
+LIBS="-lresolv"
+CFLAGS="-O2 -Wall"
+case "$OSTYPE" in
+	OSLinux)
+		;;
+	OSOSF1)
+		LIBS="$LIBS -lrt"
+		CFLAGS="$CFLAGS -D__DECC"
+		;;
+	*)
+		echo "Cannot build for this platform ($OSTYPE)"
+		exit 1
+		;;
+esac
+AC_PROG_CC
+AC_PROG_RANLIB
+AC_CHECK_PROG(AR, "ar", "ar", ":")
+dnl END-BSC
+
+dnl Checks for programs.
+AC_PROG_INSTALL
+
+dnl Checks for libraries.
+dnl Replace `main' with a function in -lsavi:
+AC_CHECK_LIB(savi, main)
+
+dnl Checks for header files.
+AC_HEADER_DIRENT
+AC_HEADER_STDC
+AC_HEADER_SYS_WAIT
+AC_CHECK_HEADERS(fcntl.h sys/ioctl.h syslog.h unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_UID_T
+AC_TYPE_PID_T
+AC_TYPE_SIZE_T
+AC_STRUCT_TM
+
+dnl Checks for library functions.
+AC_PROG_GCC_TRADITIONAL
+AC_FUNC_MEMCMP
+AC_FUNC_STRFTIME
+AC_CHECK_FUNCS(gethostname mkdir rmdir select socket strdup)
+
+AC_OUTPUT(qinputd/Makefile qoutputd/Makefile libqmta/Makefile qscand/Makefile qmkdb/Makefile qtools/Makefile test/Makefile Makefile)

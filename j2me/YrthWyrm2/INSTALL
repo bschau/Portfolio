@@ -1,0 +1,11 @@
+INSTALL
+-------
+
+
+You need j2mec installed.   You can get j2mec from:
+
+	http://www.schau.com/midlets/j2mec/index.html
+
+
+1) Run make
+2) Install the resulting YrthWyrm2.jar.

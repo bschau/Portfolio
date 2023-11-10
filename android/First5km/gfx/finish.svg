@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="31px" height="28px" viewBox="0 0 31 28" zoomAndPan="enabled">
+	<circle cx="10" cy="17" r="9" fill="#e5f545" stroke="black" />
+	<path d="M5,18 A1 1 0 0 0 15 18" fill="#e5f545" stroke="black" />
+	<circle cx="6" cy="15" r="1" fill="black" stroke="none" />
+	<circle cx="14" cy="15" r="1" fill="black" stroke="none" />
+	<ellipse cx="25" cy="8" rx="4" ry="7" fill="#e5f545" stroke="black" />
+	<ellipse cx="25" cy="17" rx="5" ry="2" fill="#e5f545" stroke="black" />
+	<ellipse cx="24" cy="21" rx="4" ry="2" fill="#e5f545" stroke="black" />
+	<ellipse cx="24" cy="25" rx="4" ry="2" fill="#e5f545" stroke="black" />
+</svg>

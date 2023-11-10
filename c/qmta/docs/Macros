@@ -1,0 +1,15 @@
+The following macros can be used in string- or fileexpand:
+
+%E	Elink errors
+%P	Postmaster
+%R	Recipient (RCPT TO:)
+%S	Sender (MAIL FROM:)
+%T	RFC821 Time stamp
+%Y	All recipients
+%d	Domainname
+%f	Fqdn
+%h	Hostname
+%i	Remote ip-address
+%l	Dump of 'line'
+%m	Message id
+%r	Remote name

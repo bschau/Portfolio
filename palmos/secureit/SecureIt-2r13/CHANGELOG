@@ -1,0 +1,126 @@
+Changelog for Secure It.
+
+v2r13 (2004-01-23)
+	Security Fix: Secure It erases the clipboard before exiting so that
+	anything stored in the clipboard when Secure It executes is not
+	compromised when Secure It exits. Thanks to Mario Chisari for spotting
+	that one!
+
+v2r12 (2003-10-16)
+	BugFix: log out when pressing the power key also works on visors.
+
+v2r11 (2003-05-27)
+	If you are in a edit view and switches to another application your
+	data in the fields are now saved - the next time you open Secure It
+	you will open up in the edit mode of the saved data (Zdenek Buk).
+	Secure It only logs out if the system is powered down when pressing
+	the power key - pressing and holding the power key toggles backlight
+	as it should (Zdenek Buk).
+	Hires icons created by Jeroen Witteman.
+
+v2r10 (2003-03-08)
+	Fixed a memory bug.
+	German version of Secure It (Christian Bolz).
+	Moved the Webpage from www.schau.com/palm/sit to www.schau.com/sit.
+
+v2r9 (2003-03-02)
+	Dismissing the "Do you want to delete ..." dialog no longer generates
+	an error (me).
+	French version of Secure It (Marc Collin).
+
+v2r8 (2002-12-10)
+	Fixed another memory/resource leak. This should make the annoying
+	"MemoryMgr.c line xxxx: Chunk over-locked." go away (several).
+	When the name of an existing record is changed, sort database so
+	the new name is placed in order (several).
+
+v2r7 (2002-03-06)
+	Logout on power off (Elka).
+
+v2r6 (2002-03-01)
+	Fixed memory leaks (Robert Harder).
+	'Use Prefs' in Options->Security (Me).
+	Lock device if Idle time is exceeded (Elka).
+
+v2r5 (2002-01-27)
+	Import entries in sort order (Uwe von der Wege).
+	Export functionality (by popular demand :).
+	Creatorid and Databasetype set properly (me).
+	Code cleanup (me).
+	Nice launcher icons - in colour :)  (Uwe von der Wege).
+
+v2r4 (2002-01-23)
+	Remember selected item in lists (Uwe von der Wege).
+	Page scroll on all lists (me).
+
+v2r3 (2002-01-21)
+	Do not store edited records in 'unfiled' category - place them in their
+	old category (Uwe Von Der Wege).
+	Pagescrolling on main list (Uwe Von Der Wege).
+	Config option to the above pagescrolling (me).
+
+v2r2 (2002-01-18)
+	Funny pattern on pincode entry forms and import forms gone.
+	Change Password now works again (Riker42).
+	Buttons in menu command bar now works (Allan Marillier).
+	Empty fields not allowed (Allan Marillier).
+	Can now import from selectable category in Memo Pad to selectable
+	category in Secure It (me).
+	Hard scrollkeys works (Josh Klein).
+	Delete templates added ... (various  :-).
+	Secure It remembers the category (Josh Klein).
+	Textual password entry got toggle button (Jim Kern).
+	Various minor bugs fixed (me).
+	Secure It should now be complete compatible with OS 2.0 - I have
+	stressed/tested Secure It on POSE with an original OS 2.0 rom (me).
+
+v2r1 (2001-08-16)
+	Support for PiLoc.  Tested on "PiLoc 2.17 with BIDI support" and the
+	Hebrew language.    Thanks to all at PenReader.Com for the demo
+	version.   Suggested by Yehuda.
+	Templates, added 'Secure It Templates' database (me).
+	Status screen while importing/changing passwords (me).
+	Import function. Imports from Memo Pad 'Unfiled' cateogry (me and
+	Henrik Schledermann).
+	About section changed (me).
+	'Description' renamed to 'Title' and expanded to 255 characters (me).
+	'Content' renamed to 'Secret' and expanded to 16383 characters (me).
+	Everybody's favorite: scrollbars (numerous).
+	'All' category Added (suggested by Allan Marillier).
+	Shortcuts for moving between fields implemented (me).
+	Renamed database to 'Secure It Secrets' - now there is some logic
+	between application and database :)  (me).
+
+v1r8 (2001-07-26)
+	Added Business/Personal to the categories list (suggested by Jan Lund
+	Thomsen).
+	In non quick-access mode, categories is placed in upper right corner
+	as just about everybody is used to :)  (suggested by Jan Lund Thomsen).
+	Database can now be backed up (suggested by W. Michael Stone).
+	Menus reworked, new names (suggested by several people).
+	Added new password dialog - a single text field (suggested by
+	Mike Hanson).
+	Added new password dialog - calculator layout (suggested by Jan Lund
+	Thomsen).
+	'Thanks' in about menu (me).
+	Reworked companion website (http://www.brisse.dk/palm/secureit) - the
+	manual comes in several formats now.
+
+v1r7 (2001-06-28):
+	Added undo, copy, cut, paste and select all to the edit menu.
+
+v1r6 (2001-06-27):
+	Records are now tied to the category they reside in.   In older versions
+	it was possible for a new record in one category to overwrite a record
+	with the same key but in a different category.
+
+v1r5 (2001-06-15):
+	System should run on 2.0 now (largeBoldFont comes in OS 3.0 - changed
+	usage to largeFont).
+
+v1r4 (2001-06-03):
+	Added 'support' menu item.
+
+v1r3 (2001-06-01):
+	Disabled timeouts while system dialogs are shown.
+	Added Graffiti-state indicator.  Upper-/Lowercase now works.

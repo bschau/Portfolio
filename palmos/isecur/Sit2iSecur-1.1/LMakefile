@@ -1,0 +1,31 @@
+ifndef a
+	include TopMake.mk
+endif
+
+all:	distclean
+	compile
+	package
+
+package:
+	echo Packaging Sit2iSecur
+	a = $(APPNAME)\-$(VERSION)
+	mkdir $(a)
+	cp Docs/* $(a)
+	cp src/$(APPNAME).prc $(a)
+	zip -r $(a).zip $(a)
+
+compile:
+	lmake -C src initall
+	lmake -C src -DDEBUG=0
+
+distclean:
+	lmake -C src distclean
+	lmake -C GenTables distclean
+	rm -f Docs/*~ 
+	rm -f *~ 
+	rm -fr Sit2iSecur-*
+
+archive:	distclean
+	a = $(APPNAME)\-$(VERSION)
+	tar cjf ../$(a).tar.bz2 ../$(a)
+

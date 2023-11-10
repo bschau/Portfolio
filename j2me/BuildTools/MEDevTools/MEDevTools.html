@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>MEDevTools Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<style type="text/css">
+body {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: tahoma,verdana,geneva,sans-serif;
+}
+
+th {
+	text-align: left;
+	vertical-align: top;
+	padding-right: 1em;
+}
+
+td { text-align: left; }
+
+dt { color: #008844; }
+
+h1 {
+	border-top: 1px dotted #131315;
+	border-bottom: 1px dotted #131315;
+}
+</style>
+</head>
+<body>
+	<h1>MEDevTools Manual</h1>
+	<ul>
+		<li><a href="#metacreator">MetaCreator</a></li>
+		<li><a href="#trlclasscreator">TrlClassCreator</a></li>
+	</ul>
+		
+	<h3>Introduction</h3>
+	<p>MEDevTools is a collection of Ant tasks which can aid in developing J2ME applications.</p>
+
+	<h3>Requirements</h3>
+	<ul>
+		<li><a href="http://ant.apache.org/">Ant</a> (obviously ..) - I use ant-1.7.1.</li>
+		<li>Linux, Windows or Mac OS X. MEDevTools has been developed and used on Slackware (12+) and Ubuntu (14.10+) Linux, Windows Vista and Mac OS X 10.5 (leopard).</li>
+	</ul>
+
+	<h3>Installation</h3>
+	<h5>Binary</h5>
+	<p>Copy the <code>MEDevTools.jar</code> file to f.ex. the Ant <code>lib</code> directory or some other directory of your choice.</p>
+	<h5>Source</h5>
+	<p>You need <a href="http://ant.apache.org/">Ant</a> to build MEDevTools. In the top-level directory of the source distribution type <code>ant</code>. When ant is finished copy <code>src/MEDevTools.jar</code> to f.ex. the Ant <code>lib</code> directory or some other directory of your choice.</p>
+
+	<p><a name="metacreator"><br /></a></p><h1>MetaCreator</h1>
+	<p>The MetaCreator is used to generate the manifest file and the jad file.</p>
+	<p>Before using MetaCreator you need to define it as a task within your project:</p>
+	<pre>
+        &lt;target name="init" description="Taskdef the MetaCreator task"&gt;
+            &lt;taskdef name="meta" classname="dk.schau.MEDevTools.MetaCreator" classpath="/path/to/MEDevTools.jar" /&gt;
+        &lt;/target&gt;
+	</pre>
+	<p>The <code>target</code> attributes are not that important but pay attention to the <code>taskdef</code> attributes! <code>name</code> (meta) is the name you want to use when referring to the MetaCreator task. <code>classname</code> must be <b>dk.schau.MEDevTools.MetaCreator</b>. If you copied the MEDevTools.jar to Ants <code>lib</code> directory you can omit the <code>classpath</code> attribute - if not, you have to enter the full path to the MEDevTools.jar file.</p>
+	<p>Remember to <code>taskdef</code> before use!</p>
+
+	<h3>Usage</h3>
+	<p>To use MetaCreator:</p>
+	<pre>
+	&lt;meta showversion=".."
+              buildjad=".."
+              manifest=".."
+              jadfile=".."
+              jarfile=".."
+              name=".."
+              vendor=".."
+              version=".."
+              midp=".."
+              cldc=".."
+              url=".." &gt;
+            &lt;midlet name=".." entry=".." icon=".." /&gt;
+                         .
+                         .
+            &lt;midlet name=".." entry=".." icon=".." /&gt;
+
+            &lt;attribute name=".." value=".." /&gt;
+                         .
+                         .
+            &lt;attribute name=".." value=".." /&gt;
+
+            &lt;jadattribute name=".." value=".." /&gt;
+                         .
+                         .
+            &lt;jadattribute name=".." value=".." /&gt;
+
+            &lt;manifestattribute name=".." value=".." /&gt;
+                         .
+                         .
+            &lt;manifestattribute name=".." value=".." /&gt;
+        &lt;/meta&gt;
+	</pre>
+	<p>MetaCreator accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>showversion</th>
+			<td>Show version information when running MetaCreator. To show version information set to <code>true</code> or <code>on</code> or <code>1</code> or <code>yes</code>. Other values hides version information. Default is <code>true</code>.</td>
+		</tr>
+
+		<tr>
+			<th>buildjad</th>
+			<td>Set this to <code>true</code> to build a <code>.jad</code> file. Other values or if omitted defaults to building a manifest file. If buildjad is set to true you <b>must</b> specify jadfile and jarfile below. If buildjad is false or not set you <b>must</b> specify manifest below.</td>
+		</tr>
+
+		<tr>
+			<th>manifest</th>
+			<td>Full path to the manifest file. Default is <code>manifest.mf</code>.</td>
+		</tr>
+
+		<tr>
+			<th>jadfile</th>
+			<td>Full path to the jad file. Default is <code>output.jad</code>.</td>
+		</tr>
+
+		<tr>
+			<th>jarfile</th>
+			<td>Path to the accompanying jar file.</td>
+		</tr>
+
+		<tr>
+			<th>name</th>
+			<td>Name of MIDlet suite (MIDlet-Name).</td>
+		</tr>
+
+		<tr>
+			<th>vendor</th>
+			<td>Name of vendor (MIDlet-Vendor).</td>
+		</tr>
+
+		<tr>
+			<th>version</th>
+			<td>MIDlet suite version (MIDlet-Version). Default is <code>1.0</code>.</td>
+		</tr>
+
+		<tr>
+			<th>midp</th>
+			<td>MIDP version (MicroEdition-Profile). Default is <code>2.0</code>.</td>
+		</tr>
+
+		<tr>
+			<th>cldc</th>
+			<td>CLDC version (MicroEdition-Configuration). Default is <code>1.1</code>.</td>
+		</tr>
+
+		<tr>
+			<th>url</th>
+			<td>If set this is the deployment url of the jar file. This is an optional attribute which is seldom used during development ...</td>
+		</tr>
+	</table>
+
+	<p>Within a &lt;meta&gt; .. &lt;/meta&gt; pair you must have one or more &lt;midlet&gt; definitions and optionally one or more &lt;attribute&gt;, &lt;jadattribute&gt; or &lt;manifestattribute&gt; definitions.</p>
+	<pre>
+	&lt;midlet name=".."
+                entry=".."
+                icon=".." /&gt;
+	</pre>
+	<p>midlet accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>name</th>
+			<td>Name of MIDlet.</td>
+		</tr>
+
+		<tr>
+			<th>entry</th>
+			<td>Main Class of MIDlet.</td>
+		</tr>
+
+		<tr>
+			<th>icon</th>
+			<td>Icon file for MIDlet.</td>
+		</tr>
+	</table>
+
+	<pre>
+	&lt;attribute name=".."
+                   value=".." /&gt;
+	</pre>
+	<p>attribute accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>name</th>
+			<td>Name of attribute.</td>
+		</tr>
+
+		<tr>
+			<th>value</th>
+			<td>Value of attribute.</td>
+		</tr>
+	</table>
+	<p>Attributes show up in both jad and manifest files.</p>
+	<p>You can also specify &lt;jadattribute;&gt; or &lt;manifestattribute&gt;. The format for these follows the &lt;attribute&gt; above. &lt;jadattribute&gt; only shows up in .jad files. &lt;manifestattribute&gt; only shows up in the manifest file.</p>
+
+	<h3>Example</h3>
+	<p>The following example has been taken from the Test Midlet in the MEDevTools source archive. The ${buildJad} variable controls if a manifest file or a .jad file is built:</p>
+	<pre>
+        &lt;target name="meta"&gt;
+            &lt;taskdef name="meta" classname="dk.schau.MEDevTools.MetaCreator" classpath="/opt/AntTasks/MEDevTools.jar" /&gt;
+            &lt;meta showversion="true"
+                  buildjad="${buildJad}"
+                  jadfile="../temp/final/TestMIDlet-en.jad"
+                  jarfile="../temp/final/TestMIDlet-en.jar"
+                  manifest="../temp/manifest.mf"
+                  name="Test"
+                  vendor="Schau.Com"
+                  version="1.0"
+                  midp="2.0"
+                  cldc="1.1"&gt;
+                &lt;midlet name="Test" entry="TestMIDlet" icon="/icon.png" /&gt;
+                &lt;attribute name="globalattr1" value="globalvalue1" /&gt;
+                &lt;attribute name="globalattr2" value="globalvalue2" /&gt;
+                &lt;jadattribute name="jadattr1" value="jadvalue1" /&gt;
+                &lt;jadattribute name="jadattr2" value="jadvalue2" /&gt;
+                &lt;manifestattribute name="manifestattr1" value="manifestvalue1" /&gt;
+                &lt;manifestattribute name="manifestattr2" value="manifestvalue2" /&gt;
+            &lt;meta&gt;
+        &lt;target&gt;
+	</pre>
+
+	<p><a name="trlclasscreator"><br /></a></p><h1>TrlClassCreator</h1>
+	<p>TrlClassCreator can be used to create a Strings class files. The Strings class file can be used when localizing programs. Other means of doing the same is by using <a href="http://www.gnu.org/software/gettext/">GNU GetText</a>.</p>
+	<p>TrlClassCreator takes a set of strings and creates a java file with final identifiers.</p>
+	<p>Optionally, TrlClassCreater will overlay a set of strings on another set of strings and then output the combined set of strings.</p>
+
+	<p>Before using TrlClassCreator you need to define it as a task within your project:</p>
+	<pre>
+        &lt;target name="init" description="Taskdef the TrlClassCreator task"&gt;
+            &lt;taskdef name="trl" classname="dk.schau.MEDevTools.TrlClassCreator" classpath="/path/to/TMEDevTools.jar" /&gt;
+        &lt;/target&gt;
+	</pre>
+	<p>The <code>target</code> attributes are not that important but pay attention to the <code>taskdef</code> attributes! <code>name</code> (trl) is the name you want to use when referring to the TrlClassCreator task. <code>classname</code> must be <b>dk.schau.MEDevTools.TrlClassCreator</b>. If you copied the MEDevTools.jar to Ants <code>lib</code> directory you can omit the <code>classpath</code> attribute - if not, you have to enter the full path to the MEDevTools.jar.</p>
+	<p>Remember to <code>taskdef</code> before use!</p>
+
+	<h3>Usage</h3>
+	<p>To use TrlClassCreator:</p>
+	<pre>
+	&lt;trl showversion="true"
+             strings=""
+             base=""
+             destfile="Trl.java"
+             package=""
+             usespaces="false"
+	     tabwidth="1"
+             encoding="UTF-8" &gt;
+            &lt;base key="str1name"&gt;str1value&lt;/base&gt;
+                         .
+                         .
+            &lt;base key="strXname"&gt;strXvalue&lt;/base&gt;
+
+            &lt;string key="str1name"&gt;str1value&lt;/string&gt;
+                           .
+                           .
+            &lt;string key="strXname"&gt;strXvalue&lt;/string&gt;
+        &lt;/trl&gt;
+	</pre>
+	<p>TrlClassCreator accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>showversion</th>
+			<td>Show version information when running TrlClassCreator. To show version information set to <code>true</code> or <code>on</code> or <code>1</code> or <code>yes</code>. Other values hides version information. Default is <code>true</code>.</td>
+		</tr>
+
+		<tr>
+			<th>strings</th>
+			<td>File with strings to output. See below.</td>
+		</tr>
+
+		<tr>
+			<th>base</th>
+			<td>A base set of strings. If given, these strings will be merged with the strings above.</td>
+		</tr>
+
+		<tr>
+			<th>dstfile</th>
+			<td>Where to store the class file. Default is <code>Trl.java</code>.</td>
+		</tr>
+
+		<tr>
+			<th>package</th>
+			<td>Set name of package in class file. Default is no package name.</td>
+		</tr>
+
+		<tr>
+			<th>usespaces</th>
+			<td>Use spaces instead of tabs in class file. Default is <code>false</code>.</td>
+		</tr>
+
+		<tr>
+			<th>tabwidth</th>
+			<td>Number of tabs/spaces to output. Default is <code>1</code>.</td>	
+		</tr>
+
+		<tr>
+			<th>encoding</th>
+			<td>Input/Output encoding. Default is <code>UTF-8</code>.</td>
+		</tr>
+	</table>
+
+	<p>Within a <code>&lt;trl&gt; .. &lt;/trl&gt;</code> pair you can have one or more <code>&lt;base&gt;</code> or <code>&lt;string&gt;</code> definitions.</p>
+	<pre>
+	&lt;base key="key"&gt;value&lt;/base&gt;
+	</pre>
+	<p>This will load the key <code>key</code> with the value <code>value</code> into the base tree.</p>
+
+	<pre>
+	&lt;string key="key"&gt;value&lt;/string&gt;
+	</pre>
+	<p>This will load the key <code>key</code> with the value <code>value</code> into the strings tree.</p>
+
+	<h3>String Files</h3>
+	<p>A string file to be used as a base or strings file must follow a simple pattern:</p>
+	<ul>
+		<li>The file contains one or more <code>key</code>/<code>value</code> pairs. The key is separated by the value by one or more whitespaces.</li>
+		<li>A comment is started using <b>#</b>. A comment can only start on the first column of the line.</li>
+		<li>A value which must span multiple lines must end in <b>\</b> on each line except for the last line.</li>
+		<li>Comments within multiple lines are ignored.</li>
+	</ul>
+
+	<h3>Example</h3>
+	<p>The following example will:</p>
+	<ol>
+		<li>create a Trl.java file with danish content.</li>
+		<li>the Trl.java belongs to the package <b>dk.schau.TrlTest</b>.</li>
+	</ol>
+	<p>Note that the taskdef is done in the same target as the actual usage of TrlClassCreator. This is perfectly OK - just remember to <code>taskdef</code> before use!</p>
+
+	<pre>
+	&lt;target name="trl"&gt;
+            &lt;taskdef name="trl" classname="dk.schau.MEDevTools.TrlClassCreator" classpath="/opt/AntTasks/MEDevTools.jar" /&gt;
+	    &lt;trl base="en.trl"
+                 strings="da.trl"
+                 destfile="Trl.java"
+                 package="dk.schau.TrlTest" &gt;
+                &lt;base key="poetry"&gt;Roses are red&lt;/base&gt;
+                &lt;string key="poetry"&gt;Roser er r&oslash;de&lt;/string&gt;
+            &lt;/trl&gt;
+        &lt;target&gt;
+	</pre>
+	<p><code>en.trl</code>:</p>
+	<pre>
+        greeting        Hello, world
+	</pre>
+	<p><code>da.trl</code>:</p>
+	<pre>
+        greeting        Hej, verden
+	</pre>
+
+	<p>The resulting Trl.java file looks like:</p>
+	<pre>
+        package dk.schau.TrlTest;
+
+        class Trl {
+                public static final String poetry = "Roser er r&oslash;de";
+                public static final String greeting = "Hej, verden!";
+        }
+	</pre>
+</body>
+</html>

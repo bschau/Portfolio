@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gæt en Lyd</string>
+    <string name="menuabout">Om Gæt en Lyd</string>
+    <string name="menustatistics">Statistik</string>
+    <string name="image1_contentdescription">Billede 1</string>
+    <string name="image2_contentdescription">Billede 2</string>
+    <string name="image3_contentdescription">Billede 3</string>
+    
+    <string name="stat_no_statistics">Ingen statistik.</string>
+    <string name="stat_correct_guesses">Antal rigtige gæt</string>
+    <string name="stat_wrong_guesses">Antal forkerte gæt</string>
+    <string name="stat_guesses">Antal gæt</string>
+    <string name="stat_guess_percentage">Korrekte gæt-%</string>
+    
+	<string name="about">Gæt en Lyd er lavet af Brian Schau.\n\nPrøv også Hør en Lyd for de allermindste - findes på Google Play.</string>
+	<string name="email_to">brian@schau.dk</string>
+	<string name="email_subject">[Gæt en Lyd] Forspørgsel</string>
+	<string name="email_body">Indtast din forspørgsel angående Gæt en Lyd her &#8230;</string>
+</resources>

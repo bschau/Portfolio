@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "name": "kaisub",
+  "description": "A KaiOS frontend to Subsonic",
+  "launch_path": "v1/podcast.html",
+  "icons": {
+    "56": "favicon-56.png",
+    "112": "favicon-112.png",
+    "128": "favicon-128.png"
+  },
+  "developer": {
+    "name": "Brian Schau",
+    "url": "https://brian.schau.dk/"
+  },
+  "locales": {
+    "en-US": {
+      "name": "kaisub",
+      "description": "A KaiOS frontend to Subsonic"
+    }
+  },
+  "default_locale": "en-US"
+}

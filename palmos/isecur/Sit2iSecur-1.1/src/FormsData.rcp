@@ -1,0 +1,128 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.1"
+DATA "AESx" ID AESFwdSBox "tables/sbox-fwd.bin"
+DATA "AESx" ID AESFwdTab0 "tables/FwdTab0.bin"
+DATA "AESx" ID AESFwdTab1 "tables/FwdTab1.bin"
+DATA "AESx" ID AESFwdTab2 "tables/FwdTab2.bin"
+DATA "AESx" ID AESFwdTab3 "tables/FwdTab3.bin"
+DATA "AESx" ID AESRvsSBox "tables/sbox-rvs.bin"
+DATA "AESx" ID AESRvsTab0 "tables/RvsTab0.bin"
+DATA "AESx" ID AESRvsTab1 "tables/RvsTab1.bin"
+DATA "AESx" ID AESRvsTab2 "tables/RvsTab2.bin"
+DATA "AESx" ID AESRvsTab3 "tables/RvsTab3.bin"
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText FILE "data/instructions.txt"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.5 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aPwdNotBlank
+INFORMATION
+BEGIN
+	TITLE "Password(s) Empty"
+	MESSAGE "You must enter valid passwords in both fields!"
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Sit2iSecur"
+
+	FIELD ID cMainFld AT (1 18 150 121) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cMainScrBar AT (152 18 7 121) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 10
+
+	BUTTON "Next" ID cMainNext AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainNext
+	BOTTOMLEFTOBJECTID cMainNext
+	NAVIGATIONMAP
+		ROW cMainFld cMainScrBar
+		ROW cMainNext
+END
+
+FORM ID fPasswords AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Enter Passwords"
+
+	LABEL "Please enter passwords for the" AUTOID AT (10 18)
+	LABEL "Secure It and iSecur databases." AUTOID AT (10 30)
+	LABEL "Note. The passwords will be echoed" AUTOID AT (10 42)
+	LABEL "to the screen while you type!" AUTOID AT (10 54)
+
+	LABEL "Password/PIN Code for Secure It:" AUTOID AT (10 74)
+	FIELD ID cPasswordsSit AT (10 86 140 11) MULTIPLELINES MAXCHARS 24 UNDERLINED
+
+	LABEL "Password for iSecur:" AUTOID AT (10 106)
+	FIELD ID cPasswordsISecur AT (10 118 140 11) MULTIPLELINES MAXCHARS 32 UNDERLINED
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "OK" ID cPasswordsOK AT (CENTER BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fPasswords
+	INITIALSTATE 1
+	INITIALOBJECTID cPasswordsSit
+	BOTTOMLEFTOBJECTID cPasswordsOK
+	NAVIGATIONMAP
+		ROW cPasswordsSit
+		ROW cPasswordsISecur
+		ROW cPasswordsOK
+END
+
+FORM ID fReo AT (0 0 160 160)
+NOFRAME
+BEGIN
+END
+
+FORM ID fDone AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Done"
+
+	LABEL "All your secrets and templates" AUTOID AT (14 40)
+	LABEL "from Secure It has been copied" AUTOID AT (14 52)
+	LABEL "to iSecur." AUTOID AT (14 64)
+	LABEL "Enjoy - and please remember:" AUTOID AT (14 80)
+	LABEL "Don't get lost!" AUTOID AT (CENTER 100) FONT 1
+END

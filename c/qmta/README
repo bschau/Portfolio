@@ -1,0 +1,12 @@
+Kør autoconf for at danne configure
+
+wget:	hvis kompileringen segfault'er skal der indsættes dummy funcnktioner
+	i src. filern:
+
+	static void
+	dummyfunction1(void)
+	{
+		return;
+	}
+
+

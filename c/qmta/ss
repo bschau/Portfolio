@@ -1,0 +1,7 @@
+#!/bin/ksh
+/dmo/qmta/bin/qmta stop
+make
+sleep 2
+make install
+/dmo/qmta/bin/qmta start
+exit 0

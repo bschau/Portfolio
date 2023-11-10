@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kisa</string>
+    <string name="kia_image">Kia Picanto</string>
+    <string name="max_km">Max km. ved denne\nmåneds udløb:</string>
+    <string name="button_save">Gem</string>
+    <string name="button_cancel">Afbryd</string>
+    <string name="prefs_start_year">Startdato, år</string>
+    <string name="prefs_start_month">Startdato, måned</string>
+    <string name="prefs_vdo">Km. tæller</string>
+    <string name="prefs_max_km_pr_year">Max km. p.a.</string>
+</resources>

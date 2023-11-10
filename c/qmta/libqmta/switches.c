@@ -1,0 +1,33 @@
+#define CFASWITCHES
+#include "private.h"
+
+cfa cfaconfig[]={
+	{ "commandtimeout", "SMTP command timeout", &helpcommandtimeout, CFAINT, &comtimeout, 180, NULL, NULL, 0 },
+	{ "logfacility", "Log facility", &helplogfacility, CFASTR, NULL, 0 , &privlogf, "LOG_LOCAL0", 0 },
+	{ "ideurl", "Url to IDEs", &helpideurl, CFASTR, NULL, 0, &ideurl, "http://www.sophos.com/downloads/ide/ides.zip", 0 },
+	{ "inputconnections", "Max inbound connections", &helpinputconnections, CFAINT, &imaxchilds, 100, NULL, NULL, 0 },
+	{ "inputtime", "Max input-session time (in seconds)", &helpinputtime, CFAINT, &itime, 1800, NULL, NULL, 0 },
+	{ "interdelay", "Delay between filecheck (in seconds)", &helpinterdelay, CFAINT, &interdelay, 1, NULL, NULL, 0 },
+	{ "localmailto", "Where to send local mail to", &helplocalmailto, CFASTR, NULL, 0, &localmailto, NULL, 0 },
+	{ "logrecipients", "Log recipients", &helplogrecipients, CFAINT, &logrecipients, 0, NULL, NULL, 0 },
+	{ "mailretry", "Minutes between delivery attempts", &helpmailretry, CFAINT, &mailretry, 30, NULL, NULL, 0 },
+	{ "maxage", "Max queue age of mail", &helpmaxage, CFAINT, &maxage, 48, NULL, NULL, 0 },
+	{ "maxload", "Max load average", &helpmaxload, CFAINT, &maxload, 4, NULL, NULL, 0 },
+	{ "maxmailsize", "SMTP max mail size", &helpmaxmailsize, CFAINT, &maxmailsize, 0, NULL, NULL, 0 },
+	{ "maxrecipients", "SMTP max recipients", &helpmaxrecipients, CFAINT, &maxrecipients, 100, NULL, NULL, 0 },
+	{ "munpack", "Path to munpack program", &helpmunpack, CFASTR, NULL, 0, &munpackbin, "/dmo/qmta/bin/munpack", 0 },
+	{ "outputconnections", "Max outbound connections", &helpoutputconnections, CFAINT, &omaxchilds, 10, NULL, NULL, 0 },
+	{ "outputtime", "Max output-session time (in seconds)", &helpoutputtime, CFAINT, &otime, 1800, NULL, NULL, 0 },
+	{ "rbl", "Host to use for rbl-check", &helprbl, CFASTR, NULL, 0, &rblhost, "blackholes.mail-abuse.org", 0 },
+	{ "relayname", "Name of this relay host", &helprelayname, CFASTR, NULL, 0, &relayname, NULL, 0 },
+	{ "savihome", "SAVI root directory", &helpsavihome, CFASTR, NULL, 0, &savihome, "/usr/local/sav", 0 },
+	{ "sleephard", "Emergency sleep (hard)", &helpsleephard, CFAINT, &sleephard, 300, NULL, NULL, 0 },
+	{ "sleepqueue", "Sleep between queue runs", &helpsleepqueue, CFAINT, &sleepqueue, 60, NULL, NULL, 0 },
+	{ "sleepsoft", "Busy sleep (soft)", &helpsleepsoft, CFAINT, &sleepsoft, 60, NULL, NULL, 0 },
+	{ "spamcheck", "Spamcheck action flag", &helpspamcheck, CFAINT, &spamcheckact, 1, NULL, NULL, 0 },
+	{ "spooldirectory", "Spool directory", &helpspooldirectory, CFASTR, NULL, 0, &spooldir, "/var/spool/qmta", 0 },
+	{ "sweepalarm", "Max sweep run seconds", &helpsweepalarm, CFAINT, &smaxsweep, 300, NULL, NULL, 0 },
+	{ "sweepchilds", "Max sweep childs", &helpsweepchilds, CFAINT, &smaxchilds, 4, NULL, NULL, 0 },
+	{ "user", "User to run as", &helpuser, CFASTR, NULL, 0, &user, "mta", 0 },
+	{ NULL },
+};

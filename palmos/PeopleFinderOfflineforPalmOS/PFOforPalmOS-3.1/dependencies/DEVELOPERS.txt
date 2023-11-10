@@ -1,0 +1,39 @@
+DLL files
+---------
+
+The following dll files must be placed in the root folder of pfoc.exe:
+
+	Instaide.dll
+	ICSharpCode.SharpZipLib.dll
+
+
+
+
+Wizard
+------
+
+The Wizard component used in this project is from:
+
+	http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp
+
+
+
+
+Sharp Zip Lib
+-------------
+
+The Sharp Zip Lib is from:
+
+	http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx
+
+
+
+
+Icons
+-----
+
+The icons was taken from:
+
+	http://www.icongalore.com/promotion-icons/windows-xp-icons-download.htm
+
+

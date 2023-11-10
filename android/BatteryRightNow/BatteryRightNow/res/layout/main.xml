@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/scrollpane"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/background">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/background">
+		
+		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp"
+			android:layout_gravity="center" >
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_present"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_present"
+					style="@style/td" />
+			</TableRow>
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_level"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_level"
+					style="@style/td" />
+			</TableRow>
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_voltage"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_voltage"
+					style="@style/td" />
+			</TableRow>
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_temperature"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_temperature"
+					style="@style/td" />
+			</TableRow>
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_technology"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_technology"
+					style="@style/td" />
+			</TableRow>
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_status"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_status"
+					style="@style/td" />
+			</TableRow>
+
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_health"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_health"
+					style="@style/td" />
+			</TableRow>
+			
+			<TableRow>
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:text="@string/bi_pluggedin"
+					style="@style/th" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/bi_pluggedin"
+					style="@style/td" />
+			</TableRow>
+		</TableLayout>
+
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/about"
+			style="@style/about" />
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,4 @@
+Font:	Ubuntu-Title, size 22
+Grøn knap: Colorize (h: 108, s: 50, l: 0)
+Rød knap: Colorize (h: 0, s: 50, l: 0)
+Grå knap: Desaturate (lightness)

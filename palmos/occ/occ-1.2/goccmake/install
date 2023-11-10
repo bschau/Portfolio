@@ -1,0 +1,37 @@
+gOCCMake v1.0
+-------------
+
+
+gOCCMake is a standalone OCC-compiler for win32 (windows 9x, Me, NT, 2000 and
+possibly XP).
+
+The OCC technology is described at:
+
+	http://www.schau.com/palm/occ/
+
+
+
+
+
+Installation
+------------
+
+
+Extract the archive to c:\Program Files using WinZip or pkUnZip.   This will
+create a directory, GOCCMAKE, containing three files:
+
+GOCCMAKE.EXE	-	The compiler
+LARGE.BMP	-	Default large icon
+SMALL.BMP	-	Default small icon
+
+Feel free to change the icons - see the link above for restrictions.
+
+
+
+
+
+Kind regards,
+Brian Schau
+Author of OCC
+
+

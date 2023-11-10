@@ -1,0 +1,34 @@
+v1.6 (2005-12-12)
+	Fixed a bug where the receiving handheld would crash when beaming
+	templates.
+	Changed versioning from vXrY to vX.Y.
+
+v1r5 (2005-06-14)
+	When HotSyncing the categories etc. was disrupted. This has now been
+	fixed (Kay Klutchko).
+	The Keyword Help menu option is now also available from the Keywords
+	screen (Kay Klutchko).
+	Fixed a minor bug where to last view was not correctly restored when
+	entering the program (Kay Klutchko).
+
+v1r4 (2005-06-12)
+	Fixed a smaller bug where deleted templates/keywords may reappear when
+	HotSync'ing.
+	Added the Keyword Help menu option (Kay Klutchko).
+
+v1r3 (2005-05-31)
+	Bug fixed where you couldn't import a single template when in the 'All'
+	category (Glenn Hervieux).
+	Fixed some other import/export bugs.
+
+v1r2 (2005-05-26)
+	Fixed a bug which triggered "../Story.c,Line:473,(StorySaveKeywords) Out
+	of memory." (Glenn Hervieux).
+	When you select the Clear Keywords list all keywords belonging to the
+	story are cleared - incl. the history (saved) list (Glenn Hervieux).
+	If you had lesser keywords than what is possible on the keywords screen
+	the display looked ... strange - too many scissors. Now there are only
+	as many scissors as fields.
+
+v1r1 (2005-05-23)
+	First public release.

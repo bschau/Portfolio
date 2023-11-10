@@ -1,0 +1,2 @@
+APPNAME	=	MathAce
+VERSION	=	1.9

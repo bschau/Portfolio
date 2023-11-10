@@ -1,0 +1,32 @@
+#include "resources.h"
+
+/*******************************************************************************
+*GLOBAL
+*	Global data.	
+*/
+VERSION "1r1"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/sepel1.bmp" BPP 1 DENSITY 1
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/sepes1.bmp" BPP 1 DENSITY 1
+END
+
+ALERT ID aNoPreferences
+INFORMATION
+BEGIN
+	TITLE "Preferences missing"
+	MESSAGE "Cannot find the preferences block for Secure It"
+	BUTTONS "OK"
+END
+
+ALERT ID aPreferencesReset
+INFORMATION
+BEGIN
+	TITLE "Preferences Reset"
+	MESSAGE "Preferences was reset - password dialog set to 'Textual'."
+	BUTTONS "OK"
+END

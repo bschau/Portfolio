@@ -1,0 +1,83 @@
+--
+Ian Wilkins
+London, England.
+
+-------- Original Message --------
+From: Brian Schau <brian@schau.com>
+To: Ian Wilkins <ian.wilkins@Safe-mail.net>
+Subject: Re: iSecur V1.4
+Date: Thu, 21 Dec 2006 19:23:06 +0100
+
+> > Hi Ian,
+> > 
+> > 
+>> > > Forget my previous email.
+> > 
+> > Ok  :-) 
+> > 
+>> > > Sit2iSecur put a lot of my entries into the 'unfiled' category'.
+> > 
+> > Yes.  iSecur defines a few categories of its own.  So, if you have
+> > 14 categories defined and they doesn't match whats stored in iSecur
+> > the secrets/templates is stored in the unfiled category.
+> > iSecur creates the following categories when installed:
+> > 
+> > 	Business
+> > 	Credit Cards
+> > 	Passwords
+> > 	Personal
+>>> >>>
+>>> >>> Ah - I didn't know this.
+>>> >>>
+> > 
+> > If you have 14 categories with other names you end up having 18
+> > categories in total.  The current Palm OS category manager only
+> > allows 16 categories of which 2 are "specials" (Unfiled and All).
+> > So, if a secret/template in Secure It is stored in a category which
+> > is not present in iSecur and there is no more room for a new category
+> > in iSecur the secret/template is stored in the Unfiled category.
+> > If a template is being copied from Secure It to iSecur and there exist
+> > a category named "Templates" in iSecur the template is copied to that
+> > category.
+> > 
+> > 
+>> > > I tried again but this time I exported my templates from Secure It,
+> > 
+> > To Memo, right?
+> > 
+>> > > when I now try to import my templates into iSecur it fails.
+> > 
+> > Ok - sounds strange.   Can you please tell me what you specify
+> > on the various screens - I will try to replicate it.
+> > 
+> > /brian
+
+
+Here is how I get the problem:
+
+I start by exporting my templates from "Secure It" to Memos.
+I then delete the templates from Secure It.
+I then use Sit2iSecur to copy the Secure It database to iSecur.
+Then, from iSecur, I try to import the templates from Memos using
+the options:
+   "I/E" -> "Import"
+>From the Import screen I select the templates Category (where I exported the Secure It templates to Memos).
+I try clicking the "All" button at the bottom of the screen but it 
+does not work so I check the boxes to select all my 5 templates.
+I then click the "Import" button.
+The "import Settings" screen appears:
+    I select Import to: Templates
+    I DON'T select "Delete after import"
+    I DO select "Import as templates"
+
+I then click the "Import" button.
+
+The "Inport Status" box appears:
+   It says: "0 Memo(s) was succesfully imported."  
+
+I check iSecur and the templates have NOT been imported.
+
+PS: I have approximately 160 records in Secure It/iSecur
+
+
+

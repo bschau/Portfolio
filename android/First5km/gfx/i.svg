@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="12px" height="28px" viewBox="0 0 12 28" zoomAndPan="enabled">
+	<circle cx="6" cy="4" r="3" fill="#ffffff" stroke="#000000" />
+	<path d="M4,9 L9,9 9,25 11,25 11,27 1,27 1,25 3,25 3,12 1,12 z" fill="#ffffff" stroke="#000000" />
+</svg>

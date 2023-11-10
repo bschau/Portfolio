@@ -1,0 +1,9 @@
+2008-04-24
+
+	* Updated to MIDP2.
+	* Enlarged the graphics.
+	* Ball blinks when dropped (whooo!)
+
+2004-09-19
+
+	* initial release (1r1)

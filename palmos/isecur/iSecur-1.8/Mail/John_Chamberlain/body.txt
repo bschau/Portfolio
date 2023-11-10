@@ -1,0 +1,59 @@
+rded message ----------
+From: "John Chamberlain" <John.chamberlainz@tiscali.co.uk>
+To: "Brian Schau" <brian@schau.com>
+Date: Wed, 27 Dec 2006 13:34:43 -0000
+Subject: Re: [iSecur] Hmmm ... I wonder why ...
+Hi Brian,
+Thanks for your ultra fast response...
+Ok, here's what happens.  When I first launch iSecur-1.6 it prompts:-
+The iSecure database was not found so a new database will be created....etc,
+tap next.
+Tap and drag your stylus...etc,
+Next screen says Enter new password,
+if I use the password generator or make up my own and confirm my E hangs and
+requires a reset.
+Thanks
+JC
+
+
+---- Original Message -----
+From: "Brian Schau" <brian@schau.com>
+To: "John Chamberlain" <John.chamberlainz@tiscali.co.uk>
+Sent: Monday, December 25, 2006 10:53 PM
+Subject: Re: [iSecur] Hmmm ... I wonder why ...
+
+
+> Hi John,
+>
+> I just tried iSecur-1.6 in the Palm Tungsten E simulator and I
+> experience no problems.   I'd really like to know what exactly you
+> are doing!
+>
+> Kind regards,
+> Brian
+>
+> John Chamberlain wrote:
+>> Hi Brian,
+>> Can't get passed the password screen without my Tungsten E hanging...
+>>  I downloaded and installed the following prc's from iSecur-English-1.6
+>> folder:-
+>> iSecur.prc
+>> iSecur-Library.prc
+>> iSecur-Keyboard.prc
+>> iSecur Icons HiRes.prc
+>>  I disabled any hacks and DA's running, but the software seems to hang
+>> after creating and re-typing a new password.
+>>  Many thanks,
+>> JC
+>> (Happy Christmas!)
+>>
+>
+>
+> --
+> No virus found in this incoming message.
+> Checked by AVG Free Edition.
+> Version: 7.5.432 / Virus Database: 268.15.26/598 - Release Date:
+> 22/12/2006 15:22
+>
+>
+

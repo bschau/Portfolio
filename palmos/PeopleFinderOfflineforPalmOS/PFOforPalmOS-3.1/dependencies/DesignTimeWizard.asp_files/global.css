@@ -1,0 +1,382 @@
+BODY, P, H1, H2, H3, H4, H5, H6, LI, TD, TH, DD, DT
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+	color: black;
+}
+BODY
+{
+	background-color: #ffffff;
+	color: #000000;
+	/*Scrollbar-face-color: #ffcc99; 
+	Scrollbar-arrow-color: black;*/
+}
+LI,UL,OL
+{
+	list-style-image: none;
+}
+H1, H2, H3, H4, H5, TH
+{
+	font-weight: bold;
+}
+H2, H3, H5
+{
+	color: #ff9900;
+}
+H1
+{
+	font-size: 16pt;
+}
+H2
+{
+	font-size: 13pt;
+}
+H3
+{
+	font-family: Arial, sans-serif;
+	font-size: 11pt;
+}
+H4
+{
+	font-size: 10pt;
+	margin-bottom: 2px;
+}
+H5
+{
+	font-size: 9pt;
+	margin-bottom: 2px;
+}
+H6
+{
+	color: #626262;
+	font-size: 65%;
+	font-weight: normal;
+}
+DD
+{
+	margin-left: 20px;
+}
+PRE
+{
+	background-color: #FBEDBB;
+	padding: 7pt;
+	background-image: url(/images/codebg.gif);
+	font: 9pt "Courier New", Courier, mono;
+	white-space: pre;
+	/*width: 100%;*/
+    width: auto;   
+    overflow:  auto;
+}
+CODE
+{
+	color: #990000;
+	font-family: "Courier New", Courier, mono;
+}
+a:link    { text-decoration:none;      }
+a:visited { text-decoration:none;      }
+a:active  { text-decoration:underline; }
+a:hover   { text-decoration:underline; }
+.top
+{
+	cursor: hand;
+}
+.MenuGroup
+{
+	background-color: #ffcc99;
+	font-weight: normal;
+	font-family: Tahoma, Arial, sans-serif;
+	position: relative;
+	top: 0px;
+	width: 124px;
+}
+.MI, .MIs, .MIn, .MIsn
+{
+	background-color: #ffcc99;
+	color: black;
+	font-size: 8pt;
+	font-weight: normal;
+	font-family: Verdana, Arial, sans-serif;
+	width: 118px; 
+	cursor: hand;
+}
+.MI,.MIn
+{
+	text-decoration: none;
+}
+.MI,.MIs
+{
+	padding-left: 3pt; 
+	margin-left: 3pt;
+	border: 1 solid #ffcc99;
+}
+.MIn
+{
+	border: 1pt solid #ffcc99;
+}
+.MIn,.MIsn
+{
+	padding-left: 2px; 
+	margin-left: 2px;
+}
+.sidebar
+{
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 9pt;
+	text-decoration: none;
+}
+.navbar 
+{
+	font-weight: bold;
+	color: white;
+	font-size: 8pt;
+	text-decoration: none;
+}
+
+button.toolbar 
+{
+	border: 1px;
+	border-style: solid;
+	background-color: white;
+	border-color: white;
+	font-family: Verdana, Arial, Tahoma, "MS Sans Serif", sans-serif;
+	font-size: 9pt;
+}
+div.toolbar 
+{
+	background-color: white;
+	border-color: #FF9900;
+	padding: 1px 2px 2px 2px;
+}
+
+textarea#ContentText { behavior: url(/styles/lnkutils.htc); }
+
+.navbar:hover  { color:blue; } 
+.navbar:active { color:red; }
+.NavMenuItem 
+{
+	position: relative;
+	top: 2px;
+	PADDING-LEFT: 2px; 
+	PADDING-right: 8px;
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 11px; 
+	COLOR: black; 
+	PADDING-TOP: 2px;
+}
+.NavMenuItem:hover  { color: Blue; }
+.NavMenuItem:active { color: Red;  }
+.AdLink, a .AdLink
+{
+	color: black;
+	font-size: 8pt;
+}
+.infobar
+{
+	font-size: 8pt;
+	margin-left: 0pt;
+	text-indent: 0pt;
+}
+.infobarList
+{
+	font-size: 8pt;
+	margin-left: 1.5em;
+	text-indent: -1.5em;
+}
+.InfobarHeader
+{
+	font-size: 9pt;
+	font-weight: bold;
+	margin-bottom: -10px;
+	color: #ab2600;
+	/*color: #85BC4C;*/
+}
+.HoverLink
+{ 
+	text-decoration: none;      
+	font-size:8pt; 
+	padding: 1px 2px 1px 2px;
+	/*margin: 1px 1px 1px 1px;*/
+	background-color: #fbedbb;
+	border-color: #fbedbb;
+	border-width: 1px;
+	border-style: solid;
+}
+A.HoverLink
+{
+	text-decoration: none;      
+	color : blue; 
+	cursor: hand;
+}
+A.HoverLink:hover
+{
+	border-color: #ff9900;
+	background-color: #ffcc99;
+}
+A.HoverLink:active
+{
+	background-color: #FFC082;
+	border-color: #ff9900;
+}
+TT.equation 
+{ 
+	font-family: 'Times New Roman', serif; 
+	font-size: 10pt; 
+	font-style: italic; 
+	white-space: pre; 
+}
+UL.download 
+{
+	margin-left: 1.5 em
+}
+UL.download LI, LI.download
+{
+	list-style-image: url(/images/download.gif);
+	font-size: 9pt;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-left: 0.5 em;
+}
+
+UL.delegate LI, LI.delegate   { list-style-image: url(/images/symbols/delegate.gif); }
+UL.enum LI, LI.enum			  { list-style-image: url(/images/symbols/Enum.GIF); }
+UL.event LI, LI.event		  { list-style-image: url(/images/symbols/event.GIF); }
+UL.interface LI, LI.interface { list-style-image: url(/images/symbols/interface.GIF); }
+UL.literal LI, LI.literal	  { list-style-image: url(/images/symbols/literal.GIF); }
+UL.method LI, LI.method		  { list-style-image: url(/images/symbols/method.GIF); }
+UL.namespace LI, LI.namespace { list-style-image: url(/images/symbols/namespace.GIF); }
+UL.property LI, LI.property	  { list-style-image: url(/images/symbols/property.GIF); }
+UL.struct LI, LI.struct		  { list-style-image: url(/images/symbols/struct.GIF); }
+
+UL.compactlist LI, LI.compactlist 
+{
+	list-style-image: url(/images/smallarrow.gif);
+	font-size: 8pt;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-left: -1 em;
+	margin-bottom: 0pt;
+}
+UL.compactlist
+{
+	margin-top: 5pt;
+	margin-bottom: 5pt;
+}
+.MainHeader
+{
+	color: black;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 155%;
+	font-weight: bold;
+}
+.formButton
+{ 
+	font-size:90%; 
+	color: white; 
+	border-color: #FBEDBB; 
+	background-color: #E08900; 
+	font-weight: 700; 
+}
+.SiteNewsHeading,.DevNewsHeading
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+.DevNewsHeading
+{
+	font-size:10.5pt; 
+}
+.links, .messagetitle, .SiteNews, .SmallText, .SiteNewsHeading
+{
+	font-size:8pt; 
+}
+.NewsFlash
+{
+	margin-top:5;
+	font-size:9pt;
+}
+.DevNewsContent
+{
+	font-size:9pt; 
+}
+.messagecontent
+{
+	font: 9.5pt Verdana, "Courier New", Courier, mono;
+}
+.Default		  { font-family: Verdana, Helvetica, Arial, sans-serif; }
+.forum_link:link    { text-decoration:none;      color:#E08900 }
+.forum_link:visited { text-decoration:none;      color:#E08900 }
+.forum_link:active  { text-decoration:none;      color:#E08900 }
+.forum_link:hover   { text-decoration:underline; color:#E08900 }
+.forum_hilite       { background-color: yellow}
+.FQ
+{
+	PADDING-LEFT: 0.6em; 
+	MARGIN-LEFT: 0.25em; 
+	BORDER-LEFT: gray 0.2em solid; 
+	COLOR: #556655; 
+	MARGIN-RIGHT: 1em;
+	margin-bottom: -1em;
+}
+.FQA
+{
+	font-size: 10px;
+	font-weight: bold;
+	MARGIN-LEFT: -0.25em; 	
+}
+.cpp-comment,.cs-comment,.vb-comment	{ COLOR: green; FONT-STYLE: italic; }
+.cpp-keyword,.cs-keyword, .vb-function	{ COLOR: blue; }
+.cpp-preprocessor, .cs-preprocessor		{ COLOR: navy; }
+.cpp-string,.cs-string,.vb-string		{ COLOR: purple; }
+.cpp-literal,.cs-literal,.vb-literal	{ COLOR: midnightblue }
+
+.vb-keyword,.vb-statement	{ COLOR: blue; font-weight:normal;}
+
+TABLE#tblButtonBar {
+	MARGIN-TOP: 1px
+}
+.clsButton {
+	BACKGROUND-COLOR: #ff9900;
+	BORDER-RIGHT: #ff9900 1px solid; 
+	BORDER-TOP: #ff9900 1px solid; 
+	BORDER-LEFT: #ff9900 1px solid; 
+	BORDER-BOTTOM: #ff9900 1px solid;
+ 	text-decoration: none; 
+	font-weight: bold; 
+	FONT-SIZE: 8pt; 
+	CURSOR: hand;
+	color: #333300;
+}
+TD.clsButtonBar TABLE.clsButton TD {
+	PADDING: 1px;
+}
+.clsButtonLnk {
+ 	text-decoration: none; 
+	font-weight: bold; 
+	FONT-SIZE: 8pt; 
+	CURSOR: hand;
+	color: #333300;
+	padding: 1;
+}
+.clsButtonLnk:hover {
+	color: blue;
+}
+.FeatureBox
+{
+	background-color: #A5C9EF;
+	BORDER: #6699cc 1px solid; 
+	PADDING: 2px; 
+}
+.FeatureBoxHeader, .FeatureBoxHeader a
+{
+	color: #993300;
+	font-family: Verdana;	
+	
+	padding-left: 2pt;
+	padding-bottom: 2pt;
+	font-weight: bold;
+	font-size: 13pt;
+	/*background-color: #6699cc;*/
+}
+.FeatureBoxHeaderArrow
+{
+	background-color: #6699cc;
+}

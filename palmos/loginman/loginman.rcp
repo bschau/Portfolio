@@ -1,0 +1,200 @@
+#include "resources.h"
+
+/*******************************************************************************
+*GLOBAL
+*	Global data.	
+*/
+VERSION "1.1"
+ICON "../loginmanl.bmp"
+SMALLICON "../loginmans.bmp"
+
+ALERT ID alertrom31
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old"
+	MESSAGE "The PalmOS in this device is too old. PalmOS 3.1 or better is required to run this program."
+	BUTTONS "OK"
+END
+
+ALERT ID alertclipper
+INFORMATION
+BEGIN
+	TITLE "Viewer Error"
+	MESSAGE "The web clipping application viewer is required to open web clipping applications."
+	BUTTONS "OK"
+END
+
+ALERT ID alerthotsync
+INFORMATION
+BEGIN
+	TITLE "Database Created"
+	MESSAGE "The database to hold your data was succesfully created. Failed to set backup bit - do this manually."
+	BUTTONS "OK"
+END
+
+ALERT ID alertdelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Entry?"
+	MESSAGE "Is it ok to delete this entry?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID alertrealmempty
+INFORMATION
+BEGIN
+	TITLE "Realm Empty"
+	MESSAGE "You must enter something in the Realm field."
+	BUTTONS "OK"
+END
+
+ALERT ID alertmethod
+INFORMATION
+BEGIN
+	TITLE "Invalid Call"
+	MESSAGE "^1: must be invoked with the ^2: method."
+	BUTTONS "OK"
+END
+
+ALERT ID alertcredentials
+INFORMATION
+BEGIN
+	TITLE "Credentials"
+	MESSAGE "Credentials for ^1 ^2."
+	BUTTONS "OK"
+END
+
+ALERT ID alertnorealm
+INFORMATION
+BEGIN
+	TITLE "No Realm?"
+	MESSAGE "No realm specified - cannot go on ..."
+	BUTTONS "OK"
+END
+
+ALERT ID alertdebug
+INFORMATION
+BEGIN
+	TITLE "Debug alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+MENU ID sysEditMenuID 
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+END
+
+/*******************************************************************************
+*MAINFORM
+*/
+FORM ID formmain AT (0 0 160 160)
+NOFRAME
+MENUID mffmenu
+BEGIN
+	TITLE "Login Manager"
+	LIST "" ID mfrealms AT (1 17 158 121) USABLE
+
+	BUTTON "New" ID mfnew AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+MENU ID mffmenu
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mffabout
+	END
+END
+
+/*******************************************************************************
+*EDITFORM
+*/
+FORM ID formedit AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Realm"
+
+	LABEL "Realm:" AUTOID AT (1 19)
+	LABEL "Login:" AUTOID AT (1 58)
+	LABEL "Password:" AUTOID AT (1 97)
+	FIELD ID efrealm AT (1 31 158 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS QALMFIELDLEN
+	FIELD ID eflogin AT (1 70 158 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS QALMFIELDLEN
+	FIELD ID efpassword AT (1 109 158 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS QALMFIELDLEN
+	
+	GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+
+	BUTTON "OK" ID efok AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID efcancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+/*******************************************************************************
+*VIEWFORM
+*/
+FORM ID formview AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Realm Entry"
+
+	LABEL "Realm:" AUTOID AT (1 19)
+	LABEL "Login:" AUTOID AT (1 58)
+	LABEL "Password:" AUTOID AT (1 97)
+	FIELD ID vfrealm AT (1 31 158 24) NONEDITABLE MULTIPLELINES MAXCHARS QALMFIELDLEN
+	FIELD ID vflogin AT (1 70 158 24) NONEDITABLE MULTIPLELINES MAXCHARS QALMFIELDLEN
+	FIELD ID vfpassword AT (1 109 158 24) NONEDITABLE MULTIPLELINES MAXCHARS QALMFIELDLEN
+
+	BUTTON "OK" ID vfok AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Edit" ID vfedit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Delete" ID vfdelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+/*******************************************************************************
+*ABOUTFORM
+*/
+FORM ID formabout AT (2 38 156 120)
+MODAL
+BEGIN
+	TITLE "About LoginMan"
+
+	LABEL "Query Applications" AUTOID AT (CENTER 17)
+	LABEL "Login Manager" AUTOID AT (CENTER 31) FONT 7
+	LABEL "Version 1.1" AUTOID AT (CENTER 50)
+
+	LABEL "Website:" AUTOID AT (4 70)
+	LABEL "http://www.brisse.dk/palm/qalm" AUTOID AT (CENTER 82)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@117 AUTO AUTO)
+END
+
+/*******************************************************************************
+*CREDENTIALSFORM
+*/
+FORM ID formcredentials AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Enter Credentials"
+
+	LABEL "Realm:" AUTOID AT (1 19)
+	LABEL "Login:" AUTOID AT (1 58)
+	LABEL "Password:" AUTOID AT (1 97)
+	FIELD ID cfrealm AT (1 31 158 24) NONEDITABLE MULTIPLELINES MAXCHARS QALMFIELDLEN
+	FIELD ID cflogin AT (1 70 158 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS QALMFIELDLEN
+	FIELD ID cfpassword AT (1 109 158 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS QALMFIELDLEN
+	
+	GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+
+	BUTTON "OK" ID cfok AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cfcancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END

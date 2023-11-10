@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>JadBuilder Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<style type="text/css">
+body {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: tahoma,verdana,geneva,sans-serif;
+}
+
+dt {
+	color: #008844;
+}
+
+th {
+	text-align: left;
+	vertical-align: top;
+	padding-right: 1em;
+}
+
+td {
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<h1>JadBuilder Manual</h1>
+	<h3>Introduction</h3>
+	<p>JadBuilder is an Ant task which can be used to create J2ME jad files.</p>
+
+	<h3>Requirements</h3>
+	<ul>
+		<li><a href="http://ant.apache.org/">Ant</a> (obviously ..) - I use ant-1.7.1.</li>
+		<li>Linux, Windows or Mac OS X. JadBuilder has been developed and used on Slackware Linux 12+, Windows Vista and Mac OS X 10.5 (leopard).</li>
+	</ul>
+
+	<h3>Installation</h3>
+	<h5>Binary</h5>
+	<p>Copy <code>JadBuilder.jar</code> to f.ex. the Ant <code>lib</code> directory or some other directory of your choice.</p>
+	<h5>Source</h5>
+	<p>You need <a href="http://ant.apache.org/">Ant</a> to build JadBuilder. In the top-level directory of the source distribution type <code>ant</code>. When ant is finished copy <code>src/JadBuilder.jar</code> to f.ex. the Ant <code>lib</code> directory or some other directory of your choice.</p>
+
+	<h3>TaskDef</h3>
+	<p>Before using JadBuilder you need to define it as a task within your project:</p>
+	<pre>
+        &lt;target name="init" description="Taskdef the JadBuilder task"&gt;
+            &lt;taskdef name="jadbuilder" classname="com.schau.JadBuilder" classpath="/path/to/JadBuilder.jar" /&gt;
+        &lt;/target&gt;
+	</pre>
+	<p>The <code>target</code> attributes are not that important but pay attention to the <code>taskdef</code> attributes! <code>name</code> (jadbuilder) is the name you want to use when referring to the JadBuilder task. <code>classname</code> must be <b>com.schau.JadBuilder</b>. If you copied the JadBuilder.jar to Ants <code>lib</code> directory you can omit the <code>classpath</code> attribute - if not, you have to enter the full path to the JadBuilder.jar.</p>
+	<p>Remember to <code>taskdef</code> before use!</p>
+
+	<h3>Usage</h3>
+	<p>To use JadBuilder:</p>
+	<pre>
+	&lt;jadbuilder showversion=".."
+	            jadfile=".."
+		    jarfile=".."
+                    name=".."
+                    vendor=".."
+                    version=".."
+                    midp=".."
+		    cldc=".."
+                    url=".." &gt;
+            &lt;midlet name=".." entry=".." icon=".." /&gt;
+                         .
+                         .
+            &lt;midlet name=".." entry=".." icon=".." /&gt;
+
+            &lt;attribute name=".." value=".." /&gt;
+                         .
+                         .
+            &lt;attribute name=".." value=".." /&gt;
+        &lt;/jadbuilder&gt;
+	</pre>
+	<p>JadBuilder accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>showversion</th>
+			<td>Show version information when running JadBuilder. To show version information set to <code>true</code> or <code>on</code> or <code>1</code> or <code>yes</code>. Other values hides version information. Default is <code>true</code>.</td>
+		</tr>
+
+		<tr>
+			<th>jadfile</th>
+			<td>Full path to the jad file. Default is <code>output.jad</code>.</td>
+		</tr>
+
+		<tr>
+			<th>jarfile</th>
+			<td>Path to the accompanying jar file.</td>
+		</tr>
+
+		<tr>
+			<th>name</th>
+			<td>Name of MIDlet suite (MIDlet-Name).</td>
+		</tr>
+
+		<tr>
+			<th>vendor</th>
+			<td>Name of vendor (MIDlet-Vendor).</td>
+		</tr>
+
+		<tr>
+			<th>version</th>
+			<td>MIDlet suite version (MIDlet-Version). Default is <code>1.0</code>.</td>
+		</tr>
+
+		<tr>
+			<th>midp</th>
+			<td>MIDP version (MicroEdition-Profile). Default is <code>2.0</code>.</td>
+		</tr>
+
+		<tr>
+			<th>cldc</th>
+			<td>CLDC version (MicroEdition-Configuration). Default is <code>1.1</code>.</td>
+		</tr>
+
+		<tr>
+			<th>url</th>
+			<td>If set this is the deployment url of the jar file. This is an optional attribute which is seldom used during development ...</td>
+		</tr>
+	</table>
+
+	<p>Within a &lt;jadbuilder&gt; .. &lt;/jadbuilder&gt; pair you must have one or more &lt;midlet&gt; definitions and optionally one or more &lt;attribute&gt; definitions.</p>
+	<pre>
+	&lt;midlet name=".."
+                   entry=".."
+                   icon=".." /&gt;
+	</pre>
+	<p>midlet accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>name</th>
+			<td>Name of MIDlet.</td>
+		</tr>
+
+		<tr>
+			<th>entry</th>
+			<td>Main Class of MIDlet.</td>
+		</tr>
+
+		<tr>
+			<th>icon</th>
+			<td>Icon file for MIDlet.</td>
+		</tr>
+	</table>
+
+	<pre>
+	&lt;attribute name=".."
+                      value=".." /&gt;
+	</pre>
+	<p>attribute accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>name</th>
+			<td>Name of attribute.</td>
+		</tr>
+
+		<tr>
+			<th>value</th>
+			<td>Value of attribute.</td>
+		</tr>
+	</table>
+
+	<h3>Example</h3>
+	<p>The following example will:</p>
+	<ol>
+		<li>create a jad file with a 3 midlets and 2 attributes.</li>
+		<li>deployment url of the jar file is <code>http://www.schau.com/midlets/CoolSuite.jar</code></li>
+	</ol>
+	<p>Note that the taskdef is done in the same target as the actual usage of JadBuilder. This is perfectly OK - just remember to <code>taskdef</code> before use!</p>
+
+	<pre>
+	&lt;target name="jad"&gt;
+            &lt;taskdef name="jadbuilder" classname="com.schau.JadBuilder" classpath="/opt/AntTasks/JadBuilder.jar" /&gt;
+            &lt;jadbuilder showVersion="true"
+                        jadfile="CoolSuite.jad"
+                        jarfile="CoolSuite.jar"
+                        name="CoolSuite"
+                        vendor="Schau.Com"
+                        version="0.9.2b1"
+                        midp="2.0"
+                        cldc="1.1"
+                        url="http://www.schau.com/midlets"&gt;
+                &lt;midlet name="MidLet1" entry="com.some.class.m1" icon="/main-m1.png" /&gt;
+                &lt;midlet name="MidLet2" entry="com.some.class.m2" icon="/main-m2.png" /&gt;
+                &lt;midlet name="MidLet3" entry="com.some.class.m3" icon="/main-m3.png" /&gt;
+                &lt;attribute name="attr1" value="some value" /&gt;
+                &lt;attribute name="attr2" value="some_other_value" /&gt;
+            &lt;jadbuilder&gt;
+        &lt;target&gt;
+	</pre>
+	<p>The resulting jad file looks like:</p>
+	<pre>
+        MIDlet-Jar-URL: http://www.schau.com/midlets/CoolSuite.jar
+        MIDlet-Jar-Size: 44
+        MIDlet-Name: CoolSuite
+        MIDlet-Vendor: Schau.Com
+        MIDlet-Version: 0.9.2b1
+        MicroEdition-Profile: MIDP-2.0
+        MicroEdition-Configuration: CLDC-1.1
+        MIDlet-1: MidLet1, /main-m1.png, com.some.class.m1
+        MIDlet-2: MidLet2, /main-m2.png, com.some.class.m2
+        MIDlet-3: MidLet3, /main-m3.png, com.some.class.m3
+        attr1: some value
+        attr2: some_other_value
+	</pre>
+</body>
+</html>

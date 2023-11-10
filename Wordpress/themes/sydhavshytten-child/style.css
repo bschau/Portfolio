@@ -1,0 +1,23 @@
+/*
+ Theme Name:   Sydhavshytten
+ Theme URI:    https://sydhavshytten.dk
+ Description:  Sydhavshytten, a child of friendly-lite (https://wordpress.org/themes/friendly-lite/)
+ Author:       Brian Schau
+ Author URI:   https://kdq.dk
+ Template:     friendly-lite
+ Version:      1.0
+ License:      MIT
+ License URI:  https://opensource.org/licenses/MIT
+ Tags:         one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, custom-menu, custom-colors, featured-images, post-formats, full-width-template, theme-options, blog, custom-logo
+ Text Domain:  sydhavshytten
+*/
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
+
+.site-title, .site-description {
+	font-family: Yellowtail, serif;
+}
+
+/* Hide PREVIOUS navigation and the No comments message*/
+.navigation, .no-comment {
+	display: none;
+}

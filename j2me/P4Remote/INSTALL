@@ -1,0 +1,13 @@
+INSTALL
+-------
+
+
+You need j2mec installed.   You can get j2mec from:
+
+	http://www.schau.com/j2mec/index.html
+
+
+1) Run 'make danish' or 'make english' in the top-level directory to set the
+   preferred language.
+2) Then run 'make release' to create the jar and jad files.
+3) Install the resulting P4Remote.jar and P4Remote.jad files.
