@@ -278,5 +278,6 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
 * [qmta](c/qmta) - a 7-bit MTA / SMTP daemon - c.
 * [snmpproxy](c/snmpproxy) - SNMP masquerade daemon - c.
+* [tools](go/tools) - a collection of command line tools - go.
 * [ubit](ubit/) - some microbit samples (in danish) - js.
 * [Wordpress](Wordpress/) - Wordpress plugins and themes - php.
