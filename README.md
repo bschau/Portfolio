@@ -272,6 +272,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 ## Other
 
 * [certview](dotnet/certview) - a commandline tool to view certicates in the Windows CSP - .NET Core.
+* [eplogr](go/eplogr) - a developer oriented endpoint logger - go.
 * [Games](Games/) - small command line games - C, Go, Java and Python.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
