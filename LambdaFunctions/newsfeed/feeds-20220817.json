@@ -1,0 +1,79 @@
+[
+{
+	"Name": "Android Authority",
+	"RssUrl": "https://www.androidauthority.com/feed/",
+	"WebUrl": "https://www.androidauthority.com/"
+},{
+	"Name": "Brian D Foy",
+	"RssUrl": "https://briandfoy.github.io/feed.xml",
+	"WebUrl": "https://briandfoy.github.io/"
+},{
+	"Name": "Chrome Unboxed",
+	"RssUrl": "https://chromeunboxed.com/feed/",
+	"WebUrl": "https://chromeunboxed.com/"
+},{
+	"Name": "Dicebreaker",
+	"RssUrl": "https://www.dicebreaker.com/feed/",
+	"WebUrl": "https://www.dicebreaker.com/"
+},{
+	"Name": "DR Nyheder",
+	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
+	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "DR Sporten",
+	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/sporten",
+	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "GSM Arena",
+	"RssUrl": "https://www.gsmarena.com/rss-news-reviews.php3",
+	"WebUrl": "https://www.gsmarena.com/"
+},{
+	"Name": "Humble Bundle",
+	"RssUrl": "https://blog.humblebundle.com/feed/",
+	"WebUrl": "https://blog.humblebundle.com/"
+},{
+	"Name": "iNPUT",
+	"RssUrl": "https://www.inputmag.dk/feed/",
+	"WebUrl": "https://www.inputmag.dk/"
+},{
+	"Name": "Mere Mobil",
+	"RssUrl": "https://meremobil.dk/feed",
+	"WebUrl": "https://meremobil.dk/"
+},{
+	"Name": "Mobil.nu",
+	"RssUrl": "https://mobil.nu/feed",
+	"WebUrl": "https://mobil.nu/"
+},{
+	"Name": "NOYB",
+	"RssUrl": "https://noyb.eu/en/rss",
+	"WebUrl": "https://noyb.eu/"
+},{
+	"Name": "Open Source",
+	"RssUrl": "https://opensource.com/feed",
+	"WebUrl": "https://opensource.com/"
+},{
+	"Name": "PC World",
+	"RssUrl": "https://www.pcworld.com/index.rss",
+	"WebUrl": "https://www.pcworld.com/"
+},{
+	"Name": "Raspberry Pi",
+	"RssUrl": "https://www.raspberrypi.com/news/feed/",
+	"WebUrl": "https://www.raspberrypi.com/"
+},{
+	"Name": "Sci Tech Daily",
+	"RssUrl": "https://feeds.feedburner.com/scitechdaily",
+	"WebUrl": "https://scitechdaily.com"
+},{
+	"Name": "The Daily WTF",
+	"RssUrl": "http://syndication.thedailywtf.com/TheDailyWtf",
+	"WebUrl": "https://thedailywtf.com"
+},{
+	"Name": "The New Stack",
+	"RssUrl": "https://thenewstack.io/feed/",
+	"WebUrl": "https://thenewstack.io/"
+},{
+	"Name": "WIRED",
+	"RssUrl": "http://feeds.wired.com/wired/index",
+	"WebUrl": "http://wired.com/"
+}
+]

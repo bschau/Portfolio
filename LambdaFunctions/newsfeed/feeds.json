@@ -1,0 +1,59 @@
+[
+{
+	"Name": "BT",
+	"RssUrl": "https://www.bt.dk/bt/seneste/rss",
+	"WebUrl": "https://www.bt.dk/"
+},{
+	"Name": "Chess News",
+	"RssUrl": "https://www.chess.com/rss/news",
+	"WebUrl": "https://www.chess.com/"
+},{
+	"Name": "DR Nyheder",
+	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
+	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "EB",
+	"RssUrl": "https://ekstrabladet.dk/rssfeed/all/",
+	"WebUrl": "https://ekstrabladet.dk/"
+},{
+	"Name": "Humble Bundle",
+	"RssUrl": "https://blog.humblebundle.com/feed/",
+	"WebUrl": "https://blog.humblebundle.com/"
+},{
+	"Name": "iNPUT",
+	"RssUrl": "https://www.inputmag.dk/feed/",
+	"WebUrl": "https://www.inputmag.dk/"
+},{
+	"Name": "Mere Mobil",
+	"RssUrl": "https://meremobil.dk/feed",
+	"WebUrl": "https://meremobil.dk/"
+},{
+	"Name": "Mobil.nu",
+	"RssUrl": "https://mobil.nu/feed",
+	"WebUrl": "https://mobil.nu/"
+},{
+	"Name": "NOYB",
+	"RssUrl": "https://noyb.eu/en/rss",
+	"WebUrl": "https://noyb.eu/"
+},{
+	"Name": "Open Source",
+	"RssUrl": "https://opensource.com/feed",
+	"WebUrl": "https://opensource.com/"
+},{
+	"Name": "PC World",
+	"RssUrl": "https://www.pcworld.com/index.rss",
+	"WebUrl": "https://www.pcworld.com/"
+},{
+	"Name": "Raspberry Pi",
+	"RssUrl": "https://www.raspberrypi.com/news/feed/",
+	"WebUrl": "https://www.raspberrypi.com/"
+},{
+	"Name": "The Daily WTF",
+	"RssUrl": "http://syndication.thedailywtf.com/TheDailyWtf",
+	"WebUrl": "https://thedailywtf.com"
+},{
+	"Name": "The New Stack",
+	"RssUrl": "https://thenewstack.io/feed/",
+	"WebUrl": "https://thenewstack.io/"
+}
+]
