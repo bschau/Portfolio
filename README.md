@@ -275,6 +275,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [eplogr](go/eplogr) - a developer oriented endpoint logger - go.
 * [Games](Games/) - small command line games - C, Go, Java and Python.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
+* **LambdaFunctions**- various AWS Lambda sunction - [Python](python/LambdaFunctions/) and [Go](go/LambdaFunctions/).
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
 * [qmta](c/qmta) - a 7-bit MTA / SMTP daemon - c.
