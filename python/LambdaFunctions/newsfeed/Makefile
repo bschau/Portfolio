@@ -8,7 +8,7 @@ init:
 	cp ~/.lambda.json settings.json
 
 lint:
-	-pylint3 --rcfile=../pylintrc *.py
+	-pylint --rcfile=../pylintrc *.py
 
 clean:
 	-find . -type f -name "*~" -exec rm -f {} \;
@@ -23,3 +23,6 @@ deploy:	clean lint
 	(cd package; zip -r9 ../function.zip .)
 	zip -g function.zip $(FUNCTION).py sendmail.py settings.json feeds.json
 	aws lambda update-function-code --function-name=$(FUNCTION) --zip-file=fileb://function.zip
+
+install: distclean init deploy
+

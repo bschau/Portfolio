@@ -14,6 +14,16 @@ import feedparser
 from sendmail import SendMail
 
 
+PREFIX = 'New C64 remix released: '
+PREFIX_LEN = len(PREFIX)
+HTML_ESCAPE = {
+    "&": "&amp;",
+    '"': "&quot;",
+    "'": "&apos;",
+    ">": "&gt;",
+    "<": "&lt;"
+}
+
 def handler(event, context):
     # pylint: disable=W0612,W0613
     """ Lambda function handler.
@@ -62,15 +72,7 @@ class Kwed():
             if not self.can_cope_with_bozo(str(rss.bozo_exception)):
                 return
 
-        prefix = 'New C64 remix released: '
-        prefix_len = len(prefix)
-        html_escape = {
-            "&": "&amp;",
-            '"': "&quot;",
-            "'": "&apos;",
-            ">": "&gt;",
-            "<": "&lt;"
-        }
+        html = ''
         for item in rss['items']:
             timestamp = time.mktime(item['published_parsed'])
             published_date = datetime.datetime.fromtimestamp(timestamp)
@@ -78,17 +80,19 @@ class Kwed():
                 continue
 
             title = item['title']
-            if title.startswith(prefix):
-                title = title[prefix_len:]
+            if title.startswith(PREFIX):
+                title = title[PREFIX_LEN:]
 
             tid = int(item['link'].split('/')[-1])
             url = self.get_download_url(tid)
 
-            track_title = "".join(html_escape.get(c, c) for c in title)
-            title = f"KWED: {track_title}"
+            track_title = "".join(HTML_ESCAPE.get(c, c) for c in title)
+            html = f'{html}<li><a href="{url}">{track_title}</a></li>\n'
+
+        if len(html) > 0:
+            title = self.title()
             page = self.head(title)
-            page = f'{page}<html><body><p><a href="{url}">'
-            page = f'{page}{track_title}</a></p></body></html>'
+            page = f'{page}<html><body><ul>{html}</ul></body></html>'
             SendMail().deliver(title, page)
 
 
@@ -106,6 +110,13 @@ class Kwed():
             return None
 
         return 'https://remix.kwed.org' + quote(location)
+
+
+    @staticmethod
+    def title():
+        """ Get title of mail. """
+        now = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        return f"KWED {now}"
 
 
     @staticmethod

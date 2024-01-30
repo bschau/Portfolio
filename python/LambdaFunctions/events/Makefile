@@ -23,3 +23,6 @@ deploy:	clean lint
 	(cd package; zip -r9 ../function.zip .)
 	zip -g function.zip $(FUNCTION).py sendmail.py settings.json happenings.json
 	aws lambda update-function-code --function-name=$(FUNCTION) --zip-file=fileb://function.zip
+
+install: distclean init deploy
+

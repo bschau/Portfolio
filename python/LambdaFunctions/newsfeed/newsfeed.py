@@ -4,6 +4,7 @@ import json
 import os
 import time
 import feedparser
+import requests
 from sendmail import SendMail
 
 
@@ -89,9 +90,9 @@ class Newsfeed():
         try:
             rss = feedparser.parse(feed["RssUrl"],
                                    request_headers=request_headers)
-        except requests.exceptions.RequestException as e:
+        except requests.exceptions.RequestException as exception:
             self.html = self.html + '<p style="color: red">'
-            self.html = self.html + e + '</p>'
+            self.html = self.html + exception + '</p>'
             return line_number
 
         if rss.bozo > 0:

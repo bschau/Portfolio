@@ -1,24 +1,20 @@
 [
 {
+	"Name": "9 to 5 Linux",
+	"RssUrl": "https://9to5linux.com/feed",
+	"WebUrl": "https://9to5linux.com/"
+},{
 	"Name": "BT",
 	"RssUrl": "https://www.bt.dk/bt/seneste/rss",
 	"WebUrl": "https://www.bt.dk/"
-},{
-	"Name": "Chess News",
-	"RssUrl": "https://www.chess.com/rss/news",
-	"WebUrl": "https://www.chess.com/"
 },{
 	"Name": "DR Nyheder",
 	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
 	"WebUrl": "https://www.dr.dk/"
 },{
-	"Name": "EB",
-	"RssUrl": "https://ekstrabladet.dk/rssfeed/all/",
-	"WebUrl": "https://ekstrabladet.dk/"
-},{
-	"Name": "Humble Bundle",
-	"RssUrl": "https://blog.humblebundle.com/feed/",
-	"WebUrl": "https://blog.humblebundle.com/"
+	"Name": "GSM Arena",
+	"RssUrl": "http://www.gsmarena.com/rss-news-reviews.php3",
+	"WebUrl": "https://www.gsmarena.com/"
 },{
 	"Name": "iNPUT",
 	"RssUrl": "https://www.inputmag.dk/feed/",
@@ -31,10 +27,6 @@
 	"Name": "Mobil.nu",
 	"RssUrl": "https://mobil.nu/feed",
 	"WebUrl": "https://mobil.nu/"
-},{
-	"Name": "NOYB",
-	"RssUrl": "https://noyb.eu/en/rss",
-	"WebUrl": "https://noyb.eu/"
 },{
 	"Name": "Open Source",
 	"RssUrl": "https://opensource.com/feed",
