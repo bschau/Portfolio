@@ -24,7 +24,7 @@ You should really set that up - follow the link in the article.
 ## Configuration
 eplogr can be configured by:
 
-* a configuration file - .eplogrrc on Linux, _eplogrrc on Windows. The files must be stored in the user's home folder.
+* a configuration file - .eplogrrc on Linux, \_eplogrrc on Windows. The files must be stored in the user's home folder.
 * overridden by environment variables EPLOGR_.
 * and further overriden by command line arguments.
 
