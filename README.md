@@ -274,6 +274,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [certview](dotnet/certview) - a commandline tool to view certicates in the Windows CSP - .NET Core.
 * [eplogr](go/eplogr) - a developer oriented endpoint logger - go.
 * [Games](Games/) - small command line games - C, Go, Java and Python.
+* [gxdavr](go/gxdavr) - Gnome Contacts DAV Redirect - go.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * **LambdaFunctions**- various AWS Lambda sunction - [Python](python/LambdaFunctions/) and [Go](go/LambdaFunctions/).
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
