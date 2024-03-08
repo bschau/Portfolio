@@ -282,7 +282,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [ctools](c/ctools) - lots of old (broken?!) tools - c.
 * [eplogr](go/eplogr) - a developer oriented endpoint logger - go.
 * [FamilyASN1](c/FamilyASN1/) - a sample ASN.1 parser using SNACC - c.
-* [Games](Games/) - small command line games - C, Go, Java and Python.
+* [Games](Games/) - small command line games - c, go, java and python.
 * [Grab](c/Grab/) - record images from web cam - c.
 * [gxdavr](go/gxdavr) - Gnome Contacts DAV Redirect - go.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
@@ -296,5 +296,6 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [tools](go/tools) - a collection of command line tools - go.
 * [Trail Tools](java/TrailTools/) - ehrm ... - java.
 * [ubit](ubit/) - some microbit samples (in danish) - js.
+* [VPS Apps](VpsApps/) - some scripts I run on my VPS - go, perl and python.
 * [Wordpress](Wordpress/) - Wordpress plugins and themes - php.
 

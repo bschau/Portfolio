@@ -1,0 +1,5 @@
+feedgen
+feedparser
+python-dateutil
+requests
+sendgrid

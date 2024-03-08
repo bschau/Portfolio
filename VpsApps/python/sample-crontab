@@ -1,0 +1,7 @@
+0 2 * * * /usr/bin/python3 /home/apps/src/trellotodo.py
+0 3 * * * /usr/bin/python3 /home/apps/src/kwed.py
+0 4 * * * /usr/bin/python3 /home/apps/src/events.py
+0 5 * * * /usr/bin/python3 /home/apps/src/dkjokes.py
+0 11 * * * /usr/bin/python3 /home/apps/src/comics.py
+0 9,15,21 * * * /usr/bin/python3 /home/apps/src/lichess.py
+0 6,8,10,12,14,16,18,20,22 * * * /usr/bin/python3 /home/apps/src/newsfeed.py
