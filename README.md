@@ -260,6 +260,12 @@ Go to [iChains source code](ios/iChains/).
 ![In Game](ios/img/ichains4.jpg)
 ![Level Completed](ios/img/ichains5.jpg)
 
+Without screenshots:
+
+* [BMI Calculator](ios/BMICalculator/)
+* [Coin Game](ios/CoinGame/)
+* [iStar](ios/iStar/)
+
 ## KaiOS
 
 ### KaiSub
