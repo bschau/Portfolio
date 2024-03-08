@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>StringBuilder.c</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<STYLE TYPE="text/css">
+body { font-family: Verdana, Arial, serif } table { border-spacing: 10px; } h1 {} td.left { vertical-align: top; } a.left { font-color: red; } td.right {} p.global {} p.entry { font-size: 1.1em; font-weight: bold; } div.signature { margin-left: 2cm; } p.desc { margin-left: 2cm; } p.right { font-weight: bold; margin-left: 2cm; } .npr { margin-left: 4cm; margin-top: -1em; } h3 { border: solid 1px; width: 100%; background-color: #87cefa; color: black; } code {} a.index {} a.selected { font-size: 1.1em; border: 1px solid black; }
+</STYLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR>
+<TD>&nbsp;</TD><TD><H1>StringBuilder.c</H1></TD></TR>
+<TR><TD CLASS="left"><A HREF="index.html" CLASS="left"><I>Index</I></A><BR><A HREF="doc1.html" CLASS="left">Options.c</A>
+<BR><A HREF="doc2.html" CLASS="selected">StringBuilder.c</A>
+<BR><A HREF="doc3.html" CLASS="left">Utils.c</A>
+<BR><A HREF="doc4.html" CLASS="left">Main.c</A>
+<BR><A HREF="doc5.html" CLASS="left">Output.c</A>
+<BR><A HREF="doc6.html" CLASS="left">Parse.c</A>
+<BR><A HREF="doc7.html" CLASS="left">XUtils.c</A>
+</TD><TD CLASS="right">
+<P CLASS="global">StringBuilder.<H3>Functions</H3>
+<P CLASS="right"><A NAME="SBAppendChar"></A><P CLASS="entry">SBAppendChar<DIV CLASS="signature"><PRE>void SBAppendChar (<BR>        StringBuilder s,<BR>        char src<BR>)</PRE></DIV><P CLASS="desc">Append a character to the StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+<CODE>src</CODE> - Source character.<BR>
+</DIV>
+<A NAME="SBCopyTo"></A><P CLASS="entry">SBCopyTo<DIV CLASS="signature"><PRE>void SBCopyTo (<BR>        StringBuilder src,<BR>        StringBuilder dst<BR>)</PRE></DIV><P CLASS="desc">Copy content from one SB to another.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>src</CODE> - Source SB.<BR>
+<CODE>dst</CODE> - Destination SB.<BR>
+</DIV>
+<A NAME="SBFree"></A><P CLASS="entry">SBFree<DIV CLASS="signature"><PRE>void SBFree (<BR>        StringBuilder s<BR>)</PRE></DIV><P CLASS="desc">Destroy a StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+</DIV>
+<A NAME="SBLength"></A><P CLASS="entry">SBLength<DIV CLASS="signature"><PRE>int SBLength (<BR>        StringBuilder s<BR>)</PRE></DIV><P CLASS="desc">Return the length of the string in the StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">String length.<A NAME="SBNew"></A><P CLASS="entry">SBNew<DIV CLASS="signature"><PRE>StringBuilder SBNew (<BR>        int g<BR>)</PRE></DIV><P CLASS="desc">Allocate a new StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>g</CODE> - Default size (and growth).<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">StringBuilder.<A NAME="SBPosition"></A><P CLASS="entry">SBPosition<DIV CLASS="signature"><PRE>int SBPosition (<BR>        StringBuilder s<BR>)</PRE></DIV><P CLASS="desc">Return position in SB.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">Current position.<A NAME="SBReset"></A><P CLASS="entry">SBReset<DIV CLASS="signature"><PRE>void SBReset (<BR>        StringBuilder s<BR>)</PRE></DIV><P CLASS="desc">Reset the StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+</DIV>
+<A NAME="SBSetLength"></A><P CLASS="entry">SBSetLength<DIV CLASS="signature"><PRE>void SBSetLength (<BR>        StringBuilder s,<BR>        int len<BR>)</PRE></DIV><P CLASS="desc">Set length of data in the StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+<CODE>len</CODE> - New length.<BR>
+</DIV>
+<A NAME="SBToString"></A><P CLASS="entry">SBToString<DIV CLASS="signature"><PRE>char * SBToString (<BR>        StringBuilder s<BR>)</PRE></DIV><P CLASS="desc">Return the string stored in this StringBuilder.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>s</CODE> - StringBuilder.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">String.</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

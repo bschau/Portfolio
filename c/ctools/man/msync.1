@@ -1,0 +1,60 @@
+.TH MSYNC 1L
+.SH NAME
+msync \- synchronize directory tree with remote ftp server based on a timestamp
+
+.SH SYNOPSIS
+.B msync 
+[\fI-f\fR] [\fI-h\fR] [command] [command-args]
+
+.SH DESCRIPTION
+msync merges two directory trees - it will overlay the source directory into the destination directory without deleting any files or directories in the destination tree. Files will be updated and new directories will be created.
+
+.SH OPTIONS
+.TP
+\fB-f\fR
+Force operation.
+.TP
+\fB-h\fR
+Show a brief help page.
+
+.SH COMMANDS
+msync understands the following commands:
+.TP
+\fBget x y z\fR
+Transfer the files x, y and z from the remote host to the current directory.
+.TP
+\fBignore x y z\fR
+Add the entries "x", "y" and "z" to the ignore list. To match a file prefix it with the directory separator character ('/' on Unix, '\\' on Windows): /wp-config.php. To match a directory prefix and suffix it with the directory separator char: /wordpress/.
+.TP
+\fBinfo\fR
+Show info about tree.
+.TP
+\fBinit ftp://user:pass@host/dir | file:///path/to/dst\fR
+Initialize this directory as the source directory.
+.TP
+\fBlock\fR
+Lock tree - disable sync. Use msync unlock to remove lock.
+.TP
+\fBls\fR
+List content of current directory on remote host.
+.TP
+\fBput x y z\fR
+Transfer the files x, y and z from the current directory to the remote host.
+.TP
+\fBrm x y z\fR
+Deletes the objects x, y and z in the current directory on the remote host. If object points to a directory it must be empty to be deleted. If deletion of any of the objects fails the request is terminated at that point.
+.TP
+\fBshow\fR
+Show which files will be copied. Do NOT update the stamp file.
+.TP
+\fBsync\fR
+Merge the files. Update the stamp file.
+.TP
+\fBunlock\fR
+Remove lock gotten by msync lock.
+.TP
+\fBuptodate\fR
+Mark the entire tree as being up to date.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

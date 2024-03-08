@@ -1,0 +1,63 @@
+.TH RSC 1L
+.SH NAME
+rsc \- synchronize directory tree with remote rsync server
+
+.SH SYNOPSIS
+.B rsc 
+[\fI-h\fR] [command] [command-args]
+
+.SH DESCRIPTION
+rsc is a wrapper around rsync which gives a cvs/git/svn like command to synchronize a local directory tree with a remote directory tree.
+
+.SH OPTIONS
+.TP
+\fB-h\fR
+Show a brief help page.
+
+.SH COMMANDS
+rsc understands the following commands:
+.TP
+\fBignore x y z\fR
+Add the entries "x", "y" and "z" to the ignore list. To match a file prefix it with the directory separator character ('/' on Unix): /wp-config.php. To match a directory prefix and suffix it with the directory separator char: /wordpress/.
+.TP
+\fBinfo\fR
+Show info about tree.
+.TP
+\fBinit user@server::module\fR
+Initialize this directory as the source directory with the remote root as user@server::module
+.TP
+\fBlock\fR
+Lock tree - disable sync. Use rsc unlock to remove lock.
+.TP
+\fBshow\fR
+Show which files will be copied.
+.TP
+\fBset var value\fR
+Set the specified variable to value. The following variables can be manipulated: command, module, remoteconfig, remotersync. Have a look in the .RSC/rc file to get a feel of what they should look like.
+.TP
+\fBsync\fR
+Synchronize the local directory with the remote directory.
+.TP
+\fBunlock\fR
+Remove lock obtained by rsc lock.
+
+.SH CONFIGURATION
+rsc expects a remote rsync to be configured. The default is that the module specifications are placed in /etc/rsync.cfg but this can be overriden by setting the remoteconfig variable.
+An example of a rsync.cfg:
+.TP
+uid = www
+.TP
+gid = www
+.TP
+use chroot = no
+.TP
+read only = no
+.TP
+exclude from = /home/www/rsync/exclude
+.TP
+[web]
+.TP
+	path = /home/www/web
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

@@ -1,0 +1,22 @@
+.TH LTS 1L
+.SH NAME
+lts \- lightweight tree sync
+
+.SH SYNOPSIS
+.B lts
+src dst
+
+.SH DESCRIPTION
+lst synchronizes src folder with dst folder. Files which have changed in src are copied to dst. Files which are present in dst but not in src are deleted from dst.
+
+.SH OPTIONS
+.TP
+\fB-d\fR
+Dry run. Print what to do without doing it.
+
+.TP
+\fB-h\fR
+Show a brief help page.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

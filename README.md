@@ -278,6 +278,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 ## Other
 
 * [certview](dotnet/certview) - a commandline tool to view certicates in the Windows CSP - .NET Core.
+* [ctools](c/ctools) - lots of old (broken?!) tools - c.
 * [eplogr](go/eplogr) - a developer oriented endpoint logger - go.
 * [FamilyASN1](c/FamilyASN1/) - a sample ASN.1 parser using SNACC - c.
 * [Games](Games/) - small command line games - C, Go, Java and Python.
