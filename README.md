@@ -277,6 +277,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 
 ## Other
 
+* [Azure Apps](dotnet/AzureApps) - some functions for Azure - c#.
 * [certview](dotnet/certview) - a commandline tool to view certicates in the Windows CSP - .NET Core.
 * [ctools](c/ctools) - lots of old (broken?!) tools - c.
 * [eplogr](go/eplogr) - a developer oriented endpoint logger - go.
@@ -286,7 +287,9 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [gxdavr](go/gxdavr) - Gnome Contacts DAV Redirect - go.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * **LambdaFunctions**- various AWS Lambda sunction - [Python](python/LambdaFunctions/) and [Go](go/LambdaFunctions/).
+* [KWED-dl](dotnet/kweddl) - download the latest tracks from remix.kwed.org - c#.
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
+* [Nant](dotnet/Nant/) - development Nant scripts - c#.
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
 * [qmta](c/qmta) - a 7-bit MTA / SMTP daemon - c.
 * [snmpproxy](c/snmpproxy) - SNMP masquerade daemon - c.
@@ -294,3 +297,4 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [Trail Tools](java/TrailTools/) - ehrm ... - java.
 * [ubit](ubit/) - some microbit samples (in danish) - js.
 * [Wordpress](Wordpress/) - Wordpress plugins and themes - php.
+

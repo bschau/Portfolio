@@ -1,0 +1,15 @@
+To build:
+
+	dotnet restore
+	dotnet build
+
+To run:
+
+	dotnet run
+
+To create a "standalone" distributable:
+
+	dotnet publish
+
+	Copy stuff from bin\Debug\netcoreapp3.1\publish to target
+

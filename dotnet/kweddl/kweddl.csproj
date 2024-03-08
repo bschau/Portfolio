@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp7.0</TargetFramework>
+    </PropertyGroup>
+</Project>
