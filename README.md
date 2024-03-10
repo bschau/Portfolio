@@ -296,6 +296,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [tools](go/tools) - a collection of command line tools - go.
 * [Trail Tools](java/TrailTools/) - ehrm ... - java.
 * [ubit](ubit/) - some microbit samples (in danish) - js.
+* [Unfinished Thanis World](unfinished/ThanisWorld/), [Unfinished Game](unfinished/Game) - unfinished games, javascript.
 * [VPS Apps](VpsApps/) - some scripts I run on my VPS - go, perl and python.
 * [Wordpress](Wordpress/) - Wordpress plugins and themes - php.
 * [Yocto Basic](c/YoctoBasic/) - everyone has their own home-grown language. This is mine - c.
