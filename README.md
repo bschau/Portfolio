@@ -298,4 +298,5 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [ubit](ubit/) - some microbit samples (in danish) - js.
 * [VPS Apps](VpsApps/) - some scripts I run on my VPS - go, perl and python.
 * [Wordpress](Wordpress/) - Wordpress plugins and themes - php.
+* [Yocto Basic](c/YoctoBasic/) - everyone has their own home-grown language. This is mine - c.
 

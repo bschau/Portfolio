@@ -1,0 +1,16 @@
+rem Fibonacci sequence
+10 print "Enter how many bits (max 32):"
+input n
+if n < 1 then goto 10
+if n > 32 then goto 10
+
+let s = 1
+print "0 bits: 0"
+for z = 1 to n
+	if z = 1 then goto 20
+	print z, " bits: ", s
+	goto 30
+	
+20	print "1 bit: ", s
+30	let s = s * 2
+next
