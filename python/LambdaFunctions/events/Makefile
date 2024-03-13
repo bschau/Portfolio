@@ -6,6 +6,7 @@ init:
 	-rm -fr package
 	pip3 install --target=./package -r requirements.txt
 	cp ~/.lambda.json settings.json
+	curl -o happenings.json https://schau.dk/happenings.json
 
 lint:
 	-pylint --rcfile=../pylintrc *.py

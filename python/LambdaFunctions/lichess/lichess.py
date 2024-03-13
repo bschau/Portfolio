@@ -1,4 +1,5 @@
 """ lichess """
+import datetime
 import json
 import os
 import time
@@ -104,12 +105,15 @@ class Lichess():
                 games: games in which I am in turn
         """
         html = ""
-        formatter = "<li><i>{}</i>: {}</li>"
+        formatter = "<li><i>{}</i>: {} (expires {})</li>"
+        now = datetime.datetime.now()
         linkformatter = "<a href=\"https://lichess.org/{}\">Go to game</a>"
         for game in games:
             opponent = game["opponent"]["username"]
             link = linkformatter.format(game["fullId"])
-            line = formatter.format(opponent, link)
+            expires = now + datetime.timedelta(seconds=game["secondsLeft"])
+            expires = expires.replace(microsecond=0)
+            line = formatter.format(opponent, link, expires)
             html = f"{html}{line}"
 
         return html

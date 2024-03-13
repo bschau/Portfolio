@@ -45,7 +45,8 @@ class TrelloTodo():
             body = f'{body}<body><table>'
             body = f'{body}<tr><th style="text-align: left">List</th>'
             body = f'{body}<th style="text-align: left">Task</th>'
-            body = f'{body}<th style="text-align: left">Due date</th></tr>'
+            body = f'{body}<th style="text-align: left">Due date</th>'
+            body = f'{body}<th style="text-align: left">Notes</th></tr>'
             body = f'{body}{html}</table></body></html>'
             SendMail().deliver(title, body)
 
@@ -125,16 +126,23 @@ class TrelloTodo():
         link_formatter = "<a href=\"{}\">{}</a>"
 
         formatter = ('<tr><td style="padding-right: 1em">{}</td>'
-                     '<td style="padding-right: 1em">{}</td><td>{}</tr>')
+                     '<td style="padding-right: 1em">{}</td><td>{}</td>'
+                     '<td>{}</td></tr>')
         for card in cards['sorted']:
             link = link_formatter.format(card['shortUrl'], card['name'])
             due = card['due'][0:10] + " (" + card['due'][11:19] + ")"
-            line = formatter.format(lists[card['idList']], link, due)
+            line = formatter.format(lists[card['idList']],
+                                    link,
+                                    due,
+                                    card['desc'])
             html = f"{html}{line}"
 
         for card in cards['unsorted']:
             link = link_formatter.format(card['shortUrl'], card['name'])
-            line = formatter.format(lists[card['idList']], link, "")
+            line = formatter.format(lists[card['idList']],
+                                    link,
+                                    "",
+                                    card['desc'])
             html = f"{html}{line}"
 
         return html
