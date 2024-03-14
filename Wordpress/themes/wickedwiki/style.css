@@ -3,11 +3,9 @@ Theme Name: Wicked Wiki
 Theme URI: http://www.schau.dk/
 Description: The schau.dk wiki theme.
 Author: Brian Schau
-Version: 2.0
+Version: 3.0
 Tags: simple
 */
-@import url('https://fonts.googleapis.com/css?family=Fira+Code|Roboto&display=s wap');
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
 font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
@@ -21,14 +19,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-size: 100%;
 }
 
+:root {
+	font-size: calc(1rem + 0.25vw);
+}
+
 html {
 	height: 100%;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	line-height: 18px;
+	font-family: Arial, sans-serif;
+/*	font-size: 16px; 	*/
+/*	line-height: 18px;	*/
 	height: 100%;
 	margin: 0 auto;
 	color: #111;
@@ -39,11 +41,12 @@ pre {
 	padding: 0.5em 1em;
 	border-left: 2px solid #888;
 	overflow: scroll;
-	font-size: 0.9rem;
+/*	font-size: 0.9rem;	*/
+	font-size: 90%;
 }
 
 code {
-	font-family: 'Fira Code', monospace;
+	font-family: 'Courier New', monospace;
 }
 
 a, a:visited, a:hover, a:active {
@@ -61,13 +64,13 @@ a:hover {
 
 h1 {
 	color: #5c6366;
-	font-family: 'Noto Serif', serif;
+	font-family: Garamond, serif;
 	clear: both;
 }
 
 h2, h3, h4, h5, h6 {
 	color: #8F9699;
-	font-family: 'Noto Serif', serif;
+	font-family: Garamond, serif;
 	clear: both;
 }
 
@@ -84,7 +87,8 @@ caption, th, td {
 #footer {
 	clear: both;
 	text-align: center;
-	font-size: 0.6rem;
+	/* font-size: 0.6rem; */
+	font-size: 60%;
 	width: 100%;
 	height: 18px;
 	font-style: italic;
@@ -222,14 +226,16 @@ caption, th, td {
 }
 
 .wwh1 {
-	font-size: 1.2rem;
+/* font-size: 1.2rem;	*/
+	font-size: 120%;
 	font-weight: normal;
 	margin-bottom: 0.5em;
 	text-transform: uppercase;
 }
 
 .wwh1::first-letter {
-	font-size: 1.3rem;
+/*	font-size: 1.3rem;	*/
+	font-size: 130%;
 }
 
 /* .children { margin-left: 48px; } */
@@ -242,7 +248,8 @@ dl a { margin-right: 0.5em; }
  * Breadcrumb trail
  */
 .breadcrumb, .breadcrumb a {
-	font-size: 0.9rem;
+/*	font-size: 0.9rem;	*/
+	font-size: 90%;
 	color: #999;
 }
 
@@ -270,7 +277,8 @@ table {
 	border: 1px solid gray;
 	border-collapse: collapse;
 	color: #fff;
-	font-size: 0.9rem;
+	/* font-size: 0.9rem;*/
+	font-size: 90%;
 }
 
 caption {
@@ -330,7 +338,7 @@ tfoot td {
 	padding-top: 3px;
 }
 
-tr:nth-child(odd) { background: #FFF }
+tr:nth-child(odd) { background: #fff; }
 
 tbody tr:hover {
 	background: #99BCBF;
@@ -338,6 +346,7 @@ tbody tr:hover {
 	color: #000000;
 }
 
+/*
 @media only screen and (max-width: 640px) {
 	body {
 		font-size: 24px;
@@ -346,3 +355,4 @@ tbody tr:hover {
 
 	.page-content { padding: 0 0.2em; }
 }
+*/
