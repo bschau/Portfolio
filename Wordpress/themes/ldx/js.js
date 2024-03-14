@@ -10,13 +10,21 @@ const text = [ "ffffff", "000000", "ffffff", "000000",
 	       "ffffff", "000000", "ffffff", "000000" ];
 
 function initLdx() {
+	// background
 	const index = Math.floor(Math.random() * 16);
+	document.body.style.background = '#' + background[index];
+
+	// ldx + stx
 	const pElem = document.getElementById('ldx');
 	let hex = index.toString(16);
 	hex = hex.length == 1 ? "0" + hex : hex;
 	pElem.innerHTML = 'ldx #' + hex + '&nbsp;&nbsp;<br />stx #d020<br />stx #d021';
+
+	// foreground
 	const hexColor = '#' + text[index];
-	document.body.style.background = '#' + background[index];
-	pElem.style.color = hexColor;
-	document.getElementById('small1').style.color = hexColor;
+	let elements = document.getElementsByClassName('js');
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].style.borderColor = hexColor;
+		elements[i].style.color = hexColor;
+	}
 }
