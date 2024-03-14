@@ -1,0 +1,38 @@
+@font-face {
+	font-family: "Speed Rush";
+	src: url('assets/SpeedrushRegular.otf') format('truetype');
+}
+
+body {
+	font-family: "Speed Rush", sans-serif;
+	font-size: 22px;
+	line-height: 24px;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+}
+
+#outer {
+	padding: 1em 0;
+}
+
+#inner {
+	text-align: center;
+}
+
+.small {
+	font-size: 12px;
+}
+
+#footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+a {
+	text-decoration: none;
+}

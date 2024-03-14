@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'Gugi';
+	src: url('Gugi-Regular.ttf');
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Gugi', cursive;
+	font-size: 18px;
+	padding: 1em;
+	text-align: center;
+}
+
+
+h2 {
+	background-color: #90d690;
+	border-radius: 8px;
+}
+
+#page {
+	width: 960px;
+	margin: 0 auto;
+}
