@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Raspberry PI</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>Raspberry PI</h1>
+	<h2>CUPS on Raspberry Pi</h2>
+	<ul>
+		<li>You must do the steps as root unless otherwise noted.</li>
+		<li>You must substitute 192.168.1.242 in the steps below with the IP address of your Raspberry Pi.</li>
+		<li>Insert the USB flash disk. Use <code>dmesg</code> to reveal information:</li>
+	</ul>
+<pre>[ 465.594442] sd 0:0:0:0: [sda] 15633408 512-byte logical blocks: (8.00 GB/7.45 GiB)
+[ 465.595797] sd 0:0:0:0: [sda] Write Protect is off
+[ 465.595812] sd 0:0:0:0: [sda] Mode Sense: 43 00 00 00
+[ 465.596219] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+[ 465.607069] sda: sda1
+[ 465.609873] sd 0:0:0:0: [sda] Attached SCSI removable disk</pre>
+
+	<ul>
+		<li>If you don't get any partition information, use <code>fdisk</code> to repartition the disk - it should contain one partition.</li>
+		<li>Create the filesystem:</li>
+	</ul>
+<pre>mkfs.ext4 -L Cups /dev/sda1</pre>
+
+	<ul>
+		<li>Install required packages:</li>
+	</ul>
+<pre>apt -y install cups hplip hpijs-ppds printer-driver-hpijs</pre>
+
+	<ul>
+		<li>Add yourself to the <em>lpadmin</em> group so that you can administrate printers (use your own username :-):</li>
+	</ul>
+<pre>usermod -aG lpadmin bs</pre>
+
+	<ul>
+		<li>Stop cups:</li>
+	</ul>
+<pre>service cups stop</pre>
+
+	<ul>
+		<li>Move cups spool to USB flash disk:</li>
+	</ul>
+<pre>echo "LABEL=Cups /var/spool/cups ext4 defaults,noatime 0 1" &gt;&gt; /etc/fstab
+cd /var/spool/cups
+rm -fr *
+cd ..
+mount -a
+chown root:lp cups
+cd cups
+mkdir tmp
+chmod 1700 tmp
+chown root:lp tmp</pre>
+
+	<ul>
+		<li>Open up Cups for remote administration:</li>
+	</ul>
+<pre>cupsctl --remote-admin
+service cups restart</pre>
+
+	<ul>
+		<li>Plug your printer into a USB port on your Raspberry Pi, turn on your printer and browse to <code><a href="https://192.168.1.242:631/admin">https://192.168.1.242:631/admin</a></code> (substitute with your IP-address) and add your USB printer. When you access the <code>/admin</code> pages your browser will complain that the certificate is self signed and not trusted. Accept and trust the certificate for future reference.</li>
+	</ul>
+
+	<h3>SSL</h3>
+	<p>To enable SSL without a self-signed certificate follow these steps. My server is called <em>tanya.schau.dk</em> - please adjust accordingly below:</p>
+	<ul>
+		<li>(Optional) Remove foreign and self-signed certificates: <code>rm /etc/cups/ssl/*</code></li>
+		<li>Copy the server certificate and certificate key to <code>/etc/cups/ssl</code>. Both files must be PEM encoded:</li>
+	</ul>
+<pre>cp tanya.schau.dk.key /etc/cups/ssl
+cp tanya.schau.dk.crt /etc/cups/ssl</pre>
+
+	<ul>
+		<li>Add the following to <code>/etc/cups/cupsd.conf</code>:</li>
+	</ul>
+<pre>ServerAlias *
+CreateSelfSignedCerts no</pre>
+
+	<ul>
+		<li>Add your IP/Hostname combo (the one matching the certificate) to <em>/etc/hosts</em>:</li>
+	</ul>
+<pre>echo "192.168.1.242 tanya.schau.dk" &gt;&gt; /etc/hosts</pre>
+
+	<ul>
+		<li>Restart cups:</li>
+	</ul>
+<pre>sudo service cups restart</pre>
+	<p><br /></p>
+
+	<h2>Subsonic on Raspberry PI</h2>
+	<ul>
+		<li>In the steps below, <code>/some/device</code> should be substituted with the correct block device.</li>
+		<li>You must to the steps as root unless otherwise noted.</li>
+		<li>Prepare the USB flash disk for music on a linux system:</li>
+	</ul>
+<pre>mkfs.ext4 -L Music /some/device</pre>
+
+	<ul>
+		<li>Mount the partition and copy your mp3 files over.</li>
+		<li>Optionally (but recommended), prepare the USB flash disk for podcasts on a linux system:</li>
+	</ul>
+<pre>mkfs.ext4 -L Subsonic /some/device</pre>
+
+	<ul>
+		<li>Insert the <em>Music</em> and <em>Subsonic</em> devices into your Raspberry Pi 3</li>
+		<li>Add the following to <code>/etc/fstab</code>:</li>
+	</ul>
+<pre>LABEL=Subsonic /home/subsonic/tmp ext4 defaults,users,noatime 0 1
+LABEL=Music /home/subsonic/Music ext4 defaults,users,noatime 0 1</pre>
+
+	<ul>
+		<li>Add and prepare the subsonic user:</li>
+	</ul>
+<pre>useradd -m subsonic
+chsh -s /usr/sbin/nologin subsonic
+mkdir /home/subsonic/Music
+mkdir /home/subsonic/tmp
+mount -a
+mkdir /home/subsonic/tmp/Podcasts
+chown -R subsonic:subsonic /home/subsonic</pre>
+
+	<ul>
+		<li>Install dependencies:</li>
+	</ul>
+<pre>apt install openjdk-8-jre</pre>
+
+	<ul>
+		<li>Install subsonic:</li>
+	</ul>
+<pre>dpkg -i subsonic-6.1.5.deb</pre>
+
+	<ul>
+	<li>Add the following to <code>/etc/default/subsonic</code>:</li>
+</ul>
+<pre>SUBSONIC_ARGS="--max-memory=300"
+SUBSONIC_USER="subsonic"</pre>
+
+	<ul>
+		<li>Reboot your server.</li>
+		<li>Now you can log on to your server using port 4040 on the public IP and configure the rest of Subsonic.</li>
+		<li>Remember that the music is stored in <code>/home/subsonic/Music</code> and podcasts in /<code>home/subsonic/Podcasts</code>.</li>
+	</ul>	
+
+	<h3>SSL</h3>
+	<ul>
+		<li>To enable SSL you must first create a suitable pkcs12 file. The pkcs12 file must follow this format:</li>
+	</ul>
+<pre>certificate-key
+certificate
+intermediates</pre>
+
+	<ul>
+		<li>You must assemble these information from your existing certificate (using f.ex. OpenSSL) or create a new certificate (Let's Encrypt is fine).</li>
+		<li>Then:</li>
+	</ul>
+<pre>cat certificate-key certificate intermediates &gt; subsonic.crt
+openssl pkcs12 -in subsonic.crt -export -out subsonic.pkcs12
+cp subsonic.pkcs12 /etc/ssl
+chmod 644 /etc/ssl/subsonic.pkcs12
+rm -f subsonic.crt</pre>
+
+	<ul>
+		<li>Make a note of the password you specify to the OpenSSL command - you will need it below!</li>
+		<li>Then update <code>/etc/default/subsonic</code>:</li>
+	</ul>
+<pre>SUBSONIC_ARGS="--https-port=4443 --port=4040 {Other Args, such as --max-memory}"</pre>
+
+	<ul>
+		<li>Update <code>/usr/share/subsonic/subsonic.sh</code> around line 131, insert:</li>
+	</ul>
+<pre>-Dsubsonic.ssl.keystore=/etc/ssl/subsonic.pkcs12 \
+-Dsubsonic.ssl.password=...password-from-above... \</pre>
+
+	<ul>
+		<li>Restart Subsonic and log on to <code><a href="http://your-server:4040/" rel="nofollow">http://your-server:4040/</a></code> – you should be redirected to <code><a href="https://your-server:4443/" rel="nofollow">https://your-server:4443/</a></code>.</li>
+	</ul>
+	<p><br /></p>
+</body>
+</html>

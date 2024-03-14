@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Postfix</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>Postfix</h1>
+	<h2>MySQL</h2>
+	<p>Install MySQL:</p>
+	<pre>sudo apt install mysql
+sudo mysql -u root
+alter user 'root'@'localhost' identified with mysql_native_password by '~password~';
+flush privileges;
+exit;
+mysql_secure_installation</pre>
+	<p>... don't set a new root password.</p>
+
+	<p>Install Postfix module:</p>
+	<pre>sudo apt install postfix-mysql</pre>
+
+	<h3>Prepare table</h3>
+	<pre>mysql -u root -p
+create database postfix;
+create user 'postfix'@'localhost' identified by '~password~';
+grant all privileges on postfix.* to 'postfix'@'localhost';
+flush privileges;
+use postfix;
+create forwards(id int auto_increment primary key, source text not
+null, destination text not null, owner text, reserved datetime, token text);
+insert into forwards(source,destination,reserved) values('~source~','~destination~',DATE_ADD(NOW(), interval 100 year));
+exit;</pre>
+
+	<p>Create <code>/etc/postfix/virtual-mysql.cf</code> with:</p>
+	<pre>hosts = inet:127.0.0.1:3306
+user = postfix
+password = ~password~
+dbname = postfix
+query = SELECT destination FROM forwards WHERE source='%s' AND reserved&gt;=NOW()</pre>
+
+	<p>Add to <code>/etc/postfix/main.cf</code>:</p>
+	<pre>virtual_alias_maps = mysql:/etc/postfix/virtual-mysql.cf</pre>
+	<p>Restart postfix.</p>
+
+	<h3>Test</h3>
+	<p>To test if virtual map works:</p>
+	<pre>`postalias -q '~source~' mysql:/etc/postfix/virtual-mysql.cf</pre>
+	<p>... will return the forward for the ~source~.</p>
+	<p><br /></p>
+</body>
+</html>

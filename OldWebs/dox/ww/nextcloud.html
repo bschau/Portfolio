@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Nextcloud</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<h1>Nextcloud</h1>
+<h2>Installation</h2>
+<p>Tested on Ubuntu 22.04.</p>
+<p>Prepare Apache Webserver, set <code>DocumentRoot</code> to <code>/home/sky</code>.</p>
+
+<p>Install extra php-modules:</p>
+<pre> sudo apt install php-zip php-dom php-xmlwriter php-xml php-mbstring php-gd php-simplexml php-curl php8.1-imagick php-gmp php-bcmath php-intl php-bz2 libmagickcore-6.q16-6-extra php-apcu curl -y</pre>
+
+<p>Prepare database, <b>sky</b>, user <b>sky</b>.</p>
+
+<p>Download <code>setup-nextcloud.php</code> to <code>/home/sky</code> and visit https://sky../setup-nextcloud.php.</p>
+
+<p>Configure Nextcloud by following the prompts.</p>
+
+<p>Then, log in and configure your profile - add email-address, phone number and so on.</p>
+
+<p>Add to crontab for the user running Nextcloud:</p>
+<pre>*/5 * * * * /usr/bin/php /home/webs/sky/cron.php</pre>
+
+<p>Add to <code>/home/sky/config/config.php:</p>
+<pre>'memcache.local' =&gt; '\\OC\\Memcache\\APCu',
+'default_phone_region' =&gt; 'DK',</pre>
+
+<p>Add to <code>/etc/php/XX/cli/php.ini</code> at the bottom:</p>
+<pre>[apc]
+apc.enable_cli=1</pre>
+
+<p>Log into Nextcloud, go to <i>Basic Settings</i> and configure email.</p>
+<p>Then, in <i>Apps</i>, go to <i>Security</i> and enable <b>Two-Factor TOTP Provider</b>.</p>
+<p>Go to <i>Personal -&gt; Security</i>.  Enable <b>TOTP</b>.</p>
+
+<p>Lastly, visit the <i>Administration settings -> Overview</i> and correct any remaining issues.</p>
+
+<p><br /></p>
+</body>
+</html>

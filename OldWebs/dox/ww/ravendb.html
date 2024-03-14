@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>RavenDB</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>RavenDB</h1>
+	<h2>Include/exclude</h2>
+	<p>Search for <strong>foo</strong> and not <strong>bar</strong> in title:</p>
+<pre>title:foo -title:bar</pre>
+
+	<h2>Nested properties</h2>
+<pre>{
+	User: {
+		Name: "Brian"
+	}
+}</pre>
+	<p>Use the following query to match:</p>
+<pre>User.Name: Brian</pre>
+
+	<h2>Collections</h2>
+<pre>{
+	"Tags" : [
+		{
+			"Name" : "sport"
+		},
+		{
+			"Name" : "tv"
+		}
+	]
+}</pre>
+	<p>Use the following query to match:</p>
+<pre>Tags,Name: sport</pre>
+
+	<h2>Numeric values</h2>
+<pre>Age: 20                     # match exact
+Age_Range: {20 TO NULL}     # append _Range to match 20+</pre>
+
+	<h2>Multiple words</h2>
+<pre>&lt;&lt;word1 word2&gt;&gt;             # or
+(word1 word2)</pre>
+
+	<h2>@in</h2>
+<pre>@in: (Brian, Charlotte)              # look for names containing Brian or Charlotte. Comma is the separator
+@in:("Australia`,`Canada", Israel)   # match Australia,Canada OR Israel.  Use grave accent ` to escape the comma</pre>
+
+	<h2>null or ""</h2>
+	<p>In order to get users that have a null or empty name specify the query:</p>
+<pre>Name:[[NULL_VALUE]] OR Name:[[EMPTY_STRING]]</pre>
+
+	<h2>Not null</h2>
+<pre>*:* AND NOT Email:[[NULL_VALUE]]</pre>
+
+	<h2>Not in list</h2>
+<pre>*:* AND -CustomerId: (1 2 3)</pre>
+
+	<h2>Query dates</h2>
+	<p>To query a date (from beginning to 2014/04/20):</p>
+<pre>EndDate: [NULL TO 2014-04-20T23:59:59.9999999]</pre>
+
+	<h2>In case of failure</h2>
+	<p>To repair database:</p>
+<pre>C:
+cd RavenDBDatabases{database_name}
+rem Adds information in logs to database - do this first
+esentutl /r RVN /l logs /s system
+
+rem Recover data - may loose information (this is a lengthy process)
+esentutl /p Data
+
+rem Defragment database (this is a lengthy process)
+esentutl /d Data</pre>
+
+	<p>... do for all corrupted databases.</p>
+	<p>See also <a href="https://support.microsoft.com/en-us/kb/314917">https://support.microsoft.com/en-us/kb/314917</a>.</p>
+
+	<h2>Import (defect) database</h2>
+	<p>Original thread <a href="https://groups.google.com/forum/#!searchin/ravendb/bummer%7Csort:relevance/ravendb/gOHL1SjzqUg/3-7XjxVhCQAJ">https://groups.google.com/forum/#!searchin/ravendb/bummer%7Csort:relevance/ravendb/gOHL1SjzqUg/3-7XjxVhCQAJ</a>.</p>
+	<p>See if documents are deleted:</p>
+	<ol>
+		<li>Create an empty temporary database without versioning -&lt; let's call it TempDB.</li>
+		<li>Export your original database.</li>
+		<li>Import the new exported file to TempDB.</li>
+		<li>In TempDB, create an index that will contain all of the documents with a field called Raven-Document-Revision-Status in the metadata:
+<pre>from doc in docs select new { Revision = doc["@metadata"]["Raven-Document-Revision-Status"] };</pre></li>
+		<li>Now query TempDB by the index for all the document where Revision = "Historical". This will get you only the docs with revisions.</li>
+		<li>Get the prefix for each doc and query the original database (to see if the original exists there), if it doesn't exist create it from the revision doc you have (the latest of course).</li>
+	</ol>
+
+	<h2>Export only documents</h2>
+<pre>raven.smuggler out http://localhost:8080 c:\\users\\bschau\\desktop\\database.dmp --database=... --operate-on-types=Documents --metadata-filter=Raven-Document-Revision-Status=Current</pre>
+
+	<h2>Rename collection</h2>
+	<p>Run the following patch on the collection to rename:</p>
+<pre>this['@metadata']['Raven-Entity-Name'] = "new-name-of-collection-remember-to-pluralize";</pre>
+	<p><br /></p>
+</body>
+</html>

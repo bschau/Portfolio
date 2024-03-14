@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>MSSQL Survival Guid</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>MSSQL Survival Guide</h1>
+	<h2>Add column</h2>
+
+	<pre>ALTER TABLE [dbo].[SubscriptionProductVersions] ADD IsCreditRatingRequired BIT;
+UPDATE [dbo].[SubscriptionProductVersions] SET IsCreditRatingRequired=0;
+ALTER TABLE [dbo].[SubscriptionProductVersions] ALTER COLUMN IsCreditRatingRequired BIT NOT NULL;</pre>
+
+	<h2>Remove column</h2>
+	<pre>ALTER TABLE [dbo].[AmortizedLoans] DROP COLUMN IsCancelled;</pre>
+
+	<h2>Rename column</h2>
+	<pre>EXEC sp_rename 'old_table_name.[oldColumnName]', 'newColumnName', 'COLUMN'</pre>
+
+	<h2>Copy column</h2>
+	<pre>update dbo.Table set customerBaseId = customerId where customerBaseId is null;</pre>
+
+	<h2>Remove procedure</h2>
+	<pre>DROP (FUNCTION | PROCEDURE) [dbo].[GetAccountFirstConsumption];</pre>
+
+	<h2>Rename table</h2>
+	<pre>sp_rename 'old_table_name', 'new_table_name'</pre>
+
+	<h2>Constraints</h2>
+	<pre>ALTER TABLE [dbo].[XXX] NOCHECK CONSTRAINT ALL   -- disable constraints
+ALTER TABLE [dbo].[XXX] CHECK CONSTRAINT ALL     -- enable constraints</pre>
+
+	<h2>Drop foreign key</h2>
+	<pre>ALTER TABLE [dbo].[AccountTable] DROP FK_AccountTableParentId_AccountTableId</pre>
+
+	<h2>Copy table</h2>
+	<pre>-- disable constraints
+EXEC sp_msforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all"
+
+-- copy table
+insert into dbo.NewTable select * from [Mvno].[dbo].[bs_NewTable]
+
+-- enable constraints
+exec sp_msforeachtable @command1="print '?'", @command2="ALTER TABLE ? WITH CHECK CHECK CONSTRAINT all"</pre>
+
+	<h2>Backup</h2>
+	<pre>USE eSignatur;
+BACKUP DATABASE eSignatur
+	TO DISK = 'c:tempeSignatur.Bak' WITH FORMAT,
+	MEDIANAME = 'C_SQLServerBackups',
+	NAME = 'Full Backup of eSignatur';</pre>
+
+	<h2>Database encryption</h2>
+	<p>See <a href="http://msdn.microsoft.com/en-us/library/cc278098(v=sql.100).aspx">http://msdn.microsoft.com/en-us/library/cc278098(v=sql.100).aspx</a> and <a href="http://ask.sqlservercentral.com/questions/28447/testing-tde-encryption-sql-2008.html">http://ask.sqlservercentral.com/questions/28447/testing-tde-encryption-sql-2008.html.</a>.</p>
+
+	<pre>USE master
+GO
+
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'B3ngal$kTig3r'
+GO
+
+CREATE CERTIFICATE SQLCertificate WITH SUBJECT = 'SQL Certificate'
+GO
+
+BACKUP CERTIFICATE SQLCertificate TO FILE = 'c:\tmp\sqlcertificate' WITH PRIVATE KEY ( FILE = 'c:\tmp\sqlprivatekey',
+	ENCRYPTION BY PASSWORD = 'B3ngal$kTig3r' )
+GO
+
+USE mydb
+GO
+
+CREATE DATABASE ENCRYPTION KEY WITH ALGORITHM = AES_256 ENCRYPTION BY SERVER CERTIFICATE SQLCertificate
+GO
+
+ALTER DATABASE mydb SET ENCRYPTION ON
+GO
+
+SELECT db_name(database_id), encryption_state, percent_complete, * FROM sys.dm_database_encryption_keys
+GO</pre>
+
+	<p>Database encryption_state 2 means that the encryption process has begun. Database encryption_state 3 means that the encryption process has completed.</p>
+
+	<h2>Move database files</h2>
+	<p>From <a href="http://technet.microsoft.com/en-us/library/ms345483.aspx">http://technet.microsoft.com/en-us/library/ms345483.aspx</a>.</p>
+
+	<pre>ALTER DATABASE SignProxy SET OFFLINE
+GO
+
+ALTER DATABASE SignProxy MODIFY FILE (name = SignProxy,
+	filename ='C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQLDATA\SignProxy.mdf')
+GO
+
+ALTER DATABASE SignProxy MODIFY FILE (name = SignProxy_Log,
+	filename ='C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQLDATA\SignProxy_log.ldf');
+GO
+
+ALTER DATABASE SignProxy SET ONLINE
+GO
+
+-- Verify
+SELECT name, physical_name AS CurrentLocation, state_desc FROM sys.master_files WHERE database_id = DB_ID(N'SignProxy')
+GO</pre>
+
+	<h2>If the database reports that it cannot open more instances</h2>
+	<ol>
+		<li>Open Task Manager</li>
+		<li>Stop sqlserver.exe</li>
+		<li>Delete the SQLEXPRESS folder from %LOCALAPPDATA%\Microsoft\Microsoft SQL Server Data</li>
+	</ol>
+
+	<h2>Restore alongside existing database</h2>
+	<pre>-- see files used (use below)
+USE master;
+RESTORE FILELISTONLY
+	FROM DISK = 'c:\temp\mydb.bak';
+
+-- restore to alternate destination
+RESTORE DATABASE mydb
+	FROM DISK = 'c:\temp\mydb.bak'
+	WITH MOVE 'mydb' TO 'c:\mydb\tt_mydb_Data.mdf',
+	MOVE 'mydb_log' TO 'c:\mydb\tt_mydb_log.ldf',
+	FILE = 1,
+	RECOVERY;</pre>
+
+	<h2>Restore to new empty database</h2>
+	<pre>USE master;
+RESTORE DATABASE mydb
+	FROM DISK = 'c:\temp\mydb.Bak' WITH FILE = 1,
+	RECOVERY;</pre>
+
+	<h2>Login error after restore</h2>
+	<p>You may have to rebind a login to a user in the database:</p>
+	<pre>USE [database-name];
+ALTER USER user WITH LOGIN = user;</pre>
+
+	<h2>Compute database size</h2>
+	<pre>select
+	SQL_Server_Version = @@version,
+	SQL_Server_Edition = serverproperty('Edition'),
+	SQL_Server_Name = serverproperty('ServerName'),
+	Database_Name = a.Name,
+	Maximum_Database_Size_MB = case
+	when serverproperty('EngineEdition') in (1, 4) then
+		case
+			when cast(serverproperty('ProductVersion') as nvarchar(128)) like '8.%' then '2048 MB'
+			when cast(serverproperty('ProductVersion') as nvarchar(128)) like '9.%' then '4096 MB'
+			when cast(serverproperty('ProductVersion') as nvarchar(128)) like '10.0%' then '4096 MB'
+		else '10240 MB'
+		end else
+			'Effectively no limit' end,
+		Data_Size_MB = convert(decimal(12,2),round(fileproperty(a.name,'SpaceUsed')/128.000,2)),
+		Available_Growth_MB = case
+		when serverproperty('EngineEdition') in (1, 4) then
+		case
+			when cast(serverproperty('ProductVersion') as nvarchar(128)) like '8.%' then 2048
+			when cast(serverproperty('ProductVersion') as nvarchar(128)) like '9.%' then 4096
+			when cast(serverproperty('ProductVersion') as nvarchar(128)) like '10.0%' then 4096
+		else 10240
+		end
+		end - convert(decimal(12,2),round(fileproperty(a.name,'SpaceUsed')/128.000,2))
+	from
+		sys.sysfiles a
+	where
+		a.name not like '%_log';</pre>
+
+	<h2>Trim database</h2>
+	<pre>use mydb;
+-- Size before
+select
+	Data_Size_MB = convert(decimal(12,2),round(fileproperty(a.name,'SpaceUsed')/128.000,2))
+from
+	sys.sysfiles a
+where
+	a.name not like '%_log';
+
+-- Trim
+delete from CrmUpdates where SentToCrm is not null and created &lt; GetDate() - 30;
+delete from Emails where Status != 0 and created &lt; GetDate() - 30;
+delete from EventLogs where created &lt; GetDate() - 30;
+delete from ValidateDocumentEntities where created &lt; GetDate() - 30;
+delete from WebSessions where LastLogin &lt; GetDate() - 30;
+delete from XmlLogs where created &lt; GetDate() - 30;
+
+-- Size after
+select
+	Data_Size_MB = convert(decimal(12,2),round(fileproperty(a.name,'SpaceUsed')/128.000,2))
+from
+	sys.sysfiles a
+where
+	a.name not like '%_log';</pre>
+
+	<h2>MSSQL 2017 for Linux in a Docker container</h2>
+	<p>Make a backup of the database you want to install into the docker container. The install Docker, start and login.</p>
+
+	<p>In the steps below, the database from the file <code>umbraco.bak</code> is imported into to the database <code>my.db</code>. A user, <code>MyUser</code> is and is aligned with the login <code>MyUser</code> from the source-database.</p>
+	<pre>docker pull microsoft/mssql-server-linux:2017-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=YourStrong!Passw0rd" --name sql2017 -p 1433:1433 -v sql2017data:/var/opt/mssql -d microsoft/mssql-server-linux:2017-latest
+docker exec -it sql2017 mkdir /var/opt/mssql/backup
+docker cp umbraco.bak sql2017:/var/opt/mssql/backup
+docker exec -it sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P YourStrong!Passw0rd</pre>
+
+	<p>... and now some SQL magic. In the current prompt replace the "???" with the names from the FILELISTONLY command:</p>
+	<pre>RESTORE FILELISTONLY FROM DISK = '/var/opt/mssql/backup/umbraco.bak'
+go
+RESTORE DATABASE [my.db] FROM DISK = '/var/opt/mssql/backup/umbraco.bak' WITH MOVE '???.umbraco' TO '/var/opt/mssql/data/???.umbraco.mdf', MOVE '???.umbraco_log' TO '/var/opt/mssql/data/???.umbraco.ldf'
+go
+SELECT Name FROM sys.Databases
+go</pre>
+
+	<p>... the last command just to check that the database was created succesfully.</p>
+	<p>Align user:</p>
+	<pre>use [my.db]
+go
+create login MyUser with password = 'SomePassword', CHECK_POLICY=off
+go
+alter user MyUser with login = MyUser
+go</pre>
+
+	<p>... and that's it.</p>
+	<p><br /></p>
+</body>
+</html>

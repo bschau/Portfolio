@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>NodeJS</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<h1>NodeJS</h1>
+<h2>Node access to port 443 as nonstd user on Linux</h2>
+<pre>
+setcap 'cap_net_bind_service=+ep' /usr/bin/node
+</pre>
+<p>Add zapprx to ssl-cert group, logoff, logon, then (as root):</p>
+<pre>
+chgrp -R ssl-cert /etc/letsencrypt
+chmod -R g=rX /etc/letsencrypt
+</pre>
+<p>(Put that in maintenance script)</p>
+</body>
+</html>
