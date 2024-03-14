@@ -29,8 +29,6 @@ html {
 
 body {
 	font-family: Arial, sans-serif;
-/*	font-size: 16px; 	*/
-/*	line-height: 18px;	*/
 	height: 100%;
 	margin: 0 auto;
 	color: #111;
@@ -41,7 +39,6 @@ pre {
 	padding: 0.5em 1em;
 	border-left: 2px solid #888;
 	overflow: scroll;
-/*	font-size: 0.9rem;	*/
 	font-size: 90%;
 }
 
@@ -86,12 +83,9 @@ caption, th, td {
 
 #footer {
 	clear: both;
-	text-align: center;
-	/* font-size: 0.6rem; */
 	font-size: 60%;
-	width: 100%;
-	height: 18px;
 	font-style: italic;
+	text-align: center;
 }
 
 #page { margin: 0 auto; }
@@ -226,19 +220,10 @@ caption, th, td {
 }
 
 .wwh1 {
-/* font-size: 1.2rem;	*/
-	font-size: 120%;
 	font-weight: normal;
 	margin-bottom: 0.5em;
 	text-transform: uppercase;
 }
-
-.wwh1::first-letter {
-/*	font-size: 1.3rem;	*/
-	font-size: 130%;
-}
-
-/* .children { margin-left: 48px; } */
 
 dt { color: #226611; }
 dt { margin-top: 0.5em; }
@@ -269,7 +254,7 @@ h4 { text-style: italic; }
 
 ul, ol { list-style-position: inside; }
 
-li > ul { margin-left: 1em; }
+li > ul, li > ol { margin-left: 2em; }
 
 table {
 	margin-top: 1em;
@@ -277,7 +262,6 @@ table {
 	border: 1px solid gray;
 	border-collapse: collapse;
 	color: #fff;
-	/* font-size: 0.9rem;*/
 	font-size: 90%;
 }
 
@@ -345,14 +329,3 @@ tbody tr:hover {
 	border: 1px solid #03476F;
 	color: #000000;
 }
-
-/*
-@media only screen and (max-width: 640px) {
-	body {
-		font-size: 24px;
-		line-height: 26px;
-	}
-
-	.page-content { padding: 0 0.2em; }
-}
-*/
