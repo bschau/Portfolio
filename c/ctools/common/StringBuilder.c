@@ -1,12 +1,7 @@
-/**
- * StringBuilder.
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define USES_STRINGBUILDER
-#include "Common.h"
+#include "common.h"
 
 /* structs */
 typedef struct {
@@ -17,32 +12,30 @@ typedef struct {
 } SB;
 
 /* protos */
-static void GrowSB(SB *, int);
+static void grow_sb(SB *sb, int c);
 
 /**
  * Allocate a new StringBuilder.
  *
  * @param g Default size (and growth).
- * @return StringBuilder.
+ * @return StringBuilder or NULL.
  */
-StringBuilder
-SBNew(int g)
-{
-	SB *sb=(SB *)calloc(1, sizeof(SB));
+StringBuilder stringbuilder_new(int g) {
+	SB *sb = (SB *) calloc(1, sizeof(SB));
 
 	if (!sb) {
 		fprintf(stderr, "OOM while allocating new StringBuilder\n");
 		exit(1);
 	}
 
-	if ((sb->data=(char *)malloc(g))==NULL) {
+	if ((sb->data = (char *) malloc(g)) ==NULL) {
 		fprintf(stderr, "OOM while allocating new StringBuilder\n");
 		exit(1);
 	}
 
-	sb->max=g;
-	sb->grow=g;
-	return (StringBuilder)sb;
+	sb->max = g;
+	sb->grow = g;
+	return (StringBuilder) sb;
 }
 
 /**
@@ -50,10 +43,8 @@ SBNew(int g)
  *
  * @param s StringBuilder.
  */
-void
-SBFree(StringBuilder s)
-{
-	SB *sb=(SB *)s;
+void stringbuilder_free(StringBuilder s) {
+	SB *sb = (SB *) s;
 
 	if (sb) {
 		if (sb->data) {
@@ -70,13 +61,11 @@ SBFree(StringBuilder s)
  * @param sb StringBuilder.
  * @param c Min. characters to grow.
  */
-static void
-GrowSB(SB *sb, int c)
-{
-	int new=(((sb->len+c)/sb->grow)+1)*sb->grow;
+static void grow_sb(SB *sb, int c) {
+	int new = (((sb->len + c) / sb->grow) + 1) * sb->grow;
 	char *d;
 
-	if ((d=malloc(new))==NULL) {
+	if ((d = malloc(new)) == NULL) {
 		fprintf(stderr, "OOM while growing StringBuilder");
 		exit(1);
 	}
@@ -86,9 +75,9 @@ GrowSB(SB *sb, int c)
 	}
 
 	free(sb->data);
-	sb->data=d;
-	sb->max=new;
-	d[sb->len]=0;
+	sb->data = d;
+	sb->max = new;
+	d[sb->len] = 0;
 }
 
 /**
@@ -98,18 +87,17 @@ GrowSB(SB *sb, int c)
  * @param src Source string.
  * @param len Length of source string.
  */
-void
-SBAppend(StringBuilder s, char *src, int len)
+void stringbuilder_append(StringBuilder s, char *src, int len)
 {
 	if (len) {
-		SB *sb=(SB *)s;
+		SB *sb = (SB *) s;
 
-		if (sb->len+len+1>sb->max) {
-			GrowSB(sb, len+1);
+		if (sb->len + len + 1 > sb->max) {
+			grow_sb(sb, len + 1);
 		}
 
-		memmove(sb->data+sb->len, src, len);
-		sb->len+=len;
+		memmove(sb->data + sb->len, src, len);
+		sb->len += len;
 	}
 }
 
@@ -119,16 +107,15 @@ SBAppend(StringBuilder s, char *src, int len)
  * @param s StringBuilder.
  * @param src Source character.
  */
-void
-SBAppendChar(StringBuilder s, char src)
+void stringbuilder_append_char(StringBuilder s, char src)
 {
-	SB *sb=(SB *)s;
+	SB *sb = (SB *) s;
 
-	if (sb->len+2>sb->max) {
-		GrowSB(sb, 2);
+	if (sb->len + 2 > sb->max) {
+		grow_sb(sb, 2);
 	}
 
-	sb->data[sb->len]=src;
+	sb->data[sb->len] = src;
 	sb->len++;
 }
 
@@ -138,12 +125,10 @@ SBAppendChar(StringBuilder s, char src)
  * @param s StringBuilder.
  * @return String.
  */
-char *
-SBToString(StringBuilder s)
-{
-	SB *sb=(SB *)s;
+char *stringbuilder_to_string(StringBuilder s) {
+	SB *sb = (SB *) s;
 
-	sb->data[sb->len]=0;
+	sb->data[sb->len] = 0;
 	return sb->data;
 }
 
@@ -153,10 +138,8 @@ SBToString(StringBuilder s)
  * @param s StringBuilder.
  * @return String length.
  */
-int
-SBLength(StringBuilder s)
-{
-	return ((SB *)s)->len;
+int stringbuilder_length(StringBuilder s) {
+	return ((SB *) s)->len;
 }
 
 /**
@@ -165,18 +148,16 @@ SBLength(StringBuilder s)
  * @param s StringBuilder.
  * @param len New length.
  */
-void
-SBSetLength(StringBuilder s, int len)
-{
-	SB *sb=(SB *)s;
+void stringbuilder_set_length(StringBuilder s, int len) {
+	SB *sb = (SB *) s;
 
-	if (len>sb->len) {
+	if (len > sb->len) {
 		fprintf(stderr, "Cannot set length to more than real data length in StringBuilder");
 		exit(1);
 	}
 
-	sb->len=len;
-	sb->data[len]=0;
+	sb->len = len;
+	sb->data[len] = 0;
 }
 
 /**
@@ -184,13 +165,11 @@ SBSetLength(StringBuilder s, int len)
  *
  * @param s StringBuilder.
  */
-void
-SBReset(StringBuilder s)
-{
-	SB *sb=(SB *)s;
+void stringbuilder_reset(StringBuilder s) {
+	SB *sb = (SB *) s;
 
-	sb->len=0;
-	*sb->data=0;
+	sb->len = 0;
+	*sb->data = 0;
 }
 
 /**
@@ -199,13 +178,11 @@ SBReset(StringBuilder s)
  * @param src Source SB.
  * @param dst Destination SB.
  */
-void
-SBCopyTo(StringBuilder src, StringBuilder dst)
-{
-	SB *sSrc=(SB *)src, *sDst=(SB *)dst;
+void stringbuilder_copy_to(StringBuilder src, StringBuilder dst) {
+	SB *s_src = (SB *) src, *s_dst = (SB *) dst;
 
-	SBReset(dst);
-	SBAppend(sDst, SBToString(sSrc), SBLength(sSrc));
+	stringbuilder_reset(dst);
+	stringbuilder_append(s_dst, stringbuilder_to_string(s_src), stringbuilder_length(s_src));
 }
 
 /**
@@ -214,10 +191,8 @@ SBCopyTo(StringBuilder src, StringBuilder dst)
  * @param s StringBuilder.
  * @return Current position.
  */
-int
-SBPosition(StringBuilder s)
-{
-	SB *sb=(SB *)s;
+int stringbuilder_position(StringBuilder s) {
+	SB *sb = (SB *) s;
 
 	return sb->len;
 }

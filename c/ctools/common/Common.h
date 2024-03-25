@@ -1,51 +1,46 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#ifdef USES_HASHTABLE
+#ifdef WIN32
+#define SEPARATOR_CHAR '\\'
+#else
+#define SEPARATOR_CHAR '/'
+#endif
+
+/* hashtable.c */
 typedef void * HashTable;
-HashTable HashNew(int);
-void HashFree(HashTable, int);
-#define HTPreserveValue 0
-#define HTFreeValue 1
-int HashAdd(HashTable, const char *, const void *, int, int);
-void *HashGet(HashTable, const char *, int *);
-int HashDelete(HashTable, const char *);
-int HashFindFirst(HashTable, const char **, const void **, int *);
-int HashFindNext(HashTable, const char **, const void **, int *);
-#endif
 
-#ifdef USES_OPTIONS
-void OptionInit(void);
-int OptionNext(int, char * const *, const char *);
-#endif
+HashTable hash_new(int bits);
+void hash_free(HashTable table, int free_val);
+#define HT_PRESERVE_VALUE 0
+#define HT_FREE_VALUE 1
+int hash_add(HashTable table, const char *key, const void *value, int v_size, int free_val);
+void *hash_get(HashTable table, const char *key, int *v_size);
+int hash_delete(HashTable table, const char *key);
+int hash_find_first(HashTable table, const char **key, const void **value, int *v_size);
+int hash_find_next(HashTable table, const char **key, const void **value, int *v_size);
 
-#ifdef USES_STRINGBUILDER
+/* stringbuilder.c */
 typedef void * StringBuilder;
 
-/* StringBuilder.c */
-StringBuilder SBNew(int);
-void SBFree(StringBuilder);
-void SBAppend(StringBuilder, char *, int);
-void SBAppendChar(StringBuilder, char);
-char *SBToString(StringBuilder);
-int SBLength(StringBuilder);
-void SBSetLength(StringBuilder, int);
-void SBReset(StringBuilder);
-void SBCopyTo(StringBuilder, StringBuilder);
-int SBPosition(StringBuilder);
-#endif
+StringBuilder stringbuilder_new(int g);
+void stringbuilder_free(StringBuilder s);
+void stringbuilder_append(StringBuilder s, char *src, int len);
+void stringbuilder_append_char(StringBuilder s, char src);
+char *stringbuilder_to_string(StringBuilder s);
+int stringbuilder_length(StringBuilder s);
+void stringbuilder_set_length(StringBuilder s, int len);
+void stringbuilder_reset(StringBuilder s);
+void stringbuilder_copy_to(StringBuilder src, StringBuilder dst);
+int stringbuilder_position(StringBuilder s);
 
-/* Utils.c */
-void UInit(void (*)(void *, const char *, ...));
-void *UAlloc(void *, int);
-char *UStrInStr(char *, char *);
-char *UStrDup(void *, char *);
-char *UTrim(char *);
+/* strings.h */
+char *xstrdup(const char *str);
 
-#ifdef USES_WINUTILS
-char *basename(char *);
-#define strcasecmp stricmp
-#define strncasecmp strnicmp
+#ifdef MAIN
+	char *bstools_version = "from bstools-v3.10";
+#else
+	extern char *bstools_version;
 #endif
 
 #endif
