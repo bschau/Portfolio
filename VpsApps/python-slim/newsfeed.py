@@ -20,7 +20,7 @@ import feedparser
 import requests
 
 
-USER_AGENT = "newsfeed/7.0"
+USER_AGENT = "blogtrottr/2.0"
 
 
 class Newsfeed():
@@ -232,10 +232,10 @@ class Newsfeed():
                 body: body text
         """
         text = "Please read this in a HTML mail user agent."
-        recipients = ["brian.schau@gmail.com"]
+        recipients = ["brian@schau.dk"]
         message = MIMEMultipart('alternative')
         message['Subject'] = title
-        message['From'] = "bs@leah.schau.dk"
+        message['From'] = "bs@stx.ldx.dk"
         message['To'] = ",".join(recipients)
         plain_text = MIMEText(text, 'plain')
         html_text = MIMEText(body, 'html')
