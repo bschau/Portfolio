@@ -6,7 +6,7 @@ init:
 	-rm -fr package
 	pip3 install --target=./package -r requirements.txt
 	cp ~/.lambda.json settings.json
-	curl -o happenings.json https://schau.dk/happenings.json
+	curl -o happenings.json https://ldx.dk/happenings.json
 
 lint:
 	-pylint --rcfile=../pylintrc *.py
@@ -18,7 +18,7 @@ clean:
 	-rm -f *.pyc
 
 distclean:	clean
-	-rm -fr package settings.json
+	-rm -fr package settings.json happenings.json
 
 deploy:	clean lint
 	(cd package; zip -r9 ../function.zip .)

@@ -4,6 +4,7 @@ package/
 *~
 ._*
 settings.json
+happenings.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

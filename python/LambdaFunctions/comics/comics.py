@@ -34,19 +34,14 @@ class Comics():
         title = f'Comics {now}'
         self.creators('Andy Capp', 'andy-capp')
         self.creators('B.C.', 'bc')
-        self.kingdom('Beetle Bailey', 'beetle-bailey')
         self.go_comics('Betty', 'betty')
         self.go_comics('Broom Hilda', 'broomhilda')
         self.go_comics('Calvin and Hobbes', 'calvinandhobbes')
-        self.kingdom('Crock', 'crock')
 
         self.generic('div class="MainComic__ComicImage', 'img src="',
                      'Explosm', 'http://explosm.net')
         self.go_comics('Garfield', 'garfield')
-        self.kingdom('Hagar the Horrible', 'hagar-the-horrible')
         self.go_comics('Pearls before Swine', 'pearlsbeforeswine')
-        self.kingdom('Sam and Silo', 'sam-and-silo')
-        self.kingdom('Zits', 'zits')
 
         page = self.page(title, self.html)
         SendMail().deliver(title, page)
@@ -151,16 +146,6 @@ class Comics():
         """
         url = f"https://www.creators.com/read/{slug}"
         self.generic('class="fancybox"', 'img src="', title, url)
-
-
-    def kingdom(self, title, slug):
-        """ Add a Comics Kingdom comics.
-            Args:
-                title: title of Comics Kingdom comics
-                slug: short name of Comics Kingdom comics
-        """
-        url = f"https://www.comicskingdom.com/{slug}/"
-        self.generic('img id="theComicImage"', 'src="', title, url)
 
 
     def go_comics(self, title, slug):
