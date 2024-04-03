@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Keys</title>
+</head>
+<body>
+	<p>Key: <span id="code"></span></p>
+	<script>
+document.onkeydown = keyDownEvent;
+document.onkeyup = keyUpEvent;
+
+function keyDownEvent(e) {
+	const callback = {
+		"ArrowLeft"  : leftHandler,
+		"ArrowRight" : rightHandler,
+		"ArrowUp"    : upHandler,
+		"ArrowDown"  : downHandler,
+	}[e.key]
+	callback?.()
+}
+
+function keyUpEvent(e) {
+	document.getElementById('code').innerHTML = "";
+}
+
+function leftHandler() {
+	document.getElementById('code').innerHTML = "left";
+}
+
+function rightHandler() {
+	document.getElementById('code').innerHTML = "right";
+}
+
+function upHandler() {
+	document.getElementById('code').innerHTML = "up";
+}
+
+function downHandler() {
+	document.getElementById('code').innerHTML = "down";
+}
+  </script>
+</body>
+</html>
+
