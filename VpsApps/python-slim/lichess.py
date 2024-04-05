@@ -133,10 +133,10 @@ class Lichess():
                 body: body text
         """
         text = "Please read this in a HTML mail user agent."
-        recipients = ["bschau@posteo.net"]
+        recipients = ["brian@schau.dk"]
         message = MIMEMultipart('alternative')
         message['Subject'] = title
-        message['From'] = "bs@leah.schau.dk"
+        message['From'] = "bs@stx.ldx.dk"
         message['To'] = ",".join(recipients)
         plain_text = MIMEText(text, 'plain')
         html_text = MIMEText(body, 'html')
