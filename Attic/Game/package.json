@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+  },
+  "devDependencies": {
+    "phaser": "^3.60.0"
+  },
+  "scripts": {
+    "web": "cd src && sauk"
+  }
+}

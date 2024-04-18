@@ -277,6 +277,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 
 ## Other
 
+* [Attic](Attic/) - a graveyard for stuff which is too good to throw away but too bad to continue on.
 * [Azure Apps](dotnet/AzureApps) - some functions for Azure - c#.
 * [certview](dotnet/certview) - a commandline tool to view certicates in the Windows CSP - .NET Core.
 * [ctools](c/ctools) - lots of old (broken?!) tools - c.
