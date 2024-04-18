@@ -1,0 +1,27 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt { white-space: normal; }
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+li { list-style-type: none; }
+
+a img { border: 0; }
+
+div.status {
+    padding: 0.5em;
+    margin-top: 1em;
+    clear: both;
+}

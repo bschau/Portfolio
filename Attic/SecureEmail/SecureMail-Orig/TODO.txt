@@ -1,0 +1,3 @@
+* Convert to .NET core
+* Add instructions on how to generate ca + own certificate
+* Put in Attic afterwards
