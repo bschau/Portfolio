@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Go</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>Go</h1>
+	<h2>Building and stripping binary</h2>
+<pre>go build -ldflags '-s'</pre>
+	<p><br /></p>
+
+	<h2>Building Linux binary on Windows</h2>
+<pre>$env:GOOS="linux" go build</pre>
+	<p><br /></p>
+
+	<h2>go install: no install location for directory</h2>
+	<p>When <code>go install</code> fails with</p>
+	<p><i>"go install: no install location for directory"</i></p>
+	<p>... then set <code>$GOBIN</code> to <code>$GOPATH/bin</code>.</p>
+	<p><br /></p>
+</body>
+</html>

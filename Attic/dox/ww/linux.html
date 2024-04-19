@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Linux</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>Linux</h1>
+	<h2>Bash</h2>
+	<ul>
+		<li>ctrl + R to reverse search history (ctrl + C to exit)</li>
+		<li>ctrl + A to go to beginning of line</li>
+		<li>ctrl + E to go to end of line</li>
+		<li>alt + B to go back one word</li>
+		<li>alt + F to go forward one word</li>
+		<li>ctrl + U to delete from cursor to start of line</li>
+		<li>ctrl + K to delete from cursor to end of line</li>
+		<li>!$ - reuse the last item from the previous command (as in <code>ls Projects; cd !$</code>)</li>
+		<li>!! - reuse the last command (such as in <code>ls -l /root; sudo !!</code>)</li>
+	</ul>
+	<p><br /></p>
+
+	<h2>JPEG Manipulation</h2>
+	<p>Use <code>identify</code> to see date when photo was taken:</p>
+	<pre>identify -verbose {picture.jpg} | grep exif:DateTimeOriginal</pre>
+	<p>To change DateTimeOriginal:</p>
+	<pre>jhead -dsYYYY:mm:dd {picture.jpg}</pre>
+	<p>... or ...</p>
+	<pre>jhead -tsYYYY:mm:dd-HH:MM:SS {picture.jpg}</pre>
+	<p>... to change date + time.</p>
+	<p>(Install jhead on ubuntu: <code>sudo apt install jhead</code>)</p>
+	<p><br /></p>
+
+	<h2>Let&#8217;s Encrypt certificates</h2>
+	<ol>
+		<li>Stop apache2</li>
+		<li><code>certbot --authenticator standalone -d $domain.$tld,www.$domain.$tld certonly</code></li>
+	</ol>
+	<p><br /></p>
+
+	<h2>Mirror Site</h2>
+	<p>Mirror entire site:</p>
+	<pre>wget --mirror [URL]</pre>
+	<p>... mirror site, but don't mirror gif,jpg and png files:</p>
+	<pre>wget --mirror -R gif,jpg,png [URL]</pre>
+	<p><br /></p>
+
+	<h2>Which programs listen on which ports</h2>
+	<pre>sudo lsof -i -P -n | grep LISTEN</pre>
+	<p>... or ...</p>
+	<pre>netstat -tulpn | grep LISTEN</pre>
+	<p><br /></p>
+
+	<h2>Systemctl</h2>
+	<h3>Run service as a user</h3>
+	<p>Place in ~/.config/systemd/user/my.service:</p>
+	<pre>[Unit]
+Description=My Service
+
+[Service]
+ExecStart=/usr/bin/node app.js
+WorkingDirectory=/home/$USERNAME/proxy-zapier
+Environment=NODE_ENV=production
+Type=simple
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60s
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target</pre>
+
+	<p>Change <strong>$USERNAME</strong> above to the desired username. Rename the servicefile ("<em>my.service</em>") to the actual name of the service.</p>
+	<p>Enable and start:</p>
+	<pre>systemctl --user enable my.service
+systemctl --user start my.service</pre>
+
+	<p>These things must be done as the logged on user. You cannot do it through a "<em>su</em>" or "<em>sudo</em>" session. If you try you will most likely encounter the following error:</p>
+	<p><strong><em>Failed to connect to bus: No such file or directory</em></strong></p>
+	<p><br /></p>
+
+</body>
+</html>

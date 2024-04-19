@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>OpenDKIM</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<h1>OpenDKIM</h1>
+<h2>Generate keyset</h2>
+<pre>opendkim-genkey [-t] -s mail -d leah.schau.dk</pre>
+<p>-t is to indicate that key is in test mode.</p>
+<p><br /></p>
+
+<h2>Setup dkimkeys</h2>
+<pre>
+cp mail.private /etc/dkimkeys/keys/leah.schau.dk.key
+chown opendkim:opendkim /etc/dkimkeys/keys/leah.schau.dk.key
+chmod 600 /etc/dkimkeys/keys/leah.schau.dk.key
+</pre>
+<p><br /></p>
+
+<h2>Populate DNS</h2>
+<p>Copy 'mail.txt' to 'mail._domainkey.leah.schau.dk' TXT record in DNS.</p>
+<p><br /></p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DNS</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>DNS</h1>
+	<h2>Github</h2>
+	<p>DNS stuff for Github pages ...</p>
+	<h3>A</h3>
+	<pre>schau.dk.   A        185.199.108.153
+schau.dk.   A        185.199.109.153
+schau.dk.   A        185.199.110.153
+schau.dk.   A        185.199.111.153</pre>
+
+	<h3>CNAME</h3>
+	<pre>www         CNAME    bschau.github.io</pre>
+	<p><br /></p>
+
+	<h2>VPS</h2>
+	<h3>MX</h3>
+	<pre>Hostname	  Exchanger        Preference	   TTL
+schau.dk	  pop.wox.dk       10              43200</pre>
+
+	<h3>TXT</h3>
+	<pre>Hostname                         TTL    Text
+schau.dk                         3600     v=spf1 a mx a:pop.wox.dk ip4:x.y.z.w -all
+mail._domainkey.schau.dk         3600     v=DKIM1; h=sha256; c=simple; k=rsa; p=MIIBI...AQAB
+_adsp._domainkey.schau.dk        3600     dkim=all
+_dmarc.schau.dk                  3600     v=DMARC1; p=quarantine; rua=mailto:me@somewhere; ruf=mailto:me@somewhere; fo=0; adkim=r; aspf=r; pct=100; rf=afrf; ri=86400</pre>
+
+	<p>You obviously need to change <code>x.y.z.w</code>, <code>me@somewhere</code> and references to <code>schau.dk</code>!</p>
+	<p><br /></p>
+</body>
+</html>

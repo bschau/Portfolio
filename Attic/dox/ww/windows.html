@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Windows</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<h1>Windows</h1>
+	<h2>Speed up Windows 11 a little</h2>
+	<ul>
+		<li>Go to Settings -&gt; Accessibility -&gt; Visual effects.</li>
+		<li>Turn off <b>Transparency effects</b> and <b>Animation effects</b>.</li>
+	</ul>
+	<p><br /></p>
+
+	<h2>Calculate SHA256-sum of file</h2>
+	<pre>certutil -hashfile ..file.. SHA256</pre>
+	<p><br /></p>
+
+	<h2>Show reserved ports on Windows</h2>
+	<pre>netsh interface ipv4 show excludedportrange protocol=tcp</pre>
+	<p><br /></p>
+
+	<h2>Disable new context menu</h2>
+	<pre>reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+taskkill /F /IM explorer.exe &amp; start explorer</pre>
+	<p><br /></p>
+
+	<h2>Restore new context menu</h2>
+	<pre>reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
+taskkill /F /IM explorer.exe &amp; start</pre>
+	<p><br /></p>
+</body>
+</html>

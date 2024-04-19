@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Samba</title>
+	<link rel="icon" href="../balloons.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<h1>Samba</h1>
+<h2>Setup</h2>
+<p>In <code>/etc/samba/smb.conf</code>:</p>
+<ol>
+	<li>Change <code>Workgroup</code> to <b>SCHAU</b>.</li>
+	<li>Add this section:
+<pre>[data]
+        path = /data
+        browsable = yes
+        guest ok = yes
+        read only = yes
+        write list = bs
+        create mask = 0600
+        directory mask = 0700
+	valid users = bs cfs</pre></li>
+</ol>
+<p><br></p>
+
+<h2>Adding user</h2>
+<p>As root:</p>
+<pre>cd /var/lib/samba/private
+smbpassword -a {username}</pre>
+<p><br /></p>
+
+<h2>Connect from client</h2>
+<p>Map drive, use <b>schau\bs</b> as username.</p>
+<p><br /></p>
+
+</body>
+</html>
