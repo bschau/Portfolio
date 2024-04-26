@@ -116,7 +116,7 @@ class Newsfeed():
             self.html = self.html + '<h1><a href="' + feed["WebUrl"]
             self.html = self.html + '">' + feed["Name"] + "</a></h1>"
             self.html = self.html + '<p style="color: red">'
-            self.html = self.html + req_exc + '</p>'
+            self.html = self.html + str(req_exc) + '</p>'
             return line_number
 
         rss = feedparser.parse(data)
@@ -235,7 +235,7 @@ class Newsfeed():
         recipients = ["brian@schau.dk"]
         message = MIMEMultipart('alternative')
         message['Subject'] = title
-        message['From'] = "bs@stx.ldx.dk"
+        message['From'] = "bs@phoebe.schau.dk"
         message['To'] = ",".join(recipients)
         plain_text = MIMEText(text, 'plain')
         html_text = MIMEText(body, 'html')
