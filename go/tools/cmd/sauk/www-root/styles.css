@@ -1,0 +1,20 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+}
+
+#outer {
+	padding: 5% 0;
+}
+
+#inner {
+	text-align: center;
+}
+
+.small {
+	font-size: 10px;
+}
