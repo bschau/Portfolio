@@ -11,6 +11,7 @@ Requirement: pyngrok
 # pylint: disable=duplicate-code
 # pylint: disable=bare-except
 # pylint: disable=too-many-instance-attributes
+import json
 import os
 import platform
 import sys
@@ -28,12 +29,17 @@ class MyServer(BaseHTTPRequestHandler):
     def do_POST(self):
         """ Handle POST request. """
         content_len = int(self.headers.get('Content-Length'))
+        content_type = self.headers.get('Content-Type')
         post_body = self.rfile.read(content_len)
         self.send_response(200)
         self.send_header("Content-type", "application/json")
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
-        print(post_body.decode('utf-8'))
+        if content_type.lower().find('application/json') >= 0:
+            json_object = json.loads(post_body.decode('utf-8'))
+            print(json.dumps(json_object, indent=2))
+        else:
+            print(post_body.decode('utf-8'))
     #pylint: enable=C0103
 
 
@@ -71,7 +77,8 @@ class Eplogr():
         web_server.server_close()
 
 
-    def get_tunnel(self):
+    @staticmethod
+    def get_tunnel():
         """ Open ngrok tunnel """
         if len(sys.argv) > 1:
             return ngrok.connect(name=sys.argv[1])
