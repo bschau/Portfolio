@@ -140,13 +140,34 @@ class Newsfeed():
                     self.html = self.html + '<table style="width: 100%">'
                     title_emitted = True
 
-                line_number = self.add_news(line_number, item['title'], link)
+                summary = self.get_summary(item)
+                line_number = self.add_news(line_number,
+                                            item['title'],
+                                            link,
+                                            summary)
                 seen[link] = cache_time
 
         if title_emitted:
             self.html = self.html + '</table><p><br /></p>'
 
         return line_number
+
+    @staticmethod
+    def get_summary(item):
+        """ Get the summary of this item or None.
+            Arguments:
+                item: current RSS item.
+        """
+        if "summary" in item:
+            return item["summary"]
+
+        if "description" in item:
+            return item["description"]
+
+        if "content" in item:
+            return item["content"]
+
+        return None
 
 
     @staticmethod
@@ -179,7 +200,7 @@ class Newsfeed():
         cache.close()
 
 
-    def add_news(self, line_number, title, url):
+    def add_news(self, line_number, title, url, summary):
         """ Add a newsfeed line to mail.
             Args:
                 self: self
@@ -187,12 +208,15 @@ class Newsfeed():
                 title: title of news
                 url: deep link to article
         """
-        color = '#efe' if line_number % 2 == 1 else '#fff'
-        self.html = self.html + '<tr><td style="background-color: '
-        self.html = self.html + color
-        self.html = self.html + ';padding:0.5em;font-size:120%"><a href="'
+        self.html = self.html + '<tr><td style="border: 1px solid #adadad;'
+        self.html = self.html + 'background-color: #f3f1ec; color: #666;'
+        self.html = self.html + 'padding:0.5em;font-size:120%"><a href="'
         self.html = self.html + url
-        self.html = self.html + '">' + title + '</a></td></tr>\r\n'
+        self.html = self.html + '">' + title + '</a>'
+        if summary is not None:
+            self.html = self.html + '<br />' + summary
+
+        self.html = self.html + '</td></tr>\r\n'
         line_number = line_number + 1
         return line_number
 
@@ -235,7 +259,7 @@ class Newsfeed():
         recipients = ["brian@schau.dk"]
         message = MIMEMultipart('alternative')
         message['Subject'] = title
-        message['From'] = "bs@phoebe.schau.dk"
+        message['From'] = "bs@leah.schau.dk"
         message['To'] = ",".join(recipients)
         plain_text = MIMEText(text, 'plain')
         html_text = MIMEText(body, 'html')
