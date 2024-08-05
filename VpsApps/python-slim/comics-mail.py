@@ -38,6 +38,7 @@ class Comics():
                      'Explosm', 'http://explosm.net')
         self.go_comics('Garfield', 'garfield')
         self.go_comics('Pearls before Swine', 'pearlsbeforeswine')
+        self.go_comics('Wulff and Morgenthaler', 'wumo')
 
         page = self.page(title, self.html)
         self.deliver(title, page)
@@ -170,7 +171,7 @@ class Comics():
         recipients = ["brian@schau.dk"]
         message = MIMEMultipart('alternative')
         message['Subject'] = title
-        message['From'] = "bs@stx.ldx.dk"
+        message['From'] = "bs@leah.schau.dk"
         message['To'] = ",".join(recipients)
         plain_text = MIMEText(text, 'plain')
         html_text = MIMEText(body, 'html')
