@@ -287,6 +287,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * [jStar](java/jstar) - a game - java.
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
+* [Meteor](python/meteor/) - a small Python game in PyGame - python.
 * [Nant](dotnet/Nant/) - development Nant scripts - c#.
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
 * [qmta](c/qmta) - a 7-bit MTA / SMTP daemon - c.
