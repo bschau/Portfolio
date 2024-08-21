@@ -283,6 +283,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [Ethereum](Ethereum/) - small smart contracts for the Ethereum blockchain - solidity.
 * [FamilyASN1](c/FamilyASN1/) - a sample ASN.1 parser using SNACC - c.
 * [Game of Life](java/gameoflife) - Conway's Game of Live - java.
+* [Games](c/games/) - all sorts of console games - c.
 * [Grab](c/Grab/) - record images from web cam - c.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * [jStar](java/jstar) - a game - java.
