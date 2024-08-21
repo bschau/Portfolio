@@ -282,6 +282,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [ctools](c/ctools) - lots of old (broken?!) tools - c.
 * [Ethereum](Ethereum/) - small smart contracts for the Ethereum blockchain - solidity.
 * [FamilyASN1](c/FamilyASN1/) - a sample ASN.1 parser using SNACC - c.
+* [Game of Life](java/gameoflife) - Conway's Game of Live - java.
 * [Grab](c/Grab/) - record images from web cam - c.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
