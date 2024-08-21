@@ -285,6 +285,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [Game of Life](java/gameoflife) - Conway's Game of Live - java.
 * [Grab](c/Grab/) - record images from web cam - c.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
+* [jStar](java/jstar) - a game - java.
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
 * [Nant](dotnet/Nant/) - development Nant scripts - c#.
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
