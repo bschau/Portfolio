@@ -1,0 +1,206 @@
+package main
+
+import (
+	"flag"
+	"fmt"
+	"io"
+	"os"
+	"strings"
+	"time"
+)
+
+var doc = `zen v1.1
+Usage: zen [OPTIONS] [master] COMMAND [ARGUMENTS]
+
+[OPTIONS]
+ -f zen-file     Path to .zen-file
+ -h              Help (this page)
+ -v              Verbose/Debug output
+ -s string       Separator string when adding words
+ -w width        Width of display to the 'list brief' command
+
+[COMMAND]
+ add (a)         Adds the following words as a story. Words are separated by
+                 a space. A word starting with @ is treated as a path to a
+                 file of which the content is included.
+                 Examples:
+                     zen add this is a small story
+                     zen add @story.txt
+ close (cl)      Close story / stories.
+                 Examples:
+                     zen close 1
+                     zen close 1 2 3 4
+ count (c)       Show count of open stories. Specify the 'all' keyword to
+                 show the count of all stories.
+                 Examples:
+                     zen count
+                     zen count all
+ count0 (c0)     As the count command, but omit the trailing newline.
+                 Useful in scripts.
+ delete (d)      Delete story / stories by id.
+                 Examples:
+                     zen delete 1
+                     zen delete 1 2 3 4
+ edit (e)        Edit story by ID.
+                 Examples:
+                     zen edit 1 change this
+                     zen edit 1 @story.txt
+ help            This page.
+ init            Initialize new .zen file here or, if the 'master' keyword,
+                 initialize the master .zen file.
+ list (l)        List all open stories. Specify the 'all' keyword to show
+                 all stories. Specify the 'brief' keyword to get a brief or
+                 terse output.
+ reopen (r)      Reopen previously closed story / stories.
+                 Examples:
+                     zen reopen 1
+                     zen reopen 1 2 3 4
+ status (s)      Show status of story / stories.
+                 Examples:
+                     zen show 1
+                     zen show 1 2 3 4
+ view (v)        View story / stories.
+                 Examples:
+                     zen view 1
+                     zen view 1 2 3 4
+`
+
+func usage(text string, ec int) {
+	s := getStream(ec)
+	fmt.Fprint(s, text)
+	os.Exit(ec)
+}
+
+func getStream(exitCode int) io.Writer {
+	if exitCode != 0 {
+		return os.Stderr
+	}
+
+	return os.Stdout
+}
+
+func main() {
+	if len(os.Args) == 0 {
+		usage(doc, 0)
+	}
+
+	file := flag.String("f", "", "Path to zen-file")
+	help := flag.Bool("h", false, "Help")
+	separator := flag.String("s", " ", "Separator string")
+	verbose := flag.Bool("v", false, "Verbose mode")
+	width := flag.Int("w", 80, "Width of display to 'list brief' command")
+	flag.Parse()
+
+	if *help {
+		usage(doc, 0)
+	}
+
+	args := flag.Args()
+	if len(args) == 0 {
+		usage(doc, 1)
+	}
+
+	Verbose = *verbose
+
+	index := 0
+	master := false
+	if strings.ToLower(args[index]) == "master" ||
+		strings.ToLower(args[index]) == "m" {
+		master = true
+		index++
+	}
+
+	if len(args) < index+1 {
+		usage(doc, 1)
+	}
+
+	command := strings.ToLower(args[index])
+	if command == "help" {
+		usage(doc, 0)
+	}
+
+	if command == "init" {
+		path := ".zen"
+		if len(*file) > 0 {
+			path = *file
+		} else if master {
+			path = ZenFileMaster()
+		}
+		CmdInit(path)
+		os.Exit(0)
+	}
+
+	zenFile := *file
+	if len(zenFile) < 1 {
+		zenFile = ZenFileLocate(master)
+	}
+
+	if len(zenFile) < 1 {
+		fmt.Fprintf(os.Stderr, "Cannot find zen-file\n")
+		os.Exit(1)
+	}
+
+	zen := ZenFileLoad(zenFile)
+
+	newArgIndex := 1
+	if master {
+		newArgIndex++
+	}
+
+	newArgs := args[newArgIndex:]
+
+	if command == "add" || command == "a" {
+		CmdAdd(zen, zenFile, newArgs, *separator)
+	} else if command == "close" || command == "cl" {
+		CmdClose(zen, zenFile, newArgs)
+	} else if command == "count" || command == "c" {
+		CmdCount(zen, newArgs)
+	} else if command == "count0" || command == "c0" {
+		CmdCount0(zen, newArgs)
+	} else if command == "delete" || command == "d" {
+		CmdDelete(zen, zenFile, newArgs)
+	} else if command == "edit" || command == "e" {
+		CmdEdit(zen, zenFile, newArgs, *separator)
+	} else if command == "list" || command == "l" {
+		if *width < 1 {
+			Error("Illegal width:", *width)
+		}
+		CmdList(zen, newArgs, *width)
+	} else if command == "reopen" || command == "r" {
+		CmdReopen(zen, zenFile, newArgs)
+	} else if command == "status" || command == "s" {
+		CmdStatus(zen, newArgs)
+	} else if command == "view" || command == "v" {
+		CmdView(zen, newArgs)
+	}
+}
+
+// Now - get current time
+func Now() string {
+	return time.Now().Format(time.RFC3339)
+}
+
+// HasAll - is "all" / "a" part of arguments list
+func HasAll(args []string) bool {
+	return search(args, "all", "a")
+}
+
+// HasBrief - is "brief" / "b" part of arguments list
+func HasBrief(args []string) bool {
+	return search(args, "brief", "b")
+}
+
+func search(args []string, long string, short string) bool {
+	if len(args) == 0 {
+		return false
+	}
+
+	for _, arg := range args {
+		if strings.ToLower(arg) == long ||
+			strings.ToLower(arg) == short {
+			return true
+		}
+	}
+
+	return false
+}

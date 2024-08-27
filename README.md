@@ -280,11 +280,13 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [Azure Apps](dotnet/AzureApps) - some functions for Azure - c#.
 * [certview](dotnet/certview) - a commandline tool to view certicates in the Windows CSP - .NET Core.
 * [ctools](c/ctools) - lots of old (broken?!) tools - c.
+* [eplogr](go/eplogr) - a simple ngrok endpoint logger - go.
 * [Ethereum](Ethereum/) - small smart contracts for the Ethereum blockchain - solidity.
 * [FamilyASN1](c/FamilyASN1/) - a sample ASN.1 parser using SNACC - c.
 * [Game of Life](java/gameoflife) - Conway's Game of Live - java.
-* [Games](c/games/) - all sorts of console games - c.
+* [c/Games](c/games/), [go/Games](go/Games) - all sorts of console games - c and go.
 * [Grab](c/Grab/) - record images from web cam - c.
+* [gxdavr](go/gxdavr) - Gnome CardDAV / CalDAV redirection service - go.
 * [jc](dotnet/jc) - a commandline Postman wannabe - .NET Core.
 * [jStar](java/jstar) - a game - java.
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
@@ -293,9 +295,10 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
 * [qmta](c/qmta) - a 7-bit MTA / SMTP daemon - c.
 * [snmpproxy](c/snmpproxy) - SNMP masquerade daemon - c.
+* [tools](go/tools) - various command line utilities - go.
 * [Trail Tools](java/TrailTools/) - ehrm ... - java.
 * [ubit](ubit/) - some microbit samples (in danish) - js.
-* [Unfinished Thanis World](unfinished/ThanisWorld/), [Unfinished Game](unfinished/Game) - unfinished games, javascript.
 * [VPS Apps](VpsApps/) - some scripts I run on my VPS - go, perl and python.
 * [Wordpress](Wordpress/) - Wordpress plugins and themes - php.
 * [Yocto Basic](c/YoctoBasic/) - everyone has their own home-grown language. This is mine - c.
+* [zen](go/zen) - command line task manager - go.
