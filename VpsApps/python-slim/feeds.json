@@ -44,10 +44,6 @@
 	"RssUrl": "https://noyb.eu/en/rss",
 	"WebUrl": "https://noyb.eu/en"
 },{
-	"Name": "The Daily WTF",
-	"RssUrl": "https://syndication.thedailywtf.com/TheDailyWtf",
-	"WebUrl": "https://thedailywtf.com"
-},{
 	"Name": "The Register",
 	"RssUrl": "https://www.theregister.co.uk/headlines.atom",
 	"WebUrl": "https://www.theregister.co.uk/"

@@ -38,7 +38,6 @@ class Comics():
                      'Explosm', 'http://explosm.net')
         self.go_comics('Garfield', 'garfield')
         self.go_comics('Pearls before Swine', 'pearlsbeforeswine')
-        self.go_comics('Wulff and Morgenthaler', 'wumo')
 
         page = self.page(title, self.html)
         self.deliver(title, page)
