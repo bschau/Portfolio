@@ -5,12 +5,8 @@
 	"WebUrl": "https://www.bt.dk/"
 },{
 	"Name": "Chess.com",
-	"RssUrl": "https://www.chess.com/rss/articles",
+	"RssUrl": "https://www.chess.com/rss/news",
 	"WebUrl": "https://www.chess.com/"
-},{
-	"Name": "Coding Horror",
-	"RssUrl": "https://feeds.feedburner.com/codinghorror/",
-	"WebUrl": "https://blog.codinghorror.com/"
 },{
 	"Name": "DR Nyheder",
 	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
@@ -23,10 +19,6 @@
 	"Name": "GSM Arena",
 	"RssUrl": "https://www.gsmarena.com/rss-news-reviews.php3",
 	"WebUrl": "https://www.gsmarena.com/"
-},{
-	"Name": "Humble Bundle",
-	"RssUrl": "https://blog.humblebundle.com/feed/",
-	"WebUrl": "https://blog.humblebundle.com/"
 },{
 	"Name": "iNPUT",
 	"RssUrl": "https://www.inputmag.dk/feed/",
@@ -47,9 +39,5 @@
 	"Name": "The Register",
 	"RssUrl": "https://www.theregister.co.uk/headlines.atom",
 	"WebUrl": "https://www.theregister.co.uk/"
-},{
-	"Name": "The Verge",
-	"RssUrl": "https://www.theverge.com/rss/index.xml",
-	"WebUrl": "https://www.theverge.com/"
 }
 ]
