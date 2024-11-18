@@ -12,6 +12,10 @@
 	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
 	"WebUrl": "https://www.dr.dk/"
 },{
+	"Name": "e-Boks Operating Status",
+	"RssUrl": "https://status.e-boks.com/history.rss",
+	"WebUrl": "https://status.e-boks.com/"
+},{
 	"Name": "Fabien Sanglard",
 	"RssUrl": "https://fabiensanglard.net/rss.xml",
 	"WebUrl": "https://fabiensanglard.net/"
@@ -25,7 +29,7 @@
 	"WebUrl": "https://www.inputmag.dk/"
 },{
 	"Name": "Mere Mobil",
-	"RssUrl": "https://meremobil.dk/feed",
+	"RssUrl": "https://meremobil.dk/feed/",
 	"WebUrl": "https://meremobil.dk/"
 },{
 	"Name": "Mobil.nu",
