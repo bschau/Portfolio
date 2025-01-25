@@ -87,10 +87,20 @@ class Events():
         age = times.year - source_date.year
         text = (texts[event_type]).format(event["Description"], age)
         if distance == 0:
-            return _event(0, glyph, texts["Today"].format(text))
+            string = texts["Today"].format(text)
+            return _event(0, glyph, self.normalize_string(string))
 
         text = self.get_event_text(distance, texts, text)
         return _event(distance, glyph, text)
+
+
+    @staticmethod
+    def normalize_string(string):
+        """ Converts html to CLI codes
+            Arguments:
+                string: string to be normalized.
+        """
+        return string.replace("<b>", "\033[1m").replace("</b>", "\033[0m")
 
 
     @staticmethod
@@ -103,7 +113,7 @@ class Events():
                 times: times array.
         """
         distance = 0
-        future = 31
+        future = 14
         if yday < this_yday:
             if this_yday + future < yday + times.days:
                 return None
