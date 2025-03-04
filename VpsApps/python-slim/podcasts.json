@@ -1,0 +1,23 @@
+[
+{
+	"Name": "Danske Drabssager",
+	"RssUrl": "https://rss.podplaystudio.com/1103.xml",
+	"WebUrl": "https://radioplay.dk/podcast/danske-drabssager/",
+	"Htmlize": false
+},{
+	"Name": "De Lovl&oslash;se",
+	"RssUrl": "https://api.dr.dk/podcasts/v1/feeds/de-lovloese.xml",
+	"WebUrl": "https://www.dr.dk/lyd/p1/de-lovloese-3337857881000",
+	"Htmlize": true
+},{
+	"Name": "Nationens Mareridt",
+	"RssUrl": "https://rss.podplaystudio.com/1134.xml",
+	"WebUrl": "https://radioplay.dk/podcast/nationens-mareridt/",
+	"Htmlize": true
+},{
+	"Name": "Tyran",
+	"RssUrl": "https://api.dr.dk/podcasts/v1/feeds/tyran",
+	"WebUrl": "https://www.dr.dk/lyd/p3/tyran-4747004850000",
+	"Htmlize": true
+}
+]
