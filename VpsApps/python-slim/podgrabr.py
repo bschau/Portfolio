@@ -122,7 +122,6 @@ class PodGrabr():
 
         cache_time = time.strftime('%Y/%m/%d %H:%M:%S', time.localtime())
         for item in rss['items']:
-            print(item)
             link = self.get_link(item)
             self.html = ""
             self.html = self.html + '<h1><a href="' + feed["WebUrl"]
