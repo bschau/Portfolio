@@ -125,7 +125,8 @@ class PodGrabr():
             link = self.get_link(item)
             self.html = ""
             self.html = self.html + '<h1><a href="' + feed["WebUrl"]
-            self.html = self.html + '">' + feed["Name"] + "</a></h1>"
+            self.html = self.html + '">' + feed["Name"] + ': '
+            self.html = self.html + item['title'] + "</a></h1>"
             if link is None:
                 self.html = self.html + '<p>No audio link!</p>'
             else:
