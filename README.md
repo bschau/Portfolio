@@ -292,6 +292,7 @@ Go to [KaiSub source code](kaios/kaisub/).
 * [Luna HSM Sign](LunaHSMSign/) - shows how to sign using a Luna HSM unit - c#.
 * [Meteor](python/meteor/) - a small Python game in PyGame - python.
 * [Nant](dotnet/Nant/) - development Nant scripts - c#.
+* [Perl VPS Apps](perl/) - VPS Apps - perl.
 * [PS Tools](dotnet/pstools) - Phantom Stacker - .NET Framework.
 * [qmta](c/qmta) - a 7-bit MTA / SMTP daemon - c.
 * [snmpproxy](c/snmpproxy) - SNMP masquerade daemon - c.

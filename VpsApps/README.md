@@ -1,2 +1,0 @@
-# VpsApps
-My VPS Apps
