@@ -1,0 +1,47 @@
+.container {
+	padding: 1em;
+}
+
+.players-player, .rounds-player {
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	padding: 12px 20px;
+	width: 100%;
+	margin: 8px 0;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.delete {
+	width: 19px;
+	height: 18px;
+	text-align: center;
+	background-color: #fa8072;
+	color: white;
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 18px;
+	cursor: pointer;
+	float: right;
+}
+
+.score-cards {
+	width: 300px;
+	margin: 5px auto;
+}
+
+.score-card {
+	width: 140px;
+	display: table;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.score-card-left {
+	float: left;
+}
+
+.score-card-right {
+	float: right;
+}

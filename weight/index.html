@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>V&aelig;gt</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/scl.css">
+</head>
+<body onload="run()">
+	<h1>Stamdata</h1>
+	<table>
+		<tbody>
+			<tr><th>H&oslash;jde (cm)</th><td><span id="height"></span></td></tr>
+			<tr><th>Start dato</th><td><span id="startDate"></span></td></tr>
+			<tr><th>Start v&aelig;gt (kg)</th><td><span id="startWeight"></span></td></tr>
+			<tr><th>M&aring;l (kg)</th><td><span id="goal"></span></td></tr>
+		</tbody>
+	</table>
+	<p><br /></p>
+
+	<label for="weight"><b>Nuv&aelig;rende v&aelig;gt (kg):</b></label>
+	<input type="text" placerholder="Nuv&aelig;rende v&aelig;gt (kg)" name="weight" value="" id="weight" required>
+	<button id="calculate" type="submit" class="base-button button-purple">Beregn</button>
+	<p><br /></p>
+
+	<h1>Resultat</h1>
+	<table>
+		<tbody>
+			<tr><th>BMI</th><td><span id="bmi"></span></td></tr>
+			<tr><th>L&aelig;ngde (dage)</th><td><span id="stretch"></span></td></tr>
+			<tr><th>Tab pr. dag (g)</th><td><span id="lossPrDay"></span></td></tr>
+			<tr><th>Dage til m&aring;l</th><td><span id="daysToDone"></span></td></tr>
+		</tbody>
+	</table>
+	<script src="js/Storage.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
