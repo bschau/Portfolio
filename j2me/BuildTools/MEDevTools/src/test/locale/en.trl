@@ -1,0 +1,10 @@
+# Command
+exit		Exit
+
+# Error
+loadError	Failed to load logo
+noLogo		No Logo
+
+# Messages
+msg1		Yay! It works :-)
+msg2		Press 'Exit' to ... exit.

@@ -1,0 +1,562 @@
+#include "resources.h"
+
+// Forms and Alerts
+ALERT ID alertwrongentries
+INFORMATION
+BEGIN
+  TITLE "Donn\351e manquante"
+  MESSAGE "Vous devez entr\351e des donn\351es dans les deux champs."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertoom
+INFORMATION
+BEGIN
+  TITLE "M\351moire manquante"
+  MESSAGE "Le syst\350me manque de m\351moire. Votre demande ne pourra \352tre " \
+          "faite."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertonechar
+INFORMATION
+BEGIN
+  TITLE "Mot de passe vide"
+  MESSAGE "Vous devez entr\351e au moins un caract\350re - et pr\351f\351rablement " \
+          "davantage. Les mots de passe vide ne sont pas allou\351."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertpwdmismatch
+INFORMATION
+BEGIN
+  TITLE "Mot de passe identique"
+  MESSAGE "Les deux mots de passe entr\351e ne sont pas identique. Svp " \
+          "entr\351e un nouveau mot de passe."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertnodbi
+INFORMATION
+BEGIN
+  TITLE "Pas d'info sur la bd"
+  MESSAGE "Impossible d'ouvrir les info de la bd."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertillcred
+INFORMATION
+BEGIN
+  TITLE "Mot de passe incorrecte"
+  MESSAGE "Mot de passe incorrecte. Svp essayer de nouveau."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertrom20
+INFORMATION
+BEGIN
+  TITLE "PalmOS trop vieux"
+  MESSAGE "La version PalmOS de cette machine est trop vieille. PalmOS " \
+          "2.0 ou sup\351rieur est n\351cessaire pour ex\351cuter ce programme."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertpwdoldeqnew
+INFORMATION
+BEGIN
+  TITLE "Rien de chang\351"
+  MESSAGE "Le nouveau mot de passe est le m\352me que l'ancien. Rien ne " \
+          "sera modifi\351."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertlastchance
+DEFAULTBUTTON 1
+CONFIRMATION
+BEGIN
+  TITLE "Derni\350re chance"
+  MESSAGE "Etes-vous certain de vouloir changer les mots de passe de " \
+          "tous vos secrets et mod\350les?"
+  BUTTONS "Oui" "Non" 
+END
+
+ALERT ID alertdeadentry
+INFORMATION
+BEGIN
+  TITLE "Donn\351e inexistante"
+  MESSAGE "D\351tection de ^1 inexistante ^2 dans ^3 la base de donn\351e"
+  BUTTONS "OK" 
+END
+
+ALERT ID alertsetdbinfo
+INFORMATION
+BEGIN
+  TITLE "Impossible de mettre"
+  MESSAGE "Impossible de mettre une protection sur ^1."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertqueryfailed
+INFORMATION
+BEGIN
+  TITLE "\311chec de la requ\352te"
+  MESSAGE "Impossible de trouver les enregistrements."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertnomemodb
+INFORMATION
+BEGIN
+  TITLE "Pas de base de donn\351e m\351mo"
+  MESSAGE "Impossible d'ouvrir la basse de donn\351e m\351mo ou base de " \
+          "donn\351e m\351mo manquante."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertnomemos
+INFORMATION
+BEGIN
+  TITLE "Pas de Memos"
+  MESSAGE "Il n'y a pas de m\351mo dans la cat\351gorie s\351lectionn\351e.\n" \
+          ""
+  BUTTONS "OK" 
+END
+
+ALERT ID alertimportinfo
+INFORMATION
+BEGIN
+  TITLE "Importation faite"
+  MESSAGE "Importation de ^1 ^2^3 \340 partir du Memo Pad."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertexportinfo
+INFORMATION
+BEGIN
+  TITLE "Exportation faite"
+  MESSAGE "Exportation de ^1 ^2^3 au Memo Pad."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertnoneselected
+INFORMATION
+BEGIN
+  TITLE "S\351lection mod\350le"
+  MESSAGE "Vous devez s\351lectionner un mod\350le."
+  BUTTONS "OK" 
+END
+
+ALERT ID alertemptycategory
+INFORMATION
+BEGIN
+  TITLE "Cat\351gorie vide"
+  MESSAGE "Cette cat\351gorie ne contient aucune entr\351e."
+  BUTTONS "OK" 
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+  TITLE "3456-Alerte"
+  MESSAGE "^1\n" \
+          "^2\n" \
+          "^3"
+  BUTTONS "OK" 
+END
+
+FORM ID formstart AT (0 0 160 160)
+NOFRAME
+MENUID startmenu
+BEGIN
+  TITLE "Secure It"
+  POPUPTRIGGER "?" ID sfcatpopup AT (RIGHT@160 BOTTOM@159 AUTO AUTO) FONT 2 RIGHTANCHOR
+  POPUPLIST sfcatpopup sfcatlist
+  LIST "" ID sfcatlist AT (RIGHT@160 BOTTOM@159 100 AUTO) FONT 2 NONUSABLE
+  LIST "" ID sfmainlist AT (0 15 160 113) FONT 2 USABLE
+  BUTTON "Nouv." ID sfnew AT (1 BOTTOM@159 AUTO AUTO) FONT 2
+END
+
+FORM ID formstartnqa AT (0 0 160 160)
+NOFRAME
+MENUID startmenu
+BEGIN
+  TITLE "Secure It"
+  POPUPTRIGGER "?" ID sfcatpopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+  LIST "" ID sfcatlist AT (RIGHT@160 1 100 AUTO) NONUSABLE
+  POPUPLIST sfcatpopup sfcatlist
+  LIST "" ID sfmainlist AT (0 15 160 122) USABLE
+  BUTTON "Nouv." ID sfnew AT (1 BOTTOM@159 AUTO AUTO) FONT 0
+END
+
+FORM ID formeditentry AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+  TITLE "?"
+  POPUPTRIGGER "?" ID eefcatpopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+  LIST "" ID eefcatlist AT (RIGHT@160 1 100 AUTO) NONUSABLE
+  POPUPLIST eefcatpopup eefcatlist
+
+  LABEL "Titre:" AUTOID AT (1 15)
+  FIELD ID eeftitlef AT (8 27 140 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS MAXTITLELEN HASSCROLLBAR AUTOSHIFT
+  SCROLLBAR ID eeftitlescrb AT (150 22 7 34) VALUE 0 MIN 0 MAX 0 PAGESIZE 2
+
+  LABEL "Secret:" AUTOID AT (1 55)
+  FIELD ID eefsecretf AT (8 67 140 72) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS MAXSECRETLEN HASSCROLLBAR AUTOSHIFT
+  SCROLLBAR ID eefsecretscrb AT (150 62 7 77) VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+
+  GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+
+  BUTTON "OK" ID eefok AT (1 BOTTOM@159 AUTO AUTO)
+  BUTTON "Annuler" ID eefcancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+  BUTTON "Mod\350le" ID eeftemplate AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID formshowentry AT (0 0 160 160)
+MODAL
+BEGIN
+  TITLE "?"
+  LABEL "Secret:" AUTOID AT (1 15)
+  FIELD ID seffield AT (8 27 135 110) NONEDITABLE MULTIPLELINES MAXCHARS MAXSECRETLEN HASSCROLLBAR
+  SCROLLBAR ID seffieldscrb AT (150 22 7 120) VALUE 0 MIN 0 MAX 0 PAGESIZE 10
+  BUTTON "OK" ID sefok AT (2 BOTTOM@159 AUTO AUTO) FONT 2
+  BUTTON "Titre" ID seftitle AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) FONT 2
+  BUTTON "Edit." ID sefedit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) FONT 2
+  BUTTON "Supp." ID sefdelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) FONT 2
+END
+
+FORM ID formshowentrynqa AT (0 0 160 160)
+MODAL
+BEGIN
+  TITLE "?"
+  LABEL "Secret:" AUTOID AT (1 15)
+  FIELD ID seffield AT (8 27 135 110) NONEDITABLE MULTIPLELINES MAXCHARS MAXSECRETLEN HASSCROLLBAR
+  SCROLLBAR ID seffieldscrb AT (150 22 7 120) VALUE 0 MIN 0 MAX 0 PAGESIZE 10
+  BUTTON "OK" ID sefok AT (2 BOTTOM@159 AUTO AUTO)
+  BUTTON "Titre" ID seftitle AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+  BUTTON "Edit." ID sefedit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+  BUTTON "Supp." ID sefdelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID formshowtitle AT (2 50 156 108)
+MODAL
+BEGIN
+  TITLE "Titre du secret"
+  LABEL "Titre:" AUTOID AT (4 15)
+  FIELD ID shtfield AT (12 27 135 60) NONEDITABLE MULTIPLELINES MAXCHARS MAXTITLELEN HASSCROLLBAR
+  SCROLLBAR ID shtfieldscrb AT (148 22 7 70) VALUE 0 MIN 0 MAX 0 PAGESIZE 5
+  BUTTON "OK" ID shtok AT (4 BOTTOM@105 AUTO AUTO) FONT 2
+END
+
+FORM ID formshowtitlenqa AT (2 50 156 108)
+MODAL
+BEGIN
+  TITLE "Titre du Secret"
+  LABEL "Titre:" AUTOID AT (4 15)
+  FIELD ID shtfield AT (12 27 135 60) NONEDITABLE MULTIPLELINES MAXCHARS MAXTITLELEN HASSCROLLBAR
+  SCROLLBAR ID shtfieldscrb AT (148 22 7 70) VALUE 0 MIN 0 MAX 0 PAGESIZE 5
+  BUTTON "OK" ID shtok AT (4 BOTTOM@105 AUTO AUTO)
+END
+
+FORM ID formdeleteentry AT (2 95 156 63)
+MODAL
+BEGIN
+  TITLE "Supprimer entr\351e"
+  LABEL "Supprimer cette entr\351e?" AUTOID AT (4 15)
+  CHECKBOX "Demander de nouveau?" ID defcheckbox AT (4 32 AUTO AUTO)
+  BUTTON "Ok" ID defyes AT (4 BOTTOM@60 AUTO AUTO)
+  BUTTON "Annuler" ID defno AT (PREVRIGHT+4 BOTTOM@60 AUTO AUTO)
+END
+
+FORM ID formvisual AT (2 51 156 107)
+MODAL
+BEGIN
+  TITLE "Visuel"
+  CHECKBOX "Acc\350s rapide" ID vquickchk AT (4 15 AUTO AUTO)
+  CHECKBOX "Confirmer la supression" ID vconfirmchk AT (4 27 AUTO AUTO)
+  CHECKBOX "D\351fillement de page" ID vpagescroll AT (4 39 AUTO AUTO)
+  LABEL "PIN Disposition:" AUTOID AT (4 55)
+  POPUPTRIGGER "M\351langer" ID vpinpopup AT (52 55 AUTO AUTO) LEFTANCHOR
+  LIST "M\351langer" "T\351l\351phone" "Calculatrice" "Textuel" ID vpinlist AT (52 55 60 AUTO) NONUSABLE VISIBLEITEMS 4
+  POPUPLIST vpinpopup vpinlist
+  BUTTON "OK" ID vok AT (4 BOTTOM@104 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID vcancel AT (PREVRIGHT+4 BOTTOM@104 AUTO AUTO) FONT 0
+END
+
+FORM ID formsecurity AT (2 35 156 123)
+MODAL
+BEGIN
+  TITLE "Securit\351"
+  CHECKBOX "Prot\351ger la bd des synchros" ID secprotect AT (1 15 AUTO AUTO)
+  CHECKBOX "V\351rouill\351 le syst\350me s'il est inactif" ID seclockdev AT (1 27 AUTO AUTO)
+  CHECKBOX "Fermer lorsqu'il y a inactivit\351" ID seclogoutpd AT (1 39 AUTO AUTO)
+
+  LABEL "Temps d'inactivit\351 max" AUTOID AT (21 55)
+  POPUPTRIGGER "" ID secalapopup AT (84 55 AUTO AUTO) LEFTANCHOR
+  LIST "30 secs" "1 min" "2 min" "3 min" "Utilis\351  Pr\351fs." ID secalalist AT (84 55 AUTO AUTO) NONUSABLE VISIBLEITEMS 5
+  POPUPLIST secalapopup secalalist
+
+  LABEL "Max erreur connection" AUTOID AT (8 68)
+  POPUPTRIGGER "" ID seckaboompopup AT (84 68 AUTO AUTO) LEFTANCHOR
+  LIST "Illimit\351" "1 erreur" "3 erreurs" "5 erreurs" ID seckaboomlist AT (84 68 AUTO AUTO) NONUSABLE VISIBLEITEMS 4
+  POPUPLIST seckaboompopup seckaboomlist
+
+  BUTTON "OK" ID secok AT (4 BOTTOM@116 AUTO AUTO)
+  BUTTON "Annuler" ID seccancel AT (PREVRIGHT+4 BOTTOM@116 AUTO AUTO)
+END
+
+FORM ID formpincode AT (0 0 160 160)
+MODAL
+BEGIN
+  TITLE "?"
+  BUTTON "" ID pinbuttoggle AT (PINCODETOGGLEX PINCODETOGGLEY 9 9) NOFRAME
+  BUTTON "" ID pinbut00 AT (2 35 48 28) FONT 2
+  BUTTON "" ID pinbut01 AT (56 35 48 28) FONT 2
+  BUTTON "" ID pinbut02 AT (110 35 48 28) FONT 2
+  BUTTON "" ID pinbut03 AT (2 67 48 28) FONT 2
+  BUTTON "" ID pinbut04 AT (56 67 48 28) FONT 2
+  BUTTON "" ID pinbut05 AT (110 67 48 28) FONT 2
+  BUTTON "" ID pinbut06 AT (2 99 48 28) FONT 2
+  BUTTON "" ID pinbut07 AT (56 99 48 28) FONT 2
+  BUTTON "" ID pinbut08 AT (110 99 48 28) FONT 2
+  BUTTON "EFFACER" ID pinbutclear AT (2 131 48 28) FONT 2
+  BUTTON "" ID pinbut09 AT (56 131 48 28) FONT 2
+  BUTTON "OK" ID pinbutok AT (110 131 48 28) FONT 2
+END
+
+FORM ID formtextual AT (0 0 160 160)
+MODAL
+MENUID sysEditMenuID
+BEGIN
+  TITLE "?"
+  LABEL "Mot de passe:" AUTOID AT (4 65) FONT 0
+  FIELD ID txtpwd1 AT (24 79 132 24) UNDERLINED MULTIPLELINES MAXCHARS PASSWORDLEN
+  BUTTON "" ID txttoggle AT (TEXTUALTOGGLEX TEXTUALTOGGLEY 9 9) NOFRAME
+  BUTTON "OK" ID txtok AT (4 BOTTOM@159 AUTO AUTO) FONT 0
+END
+
+FORM ID formabout AT (2 2 156 156)
+MODAL
+BEGIN
+  TITLE "\300 propos de Secure It"
+  LABEL "Secure It v2r13" AUTOID AT (4 15) FONT 2
+  LABEL "Brian Schau <brian@schau.com>" AUTOID AT (4 32) FONT 0
+  LABEL "Icones fait par Uwe von der Wege" AUTOID AT (4 42) FONT 0
+  LABEL "& Jeroen Witteman" AUTOID AT (4 52) FONT 0
+  FIELD ID abtfield AT (8 74 128 64) NONEDITABLE MULTIPLELINES MAXCHARS MAXABOUTLEN HASSCROLLBAR
+  SCROLLBAR ID abtfieldscrb AT (144 70 7 64) VALUE 0 MIN 0 MAX 0 PAGESIZE 5
+  BUTTON "OK" ID abtok AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formnewdb AT (2 2 156 156)
+MODAL
+BEGIN
+  TITLE "Nouvelle base de donn\351e"
+  LABEL "Une nouvelle bd pour stor\351 vos secret" AUTOID AT (4 15)
+  LABEL "\340 \351t\351 cr\351\351. Lorsque vous quitterez" AUTOID AT (4 27)
+  LABEL "cette bo\356te de dialogue vous devriez" AUTOID AT (4 39)
+  LABEL "entrer \340 deux reprise un mot de" AUTOID AT (4 51)
+  LABEL "passe. Choissisez en un qui soit facile" AUTOID AT (4 63)
+  LABEL "\340 retenir et contenant au moins 4" AUTOID AT (4 75)
+  LABEL "caract\350res. Tous vos secrets seront" AUTOID AT (4 87)
+  LABEL "encrypt\351s avec ce mot de passe." AUTOID AT (4 99)
+  LABEL "Utilis\351 ce mot de passe, pour avoir" AUTOID AT (4 111)
+  LABEL "acc\350s \340 vos secret, la prochaine fois." AUTOID AT (4 123)
+  BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formnopassword AT (2 2 156 156)
+MODAL
+BEGIN
+  TITLE "Mot de passe inexistant"
+  LABEL "La bd secr\350tes n'est pas encrypt\351." AUTOID AT (4 15)
+  LABEL "Lorsque vous quitterez cette bo\356te" AUTOID AT (4 27)
+  LABEL "de dialogue, vous devriez entrer \340" AUTOID AT (4 39)
+  LABEL "deux reprise un mot de passe." AUTOID AT (4 51)
+  LABEL "Choissisez en un qui soit facile \340" AUTOID AT (4 63)
+  LABEL "retenir et contenant au moins 4" AUTOID AT (4 75)
+  LABEL "caract\350res. Tous vos secrets seront" AUTOID AT (4 87)
+  LABEL "encrypt\351s avec ce mot de passe." AUTOID AT (4 99)
+  LABEL "Utilis\351 ce mot de passe, pour avoir" AUTOID AT (4 111)
+  LABEL "acc\350s \340 vos secret, la prochaine fois." AUTOID AT (4 123)
+  BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formaboutchangepwd AT (2 2 156 156)
+MODAL
+BEGIN
+  TITLE "Changer de mot de passe"
+  LABEL "Lorsque vous quitterez cette bo\356te" AUTOID AT (4 15)
+  LABEL "de dialogue, vous devriez entrer \340" AUTOID AT (4 27)
+  LABEL "deux reprise un mot de passe." AUTOID AT (4 39)
+  LABEL "Choissisez sans un qui soit facile \340" AUTOID AT (4 51)
+  LABEL "retenir et contenant au moins 4" AUTOID AT (4 63)
+  LABEL "caract\350res." AUTOID AT (4 75)
+  LABEL "Svp effectuer une " AUTOID AT (26 90) FONT 2
+  LABEL "synchronisation avant de " AUTOID AT (7 107) FONT 2
+  LABEL "changer de mot de passe !" AUTOID AT (CENTER PREVBOTTOM) FONT 2
+  BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formimportsecrets AT (2 73 156 85)
+MODAL
+BEGIN
+  TITLE "Importer un Secret"
+  LIST "" ID fimcatlistfrom AT (60 15 100 AUTO) FONT 0 NONUSABLE VISIBLEITEMS 4
+  LABEL "Importer de:" AUTOID AT (RIGHT@PREVLEFT-4 PREVTOP+3) FONT 0
+  POPUPTRIGGER "?" ID fimcatpopupfrom AT (68 PREVTOP-1 AUTO AUTO) FONT 0 LEFTANCHOR
+  POPUPLIST fimcatpopupfrom fimcatlistfrom
+  LABEL "Importer vers:" AUTOID AT (RIGHT@PREVRIGHT-27 PREVBOTTOM+6) FONT 0
+  POPUPTRIGGER "?" ID fimcatpopupto AT (PREVRIGHT+4 PREVTOP-1 AUTO AUTO) FONT 0 LEFTANCHOR
+  POPUPLIST fimcatpopupto fimcatlistto
+  LIST "" ID fimcatlistto AT (60 29 100 AUTO) FONT 0 NONUSABLE VISIBLEITEMS 4
+  CHECKBOX "Supp. le m\351mos apr\350s l'import." ID fimcheck AT (3 49 AUTO AUTO) FONT 0
+  BUTTON "Importer" ID fimimport AT (4 BOTTOM@82 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID fimcancel AT (PREVRIGHT+4 BOTTOM@82 AUTO AUTO) FONT 0
+END
+
+FORM ID formimporttemplates AT (2 93 156 65)
+MODAL
+BEGIN
+  TITLE "Importation de mod\350le"
+  LABEL "Importer de:" AUTOID AT (6 15) FONT 0
+  POPUPTRIGGER "?" ID fimcatpopupfrom AT (60 15 AUTO AUTO) FONT 0 LEFTANCHOR
+  POPUPLIST fimcatpopupfrom fimcatlistfrom
+  LIST "" ID fimcatlistfrom AT (60 15 100 AUTO) FONT 0 NONUSABLE VISIBLEITEMS 4
+  CHECKBOX "Supprimer m\351mos apr\350s l'import" ID fimcheck AT (4 29 AUTO AUTO) FONT 0
+  BUTTON "Importer" ID fimimport AT (4 BOTTOM@62 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID fimcancel AT (PREVRIGHT+4 BOTTOM@62 AUTO AUTO) FONT 0
+END
+
+FORM ID formtemplateeditor AT (2 2 156 156)
+MODAL
+BEGIN
+  TITLE "Mod\350les"
+  LIST "" ID telist AT (8 20 140 110) USABLE
+  BUTTON "OK" ID teok AT (2 BOTTOM@153 AUTO AUTO) FONT 0
+  BUTTON "Nouv." ID tenew AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) FONT 0
+  BUTTON "Import" ID teimport AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) FONT 0
+  BUTTON "Export" ID teexport AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) FONT 0
+END
+
+FORM ID formedittemplate AT (0 0 160 160)
+MODAL
+MENUID sysEditMenuID
+BEGIN
+  TITLE "?"
+  LABEL "Titre:" AUTOID AT (1 15) FONT 0
+  FIELD ID teetitlef AT (8 27 140 24) FONT 0 UNDERLINED MULTIPLELINES MAXCHARS MAXTEMPLATETITLELEN HASSCROLLBAR AUTOSHIFT
+  SCROLLBAR ID teetitlescrb AT (150 22 7 34) VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+  LABEL "Mod\350le:" AUTOID AT (1 55) FONT 0
+  FIELD ID teetemplatef AT (8 67 140 72) FONT 0 UNDERLINED MULTIPLELINES MAXCHARS MAXSECRETLEN HASSCROLLBAR AUTOSHIFT
+  SCROLLBAR ID teetemplatescrb AT (150 62 7 77) VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+  GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+  BUTTON "OK" ID teeok AT (1 BOTTOM@159 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID teecancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) FONT 0
+  BUTTON "Supprimer" ID teedelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) FONT 0 NONUSABLE
+END
+
+FORM ID formselecttemplate AT (2 2 156 156)
+MODAL
+BEGIN
+  TITLE "S\351lectionner le mod\350le"
+  LIST "" ID stlist AT (8 20 140 110) USABLE
+  BUTTON "OK" ID stok AT (4 BOTTOM@153 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID stcancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) FONT 0
+END
+
+FORM ID formworking AT (0 0 160 160)
+NOFRAME
+BEGIN
+  TITLE "Op\351rationnel"
+END
+
+FORM ID formexportsecrets AT (2 73 156 85)
+MODAL
+BEGIN
+  TITLE "Exporter un secret"
+  LABEL "Exporter de" AUTOID AT (6 15) FONT 0
+  LABEL "Exporter vers" AUTOID AT (PREVLEFT PREVBOTTOM+2) FONT 0
+  CHECKBOX "Supp. le secret apr\350s l'export." ID fexcheck AT (PREVLEFT-2 PREVBOTTOM+5 AUTO AUTO) FONT 0
+  POPUPTRIGGER "?" ID fexcatpopupfrom AT (60 15 AUTO AUTO) FONT 0 LEFTANCHOR
+  POPUPLIST fexcatpopupfrom fexcatlistfrom
+  LIST "" ID fexcatlistfrom AT (60 15 100 AUTO) FONT 0 NONUSABLE VISIBLEITEMS 4
+  POPUPTRIGGER "?" ID fexcatpopupto AT (60 29 AUTO AUTO) FONT 0 LEFTANCHOR
+  POPUPLIST fexcatpopupto fexcatlistto
+  LIST "" ID fexcatlistto AT (60 29 100 AUTO) FONT 0 NONUSABLE VISIBLEITEMS 4
+  BUTTON "Exporter" ID fexexport AT (4 BOTTOM@82 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID fexcancel AT (PREVRIGHT+4 BOTTOM@82 AUTO AUTO) FONT 0
+END
+
+FORM ID formexporttemplates AT (2 93 156 65)
+MODAL
+BEGIN
+  TITLE "Exporter un mod\350le"
+  LABEL "Exporter vers:" AUTOID AT (6 15) FONT 0
+  CHECKBOX "Supp. les mod\350les apr\350s l'export." ID fexcheck AT (PREVLEFT-2 PREVBOTTOM+3 AUTO AUTO) FONT 0
+  POPUPTRIGGER "?" ID fexcatpopupto AT (60 15 AUTO AUTO) FONT 0 LEFTANCHOR
+  POPUPLIST fexcatpopupto fexcatlistto
+  LIST "" ID fexcatlistto AT (60 15 100 AUTO) FONT 0 NONUSABLE VISIBLEITEMS 4
+  BUTTON "Exporter" ID fexexport AT (4 BOTTOM@62 AUTO AUTO) FONT 0
+  BUTTON "Annuler" ID fexcancel AT (PREVRIGHT+4 BOTTOM@62 AUTO AUTO) FONT 0
+END
+
+
+// Bitmaps and Icons
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/agentl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/agentl8.bmp" BPP 8
+	BITMAP "gfx/agentl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/agents1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/agents8.bmp" BPP 8
+	BITMAP "gfx/agents8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAP ID pincodeswitchon "gfx/swon.bmp"
+BITMAP ID pincodeswitchoff "gfx/swoff.bmp"
+
+VERSION "2r13"
+
+MENU sysEditMenuID
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" 10000 "U"
+		MENUITEM "Cut" 10001 "X"
+		MENUITEM "Copy" 10002 "C"
+		MENUITEM "Paste" 10003 "P"
+		MENUITEM "Select All" 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" 10006 "K"
+		MENUITEM "Graffiti" 10007 "G"
+	END
+END
+
+CATEGORIES ID sfmaincat "Unfiled" "Business" "Personal" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+MENU startmenu
+BEGIN
+	PULLDOWN "Exchange"
+	BEGIN
+		MENUITEM "Import Secrets" sfmfrommemo "I"
+		MENUITEM "Export Secrets" sfmtomemo "E"
+	END
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Edit Templates" sfmtemplates "T"
+		MENUITEM SEPARATOR
+		MENUITEM "Visuals" sfmvisual "V"
+		MENUITEM "Security" sfmsecurity "S"
+		MENUITEM "Change Password" sfmchpwd "C"
+	END
+	
+	PULLDOWN "About"
+	BEGIN
+		MENUITEM "Secure It" sfmabout
+	END
+END

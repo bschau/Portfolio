@@ -1,0 +1,5 @@
+2005-01-16
+
+	* release 0.1
+	* extracted the emulators from the mbs package - fixed some bugs
+	  wrt. the readlink used in some of the scripts.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Release" default="all" basedir=".">
+	<import file="build.xml" />
+
+	<target name="obfuscate">
+		<taskdef resource="proguard/ant/task.properties" classpath="/opt/proguard/lib/proguard.jar" />
+		<move file="${final.d}/${project}.jar" tofile="${final.d}/plain.jar" />
+		<proguard overloadaggressively="true" allowaccessmodification="true" microedition="true" preverify="true" repackageclasses="">
+			<injar path="${final.d}/plain.jar" />
+			<outjar path="${final.d}/${project}.jar" />
+			<libraryjar refid="midpclasses" />
+			<keep />
+		</proguard>
+		<delete file="${final.d}/plain.jar" />
+		<antcall target="buildjad" />
+	</target>
+
+	<target name="all" depends="distclean,jad,obfuscate" />
+</project>

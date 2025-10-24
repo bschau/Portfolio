@@ -1,0 +1,5 @@
+tar xzf snacc-1.3.tar.gz
+cd snacc-1.3
+./configure --without-x --without-tcl
+make c
+make c-install

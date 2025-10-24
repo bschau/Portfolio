@@ -1,0 +1,58 @@
+TRANSLATION "Danish"
+BEGIN
+	"@@AboutText@@" = "El, Gas, Vand er lavet af:\n\nBrian Schau\n\nVenligst besøg mit website på:\n\nhttp://www.schau.com/\n\nPå websitet finder du den seneste version samt manualer m.m.\n\nEl, Gas, Vand er frigivet i henhold til GNU General Public License v2.\n\n"
+	"@@SelectDay@@" = "Vælg Dato"
+	"@@StringDiff@@" = "Forskel"
+	"@@StringPleaseWait@@" = "Vent Venligst!"
+	"@@StringMeter@@" = "Måler"
+	"@@StringUsage@@" = "Forbrug"
+	"@@StringAverage@@" = "Gns."
+	"@@StringCount@@" = "Målinger"
+	"@@StringLo@@" = "Laveste"
+	"@@StringHi@@" = "Højeste"
+	"@@StringDate@@" = "Dato"
+
+	"@@aBadRomTitle@@" = "PalmOS for gammel"
+	"@@aBadRomText@@" = "Denne enheds OS er for gammel. PalmOS v3.0 eller bedre er påkrævet."
+
+	"@@aDatabaseErrorTitle@@" = "Database Fejl"
+	"@@aDatabaseErrorText@@" = "Kan ikke åbne ^1 databasen."
+
+	"@@aDeleteTitle@@" = "Slet?"
+	"@@aDeleteText@@" = "Skal disse data slettes?"
+
+	"@@aNoStatisticsTitle@@" = "Statistik Fejl"
+	"@@aNoStatisticsText@@" = "Der skal være mindst 2 aflæsninger førend statistikken kan laves."
+
+	"@@fAboutTitle@@" = "Om"
+	"@@fAboutVersion@@" = "Version"
+
+	"@@fMainDate@@" = "Dato"
+	"@@fMainEl@@" = "El"
+	"@@fMainGas@@" = "Gas"
+	"@@fMainWater@@" = "Vand"
+	"@@fMainListAll@@" = "Alle"
+	"@@fMainListEl@@" = "El"
+	"@@fMainListGas@@" = "Gas"
+	"@@fMainListWater@@" = "Vand"
+
+	"@@fEditTitle@@" = "Tilføj/Ret"
+	"@@fEditDate@@" = "Dato:"
+	"@@fEditElectricity@@" = "El-måler"
+	"@@fEditGas@@" = "Gas-måler"
+	"@@fEditWater@@" = "Vand-måler"
+	"@@fEditNew@@" = "Ny"
+
+	"@@fStatisticsTitle@@" = "Statistik"
+
+	"@@mMainHelp@@" = "Hjælp"
+	"@@mMainAbout@@" = "Om"
+
+	"@@bOK@@" = "OK"
+	"@@bNew@@" = "Ny"
+	"@@bYes@@" = "Ja"
+	"@@bNo@@" = "Nej"
+	"@@bCancel@@" = "Fortryd"
+	"@@bDelete@@" = "Slet"
+	"@@bStat@@" = "Statistik"
+END

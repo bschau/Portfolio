@@ -1,0 +1,48 @@
+DST	=	Griddler.prc
+APPID	=	griD
+SOURCES	=	DB PCList PilotMain UI fAbout fGame fMain fPuzzleDone
+DEPS	=	../Resources.h ../Include.h
+CC	=	m68k-palmos-gcc
+CFLAGS	=	-O2 -Wall -I ..
+ifdef DEBUG
+	SOURCES	=	$(SOURCES) Debug
+	CFLAGS	=	$(CFLAGS) -DDEBUG=1
+	ifdef SYS
+		CFLAGS	=	$(CFLAGS) -DSYS=$(SYS)
+	else
+		if $(OS) == "WIN32"
+			CFLAGS	=	$(CFLAGS) -DSYS=1
+		else
+			CFLAGS	=	$(CFLAGS) -DSYS=0
+		endif
+	endif
+endif
+
+all:
+	lmake -C build -f ../LMakefile build
+
+initall:
+	mkdir build
+
+build:	code0000.grc
+	FormsData
+	build-prc -t 'appl' -o ../$(DST) -c $(APPID) -n 'Griddler' *.bin *.grc
+
+code0000.grc:	code0000.exe
+	m68k-palmos-obj-res code0000.exe
+
+code0000.exe:
+	< $(SOURCES) > compile
+	depend code0000.exe $(SOURCES).o || $(CC) $(CFLAGS) -o code0000.exe $(SOURCES).o $(LIBS)
+
+compile:
+	depend $<.o ../$<.c $(DEPS) || $(CC) $(CFLAGS) -c ../$<.c
+
+FormsData:
+	pilrc -q -I .. -allowEditID ../FormsData.rcp
+
+clean:
+	rm -f *~ build/* *.prc
+
+distclean:	clean
+	rm -fr build

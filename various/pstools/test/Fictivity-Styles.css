@@ -1,0 +1,35 @@
+body { font-family: tahoma,verdana,geneva,sans-serif; }
+.intro th { text-align: left; padding-right: 12px; }
+.intro td { text-align: left; }
+.messages p { color: red; }
+.messages pre { color: red; font-family: monospace; font-size: 90%; }
+div.messages { background-color: #ffeeee; color: red; border: 1px dotted red; padding: 2px; width: auto;}
+/* div#ctrls a { ... } */
+div#ctrls a:link { color: green; text-decoration: none; }
+div#ctrls a:visited { color: green; text-decoration: none; }
+/* div#ctrls a:focus { ... } */
+/* div#ctrls a:hover { ... } */
+/* div#ctrls a:active { ... } */
+div.groupleft { float: left; clear: right; }
+.groupleft tr { vertical-align: top; }
+.groupleft th { text-align: left; font-size: 80%; padding-left: 10px;}
+.groupleft td { text-align: left; font-size: 80%; padding-left: 10px; }
+div.groupmiddle { float: left; clear: right; padding-left: 10px; padding-right: 10px; }
+.groupmiddle tr { vertical-align: top; }
+.groupmiddle th { text-align: left; font-size: 80%; padding-right: 10px; }
+.groupmiddle td { text-align: left; font-size: 80%; }
+div.groupright { float: left; clear: right; }
+.groupright tr { vertical-align: top; }
+.groupright th { text-align: left; font-size: 80%; padding-right: 10px; }
+.groupright td { text-align: left; font-size: 80%; }
+div.groupphantoms { float: none; clear: both; }
+.groupphantoms tr { vertical-align: top; }
+.groupphantoms th { text-align: left; padding-left: 10px;}
+.groupphantoms td { text-align: left; padding-left: 10px; }
+.groupphantoms caption { font-size: 80%; font-style: bold; padding-top: 20px; }
+.unstackable tr { vertical-align: top; }
+.unstackable th { text-align: left; font-size: 90%; padding-left: 10px;}
+.unstackable td { text-align: left; font-size: 90%; padding-left: 10px; }
+.unused tr { vertical-align: top; }
+.unused th { text-align: left; font-size: 90%; padding-left: 10px;}
+.unused td { text-align: left; font-size: 90%; padding-left: 10px; }

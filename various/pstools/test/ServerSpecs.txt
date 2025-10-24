@@ -1,0 +1,15 @@
+#
+# Load default CPU
+cpu 200:3 400 400 1000
+
+#
+# Load default MEM
+mem 256:3 512
+
+#
+# Load default NET
+net 10:3 100
+
+#
+# Load default DSK
+dsk 4000:4 9000:2 18000

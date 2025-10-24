@@ -1,0 +1,318 @@
+/*
+Theme Name: Opskrifter
+Theme URI: http://opskrifter.schau.dk/
+Description: The opskrifter.schau.dk wiki theme.
+Author: Brian Schau
+Version: 1.0
+Tags: simple
+*/
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Roboto&display=s wap');
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-size: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+}
+
+pre {
+	background-color: #eee;
+	padding: 0.5em 1em;
+	border-left: 2px solid #888;
+	overflow: scroll;
+	font-size: 0.9rem;
+}
+
+code {
+	font-family: 'Fira Code', monospace;
+}
+
+a, a:visited, a:hover, a:active {
+	font-weight: bold;
+	text-decoration: none;
+	color: #558;
+}
+				     
+a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: #99c;
+	border-bottom: 1px dotted #111;
+}
+
+h1 {
+	color: #5c6366;
+	font-family: 'Noto Serif', serif;
+	clear: both;
+}
+
+h2, h3, h4, h5, h6 {
+	color: #8F9699;
+	font-family: 'Noto Serif', serif;
+	clear: both;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+	font-size: 0.6rem;
+	width: 100%;
+	height: 18px;
+	font-style: italic;
+}
+
+#page { margin: 0 auto; }
+
+.alignleft, img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+
+.alignright, img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+
+.aligncenter, img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Search box
+ */
+#search-box {
+	margin: 1em auto;
+	width: 100%;
+	text-align: center;
+	display: block;
+	overflow: hidden;
+}
+
+#search-text {
+	font-size: 1rem;
+	color: #999;
+	padding: 8px;
+	margin-right: 10px;
+	-moz-box-shadow: inset 2px 2px 5px #ccc;
+	box-shadow: inset 2px 2px 5px #ccc;
+	border: 1px solid #b8b8b8;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-transition: background-color 0.3s linear;
+	-moz-transition: background-color 0.3s linear;
+	-o-transition: background-color 0.3s linear;
+	width: 16rem;
+}
+
+.button-blue {
+	background: #00cd95;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00eead), to(#00a578));
+	background: -moz-linear-gradient(top,  #00eead,  #00a578);
+	-pie-background: linear-gradient(top,  #00eead,  #00a578);
+	border: 1px solid #036244;
+	color: #fff;
+	font-size: 1rem;
+	padding: 8px;
+	border-radius: 6px;
+	display: inline-block;
+	width: 6rem;
+}
+
+.button-blue:hover {
+	color: #ddd;
+}
+
+/**
+ * Main
+ */
+.lists {
+	margin: 0 auto;
+}
+
+.lists ul, .lists ol { list-style: none; }
+
+.cat-item {
+	padding: 0.25em 1em;
+	background-color: #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#ffffff));
+	background: -moz-linear-gradient(top,  #dddddd,  #ffffff);
+	-pie-background: linear-gradient(top,  #dddddd,  #ffffff);
+	border: 1px solid #a0aaaa;
+	margin: 0.2rem 0.5rem;
+	border-radius: 6px;
+	display: inline;
+	line-height: 2.5rem;
+	float: left;
+}
+
+.cat-item:hover {
+	background-color: #dddddd;
+}
+
+.cat-item a {
+	color: black;
+	text-decoration: none;
+}
+
+.cat-item a:hover {
+	text-decoration: underline dotted;
+}
+
+.wwh1 {
+	font-size: 1.2rem;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+.wwh1::first-letter {
+	font-size: 1.3rem;
+}
+
+/* .children { margin-left: 48px; } */
+
+dt { color: #226611; }
+dt { margin-top: 0.5em; }
+dl a { margin-right: 0.5em; }
+
+/**
+ * Posts
+ */
+p { margin-top: 1em; }
+
+.page-content { padding: 0 2em; }
+
+h1 { margin: 1em 0 1em 0; }
+h2, h3, h4, h5, h6 { margin: 0.5em 0 0.5em 0; }
+
+h3 { color: #248; }
+
+h4 { text-style: italic; }
+
+ul, ol { list-style-position: inside; }
+
+li > ul { margin-left: 1em; }
+
+table {
+	margin-top: 1em;
+	background: #D3E4E5;
+	border: 1px solid gray;
+	border-collapse: collapse;
+	color: #fff;
+	font-size: 0.9rem;
+}
+
+caption {
+	border: 1px solid #5C443A;
+	color: #5C443A;
+	font-weight: bold;
+	letter-spacing: 20px;
+	padding: 6px 4px 8px 0px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+td, th {
+	color: #363636;
+	padding: .4em;
+}
+
+tr { border: 1px dotted gray; }
+
+thead th, tfoot th {
+	background: #5C443A;
+	color: #FFFFFF;
+	padding: 3px 10px 3px 10px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+tbody td a {
+	color: #363636;
+	text-decoration: none;
+}
+
+tbody td a:visited {
+	color: gray;
+	text-decoration: line-through;
+}
+
+tbody td a:hover { text-decoration: underline; }
+
+tbody th a {
+	color: #363636;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+tbody th a:hover { color: #363636; }
+
+
+tbody th, tbody td {
+	text-align: left;
+	vertical-align: top;
+}
+
+tfoot td {
+	background: #5C443A;
+	color: #FFFFFF;
+	padding-top: 3px;
+}
+
+tr:nth-child(odd) { background: #FFF }
+
+tbody tr:hover {
+	background: #99BCBF;
+	border: 1px solid #03476F;
+	color: #000000;
+}
+
+@media only screen and (max-width: 640px) {
+	body {
+		font-size: 24px;
+		line-height: 26px;
+	}
+
+	.page-content { padding: 0 0.2em; }
+
+	#search-text {
+		width: 8rem;
+	}
+}

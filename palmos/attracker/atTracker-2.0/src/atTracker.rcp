@@ -1,0 +1,573 @@
+#include "Resources.h"
+
+/*
+ * Global data
+ */
+VERSION "2.0"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+BITMAP ID bQuickText "gfx/quicktext.bmp"
+BITMAP ID bBullet "gfx/bullet.bmp"
+
+CATEGORIES ID defaultCategories "Unfiled" "Business" "Personal" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+/*
+ * Strings
+ */
+STRING ID strAboutText "@Tracker was made by\n\n\tBrian Schau.\n\nPlease visit my website at:\n\n\thttp://www.schau.com/\n\nOn my website you will find the latest version of @Tracker, documentation and a online Archive Web Export tool to convert your archives to CSV or PHP.\n\n\n"
+
+/*
+ * Alerts
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.1 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Cannot open database."
+	MESSAGE "Cannot open the atTracker ^1 Database."
+	BUTTONS "OK"
+END
+
+ALERT ID aDeleteRecord
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete task?"
+	MESSAGE "Do you want to delete this task?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aCleanUpOK
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Perform clean up?"
+	MESSAGE "Do you want to perform clean up? This will delete tasks matching the given criterias. You will not be asked to confirm deletion."
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aCleanUpResult
+INFORMATION
+BEGIN
+	TITLE "Clean up result"
+	MESSAGE "^1 Task^2deleted."
+	BUTTONS "OK"
+END
+
+ALERT ID aSummaryBothDates
+INFORMATION
+BEGIN
+	TITLE "Both dates"
+	MESSAGE "You must set both dates."
+	BUTTONS "OK"
+END
+
+ALERT ID aSummaryResult
+INFORMATION
+BEGIN
+	TITLE "Result"
+	MESSAGE "Time spent in selected tasks:\n\n^1^2^3"
+	BUTTONS "OK"
+END
+
+ALERT ID aNoPalmPrint
+INFORMATION
+BEGIN
+	TITLE "No palm print"
+	MESSAGE "Cannot find Palm Print."
+	BUTTONS "OK"
+END
+
+ALERT ID aNothingToPrint
+INFORMATION
+BEGIN
+	TITLE "Nothing to print"
+	MESSAGE "There is nothing to print."
+	BUTTONS "OK"
+END
+
+ALERT ID aArchiveExists
+INFORMATION
+BEGIN
+	TITLE "Archive name exists"
+	MESSAGE "The selected archive name already exists."
+	BUTTONS "OK"
+END
+
+ALERT ID aArchiveUncreateable
+INFORMATION
+BEGIN
+	TITLE "Cannot create archive"
+	MESSAGE "Cannot create archive - please enter a different name."
+	BUTTONS "OK"
+END
+
+ALERT ID aDeleteArchive
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete archive?"
+	MESSAGE "Do you want to delete this archive? All tasks stored within the archive will be deleted as well."
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNeedsArchive
+INFORMATION
+BEGIN
+	TITLE "Needs archive"
+	MESSAGE "Please select archive to edit."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotDeleteArchive
+INFORMATION
+BEGIN
+	TITLE "Cannot delete"
+	MESSAGE "Cannot delete the selected archive."
+	BUTTONS "OK"
+END
+
+ALERT ID aSelectArchive
+INFORMATION
+BEGIN
+	TITLE "Select archive"
+	MESSAGE "Please select archive before returning."
+	BUTTONS "OK"
+END
+
+ALERT ID aArchiveOK
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Archive?"
+	MESSAGE "Do you want to archive the matching tasks?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aArchiveNotSet
+INFORMATION
+BEGIN
+	TITLE "No archive selected"
+	MESSAGE "No archive selected."
+	BUTTONS "OK"
+END
+
+ALERT ID aArchiveResult
+INFORMATION
+BEGIN
+	TITLE "Archive result"
+	MESSAGE "^1 Task^2^3 to archive."
+	BUTTONS "OK"
+END
+
+ALERT ID aRestoreOK
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Restore?"
+	MESSAGE "Do you want to restore tasks from the selected archive to the Unfiled category?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aRestoreResult
+INFORMATION
+BEGIN
+	TITLE "Restore result"
+	MESSAGE "^1 Task^2copied from the selected archive to the Unfiled category."
+	BUTTONS "OK"
+END
+
+ALERT ID aQuickTextManagerNoneSelected
+INFORMATION
+BEGIN
+	TITLE "No Quick Text selected"
+	MESSAGE "You must select a Quick Text to edit."
+	BUTTONS "OK"
+END
+
+ALERT ID aQuickTextFull
+INFORMATION
+BEGIN
+	TITLE "Limit Reached"
+	MESSAGE "The Quick Text space have been exhausted. Please delete one or more Quick Texts and then try again."
+	BUTTONS "OK"
+END
+
+ALERT ID aQuickTextDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Quick Text?"
+	MESSAGE "Do you want to delete this Quick Text?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms
+ */
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "@Tracker"
+	POPUPTRIGGER "?" ID cMainCategoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cMainCategoryList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cMainCategoryPopup cMainCategoryList
+
+	LABEL "Date" AUTOID AT (RIGHT@1+DATEFIELDWIDTH 20) FONT 1
+	LABEL "Time" AUTOID AT (RIGHT@1+DATEFIELDWIDTH+SPACING+TIMEFIELDWIDTH 20) FONT 1
+	LABEL "Task" ID cMainTaskLabel AT (1+DATEFIELDWIDTH+SPACING+TIMEFIELDWIDTH+SPACING 20) FONT 1 
+	LABEL " " AUTOID AT (PREVRIGHT+2 20) FONT 0
+	TABLE ID cMainTable AT (1 32 150 110) ROWS MainTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cMainScrollBar AT (151 32 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+
+	BUTTON "New" ID cMainNew AT (1 BOTTOM@159 AUTO AUTO)
+
+	POPUPTRIGGER "?" ID cMainFilterPopup AT (RIGHT@160 149 AUTO AUTO) RIGHTANCHOR
+	LIST "All" "Today" "Yesterday" "Last 7 Days" "Last Week" "Last 31 Days" "Last Month" "Range ..." ID cMainFilterList AT (RIGHT@160 149 60 88) NONUSABLE
+	POPUPLIST ID cMainFilterPopup cMainFilterList
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Summary" ID mMainSummary "S"
+		MENUITEM "Clean Up" ID mMainCleanUp "C"
+		MENUITEM SEPARATOR
+		MENUITEM "Print" ID mMainPrint "P"
+	END
+
+	PULLDOWN "Archive"
+	BEGIN
+		MENUITEM "Archive" ID mMainArchive "A"
+		MENUITEM "Restore" ID mMainRestore "R"
+		MENUITEM SEPARATOR
+		MENUITEM "Manager" ID mMainManager "M"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Quick Text" ID mMainQuickText "Q"
+		MENUITEM "Preferences" ID mMainPreferences
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About @Tracker"
+
+	LABEL "@Tracker" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 2.0" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+DEFAULTBUTTON cEditCancel
+BEGIN
+	TITLE "Task"
+
+	POPUPTRIGGER "?" ID cEditCategoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cEditCategoryList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cEditCategoryPopup cEditCategoryList
+
+	SELECTORTRIGGER "" ID cEditDate AT (1 20 56 AUTO)
+	SELECTORTRIGGER "" ID cEditTime AT (RIGHT@159 20 56 AUTO) RIGHTANCHOR
+
+	FIELD ID cEditTask AT (18 38 128 99) EDITABLE UNDERLINED MAXCHARS TaskLength MULTIPLELINES AUTOSHIFT HASSCROLLBAR
+	SCROLLBAR ID cEditTaskScrollbar AT (151 38 7 99) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 9
+
+	POPUPTRIGGER "" ID cEditQuickTextPopup AT (0 39 15 AUTO) GRAPHICAL BITMAPID bQuickText SELECTEDBITMAPID bQuickText LEFTANCHOR
+	LIST "" ID cEditQuickTextList AT (1 39 140 99) NONUSABLE
+	POPUPLIST ID cEditQuickTextPopup cEditQuickTextList
+
+	GRAFFITISTATEINDICATOR AT (143 147)
+
+	BUTTON "OK" ID cEditOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cEditCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Delete" ID cEditDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fTimeSelector AT (2 86 156 72)
+MODAL
+DEFAULTBUTTON cTimeSelectorCancel
+BEGIN
+	TITLE ""
+	PUSHBUTTON "" ID cTimeSelectorHour AT (10 26 20 12) GROUP 1 FONT 1
+	LABEL ":" AUTOID AT (PREVRIGHT+4 26) FONT 1
+	PUSHBUTTON "" ID cTimeSelectorMinuteH AT (PREVRIGHT+4 26 16 12) GROUP 1 FONT 1
+	PUSHBUTTON "" ID cTimeSelectorMinuteL AT (PREVRIGHT+1 26 16 12) GROUP 1 FONT 1
+
+	BUTTON "\x01" ID cTimeSelectorUp AT (82 24 14 8) FONT 5 NOFRAME
+	BUTTON "\x02" ID cTimeSelectorDown AT (82 33 14 8) FONT 5 NOFRAME
+
+	POPUPTRIGGER "Recent" ID cTimeSelectorPopup AT (106 26 AUTO AUTO) NONUSABLE
+	LIST "" ID cTimeSelectorList AT (106 26 40 56) NONUSABLE
+	POPUPLIST ID cTimeSelectorPopup cTimeSelectorList
+	
+	BUTTON "OK" ID cTimeSelectorOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Cancel" ID cTimeSelectorCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END
+
+FORM ID fPreferences AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cPreferencesCancel
+BEGIN
+	TITLE "Preferences"
+	LABEL "Default Time:" AUTOID AT (4 20)
+	SELECTORTRIGGER "" ID cPreferencesTime AT (PREVRIGHT+4 20 70 AUTO)
+	CHECKBOX "Show details in 'All' view" ID cPreferencesDouble AT (4 36 AUTO AUTO) NONUSABLE
+	CHECKBOX "Alternate line color:" ID cPreferencesAlternate AT (4 50 AUTO AUTO) NONUSABLE
+	GADGET ID cPreferencesGadget AT (PREVRIGHT+2 50 12 12) NONUSABLE
+
+	BUTTON "OK" ID cPreferencesOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Cancel" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fRange AT (2 86 156 72)
+MODAL
+DEFAULTBUTTON cRangeCancel
+BEGIN
+	TITLE "Set Range"
+	LABEL "Start Date:" AUTOID AT (RIGHT@50 20)
+	SELECTORTRIGGER "" ID cRangeStart AT (54 20 70 AUTO)
+	LABEL "End Date:" AUTOID AT (RIGHT@50 36)
+	SELECTORTRIGGER "" ID cRangeEnd AT (54 36 70 AUTO)
+
+	BUTTON "OK" ID cRangeOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Cancel" ID cRangeCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END
+
+FORM ID fCleanUp AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+DEFAULTBUTTON cCleanUpCancel
+BEGIN
+	TITLE "Clean Up"
+
+	LABEL "Delete Tasks:" AUTOID AT (1 20)
+
+	LABEL "In category:" AUTOID AT (RIGHT@60 36)
+	POPUPTRIGGER "?" ID cCleanUpPopup AT (64 36 AUTO AUTO)
+	LIST "" ID cCleanUpList AT (64 36 80 AUTO) NONUSABLE
+	POPUPLIST ID cCleanUpPopup cCleanUpList
+
+	LABEL "Before date:" AUTOID AT (RIGHT@60 54)
+	SELECTORTRIGGER "" ID cCleanUpSelector AT (64 54 AUTO AUTO)
+
+	LABEL "Older than:" AUTOID AT (RIGHT@60 72)
+	FIELD ID cCleanUpDays AT (64 72 30 12) EDITABLE UNDERLINED MAXCHARS CleanUpDaysLength NUMERIC RIGHTALIGN
+	LABEL "days" AUTOID AT (PREVRIGHT+2 72)
+
+	LABEL "Containing:" AUTOID AT (RIGHT@60 90)
+	FIELD ID cCleanUpString AT (64 90 90 12) EDITABLE UNDERLINED MAXCHARS TaskLength MULTIPLELINES AUTOSHIFT
+	
+	GRAFFITISTATEINDICATOR AT (143 147)
+
+	BUTTON "OK" ID cCleanUpOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cCleanUpCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fSummary AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+DEFAULTBUTTON cSummaryCancel
+BEGIN
+	TITLE "Summary"
+
+	LABEL "Summarize total time spent on tasks:" AUTOID AT (1 20)
+
+	LABEL "In category:" AUTOID AT (RIGHT@60 36)
+	POPUPTRIGGER "?" ID cSummaryPopup AT (64 36 AUTO AUTO)
+	LIST "" ID cSummaryList AT (64 36 80 AUTO) NONUSABLE
+	POPUPLIST ID cSummaryPopup cSummaryList
+
+	LABEL "Between:" AUTOID AT (RIGHT@60 54)
+	SELECTORTRIGGER "" ID cSummaryStart AT (64 54 AUTO AUTO)
+	LABEL "And" AUTOID AT (RIGHT@60 72)
+	SELECTORTRIGGER "" ID cSummaryEnd AT (PREVRIGHT+4 72 AUTO AUTO)
+
+	LABEL "Containing:" AUTOID AT (RIGHT@60 90)
+	FIELD ID cSummarySearch AT (64 90 90 12) EDITABLE UNDERLINED MAXCHARS TaskLength MULTIPLELINES AUTOSHIFT
+	
+	GRAFFITISTATEINDICATOR AT (143 147)
+
+	BUTTON "OK" ID cSummaryOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cSummaryCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fArchive AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+DEFAULTBUTTON cArchiveCancel
+BEGIN
+	TITLE "Archive"
+
+	LABEL "Archive Tasks:" AUTOID AT (1 20)
+
+	LABEL "In category:" AUTOID AT (RIGHT@60 36)
+	POPUPTRIGGER "?" ID cArchivePopup AT (64 36 AUTO AUTO)
+	LIST "" ID cArchiveList AT (64 36 80 AUTO) NONUSABLE
+	POPUPLIST ID cArchivePopup cArchiveList
+
+	LABEL "Before date:" AUTOID AT (RIGHT@60 54)
+	SELECTORTRIGGER "" ID cArchiveSelector AT (64 54 AUTO AUTO)
+
+	LABEL "Older than:" AUTOID AT (RIGHT@60 72)
+	FIELD ID cArchiveDays AT (64 72 30 12) EDITABLE UNDERLINED MAXCHARS ArchiveDaysLength NUMERIC RIGHTALIGN 
+	LABEL "days" AUTOID AT (PREVRIGHT+2 72)
+
+	LABEL "Containing:" AUTOID AT (RIGHT@60 88)
+	FIELD ID cArchiveString AT (64 88 90 12) EDITABLE UNDERLINED MAXCHARS TaskLength MULTIPLELINES AUTOSHIFT
+
+	LABEL "Archive name:" AUTOID AT (RIGHT@60 106)
+	SELECTORTRIGGER "" ID cArchiveName AT (64 106 AUTO AUTO)
+
+	PUSHBUTTON "Move tasks" ID cArchiveMove AT (RIGHT@78 124 AUTO AUTO) GROUP 1
+	PUSHBUTTON "Copy tasks" ID cArchiveCopy AT (82 124 AUTO AUTO) GROUP 1
+	
+	GRAFFITISTATEINDICATOR AT (143 147)
+
+	BUTTON "OK" ID cArchiveOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cArchiveCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fManager AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cManagerOK
+BEGIN
+	TITLE "Archive Manager"
+
+	LABEL "Name" AUTOID AT (4 20) FONT 1
+	LABEL "Tasks" AUTOID AT (RIGHT@138 20) FONT 1
+	LABEL " " AUTOID AT (152 20) FONT 0
+
+	TABLE ID cManagerTable AT (4 31 136 99) ROWS ManagerTableLines COLUMNS 1 COLUMNWIDTHS 136
+	SCROLLBAR ID cManagerScrollBar AT (146 31 7 99) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+
+	BUTTON "OK" ID cManagerOK AT (4 BOTTOM@151 AUTO AUTO)
+	BUTTON "New" ID cManagerNew AT (PREVRIGHT+4 BOTTOM@151 AUTO AUTO)
+	BUTTON "Edit" ID cManagerEdit AT (PREVRIGHT+4 BOTTOM@151 AUTO AUTO)
+END
+
+FORM ID fManagerNewDB AT (2 86 156 72)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cManagerNewDBCancel
+BEGIN
+	TITLE "New Archive"
+
+	LABEL "Enter new archive name:" AUTOID AT (4 20)
+	FIELD ID cManagerNewDBName AT (4 33 148 12) EDITABLE UNDERLINED MAXCHARS ArchiveNameLength AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (141 57)
+
+	BUTTON "OK" ID cManagerNewDBOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Cancel" ID cManagerNewDBCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END
+
+FORM ID fManagerEditDB AT (2 86 156 72)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cManagerEditDBCancel
+BEGIN
+	TITLE "Edit Archive"
+
+	LABEL "Archive name:" AUTOID AT (4 20)
+	FIELD ID cManagerEditDBName AT (4 33 148 12) EDITABLE UNDERLINED MAXCHARS ArchiveNameLength AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (141 57)
+
+	BUTTON "OK" ID cManagerEditDBOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Cancel" ID cManagerEditDBCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Delete" ID cManagerEditDBDelete AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END
+
+FORM ID fRestore AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cRestoreCancel
+BEGIN
+	TITLE "Restore"
+
+	LABEL "Please select archive to restore from." AUTOID AT (1 20)
+	LABEL "All tasks in the selected archive will be" AUTOID AT (1 36)
+	LABEL "copied to the " AUTOID AT (1 48)
+	LABEL "Unfiled" AUTOID AT (PREVRIGHT 48) FONT 1
+	LABEL " category." AUTOID AT (PREVRIGHT 48) FONT 0
+
+	LABEL "The archive will be left untouched." AUTOID AT (1 64)
+	LABEL "That is, no tasks will be deleted from" AUTOID AT (1 76)
+	LABEL "the archive." AUTOID AT (1 88)
+
+	LABEL "Archive name:" AUTOID AT (RIGHT@60 112)
+	SELECTORTRIGGER "" ID cRestoreName AT (64 112 AUTO AUTO)
+
+	BUTTON "OK" ID cRestoreOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cRestoreCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fQuickTextManager AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cQuickTextManagerOK
+SAVEBEHIND
+BEGIN
+	TITLE "Edit Quick Texts"
+
+	LIST "" ID cQuickTextManagerList AT (4 20 148 110)
+
+	BUTTON "OK" ID cQuickTextManagerOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "New" ID cQuickTextManagerNew AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Edit" ID cQuickTextManagerEdit AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fQuickTextManagerEdit AT (2 86 156 72)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cQuickTextManagerEditCancel
+SAVEBEHIND
+BEGIN
+	TITLE "Quick Text"
+
+	LABEL "Quick Text:" AUTOID AT (4 20)
+	FIELD ID cQuickTextManagerEditName AT (4 33 148 12) EDITABLE UNDERLINED MAXCHARS QTEntryLen-1 AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (141 57)
+
+	BUTTON "OK" ID cQuickTextManagerEditOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Cancel" ID cQuickTextManagerEditCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Delete" ID cQuickTextManagerEditDelete AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO) NONUSABLE
+END

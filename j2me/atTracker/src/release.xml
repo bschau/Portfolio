@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Release" default="all" basedir=".">
+	<import file="build.xml" />
+
+	<target name="obfuscate">
+		<echo message="Obfuscation for LANG: ${lang}" />
+		<taskdef resource="proguard/ant/task.properties" classpath="/opt/proguard/lib/proguard.jar" />
+		<move file="${final.d}/${project}-${lang}.jar" tofile="${final.d}/plain.jar" />
+		<proguard overloadaggressively="true" allowaccessmodification="true" microedition="true" preverify="true" repackageclasses="">
+			<injar path="${final.d}/plain.jar" />
+			<outjar path="${final.d}/${project}-${lang}.jar" />
+			<libraryjar refid="midpclasses" />
+			<keep />
+		</proguard>
+		<delete file="${final.d}/plain.jar" />
+		<antcall target="buildjad">
+			<param name="lang" value="${lang}" />
+		</antcall>
+	</target>
+
+	<target name="en">
+		<ant antfile="build.xml" target="all">
+			<property name="lang" value="en" />
+		</ant>
+		<ant antfile="release.xml" target="obfuscate">
+			<property name="lang" value="en" />
+		</ant>
+	</target>
+
+	<target name="da">
+		<ant antfile="build.xml" target="all">
+			<property name="lang" value="da" />
+		</ant>
+		<ant antfile="release.xml" target="obfuscate">
+			<property name="lang" value="da" />
+		</ant>
+	</target>
+
+	<target name="all" depends="distclean,en,da" />
+</project>

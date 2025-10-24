@@ -1,0 +1,4 @@
+Remember to:
+
+ln -s iChains_Prefix.pch Prefix.pch before doing a Release build for
+the device.

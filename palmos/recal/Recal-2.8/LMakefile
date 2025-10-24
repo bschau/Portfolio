@@ -1,0 +1,22 @@
+include TopMake.mk
+
+all:	distclean
+	lmake -C src initall
+	lmake -C src -D DEBUG=0
+	test -d Recal || mkdir Recal
+	cp Docs/* Recal
+	cp src/Recal.prc Recal
+	zip -r Recal.zip Recal
+
+distclean:
+	rm -f *~ Docs/*~
+	lmake -C src distclean
+	rm -fr Recal
+	rm -fr Recal.zip
+
+archive:	distclean
+	dos2unix *
+	dos2unix Docs/*
+	dos2unix src/*
+	a = $(APPNAME)\-$(VERSION)
+	tar cjf ../$(a).tar.bz2 ../$(a)

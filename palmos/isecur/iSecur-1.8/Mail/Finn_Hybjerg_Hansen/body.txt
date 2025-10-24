@@ -1,0 +1,18 @@
+Jeg er ved at teste iSecur 1.6 (dk version) på min Palm T3.
+Jeg kan ikke scrolle ned i min liste over secrets med min 5 way knap, uanset om jeg har slået "5 way op/ned..." funktionen til eller fra.
+Når jeg trykker nedad, kan jeg i kort blink se listen rykke 1 side ned, og så op til toppen igen.
+Er jeg bladret ned i listen med scroll-baren, og så trykker på "5-way" (op,ned,høje eller venstre) rykker listen helt til top igen.
+Er det en fejl du også kan reproducere?
+(Det virker fint i SecureIt v2r13)
+
+Derudover ville support for den store skærm (vistnok 320x480) være dejlig, har du planer om det?
+
+Ellers fine nye funktioner i programmet!
+
+Mvh. Finn Hybjerg Hansen
+__________________
+/Finn (2007.01.11)
+
+
+
+

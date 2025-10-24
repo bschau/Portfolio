@@ -1,0 +1,28 @@
+all:	clean
+	lmake -C src initall
+	lmake -C src
+	msg ============================================================
+	msg Now copy src$/translate$(EXE) to somewhere in your path
+	if $(OS) != WIN32
+		msg On Unix/Linux you may want to strip the binary after copying
+	endif
+	msg ============================================================
+
+clean:
+	lmake -C src clean
+	$(RM) *~
+
+distclean:	clean
+	lmake -C src distclean
+
+archive:	distclean
+	if $(OS) == Linux
+		dos2unix src/*
+		dos2unix src/test/*
+		dos2unix *
+		basename `pwd`
+		a = $-
+		in .. tar cvzf $(a).tar.gz $(a)
+	else
+		echo "Cannot archive on WIN32"
+	endif

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="30px" height="15px" viewbox="0 0 30 15" zoomAndPan="enabled">
+        <polygon points="2,1 2,14 13,7" stroke="black" stroke-width="1" fill="black"/>
+        <rect x="17" y="2" width="4" height="11" stroke="black" stroke-width="1" fill="black"/>
+        <rect x="24" y="2" width="4" height="11" stroke="black" stroke-width="1" fill="black"/>
+</svg>

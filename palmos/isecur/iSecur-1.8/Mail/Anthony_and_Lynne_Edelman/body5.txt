@@ -1,0 +1,62 @@
+Hi,
+
+Thanks for the continued work as always. I thought I would inform you of
+some things on the Treo 650.
+
+- The annoying bug that deletes a record on exit seems to be partly fixed.
+ie. when exit it does not delete the record (GOOD) but on return into 'isecur'
+it is in edit mode on a different record.
+- The 5 way key navigation still does not work when viewing a record (NOT
+in edit mode)
+- Export/Import is excellent - I like the new apply icon on import.
+
+Regards
+Anthony.
+
+> >-- Original Message --
+> >Date: Thu, 21 Dec 2006 21:15:00 +0100
+> >From: Brian Schau <brian@schau.com>
+> >To: undisclosed-recipients:;
+> >Subject: iSecur-1.6 is out!
+> >
+> >
+> >Hello,
+> >
+> >
+> >iSecur-1.5 was only released to a select few.  Based on
+> >the input I feel confident to go and release v1.6.
+> >iSecur is close to what I want it to be.  Only one bug
+> >exists on the TODO list - but it is a bug I have a hard
+> >time to correct as it apparently only shows on a Treo 650.
+> >I don't have access to the Treo 650 (anyone up for a
+> >donation?  :-)  and the bug doesn't show on the Treo 650
+> >simulator so I am pretty much at my talents end ...
+> >
+> >Anyway, get iSecur from:
+> >
+> >http://www.schau.com/gz/palm/isecur/
+> >
+> >Changelog (v1.5 + v1.6):
+> >
+> >v1.6 (2006-12-21)	AKA: "The Christmas Release"
+> >	Annoying bug fixed: iSecur no longer deletes an item when
+> >	exiting (yay! this one has been going on since v1.0  :-) 
+> >	When importing you can now set a icon for all the imported
+> >	items.
+> >	iSecur is now prepared for translation.
+> >	iSecur is also released in Danish  :-) 
+> >	iSecur no longer crashes if the Password Generator is brought up
+> >	on a non-field object.
+> >	5 way navigation on the Show form is now corrected.
+> >
+> >v1.5 (2006-12-01)	* THIS RELEASE WAS ONLY RELEASED TO TESTERS *
+> >	Added keyboard - everybodys favourite!
+> >
+> >
+> >Enjoy!   And have a merry christmas and a happy new year!
+> >
+> >
+> >Kind regards,
+> >Brian
+> >Author of iSecur
+

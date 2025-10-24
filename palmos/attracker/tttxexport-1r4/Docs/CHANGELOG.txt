@@ -1,0 +1,19 @@
+Changelog for tttxexport.
+
+v1r4 (2005-03-21)
+	Got rid of the Cygwin dependency on Windows.
+	Eliminated extra linefeeds.
+
+v1r3 (2004-10-14)
+	Fixed yet another bug which made tttxexport segfault.
+	Added support for TTTXExport GUI.
+
+v1r2 (2004-08-09)
+	Fixed a bug which made tttxexport segfault if invoked without any
+	command line arguments.
+	tttxexport can now compile under Linux, too!
+	cygwin1.dll can be installed during setup.
+	
+v1r1 (2004-06-23)
+	First public release. V1R1 must be used in conjunction with the V1R1
+	and V1R2 releases of atTracker.

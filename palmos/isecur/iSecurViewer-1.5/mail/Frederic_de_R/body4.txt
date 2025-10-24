@@ -1,0 +1,129 @@
+Hi Brian,
+ 
+Thanks for replying.
+ 
+Regarding the error with iSV :
+1. I use .NET 2.0
+2. No there's no error code
+ 
+See the pictures attached !
+ 
+Fred
+
+    ----- Original Message -----
+    From: Brian Schau
+    To: Frédéric de R
+    Sent: Monday, November 20, 2006 11:17 PM
+    Subject: Re: Suggestions
+
+    Hi Frederic,
+
+    > &nbsp;
+    > 1. Did you get my e-mail
+    > about iSecurViewer, dated 18/11
+
+    No ...?!?!?    I've just browsed throught the spam folder, trash archive
+    and inbox.  I have no trace of a mail from you from that date.
+
+    >   1. When I launch iSV, the window to
+    >   select the profile does not show up.
+
+    The window will only show if you have more than one profile.  Generally,
+    if you have one device you would normally only have one profile.
+
+    >   2. The window to enter the password
+    >   is the first one.
+
+    Yes. If only one profile is present, iSV uses that (pr. default).
+
+    >   3. I type the password but there is
+    >   "Load error" window saying "Arithmetical calculation generated a
+    overflow
+    >   problem" (actually it says something like that in French)
+
+    Does it have an associated errorcode like: 0x80004abc (just an example!)?
+
+    >   .NET installed. I've uninstalled iSV, cleaned the registry and
+    re-installed it
+
+    What version of .NET are you using?
+
+    >   if you need a translation job (into French), as I've already proposed to
+
+    >   you.
+
+    Yes, I know :-)   Translations will be a v1.5 or v1.6 thing.   I have some
+    gui changes in v1.4/v1.5 which I want get out before accepting translations.
+    That way it should mean lesser work for me and you (as a translator).
+    I _hope_ to be able to totally empty the todo list around v1.6-v1.8 (unless
+    too many bugs are reported)
+    Then it will be time to stabilize (eg. only bug fix) and focus on a
+    potential v2.0 release.   And to get tools like iSecurViewer up to date, I
+    guess :-)
+
+
+    > icon library and now there's a kind of black and white square or a maze.
+    Is it the normal icon ?
+
+    Yes. It is not a very beautiful icon so if you can do better or know some-
+    one who can do better (and are willing to do an icon for free!) I'd like
+    to know :-)
+
+    > 3. One more report after my
+    > to the category selection (up) or the "new" button (down). Is it supposed
+    to be that way ?
+
+    No. I think it is fixed in the yet-to-be-released v1.4 of iSecur.
+    v1.4 is undergoing tests ... so hopefully it will be out next week.
+
+
+    Kind regards,
+    Brian
+
+
+
+
+    > &nbsp;
+    > Fred
+    > &nbsp;
+    >
+    >   ----- Original Message -----
+    >   From:
+    >   Brian Schau
+    >   To: Frédéric de R
+    >   Sent: Sunday, November 19, 2006 11:07
+    >   PM
+    >   Subject: Re: Suggestions
+    >   Hi Frederic,Thanks for reporting ....1) That
+    >   is a bug.&nbsp; And I think I know what it is ... I'll fix this for
+    >   thenext release of iSecur.2) I'll look into
+    >   that./brian--------- Original Message --------From:
+    >   Frédéric de R &lt;fder@laposte.net&gt;To: brian@schau.com
+    &lt;brian@schau.com&gt;Subject:
+    >   SuggestionsDate: 19/11/06 08:53&gt; &gt; &gt; &gt;
+    >   &gt; &gt; &gt; &gt; Dear &gt; Brian,&gt;
+    >   &amp;nbsp;&gt; I'm still digging into &gt; iSecur. I'm not sure I'm
+    >   using this software with all of its power yet butI &gt; have one
+    >   question and one suggestion :&gt; &amp;nbsp;&gt; 1. There's an icon on
+    >   the key &gt; that's suppose to bring up the password generator box. Is
+    >   there a way to &gt; choose/change the icon ? (see attached
+    >   picture)&gt; &amp;nbsp;&gt; 2. I chose the option not to &gt; open
+    >   the secrets in edit mode because in edit mode, one may erase someletters
+
+    >   &gt; and I'd rather be sure to have my secret complete at all times.
+    >   However, I&gt; sometimes have to select-copy some parts of them. Is it
+    >   possible to havethe &gt; select-copy working in view mode ?&gt;
+    >   &amp;nbsp;&gt; Cheers,&gt; Fred&gt;
+    >   ________________________________________________Message sent using
+    >   UebiMiau 2.7.9
+    >
+
+    ________________________________________________
+    Message sent using UebiMiau 2.7.9
+
+
+
+
+
+
+

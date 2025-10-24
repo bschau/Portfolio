@@ -1,0 +1,34 @@
+Diplomas
+--------
+
+
+The diploma is based on a simple HTML file. The html file must be placed
+in the Diploma installation directory (typically c:\Program Files\Schau.Com\
+Dictate\Diploma\vXrY\).
+The html file must be named as you want it to look in the drop down box and
+the file must end in .htm.   F.ex., the Standard Diploma is called:
+
+	Standard Diploma.htm
+
+When Diploma starts it searchs the installation directory for any .htm files.
+The suffix is stripped from the name and the name is added to the drop down
+list.
+
+The html file can contain whatever information you want.  Diploma will search
+and replace the following strings:
+
+Key		Replacement
+@@SCORE@@	The users score.
+@@ROUND@@	Number of rounds in the dictation session.
+@@NAME@@	User name.
+@@GROUP@@	Group name.
+@@PCT@@		Percentage ((score*100)/rounds).
+@@YEAR@@	The year part of when the dictation was done.
+@@MONTH@@	The month part of when the dictation was done.
+@@DAY@@		The day part of when the dictation was done.
+@@BASE@@	Base directory of the Diploma (used to locate graphics).
+
+The final page will be shown in the system wide default browser.
+
+Have a look at the Standard Diploma.htm file for inspiration ...
+

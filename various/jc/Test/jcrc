@@ -1,0 +1,25 @@
+{
+	"Templates": "/home/bs/Projects/jc/Test",
+	"Headers": [
+		[ "X-jc-Id", "ee31d71e-e99b-4d5a-900c-067437b6a325" ]
+	],
+	"Profiles": [
+		{
+			"Name": "test",
+			"Endpoint": "",
+			"Headers": [
+				[ "X-jc-another-Id", "a7bbe782-6028-4d82-8131-87940f3e7660" ]
+			],
+			"Message": "Hello to you"
+		},
+		{
+			"Name": "simple",
+			"Endpoint": ""
+		},
+		{
+			"Name": "bin",
+			"Endpoint": "http://httpbin.org"
+		}
+	],
+	"Message": "Hello world"
+}

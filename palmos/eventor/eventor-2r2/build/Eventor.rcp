@@ -1,0 +1,276 @@
+#include "resources.h"
+
+/*
+**	Global data.	
+*/
+VERSION "2r2"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/eventorl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/eventorl8.bmp" BPP 8
+	BITMAP "gfx/eventorl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/eventors1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/eventors8.bmp" BPP 8
+	BITMAP "gfx/eventors8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+CATEGORIES ID defaultCategories "Ingen" "M\xe6rkedage" "F\xf8dselsdage" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+/*
+**	Strings
+*/
+STRING ID strTomorrow "I morgen"
+STRING ID strInDays "om %ld dage"
+STRING ID strToday "I dag"
+STRING ID strNotSet "Ej sat"
+STRING ID strNewEvent "Ny Begivenhed"
+STRING ID strEditEvent "Ret Begivenhed"
+STRING ID strSetDate "S\xe6t Dato"
+STRING ID strSetNewAlarm "S\xe6t Nyt Tidspunkt"
+STRING ID strOnTheDay "p\xe5 dagen"
+STRING ID strDaysBefore "%d dag%s f\xf8r"
+STRING ID strDaysBeforeP "e"
+STRING ID strRepeating "gentager"
+STRING ID strNever "Aldrig"
+STRING ID strAboutText "Eventor er skrevet af Brian Schau.\n\nBes\xf8g venligst websitet:\n\n  http://www.schau.com/eventor\n\nP\xe5 websitet findes den seneste version af Eventor, en Conduit beregnet til Microsoft Windows, Bruger manual samt en FAQ.\n\n\nDette program er freeware - brug det som du lyster!\n\n"
+STRING ID strDate "Dato"
+STRING ID strEvent "Begivenhed"
+STRING ID strCategory "Kategori"
+
+/*
+**	Alerts.
+*/
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS for gammel"
+	MESSAGE "Operativsystemet i denne PDA er for gammelt. Der skal bruges version 3.0 eller bedre."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Kan ikke \xf8bne database"
+	MESSAGE "Kan ikke \xf8bne ^1 databasen."
+	BUTTONS "OK"
+END
+
+ALERT ID aEmptyEvent
+INFORMATION
+BEGIN
+	TITLE "Tom tekst"
+	MESSAGE "Du skal angive en kort beskrivelse i Begivenheds feltet."
+	BUTTONS "OK"
+END
+
+ALERT ID aInvalidDate
+INFORMATION
+BEGIN
+	TITLE "Dato ej sat"
+	MESSAGE "Du skal angive en gyldig dato."
+	BUTTONS "OK"
+END
+
+ALERT ID aDelete
+INFORMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Slet?"
+	MESSAGE "Er det ok at slette denne begivenhed?"
+	BUTTONS "Ja" "Nej"
+END
+
+ALERT ID aNoEvents
+INFORMATION
+BEGIN
+	TITLE "Ingen begivenheder"
+	MESSAGE "Der er ingen begivenheder."
+	BUTTONS "OK"
+END
+
+ALERT ID aNothingToPrint
+INFORMATION
+BEGIN
+	TITLE "Intet at udskrive"
+	MESSAGE "Der er intet at udskrive."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+**	Menu
+*/
+MENU sysEditMenuID
+BEGIN
+	PULLDOWN "Ret"
+	BEGIN
+		MENUITEM "Fortryd" 10000 "U"
+		MENUITEM "Klip" 10001 "X"
+		MENUITEM "Kopier" 10002 "C"
+		MENUITEM "Inds\xe6t" 10003 "P"
+		MENUITEM "V\xe6lg Alt" 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Tastatur" 10006 "K"
+		MENUITEM "Graffiti" 10007 "G"
+	END
+END
+
+/*
+**	Forms.
+*/
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Eventor"
+	POPUPTRIGGER "?" ID fMainCategoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID fMainCategoryList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID fMainCategoryPopup fMainCategoryList
+
+	LABEL "Dato" AUTOID AT (RIGHT@1+DATEFIELDWIDTH 18) FONT 1
+	LABEL "Begivenhed" AUTOID AT (1+SPACING+DATEFIELDWIDTH 18) FONT 1
+	// Turns off boldfont for tables on 3.x roms.
+	LABEL " " AUTOID AT (PREVRIGHT+2 18) FONT 0
+	TABLE ID fMainTable AT (1 31 150 110) ROWS MainTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID fMainScrollBar AT (151 31 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+	BUTTON "Ny" ID fMainNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "N\xe6ste" ID fMainNext AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Udskriv" ID fMainPrint AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Muligheder"
+	BEGIN
+		MENUITEM "Bekendtg\xf8relser" mMainNotifications "N"
+		MENUITEM "Indstillinger" mMainPrefs "P"
+		MENUITEM SEPARATOR
+		MENUITEM "Om Eventor" mMainAbout
+	END
+END
+
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fEditCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE ""
+	POPUPTRIGGER "?" ID fEditCategoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID fEditCategoryList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID fEditCategoryPopup fMainCategoryList
+
+	LABEL "Begivenhed:" AUTOID AT (RIGHT@51 19)
+	FIELD ID fEditEvent AT (53 19 100 36) EDITABLE UNDERLINED MAXCHARS EventLength MULTIPLELINES AUTOSHIFT
+
+	LABEL "Dato:" AUTOID AT (RIGHT@49 62)
+	SELECTORTRIGGER "" ID fEditDateSelector AT (51 62 AUTO AUTO)
+
+	CHECKBOX "Mind mig om begivenheden" ID fEditRemindMe AT (1 78 AUTO AUTO)
+	FIELD ID fEditRemindDays AT (18 90 14 12) EDITABLE UNDERLINED MAXCHARS 3
+
+	LABEL "dag(e) f\xf8r begivenheden" AUTOID AT (PREVRIGHT+4 90)
+	CHECKBOX "Gentag hver dag indtil ..." ID fEditRepeat AT (15 104 AUTO AUTO)
+
+	GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+	BUTTON "OK" ID fEditOk AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Forkast" ID fEditCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fView AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fViewDone
+BEGIN
+	TITLE "Vis Begivenhed"
+
+	LABEL "Begivenhed:" AUTOID AT (RIGHT@51 19)
+	FIELD ID fViewEvent AT (53 19 100 36) NONEDITABLE MULTIPLELINES
+
+	LABEL "Dato:" AUTOID AT (RIGHT@51 58)
+	FIELD ID fViewDate AT (53 58 100 12) NONEDITABLE 
+	LABEL "Kategori:" AUTOID AT (RIGHT@51 73)
+	FIELD ID fViewCategory AT (53 73 110 12) NONEDITABLE
+
+	LABEL "Mind om:" AUTOID AT (RIGHT@51 88)
+	FIELD ID fViewRemind AT (53 88 158 24) NONEDITABLE
+
+	BUTTON "Tilbage" ID fViewDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Rediger" ID fViewEdit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Slet" ID fViewDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Om Eventor"
+
+	LABEL "Eventor" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 2r2" AUTOID AT (CENTER 42)
+	FIELD ID fAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID fAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Tilbage" ID fAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fAlarm AT (2 40 156 118)
+MODAL
+DEFAULTBUTTON fAlarmDone
+BEGIN
+	TITLE "Eventor"
+
+	FIELD ID fAlarmCategory AT (4 19 150 12) NONEDITABLE FONT 1
+	LABEL "Dato:" AUTOID AT (4 35)
+	FIELD ID fAlarmEventDate AT (PREVRIGHT+4 35 100 12) NONEDITABLE
+	FIELD ID fAlarmEvent AT (4 51 150 24) NONEDITABLE MULTIPLELINES
+	LABEL "Indtr\xe6ffer:" AUTOID AT (4 79)
+	FIELD ID fAlarmDate AT (PREVRIGHT+4 79 100 12) NONEDITABLE
+
+	BUTTON "Tilbage" ID fAlarmDone AT (4 BOTTOM@113 AUTO AUTO)
+	BUTTON "\x02" ID fAlarmPrev AT (132 BOTTOM@113 8 AUTO) FONT 4 NOFRAME
+	BUTTON "\x03" ID fAlarmNext AT (PREVRIGHT+2 BOTTOM@113 8 AUTO) FONT 4 NOFRAME
+END
+
+FORM ID fPrefs AT (2 66 156 92)
+MODAL
+DEFAULTBUTTON fPrefsCancel
+BEGIN
+	TITLE "Indstillinger"
+
+	LABEL "Alarmer:" AUTOID AT (4 19)
+	SELECTORTRIGGER "" ID fPrefsAlarmTime AT (PREVRIGHT+4 19 AUTO AUTO)
+	CHECKBOX "Alarm lyd." ID fPrefsSoundAlarm AT (4 35 AUTO AUTO)
+	CHECKBOX "Vis bekendtg\xf8relser ved start." ID fPrefsShowNotifications AT (4 51 AUTO AUTO) NONUSABLE
+
+	BUTTON "Tilbage" ID fPrefsOK AT (4 BOTTOM@89 AUTO AUTO)
+	BUTTON "Forkast" ID fPrefsCancel AT (PREVRIGHT+4 BOTTOM@89 AUTO AUTO)
+END
+
+FORM ID fTimeSelector AT (2 86 156 72)
+MODAL
+DEFAULTBUTTON fTimeSelectorCancel
+BEGIN
+	TITLE ""
+	PUSHBUTTON "" ID fTimeSelectorHour AT (10 26 20 12) GROUP 1 FONT 1
+	LABEL ":" AUTOID AT (PREVRIGHT+4 26) FONT 1
+	PUSHBUTTON "" ID fTimeSelectorMinuteH AT (PREVRIGHT+4 26 16 12) GROUP 1 FONT 1
+	PUSHBUTTON "" ID fTimeSelectorMinuteL AT (PREVRIGHT+1 26 16 12) GROUP 1 FONT 1
+
+	BUTTON "\x01" ID fTimeSelectorUp AT (82 24 14 8) FONT 5 NOFRAME
+	BUTTON "\x02" ID fTimeSelectorDown AT (82 33 14 8) FONT 5 NOFRAME
+
+	PUSHBUTTON "AM" ID fTimeSelectorAM AT (104 26 AUTO AUTO) GROUP 2
+	PUSHBUTTON "PM" ID fTimeSelectorPM AT (PREVRIGHT+1 26 AUTO AUTO) GROUP 2
+
+	BUTTON "OK" ID fTimeSelectorOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Forkast" ID fTimeSelectorCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END

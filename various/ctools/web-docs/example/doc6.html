@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>Parse.c</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<STYLE TYPE="text/css">
+body { font-family: Verdana, Arial, serif } table { border-spacing: 10px; } h1 {} td.left { vertical-align: top; } a.left { font-color: red; } td.right {} p.global {} p.entry { font-size: 1.1em; font-weight: bold; } div.signature { margin-left: 2cm; } p.desc { margin-left: 2cm; } p.right { font-weight: bold; margin-left: 2cm; } .npr { margin-left: 4cm; margin-top: -1em; } h3 { border: solid 1px; width: 100%; background-color: #87cefa; color: black; } code {} a.index {} a.selected { font-size: 1.1em; border: 1px solid black; }
+</STYLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR>
+<TD>&nbsp;</TD><TD><H1>Parse.c</H1></TD></TR>
+<TR><TD CLASS="left"><A HREF="index.html" CLASS="left"><I>Index</I></A><BR><A HREF="doc1.html" CLASS="left">Options.c</A>
+<BR><A HREF="doc2.html" CLASS="left">StringBuilder.c</A>
+<BR><A HREF="doc3.html" CLASS="left">Utils.c</A>
+<BR><A HREF="doc4.html" CLASS="left">Main.c</A>
+<BR><A HREF="doc5.html" CLASS="left">Output.c</A>
+<BR><A HREF="doc6.html" CLASS="selected">Parse.c</A>
+<BR><A HREF="doc7.html" CLASS="left">XUtils.c</A>
+</TD><TD CLASS="right">
+<P CLASS="global"><P>Main parser. Parse and initialize procedures, variables et. al. <P>The parser looks for comment blocks starting with &#47;&#42;&#42; (slash- star-star) (like in Java). If the sequence is followed by a dash the comment is ignored. <P>Then follows the description and one or more of the keywords describing the various input and output parameters for the function. <P>The comment block must be terminated with &#42;&#47; (star-slash). <P>After the comment block the signature of what is describe follows. <I>lcdoc</I> tries to auto guess the type being describe (function, structs, typedefs, enums or variables). If <I>lcdoc</I> parses the type incorrectly, you can force the type using a directive in the comment block. <P>Directives: <DL> <DT>&#64;param</DT> <DD>A parameter for a function.</DD> <DT>&#64;member</DT> <DD>A member in a enum or structure. <I>member</I> and <I>param</I> are interchangeable.</DD> <DT>&#64;return</DT> <DD>What kind of value (if any) this function returns.</DD> <DT>&#64;note</DT> <DD>Something to be hightlighted.</DD> <DT>&#64;type</DT> <DD>Set to <B>struct</B>, <B>enum</B>, <B>var</B>, <B>func</B> or <B>typedef</B> to force the target to the specified type.</DD> </DL><H3>Functions</H3>
+<P CLASS="right"><A NAME="Parse"></A><P CLASS="entry">Parse<DIV CLASS="signature"><PRE>void Parse (<BR>        void<BR>)</PRE></DIV><P CLASS="desc">Parse a file.<A NAME="ParseClose"></A><P CLASS="entry">ParseClose<DIV CLASS="signature"><PRE>void ParseClose (<BR>        void<BR>)</PRE></DIV><P CLASS="desc">Destroy parser.<A NAME="ParseFree"></A><P CLASS="entry">ParseFree<DIV CLASS="signature"><PRE>void ParseFree (<BR>        void<BR>)</PRE></DIV><P CLASS="desc">Close down file parsing for this file.<A NAME="ParseOpen"></A><P CLASS="entry">ParseOpen<DIV CLASS="signature"><PRE>void ParseOpen (<BR>        void<BR>)</PRE></DIV><P CLASS="desc">Initialize parser.</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

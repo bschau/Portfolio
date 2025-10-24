@@ -1,0 +1,15 @@
+WINDOWTITLE	=	'j2mec - class documentation'
+DOCTITLE	=	'j2mec - class documentation'
+HEADER		=	'j2mec'
+BOTTOM		=	'Homepage: <A HREF="http://www.schau.com/j2mec/index.html">http://www.schau.com/j2mec/index.html</A>'
+
+all:	generate
+
+initall:
+	mkdir -p apidoc
+
+distclean:
+	rm -fr apidoc
+
+generate:
+	javadoc -sourcepath . -d apidoc -use -splitIndex -windowTitle $(WINDOWTITLE) -doctitle $(DOCTITLE) -header $(HEADER) -bottom $(BOTTOM) *.java

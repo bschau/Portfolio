@@ -1,0 +1,27 @@
+Sara findes på:
+
+http://site1.pdc.dk/saraweb/Default.aspx
+
+1) Skriv teksten
+2) Tryk lyt
+3) View Source
+4) Find:
+
+	<object id="player"
+		type="application/x-mplayer2" height = "45"
+		width = "350">
+		<param name="fileName" value="Temp/gs2b5yiozlud2o45ll4fls55.wav" />
+		<param name="autoStart" value="1" />
+		<p>Error - the plugin has not loaded</p>
+	</object>
+
+5) I CLI:
+
+	wget http://site1.pdc.dk/saraweb/Temp/gs2b5yiozlud2o45ll4fls55.wav
+
+   (Brug gs*.wav fra value i object blokken ovenover)
+
+6) Konverter til mp3:
+
+	ffmpeg -i gs2b5y...wav Lydens_navn.mp3
+

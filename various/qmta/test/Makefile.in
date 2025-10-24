@@ -1,0 +1,25 @@
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+
+CC = @CC@
+CFLAGS = @CFLAGS@ -I. -I../include -D@OSTYPE@
+LIBS = ../libqmta/libqmta.a @LIBS@
+DST1 = database
+DST2 = mail
+
+all:		$(DST1) $(DST2)
+
+$(DST1):	$(DST1).c
+	$(CC) $(CFLAGS) -o $(DST1) $(DST1).c $(LIBS)
+
+$(DST2):	$(DST2).c
+	$(CC) $(CFLAGS) -o $(DST2) $(DST2).c $(LIBS)
+
+clean:
+	rm -f *.o test.db $(DST1) $(DST2)
+
+distclean:	clean
+	rm -f Makefile
+
+install:	$(DST1) $(DST2)

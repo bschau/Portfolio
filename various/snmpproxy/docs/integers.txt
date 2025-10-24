@@ -1,0 +1,36 @@
+Snatched from snacc-1.3/c-examples/snmp/README
+----------------------------------------------
+
+Deficiencies
+   A deficiency in parsing large integers is shown when parsing the
+   following rfc 1155 types:
+
+                  Counter ::=
+                      [APPLICATION 1]
+                          IMPLICIT INTEGER (0..4294967295)
+
+                  Gauge ::=
+                      [APPLICATION 2]
+                          IMPLICIT INTEGER (0..4294967295)
+
+                  TimeTicks ::=
+                      [APPLICATION 3]
+                          IMPLICIT INTEGER (0..4294967295)
+
+Due the size of a C long int the above ASN.1 is represented internally as:
+
+Counter ::= [APPLICATION 1] IMPLICIT INTEGER (0..-1)
+
+Gauge ::= [APPLICATION 2] IMPLICIT INTEGER (0..-1)
+
+TimeTicks ::= [APPLICATION 3] IMPLICIT INTEGER (0..-1)
+
+The ASN.1 library contains routines for encoding/decoding unsigned
+long integers but you must hand code the cases where it is used - the
+compiler never generates code that calls them.
+
+
+
+
+The asn1uint.sh script mindlessly replaces any instances of BEncCounterContent
+(and for gauges and ticks) from BEncAsnIntContent to BEncUAsnIntContent.

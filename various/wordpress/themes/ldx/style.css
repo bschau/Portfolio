@@ -1,0 +1,38 @@
+/*
+Theme Name: LDX
+Theme URI: https://ldx.dk
+Description: The theme for ldx.dk - very minimal.
+Author: Brian Schau
+Version: 1.1
+Tags: colorful, fixed-width, microformats, opskrifter
+*/
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+	max-width: 960px;
+}
+
+#outer { padding: 10% 0; }
+
+#inner { text-align: center; }
+
+#mnemonic {
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 90%;
+}
+
+#latin {
+	text-align: left;
+	width: 12em;
+	margin: 0 auto;
+	font-size: 90%;
+}
+
+.page-content {
+	margin: 0.5em;
+}

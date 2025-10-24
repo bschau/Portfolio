@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>Recal User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>Recal User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>Recal is a quick hack I use when my Palm (Vx, Zire or Tungsten T) loses its digitizer settings. This unfortunately happens once in a while. The only way in getting the device back on track is to recalibrate the digitizer using the appropriate panel in the Preferences application. But how do you tap your way into the calibration screen when the digitizer is in a messed up state (which came first: the chicken or the egg? And who cares?)
+<P>Recal to the rescue ...
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of Recal is like installing any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] Recal.
+<LI>Unpack the <B>recal.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the archive. Highlight the <B>recal.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a 'Recal' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move Recal to another category.
+
+<P><BR><P><BR>
+<H3>Using Recal</H3>
+<P>Recal auto-starts after a HotSync or a Soft Reset of the device. If you do a Hard Reset all applications and data are lost - even Recal will not survive this. When Recal is started this way the Calibrate Digitizer dialog is launched after a configurable amount of time and you will have to complete a full calibration before moving on to something else.
+<P>The first time you launch Recal you will be prompted to calibrate your device. The settings will be saved and used during auto calibration.
+<P><B>Note!</B> Recal is not compatible with the system digitizer calibration setting dialog. You can use both. But Recal uses it's own settings when doing auto calibration.
+<P><IMG SRC="recal.gif" WIDTH="160" HEIGHT="160" ALT="Main Screen">By tapping the Recal icon you will be able to launch the Calibrate Digitizer dialog by tapping the button or pressing the Up or Down key. The <B>Delay</B> field controls the delay (in seconds) before launching the Calibrate Digitizer dialog upon a initial HotSync or a Soft Reset.
+<P>The <B>Timeout</B> value given is the timeout the digitizer screen will be idle between taps.
+<P>The <B>Precision</B> value is the precision of taps wíthin the crossharis. The lower the number selected, the finer the precision. On a healthy device the precision should be set to <I>1 pt</I>.
+<P>Select the delay between auto calibrations or set the delay to <B>Never</B> to .. never auto calibrate. <B>Note!</B> On pre 3.2 Palm OS devices the display will most likely turn on when auto calibrating. So, beware - if you have a device timeout on say 2 minutes and you set auto calibrate to 1 minute you may experience that the device will have it's battery drained. Of course, if you really need to auto calibrate your device every minute you might as well get a new device ;-) And no, there is nothing I can do to help this. PalmSource/Access made this by design.
+<P><BR>Depending on your device you may see one or more of the following options:
+<UL>
+<LI><B>After HotSync</B> - Bring up the calibration dialog after every HotSync?
+<LI><B>Before launching application</B> - do a calibration before launching an application? This is done without user intervention.
+<LI><B>After quitting application</B> - do a calibration after quitting an application? This is done without user intervention.
+<LI><B>After wakeing up</B> - do a calibration after turning on the device? This is done without user intervention.
+</UL>
+
+<P><BR><P><BR>That is all there is to it. Enjoy! :o)
+
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>Recal: <A HREF="http://www.schau.com/gz/palm/recal/index.html">www.schau.com/gz/palm/recal/index.html</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

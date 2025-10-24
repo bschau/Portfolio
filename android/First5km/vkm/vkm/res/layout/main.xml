@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@color/background"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@color/background"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+		<Button android:id="@+id/togglebutton"
+    	    	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_toggle"
+        		android:layout_gravity="left"
+        		android:onClick="onButtonClick" />
+    	<TextView android:layout_gravity="fill_horizontal"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dp"
+    			android:layout_weight="1" />
+  		<Button android:id="@+id/infobutton"
+    	   		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_info"
+        		android:layout_gravity="right"
+        		android:onClick="onButtonClick" />
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@color/background"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+    	android:orientation="vertical">
+		<TextView android:id="@+id/daytext"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginTop="12sp"
+				android:gravity="center"
+				android:textSize="20sp"
+				android:textColor="@color/text" />
+
+		<ImageView android:id="@+id/activity"
+		    	android:contentDescription="@string/image_content_description"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:src="@drawable/running"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:layout_gravity="center" />
+
+		<TextView android:id="@+id/activitytext"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginBottom="12sp"
+				android:gravity="center"
+				android:textSize="20sp"
+				android:textColor="@color/text" />
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@color/background"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+		<Button android:id="@+id/resetbutton"
+    	    	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_reset"
+        		android:layout_gravity="left"
+        		android:onClick="onButtonClick" />
+    	<TextView android:layout_gravity="fill_horizontal"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dp"
+    			android:layout_weight="1" />
+  		<Button android:id="@+id/runbutton"
+    	   		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_run"
+        		android:layout_gravity="right"
+        		android:onClick="onButtonClick" />
+	</LinearLayout>	
+</LinearLayout>

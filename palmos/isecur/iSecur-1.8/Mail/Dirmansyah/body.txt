@@ -1,0 +1,44 @@
+---------- Forwarded message ----------
+From: Dirmansyah <dirmansyahlubis@yahoo.com>
+To: brian@schau.com
+Date: Sat, 30 Dec 2006 00:03:03 -0800 (PST)
+Subject: [iSecur] Focus, Scroll Hard-buttons, 3 fields in one line
+Brian,
+
+1. When we enter the edit form, which field is the
+focus? the Title or
+the Secret? So that we can write down directly?
+
+2. Using the Scroll hard-button is confusing. First, I
+must tap the
+secret field. Then, when I push the scroll down
+hard-button, it scrolls
+once. Pushing the scroll-down HB again, the pointer
+move to title field.
+Again, it moves to secret field, and so on.
+
+
+3. If I want to enter the following items, can I use
+template?:
+
+   Title: My Title ...(never change)
+   Secret:
+          ABCD 1257 xyz
+          HTYR 8896 tei
+          POST 5549 kwl
+          etc..
+
+So , each time I enter data, I only need to modify the
+secret, not the
+title. e.g. ABCD, then 1257, then xyz.
+
+ How to make template for entering "three fields but
+make them in one
+line and title does not change?" Meaning: only I
+record is used
+
+
+Thanks.
+
+DL
+.

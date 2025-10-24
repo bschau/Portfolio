@@ -1,0 +1,25 @@
+<?php
+/*
+Template Name: Single Post
+*/
+	require_once('header.inc.php');
+	the_post();
+?>
+<!-- single.php -->
+<body <?php body_class(); ?>>
+<div id="page">
+<?php
+	require_once('searchbox.inc.php');
+	$category = get_the_category();
+	$category = $category[0];
+	$post_name = get_the_title();
+?>
+<div class="page-content">
+	<h1 class="wwh1"><?php echo $post_name; ?></h1>
+	<?php the_content(); ?>
+</div>
+<p><br /></p>
+</div>
+<?php
+	get_footer();
+?>

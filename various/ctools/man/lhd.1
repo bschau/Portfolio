@@ -1,0 +1,64 @@
+.TH LHD 1L "23 September 2007" "ltools"
+.SH NAME
+lhd \- little hex dumper
+.SH SYNOPSIS
+.B lhd
+file \fI[ranges]\fR
+.SH DESCRIPTION
+lhd is a little hex dump utility much like xxd or od. It works using the concept of ranges. A range is a start position and optionally a length or end position of the file to show.
+.PP
+Ranges can be given as:
+.TP
+\fBr1:\fR
+Show from 'r1' to the end of the file.
+.TP
+\fBr1\fR
+Show from 'r1' to the end of the file.
+.TP
+\fB:r2\fR
+Show from the start of the file to 'r2'.
+.TP
+\fB+r2\fR
+Show from the start of the file to 'r2'.
+.TP
+\fBr1:r2\fR
+Show from 'r1' to 'r2'.
+.TP
+\fBr1+r2\fR
+Show from 'r1' and 'r2' bytes onwards.
+
+.PP
+Multiple ranges can be given and they must be separated by whitespaces.
+.PP
+Values can be prefixed with:
+.TP
+\fB0x1234\fR
+Hexadecimal value.
+.TP
+\fBx1234\fR
+Hexadecimal value.
+.TP
+\fB01234\fR
+Octal value.
+.TP
+\fB%1010\fR
+Binary value.
+.PP
+No prefix means use plain old decimal system.
+
+.SH OPTIONS
+.TP
+\fBfile\fR
+The file to view.
+.TP
+\fBranges\fR
+One or more ranges as defined above.
+
+.SH EXAMPLE
+\fBlhd file :10 20:30 50+60
+.PP
+In the above example the 10 first bytes of file (:10) will be shown followed by the 10 bytes starting at position 20 (20:30) and then followed by 60 bytes starting at 50 (50+60).
+
+.SH SEE ALSO
+The lhd homepage at
+\fIhttp://www.schau.com/\fR

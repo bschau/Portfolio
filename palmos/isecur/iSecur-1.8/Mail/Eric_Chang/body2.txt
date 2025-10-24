@@ -1,0 +1,24 @@
+Hi Brian,
+
+Sorry to bother you again.  My device consistently
+crashes in iSecur v1.4 when I open the password
+generator in an editing screen (editing an existing
+secret or creating a new secret), select length 20,
+tap "Generate", and then tap "Use".  I haven't had a
+chance yet to see if disabling other "hack-like"
+programs such as KeyguardTime would fix it, but I
+wanted to go ahead and let you know first.
+
+Again, it's Palm OS v5.4.8 in case that's helpful.
+
+Thanks!
+
+Regards,
+Eric
+
+
+ 
+____________________________________________________________________________________
+Do you Yahoo!?
+Everyone is raving about the all-new Yahoo! Mail beta.
+http://new.mail.yahoo.com

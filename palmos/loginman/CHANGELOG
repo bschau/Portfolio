@@ -1,0 +1,7 @@
+Changelog for LoginMan.
+
+v1.1 (2002-03-01)
+	Fixed some memory leaks.
+
+v1.0 (2002-02-02)
+	First release.

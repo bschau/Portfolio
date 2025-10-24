@@ -1,0 +1,2 @@
+APPNAME	=	Recal
+VERSION	=	2.8

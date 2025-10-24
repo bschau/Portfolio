@@ -1,0 +1,157 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of PXSc to get a feeling of how the various screens are laid out.
+# You can install PXSc to a Palm OS Simulator or Emulator and have the
+# english version running while translating the text.
+#
+# This is the default language file for the English language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Brian Schau <brian@schau.com>
+#
+
+# Strings
+Str01			Phase 10 Score Card er lavet af\n\nBrian Schau.\n\nVenligst besøg min hjemmeside:\n\n  http://www.schau.com/\n\nPå hjemmesiden findes den nyeste version af Phase 10 Score Card, en bruger manual og en FAQ.\n\nPhase 10 navnet ejes af Ravensburger Spielverlag.\n\n\n
+Str02			Ikke Valgt
+Str03			Spiller Administration
+Str04			Vælg Spiller
+Str05			2 x 3 ens
+Str06			3 ens + 4 i rap
+Str07			4 ens + 4 i rap
+Str08			7 i rap
+Str09			8 i rap
+Str10			9 i rap
+Str11			2 x 4 ens
+Str12			7 i samme farve
+Str13			5 ens + et par
+Str14			5 ens + en triplet
+Str15			Spil start
+Str16			Spil slut
+
+# Alerts
+aOK			OK
+aYes			Ja
+aNo			Nej
+
+aBadRomTitle		PalmOS for gammel
+aBadRomText		PalmOS i denne PDA er for gammel. Der kræves som minimum PalmOS v3.1.
+aCannotOpenDatabaseTitle	Database fejl
+aCannotOpenDatabaseText		Kan ikke åbne databasen.
+aDeletePlayerTitle	Slet spiller?
+aDeletePlayerText	Vil du slette denne spiller?
+aNeedsPlayerTitle	Mangler spiller
+aNeedsPlayerText	Venligst vælg det spillernavn der skal rettes.
+aSelectPlayerTitle	Vælg spiller
+aSelectPlayerText	Venligst vælg en spiller før der kan afsluttes.
+aNeedsMorePlayersTitle	Mangler spillere
+aNeedsMorePlayersText	Der skal bruges 2-6 spillere i en runde af Phase 10. Venligst vælg en eller flere spillere.
+aNeedsPointsTitle	Ingen points
+aNeedsPointsText	Venligst angiv mindst 0 points i Point feltet før der afsluttes.
+aScoreMissingTitle	Mangler en (eller flere)
+aScoreMissingText	En eller flere spillere har ikke fået tildelt point.
+
+# Menus
+Edit			Ret
+Undo			Fortryd
+UndoKey			U
+Cut			Klip
+CutKey			X
+Copy			Kopier
+CopyKey			C
+Paste			Indsæt
+PasteKey		P
+SelectAll		Vælg Alt
+SelectAllKey		S
+Keyboard		Tastatur
+KeyboardKey		K
+Graffiti		Graffiti
+GraffitiKey		G
+
+Actions			Handlinger
+Players			Spillere
+PlayersKey		S
+About			Om
+NewGame			Nyt Spil
+
+# Buttons
+ButtonDone		Færdig
+ButtonOK		OK
+ButtonNew		Ny
+ButtonEdit		Ret
+ButtonCancel		Afbryd
+ButtonDelete		Slet
+ButtonYes		Ja
+ButtonNo		Nej
+
+# fMain
+MainTitle		Phase 10 Score Card
+MainPlayer1		Spiller 1
+MainPlayer2		Spiller 2
+MainPlayer3		Spiller 3
+MainPlayer4		Spiller 4
+MainPlayer5		Spiller 5
+MainPlayer6		Spiller 6
+MainStart		Start Spil
+
+# fAbout
+AboutTitle		Om Phase 10 Score Card
+AboutLabel1		Phase 10 Score Card
+AboutLabel2		Version
+
+# fPlayersEdit
+PlayersEditTitle	Spiller
+PlayersEditLabel1	Indtast spiller navn
+
+# fInGame
+InGameTitle		I Spil
+InGameNext		Næste Fase
+
+# fScore
+ScoreTitle		Spiller Point
+ScoreLabel1		Pointtabel
+ScoreLabel2		Kort 1-9: 5 points
+ScoreLabel3		Kort 10-12: 10 points
+ScoreLabel4		Spring Over kort: 15 points
+ScoreLabel5		Stjerne kort: 25 points
+ScoreLabel6		Spiller
+ScoreLabel7		Points
+ScoreCompleted		Fase Bestået
+
+# fNewGame
+NewGameTitle		Start nyt spil?
+NewGameLabel1		Ønsker du at starte et nyt spil?
+NewGameSame		Samme spillere
+
+# fWinner
+WinnerTitle		Spillet er forbi
+WinnerLabel		VINDERE
+WinnerSame		Samme spillere
+WinnerButton		Nyt Spil
+WinnerExport		Eksporter
+
+# fExport
+ExportTitle		Eksporter
+ExportLabel1		Memo Titel:
+ExportLabel2		Eksporter Til:
+ExportExport		Eksporter

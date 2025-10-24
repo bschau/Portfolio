@@ -1,0 +1,2 @@
+APPNAME=Angles
+VERSION=1r4

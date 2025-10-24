@@ -1,0 +1,19 @@
+iSecurViewer TODO
+-----------------
+
+Someday this list will go online ...
+
+
+
+
+* (BUG) Cannot handle Cyrillic
+
+* (RFE) Integration with KeePass?
+
+* (BUG) When I launch iSV, the window to select the profile does not show up -
+the window to enter the password is the first one. I type the password but
+there is "Load error" window saying "Arithmetical calculation generated a
+overflow problem" (actually it says something like that in French). I'm running
+iSV 1.4 and I have MS .NET installed. I've uninstalled iSV, cleaned the registry
+and re-installed it but it remains the same.
+ 

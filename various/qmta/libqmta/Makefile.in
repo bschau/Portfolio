@@ -1,0 +1,32 @@
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+
+AR = @AR@
+ARFLAGS = @ARFLAGS@
+RANLIB = @RANLIB@
+CC = @CC@
+CFLAGS = @CFLAGS@ -I. -I../include -D@OSTYPE@ -DQROOT="\"@QROOT@\""
+DST = libqmta.a
+OBJS= control.o database.o debug.o domain.o elink.o errors.o expand.o file.o helptext.o injectmail.o loadavg.o mail.o main.o misc.o mxlist.o net.o preferences.o process.o rbl.o recipients.o sanity.o sendmail.o session.o smtp.o sophos.o spamcheck.o switches.o system.o
+
+all:		helptext.c $(DST)
+
+helptext.c:	text.asc
+	cat text.asc | ../scripts/t2c help lf
+
+$(DST):		$(OBJS)
+	rm -f $(DST)
+	$(AR) $(ARFLAGS) $(DST) $(OBJS)
+	$(RANLIB) $(DST)
+
+notext:
+	rm -f helptext.c helptext.h
+
+clean:	notext
+	rm -f *.o $(DST)
+
+distclean:	clean
+	rm -f Makefile
+
+install:	$(DST)

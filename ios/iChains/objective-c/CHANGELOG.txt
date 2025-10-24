@@ -1,0 +1,9 @@
+2009-12-02	v3.0
+	* Removed a very annoying bug where completing a level would still
+	  mark it as failed.
+	* Removed the Facebook an Twitter syncs. Nobody used them and I am
+	  boycotting these two sites :-)
+
+2009-08-21	v2.1
+	* Fixed a couple of bugs which made iChains crash after some time.
+	* Touch up on some of the graphics - smoother game.

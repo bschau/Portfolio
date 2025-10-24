@@ -1,0 +1,4 @@
+Changelog for HSNDetect
+
+v1r1 (2005-04-25)
+	First release of HSNDetect.

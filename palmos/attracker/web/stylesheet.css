@@ -1,0 +1,31 @@
+BODY, P, LI, H1 {
+	background-color: #ffffff;
+	color: #444444;
+	font-family: tahoma,verdana,geneva,arial,helvetica,sans-serif;
+}
+
+TT, PRE {
+	background-color: #ffffff;
+	color: #444444;
+	font-family: Courier New,Courier,monospace;
+}
+
+BLOCKQUOTE {
+	background-color: #ffffff;
+	color: #444444;
+	font-family: Courier New,Courier,monospace;
+	font-style: italic;
+}
+
+DT {
+	background-color: #ffffff;
+	color: green;
+}
+
+IMG {
+	border: 0;
+	float: left;
+	margin: 1em;
+}
+
+BR { clear: both; }

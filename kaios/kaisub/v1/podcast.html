@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="icon" href="../favicon.png">
+	<link rel="manifest" href="../manifest.webapp">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="pages">
+    <div class="page" id="login">
+      <img src="logo-v1.png" width="112" height="74" alt="kaiSub" class="img-center" />
+
+      <div id="login-page-error"></div>
+
+      <div class="container">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Subsonic username" name="username" id="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Subsonic password" name="password" id="password" required>
+
+        <label for="server"><b>Server</b></label>
+        <input type="text" placeholder="Url to server" name="server" value="https://server:4443" id="server" required>
+
+				<button id="login-button" type="submit" class="base-button button-purple">Login</button>
+				<button id="subsonic-demo-button" type="submit" class="base-button button-green">Subsonic Demo</button>
+      </div>
+    </div>
+
+    <div class="page" id="fetching">
+      <h1>Fetching</h1>
+      <p>Fetching podcasts - please wait.</p>
+      <p><br /></p>
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="page" id="select-podcast">
+      <h1>Episodes</h1>
+      <div id="podcast-episodes"></div>
+      <p>
+        <a class="logout-button">Logout</a>
+      </p>
+    </div>
+
+    <div class="page" id="no-podcasts">
+      <h1>Nothing</h1>
+      <p>There are no podcasts with episodes on your server.</p>
+      <p>Or, the podcast you're resuming has been removed from your server.</p>
+      <p>
+        <button class="base-button button-purple select-podcast-button">Podcasts</button>
+      </p>
+    </div>
+
+    <div class="page" id="player">
+      <h2 id="podcast-title"></h2>
+      <div id="player-controls">
+        <div id="duration-panel"></div>
+        <p><progress id="player-progress" value="0" max="100"></progress></p>
+        <p>
+          <a class="material-icons player-button" id="play-fr">fast_rewind</a>
+          <a class="material-icons player-button" id="play-pause">play_arrow</a>
+          <a class="material-icons player-button" id="play-ff">fast_forward</a>
+          <a class="material-icons player-button" id="play-volume">volume_off</a>
+        </p>
+      </div>
+      <audio id="podcast-player"></audio>
+      <p id="podcast-duration" class="small"></p>
+      <p id="podcast-album" class="small"></p>
+      <p>
+        <button class="base-button button-purple select-podcast-button">Podcasts</button>
+      </p>
+      <p class="center">
+        <a class="logout-button">Logout</a>
+      </p>
+    </div>
+
+    <div class="page" id="podcast-ended">
+      <h1>Ended</h1>
+      <p>Yay! I hope you enjoyed listening to the podcast.</p>
+      <p>
+        <button class="base-button button-purple select-podcast-button">Podcasts</button>
+      </p>
+    </div>
+  </div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.min.js"></script>
+	<script src="utils.js"></script>
+  <script src="remote.js"></script>
+  <script src="login.js"></script>
+  <script src="select.js"></script>
+  <script src="player.js"></script>
+  <script src="podcast.js"></script>
+</body>
+</html>

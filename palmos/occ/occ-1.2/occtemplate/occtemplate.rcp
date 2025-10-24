@@ -1,0 +1,6 @@
+#include "otresources.h"
+
+ICON "../../common/large.bmp"
+SMALLICON "../../common/small.bmp"
+VERSION "1.0"
+STRING ID 100 "http://www.schau.com/"

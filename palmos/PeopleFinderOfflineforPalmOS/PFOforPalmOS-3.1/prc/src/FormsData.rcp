@@ -1,0 +1,332 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "3.1"
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 0 255 0
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 255 0
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 0 255 0
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 255 0
+END
+
+BITMAPFAMILYEX ID bmpPhone
+COMPRESS
+BEGIN
+	BITMAP "data/phone1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/phone8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/phone8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID bmpMobile
+COMPRESS
+BEGIN
+	BITMAP "data/mobile1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/mobile8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/mobile8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID bmpEmail
+COMPRESS
+BEGIN
+	BITMAP "data/email1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/email8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/email8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID bmpHome
+COMPRESS
+BEGIN
+	BITMAP "data/home1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/home8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/home8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID bmpManager
+COMPRESS
+BEGIN
+	BITMAP "data/manager1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/manager8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/manager8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+STRING ID hMain FILE "data/help.txt"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v4.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoMatch
+INFORMATION
+BEGIN
+	TITLE "No Match"
+	MESSAGE "The person or phone number you are looking for does not exist in the People Finder database."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoPhones
+INFORMATION
+BEGIN
+	TITLE "No Phones"
+	MESSAGE "What number to dial???"
+	BUTTONS "OK"
+END
+
+ALERT ID aNoNotifications
+INFORMATION
+BEGIN	
+	TITLE "Notification Missing"
+	MESSAGE "This device lacks support for Notifications - cannot dial."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoNumber
+INFORMATION
+BEGIN
+	TITLE "Who To Call?"
+	MESSAGE "You must enter a valid phone number in the Dial field before proceeding."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoBtToggle
+INFORMATION
+BEGIN
+	TITLE "No BtToggle"
+	MESSAGE "Cannot find BtToggle. Cannot turn on Bluetooth radio before dialing.\n\nYou can get BtToggle or BtToggle Pro from:\n\nhttp://www.whizoo.com/apps/bttoggle.php\n"
+	BUTTONS "OK"
+END
+
+ALERT ID aWhichLookup
+INFORMATION
+BEGIN
+	TITLE "Lookup what?"
+	MESSAGE "What kind of search should be performed?\nA name (^1) search or a phone (^2) search?"
+	BUTTONS "Name" "Phone" "Cancel"
+END
+
+ALERT ID aPhoneTooShort
+INFORMATION
+BEGIN
+	TITLE "Too short"
+	MESSAGE "The phone number is too short. You need to supply at least 4 digits."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About PFO"
+
+	LABEL "PFO" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 3.1" AUTOID AT (CENTER 42)
+	LABEL "People Finder Offline for" AUTOID AT (CENTER 62)
+	LABEL "Palm OS powered handhelds." AUTOID AT (CENTER 74)
+	LABEL "Created by Brian Schau." AUTOID AT (CENTER 96)
+	LABEL "<mailto:brian.schau@hp.com>" AUTOID AT (CENTER 108)
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+FRAME
+MENUID mMain
+BEGIN
+	TITLE "PFO          "
+
+	GADGET ID cMainHelp AT (32 2 10 10)
+
+	LABEL "Name Search:" AUTOID AT (1 24)
+	FIELD ID cMainName AT (3 38 154 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS SearchNameLength
+
+	LABEL "- or -" AUTOID AT (CENTER 64)
+
+	LABEL "Phone Search:" AUTOID AT (1 90)
+	FIELD ID cMainPhone AT (3 104 154 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS MaxPhoneLength
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+	BUTTON "Search" ID cMainSearch AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainName
+	BOTTOMLEFTOBJECTID cMainSearch
+	NAVIGATIONMAP
+		ROW cMainName
+		ROW cMainPhone
+		ROW cMainSearch
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Bluetooth" ID mMainBluetooth
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fNameSearch AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "PFO - Search Results"
+
+	BUTTON "?" ID cNameSearchBSurname AT (0 17 10 11) NOFRAME FONT 4
+	BUTTON "?" ID cNameSearchFSurname AT (10 17 10 11) NOFRAME FONT 4
+
+	LIST "" ID cNameSearchList AT (1 32 158 110) VISIBLEITEMS NameSearchLength
+
+	BUTTON "Back" ID cNameSearchBack AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fNameSearch
+	INITIALSTATE 1
+	INITIALOBJECTID cNameSearchBack
+	BOTTOMLEFTOBJECTID cNameSearchBack
+	NAVIGATIONMAP
+		ROW cNameSearchBSurname cNameSearchFSurname
+		ROW cNameSearchList
+		ROW cNameSearchBack
+END
+
+FORM ID fDetails AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Details"
+
+	FIELD ID cDetailsName AT (4 16 152 12) NONEDITABLE MAXCHARS DetailsFieldLength FONT 1
+	
+	FORMBITMAP AT (4 30) BITMAP bmpPhone
+	FIELD ID cDetailsPhone AT (17 30 137 12) NONEDITABLE MAXCHARS DetailsFieldLength
+
+	FORMBITMAP AT (4 44) BITMAP bmpMobile
+	FIELD ID cDetailsMobile AT (17 44 137 12) NONEDITABLE MAXCHARS DetailsFieldLength
+
+	FORMBITMAP AT (4 58) BITMAP bmpEmail
+	FIELD ID cDetailsEmail AT (17 58 137 12) NONEDITABLE MAXCHARS DetailsFieldLength
+
+	FORMBITMAP AT (4 72) BITMAP bmpManager
+	FIELD ID cDetailsManager AT (17 72 137 12) NONEDITABLE MAXCHARS DetailsFieldLength
+
+	FORMBITMAP AT (4 86) BITMAP bmpHome
+	FIELD ID cDetailsAddress AT (17 86 127 36) NONEDITABLE MAXCHARS DetailsFieldLength MULTIPLELINES
+	SCROLLBAR ID cDetailsScrollbar AT (148 86 7 36) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 2
+
+	BUTTON "OK" ID cDetailsOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Dial" ID cDetailsDial AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Manager" ID cDetailsLookup AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fDetails
+	INITIALSTATE 1
+	INITIALOBJECTID cDetailsOK
+	BOTTOMLEFTOBJECTID cDetailsOK
+	NAVIGATIONMAP
+		ROW cDetailsOK cDetailsDial cDetailsLookup
+END
+
+FORM ID fDial AT (2 52 156 106)
+MODAL
+DEFAULTBUTTON cDialCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Dial Number"
+
+	LABEL "Select number to dial:" AUTOID AT (4 18)
+
+	LIST "" ID cDialList AT (4 32 148 24) VISIBLEITEMS 2
+
+	LABEL "Dial:" AUTOID AT (4 64) 
+	FIELD ID cDialNumber AT (24 64 128 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS MaxPhoneLength
+
+	GRAFFITISTATEINDICATOR AT (140 94)
+
+	BUTTON "Dial" ID cDialDial AT (4 BOTTOM@103 AUTO AUTO)
+	BUTTON "Cancel" ID cDialCancel AT (PREVRIGHT+4 BOTTOM@103 AUTO AUTO)
+END
+
+NAVIGATION ID fDial
+	INITIALSTATE 1
+	INITIALOBJECTID cDialDial
+	BOTTOMLEFTOBJECTID cDialDial
+	NAVIGATIONMAP
+		ROW cDialList
+		ROW cDialNumber
+		ROW cDialDial cDialCancel
+END
+
+FORM ID fBluetooth AT (2 92 156 66)
+MODAL
+DEFAULTBUTTON cBluetoothCancel
+BEGIN
+	TITLE "Bluetooth"
+
+	LABEL "Before dialing:" AUTOID AT (4 18) FONT 1
+	CHECKBOX "Turn Bluetooth On" ID cBluetoothBluetooth AT (4 30 AUTO AUTO)
+
+	BUTTON "OK" ID cBluetoothOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Cancel" ID cBluetoothCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+NAVIGATION ID fBluetooth
+	INITIALSTATE 1
+	INITIALOBJECTID cBluetoothCancel
+	BOTTOMLEFTOBJECTID cBluetoothOK
+	NAVIGATIONMAP
+		ROW cBluetoothBluetooth
+		ROW cBluetoothOK cBluetoothCancel
+END

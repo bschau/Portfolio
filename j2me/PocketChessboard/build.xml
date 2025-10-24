@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Main" default="clean">
+	<import file="common.xml" />
+
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete dir="temp" />
+		<ant dir="src" target="distclean" />
+	</target>
+
+	<target name="archive" depends="clean">
+		<zip destfile="../${project}-src.zip" basedir=".." includes="${project}/**" />
+	</target>
+</project>

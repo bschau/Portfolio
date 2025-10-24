@@ -1,0 +1,38 @@
+.TH ADD 1
+
+.SH NAME
+add \- add or subtract columns
+
+.SH SYNOPSIS
+.B add
+[\fI-c column\fR] [\fI-h\fR] [\fI-q\fR] [\fI-s\fR] [\fI-z value\fR] [file]
+.br
+
+.SH DESCRIPTION
+.B add
+adds or subtracts the values of the specified column and outputs the result.
+
+.SH OPTIONS
+.TP
+\fB-c column\fR
+Add or subtract values from this column. Defaults to 1.
+.TP
+\fB-h\fR
+Show a brief help page.
+.TP
+\fB-q\fR
+Quiet operation. Default is to write warnings/errors to standard error.
+.TP
+\fB-s\fR
+Subtract instead of add.
+.TP
+\fB-z value\fR
+Set zero to value. Default is 0.
+
+.SH CONVERSION
+If a column cannot be found or cannot be converted (if it contains invalid characters) the value of that column/row entry is set to 0. Also, a warning is emitted. This can be suppressed by specifying the
+.B \-b
+switch to add.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

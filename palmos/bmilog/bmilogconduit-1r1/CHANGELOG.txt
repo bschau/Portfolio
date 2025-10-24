@@ -1,0 +1,4 @@
+Changelog for the BMILog conduit.
+
+v1r1 (2003-04-25)
+	Initial release of the BMILog Conduit.

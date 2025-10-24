@@ -1,0 +1,24 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1r1"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl8.bmp" BPP 8 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons8.bmp" BPP 8 TRANSPARENT 255 255 255
+END
+
+/*
+ * Forms.
+ */
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "HSNDetect"
+END

@@ -1,0 +1,187 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1r1"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "MixedUp was made by\n\nBrian Schau.\n\nPlease visit the website at:\n\nhttp://www.schau.com/s/mixedup\n\nOn the website you will find the latest version of MixedUp and a user manual.\n\n\nMixedUp is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aGuessInvalid
+INFORMATION
+BEGIN
+	TITLE "Invalid guess"
+	MESSAGE "You must enter a value between 1 and 1000 in all fields."
+	BUTTONS "OK"
+END
+
+ALERT ID aRightOnMixed
+INFORMATION
+BEGIN
+	TITLE "Excellent!"
+	MESSAGE "Well done! ^1 ^2/^3 is in fact the right answer."
+	BUTTONS "OK"
+END
+
+ALERT ID aAlmostRightMixed
+INFORMATION
+BEGIN
+	TITLE "Almost right ..."
+	MESSAGE "You're almost right - but you need to reduce the answer."
+	BUTTONS "OK"
+END
+
+ALERT ID aAnswerMixed
+INFORMATION
+BEGIN
+	TITLE "Wrong."
+	MESSAGE "Your guess is wrong. The correct answer is ^1 ^2/^3."
+	BUTTONS "OK"
+END
+
+ALERT ID aNotSimpleMixed
+INFORMATION
+BEGIN
+	TITLE "Wrong."
+	MESSAGE "The fraction is not reduced to its simplest form. The correct answer is ^1 ^2/^3."
+	BUTTONS "OK"
+END
+
+ALERT ID aRightOnFraction
+INFORMATION
+BEGIN
+	TITLE "Excellent!"
+	MESSAGE "Well done! ^1/^2 is in fact the right answer."
+	BUTTONS "OK"
+END
+
+ALERT ID aAnswerFraction
+INFORMATION
+BEGIN
+	TITLE "Wrong."
+	MESSAGE "Your guess is wrong. The correct answer is ^1/^2."
+	BUTTONS "OK"
+END
+
+ALERT ID aReset
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Reset?"
+	MESSAGE "Do you really want to reset your score?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About MixedUp"
+
+	LABEL "MixedUp" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1r1" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID mGame
+BEGIN
+	TITLE "MixedUp"
+
+	SELECTORTRIGGER "" ID cGameTrigger AT (RIGHT@159 1 AUTO 11) RIGHTANCHOR
+
+	FIELD ID cGameLHSN AT (32 39 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC NONUSABLE
+	FIELD ID cGameLHSD AT (32 58 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC NONUSABLE
+	FIELD ID cGameRHSW AT (70 49 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC NONUSABLE
+	FIELD ID cGameRHSN AT (100 39 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC NONUSABLE
+	FIELD ID cGameRHSD AT (100 58 24 14) EDITABLE MAXCHARS 4 RIGHTALIGN FONT 7 NUMERIC NONUSABLE
+	BUTTON "Check" ID cGameCheck AT (CENTER BOTTOM@159 AUTO AUTO)
+	GRAFFITISTATEINDICATOR AT (147 147)
+END
+
+MENU mGame
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Reset" ID mGameReset
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mGameAbout
+	END
+END
+
+FORM ID fPreferences AT (2 62 156 96)
+MODAL
+DEFAULTBUTTON cPreferencesCancel
+BEGIN
+	TITLE "Preferences"
+
+	LABEL "Quiz Type:" AUTOID AT (RIGHT@64 20)
+	POPUPTRIGGER "?" ID cPreferencesTypePopup AT (66 20 AUTO AUTO) LEFTANCHOR
+	LIST "Fractions" "Mixed numbers" ID cPreferencesTypeList AT (66 20 70 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesTypePopup cPreferencesTypeList
+
+	LABEL "Denominator:" AUTOID AT (RIGHT@64 36)
+	POPUPTRIGGER "?" ID cPreferencesDenomPopup AT (66 36 AUTO AUTO) LEFTANCHOR
+	LIST "Up to 10" "Up to 20" "Up to 100" "Up to 200" ID cPreferencesDenomList AT (66 36 50 48) NONUSABLE VISIBLEITEMS 4
+	POPUPLIST ID cPreferencesDenomPopup cPreferencesDenomList
+
+	LABEL "Level:" AUTOID AT (RIGHT@64 52)
+	POPUPTRIGGER "?" ID cPreferencesLevelPopup AT (66 52 AUTO AUTO) LEFTANCHOR
+	LIST "Beginner" "Advanced" ID cPreferencesLevelList AT (66 52 50 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesLevelPopup cPreferencesLevelList
+
+	BUTTON "OK" ID cPreferencesOK AT (4 BOTTOM@93 AUTO AUTO)
+	BUTTON "Cancel" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@93 AUTO AUTO)
+END

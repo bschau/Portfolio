@@ -1,0 +1,46 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle icon-only>
+ 			<ion-icon name='menu'></ion-icon>
+		</button>
+		<ion-title>X Scorer</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-left (click)="addPlayer()">
+				<ion-icon name="person-add"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-menu [content]="content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<button menuClose ion-item (click)="newGame()">New game</button>
+			<button menuClose ion-item (click)="resetScores()">Reset scores</button>
+			<button menuClose ion-item (click)="about()">About</button>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+
+<ion-content #content padding swipeBackEnabled="false">
+	<ion-list>
+		<ion-item-sliding *ngFor="let player of singleton.players" #slidingItem>
+			<ion-item [ngStyle]="{'background-color': player.accounted_for == 1 ? '#efe' : 'inherit'}" (click)="updatePlayer(player)">
+				<h1>{{player.name}}</h1>
+				<span><b>{{player.phase + 1}}: {{this.singleton.phases[player.phase]}}</b> ({{player.score}})</span>
+			</ion-item>
+			<ion-item-options side="right">
+				<button ion-button icon-only (click)="removePlayer(slidingItem, player)" color="danger">
+					<ion-icon name="trash"></ion-icon>
+				</button>
+				<button ion-button icon-only (click)="renamePlayer(slidingItem, player)">
+					<ion-icon name="create"></ion-icon>
+				</button>
+			</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>

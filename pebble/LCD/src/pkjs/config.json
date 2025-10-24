@@ -1,0 +1,91 @@
+[
+{
+	"type": "section",
+	"items": [
+	{
+		"type": "select",
+		"messageKey": "AppKeyDesign2",
+		"label": "Layout",
+		"defaultValue": 0,
+		"options": [
+		{
+			"label": "White on Black",
+			"value": "0"
+		},
+		{
+			"label": "Yellow on Black",
+			"value": "1"
+		},
+		{
+			"label": "Magenta on Black",
+			"value": "2"
+		},
+		{
+			"label": "Cyan on Black",
+			"value": "3" 
+		},
+		{
+			"label": "Black on White",
+			"value": "4"
+		},
+		{
+			"label": "Blue on White",
+			"value": "5"
+		},
+		{
+			"label": "Red on White",
+			"value": "6"
+		},
+		{
+			"label": "Green on White",
+			"value": "7"
+		}
+		]
+	},
+	{
+		"type": "select",
+		"messageKey": "AppKeyFiveSec",
+		"label": "5 seconds markers",
+		"defaultValue": 0,
+		"options": [
+		{
+			"label": "None",
+			"value": "0"
+		},
+		{
+			"label": "Medium",
+			"value": "1"
+		},
+		{
+			"label": "Large",
+			"value": "2"
+		}
+		]
+	},
+	{
+		"type": "select",
+		"messageKey": "AppKeyWatchType",
+		"label": "Type",
+		"defaultValue": 0,
+		"options": [
+		{
+			"label": "Standard",
+			"value": "0"
+		},
+		{
+			"label": "Invert seconds",
+			"value": "1"
+		},
+		{
+			"label": "Animate",
+			"value": "2"
+		}
+		]
+	},
+	{
+		"type": "submit",
+		"defaultValue": "Save Settings"
+	}
+	]
+}
+]

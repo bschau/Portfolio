@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Src" basedir="." default="jar">
+	<import file="../common.xml" />
+	<property name="src.d" value="." />
+	<property name="classes.d" value="classes" />
+
+	<target name="clean" description="Delete all generated files">
+		<delete verbose="true" failonerror="false" includeEmptyDirs="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+				<include name="${project}.jar" />
+			</fileset>
+		</delete>
+		<delete file="processed.png" />
+		<delete file="doubleloop.tc" />
+		<delete file="manifest.mf" />
+		<delete dir="${classes.d}" />
+	</target>
+
+	<target name="compile" description="Compiles it all">
+		<mkdir dir="${classes.d}" />
+		<javac srcdir="${src.d}" destdir="${classes.d}" excludes="test/**">
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
+	</target>
+
+	<target name="jar" description="Create JAR" depends="compile">
+		<echo message="Main-Class: ${main.class}" file="manifest.mf" />
+		<jar destfile="${project}.jar" basedir="${classes.d}" manifest="manifest.mf" />
+	</target>
+
+	<target name="run" description="Run the program" depends="jar">
+		<java jar="${project}.jar" fork="true" failonerror="true" />
+	</target>
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SchemingMind</string>
+
+    <string name="credentials_intro">Please enter your SchemingMind credentials in the boxes below. If you do not have a SchemingMind account you can create an account on the www.schemingmind.com website. The account is free for the first 50 games.</string>
+    <string name="credentials_username">Username:</string>
+    <string name="credentials_password">Password:</string>
+    
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="loading_desktop">Loading SchemingMind &#8230;\n\nPlease wait!</string>
+    <string name="loading_mobile">Loading SchemingMind Mobile &#8230;\n\nPlease wait!</string>
+
+    <string name="menumobile">Go to mobile version</string>
+    <string name="menudesktop">Go to desktop version</string>
+    <string name="menucredentials">Credentials</string>
+    <string name="menuabout">About</string>
+    <string name="menuback">Back</string>
+</resources>

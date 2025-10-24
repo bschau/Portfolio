@@ -1,0 +1,18 @@
+> Hi Brian,I&#39;ve come up with two more ideas to improve iSecur :)You
+really need to make arrow buttons on icon selection form to scroll up/down
+the whole page, not just one line (don&#39;t forget about 5-way navigation
+as well :)
+> I wasn&#39;t able to use copy/paste commands (via tapping icon on appeared
+command bar) when entering data after loading a template. Is that
+intentional?--Regards,Dmitry
+
+
+
+
+> Hi Brian,Indeed! I should have tried that before emailing to you. :)One
+more minor issue I&#39;ve noticed so far is that you
+need&nbsp;to&nbsp;&quot;accept&nbsp;input&quot;&nbsp;twice&nbsp;when&nbsp;enterring&nbsp;master&nbsp;password&nbsp;with&nbsp;on-screen&nbsp;keyboard.
+>  First you have to tap &quot;check&quot; key on the keyboard itself. Then
+you need to hit Ok button on login form.Is it possible to implement a
+&quot;single tap login solution&quot; when using on-screen keyboard?
+> It seems to me it will be a bit more convenient.--Regards,DmitryOn

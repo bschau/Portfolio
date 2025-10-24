@@ -1,0 +1,10 @@
+PACKAGE="Eyes"
+
+VERSION="1r1"
+VENDOR="Schau.Com"
+SCOPE="Eyes"
+RESOURCES="resources"
+
+midLet0_NAME="Eyes"
+midLet0_SOURCES="EyesMIDlet"
+midLet0_JADINFO="Nokia-MIDlet-Category: Game"

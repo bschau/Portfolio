@@ -1,0 +1,136 @@
+.TH SWFFX 1
+.SH NAME
+swffx \- SWF Fade Effects
+.SH SYNOPSIS
+.B swffx
+[OPTIONS] [file1 file2 ... fileN]
+.SH DESCRIPTION
+.PP
+swffx is used to generate scripts which can be compiled by swfc (from http://www.swftools.org/). Each script describes a flash movie and each flash movie contain a "special fade effect" (* ahem *).
+.PP
+Currently only two special effects are defined: fade from one picture to another and fade to black and then to another picture.
+.PP
+Options to swffx can be given on the command line or be loaded from a script file.
+.PP
+Many of the options are given verbatim to swfc without any parsing.
+.SH OPTIONS
+.TP
+\fB-B image\fR
+Background image.
+.TP
+\fB-C\fR
+Files given on the command line goes before files given in the script.
+.TP
+\fB-E effect\fR
+Which effect to define: ota (one to another) or ftb (fade to black).
+.TP
+\fB-F fps\fR
+Frames pr. seconds such as 10, 12 or 25. The supplied value must be an integer.
+.TP
+\fB-N\fR
+Do not run swfc after generating the swfc-script.
+.TP
+\fB-P\fR
+Also generate a HTML test page.
+.TP
+\fB-S name\fR
+Name of flash file to set in swfc-script.
+.TP
+\fB-V version\fR
+Flash version to use.
+.TP
+\fB-X offset\fR
+X offset of smaller pictures.
+.TP
+\fB-Y offset\fR
+Y offset of smaller pictures.
+.TP
+\fB-b wxh\fR
+Bounding box to use.  Dimension can be 100x200, 300x400 or anything you like - please note that there must no spaces in the argument!
+.TP
+\fB-f frames\fR
+Frames length for fade - must be an integer.
+.TP
+\fB-h value\fR
+High alpha value - must be given as an percentage value.
+.TP
+\fB-l value\fR
+Low alpha value - must be given as an percentage value.
+.TP
+\fB-o file\fR
+Output generated swfc-script to file.
+.TP
+\fB-p frames\fR
+Frames length for pause between fades - must be an integer.
+.TP
+\fB-q quality\fR
+Quality of loaded jpeg files.
+.TP
+\fB-s file\fR
+Read options from file.
+.TP
+\fB-t type\fR
+Type of loaded pictures (gif, jpeg or png).
+.SH OPTIONS FILE
+The options can also be loaded from a file. The options file is a plain text file with one or more lines of the format:
+.TP
+key [value]
+.PP
+The value can be enclosed in single or double quotes - these will be removed in the generated swfc-script file.
+.TP
+\fBeffect ota|ftb\fR
+Which effect to define (-E).
+.TP
+\fBfps INT\fR
+Frames pr. seconds (-F).
+.TP
+\fBdontrunswfc\fR
+Do not run swfc after generating the swfc-script (-N).
+.TP
+\fBgeneratehtml\fR
+Generate a HTML test page (-P)
+.TP
+\fBswfname name\fR
+Name of flash file to set in swfc-script (-S).
+.TP
+\fBversion INT\fR
+Flash version to use (-V).
+.TP
+\fBbbox wxh\fR
+Bounding box to use (-b).
+.TP
+\fBfadeframes INT\fR
+Frames length for fade (-f).
+.TP
+\fBhi INT%\fR
+High alpha value (-h).
+.TP
+\fBlo INT%\fR
+Low alpha value (-l).
+.TP
+\fBoutput file\fR
+Output generated swfc-script to file (-o).
+.TP
+\fBpauseframes INT\fR
+Frames length for pause between fades (-p).
+.TP
+\fBquality INT%\fR
+Quality of loaded jpeg files (-q).
+.TP
+\fBtype gif|jpeg|png\fR
+Type of loaded pictures (-t).
+.TP
+\fBpicture file\fR
+Add picture to the animation (can be given several times to add several pictures).
+.TP
+\fBbackgroundimage file\fR
+Background image (-B).
+.TP
+\fBoffsetx INT\fR
+X offset of smaller pictures (-X)
+.TP
+\fBoffsety INT\fR
+Y offset of smaller pictures (-Y)
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

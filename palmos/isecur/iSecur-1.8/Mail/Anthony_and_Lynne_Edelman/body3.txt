@@ -1,0 +1,49 @@
+Hi,
+
+Thanks for the new version of 'iSecur' I have reverted back to the test version of 1.4 since I cannot navigate buttons during readmode of a record using the 5 way navigation button, I can in the test version. The import/export works well - nice to have it. This feature highlights the need for another feature "To do a bulk action on records ie. Category change, icon allocation" - since imports from memo no icon appears.
+
+Following are the problems that I have found with the newly released version 1.4 :
+
+- Wrong message on succesful export
+
+- The deletion of records in the scenario below still occur
+
+> ==> Regarding the bug you have in your TODO file :
+>
+> * (BUG) I've had one report of iSecur deleting a secret when:
+>
+>  "1) I am in updating a secret
+>   2) iSecur exit out either by system timeout or I manually turn off the
+> Palm"
+>
+> I experience this problem all the time, steps to reproduce -
+> 1. Open an existing record
+> 2. Press 'Edit' button
+> 3. Press palm application home button (ie. exit iSecur)
+> 4. On return the record is gone
+
+
+> On a further note, quickfind still has navigation problems as follows
+>
+> Steps
+> 1. Open isecur
+> 2. Press a letter for quickfind
+> 3. Press down on 5 way navigation key
+> 4. Record at top of displayed list is correctly highlighted
+> 5. Press another letter for quickfind
+> 6. Press down on 5 way navigation key
+> 7. Record after last quickfind (step 4) is highlighted instead of top of currently
+> displayed list
+> 8. Move focus to category selection
+> 9. Press a letter for quickfind
+> 10. Press down on 5 way navigation key
+> 11. Record at top of displayed list is correctly highlighted
+> 12. Open any record
+> 13. Return to list of records
+>
+> Follow the above steps again and the correct highlighting no longer occurs
+> after a quickfind.
+>
+> Thanks again.
+
+

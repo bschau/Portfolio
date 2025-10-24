@@ -1,0 +1,441 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.6"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+BITMAP ID bmpLock "gfx/lock.bmp" COMPRESS
+BITMAP ID bmpUnlock "gfx/unlock.bmp" COMPRESS
+BITMAP ID bmpScissor "gfx/scissor.bmp" COMPRESS
+CATEGORIES ID defCatTemplate "Unfiled" "Samples" "Funny" "Horror" "" "" "" "" "" "" "" "" "" "" "" ""
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Gone Mad! was made by:\n\nCoding: Brian Schau\n\Icons: Tony Vincent\n\nPlease visit the website at:\n\nhttp://www.schau.com/s/gonemad\n\nOn the website you will find the latest version of Gone Mad! and a user manual.\n\n\nGone Mad! is released under the Gnu General Public License v2.\n"
+STRING ID strHelpText "Read and write interesting short stories with Gone Mad!\n\nStart by selecting a template, which contains some blanks for you to fill in. Enter words that fit the descriptions.\nThe more creative you are, the crazier the final story will turn out.\n\nAfter completing all of the blanks, the final story will be displayed, containing the words you filled in. If you like your version of the story, you can export it to Memo Pad.\n\nOnce you're familiar with filling in the sample templates, you can begin to make your own story templates.\nEnter the title as the first line of the story. As you enter your story, simply leave out key words and replace them with a description of the missing words in brackets.\nFor example:\n\nI wore a [adjective] shirt to the [event].\n\nEach of the descriptors in brackets need to be uniquely named, otherwise the same word will be placed in same-named brackets."
+STRING ID strKeywordHelpText FILE "build/KeywordHelp.txt"
+STRING ID strStory1 "All About Apples\n\nApples are a [adjective 1] fruit. Unlike strawberries and water[plural noun 1], apples [verb 1] on trees. Many people like apples dipped in [liquid 1], while others like them baked in [plural noun 2]. There are many different varieties like Granny [last name] and [color - capitalized] Delicious. Sometimes people play a game where you [verb 2] for apples in a [adjective 2] tub of [liquid 2]. You must [adverb 1] use your [body part] to win. Apples are a [adjective 3] food that you should eat more [adverb 2]!"
+STRING ID strStory2 "Trip to the Zoo\n\nI went to the zoo [number] days ago. I can remember it like it was yesterday! There were [adjective 1] sharks in the aquarium [adverb 1] swimming around. I saw elephants eating [plural noun] with their [adjective 1] trunks. The [color] flamingos were standing on one [body part 1]. I even [adverb 2] [past tense verb 1] a pig. After eating a [adjective 2] [noun]burger,  I watched pandas [verb] bamboo and fall [adverb 3] asleep. Just before leaving the [adjective 3] zoo, I stopped and [past tense verb 2] at the gorillas. They didn't like that, because they threw [adjective 4] [plural noun 2] and hit me in the [body part 2]. Even though it's been [number] days, I still keep ice on my [body part 2]."
+STRING ID strStory3 "Handhelds are Handy\n\nHandheld computing has come a long way since the original Palm [occupation - capitalized]. Handhelds now have enough memory to store [number] [plural noun 1]. They also have more processing power than [adjective 1] [plural noun 2] from [year]. Many handhelds come with a built-in [noun 1] for [verb ending in ing]. Additionally, there are thousands of [adjective 2] software [plural noun 3] for handhelds. For example, there's a program called Gone [adjective - capitalized]! where you [adverb]read and write your own [adjective 3] stories. What does the future hold? Perhaps handhelds that can [verb] your [noun 2]!\n\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aTemplateDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Template?"
+	MESSAGE "Do you want to delete this template?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aTemplateExport
+INFORMATION
+BEGIN
+	TITLE "Export"
+	MESSAGE "Exported ^1 template^2to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aTemplateImport
+INFORMATION
+BEGIN
+	TITLE "Import"
+	MESSAGE "Imported ^1 template^2from Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aTemplateExportSingle
+INFORMATION
+BEGIN
+	TITLE "Export"
+	MESSAGE "Template exported to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoTemplateToExport
+INFORMATION
+BEGIN
+	TITLE "No Template To Export"
+	MESSAGE "There is nothing to export. You must enter something in the field before exporting."
+	BUTTONS "OK"
+END
+
+ALERT ID aMissingKeyword
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Empty Keyword Found"
+	MESSAGE "One or more keywords are empty. Continue anyway?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNoStoryToExport
+INFORMATION
+BEGIN
+	TITLE "Nothing To Export"
+	MESSAGE "There is nothing to export."
+	BUTTONS "OK"
+END
+
+ALERT ID aStoryExported
+INFORMATION
+BEGIN
+	TITLE "Story Exported"
+	MESSAGE "The story was exported to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aNothingToBeam
+INFORMATION
+BEGIN
+	TITLE "Nothing To Beam"
+	MESSAGE "There is nothing to beam."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "IR Send Error"
+	MESSAGE "Cannot beam story template."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRReceiveError
+INFORMATION
+BEGIN
+	TITLE "IR Receive Error"
+	MESSAGE "Error while receiving template story."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRCannotRegister
+INFORMATION
+BEGIN
+	TITLE "Cannot Register"
+	MESSAGE "Cannot register IR transmission. You may not be able to receive Story Templates."
+	BUTTONS "Bummer!"
+END
+
+ALERT ID aClearKeywords
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Clear Keywords?"
+	MESSAGE "Do you want to clear all the keywords?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aLoadDatabase
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Load Database?"
+	MESSAGE "It seems that this is the first time Gone Mad! is run. Do you want to install the default set of stories?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Gone Mad!"
+
+	LABEL "Gone Mad!" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.6" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Gone Mad!"
+
+	POPUPTRIGGER "?" ID cMainPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cMainList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cMainPopup cMainList
+
+	LABEL "Templates List" AUTOID AT (CENTER 16) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+4 16) FONT 0
+
+	TABLE ID cMainTable AT (1 53 150 88) ROWS MainTableLines COLUMNS 2 COLUMNWIDTHS 10 138
+	SCROLLBAR ID cMainScrollBar AT (152 53 7 88) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MainTableLines-1
+
+	BUTTON "New" ID cMainNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Import" ID cMainImport AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Exchange"
+	BEGIN
+		MENUITEM "Import from Memo Pad" ID mMainImport "I"
+		MENUITEM "Export to Memo Pad" ID mMainExport "E"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Keyword Help" ID mMainKeywordHelp
+		MENUITEM "Help" ID mMainHelp
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fEditTemplate AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cEditTemplateCancel
+MENUID mEditTemplate
+BEGIN
+	TITLE "Edit Template"
+
+	POPUPTRIGGER "?" ID cEditTemplatePopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cEditTemplateList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cEditTemplatePopup cEditTemplateList
+
+	FIELD ID cEditTemplateField AT (1 18 150 111) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS MemoSize AUTOSHIFT HASSCROLLBAR
+	SCROLLBAR ID cEditTemplateScrollBar AT (152 18 7 111) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 9
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "OK" ID cEditTemplateOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID cEditTemplateCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Delete" ID cEditTemplateDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+MENU mEditTemplate
+BEGIN
+	PULLDOWN "Exchange"
+	BEGIN
+		MENUITEM "Beam" ID mEditTemplateBeam "B"
+		MENUITEM "Export to Memo" ID mEditTemplateExport "E"
+	END
+
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+END
+
+FORM ID fTemplateImport AT (2 73 156 85)
+MODAL
+DEFAULTBUTTON cTemplateImportCancel
+BEGIN
+	TITLE "Import Templates"
+
+	LABEL "Import from:" AUTOID AT (RIGHT@58 15)
+	POPUPTRIGGER "?" ID cTemplateImportPopupFrom AT (60 15 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cTemplateImportListFrom AT (60 15 100 AUTO) NONUSABLE
+	POPUPLIST ID cTemplateImportPopupFrom cTemplateImportListFrom
+
+	LABEL "Import to:" AUTOID AT (RIGHT@58 29)
+	POPUPTRIGGER "?" ID cTemplateImportPopupTo AT (60 29 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cTemplateImportListTo AT (60 29 100 AUTO) NONUSABLE
+	POPUPLIST ID cTemplateImportPopupTo cTemplateImportListTo
+
+	CHECKBOX "Delete templates after import" ID cTemplateImportDelete AT (4 47 AUTO AUTO)
+
+	BUTTON "Import" ID cTemplateImportImport AT (4 BOTTOM@82 AUTO AUTO)
+	BUTTON "Cancel" ID cTemplateImportCancel AT (PREVRIGHT+4 BOTTOM@82 AUTO AUTO)
+END
+
+FORM ID fTemplateExport AT (2 73 156 85)
+MODAL
+DEFAULTBUTTON cTemplateExportCancel
+BEGIN
+	TITLE "Export Templates"
+
+	LABEL "Export from:" AUTOID AT (RIGHT@58 15)
+	POPUPTRIGGER "?" ID cTemplateExportPopupFrom AT (60 15 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cTemplateExportListFrom AT (60 15 100 AUTO) NONUSABLE
+	POPUPLIST ID cTemplateExportPopupFrom cTemplateExportListFrom
+
+	LABEL "Export to:" AUTOID AT (RIGHT@58 29)
+	POPUPTRIGGER "?" ID cTemplateExportPopupTo AT (60 29 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cTemplateExportListTo AT (60 29 100 AUTO) NONUSABLE
+	POPUPLIST ID cTemplateExportPopupTo cTemplateExportListTo
+
+	CHECKBOX "Delete templates after export" ID cTemplateExportDelete AT (4 47 AUTO AUTO)
+
+	BUTTON "Export" ID cTemplateExportExport AT (4 BOTTOM@82 AUTO AUTO)
+	BUTTON "Cancel" ID cTemplateExportCancel AT (PREVRIGHT+4 BOTTOM@82 AUTO AUTO)
+END
+
+FORM ID fTemplateExportSingle AT (2 97 156 61)
+MODAL
+DEFAULTBUTTON cTemplateExportSingleCancel
+BEGIN
+	TITLE "Export Template"
+
+	LABEL "Export to:" AUTOID AT (RIGHT@58 18)
+	POPUPTRIGGER "?" ID cTemplateExportSinglePopupTo AT (60 18 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cTemplateExportSingleListTo AT (60 18 100 AUTO) NONUSABLE
+	POPUPLIST ID cTemplateExportSinglePopupTo cTemplateExportSingleListTo
+
+	BUTTON "Export" ID cTemplateExportSingleExport AT (4 BOTTOM@58 AUTO AUTO)
+	BUTTON "Cancel" ID cTemplateExportSingleCancel AT (PREVRIGHT+4 BOTTOM@58 AUTO AUTO)
+END
+
+FORM ID fKeywords AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cKeywordsTemplates
+MENUID mKeywords
+BEGIN
+	TITLE "Keywords"
+
+	FIELD ID cKeywordF1 AT (1 30 140 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS ValueLen NONUSABLE
+	GADGET ID cKeywordS1 AT (145 31 13 9) NONUSABLE
+
+	FIELD ID cKeywordF2 AT (1 55 140 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS ValueLen NONUSABLE
+	GADGET ID cKeywordS2 AT (145 56 13 9) NONUSABLE
+
+	FIELD ID cKeywordF3 AT (1 80 140 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS ValueLen NONUSABLE
+	GADGET ID cKeywordS3 AT (145 81 13 9) NONUSABLE
+
+	FIELD ID cKeywordF4 AT (1 105 140 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS ValueLen NONUSABLE
+	GADGET ID cKeywordS4 AT (145 106 13 9) NONUSABLE
+
+	FIELD ID cKeywordF5 AT (1 130 140 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS ValueLen NONUSABLE
+	GADGET ID cKeywordS5 AT (145 131 13 9) NONUSABLE
+
+	GADGET ID cKeywordsUp AT (146 145 13 6)
+	GADGET ID cKeywordsDown AT (146 153 13 6)
+
+	GRAFFITISTATEINDICATOR AT (130 147)
+
+	BUTTON "Templates" ID cKeywordsTemplates AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "View" ID cKeywordsView AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mKeywords
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Clear Keywords" ID mKeywordsClear
+		MENUITEM SEPARATOR
+		MENUITEM "Keyword Help" ID mKeywordsHelp
+	END
+
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+END
+
+FORM ID fStory AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cStoryTemplates
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Story"
+	GADGET ID cStoryLock AT (RIGHT@160 1 13 12)
+
+	FIELD ID cStoryField AT (1 18 150 111) NONEDITABLE MULTIPLELINES MAXCHARS (2*MemoSize) AUTOSHIFT HASSCROLLBAR
+	SCROLLBAR ID cStoryScrollBar AT (152 18 7 111) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 9
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "Back" ID cStoryBack AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Templates" ID cStoryTemplates AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Export" ID cStoryExport AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fMemoBrowser AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cMemoBrowserCancel
+BEGIN
+	TITLE "Memos"
+
+	POPUPTRIGGER "?" ID cMemoBrowserPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cMemoBrowserList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cMemoBrowserPopup cMemoBrowserList
+
+	TABLE ID cMemoBrowserTable AT (1 18 150 121) ROWS MemoBrowserTableLines COLUMNS 1 COLUMNWIDTHS 148
+	SCROLLBAR ID cMemoBrowserScrollBar AT (152 18 7 121) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MemoBrowserTableLines-1
+
+	BUTTON "Cancel" ID cMemoBrowserCancel AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fStoryExport AT (2 97 156 61)
+MODAL
+DEFAULTBUTTON cStoryExportCancel
+BEGIN
+	TITLE "Export Story"
+
+	LABEL "Export to:" AUTOID AT (RIGHT@58 18)
+	POPUPTRIGGER "?" ID cStoryExportPopupTo AT (60 18 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cStoryExportListTo AT (60 18 100 AUTO) NONUSABLE
+	POPUPLIST ID cStoryExportPopupTo cStoryExportListTo
+
+	BUTTON "Export" ID cStoryExportExport AT (4 BOTTOM@58 AUTO AUTO)
+	BUTTON "Cancel" ID cStoryExportCancel AT (PREVRIGHT+4 BOTTOM@58 AUTO AUTO)
+END
+
+FORM ID fHelp AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Help"
+
+	FIELD ID cHelpText AT (4 16 140 111) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cHelpScrollBar AT (146 16 7 111) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 10
+	BUTTON "Done" ID cHelpDone AT (4 BOTTOM@153 AUTO AUTO)
+END

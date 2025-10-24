@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>MathAce User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>MathAce User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>In MathAce you train simple math - addition, subtraction, multiplication and division.  You setup the characteristica of the quiz - if it should be timed, what kind of operations you'd like, sizes of the operands, size of the answer and if you'd like negative numbers to be in the quiz.
+<P>MathAce will then display a simple equation for you to solve. MathAce keeps tracks of your successes and failures. The Last 10 scores can be exported to Memo Pad.
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of MathAce is like installing any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] MathAce.
+<LI>Unpack the <B>MathAce.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the archive. Highlight the <B>MathAce.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a 'MathAce' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move MathAce to another category.
+
+<P><BR><P><BR>
+<H3>Using MathAce</H3>
+<P><IMG SRC="gfx/mathace.gif" WIDTH="160" HEIGHT="160" ALT="MathAce">When starting MathAce you will be presented with a short menu. Select <B>Preferences</B> to set the characteristicas of the quiz. Select <B>Beam Preferences</B> to beam the preferences settings to another device. Select <B>Show Scores</B> to view the <I>Last 10 Scores</I>. Select <B>Clear Scores</B> to clear the <I>Last 10 Scores</I> list - you will be asked to confirm your action. Select <B>Start Quiz</B> to start the quiz.
+
+<P><BR><IMG SRC="gfx/preferences.gif" WIDTH="160" HEIGHT="160" ALT="Preferences">The quiz is setup using the controls on the <I>Preferences</I> screen. First select the <B>Quiz Type</B>. You can choose between <I>Calculate</I> or <I>Solve</I>. In <I>Calculate</I> mode you always has so find the right hand side of the quiz - that is, the quizzes are on the form:
+<PRE>
+    x + y = _
+    x - y = _
+    x * y = _
+    x / y = _
+</PRE>
+<P>In <I>Solve</I> mode you will have to solve the equation. Depending on what you select in the <I>Solve</I> list you will get the following kind of quizzes:
+<PRE>
+    x + _ = y
+    _ - x = y
+    x * y = _
+</PRE>
+<P>If <I>Solve</I> is set to <B>Left hand side only</B> then only the first two kind of quizzes will be shown. If <I>Solve</I> is set to <B>Both Sides</B> then all kind of quizzes will be shown.
+<P>Select what kind of <I>Scoring</I> should be used. If you select <B>First Guess</B> then a point will only be scored if the first guess is correct. If <B>Correct Guess</B> is chosen, then a point will be scored whenever a correct answer is given. The former is more restrictive and was the default in MathAce up to version 1.5.
+<P>Select the size of the <B>Max Operand</B> or <B>Max Answer</B>. If the <I>Max Operand</I> is set to f.ex. 10 then the value to be guessed is no larger than 10 - other operands may be larger, though. So a quiz like 64 / 8 is valid. The <I>Max Answer</I> limits all the operands to be lower or equal to the threshold. So if <I>Max Answer</I> is set to f.ex. 10, then a quiz like 5 + 3 would be possible. The <I>Max Answer</I> only works for addition and subtraction quizzes.
+<P>The <B>Min Operand</B> value controls the lower bound of the quiz. If <I>Min Operand</I> is set to <B>2</B> and <I>Max Operand</I> is set to <B>10</B> then the quiz will be created using the numbers from 2 to 10.
+<P>Select the <B>Operations</B> to be chosen from. Also check the <B>Allow Negative Numbers</B> to enable signed quizzes (like in 5 * -3 and so forth).
+<P>Select if the quiz should be timed. A blank <B>Timed</B> field or a value of <I>0</I> disable the timer. Other values enable the timer for that many minutes.
+
+<P><BR><IMG SRC="gfx/main.gif" WIDTH="160" HEIGHT="160" ALT="Quiz">When running the quiz you will get a display looking like a simple calculator. The buttons on the right, from top to bottom are: <B>backspace</B>, <B>clear all</B>, <B>sign</B> and <B>OK</B> (submit the answer). In the upper right corner you have a button to end the current quiz. In a timed game the time remaining will be shown between the <B>0</B> and <B>OK</B> buttons (not shown). When you press a button the time seems halt; but fear not - the timer is counted down in the background and as soon as you release the button the timer will catch up. 
+
+<P><BR><IMG SRC="gfx/quizover.gif" WIDTH="160" HEIGHT="160" ALT="Quiz Over">When the quiz is over you wil get a chance to enter your name for the <B>Last 10 Scores</B> list. Select <B>Save Score</B> to save the score. Select <B>Don't Save Score</B> to go to the main form without saving the score.
+
+<P><BR><IMG SRC="gfx/scores.gif" WIDTH="160" HEIGHT="160" ALT="Last 10 Scores">The <B>Last 10 Scores</B> list lists the last 10 scores (whoah!) The list is not to be taken as a High Score list. Tap an entry to view the details for that entry. Select <B>Export</B> to export the list to Memo Pad.
+
+<P><BR><IMG SRC="gfx/details.gif" WIDTH="160" HEIGHT="160" ALT="Details">A detailed view of a randomly chosen entry. This view contains scores, rounds and the selected preferences for the quiz. This is more less how each entry in the Export list will look like.
+
+<P><BR><P><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>MathAce: <A HREF="http://www.schau.com/gz/palm/mathace/index.html">www.schau.com/gz/palm/mathace/index.html</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

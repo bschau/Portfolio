@@ -1,0 +1,19 @@
+DST	=	ptconvert$(EXE)
+SOURCES	=	Main Utils
+DEPS	=	Include.h
+CFLAGS	=	$(CFLAGS) -D$(OS)
+
+all:
+	< $(SOURCES) > compile
+	depend $(DST).exe $(SOURCES).o || $(CC) $(CFLAGS) -o $(DST) $(SOURCES).o
+
+compile:
+	depend $<.o $<.c $(DEPS) || $(CC) $(CFLAGS) -c $<.c
+
+clean:
+	$(RM) *.o *~ $(DST)
+
+archive:	clean
+	basename $(CWD)
+	C = $-
+	tar czvf ../$(C).tar.gz ../$(C)

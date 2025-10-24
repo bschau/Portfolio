@@ -1,0 +1,276 @@
+#include "resources.h"
+
+/*
+**	Global data.	
+*/
+VERSION "2r2"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/eventorl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/eventorl8.bmp" BPP 8
+	BITMAP "gfx/eventorl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/eventors1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/eventors8.bmp" BPP 8
+	BITMAP "gfx/eventors8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+CATEGORIES ID defaultCategories "@@dcUnfiled@@" "@@dcAnniversaries@@" "@@dcBirthdays@@" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+/*
+**	Strings
+*/
+STRING ID strTomorrow "@@strTomorrow@@"
+STRING ID strInDays "@@strInDays@@"
+STRING ID strToday "@@strToday@@"
+STRING ID strNotSet "@@strNotSet@@"
+STRING ID strNewEvent "@@strNewEvent@@"
+STRING ID strEditEvent "@@strEditEvent@@"
+STRING ID strSetDate "@@strSetDate@@"
+STRING ID strSetNewAlarm "@@strSetNewAlarm@@"
+STRING ID strOnTheDay "@@strOnTheDay@@"
+STRING ID strDaysBefore "@@strDaysBefore@@"
+STRING ID strDaysBeforeP "@@strDaysBeforeP@@"
+STRING ID strRepeating "@@strRepeating@@"
+STRING ID strNever "@@strNever@@"
+STRING ID strAboutText "@@strAboutText@@"
+STRING ID strDate "@@gDate@@"
+STRING ID strEvent "@@gEvent@@"
+STRING ID strCategory "@@gCategory@@"
+
+/*
+**	Alerts.
+*/
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "@@aBadRomTitle@@"
+	MESSAGE "@@aBadRomText@@"
+	BUTTONS "@@gOK@@"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "@@aCannotOpenDatabaseTitle@@"
+	MESSAGE "@@aCannotOpenDatabaseText@@"
+	BUTTONS "@@gOK@@"
+END
+
+ALERT ID aEmptyEvent
+INFORMATION
+BEGIN
+	TITLE "@@aEmptyEventTitle@@"
+	MESSAGE "@@aEmptyEventText@@"
+	BUTTONS "@@gOK@@"
+END
+
+ALERT ID aInvalidDate
+INFORMATION
+BEGIN
+	TITLE "@@aInvalidDateTitle@@"
+	MESSAGE "@@aInvalidDateText@@"
+	BUTTONS "@@gOK@@"
+END
+
+ALERT ID aDelete
+INFORMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aDeleteTitle@@"
+	MESSAGE "@@aDeleteText@@"
+	BUTTONS "@@gYes@@" "@@gNo@@"
+END
+
+ALERT ID aNoEvents
+INFORMATION
+BEGIN
+	TITLE "@@aNoEventsTitle@@"
+	MESSAGE "@@aNoEventsText@@"
+	BUTTONS "@@gOK@@"
+END
+
+ALERT ID aNothingToPrint
+INFORMATION
+BEGIN
+	TITLE "@@aNothingToPrintTitle@@"
+	MESSAGE "@@aNothingToPrintText@@"
+	BUTTONS "@@gOK@@"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+**	Menu
+*/
+MENU sysEditMenuID
+BEGIN
+	PULLDOWN "@@EditMenuName@@"
+	BEGIN
+		MENUITEM "@@EditMenuUndo@@" 10000 "@@EditMenuUndoSC@@"
+		MENUITEM "@@EditMenuCut@@" 10001 "@@EditMenuCutSC@@"
+		MENUITEM "@@EditMenuCopy@@" 10002 "@@EditMenuCopySC@@"
+		MENUITEM "@@EditMenuPaste@@" 10003 "@@EditMenuPasteSC@@"
+		MENUITEM "@@EditMenuSelect@@" 10004 "@@EditMenuSelectSC@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@EditMenuKeyboard@@" 10006 "@@EditMenuKeyboardSC@@"
+		MENUITEM "@@EditMenuGraffiti@@" 10007 "@@EditMenuGraffitiSC@@"
+	END
+END
+
+/*
+**	Forms.
+*/
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Eventor"
+	POPUPTRIGGER "?" ID fMainCategoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID fMainCategoryList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID fMainCategoryPopup fMainCategoryList
+
+	LABEL "@@gDate@@" AUTOID AT (RIGHT@1+DATEFIELDWIDTH 18) FONT 1
+	LABEL "@@gEvent@@" AUTOID AT (1+SPACING+DATEFIELDWIDTH 18) FONT 1
+	// Turns off boldfont for tables on 3.x roms.
+	LABEL " " AUTOID AT (PREVRIGHT+2 18) FONT 0
+	TABLE ID fMainTable AT (1 31 150 110) ROWS MainTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID fMainScrollBar AT (151 31 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+	BUTTON "@@mainNew@@" ID fMainNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@mainNext@@" ID fMainNext AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@mainPrint@@" ID fMainPrint AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "@@mainMenuOptions@@"
+	BEGIN
+		MENUITEM "@@mainMenuNotifications@@" mMainNotifications "@@mainMenuNotificationsSC@@"
+		MENUITEM "@@mainMenuPreferences@@" mMainPrefs "@@mainMenuPreferencesSC@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mainMenuAbout@@" mMainAbout
+	END
+END
+
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fEditCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE ""
+	POPUPTRIGGER "?" ID fEditCategoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID fEditCategoryList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID fEditCategoryPopup fMainCategoryList
+
+	LABEL "@@gEvent@@:" AUTOID AT (RIGHT@51 19)
+	FIELD ID fEditEvent AT (53 19 100 36) EDITABLE UNDERLINED MAXCHARS EventLength MULTIPLELINES AUTOSHIFT
+
+	LABEL "@@gDate@@:" AUTOID AT (RIGHT@49 62)
+	SELECTORTRIGGER "" ID fEditDateSelector AT (51 62 AUTO AUTO)
+
+	CHECKBOX "@@editRemindMe@@" ID fEditRemindMe AT (1 78 AUTO AUTO)
+	FIELD ID fEditRemindDays AT (18 90 14 12) EDITABLE UNDERLINED MAXCHARS 3
+
+	LABEL "@@editDays@@" AUTOID AT (PREVRIGHT+4 90)
+	CHECKBOX "@@editRepeat@@" ID fEditRepeat AT (15 104 AUTO AUTO)
+
+	GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+	BUTTON "@@gOK@@" ID fEditOk AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@gCancel@@" ID fEditCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fView AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fViewDone
+BEGIN
+	TITLE "@@viewTitle@@"
+
+	LABEL "@@gEvent@@:" AUTOID AT (RIGHT@51 19)
+	FIELD ID fViewEvent AT (53 19 100 36) NONEDITABLE MULTIPLELINES
+
+	LABEL "@@gDate@@:" AUTOID AT (RIGHT@51 58)
+	FIELD ID fViewDate AT (53 58 100 12) NONEDITABLE 
+	LABEL "@@gCategory@@:" AUTOID AT (RIGHT@51 73)
+	FIELD ID fViewCategory AT (53 73 110 12) NONEDITABLE
+
+	LABEL "@@viewReminder@@:" AUTOID AT (RIGHT@51 88)
+	FIELD ID fViewRemind AT (53 88 158 24) NONEDITABLE
+
+	BUTTON "@@gDone@@" ID fViewDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@gEdit@@" ID fViewEdit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@gDelete@@" ID fViewDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "@@aboutAbout@@ Eventor"
+
+	LABEL "Eventor" AUTOID AT (CENTER 20) FONT 7
+	LABEL "@@aboutVersion@@ 2r2" AUTOID AT (CENTER 42)
+	FIELD ID fAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID fAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "@@gDone@@" ID fAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fAlarm AT (2 40 156 118)
+MODAL
+DEFAULTBUTTON fAlarmDone
+BEGIN
+	TITLE "Eventor"
+
+	FIELD ID fAlarmCategory AT (4 19 150 12) NONEDITABLE FONT 1
+	LABEL "@@gDate@@:" AUTOID AT (4 35)
+	FIELD ID fAlarmEventDate AT (PREVRIGHT+4 35 100 12) NONEDITABLE
+	FIELD ID fAlarmEvent AT (4 51 150 24) NONEDITABLE MULTIPLELINES
+	LABEL "@@alarmEventDue@@:" AUTOID AT (4 79)
+	FIELD ID fAlarmDate AT (PREVRIGHT+4 79 100 12) NONEDITABLE
+
+	BUTTON "@@gDone@@" ID fAlarmDone AT (4 BOTTOM@113 AUTO AUTO)
+	BUTTON "\x02" ID fAlarmPrev AT (132 BOTTOM@113 8 AUTO) FONT 4 NOFRAME
+	BUTTON "\x03" ID fAlarmNext AT (PREVRIGHT+2 BOTTOM@113 8 AUTO) FONT 4 NOFRAME
+END
+
+FORM ID fPrefs AT (2 66 156 92)
+MODAL
+DEFAULTBUTTON fPrefsCancel
+BEGIN
+	TITLE "@@prefsTitle@@"
+
+	LABEL "@@prefsAlarmAt@@:" AUTOID AT (4 19)
+	SELECTORTRIGGER "" ID fPrefsAlarmTime AT (PREVRIGHT+4 19 AUTO AUTO)
+	CHECKBOX "@@prefsSoundAlarm@@" ID fPrefsSoundAlarm AT (4 35 AUTO AUTO)
+	CHECKBOX "@@prefsShow@@" ID fPrefsShowNotifications AT (4 51 AUTO AUTO) NONUSABLE
+
+	BUTTON "@@gDone@@" ID fPrefsOK AT (4 BOTTOM@89 AUTO AUTO)
+	BUTTON "@@gCancel@@" ID fPrefsCancel AT (PREVRIGHT+4 BOTTOM@89 AUTO AUTO)
+END
+
+FORM ID fTimeSelector AT (2 86 156 72)
+MODAL
+DEFAULTBUTTON fTimeSelectorCancel
+BEGIN
+	TITLE ""
+	PUSHBUTTON "" ID fTimeSelectorHour AT (10 26 20 12) GROUP 1 FONT 1
+	LABEL ":" AUTOID AT (PREVRIGHT+4 26) FONT 1
+	PUSHBUTTON "" ID fTimeSelectorMinuteH AT (PREVRIGHT+4 26 16 12) GROUP 1 FONT 1
+	PUSHBUTTON "" ID fTimeSelectorMinuteL AT (PREVRIGHT+1 26 16 12) GROUP 1 FONT 1
+
+	BUTTON "\x01" ID fTimeSelectorUp AT (82 24 14 8) FONT 5 NOFRAME
+	BUTTON "\x02" ID fTimeSelectorDown AT (82 33 14 8) FONT 5 NOFRAME
+
+	PUSHBUTTON "@@tsAm@@" ID fTimeSelectorAM AT (104 26 AUTO AUTO) GROUP 2
+	PUSHBUTTON "@@tsPm@@" ID fTimeSelectorPM AT (PREVRIGHT+1 26 AUTO AUTO) GROUP 2
+
+	BUTTON "@@gOK@@" ID fTimeSelectorOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "@@gCancel@@" ID fTimeSelectorCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END

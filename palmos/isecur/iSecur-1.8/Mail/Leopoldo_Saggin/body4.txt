@@ -1,0 +1,13 @@
+Dear Brian,
+herein enclose you find the first example of what I spoke to you yesterday, ie an uncorrect manageing of the screen.
+I attach 2 images. The first one )1.ipg) indicates the basic situation I choose, ie the list of all (= Tutti) my secrets.
+The image 2 shows what happens if I select one of them.
+It is evident the error in the blue background of the string "Segreto" (= Secret).
+This is not evident if the string has 6 characters ("Secret") but it appears if the string is logner (for example the italian equivalent "Segreto" which has 7 characters).
+
+Leopoldo
+
+
+
+
+

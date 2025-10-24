@@ -1,0 +1,22 @@
+tttxexport
+----------
+
+
+Read the Readme and Manual in the Docs folder.
+
+
+Linux
+-----
+
+Tweak the Makefile in src (it should be fine as is), then:
+
+ * make linux - to create and install a linux binary (do this as root)
+
+
+Windows
+-------
+
+1) Run setver.bat
+2) Open the vcproj file in the tttxexport sub-folder.  Build the solution.
+
+

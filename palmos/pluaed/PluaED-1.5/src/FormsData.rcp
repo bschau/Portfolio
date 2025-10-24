@@ -1,0 +1,252 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.5"
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAP ID bmpBack "data/back.bmp"
+BITMAP ID bmpSearch "data/search.bmp"
+BITMAP ID bmpDetails "data/details.bmp"
+BITMAP ID bmpPlua "data/plua.bmp"
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "PluaED was made by:\n\nCoding: Brian Schau\n\nPlease visit my website at:\n\nhttp://www.schau.com/\n\nOn the website you will find the latest version of PluaED and a user manual.\n\n\nPluaED is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aDeleteSource
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Source"
+	MESSAGE "Do you want to delete this source?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNoPluas
+INFORMATION
+BEGIN
+	TITLE "No Pluas?"
+	MESSAGE "Cannot find Plua1 or Plua2."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotLaunchPlua1
+INFORMATION
+BEGIN
+	TITLE "Plua1 Error?"
+	MESSAGE "Plua1 found but cannot be launched."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotLaunchPlua2
+INFORMATION
+BEGIN
+	TITLE "Plua2 Error?"
+	MESSAGE "Plua2 found but cannot be launched."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About PluaED"
+
+	LABEL "PluaED" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.5" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "PluaED"
+
+	POPUPTRIGGER "?" ID cMainPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID cMainList AT (RIGHT@160 1 80 AUTO) NONUSABLE
+	POPUPLIST ID cMainPopup cMainList
+
+	TABLE ID cMainTable AT (1 18 150 121) ROWS MainTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cMainScrollBar AT (152 18 7 121) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MainTableLines-1
+
+	BUTTON "New" ID cMainNew AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Preferences" ID mMainPreferences
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fNew AT (2 90 156 68)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cNewCancel
+BEGIN
+	TITLE "New Source"
+
+	LABEL "Source Name:" AUTOID AT (4 20)
+	FIELD ID cNewField AT (4 32 148 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS SourceNameLength AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (144 56)
+
+	BUTTON "OK" ID cNewOK AT (4 BOTTOM@65 AUTO AUTO)
+	BUTTON "Cancel" ID cNewCancel AT (PREVRIGHT+4 BOTTOM@65 AUTO AUTO)
+END
+
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+MENUID mEdit
+BEGIN
+	FIELD ID cEditField AT (1 1 150 143) EDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cEditScrollBar AT (152 1 7 143) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 12
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	GADGET ID cEditBack AT (0 150 10 10)
+	FORMBITMAP AT (PREVLEFT PREVTOP) BITMAP bmpBack
+	GADGET ID cEditSearch AT (10 150 10 10)
+	FORMBITMAP AT (PREVLEFT PREVTOP) BITMAP bmpSearch
+	GADGET ID cEditDetails AT (20 150 10 10)
+	FORMBITMAP AT (PREVLEFT PREVTOP) BITMAP bmpDetails
+	GADGET ID cEditPlua AT (30 150 10 10)
+	FORMBITMAP AT (PREVLEFT PREVTOP) BITMAP bmpPlua
+END
+
+MENU mEdit
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Back" ID mEditBack "B"
+		MENUITEM "Search" ID mEditSearch "H"
+		MENUITEM "Details" ID mEditDetails "D"
+		MENUITEM "Plua" ID mEditPlua "U"
+	END
+
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+END
+
+FORM ID fPreferences AT (2 70 156 88)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cPreferencesCancel
+BEGIN
+	TITLE "Preferences"
+
+	LABEL "Plua:" AUTOID AT (4 16) FONT 1
+	LABEL "Version:" AUTOID AT (16 28) FONT 0
+
+	POPUPTRIGGER "?" ID cPreferencesPopup AT (PREVRIGHT+4 28 AUTO AUTO) LEFTANCHOR
+	LIST "Plua2 first" "Plua1 first" "Plua2 only" "Plua1 only" ID cPreferencesList AT (PREVLEFT 28 50 AUTO) NONUSABLE VISIBLEITEMS 4
+	POPUPLIST ID cPreferencesPopup cPreferencesList
+
+	LABEL "Source:" AUTOID AT (4 42) FONT 1
+	LABEL "Size:" AUTOID AT (16 54) FONT 0
+	FIELD ID cPreferencesSourceSize AT (PREVRIGHT+4 54 30 11) EDITABLE NUMERIC UNDERLINED MAXCHARS 5 AUTOSHIFT
+
+	CHECKBOX "Underline" ID cPreferencesUnderline AT (80 54 AUTO AUTO)
+
+	GRAFFITISTATEINDICATOR AT (144 76)
+
+	BUTTON "OK" ID cPreferencesOK AT (4 BOTTOM@85 AUTO AUTO)
+	BUTTON "Cancel" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@85 AUTO AUTO)
+END
+
+FORM ID fEditDetails AT (2 70 156 88)
+MODAL
+DEFAULTBUTTON cEditDetailsCancel
+BEGIN
+	TITLE "Details"
+
+	LABEL "Category:" AUTOID AT (RIGHT@80 18)
+	POPUPTRIGGER "?" ID cEditDetailsPopup AT (82 18 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cEditDetailsList AT (82 18 78 AUTO) NONUSABLE
+	POPUPLIST ID cEditDetailsPopup cEditDetailsList
+
+	LABEL "Characters:" AUTOID AT (RIGHT@80 32)
+	FIELD ID cEditDetailsCharacters AT (82 32 36 11) NONEDITABLE NUMERIC MAXCHARS 5
+
+	LABEL "Lines:" AUTOID AT (RIGHT@80 44)
+	FIELD ID cEditDetailsLines AT (82 44 36 11) NONEDITABLE NUMERIC MAXCHARS 5
+
+	BUTTON "OK" ID cEditDetailsOK AT (4 BOTTOM@85 AUTO AUTO)
+	BUTTON "Cancel" ID cEditDetailsCancel AT (PREVRIGHT+4 BOTTOM@85 AUTO AUTO)
+	BUTTON "Delete" ID cEditDetailsDelete AT (PREVRIGHT+4 BOTTOM@85 AUTO AUTO)
+END
+
+FORM ID fEditSearch AT (2 70 156 88)
+MODAL
+DEFAULTBUTTON cEditSearchCancel
+BEGIN
+	TITLE "Search"
+
+	LABEL "Search for:" AUTOID AT (4 18)
+	FIELD ID cEditSearchTerm AT (4 30 148 11) EDITABLE MAXCHARS SearchTermLength UNDERLINED MULTIPLELINES
+
+	CHECKBOX "Start at top" ID cEditSearchFromTop AT (4 46 AUTO AUTO)
+
+	GRAFFITISTATEINDICATOR AT (144 76)
+
+	BUTTON "OK" ID cEditSearchOK AT (4 BOTTOM@85 AUTO AUTO)
+	BUTTON "Cancel" ID cEditSearchCancel AT (PREVRIGHT+4 BOTTOM@85 AUTO AUTO)
+END

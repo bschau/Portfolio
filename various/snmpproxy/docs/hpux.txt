@@ -1,0 +1,57 @@
+For at compilere snmpproxy på HP-UX v11:
+
+ 1) Installer bzip2-1.0.1.tar
+    (ftp://sunsite.informatik.rwth-aachen.de/pub/packages/gcc_hpux/)
+
+    1. cd /tmp
+    2. tar xf /path/to/bzip2-1.0.1.tar
+    3. cd opt/precompiled/bzip2-1.0.1
+    4. cp -r * /usr
+
+ 2) Installer gcc-3.0.1-bin-hppa2.0w-hp-hpux11.00.tar.bz2
+    (ftp://sunsite.informatik.rwth-aachen.de/pub/packages/gcc_hpux/)
+
+    1. bunzip2 gcc-3.0.1-bin-hppa2.0w-hp-hpux11.00.tar.bz2
+    2. cd /
+    3. tar xf /path/to/gcc-3.0.1-bin-hppa2.0w-hp-hpux11.00.tar
+    4. Tilføj /opt/precompiled/gcc-3.0.1-32/bin:/usr/local/bin til starten
+       af /etc/PATH
+    5. Log af og log på
+
+ 3) Flyt /usr/bin/cc til /usr/bin/sys,cc
+
+ 4) Flyt /usr/bin/m4 til /usr/bin/sys.m4
+
+ 5) Kopier /usr/bin/make til /usr/bin/sys.make
+
+ 6) Installer make-3.80.tar.gz
+    (ftp://sunsite.dk/mirrors/gnu/make/)
+
+ 7) Installer m4-1.4.tar.gz
+    (ftp://sunsite.dk/mirrors/gnu/m4/)
+
+ 8) Installer bison-1.875.tar.bz2
+    (ftp://sunsite.dk/mirrors/gnu/bison)
+
+ 9) Installer flex-2.5.4a.tar.gz
+    (ftp://sunsite.dk/mirrors/gnu/non-gnu/flex/)
+
+10) Installer snacc-1.3.tar.gz
+    (http://www.fokus.gmd.de/ovma/freeware/snacc)
+
+    1. gunzip snacc-1.3.tar.gz
+    2. tar xf snacc-1.3.tar
+    3. cd snacc-1.3
+    4. CFLAGS="-DYYTEXT_POINTER" LDFLAGS="-L/usr/local/lib" LIBS="-lfl" \
+           ./configure --without-x --without-tcl
+    5. make c
+    6. make c-install
+
+11) Installer snmpproxy
+
+    1. gunzip snmpproxy.tar.gz
+    2. tar xf snmpproxy.tar
+    3. cd snmpproxy
+    4. make initall
+    5. make
+    6. make install (as root)

@@ -1,0 +1,55 @@
+[
+{
+	"Name": "BT",
+	"RssUrl": "https://www.bt.dk/bt/seneste/rss",
+	"WebUrl": "https://www.bt.dk/"
+},{
+	"Name": "Chess.com",
+	"RssUrl": "https://www.chess.com/rss/articles",
+	"WebUrl": "https://www.chess.com/"
+},{
+	"Name": "Coding Horror",
+	"RssUrl": "https://feeds.feedburner.com/codinghorror/",
+	"WebUrl": "https://blog.codinghorror.com/"
+},{
+	"Name": "DR Nyheder",
+	"RssUrl": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
+	"WebUrl": "https://www.dr.dk/"
+},{
+	"Name": "Fabien Sanglard",
+	"RssUrl": "https://fabiensanglard.net/rss.xml",
+	"WebUrl": "https://fabiensanglard.net/"
+},{
+	"Name": "GSM Arena",
+	"RssUrl": "https://www.gsmarena.com/rss-news-reviews.php3",
+	"WebUrl": "https://www.gsmarena.com/"
+},{
+	"Name": "Humble Bundle",
+	"RssUrl": "https://blog.humblebundle.com/feed/",
+	"WebUrl": "https://blog.humblebundle.com/"
+},{
+	"Name": "iNPUT",
+	"RssUrl": "https://www.inputmag.dk/feed/",
+	"WebUrl": "https://www.inputmag.dk/"
+},{
+	"Name": "Mere Mobil",
+	"RssUrl": "https://meremobil.dk/feed",
+	"WebUrl": "https://meremobil.dk/"
+},{
+	"Name": "Mobil.nu",
+	"RssUrl": "https://mobil.nu/feed",
+	"WebUrl": "https://mobil.nu/"
+},{
+	"Name": "NOYB",
+	"RssUrl": "https://noyb.eu/en/rss",
+	"WebUrl": "https://noyb.eu/en"
+},{
+	"Name": "The Register",
+	"RssUrl": "https://www.theregister.co.uk/headlines.atom",
+	"WebUrl": "https://www.theregister.co.uk/"
+},{
+	"Name": "The Verge",
+	"RssUrl": "https://www.theverge.com/rss/index.xml",
+	"WebUrl": "https://www.theverge.com/"
+}
+]

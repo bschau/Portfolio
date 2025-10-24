@@ -1,0 +1,7 @@
+Well, no icons yet, but I've got a really vexing bug.  Unfortunately, at this point it's just a heads up since I can't seem to find the exact circumstances that cause it.  I've had three different iSecur notes disappear on me.  I can't figure out exactly why except that when I re-run the program after it's turned itself off, I can't find the note anywhere.  Fortunately, I still had them backuped up in SecureIT, so I could export/import them, but it's worrisome since I have to be very careful when making changes to make sure I immediately take a backup copy of the data file.
+
+I thought it was related to editing an entry when the device timed-out, but that doesn't look to be the case as I've tested that on a test entry and it's surviving the timeout and logout just fine when it's on the edit form.  All I remember is that the entries that went away were definitely ones I had just been working on, so it has something to do with editing/making changes to them and I think then letting the device time out and auto-logout or shutdown.
+
+Anyway, I'll see if I can actually reproduce it and send you more detailed information.
+
+

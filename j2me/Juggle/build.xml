@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+vim: ts=2 sw=2 et
+-->
+<project name="Juggle" default="doItAll">
+	<property name="version" value="2.0" />
+	<property name="release.d" value="Juggle-${version}" />
+
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete dir="${release.d}" />
+		<ant dir="src" target="clean" />
+	</target>
+
+	<target name="doItAll" depends="compile" />
+
+	<target name="compile">
+		<ant dir="src" target="package"/>
+	</target>
+
+	<target name="archive" depends="clean">
+		<zip destfile="../Juggle-${version}-src.zip" basedir=".." includes="Juggle/**" />
+	</target>
+
+	<target name="release" depends="clean,compile">
+		<mkdir dir="${release.d}" />
+		<copy file="AUTHORS.txt" todir="${release.d}" />
+		<copy file="CHANGELOG.txt" todir="${release.d}" />
+		<copy file="COPYING.txt" todir="${release.d}" />
+    <copy file="src/final/Juggle.jar" todir="${release.d}" />
+    <copy file="src/final/Juggle.jad" todir="${release.d}" />
+    <zip destfile="../Juggle-${version}.zip" basedir="." includes="${release.d}/**" />
+	</target>
+</project>

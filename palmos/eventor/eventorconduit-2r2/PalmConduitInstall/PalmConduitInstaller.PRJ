@@ -1,0 +1,40 @@
+[Project ID]
+Signature=UE Proj: v.1
+[Open Files]
+Open File0=C:\My Projects\PalmConduitInstaller\ConduitInstallDll\CondInst.def
+Active File Display Mode=3
+Open File Pos0=0
+Open File Line0=0
+Open File Window Pos0=0,1,0,0,-1,-1,66,66,707,646
+Open File1=C:\My Projects\PalmConduitInstaller\ConduitInstallDll\CondInst.h
+Open File Pos1=1167
+Open File Line1=0
+Open File Window Pos1=0,1,0,0,-1,-1,88,88,733,672
+Open File2=C:\My Projects\PalmConduitInstaller\ConduitInstallDll\CondInst.cpp
+Open File Pos2=17730
+Open File Line2=16377
+Open File Window Pos2=2,3,0,0,-1,-1,110,110,755,694
+Open File3=C:\My Projects\PalmConduitInstaller\PalmConduitInstaller\PalmConduitInstaller.cpp
+Open File Pos3=2962
+Open File Line3=2214
+Open File Window Pos3=0,1,0,0,-1,-1,176,176,821,760
+Open File4=C:\My Projects\PalmInstaller\PalmInst.cpp
+Open File Pos4=10932
+Open File Line4=9935
+Open File Window Pos4=0,1,0,0,-1,-1,198,198,843,782
+Open File5=
+Open File Pos5=20844
+Open File Line5=19567
+Open File Window Pos5=0,1,0,0,-1,-1,198,198,843,782
+Open File6=C:\CDK4\Include\INSTAPPD.H
+Open File Pos6=0
+Open File Line6=0
+Active File Index=2
+Open File Window Pos6=2,3,0,0,-1,-1,220,220,865,804
+Open File7=
+[File View]
+Current Select=Open Files\
+[Files]
+0=C:\My Projects\PalmConduitInstaller\ConduitInstallDll\CondInst.cpp
+1=C:\My Projects\PalmConduitInstaller\ConduitInstallDll\CondInst.def
+2=C:\My Projects\PalmConduitInstaller\ConduitInstallDll\CondInst.h

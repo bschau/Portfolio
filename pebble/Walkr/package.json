@@ -1,0 +1,69 @@
+{
+    "author": "brian@schau.dk",
+    "dependencies": {},
+    "keywords": [],
+    "name": "walkr",
+    "pebble": {
+        "capabilities": [
+            "health"
+        ],
+        "displayName": "Walkr",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/walk.png",
+                    "name": "IMAGE_WALK",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/walkr.png",
+                    "menuIcon": true,
+                    "name": "MENU_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/stop.png",
+                    "name": "IMAGE_STOP",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/play.png",
+                    "name": "IMAGE_PLAY",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/pause.png",
+                    "name": "IMAGE_PAUSE",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/clock.png",
+                    "name": "IMAGE_CLOCK",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/burn.png",
+                    "name": "IMAGE_BURN",
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite",
+            "emery"
+        ],
+        "uuid": "5cbf0920-f1cc-4b66-8fba-ea402671c0d3",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.1.0"
+}

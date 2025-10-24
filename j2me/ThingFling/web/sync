@@ -1,0 +1,3 @@
+#!/bin/bash
+find . -type f -name "*~" -exec rm -f {} \;
+scp fb.inc.php main.php flinger.php schau@www.schau.com:/home/schau/www/fb/thingfling

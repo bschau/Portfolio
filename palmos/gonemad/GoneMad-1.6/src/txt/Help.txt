@@ -1,0 +1,14 @@
+Read and write interesting short stories with Gone Mad!
+
+Start by selecting a template, which contains some blanks for you to fill in. Enter words that fit the descriptions.
+The more creative you are, the crazier the final story will turn out.
+
+After completing all of the blanks, the final story will be displayed, containing the words you filled in. If you like your version of the story, you can export it to Memo Pad.
+
+Once you're familiar with filling in the sample templates, you can begin to make your own story templates.
+Enter the title as the first line of the story. As you enter your story, simply leave out key words and replace them with a description of the missing words in brackets.
+For example:
+
+I wore a [adjective] shirt to the [event].
+
+Each of the descriptors in brackets need to be uniquely named, otherwise the same word will be placed in same-named brackets.

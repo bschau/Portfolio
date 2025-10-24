@@ -1,0 +1,357 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.0"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+BITMAPFAMILYEX ID bmpStop
+COMPRESS
+BEGIN
+	BITMAP "gfx/stop1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/stop8.bmp" BPP 8
+	BITMAP "gfx/stop-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 0 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "LcmGcf was made by\n\nBrian Schau.\n\nThe icons was created by\n\nTony Vincent\n\n\nPlease visit my website at:\n\nhttp://www.schau.com/\n\nOn my website you will find the latest version of LcmGcf and a user manual.\n\n\nLcmGcf is released under the Gnu General Public License v2.\n"
+STRING ID strPreferencesHelp "On the Preferences form you can tailor the level of difficulty of the quizzes presented by LcmGcf.\n\nThe Quiz Type can be set to LCM, GCF or Random.\n\nLCM - Least Common Multiple.\nGCF - Greatest Common Factor.\nRandom - Select randomly between LCF and GCF.\n\nSelect the appropriate number of numbers to use in the quiz.\n\nThe scoring selects how scores are tallied.\nFirst guess means that the initial answer determines if you get a point or not. Correct guess means that you will get a point whenever you enter a correct guess.\n\nThe Max Operand dictates the size of each operand.\n\nThe Timed mode lets you select the duration of the quiz. If the Minutes field is blank or set to 0 the quiz runs forever.\n\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aReset
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Reset?"
+	MESSAGE "Do you really want to reset your score?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aEndQuiz
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "End Quiz?"
+	MESSAGE "Do you want to end the quiz?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aExported
+INFORMATION
+BEGIN
+	TITLE "List Exported"
+	MESSAGE "The Last 10 Scores list has been exported to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "IR Send Error"
+	MESSAGE "Cannot beam preferences for LcmGcf."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRReceiveError
+INFORMATION
+BEGIN
+	TITLE "IR Receive Error"
+	MESSAGE "Error while receiving preferences for LcmGcf."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotReceive
+INFORMATION
+BEGIN
+	TITLE "Cannot Receive"
+	MESSAGE "Cannot receive preferences settings while the Preferences form is open."
+	BUTTONS "OK"
+END
+
+ALERT ID aClearScores
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Clear Scores?"
+	MESSAGE "Do you want clear the Last 10 Scores list?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About LcmGcf"
+
+	LABEL "LcmGcf" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.0" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID mGame
+BEGIN
+	TITLE "LcmGcf"
+
+	BUTTON "" ID cGameStop AT (148 1 11 11) NOFRAME GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStop
+
+	FIELD ID cGameAnswer AT (110 40 AnswerFieldWidth 16) EDITABLE MAXCHARS 7 UNDERLINED FONT 7
+
+	BUTTON "7" ID cGameBut7 AT (14 67 30 20) FONT 1
+	BUTTON "8" ID cGameBut8 AT (48 67 30 20) FONT 1
+	BUTTON "9" ID cGameBut9 AT (82 67 30 20) FONT 1
+
+	BUTTON "4" ID cGameBut4 AT (14 91 30 20) FONT 1
+	BUTTON "5" ID cGameBut5 AT (48 91 30 20) FONT 1
+	BUTTON "6" ID cGameBut6 AT (82 91 30 20) FONT 1
+
+	BUTTON "1" ID cGameBut1 AT (14 115 30 20) FONT 1
+	BUTTON "2" ID cGameBut2 AT (48 115 30 20) FONT 1
+	BUTTON "3" ID cGameBut3 AT (82 115 30 20) FONT 1
+
+	BUTTON "0" ID cGameBut0 AT (14 139 30 20) FONT 1
+
+	BUTTON "\x03" ID cGameButBS AT (116 67 30 20) FONT 3
+	BUTTON "\x10" ID cGameButC AT (116 91 30 20) FONT 3
+	BUTTON "?" ID cGameButSign AT (116 115 30 20) FONT 1
+	BUTTON "OK" ID cGameButOK AT (116 139 30 20) FONT 1
+
+	GRAFFITISTATEINDICATOR AT (151 147)
+END
+
+MENU mGame
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Reset Score" ID mGameReset
+		MENUITEM "End Quiz" ID mGameEndQuiz
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mGameAbout
+	END
+END
+
+FORM ID fPreferences AT (2 2 156 156)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cPreferencesCancel
+HELPID strPreferencesHelp
+BEGIN
+	TITLE "Preferences"
+
+	LABEL "Quiz Type:" AUTOID AT (RIGHT@80 16)
+	POPUPTRIGGER "?" ID cPreferencesTypePopup AT (82 16 AUTO AUTO) LEFTANCHOR
+	LIST "LCM" "GCF" "Random" ID cPreferencesTypeList AT (82 16 40 24) NONUSABLE VISIBLEITEMS 3
+	POPUPLIST ID cPreferencesTypePopup cPreferencesTypeList
+
+	LABEL "Numbers:" AUTOID AT (RIGHT@80 30)
+	POPUPTRIGGER "?" ID cPreferencesNumbersPopup AT (82 30 AUTO AUTO) LEFTANCHOR
+	LIST "2" "3" ID cPreferencesNumbersList AT (82 30 12 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesNumbersPopup cPreferencesNumbersList
+
+	LABEL "Max Operand:" AUTOID AT (RIGHT@80 44)
+	POPUPTRIGGER "?" ID cPreferencesOperandPopup AT (82 44 AUTO AUTO) LEFTANCHOR
+	LIST "10" "12" "15" "20" "25" "50" "100" "200" ID cPreferencesOperandList AT (82 44 70 24) NONUSABLE VISIBLEITEMS 8
+	POPUPLIST ID cPreferencesOperandPopup cPreferencesOperandList
+
+	LABEL "Scoring:" AUTOID AT (RIGHT@80 58)
+	POPUPTRIGGER "?" ID cPreferencesScorePopup AT (82 58 AUTO AUTO) LEFTANCHOR
+	LIST "First Guess" "Correct Guess" ID cPreferencesScoreList AT (82 58 70 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesScorePopup cPreferencesScoreList
+
+	LABEL "Timed Quiz:" AUTOID AT (RIGHT@80 72)
+	FIELD ID cPreferencesTimedMins AT (82 72 18 12) EDITABLE MAXCHARS 3 UNDERLINED NUMERIC RIGHTALIGN
+	LABEL "Minutes" AUTOID AT (PREVRIGHT+2 72)
+
+	GRAFFITISTATEINDICATOR AT (140 140)
+
+	BUTTON "OK" ID cPreferencesOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Cancel" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "LcmGcf"
+
+	LABEL "LcmGcf" AUTOID AT (CENTER 46) FONT 7
+
+	BUTTON "Preferences" ID cMainPreferences AT (CENTER 70 100 AUTO)
+	BUTTON "Beam Preferences" ID cMainBeam AT (CENTER 88 100 AUTO)
+	BUTTON "Show Scores" ID cMainScores AT (CENTER 106 100 AUTO)
+	BUTTON "Clear Scores" ID cMainClear AT (CENTER 124 100 AUTO)
+	BUTTON "Start Quiz" ID cMainStart AT (CENTER 142 100 AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Start Quiz" ID mMainStart "S"
+		MENUITEM "Clear Scores" ID mMainClear
+		MENUITEM "Show Scores" ID mMainScores
+		MENUITEM "Preferences" ID mMainPreferences
+		MENUITEM "Beam Preferences" ID mMainBeam
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fQuizOver AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Quiz Over"
+
+	LABEL "Q U I Z   O V E R" AUTOID AT (CENTER 30) FONT 7
+	LABEL "You scored" AUTOID AT (CENTER 60)
+
+	LABEL "Please enter your name:" AUTOID AT (CENTER 104)
+	FIELD ID cQuizOverName AT (PREVLEFT 118 PREVWIDTH 12) EDITABLE MAXCHARS NameLength UNDERLINED 
+
+	BUTTON "Save Score" ID cQuizOverOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Don't Save Score" ID cQuizOverDont AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	GRAFFITISTATEINDICATOR AT (147 147)
+END
+
+FORM ID fScores AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Last 10 Scores"
+
+	LABEL "#" AUTOID AT (RIGHT@16 16) FONT 1
+	LABEL "Name" AUTOID AT (20 16) FONT 1
+	LABEL "S/R" AUTOID AT (RIGHT@159 16) FONT 1
+
+	GADGET ID cScores00 AT (0 29 160 11)
+	GADGET ID cScores01 AT (0 40 160 11)
+	GADGET ID cScores02 AT (0 51 160 11)
+	GADGET ID cScores03 AT (0 62 160 11)
+	GADGET ID cScores04 AT (0 73 160 11)
+	GADGET ID cScores05 AT (0 84 160 11)
+	GADGET ID cScores06 AT (0 95 160 11)
+	GADGET ID cScores07 AT (0 106 160 11)
+	GADGET ID cScores08 AT (0 117 160 11)
+	GADGET ID cScores09 AT (0 128 160 11)
+
+	BUTTON "Done" ID cScoresDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Export" ID cScoresExport AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fDetails AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Details"
+
+	FIELD ID cDetailsName AT (4 15 148 12) NONEDITABLE MAXCHARS NameLength+1 FONT 1
+
+	LABEL "Started:" AUTOID AT (RIGHT@52 30)
+	FIELD ID cDetailsStarted AT (54 30 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Stopped:" AUTOID AT (RIGHT@52 42)
+	FIELD ID cDetailsStopped AT (54 42 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Timed:" AUTOID AT (RIGHT@52 54)
+	FIELD ID cDetailsTimed AT (54 54 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Score:" AUTOID AT (RIGHT@52 66)
+	FIELD ID cDetailsScore AT (54 66 98 12) NONEDITABLE MAXCHARS DateTimeLength
+
+	LABEL "Scoring:" AUTOID AT (RIGHT@52 78)
+	FIELD ID cDetailsScoring AT (54 78 98 12) NONEDITABLE MAXCHARS 32
+
+	LABEL "Quiz Type:" AUTOID AT (RIGHT@52 90)
+	FIELD ID cDetailsQuizType AT (54 90 98 12) NONEDITABLE MAXCHARS 32
+
+	LABEL "Numbers:" AUTOID AT (RIGHT@52 102)
+	FIELD ID cDetailsNumbers AT (54 102 60 12) NONEDITABLE MAXCHARS 3
+
+	LABEL "Max:" AUTOID AT (RIGHT@52 114)
+	FIELD ID cDetailsMax AT (54 114 98 12) NONEDITABLE MAXCHARS DateTimeLength
+
+	LABEL "Clues:" AUTOID AT (RIGHT@52 126)
+	FIELD ID cDetailsClues AT (54 126 98 12) NONEDITABLE MAXCHARS 16
+
+	BUTTON "Done" ID cDetailsDone AT (CENTER BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fExport AT (2 97 156 61)
+MODAL
+DEFAULTBUTTON cExportCancel
+BEGIN
+	TITLE "Export List"
+
+	LABEL "Export To:" AUTOID AT (RIGHT@58 18)
+	POPUPTRIGGER "?" ID cExportPopup AT (60 18 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cExportList AT (60 18 100 AUTO) NONUSABLE
+	POPUPLIST ID cExportPopup cExportList
+
+	BUTTON "Export" ID cExportExport AT (4 BOTTOM@58 AUTO AUTO)
+	BUTTON "Cancel" ID cExportCancel AT (PREVRIGHT+4 BOTTOM@58 AUTO AUTO)
+END
+
+FORM ID fClue AT (10 30 140 120)
+MODAL
+NOFRAME
+BEGIN
+	BUTTON "" ID cClueStop AT (128 1 11 11) NOFRAME GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStop
+
+	FIELD ID cClueField AT (2 26 136 77) NONEDITABLE MULTIPLELINES MAXCHARS ClueTextLength
+
+	GADGET ID cClueUp AT (50 108 11 9)
+	GADGET ID cClueDown AT (79 108 11 9)
+END

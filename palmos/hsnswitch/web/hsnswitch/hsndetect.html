@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>HSNDetect</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>HSNDetect v1r1</H1>
+<P>If <A HREF="index.html">HSNSwitch</A> fails to run it may be that it cannot parse the HotSync record. As the HotSync record is undocumented a bit of reverse engineering must be done by using <I>HSNDetect</I>.
+<P><I>HSNDetect</I> is a tool which collects the relevant system information and stores them in a database. The database should be mailed to me - instructions are in the README.txt in the archive.
+<P>When I have the collected information I might get a better understanding on how the HotSync record are stored on your hardware platform.
+<UL>
+<LI><A HREF="HSNDetect.zip">Download</A> <I>HSNDetect</I> - read the README file before installing!
+<LI><A HREF="HSNDetect-1r1.tar.bz2">Download</A> the source code archive.
+</UL>
+<P><BR><P><H3>Manual</H3>
+<P>To use <I>HSNDetect</I> follow these steps:
+<OL>
+<LI>Install <I>HSNDetect</I>
+<LI>Launch it - it may take a while to complete. On my Tungsten T it runs for almost 2 minutes. The slot count goes up to 65535.
+<LI>When the program has stopped do a full HotSync.
+<LI>Email me the resulting <B>HSND_HSNDetectData.pdb</B> file (usually found in <TT>c:\Program Files\palmOne\{id}\backup</TT>).
+<LI>Also include information about your Hardware platform (like Tungsten T3, Treo 650, ...)
+</OL>
+<P>I will then have a better chance of getting HSNSwitch working on your hardware platform.
+
+<P><BR><P><H3>Changelog</H3>
+<PRE>
+v1r1 (2005-04-25)
+	First release of HSNDetect.
+</PRE>
+<P><A HREF="/index.html">Home</A>
+
+</BODY>
+</HTML>

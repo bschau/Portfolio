@@ -1,0 +1,85 @@
+Hi Brian,
+
+Thanks and congrats on such a useful tool as SecureIt.
+ I was very happy to see the changes and enhancements
+you made with iSecur, and I just wanted to point out a
+behavior on iSecur's login screen.  I'm using version
+1.3 on a Treo 650 running PalmOS 5.4.8, and when I
+launch iSecur the password box has focus.  In other
+words, the textbox has the PalmOS blue highlight
+indicating that it can be selected with the center
+navigation button, but the cursor isn't active inside
+the textbox yet.  (Auto-capitalization, shift-lock,
+and symbol-lock are all off.)  My password starts with
+several numbers, so instinctively I press the symbol
+key twice to turn on symbol-lock (but the behavior is
+also the same if I press the shift key twice for
+shift-lock).  Then as I type the first character in my
+password, the textbox cursor becomes active, the blue
+highlight around the textbox disappears, and the first
+character gets entered into the textbox.  However, at
+this point symbol-lock (or shift-lock) also goes away
+automatically.  Is it possible to keep
+symbol/shift-lock active until it's explicitly turned
+off (with another press of the symbol or shift key)?
+
+Thanks again!  This isn't a big problem for me, so
+don't worry about it if other things are keeping you
+busy.  I appreciate your work in any case!
+
+Regards,
+Eric
+
+
+ 
+____________________________________________________________________________________
+Cheap talk?
+Check out Yahoo! Messenger's low PC-to-Phone call rates.
+http://voice.yahoo.com
+
+
+
+
+
+Hi Brian,
+
+> > v1.4 was released yesterday - you should really
+> > upgrade
+> > as it fixes a couple of bugs/annoyances and also
+> > implements
+> > some new features.
+
+Thanks for pointing this out.  I downloaded it and
+like the new preference options you've added.
+
+> > When the form opens I send a
+> > FrmSetFocus(passwordField) - on
+> > earlier devices (OS 2.x-4.x) this will activate the
+> > field and
+> > add the cursor.  I haven't found a definite fix for
+> > this (but
+> > I am searching ...  :-) 
+
+Version 1.4, of course, has the same behavior on my
+Treo 650, and I hope you eventually hit on the
+solution; as I mentioned, though, it's not at all a
+big deal for me.  Thanks anyway for keeping it in
+mind!
+
+One other thing I forgot to say: this is strictly my
+personal opinion, but I think you should include the
+"Help >> About" menu item on the login screen.  You
+deserve credit (via the About screen) even if the user
+hasn't logged into the secrets database yet!
+
+Regards,
+Eric
+
+
+ 
+____________________________________________________________________________________
+Have a burning question?  
+Go to www.Answers.yahoo.com and get answers from real people who know.
+
+
+

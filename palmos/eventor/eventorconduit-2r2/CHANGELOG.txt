@@ -1,0 +1,11 @@
+Changelog for the Eventor Conduit.
+
+v2r2 (2003-05-14)
+	The output from the Eventor Conduit is now more readable.  This
+	is the first step towards a desktop companion :o)
+
+v2r1 (2003-05-10)
+	Updated Conduit to support Eventor-2r1 and better.
+
+v1r1 (2003-03-27)
+	Initial release of the new version of the Eventor Conduit.

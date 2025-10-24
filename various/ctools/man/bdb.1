@@ -1,0 +1,174 @@
+.TH BDB 1
+
+.SH NAME
+bdb - frontend to gdbm library
+
+.SH SYNOPSIS
+.B bdb
+[-b bsize]   [-c csize]   [-e endchar]   [-f file]  [-s separator] [-t timeout]
+.B database
+.B command
+[key] [value]
+
+.SH DESCRIPTION
+.B bdb
+is a simple frontend to the gdbm library. It is mainly used to handle
+smaller databases.
+
+.SH COMMANDS
+.TP
+.B insert
+.br
+Insert content of [file] or [value] to the given [key]. The content will
+not be inserted if the [key] exists in the database.
+
+.TP
+.B replace
+.br
+Insert or replace content of [file] or [value] to the given [key].
+
+.TP
+.B fetch
+.br
+Fetch content of [key].
+
+.TP
+.B exists
+.br
+Check whether a [key] exists or not.
+
+.TP
+.B delete
+.br
+Delete the content of [key] and [key] itself.
+
+.TP
+.B dump
+.br
+Dump the database to stdout or [file].
+
+.TP
+.B reorganize
+.br
+Reorganize the database. Removes keys marked for deletion.
+
+.SH OPTIONS
+.TP
+.B "-b blocksize"
+.br
+Set blocksize for this operation.
+
+.TP
+.B "-c cachesize"
+.br
+Set cachesize for this operation.
+
+.TP
+.B "-e endchar"
+.br
+When dumping a database or fetching an entry, use this char as the last
+char in the pair.  See single char escape sequences below.
+.br
+Defaults to a newline.
+
+.TP
+.B "-f file"
+.br
+Get content from this file (insert, replace) or write content to this file
+(fetch, dump).
+
+.TP
+.B "-s separator"
+.br
+When dumping a database, use this char to separate key from content.  See
+single char escape sequences below.
+.br
+Defaults to a space.
+
+.TP
+.B "-t timeout"
+.br
+If the database is busy, try this amount of seconds to read or write before
+failing. Setting timeout to 0 means fail immediately.
+
+.SH "SINGLE CHAR ESCAPE SEQUENCES"
+The following escape sequences can be used to option \-e and \-s. The sequences
+should be surrounded by ' (single quotes).
+.PP
+.IP
+.B "\\\\a"
+Alert, decimal 7.
+.IP
+.B "\\\\b"
+Backspace, decimal 8.
+.IP
+.B "\\\\f"
+Formfeed, decimal 12.
+.IP
+.B "\\\\n"
+Newline, decimal 10.
+.IP
+.B "\\\\r"
+Carriage Return, decimal 13.
+.IP
+.B "\\\\t"
+Horizontal Tabulator, decimal 9.
+.IP
+.B "\\\\v"
+Vertical Tabulator, decimal 11.
+.IP
+.B "\\\\""
+Double quote, decimal 34.
+.IP
+.B "\\\\'"
+Single quote, decimal 39.
+.IP
+.B "\\\\?"
+Question mark, decimal 63.
+.IP
+.B "\\\\\\\\"
+Backslash, decimal 92.
+.IP
+.B "\\\\0"
+ASCII Nul, decimal 0.
+.IP
+.B "\\\\xdd"
+Hexadecimal, d [0-9a-fA-F].
+.IP
+.B "\\\\ddd"
+Octal, d [0-7].
+
+.SH RETURNCODES
+.B bdb
+returns the following values to $?:
+.PP
+0 - Operation succeeded.
+.br
+1 - Exist, operation succeeded but key was not found.
+.br
+2 - Operation didn't succeed.
+.br
+128 - Unknown command.
+.br
+129 - Wrong argument count (you forgot something :-)
+.br
+130 - Couldn't open outputfile.
+.br
+131 - Couldn't open database for reading or writing.
+.br
+132 - Couldn't set options on database.
+.br
+133 - No [value] given.
+.br
+134 - No valuefile [file] given.
+.br
+135 - No [key] given.
+.br
+140+ - A signal was caught.
+
+.SH "SEE ALSO"
+.I gdbm
+(3)
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

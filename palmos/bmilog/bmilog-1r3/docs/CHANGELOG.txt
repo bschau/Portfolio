@@ -1,0 +1,17 @@
+Changelog for BMILog.
+
+v1r3 (2003-05-10)
+	Sorts the database whenever a HotSync occurs. This way, everything
+	comes out just nice if you install your date into a fresh installation
+	of BMILog on your PDA.
+
+v1r2 (2003-04-27)
+	French translation by Antoine - freewarefrance.com.
+	Support for Palm Print
+		(http://www.stevenscreek.com/palm/palmprint.shtml)
+
+	Fixed a nasty database bug which allowed multiple entries pr. day and
+	which made the history come out ... nasty.
+	
+v1r1 (2003-04-25)
+	Initial release of BMILog.

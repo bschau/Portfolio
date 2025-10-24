@@ -1,0 +1,17 @@
+fps "25"
+swfname "ota.swf"
+version 8
+# this is a comment
+bbox 39x39
+output "ota.sc"
+quality 100%
+type png
+lo 0%
+hi 100%
+generatehtml
+fadeframes 20
+pauseframes 50
+effect ota
+picture circle.png
+picture diamond.png
+picture square.png

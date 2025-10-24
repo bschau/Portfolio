@@ -1,0 +1,156 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of PXSc to get a feeling of how the various screens are laid out.
+# You can install PXSc to a Palm OS Simulator or Emulator and have the
+# english version running while translating the text.
+#
+# This is the default language file for the English language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# The german language file is maintained by:
+#
+#	Norbert Kirch <LHIDKCSPAVBJ@spammotel.com>
+
+# Strings
+Str01			Phase 10 Score Card was made by\n\nBrian Schau.\n\nPlease visit my website at:\n\n  http://www.schau.com/\n\nOn the website you will find the latest version of Phase 10 Score Card, a user manual and a FAQ.\n\nPhase 10 is a trademark of Ravensburger Spielverlag.\n\n\n
+Str02			Nicht belegt
+Str03			Spielerverwaltung
+Str04			Spieler auswählen
+Str05			2 Drillinge
+Str06			1 Drilling und 1 Viererfolge
+Str07			1 Vierling und 1 Viererfolge
+Str08			1 Siebenerfolge
+Str09			1 Achterfolge
+Str10			1 Neunerfolge
+Str11			2 Vierlinge
+Str12			7 Karten einer Farbe
+Str13			1 Fünfling und 1 Zwilling
+Str14			1 Fünfling und 1 Drilling
+Str15			Spiel gestartet
+Str16			Spiel beendet
+
+# Alerts
+aOK			OK
+aYes			Ja
+aNo			Nein
+
+aBadRomTitle		PalmOS zu alt.
+aBadRomText		Das PalmOS in diesem Gerät ist zu alt. PalmOS v3.1 oder höher ist notwendig für diese Anwendung.
+aCannotOpenDatabaseTitle	Fehler beim Öffnen der Datenbank
+aCannotOpenDatabaseText		Datenbank kann nicht geöffnet werden.
+aDeletePlayerTitle	Spieler löschen?
+aDeletePlayerText	Möchten Sie diesen Spieler löschen?
+aNeedsPlayerTitle	Spieler erforderlich
+aNeedsPlayerText	Bitte Spieler zum Überarbeiten auswählen.
+aSelectPlayerTitle	Spieler wählen
+aSelectPlayerText	Wählen Sie einen Spieler aus.
+aNeedsMorePlayersTitle	Mehr Spieler erforderlich
+aNeedsMorePlayersText	Für Phase 10 werden 2-6 Spieler benötigt. Bitte wählen Sie einen oder mehrere weitere Spieler.
+aNeedsPointsTitle	Punkte nicht vergeben
+aNeedsPointsText	Bitte geben Sie mindenstens 0 Punkte im Punktestand ein.
+aScoreMissingTitle	Ein (oder mehrere) Spieler fehlen
+aScoreMissingText	Es wurden nicht alle Spielerergebnisser erfasst.
+
+# Menus
+Edit			Bearbeiten
+Undo			Rückgängig
+UndoKey			U
+Cut			Ausschneiden
+CutKey			X
+Copy			Kopieren
+CopyKey			C
+Paste			Einfügen
+PasteKey		P
+SelectAll		Alle Auswählen
+SelectAllKey		S
+Keyboard		Tastatur
+KeyboardKey		K
+Graffiti		Graffiti
+GraffitiKey		G
+
+Actions			Aktionen
+Players			Spieler
+PlayersKey		P
+About			Über
+NewGame			Neues Spiele
+
+# Buttons
+ButtonDone		Erledigt
+ButtonOK		OK
+ButtonNew		Neu
+ButtonEdit		Bearbeiten
+ButtonCancel		Rückgängig
+ButtonDelete		Löschen
+ButtonYes		Ja
+ButtonNo		Nein
+
+# fMain
+MainTitle		Phase 10 Punktekarte
+MainPlayer1		Spieler 1
+MainPlayer2		Spieler 2
+MainPlayer3		Spieler 3
+MainPlayer4		Spieler 4
+MainPlayer5		Spieler 5
+MainPlayer6		Spieler 6
+MainStart		Spiele starten
+
+# fAbout
+AboutTitle		Über Phase 10 Punktekarte
+AboutLabel1		Phase 10 Punktekarte
+AboutLabel2		Version
+
+# fPlayersEdit
+PlayersEditTitle	Spieler
+PlayersEditLabel1	Neuen Spielernamen erfassen
+
+# fInGame
+InGameTitle		Im Spiele
+InGameNext		Nächste Phase
+
+# fScore
+ScoreTitle		Spielerpunkte
+ScoreLabel1		Punktevergabe
+ScoreLabel2		Karte 1-9: 5 Punkte
+ScoreLabel3		Karte 10-12: 10 Punkte
+ScoreLabel4		Aussetzen-Karte: 15 Punkte
+ScoreLabel5		Joker: 25 Punkte
+ScoreLabel6		Spieler
+ScoreLabel7		Punkte
+ScoreCompleted		Phase beendet
+
+# fNewGame
+NewGameTitle		Neues Spiele starten?
+NewGameLabel1		Möchten Sie ein neues Spiel starten?
+NewGameSame		Die selben Spieler
+
+# fWinner
+WinnerTitle		Spiel beendet
+WinnerLabel		GEWINNER
+WinnerSame		Die selben Spieler
+WinnerButton		Neues Spiel
+WinnerExport		Export
+
+# fExport
+ExportTitle		Export
+ExportLabel1		Memo Titel:
+ExportLabel2		Export nach:
+ExportExport		Export

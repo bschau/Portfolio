@@ -1,0 +1,38 @@
+filecache
+=========
+
+Creates a simple file cache or file storage in WordPress. Files stored in this
+cache cannot be reached from the internet.
+
+
+Installation
+
+ 1. Download the plugin.
+ 2. Unpack it using gunzip or winzip.
+ 3. Copy the entire filecache folder to your WordPress plugin folder.
+ 4. Log on to WordPress and activate the plugin.
+
+
+Configuration
+
+ 1. Create a folder in the root of your web, f.ex. filecache.
+ 2. In WordPress, go to Settings->File Cache and set the path to the above
+    folder.  If the root of your web is /var/www/domain then the path to the
+    cache would be /var/www/domain/filecache.
+ 3. Add the following line to .htaccess in the filecache folder:
+
+        deny from all
+
+... or ...
+
+ 1. Create a folder outside the root of your web, f.ex. /home/filecache.
+ 2. In WordPress, go to Settings->File Cache and set the path to the above
+    folder.
+
+Usage
+
+To upload a file go to Media->File Cache in WordPress.  Use the browse button
+to locate a file and press upload.
+To download a file click the file name and select download.
+To delete a file click the file name and selecte delete.
+

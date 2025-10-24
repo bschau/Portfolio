@@ -1,0 +1,499 @@
+#include "resources.h"
+
+/*
+**	Global data.	
+*/
+VERSION "1r3"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/bmilogl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/bmilogl8.bmp" BPP 8
+	BITMAP "gfx/bmilogl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/bmilogs1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/bmilogs8.bmp" BPP 8
+	BITMAP "gfx/bmilogs8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+BITMAP ID bmpNegativeBW "gfx/negative-bw.bmp" COMPRESS
+BITMAP ID bmpNullBW "gfx/null-bw.bmp" COMPRESS
+BITMAP ID bmpPositiveBW "gfx/positive-bw.bmp" COMPRESS
+BITMAPCOLOR ID bmpNegativeColor "gfx/negative-color.bmp" TRANSPARENT 255 255 255 COMPRESS
+BITMAPCOLOR ID bmpNullColor "gfx/null-color.bmp" TRANSPARENT 255 255 255 COMPRESS
+BITMAPCOLOR ID bmpPositiveColor "gfx/positive-color.bmp" TRANSPARENT 255 255 255 COMPRESS
+
+STRING ID strSelectDate "@@strSelectDate@@"
+STRING ID strWhatIsTitle "@@strWhatIsTitle@@"
+STRING ID strWhatIsText "@@strWhatIsText@@"
+STRING ID strBMITableTitle "@@strBMITableTitle@@"
+STRING ID strBMITableTextAmerican "@@strBMITableTextAmerican@@"
+STRING ID strBMITableTextEuropean "@@strBMITableTextEuropean@@"
+STRING ID strCm "@@strCm@@"
+STRING ID strFeet "@@strFeet@@"
+STRING ID strInch "@@strInch@@"
+STRING ID strKg "@@strKg@@"
+STRING ID strLbs "@@strLbs@@"
+STRING ID strAbout "@@strAbout@@"
+STRING ID strName "@@strName@@"
+STRING ID strDate "@@strDate@@"
+STRING ID strBMI "@@strBMI@@"
+STRING ID strFeetInch "@@strFeetInch@@"
+
+/*
+**	Menu
+*/
+MENU sysEditMenuID
+BEGIN
+	PULLDOWN "@@EditMenuName@@"
+	BEGIN
+		MENUITEM "@@EditMenuUndo@@" 10000 "U"
+		MENUITEM "@@EditMenuCut@@" 10001 "X"
+		MENUITEM "@@EditMenuCopy@@" 10002 "C"
+		MENUITEM "@@EditMenuPaste@@" 10003 "P"
+		MENUITEM "@@EditMenuSelect@@" 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "@@EditMenuKeyboard@@" 10006 "K"
+		MENUITEM "@@EditMenuGraffiti@@" 10007 "G"
+	END
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "@@QueryMenu@@"
+	BEGIN
+		MENUITEM "@@QueryFindHeight@@" mQueryFindHeight "H"
+		MENUITEM "@@QueryFindWeight@@" mQueryFindWeight "W"
+		MENUITEM SEPARATOR
+		MENUITEM "@@QueryConversion@@" mQueryConversion "C"
+	END
+
+	PULLDOWN "@@OptionsMenu@@"
+	BEGIN
+		MENUITEM "@@OptionsPreferences@@" mOptionsPreferences "P"
+	END
+
+	PULLDOWN "@@AboutMenu@@"
+	BEGIN
+		MENUITEM "@@AboutBMITable@@" mAboutBMITable
+		MENUITEM "@@AboutWhatIs@@" mAboutWhatIs
+		MENUITEM SEPARATOR
+		MENUITEM "@@AboutAbout@@" mAboutAbout
+	END
+END
+
+/*
+**	Alerts.
+*/
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "@@aBadRomTitle@@"
+	MESSAGE "@@aBadRomText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aNoSuchForm
+INFORMATION
+BEGIN
+	TITLE "@@aNoSuchFormTitle@@"
+	MESSAGE "@@aNoSuchFormText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "@@aCannotOpenDatabaseTitle@@"
+	MESSAGE "@@aCannotOpenDatabaseText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aDeletePerson
+DEFAULTBUTTON 1
+CONFIRMATION
+BEGIN
+	TITLE "@@aDeletePersonTitle@@"
+	MESSAGE "@@aDeletePersonText@@"
+	BUTTONS "@@AlertButtonYes@@" "@@AlertButtonNo@@"
+END
+
+ALERT ID aNameExists
+INFORMATION
+BEGIN
+	TITLE "@@aNameExistsTitle@@"
+	MESSAGE "@@aNameExistsText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aNotNull
+INFORMATION
+BEGIN
+	TITLE "@@aNotNullTitle@@"
+	MESSAGE "@@aNotNullText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aKgCmHeightInvalid
+INFORMATION
+BEGIN
+	TITLE "@@aKgCmHeightInvalidTitle@@"
+	MESSAGE "@@aKgCmHeightInvalidText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aWeightInvalid
+INFORMATION
+BEGIN
+	TITLE "@@aWeightInvalidTitle@@"
+	MESSAGE "@@aWeightInvalidText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aDeleteBMIEntry
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aDeleteBMIEntryTitle@@"
+	MESSAGE "@@aDeleteBMIEntryText@@"
+	BUTTONS "@@AlertButtonYes@@" "@@AlertButtonNo@@"
+END
+
+ALERT ID aBMIInfo
+INFORMATION
+BEGIN
+	TITLE "@@aBMIInfoTitle@@"
+	MESSAGE "@@aBMIInfoText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aFeetHeightInvalid
+INFORMATION
+BEGIN
+	TITLE "@@aFeetHeightInvalidTitle@@"
+	MESSAGE "@@aFeetHeightInvalidText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aInchHeightInvalid
+INFORMATION
+BEGIN
+	TITLE "@@aInchHeightInvalidTitle@@"
+	MESSAGE "@@aInchHeightInvalidText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aEitherKgOrLbs
+INFORMATION
+BEGIN
+	TITLE "@@aEitherKgOrLbsTitle@@"
+	MESSAGE "@@aEitherKgOrLbsText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aEitherCmOrFeetInch
+INFORMATION
+BEGIN
+	TITLE "@@aEitherCmOrFeetInchTitle@@"
+	MESSAGE "@@aEitherCmOrFeetInchText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID aBMIExists
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aBMIExistsTitle@@"
+	MESSAGE "@@aBMIExistsText@@"
+	BUTTONS "@@AlertButtonYes@@" "@@AlertButtonNo@@"
+END
+
+ALERT ID aNothingToPrint
+INFORMATION
+BEGIN
+	TITLE "@@aNothingToPrintTitle@@"
+	MESSAGE "@@aNothingToPrintText@@"
+	BUTTONS "@@AlertButtonOK@@"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+**	Forms.
+*/
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "@@fMTitle@@"
+
+	TABLE ID fMainTable AT (1 18 150 122) ROWS MainTableLines COLUMNS 3 COLUMNWIDTHS 10 13 117
+	SCROLLBAR ID fMainScrollBar AT (151 18 7 122) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+
+	BUTTON "@@fMButtonNew@@" ID fMainNew AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fEditPerson AT (2 86 156 72)
+MODAL
+NOFRAME
+MENUID sysEditMenuID
+DEFAULTBUTTON fEPCancel
+BEGIN
+	TITLE "@@fEPTitle@@"
+
+	LABEL "@@fEPLabel@@:" AUTOID AT (RIGHT@36 20)
+	FIELD ID fEPName AT (40 20 100 12) UNDERLINED EDITABLE MAXCHARS MaxNameLength MULTIPLELINES AUTOSHIFT
+
+	LABEL "@@fEPFormat@@:" ID fEPFormatLabel AT (RIGHT@36 34) NONUSABLE
+	POPUPTRIGGER "" ID fEPFormatPopup AT (40 34 AUTO AUTO) LEFTANCHOR NONUSABLE
+	LIST "@@fPreferencesFormat1@@" "@@fPreferencesFormat2@@" ID fEPFormatList AT (40 34 AUTO AUTO) VISIBLEITEMS 2 NONUSABLE
+	POPUPLIST ID fEPFormatPopup fEPFormatList
+
+	GRAFFITISTATEINDICATOR AT (144 59)
+	BUTTON "@@fEPOK@@" ID fEPOK AT (4 BOTTOM@69 AUTO AUTO)
+	BUTTON "@@fEPCancel@@" ID fEPCancel AT (PREVRIGHT+4 BOTTOM@69 AUTO AUTO)
+	BUTTON "@@fEPDelete@@" ID fEPDelete AT (PREVRIGHT+4 BOTTOM@69 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fHistoryKgCm AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fHistoryDone
+BEGIN
+	TITLE "@@fHistoryTitle@@"
+
+	LABEL "@@fHistoryName@@:" AUTOID AT (1 18)
+	FIELD ID fHistoryName AT (PREVRIGHT+4 18 128 AUTO) MAXCHARS MaxNameLength NONEDITABLE FONT 1
+
+	LABEL "@@fHistoryDate@@" AUTOID AT (RIGHT@45 34) FONT 1
+	LABEL "@@fHistoryCm@@" AUTOID AT (RIGHT@71 34) FONT 1
+	LABEL "@@fHistoryKg@@" AUTOID AT (RIGHT@97 34) FONT 1
+	LABEL "@@fHistoryBMI@@" AUTOID AT (RIGHT@128 34) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 34) FONT 0
+
+	TABLE ID fHistoryTable AT (1 49 150 88) ROWS HistoryTableLines COLUMNS 5 COLUMNWIDTHS 45 25 25 30 20
+	SCROLLBAR ID fHistoryScrollBar AT (151 49 7 88) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+
+	BUTTON "@@fHistoryDone@@" ID fHistoryDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fHistoryNew@@" ID fHistoryNew AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fHistoryPrint@@" ID fHistoryPrint AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fHistoryLbsInch AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fHistoryDone
+BEGIN
+	TITLE "@@fHistoryTitle@@"
+
+	LABEL "@@fHistoryName@@:" AUTOID AT (1 18)
+	FIELD ID fHistoryName AT (PREVRIGHT+4 18 128 AUTO) MAXCHARS MaxNameLength NONEDITABLE FONT 1
+
+	LABEL "@@fHistoryDate@@" AUTOID AT (RIGHT@40 34) FONT 1
+	LABEL "@@fHistoryFeetInch@@" AUTOID AT (RIGHT@71 34) FONT 1
+	LABEL "@@fHistoryLbs@@" AUTOID AT (RIGHT@97 34) FONT 1
+	LABEL "@@fHistoryBMI@@" AUTOID AT (RIGHT@128 34) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 34) FONT 0
+
+	TABLE ID fHistoryTable AT (1 49 150 88) ROWS HistoryTableLines COLUMNS 5 COLUMNWIDTHS 40 30 25 30 20
+	SCROLLBAR ID fHistoryScrollBar AT (151 49 7 88) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+
+	BUTTON "@@fHistoryDone@@" ID fHistoryDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fHistoryNew@@" ID fHistoryNew AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fHistoryPrint@@" ID fHistoryPrint AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fHistoryEditKgCm AT (2 68 156 90)
+MODAL
+DEFAULTBUTTON fHistoryEditCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "@@fHistoryEditTitle@@"
+	LABEL "@@fHistoryEditDate@@:" AUTOID AT (RIGHT@36 18)
+	SELECTORTRIGGER "" ID fHistoryEditDate AT (40 18 AUTO AUTO) 
+
+	LABEL "@@fHistoryEditHeight@@:" AUTOID AT (RIGHT@36 34)
+	FIELD ID fHistoryEditHeight1 AT (40 34 18 AUTO) MAXCHARS MaxHeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fHistoryEditCm@@" AUTOID AT (PREVRIGHT+2 34)
+
+	LABEL "@@fHistoryEditWeight@@:" AUTOID AT (RIGHT@36 50)
+	FIELD ID fHistoryEditWeight AT (40 50 18 AUTO) MAXCHARS MaxWeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fHistoryEditKg@@" AUTOID AT (PREVRIGHT+2 50)
+
+	BUTTON "@@fHistoryEditOK@@" ID fHistoryEditOK AT (3 BOTTOM@87 AUTO AUTO)
+	BUTTON "@@fHistoryEditCancel@@" ID fHistoryEditCancel AT (PREVRIGHT+4 BOTTOM@87 AUTO AUTO)
+END
+
+FORM ID fHistoryEditLbsInch AT (2 68 156 90)
+MODAL
+DEFAULTBUTTON fHistoryEditCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "@@fHistoryEditTitle@@"
+	LABEL "@@fHistoryEditDate@@:" AUTOID AT (RIGHT@36 18)
+	SELECTORTRIGGER "" ID fHistoryEditDate AT (40 18 AUTO AUTO) 
+
+	LABEL "@@fHistoryEditHeight@@:" AUTOID AT (RIGHT@36 34)
+	FIELD ID fHistoryEditHeight1 AT (40 34 18 AUTO) MAXCHARS MaxHeightLengthFeet UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fHistoryEditFeet@@" AUTOID AT (PREVRIGHT+2 34)
+	FIELD ID fHistoryEditHeight2 AT (PREVRIGHT+2 34 18 AUTO) MAXCHARS MaxHeightLengthInch UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fHistoryEditInch@@" AUTOID AT (PREVRIGHT+2 34)
+
+	LABEL "@@fHistoryEditWeight@@:" AUTOID AT (RIGHT@36 50)
+	FIELD ID fHistoryEditWeight AT (40 50 18 AUTO) MAXCHARS MaxWeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fHistoryEditLbs@@" AUTOID AT (PREVRIGHT+2 50)
+
+	BUTTON "@@fHistoryEditOK@@" ID fHistoryEditOK AT (3 BOTTOM@87 AUTO AUTO)
+	BUTTON "@@fHistoryEditCancel@@" ID fHistoryEditCancel AT (PREVRIGHT+4 BOTTOM@87 AUTO AUTO)
+END
+
+FORM ID fAboutAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "@@fAboutAbout@@ BMILog"
+
+	LABEL "BMILog" AUTOID AT (CENTER 20) FONT 7
+	LABEL "@@fAboutVersion@@ 1r3" AUTOID AT (CENTER 40)
+	FIELD ID fAboutAboutText AT (4 60 140 66) NONEDITABLE MAXCHARS MaxHelpLength MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID fAboutAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6 
+	BUTTON "@@fAboutDone@@" ID fAboutAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fPreferences AT (2 88 156 70)
+MODAL
+DEFAULTBUTTON fPreferencesCancel
+BEGIN
+	TITLE "@@fPreferences@@"
+
+	LABEL "@@fPreferencesTable@@:" AUTOID AT (RIGHT@48 20)
+	POPUPTRIGGER "" ID fPreferencesTablePopup AT (50 20 AUTO AUTO) LEFTANCHOR
+	LIST "@@fPreferencesTable1@@" "@@fPreferencesTable2@@" ID fPreferencesTableList AT (50 20 AUTO AUTO) VISIBLEITEMS 2 NONUSABLE
+	POPUPLIST ID fPreferencesTablePopup fPreferencesTableList
+
+	LABEL "@@fPreferencesFormat@@:" AUTOID AT (RIGHT@48 34)
+	POPUPTRIGGER "" ID fPreferencesFormatPopup AT (50 34 AUTO AUTO) LEFTANCHOR
+	LIST "@@fPreferencesFormat1@@" "@@fPreferencesFormat2@@" ID fPreferencesFormatList AT (50 34 AUTO AUTO) VISIBLEITEMS 2 NONUSABLE
+	POPUPLIST ID fPreferencesFormatPopup fPreferencesFormatList
+
+	BUTTON "@@fPreferencesOK@@" ID fPreferencesOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "@@fPreferencesCancel@@" ID fPreferencesCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END
+
+FORM ID fAboutHelp AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE ""
+
+	FIELD ID fAboutHelpText AT (4 18 140 110) NONEDITABLE MAXCHARS MaxHelpLength MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID fAboutHelpScrollBar AT (146 18 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 10
+	BUTTON "@@fAboutHelpDone@@" ID fAboutHelpDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fConversion AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fConversionDone
+BEGIN
+	TITLE "@@fConversionTitle@@"
+
+// Feet/Inch to Cm
+	LABEL "@@fConversion1@@:" AUTOID AT (1 18)
+	FIELD ID fConversionFeet AT (40 32 12 AUTO) MAXCHARS MaxHeightLengthFeet UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fConversionFeet@@" AUTOID AT (PREVRIGHT+2 32)
+	FIELD ID fConversionInch AT (PREVRIGHT+2 32 12 AUTO) MAXCHARS MaxHeightLengthInch UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fConversionInch@@" AUTOID AT (PREVRIGHT+2 32)
+
+	LABEL "=" AUTOID AT (90 32)
+	FIELD ID fConversionFeetInchA AT (PREVRIGHT+4 32 30 AUTO) MAXCHARS MaxAnswerLength NONEDITABLE FONT 1 RIGHTALIGN
+	LABEL "@@fConversionCm@@" AUTOID AT (PREVRIGHT+2 32)
+
+// Cm to feet/inch
+	LABEL "@@fConversion2@@:" AUTOID AT (1 50)
+	FIELD ID fConversionCm AT (40 62 18 AUTO) MAXCHARS MaxHeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fConversionCm@@" AUTOID AT (PREVRIGHT+2 62)
+
+	LABEL "=" AUTOID AT (90 62)
+	FIELD ID fConversionCmAFeet AT (PREVRIGHT+4 62 12 AUTO) MAXCHARS MaxHeightLengthFeet NONEDITABLE RIGHTALIGN FONT 1
+	LABEL "@@fConversionFeet@@" AUTOID AT (PREVRIGHT+2 62)
+	FIELD ID fConversionCmAInch AT (PREVRIGHT+2 62 12 AUTO) MAXCHARS MaxHeightLengthInch NONEDITABLE RIGHTALIGN FONT 1
+	LABEL "@@fConversionInch@@" AUTOID AT (PREVRIGHT+2 62)
+
+// Lbs to kg
+	LABEL "@@fConversion3@@:" AUTOID AT (1 80)
+	FIELD ID fConversionLbs AT (40 92 18 AUTO) MAXCHARS MaxWeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fConversionLbs@@" AUTOID AT (PREVRIGHT+2 92)
+
+	LABEL "=" AUTOID AT (90 92)
+	FIELD ID fConversionLbsA AT (PREVRIGHT+4 92 30 AUTO) MAXCHARS MaxAnswerLength NONEDITABLE RIGHTALIGN FONT 1
+	LABEL "@@fConversionKg@@" AUTOID AT (PREVRIGHT+2 92)
+
+// Kg to lbs
+	LABEL "@@fConversion4@@:" AUTOID AT (1 110)
+	FIELD ID fConversionKg AT (40 122 18 AUTO) MAXCHARS MaxWeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fConversionKg@@" AUTOID AT (PREVRIGHT+2 122)
+
+	LABEL "=" AUTOID AT (90 122)
+	FIELD ID fConversionKgA AT (PREVRIGHT+4 122 30 AUTO) MAXCHARS MaxAnswerLength NONEDITABLE RIGHTALIGN FONT 1
+	LABEL "@@fConversionLbs@@" AUTOID AT (PREVRIGHT+2 122)
+
+	BUTTON "@@fConversionDone@@" ID fConversionDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fConversionSolve@@" ID fConversionSolve AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fConversionClear@@" ID fConversionClear AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fQueryFindHeight AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fQueryFindHeightDone
+BEGIN
+	TITLE "@@fQueryFindHeightTitle@@"
+
+	LABEL "@@fQueryFindHeightTable@@:" AUTOID AT (RIGHT@68 20)
+	POPUPTRIGGER "" ID fQueryFindHeightTablePopup AT (70 20 AUTO AUTO) LEFTANCHOR
+	LIST "@@fPreferencesTable1@@" "@@fPreferencesTable2@@" ID fQueryFindHeightTableList AT (70 20 AUTO AUTO) VISIBLEITEMS 2 NONUSABLE
+	POPUPLIST ID fQueryFindHeightTablePopup fQueryFindHeightTableList
+
+	LABEL "@@fQueryFindHeightKg@@:" AUTOID AT (RIGHT@68 36)
+	FIELD ID fQueryFindHeightKg AT (PREVRIGHT+2 36 18 AUTO) MAXCHARS MaxWeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fQueryFindHeightLbs@@:" AUTOID AT (RIGHT@68 52)
+	FIELD ID fQueryFindHeightLbs AT (PREVRIGHT+2 52 18 AUTO) MAXCHARS MaxWeightLength UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fQueryFindHeightOptimal@@:" AUTOID AT (RIGHT@68 80)
+	FIELD ID fQueryFindHeightOptimal AT (PREVRIGHT+2 80 88 44) MAXCHARS MaxAnswerLength NONEDITABLE MULTIPLELINES FONT 1
+
+	BUTTON "@@fQueryFindHeightDone@@" ID fQueryFindHeightDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fQueryFindHeightSolve@@" ID fQueryFindHeightSolve AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fQueryFindHeightClear@@" ID fQueryFindHeightClear AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fQueryFindWeight AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON fQueryFindWeightDone
+BEGIN
+	TITLE "@@fQueryFindWeightTitle@@"
+
+	LABEL "@@fQueryFindWeightTable@@:" AUTOID AT (RIGHT@68 20)
+	POPUPTRIGGER "" ID fQueryFindWeightTablePopup AT (70 20 AUTO AUTO) LEFTANCHOR
+	LIST "@@fPreferencesTable1@@" "@@fPreferencesTable2@@" ID fQueryFindWeightTableList AT (70 20 AUTO AUTO) VISIBLEITEMS 2 NONUSABLE
+	POPUPLIST ID fQueryFindWeightTablePopup fQueryFindWeightTableList
+
+	LABEL "@@fQueryFindWeightCm@@:" AUTOID AT (RIGHT@68 36)
+	FIELD ID fQueryFindWeightCm AT (PREVRIGHT+2 36 18 AUTO) MAXCHARS MaxHeightLength UNDERLINED EDITABLE NUMERIC
+
+	LABEL "@@fQueryFindWeightFeetInch@@:" AUTOID AT (RIGHT@68 52)
+	FIELD ID fQueryFindWeightFeet AT (70 52 12 AUTO) MAXCHARS MaxHeightLengthFeet UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fQueryFindWeightFeet@@" AUTOID AT (PREVRIGHT+2 52)
+	FIELD ID fQueryFindWeightInch AT (PREVRIGHT+2 52 12 AUTO) MAXCHARS MaxHeightLengthInch UNDERLINED EDITABLE NUMERIC
+	LABEL "@@fQueryFindWeightInch@@" AUTOID AT (PREVRIGHT+2 52)
+
+	LABEL "@@fQueryFindWeightOptimal@@:" AUTOID AT (RIGHT@68 80)
+	FIELD ID fQueryFindWeightOptimal AT (PREVRIGHT+2 80 88 44) MAXCHARS MaxAnswerLength NONEDITABLE MULTIPLELINES FONT 1
+
+	BUTTON "@@fQueryFindWeightDone@@" ID fQueryFindWeightDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fQueryFindWeightSolve@@" ID fQueryFindWeightSolve AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fQueryFindWeightClear@@" ID fQueryFindWeightClear AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+

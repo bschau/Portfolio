@@ -1,0 +1,29 @@
+CC	=	m68k-palmos-gcc
+AS	=	m68k-palmos-as
+CFLAGS	=	-Wall -O2 -I .. -I ../../api
+SOURCES	=	Keyboard
+DST	=	iSecur-Keyboard.prc
+
+all:	
+	lmake -C build -f ../LMakefile build
+
+initall:
+	mkdir build
+
+build:
+	m68k-palmos-stubgen ../Keyboard.def
+	$(AS) -o Keyboard-dispatch.o Keyboard-dispatch.s
+	< $(SOURCES) > compile
+	$(CC) -nostartfiles -o Keyboard.ex $(SOURCES).o Keyboard-dispatch.o
+	pilrc -I .. -I ../../api -allowEditID ../Keyboard.rcp
+	build-prc -t 'kbde' -o ../$(DST) ../Keyboard.def Keyboard.ex *.bin
+
+compile:
+	depend $<.o ../$<.c || $(CC) $(CFLAGS) -c ../$<.c
+
+clean:
+	rm -f build/* *~
+	rm -f $(DST)
+
+distclean:	clean
+	rm -fr build

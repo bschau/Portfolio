@@ -1,0 +1,47 @@
+.TH GLTTF 1
+.SH NAME
+glttf \- create Open GL ES truetype font bitmap and font sizes
+
+.SH SYNOPSIS
+.B glttf
+[OPTIONS] path-to-font font-size
+.SH DESCRIPTION
+.PP
+glttf is used to create a font file for Open GL ES rendering. The output from glttf is a font.png file and a font.txt file with the size of the individual glyph.
+.SH
+.TP
+\fB-B back\fR
+Background color.
+.TP
+\fB-C fore\fR
+Foreground color.
+.TP
+\fB-S size\fR
+Size of space character.
+.TP
+\fB-c char\fR
+Start character.
+.TP
+\fB-f path\fR
+Output font path.
+.TP
+\fB-g size\fR
+Glyph size.
+.TP
+\fB-h\fR
+Help.
+.TP
+\fB-l cnt\fR
+Glyphs pr. line.
+.TP
+\fB-n cnt\fR
+Number of glyphs.
+.TP
+\fB-t path\fR
+Output fontsize path.
+.TP
+Run glttf without any options to see the defaults used in the program.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>
+

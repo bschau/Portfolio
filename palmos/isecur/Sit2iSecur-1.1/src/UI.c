@@ -1,0 +1,289 @@
+/*
+ * UI.c
+ */
+#include "Include.h"
+
+/*
+ * UIObjectGet
+ *
+ * Return pointer to form object given by id.
+ *
+ *  -> id		Object ID.
+ *
+ * Returns pointer or NULL (not found).
+ */
+void *
+UIObjectGet(UInt16 id)
+{
+	return FrmGetObjectPtr(currentForm, FrmGetObjectIndex(currentForm, id));
+}
+
+/*
+ * UIFieldFocus
+ *
+ * Bring this field to Focus.
+ *
+ *   -> id		Field id in current form.
+ */
+void
+UIFieldFocus(UInt16 id)
+{
+	FrmSetFocus(currentForm, FrmGetObjectIndex(currentForm, id));
+}
+
+/*
+ * UIFieldRefocus
+ *
+ * Refocus insertion point.
+ *
+ *  -> focusBand	Array of object IDs to switch between.
+ *  -> evChr	Event character.
+ *
+ * Returns true if refocussed, false otherwise.
+ */
+Boolean
+UIFieldRefocus(UInt16 *focusBand, WChar evChr)
+{
+	Int16 idx, focusIdx, zeroPos, startPos;
+	UInt16 id;
+	FieldAttrType attr;
+
+	if ((focusIdx=FrmGetFocus(currentForm))==noFocus)
+		return false;
+
+	id=FrmGetObjectId(currentForm, focusIdx);
+
+	startPos=-1;
+	for (zeroPos=0; focusBand[zeroPos]; zeroPos++) {
+		if (focusBand[zeroPos]==id)
+			startPos=zeroPos;
+	}
+
+	if (startPos==-1)
+		return false;
+
+	if (evChr==prevFieldChr || evChr==pageUpChr) {
+		for (idx=startPos-1; ; ) {
+			if (idx<0)
+				idx=zeroPos-1;
+
+			id=focusBand[idx];
+			FldGetAttributes(UIObjectGet(id), &attr);
+			if (attr.editable && attr.usable) {
+				FrmSetFocus(currentForm, FrmGetObjectIndex(currentForm, id));
+				return true;
+			}
+			idx--;
+			if (idx==startPos)
+				break;
+		}
+	} else if (evChr==nextFieldChr || evChr==pageDownChr) {
+		for (idx=startPos+1; ; ) {
+			if (focusBand[idx]==0)
+				idx=0;
+
+			id=focusBand[idx];
+			FldGetAttributes(UIObjectGet(id), &attr);
+			if (attr.editable && attr.usable) {
+				FrmSetFocus(currentForm, FrmGetObjectIndex(currentForm, id));
+				return true;
+			}
+			idx++;
+			if (idx==startPos)
+				break;
+		}
+	}
+
+	return false;
+}
+
+/*
+ * UIFieldGetText
+ *
+ * Get text field pointer.
+ *
+ *  -> id		Field id in current form.
+ *
+ * Returns whatever pointer is in the field.  Beware! Can be NULL!
+ */
+Char *
+UIFieldGetText(UInt16 id)
+{
+	return FldGetTextPtr(UIObjectGet(id));
+}
+
+/*
+ * UIFieldSetText
+ *
+ * Update field with copy of buffer.  Any previous text is discarded.
+ *
+ *  -> id		Field id in current form.
+ *  -> buffer		Buffer to get text from.
+ */
+void
+UIFieldSetText(UInt16 id, Char *buffer)
+{
+	FieldType *fld=UIObjectGet(id);
+	UInt16 tLen=StrLen(buffer), max;
+	MemHandle mh, oldH;
+	Char *tp;
+
+	if ((max=FldGetMaxChars(fld))>0) {
+		if (max<tLen)
+			tLen=max;
+	} else
+		max=tLen;
+
+	mh=MemHandleNew(max+1);
+	ErrFatalDisplayIf(mh==NULL, "(UIFieldSetText) Out of memory");
+
+	tp=MemHandleLock(mh);
+	if (tLen) 
+		MemMove(tp, buffer, tLen);
+
+	tp[tLen]='\x00';
+	MemHandleUnlock(mh);
+
+	oldH=FldGetTextHandle(fld);
+	FldSetTextHandle(fld, mh);
+
+	if (oldH)
+		MemHandleFree(oldH);
+
+	FldDrawField(fld);
+}
+
+/*
+ * UIFieldScrollBarHandler
+ *
+ * Handler for scrollbar events.
+ *
+ *  -> ev		Event.
+ *  -> fId		Field ID.
+ *  -> sId		ScrollBar ID.
+ *
+ * Returns true if handled, false otherwise.
+ */
+Boolean
+UIFieldScrollBarHandler(EventType *ev, UInt16 fId, UInt16 sId)
+{
+	if (ev->eType==fldChangedEvent) {
+		if (ev->data.fldChanged.fieldID==fId) {
+			UIFieldUpdateScrollBar(fId, sId);
+			return true;
+		}
+	} else if (ev->eType==sclRepeatEvent) {
+		if (ev->data.sclRepeat.scrollBarID==sId) {
+			UIFieldScrollLines(fId, ev->data.sclRepeat.newValue-ev->data.sclRepeat.value);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/*
+ * UIFieldScrollBarKeyHandler
+ *
+ * Handler for scrollbar key events.
+ *
+ *  -> ev		Event.
+ *  -> fId		Field ID.
+ *  -> sId		ScrollBar ID.
+ *
+ * Returns true if handled, false otherwise.
+ */
+Boolean
+UIFieldScrollBarKeyHandler(EventType *ev, UInt16 fId, UInt16 sId)
+{
+	Int16 focusIndex;
+	UInt16 focusId;
+
+	if ((focusIndex=FrmGetFocus(currentForm))==noFocus)
+		return false;
+
+	if ((focusId=FrmGetObjectId(currentForm, focusIndex))==fId) {
+		if (ev->data.keyDown.chr==pageUpChr) {
+			UIFieldPageScroll(fId, sId, winUp);
+			return true;
+		} else if (ev->data.keyDown.chr==pageDownChr) {
+			UIFieldPageScroll(fId, sId, winDown);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/*
+ * UIFieldUpdateScrollBar
+ *
+ * Update scrollbar based on field attributes.
+ *
+ *  -> fId		Field ID.
+ *  -> sId		ScrollBar ID.
+ */
+void
+UIFieldUpdateScrollBar(UInt16 fId, UInt16 sId)
+{
+	FieldType *fld=UIObjectGet(fId);
+	ScrollBarType *scr=UIObjectGet(sId);
+	UInt16 mv=0, curPos, txtH, fldH;
+
+	FldGetScrollValues(fld, &curPos, &txtH, &fldH);
+
+	if (txtH>fldH)
+		mv=txtH-fldH;
+	else {
+		if (curPos)
+			mv=curPos;
+	}
+
+	SclSetScrollBar(scr, curPos, 0, mv, fldH-1);
+}
+
+/*
+ * UIFieldScrollLines
+ *
+ * Scroll field number of lines.
+ *
+ *  -> fId		Field ID.
+ *  -> num		Number of lines to scroll.
+ */
+void
+UIFieldScrollLines(UInt16 fId, Int16 num)
+{
+	FieldType *fld=UIObjectGet(fId);
+
+	if (num<0)
+		FldScrollField(fld, -num, winUp);
+	else
+		FldScrollField(fld, num, winDown);
+}
+
+/*
+ * UIFieldPageScroll
+ *
+ * Scroll field a page.
+ *
+ *  -> fId		Field ID.
+ *  -> sId		ScrollBar ID.
+ *  -> dir		Direction to scroll.
+ */
+void
+UIFieldPageScroll(UInt16 fId, UInt16 sId, WinDirectionType dir)
+{
+	FieldType *fld=UIObjectGet(fId);
+
+	if (FldScrollable(fld, dir)) {
+		Int16 lts;
+
+		lts=FldGetVisibleLines(fld)-1;
+
+		if (dir==winUp)
+			lts=-lts;
+
+		UIFieldScrollLines(fId, lts);
+		UIFieldUpdateScrollBar(fId, sId);
+	}
+}

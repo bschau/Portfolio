@@ -1,0 +1,195 @@
+ Brian,
+I was just writing this e-mail when I received your last message:
+
+Rules!!!
+
+Everything went OK and now I'm a proud user of iSecur. Thanks a lot!.
+
+Where in Denmark do you live?. I've been in Nordborg and Kolding one
+year ago for a Danfoss training course: I do really enjoyed the visit
+very much and your country is really beautiful (and food is really good
+too... oh my god!, I came back to Spain with 3 more kg in my body!;
+lovely breakfasts (what a nice different kinds of bread you have!) ;-)
+Have you ever been at Danfoss Universe
+(http://www.danfoss-teknorama.com/)? (Danfoss took us there and I had a
+very enjoyable time with colleges from all over the world).
+
+Thanks again for your program, your time, your fast response and your
+kindness.
+
+Ignacio
+
+BTW: Would you like to translate iSecur into Spanish?. I will be glad to
+translate current version and maintain upgrades of the program with a
+good and "academic" translation. Just tell how and I will be happy to do
+it. I offer my lovely T|X for betatesting too ;-).
+BTW2: I can see that you have good programming skills and that you like
+Palm... Do you admit ideas for software development?.
+
+-----Original Message-----
+From: Schau [mailto:schau@schau.com]
+Sent: martes, 07 de noviembre de 2006 22:54
+To: Sueiras Ignacio
+Subject: RE: [Sit2iSecur] Hmmm ... I wonder why ...
+
+Hey,
+
+Try the attached version. The version previously downloadable from
+my website was a debug version.
+I fixed that - it should work now ...
+
+BTW, did you know that your employer originates from Denmark where
+I live? :-)
+
+/brian
+
+
+--------- Original Message --------
+From: Sueiras Ignacio <isueiras@danfoss.es>
+To: Brian Schau <brian@schau.com>
+Subject: RE: [Sit2iSecur] Hmmm ... I wonder why ...
+Date: 07/11/06 05:13
+
+> iSecur runs OK after reinstall (I have input some data and
+&quot;played&quot; with
+> everything).
+> The problem seems to be in Sit2iSecur. Please, tell me if I can make
+> more tests and I will be glad to do them.
+>
+> Thx,
+>
+> Ignacio
+>
+> -----Original Message-----
+> From: Brian Schau [mailto:brian@schau.com]
+> Sent: martes, 07 de noviembre de 2006 19:57
+> To: Sueiras Ignacio
+> Subject: RE: [Sit2iSecur] Hmmm ... I wonder why ...
+>
+> Yes, indeed. What if you:
+>
+> 1) Deinstall Sit2iSecur, iSecur and any iSecur Icons you may have
+> installed.
+>
+> 2) Install iSecur, iSecur Library and the HiRes icon set.
+>
+> Please open iSecur - does it reset? I want to narrow down which
+> component may be the culprit ....
+>
+>
+> /brian
+>
+>
+> &gt; Hi Brian,
+> &gt; No, I'm affraid not. The Sit2iSecur resets my T|X before any
+wellcome
+> &gt; screen. One more thing: It harms iSecur too. After executing
+> Sit2iSecur
+> &gt; again to see if I can see some welcome message, it has reset my
+> device;
+> &gt; to my surprise, when I tryed to execute iSecur after the reset,
+iSecur
+> &gt; itself made the reset.
+> &gt;
+> &gt; Things are getting more complicated...
+> &gt;
+> &gt; Thanks for your help.
+> &gt;
+> &gt; Ignacio
+> &gt;
+> &gt; -----Original Message-----
+> &gt; From: Brian Schau [mailto:brian@schau.com]
+> &gt; Sent: lunes, 06 de noviembre de 2006 20:33
+> &gt; To: Sueiras Ignacio
+> &gt; Subject: RE: [Sit2iSecur] Hmmm ... I wonder why ...
+> &gt;
+> &gt; Hi,
+> &gt;
+> &gt;
+> &gt; You don't see a welcome screen?
+> &gt;
+> &gt;
+> &gt; /brian
+> &gt;
+> &gt; &gt; Hi,
+> &gt; &gt; Resets my device just when I try to execute it (it doesn't
+even
+> enter
+> &gt; &gt; into the initial message screen).
+> &gt; &gt;
+> &gt; &gt; Regards,
+> &gt; &gt;
+> &gt; &gt; Ignacio
+> &gt; &gt;
+> &gt; &gt; -----Original Message-----
+> &gt; &gt; From: Brian Schau [mailto:brian@schau.com]
+> &gt; &gt; Sent: lunes, 06 de noviembre de 2006 19:03
+> &gt; &gt; To: Sueiras Ignacio
+> &gt; &gt; Subject: Re: [Sit2iSecur] Hmmm ... I wonder why ...
+> &gt; &gt;
+> &gt; &gt; Hello,
+> &gt; &gt;
+> &gt; &gt;
+> &gt; &gt; When does it reset? After which step?
+> &gt; &gt;
+> &gt; &gt;
+> &gt; &gt; /brian
+> &gt; &gt;
+> &gt; &gt; &gt; This is a multi-part message in MIME format.
+> &gt; &gt; &gt;
+> &gt; &gt; &gt;
+> &gt; &gt; &gt;
+> &gt; &gt; &gt; Dear Brian,
+> &gt; &gt; &gt; Thank you very much for your nice programs, I love them
+and
+I do
+> &gt; &gt; really
+> &gt; &gt; &gt; appreciate people like you that makes good quality
+soft
+and put
+> &gt; that
+> &gt; &gt; &gt; soft under the GPL. THANKS! (you have made this world a
+little bit
+> &gt; &gt; &gt; better) ;-)
+> &gt; &gt; &gt;
+> &gt; &gt; &gt; And now... I wonder why... my Palm T|X hangs (black
+screen+reset)
+> &gt; when
+> &gt; &gt; I
+> &gt; &gt; &gt; try to move data between Secure it 2r13 and iSecur 1.3
+using
+> &gt; &gt; Sit2iSecure
+> &gt; &gt; &gt; 1.1.
+> &gt; &gt; &gt;
+> &gt; &gt; &gt; I have done the process twice (first time install +
+delete
+> &gt; everything
+> &gt; &gt; +
+> &gt; &gt; &gt; second installation) following the instructions in the
+manual and
+> &gt; both
+> &gt; &gt; &gt; times, when I try to run Sit2iSecur, my beloved Palm
+blanks
+and
+> &gt; resets
+> &gt; &gt; &gt; (no initial screen, nor anything...).
+> &gt; &gt; &gt;
+> &gt; &gt; &gt; Thx in advance.
+> &gt; &gt; &gt;
+> &gt; &gt; &gt; Ignacio Sueiras
+> &gt; &gt; &gt;
+> &gt; &gt; &gt;
+> &gt; &gt; &gt;
+> &gt; &gt;
+> &gt; &gt;
+> &gt; &gt;
+> &gt;
+> &gt;
+> &gt;
+>
+>
+>
+
+________________________________________________
+Message sent using UebiMiau 2.7.9
+

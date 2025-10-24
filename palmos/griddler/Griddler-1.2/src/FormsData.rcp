@@ -1,0 +1,332 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.2"
+FONT ID 1000 FONTID smallNumbersFont "data/smallnumbers.pfn"
+FONT ID 1001 FONTID largeNumbersFont "data/largenumbers.pfn"
+FONT ID 1002 FONTID tinyFont "data/tinyfont.pfn"
+
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID bmpStop
+COMPRESS
+BEGIN
+	BITMAP "data/stop1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/stop8.bmp" BPP 8 TRANSPARENT 0 0 255
+	BITMAP "data/stop8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 0 255
+END
+
+BITMAPFAMILYEX ID bmpCellSize
+COMPRESS
+BEGIN
+	BITMAP "data/butcellsize1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butcellsize8.bmp" BPP 8
+	BITMAP "data/butcellsize8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpBlank
+COMPRESS
+BEGIN
+	BITMAP "data/butblank1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butblank8.bmp" BPP 8
+	BITMAP "data/butblank8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpFill
+COMPRESS
+BEGIN
+	BITMAP "data/butfill1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butfill8.bmp" BPP 8
+	BITMAP "data/butfill8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpDot
+COMPRESS
+BEGIN
+	BITMAP "data/butdot1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butdot8.bmp" BPP 8
+	BITMAP "data/butdot8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpArrowL
+COMPRESS
+BEGIN
+	BITMAP "data/butarrowl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butarrowl8.bmp" BPP 8
+	BITMAP "data/butarrowl8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpArrowU
+COMPRESS
+BEGIN
+	BITMAP "data/butarrowU1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butarrowU8.bmp" BPP 8
+	BITMAP "data/butarrowU8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpArrowD
+COMPRESS
+BEGIN
+	BITMAP "data/butarrowD1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butarrowD8.bmp" BPP 8
+	BITMAP "data/butarrowD8-hd.bmp" BPP 8 DENSITY 2
+END
+
+BITMAPFAMILYEX ID bmpArrowR
+COMPRESS
+BEGIN
+	BITMAP "data/butarrowR1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/butarrowR8.bmp" BPP 8
+	BITMAP "data/butarrowR8-hd.bmp" BPP 8 DENSITY 2
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Griddler was made by Brian Schau\n\nPlease visit my website at:\n\n   http://www.schau.com/\n\nOn the website you will find the latest version of Griddler and a user manual.\n\n\nGriddler is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aGameFatal
+INFORMATION
+BEGIN
+	TITLE "Fatal Error"
+	MESSAGE "^1"
+	BUTTONS "OK"
+END
+
+ALERT ID aGameStop
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Quit?"
+	MESSAGE "Do you want to quit the current puzzle?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aCollectionDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Collection?"
+	MESSAGE "Do you want to delete the selected Puzzle Collection?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aSelectPuzzle
+INFORMATION
+BEGIN
+	TITLE "Select Puzzle"
+	MESSAGE "You must select a puzzle before this operation can proceed."
+	BUTTONS "OK"
+END
+
+ALERT ID aNotSolved
+INFORMATION
+BEGIN
+	TITLE "Not Solved"
+	MESSAGE "The puzzle is not solved.\n\n^1 ^2 contain one or more errors."
+	BUTTONS "OK"
+END
+
+ALERT ID aClearField
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Clear Playfield?"
+	MESSAGE "Do you want to clear the playfield?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Griddler"
+
+	LABEL "Griddler" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.2" AUTOID AT (CENTER 42)
+	FIELD ID cAboutTxt AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Griddler"
+
+	LABEL "Puzzle Collections" AUTOID AT (CENTER 17) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+1 17) FONT 0
+	LIST "" ID cMainPCList AT (1 30 158 33) VISIBLEITEMS MainPCListLines
+
+	LABEL "Puzzles" AUTOID AT (CENTER 69) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+1 69) FONT 0
+	LIST "" ID cMainPuzzleList AT (1 82 158 55) VISIBLEITEMS MainPuzzleLines
+
+	BUTTON "Play" ID cMainPlay AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Info" ID cMainInfo AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainPlay
+	BOTTOMLEFTOBJECTID cMainPlay
+	NAVIGATIONMAP
+		ROW cMainPCList
+		ROW cMainPuzzleList
+		ROW cMainPlay cMainInfo
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Collection"
+	BEGIN
+		MENUITEM "Delete" ID mMainDelete
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID mGame
+BEGIN
+	BUTTON "" ID cGameCellSizeG AT (2 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpCellSize SELECTEDBITMAPID bmpCellSize NONUSABLE
+	BUTTON "" ID cGameBlankG AT (15 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpBlank SELECTEDBITMAPID bmpBlank NONUSABLE
+	BUTTON "" ID cGameFillG AT (28 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpFill SELECTEDBITMAPID bmpFill NONUSABLE
+	BUTTON "" ID cGameDotG AT (41 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpDot SELECTEDBITMAPID bmpDot NONUSABLE
+
+	BUTTON "" ID cGameArrowLG AT (54 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpArrowL SELECTEDBITMAPID bmpArrowL NONUSABLE
+	BUTTON "" ID cGameArrowUG AT (67 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpArrowU SELECTEDBITMAPID bmpArrowU NONUSABLE
+	BUTTON "" ID cGameArrowDG AT (80 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpArrowD SELECTEDBITMAPID bmpArrowD NONUSABLE
+	BUTTON "" ID cGameArrowRG AT (93 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpArrowR SELECTEDBITMAPID bmpArrowR NONUSABLE
+
+	BUTTON "S" ID cGameCellSizeT AT (2 2 11 11) NONUSABLE FONT 0
+	BUTTON " " ID cGameBlankT AT (15 2 11 11) NONUSABLE FONT 0
+	BUTTON "\x95" ID cGameFillT AT (28 2 11 11) NONUSABLE FONT 0
+	BUTTON "/" ID cGameDotT AT (41 2 11 11) NONUSABLE FONT 0
+
+	BUTTON "\x03" ID cGameArrowLT AT (54 2 11 11) NONUSABLE FONT 3 NOFRAME
+	BUTTON "\x05" ID cGameArrowUT AT (67 2 11 11) NONUSABLE FONT 3 NOFRAME
+	BUTTON "\x06" ID cGameArrowDT AT (80 2 11 11) NONUSABLE FONT 3 NOFRAME
+	BUTTON "\x04" ID cGameArrowRT AT (93 2 11 11) NONUSABLE FONT 3 NOFRAME
+
+	LABEL "Draw:" AUTOID AT (108 2)
+
+	BUTTON "" ID cGameStopG AT (147 2 11 11) NOFRAME GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStop NONUSABLE
+	BUTTON "X" ID cGameStopT AT (147 2 11 11) NONUSABLE FONT 0
+END
+
+NAVIGATION ID fGame
+	INITIALSTATE 1
+	INITIALOBJECTID cGameCellSizeG
+	BOTTOMLEFTOBJECTID cGameCellSizeG
+	NAVIGATIONMAP
+		ROW cGameCellSizeG cGameBlankG cGameFillG cGameDotG cGameArrowLG cGameArrowUG cGameArrowDG cGameArrowRG cGameStopG
+		ROW cGameCellSizeT cGameBlankT cGameFillT cGameDotT cGameStopT
+END
+
+MENU mGame
+BEGIN
+	PULLDOWN "Puzzle"
+	BEGIN
+		MENUITEM "Check" ID mGameCheck "C"
+		MENUITEM SEPARATOR
+		MENUITEM "Clear" ID mGameClear
+	END
+END
+
+FORM ID fInfo AT (2 32 156 126)
+MODAL
+BEGIN
+	TITLE "Puzzle Info"
+
+	LABEL "Puzzle Name:" AUTOID AT (4 18) FONT 1
+	FIELD ID cInfoName AT (4 30 148 11) NONEDITABLE MAXCHARS 64
+
+	LABEL "Author:" AUTOID AT (4 46) FONT 1
+	FIELD ID cInfoAuthor AT (4 58 148 11) NONEDITABLE MAXCHARS 64
+
+	LABEL "Website:" AUTOID AT (4 74) FONT 1
+	FIELD ID cInfoSite AT (4 86 148 11) NONEDITABLE MAXCHARS 64
+
+	BUTTON "Done" ID cInfoDone AT (4 BOTTOM@123 AUTO AUTO)
+END
+
+NAVIGATION ID fInfo
+	INITIALSTATE 1
+	INITIALOBJECTID cInfoDone
+	BOTTOMLEFTOBJECTID cInfoDone
+	NAVIGATIONMAP
+		ROW cInfoDone
+END
+
+FORM ID fPuzzleDone AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Puzzle Solved!"
+
+	BUTTON "Done" ID cPuzzleDoneDone AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fPuzzleDone
+	INITIALSTATE 1
+	INITIALOBJECTID cPuzzleDoneDone
+	BOTTOMLEFTOBJECTID cPuzzleDoneDone
+	NAVIGATIONMAP
+		ROW cPuzzleDoneDone
+END

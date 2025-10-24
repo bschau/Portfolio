@@ -1,0 +1,25 @@
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+
+CC = @CC@
+CFLAGS = @CFLAGS@ -I. -I../include -D@OSTYPE@
+QROOT = @QROOT@
+LIBS = ../libqmta/libqmta.a @LIBS@
+DEPS = ../libqmta/libqmta.a
+DST = qmkdb
+OBJS = access.o brain.o domain.o main.o spammer.o
+
+all:		$(DST)
+
+$(DST):		$(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) -o $(DST) $(OBJS) $(LIBS)
+
+clean:
+	rm -f *.o $(DST)
+
+distclean:	clean
+	rm -f Makefile
+
+install:	$(DST)
+	../install.sh $(DST) $(QROOT)/bin 755 mta mta

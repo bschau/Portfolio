@@ -1,0 +1,11 @@
+N	=	8
+
+all:
+	PuzzleCvt$(EXE) PlayTsunami-set$(N).txt "PlayTsunami.Com Set $(N)" PlayTsunami-set$(N).pdb
+
+clean:
+	$(RM) *~
+
+archive:	clean
+	all
+	zip -r ..$/PlayTsunami-set$(N).zip .
