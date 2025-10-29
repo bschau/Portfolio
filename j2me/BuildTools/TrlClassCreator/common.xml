@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="common">
+	<property name="project" value="TrlClassCreator" />
+	<!-- please also update VERSION in TrlClassCreator.java -->
+	<property name="version" value="1.0" />
+</project>

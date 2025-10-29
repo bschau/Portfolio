@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>PluaED - Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>PluaED User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>PluaED is a simple editor which can be used to edit <A HREF="http://netpage.uai.com.br/mmand/plua.htm">Plua</A> source files. Plua can read source files in DOC format or from Memo Pad. DOC writers usually costs money, Memo Pad can only edit source files up to 4096 characters.
+<P>PluaED overcomes some of these limitations - PluaED is free and can edit source files up to 65534 characters (if your device supports it).
+<P>PluaED uses the Memo Pad database to store it's source file. If you view a source file created by PluaED in Memo Pad the source file may be truncated - source files created by PluaED is easy recognisable as they start with '--' and ends in '.lua'.
+<P>PluaED is best used in conjunction with a keyboard. PluaED has been tested using the <A HREF="http://www.citipack.com.tw/">CitiPack IR 502 Keyboard</A> but should be compatible with any Palm OS keyboard.
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of PluaED is like installing any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] PluaED.
+<LI>Unpack the <B>PluaED.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the archive. Highlight the <B>PluaED.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a 'PluaED' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move PluaED to another category.
+
+<P><BR><P><BR>
+<H3>Using PluaED</H3>
+<P><IMG SRC="main.gif" WIDTH="160" HEIGHT="160" ALT="Main">Tap on the PluaED icon. The list contains the Memos currently present in the Memo Pad. A real memo (not a Plua source file) is prefixed with a small Note icon. A good practice would be to store your Plua source codes in a separate category in the Memo Pad, f.ex. in a category called <I>Plua</I>.
+<BR><P><IMG SRC="new.gif" WIDTH="160" HEIGHT="160" ALT="New">Tap on <B>New</B> to add a new source code. You will be prompted for the source code name. This name will be written to the first line of the source code prefixed with -- and with a <I>.lua</I> suffix. Plua expects source codes to follow this format. F.ex. if you name the source code file <B>PluaTest</B> the following will be written to the source code:
+<P><PRE>-- PluaTest.lua</PRE>
+<P>In Plua this will be shown as <B>PluaTest</B>. If you need to change the name of the source file feel free to edit the first line. Just remember it must start with -- and end in <I>.lua</I>!
+
+<BR><P><IMG SRC="edit.gif" WIDTH="160" HEIGHT="160" ALT="Edit">Write your program. In the bottom of the display you will see four icons. From left to right:
+<UL>
+<LI><B>Back</B> (the left arrow) - go to the source code list (main display).
+<LI><B>Search</B> - search in current source code (see below).
+<LI><B>Details</B> - show details for current source code (see below).
+<LI><B>Plua</B> - launch Plua.
+</UL>
+<P>A character count is shown to the right.
+
+<BR><P><IMG SRC="search.gif" WIDTH="160" HEIGHT="160" ALT="Search">Click on the search icon to bring up the search dialog. Enter a term to search for and check the <B>Start at top</B> checkbox to start the search from the top. If this box is not checked, the search will start from the current position.
+
+<BR><P><IMG SRC="details.gif" WIDTH="160" HEIGHT="160" ALT="Details">Click on the details icon to bring up the details dialog. Here you can move the source code another category, delete the source code or just get a simple line count and character count statistic.
+
+<BR><P><IMG SRC="preferences.gif" WIDTH="160" HEIGHT="160" ALT="Preferences">Depending on your device you may have to change the maximum size of a source code. For Palm OS 4 and better the default setting should be safe. Also, if you do not want the source code to be underlined you can remove the underline from the preferences form.
+<P>PluaED supports version 1 of Plua as well as version 2. Select the version to use in by the <B>Version</B> drop down list. There are 4 choices - <I>Plua2 first</I>, <I>Plua1 first</I>, <I>Plua2 only</I> and <I>Plua1 only</I>. These determine the version to use and in what order. F.ex, <I>Plua2 first</I> governs that Plua2 will be searched for first when launching Plua from within PluaED. If Plau2 is not found, then try Plua1. <I>Plua1 only</I> governs, that only Plua1 will be tried.
+<P>You find the Preferences option in the Main menu.
+
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>PluaED: <A HREF="http://www.schau.com/gz/palm/pluaed/index.html">www.schau.com/gz/palm/pluaed/index.html</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

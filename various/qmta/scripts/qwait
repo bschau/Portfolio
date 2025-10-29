@@ -1,0 +1,17 @@
+#!/bin/ksh
+if test -z "$1"; then
+	COM="netstat -n | grep ':25 '"
+else
+	COM="netstat -n | grep :$1"
+fi
+
+while :; do
+	output="$(eval $COM)"
+	if test "$output"; then
+		echo "Waiting ..."
+		sleep 1
+	else
+		break
+	fi
+done
+exit 0

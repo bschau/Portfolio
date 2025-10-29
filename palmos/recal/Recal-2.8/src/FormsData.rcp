@@ -1,0 +1,135 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "2.8"
+ICONFAMILYEX
+COMPRESS
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8 TRANSPARENT 255 255 255
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+COMPRESS
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8 TRANSPARENT 255 255 255
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+BITMAPFAMILYEX ID bmpPointer
+COMPRESS
+BEGIN
+	BITMAP "gfx/pointer.bmp" BPP 1
+	BITMAP "gfx/pointer.bmp" BPP 2 TRANSPARENT 255 255 255
+	BITMAP "gfx/pointer-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Recal was made by:\n\n\tBrian Schau\n\nPlease visit my website at:\n\nhttp://www.schau.com/\n\nOn my website you will find the latest version of Recal and a user manual.\n\n\nRecal is released under the Gnu General Public License v2.\n"
+STRINGTABLE ID strTapThree "" "Use stylus to tap" "center of target." "Attempts left:" "Last attempt!"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Recal"
+
+	LABEL "Recal" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 2.8" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutText
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Recal"
+
+	LABEL "UP/DOWN to recalibrate" AUTOID AT (RIGHT@160 1)
+	GRAFFITISTATEINDICATOR AT (RIGHT@PREVLEFT-4 1)
+
+	LABEL "Delay:" AUTOID AT (RIGHT@40 16)
+	FIELD ID cMainDelay AT (42 16 12 11) UNDERLINED NUMERIC MAXCHARS 2
+	LABEL "Timeout:" AUTOID AT (RIGHT@120 16)
+	FIELD ID cMainTimeout AT (122 16 12 11) UNDERLINED NUMERIC MAXCHARS 2
+
+	LABEL "Precision:" AUTOID AT (RIGHT@80 28)
+	POPUPTRIGGER "" ID cMainPPopup AT (82 28 AUTO AUTO) LEFTANCHOR
+	LIST "1 pt" "2 pts" "3 pts" "5 pts" "10 pts" cMainPList AT (82 28 AUTO AUTO) VISIBLEITEMS 5 NONUSABLE
+	POPUPLIST cMainPPopup cMainPList
+
+	LABEL "Auto Recalibrate:" AUTOID AT (RIGHT@80 40)
+	POPUPTRIGGER "" ID cMainACPopup AT (82 40 AUTO AUTO) LEFTANCHOR
+	LIST "Never" "10 secs" "30 secs" "1 minute" "2 minutes" "5 minutes" "10 minutes" "30 minutes" "1 hour" "2 hours" "6 hours" "12 hours" "1 day" "7 days" "14 days" "1 month" ID cMainACList AT (82 40 AUTO AUTO) VISIBLEITEMS 6 NONUSABLE
+	POPUPLIST ID cMainACPopup cMainACList
+
+	LABEL "Recalibrate:" ID cMainLabel AT (12 52) NONUSABLE
+	CHECKBOX "After HotSync" ID cMainHotSync AT (10 64 AUTO AUTO) RIGHTANCHOR NONUSABLE
+	CHECKBOX "Before launching application" ID cMainLaunching AT (10 76 AUTO AUTO) RIGHTANCHOR NONUSABLE
+	CHECKBOX "After quitting application" ID cMainQuitting AT (10 88 AUTO AUTO) RIGHTANCHOR NONUSABLE
+	CHECKBOX "After wakeing up" ID cMainWakeup AT (10 100 AUTO AUTO) RIGHTANCHOR NONUSABLE
+
+
+	BUTTON "Recalibrate" ID cMainRecalibrate AT (CENTER BOTTOM@159 158 40)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainRecalibrate
+	BOTTOMLEFTOBJECTID cMainRecalibrate
+	NAVIGATIONMAP
+		ROW cMainDelay cMainTimeout
+		ROW cMainPPopup cMainPList
+		ROW cMainACPopup cMainACList
+		ROW cMainHotSync
+		ROW cMainLaunching
+		ROW cMainQuitting
+		ROW cMainWakeup
+		ROW cMainRecalibrate		
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mMainAbout
+	END
+END

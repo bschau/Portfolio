@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>iSecurViewer</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/hp/stylesheet.css">
+</HEAD>
+<BODY>
+<TABLE><TR>
+<TD STYLE="vertical-align: top"><IMG SRC="iSecurViewer.gif" WIDTH="49" HEIGHT="44" ALT="iSecurViewer"></TD>
+<TD>   </TD>
+<TD STYLE="vertical-align: top"><H1>iSecurViewer v1.5</H1></TD>
+</TR></TABLE>
+
+<P>iSecurViewer is used to view the secrets stored in the <A HREF="/gz/palm/isecur/index.html">iSecur</A> secrets database. iSecurViewer requires Microsoft .NET framework v2.0.
+
+<UL>
+<LI>Download <A HREF="iSecurViewer-1.5.exe">iSecurViewer-1.5.exe</A>.
+<LI>Download the <A HREF="iSecurViewer-1.5.zip">Source Code Archive</A>.
+<LI>Microsoft .NET Framework 2.0 or better is required. Go to <A HREF="http://msdn.microsoft.com/netframework/downloads/updates/default.aspx#.NET%20Framework%202.0%20Beta%20SDK%20and%20Redistributable">Microsoft .NET Framework downloads page</A> and select the ".NET Framework Version 2.0 Redistributable Package (x86) link. The direct link to the software download is <A HREF="http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5&amp;DisplayLang=en">http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5&amp;DisplayLang=en</A> (ugly link by the way!)
+<LI>Support ... <A HREF="mailto:brian@schau.com?Subject=[iSecurViewer] Hmmm ... I wonder why ...">Drop me a mail</A>.
+</UL>
+<P>You can support this project by <A HREF="http://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=brian@schau.com">donating</A> any amount to my Pay Pal account.
+
+<P><BR><P>
+<H3>Manual</H3>
+<P>Install iSecurViewer by running the application and click <B>Next</B> a couple of times and then <B>Finish</B>. You will now have a iSecurViewer group in your start menu. Launch iSecurViewer. If you get some messages saying something about <I>debug</I> then you need to have Microsoft .NET framework v2.0 installed - please do so using the link above or by going to Windows Update.
+<P><IMG SRC="selectprofile.jpg" WIDTH="255" HEIGHT="149" ALT="Select Profile">When launched for the first time iSecurViewer prompts you to select your HotSync Profile. You need to have transferred the iSecur database before you can view it - this step will auto located it given your profile. The profile can be changed from the main menu. If you hit <B>Cancel</B> you will get a standard file requestor and you can then browse to the iSecur database file if it is placed in a non standard path.
+
+<P><BR><P><IMG SRC="password.jpg" WIDTH="298" HEIGHT="201" ALT="Enter Password">Enter the password to unlock the database. If you have previously set a Password Hint for the database you can recall that by pressing the <B>Hint</B> button.
+
+<P><BR><P><IMG SRC="main.jpg" WIDTH="544" HEIGHT="407" ALT="Main">On the main screen all your secrets are listed. Use the various filters to locate the entry to be shown and then double click the entry.
+
+<P><BR><P><IMG SRC="show.jpg" WIDTH="300" HEIGHT="250" ALT="Show">Click <B>OK</B> to dismiss the entry and go back to the main form.
+
+<P><BR><P>
+<H3>Note</H3>
+<P>iSecurViewer may some day evolve to a <I>real</I> product. Currently it is made as a functioning proof of concept. It is somewhat insecure as it cannot guarantee the encryptedness of data swapped/paged to disk. This means that if someone steals your computer the bad guy <B>_may_</B> be able to see some of the data in plaintext.
+<P>You have been warned.
+
+<P><BR><P>
+<H3>ChangeLog</H3>
+<P>
+<PRE>
+2006-11-28	v1.5
+
+	*	Upgraded to match v1.4 of iSecur.
+	*	Optimized some of the main list and category list updates.
+
+2006-11-07	v1.4
+
+	*	Sorting in v1.3 didn't work. Reverted somewhat to what v1.2
+		did and it seems to work.
+
+2006-11-02	v1.3
+
+	*	Secrets on the main form are now sorted.
+	*	Switching Profiles now works as expected - you no longer have to
+		select the "Load Profile" menu item twice to switch profiles.
+
+2006-10-28	v1.2
+
+	*	Can now open databases created by iSecur-1.3.
+
+2006-10-05	v1.1
+
+	*	Now renders tabs in secrets.
+	*	Secrets can be copied to other programs.
+	*	If a secret is long it can now be scrolled.
+
+2006-07-10	v1.0
+
+	*	Initial version.
+</PRE>
+<P><A HREF="/index.html">Home</A>
+
+</BODY>
+</HTML>

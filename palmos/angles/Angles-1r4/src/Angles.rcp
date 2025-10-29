@@ -1,0 +1,186 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1r4"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Angles was made by\n\nBrian Schau.\n\nPlease visit the website at:\n\nhttp://www.schau.com/s/angles/\n\nOn the website you will find the latest version of Angles and a user manual.\n\n\nAngles is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aQuit
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Quit?"
+	MESSAGE "Do you really want to quit from this quiz?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aGuessInvalid
+INFORMATION
+BEGIN
+	TITLE "Invalid guess"
+	MESSAGE "You must enter a value between 0 and 360."
+	BUTTONS "OK"
+END
+
+ALERT ID aRightOn
+INFORMATION
+BEGIN
+	TITLE "Excellent!"
+	MESSAGE "Cool! ^1\xb0 is in fact the correct angle!"
+	BUTTONS "OK"
+END
+
+ALERT ID aClose
+INFORMATION
+BEGIN
+	TITLE "Close!"
+	MESSAGE "Wow! That was really close. The correct angle is ^1\xb0."
+	BUTTONS "OK"
+END
+
+ALERT ID aAngleIs
+INFORMATION
+BEGIN
+	TITLE "Wrong."
+	MESSAGE "Your guess is wrong. The correct angle is ^1\xb0."
+	BUTTONS "OK"
+END
+
+ALERT ID aReset
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Reset?"
+	MESSAGE "Do you really want to reset the Best Scorers list?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Angles"
+
+	LABEL "Best Scores" AUTOID AT (CENTER 37)
+
+	BUTTON "Start" ID cMainStart AT (CENTER BOTTOM@159 AUTO AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Reset" ID mMainReset
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Angles"
+
+	LABEL "Angles" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1r4" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID mGame
+BEGIN
+	TITLE "Angles"
+
+	SELECTORTRIGGER "" ID cGameTrigger AT (RIGHT@159 1 110 11) RIGHTANCHOR
+
+	LABEL "Round #" AUTOID AT (1 16)
+	FIELD ID cGameRound AT (1 28 40 12) NONEDITABLE LEFTALIGN
+	LABEL "Score" AUTOID AT (RIGHT@160 16)
+	FIELD ID cGameScore AT (RIGHT@160 28 40 12) NONEDITABLE RIGHTALIGN
+
+	LABEL "\xb0" AUTOID AT (RIGHT@74 BOTTOM@159)
+	FIELD ID cGameDegrees AT (RIGHT@PREVLEFT-2 BOTTOM@159 20 12) EDITABLE UNDERLINED MAXCHARS 3 NUMERIC RIGHTALIGN 
+	BUTTON "Guess" ID cGameGuess AT (86 BOTTOM@159 AUTO AUTO)
+	GRAFFITISTATEINDICATOR AT (147 147)
+END
+
+MENU mGame
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Quit" ID mGameQuit
+	END
+END
+
+FORM ID fEnd AT (2 2 156 156)
+MODAL
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Game Over"
+
+	LABEL "Game Over" AUTOID AT (CENTER 40) FONT 2
+
+	LABEL "Enter your name for the" ID cEndEN1 AT (CENTER 88) NONUSABLE
+	LABEL "Best Scorers table:" ID cEndEN2 AT (CENTER 100) NONUSABLE
+
+	FIELD ID cEndPosition AT (RIGHT@30 116 26 12) NONEDITABLE RIGHTALIGN NONUSABLE
+	FIELD ID cEndName AT (32 116 100 12) EDITABLE MAXCHARS 41 UNDERLINED MULTIPLELINES NONUSABLE
+
+	BUTTON "OK" ID cEndOK AT (CENTER BOTTOM@153 AUTO AUTO)
+	GRAFFITISTATEINDICATOR AT (147 147)
+END

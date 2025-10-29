@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>iSecur User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>iSecur User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>iSecur is a Personal Information Manager which lets you store secrets safely. iSecur is the successor of Secure It and provides stronger encryption (SHA256 and AES), icons, intelligent templates and more.
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of iSecur is much like installing any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] iSecur.
+<LI>Unpack the <B>iSecur-Language-x.y.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the archive. Highlight the <B>iSecur.prc</B>, <B>iSecur-Library.prc</B> and <B>iSecur Icons LoRes.pdb</B> or <B>iSecur Icons HiRes.pdb</B> files and select 'Open'. Then select 'Done'.
+<LI>You may optionally install the <B>iSecur-Keyboard.prc</B> file to enable support for the iSecur Keyboard.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a 'iSecur' icon in the <I>Main</I> category on your Palm PDA. Feel free to move iSecur to another category.
+<P><B>Note!</B> You only need to install one of the icon files. You should install the HiRes file if your device is capable of displaying 320 x 320 pixels, such as the Tungsten T, TX and others. If not, install the LoRes file - it will work on all Palm OS handhelds (including the Hires devices).
+
+<P><BR><P><BR>
+<H3>First Run</H3>
+<P><IMG SRC="gfx/newdatabase.gif" WIDTH="160" HEIGHT="160" ALT="New Database">On the first run you will have to form the seed which will make up the encryption key for the database. Please turn off any on-screen writing software you may have. F.ex.:
+<UL>
+<LI>On the TX, go to <I>System -&gt; Prefs -&gt; Input</I>. Make sure that the <B>Show Graffiti Strokes</B> checkbox is unchecked.
+<LI>On the Z22, go to <I>System -&gt; Prefs -&gt; Writing Area</I>. Make sure that <B>Write anywhere on-screen</B> is set to <B>Off</B>.
+</UL>
+<P>When the database has been created you can enable the on-screen writing software you previously disabled.
+
+<P><BR><IMG SRC="gfx/collectseed.gif" WIDTH="160" HEIGHT="160" ALT="Collect Seed">Use a combination of narrow and wide strokes. Also vary the speed of the strokes. The count will countdown from 256.
+
+<P><BR><IMG SRC="gfx/newpassword.gif" WIDTH="160" HEIGHT="160" ALT="New Password">When the count reaches 1 you will be asked to create a new password. Please enter and confirm your desired password. The 3 little icons in the lower right corner are (from right to left):
+<UL>
+<LI><B>A</B> - passwords are shown when typed.
+<LI>dot - passwords are masked when typed.
+<LI>star - bring up the random password generator.
+</UL>
+<P>Tap the keyboard next to the field to bring up the iSecur Keyboard.
+
+<P><BR><IMG SRC="gfx/pwdgen.gif" WIDTH="160" HEIGHT="160" ALT="Password Generator">The Password Generator can help you in creating a new password. You can adjust some of the settings of the generated password. Tap:
+<UL>
+<LI><B>Use</B> to use the generated password.
+<LI><B>Cancel</B> to dismiss the dialog.
+<LI><B>Generate</B> to generate a new password.
+</UL>
+
+<P><BR><IMG SRC="gfx/pwdhint.gif" WIDTH="160" HEIGHT="160" ALT="Password Hint">After creation of the database you will be asked if you would like to enter a Password Hint for the database. F.ex. if you use the name of your wife as password (bad idea) the hint could be set to <I>Name of loved one</I> (even worse). The password hint is <B>NOT</B> encrypted. The hint can be set in the <I>Options -&gt; Password Hint</I> menu.
+
+<P><BR><P><BR>
+<H3>Usage</H3>
+<P><IMG SRC="gfx/login.gif" WIDTH="160" HEIGHT="160" ALT="Login">You must log on to iSecur before you can view any secrets. Enter your password and tap <B>OK</B>. To see what you type tap the little <B>A</B> icon in the lower right corner. To mask what you type tap the little <B>dot</B> icon in the lower right corner.
+<P>Tap the keyboard next to the field to bring up the iSecur Keyboard.
+
+<P><BR><IMG SRC="gfx/loginhint.gif" WIDTH="160" HEIGHT="160" ALT="Hint">If you have forgotten your password you can tap the <B>?</B> icon. If a password hint has been set it will be shown and hopefully you get an idea of your password.
+
+<P><BR><IMG SRC="gfx/main.gif" WIDTH="160" HEIGHT="160" ALT="Main">On the main form you have all your secrets and templates listed ordered by category. To change category select or create the category using the drop down list in the upper right corner. To show only templates, only secrets or both, use the drop down list in the lower right corner. Tapping a secret will show the content. Tapping <B>New</B> creates a new secret. Tapping <B>Load</B> creates a secret loaded from a template (see below).
+
+<P><BR><IMG SRC="gfx/show.gif" WIDTH="160" HEIGHT="160" ALT="Show">When a secret is shown, you can use the arrows in the upper right corner to view the entire title of the secret if it is too long to fit on one line. Tap:
+<UL>
+<LI><B>Done</B> to dismiss the dialog and go back to the main form.
+<LI><B>Beam</B> to beam this secret to another device.
+<LI><B>Edit</B> to edit this secret.
+</UL>
+<P>In the menu you can turn this secret into a <A HREF="#iSecurLets">iSecurLet</A>.
+
+<P><BR><IMG SRC="gfx/showunlocked.gif" WIDTH="160" HEIGHT="160" ALT="Unlocked">If you tap the little lock the body text of the secret will unlock. You can then highlight and copy all or parts of the text (using the menu and stylus). You cannot insert text though - you have to tap <B>Edit</B> to do so.
+
+<P><BR><P><BR>
+<H3>Adding, Changing or Deleting Secrets</H3>
+<P><IMG SRC="gfx/edit.gif" WIDTH="160" HEIGHT="160" ALT="Edit">When tapping <B>New</B> on the main form or <B>Edit</B> when showing a secret you will be able to add, change or delete a secret. Set or change the category using the drop down list in the upper right corner. If this secret is a <A HREF="#templates">template</A> then check the <B>Template</B> check box. To set or clear the icon, tap the icon box in the lower right corner. If you have no icon files installed then this box will not be shown! Tap:
+<UL>
+<LI><B>OK</B> when done. This will encrypt and store the secret.
+<LI><B>Cancel</B> - this will dismiss the dialog.
+<LI><B>Load</B> - to load a <A HREF="#templates">template</A>.
+<LI><B>Delete</B> - to delete this secret. You will be asked to confirm your action.
+</UL>
+<P>If you tap the Password Generator Icon (between the Template checkbox and the Secret Icon) you can generate and insert a password.
+<P>In the menu you can turn this secret into a <A HREF="#iSecurLets">iSecurLet</A>.
+
+<P><BR><P><IMG SRC="gfx/loadtemplate.gif" WIDTH="160" HEIGHT="160" ALT="Load Template">Tapping <B>Load</B> on the edit screen will bring up the <I>Select Template</I> screen. Tap the template to load or tap <B>Cancel</B> to dismiss the dialog without loading a template. If a template is accepted it will replace whatever text is present in the secret.
+
+<P><BR><P><IMG SRC="gfx/keywords.gif" WIDTH="160" HEIGHT="160" ALT="Keywords">Template might carry keywords for you to enter. You may enter as many keywords as you like. Tap:
+<UL>
+<LI><B>OK</B> - to accept this template.
+<LI><B>Cancel</B> - to dismiss the dialog.
+<LI><B>Clear All</B> - to clear all keywords.
+</UL>
+<P>If you tap the Password Generator Icon you can generate and insert a password.
+
+<P><BR><P><IMG SRC="gfx/templateload.gif" WIDTH="160" HEIGHT="160" ALT="Template Load">If the receiving secret already has some text you will be asked what to do with the text from the template. <B>Note!</B> The title will always be replaced.
+
+<P><BR><P><BR>
+<H3>Icons</H3>
+<P>If you have one or more DateBk5 compatible icons installed you can use them from within iSecur. The standard distribution comes with two sets of icon files:
+<UL>
+<LI><TT>iSecur Icons LoRes.pdb</TT> - low resolution icons for 160 x 160 devices such as the Palm Z22.
+<LI><TT>iSecur Icons HiRes.pdb</TT> - high resolution icons for 320 x 320 (or better) devices such as the Palm TX.
+</UL>
+<P>Internally, the name should be <TT>iSecur Icons</TT>. If you install both of the icon files from the standard distribution the file installed last will overwrite the file installed first.
+<P>The icons in the standard distribution are kindly donated by <A HREF="http://lesliefranke.com/">Leslie Franke</A>.
+<P><IMG SRC="gfx/icons.gif" WIDTH="160" HEIGHT="160" ALT="Icons">The icon selector is accessed by tapping the icon button on the edit screen. Select the icon to use or tap the <B>No Icon</B> button to clear the icon for the secret.
+
+<P><BR><P><BR>
+<H3><A NAME="templates">Templates</A></H3>
+<P>More on templates ... Templates can be divided into two groups:
+<UL>
+<LI><I>Static Templates</I> - These are textual templates with no keywords. This is how the old Secure It did templates.
+<LI><I>Non-static Templates</I> - These contains keywords to be entered by the user.
+</UL>
+<P>To create a template tap <B>New</B> on the main form. Enter the template title and text. Set a icon if needed. Remember to check the <B>Template</B> check box and then tap <B>OK</B>. You have now created a template which can be loaded using the <B>Load</B> button on the edit form.
+
+<P><IMG SRC="gfx/template1.gif" WIDTH="160" HEIGHT="160" ALT="Template Example #1">To really harness the power of templates you can use keywords. A keyword is a word or a phrase in square brackets: <TT>[keyword or phrase]</TT>. When loading the template the user will be asked to enter replacement values for the keyword which will then be used when loading the template. Here's an example. On the template on the left two keywords have been created: <B>[keyword]</B> and <B>[another]</B>. The <B>Template</B> checkbox has been checked to indicate that this is a template. Secure It users: please note that the old template editor is gone.
+
+<P><BR><P><IMG SRC="gfx/template2.gif" WIDTH="160" HEIGHT="160" ALT="Template Example #2">On the main screen our template is shown in <B>bold</B>. Tap <B>New</B> to create a new secret, then tap <B>Load</B> to bring up the template selector and then select the newly create template (<TT>A Template</TT>).
+
+<P><BR><P><IMG SRC="gfx/template3.gif" WIDTH="160" HEIGHT="160" ALT="Template Example #3">The template will ask you to fill in replacement values for <B>keyword</B> and <B>another</B>. Do so and tap <B>OK</B>.
+
+<P><BR><P><IMG SRC="gfx/template4.gif" WIDTH="160" HEIGHT="160" ALT="Template Example #3">The values entered on the <I>Enter Keywords</I> form are then used in the new secret.
+
+<P><BR><P>To set a keyword to a fixed value use the following:<BR>
+<PRE>
+    [keyword=value]
+</PRE>
+
+<P><BR><P><B>Commands</B>. A command is a simple macro which will expand to some predefined value or ask for external input:
+<PRE>
+    [keyword=@command[ arguments]]
+</PRE>
+<P>The following commands have been defined:
+<DL>
+<DT><TT STYLE="color: blue">time</TT></DT>
+<DD>The current time in the format specified in the device preferences.</DD>
+
+<DT><TT STYLE="color: blue">longdate</TT></DT>
+<DD>The current date in the long format specified in the device preferences.</DD>
+
+<DT><TT STYLE="color: blue">shortdate</TT></DT>
+<DD>The current date in the short format specified in the device preferences.</DD>
+
+<DT><TT STYLE="color: blue">name</TT></DT>
+<DD>The HotSync name.</DD>
+
+<DT><TT STYLE="color: blue">password [length flags]</TT></DT>
+<DD>Generate a random password using the default settings by using the specifier. The length is the length of the password. Flags can be one of:<OL>
+<LI><TT>U|u</TT> - password must contain uppercase characters.
+<LI><TT>L|l</TT> - password must contain lowercase characters.
+<LI><TT>D|d</TT> - password must contain digits.
+<LI><TT>S|s</TT> - password must contain special characters.
+</OL>
+<P>Examples:<BR>
+<PRE>
+    [password=@password 10 Ud]
+    [password=@password SL 7]
+    [password=@password]
+</PRE>
+<P>The first creates a password of 10 characters consisting of uppercase characters and digits. The second creates a password of 7 characters consisting of special characters and lowercase characters. The third creates a password using the default settings: <B>8 LUD</B>.
+</DD>
+</DL>
+
+<P><BR><P><BR>
+<H3><A NAME="iSecurLets">iSecurLets</A></H3>
+<P>iSecurLets are small pointers into the iSecur Database. The idea is to create a shortcut to often used secrets. F.ex. if you store your MasterCard data in iSecur and then create an iSecurLet while showing/editing the MasterCard data you will place a icon in your launcher pointing to the MasterCard entry. Tapping on the launcher icon will launch iSecur showing the MasterCard entry - you will be asked to enter a password before the data is shown. Dismissing the MasterCard iSecurLet will drop you into the launcher again.
+
+<P><IMG SRC="gfx/createisecurlet.gif" WIDTH="160" HEIGHT="160" ALT="Create iSecurLet">Select the <I>Create iSecurLet</I> menu item when showing or editing a secret. Enter a name, tap <B>OK</B> and iSecur will create a icon in your launcher pointing to the current secret.
+
+<P><BR><P><IMG SRC="gfx/manageisecurlets.gif" WIDTH="160" HEIGHT="160" ALT="Manage iSecurLets">On the main screen select the <I>Manage iSecurLets</I> menu item to launch the iSecurLet manager. Tap on a entry to edit the iSecurLet. Tap <B>Prune</B> to remove iSecurLets which points to non-existing secrets. Tap <B>Done</B> when ... done.
+
+<P><BR><P><BR>
+<H3>Import/Export</H3>
+<P>iSecur can export secrets and templates to Memo and import memos as secrets or templates from Memo.
+<P><IMG SRC="gfx/import.gif" WIDTH="160" HEIGHT="160" ALT="Import">Select the Memos to import. Tap the <B>All</B> button to select all Memos in this category and tap the <B>None</B> button to de-select all Memos in this category. Tap <B>Import</B> to import the selected Memos. Tap <B>Done</B> when ... done.
+
+<P><BR><P><IMG SRC="gfx/importsettings.gif" WIDTH="160" HEIGHT="160" ALT="Import Settings">Select the iSecur category to import to. if <B>Delete after import</B> is checked the imported Memos will be deleted from Memo. If <B>Import as templates</B> is checked all imported Memos will be treated as templates. You can optionally set an <B>Icon</B> which all the imported items will share. Tap <B>Import</B> to start import of Memos.
+
+<P><BR><P><IMG SRC="gfx/export.gif" WIDTH="160" HEIGHT="160" ALT="Export">Select the secrets and templates to export. Tap the <B>All</B> button to select all secrets and templates in this category and tap the <B>None</B> button to de-select all secrets and templates in this category. Tap <B>Export</B> to export the selected secrets and templates. Tap <B>Done</B> when ... done.
+
+<P><BR><P><IMG SRC="gfx/exportsettings.gif" WIDTH="160" HEIGHT="160" ALT="Export Settings">Select the Memo category to export to. if <B>Delete after export</B> is checked the exported secrets and templates will be deleted from iSecur. Tap <B>Export</B> to start export of secrets and templates.
+
+<P><BR><P><BR>
+<H3>Keyboard</H3>
+<P>The iSecur Keyboard is a simple numeric keyboard. The keys are large so that you can use your thumbs.
+<P><IMG SRC="gfx/keyboard.gif" WIDTH="160" HEIGHT="160" ALT="Keyboard">There are 16 keys. These are (from left to right, top to bottom):
+<UL>
+<LI>7, 8, 9 and backspace.
+<LI>4, 5, 6 and clear text.
+<LI>1, 2, 3 and mask (dot) or unmask (A) password.
+<LI>0, change layout, cancel and accept password.
+</UL>
+<P>You can change the layout by pressing the key next to 0. The layout will switch between calculator layout and phone layout.
+<P>You can enter other characters using Graffiti or by bringing up the system keyboard.
+
+<P><BR><P><BR>
+<H3>Preferences</H3>
+<P><IMG SRC="gfx/prfpwdpolicy.gif" WIDTH="160" HEIGHT="160" ALT="Password Policy">The behaviour of iSecur can be changed to your likings in many ways. Select the <I>Preferences</I> menu item on the main screen to open the <I>Preferences</I> dialog. Select the preferences section using the drop down list in the upper right corner. On the <B>Password Policy</B> screen you can change:
+<UL>
+<LI><B>Remember last ... passwords</B>: enable and enter the amount of passwords which should be placed on the ban list. When changing the iSecur password the ban list is consulted if this option is set. If the new password is on the ban list it will be denied. If the password is changed then the password is added to the bottom list. If the ban list is full the oldest entry is removed to make room for the new entry.
+<LI><B>Remind me to change password every ... days</B>: iSecur can remind you to change your password every <I>X</I> days.
+</UL>
+
+<P><BR><P><IMG SRC="gfx/prfloginout.gif" WIDTH="160" HEIGHT="160" ALT="Login and Logout"><P><UL>
+<LI><B>Max failed logins ...</B>: number of failed logins before iSecur will auto exit.
+<LI><B>Delete database when Max failed logins are reached</B>: enable this to auto exit <B>and delete the database</B> if the <I>Max failed logins</I> number of logins are reached (in one session).
+<LI><B>Log out when Power Off</B>: enable this to exit iSecur when you turn off the power.
+<LI><B>Log out when system times out</B>: enable this to exit iSecur when the system is going into sleep modus.
+<LI><B>Auto popup keyboard</B>: enable this to have the iSecur Keyboard auto popup upon login.
+</UL>
+
+<P><BR><P><IMG SRC="gfx/prfmisc.gif" WIDTH="160" HEIGHT="160" ALT="Miscelleanous"><P><UL>
+<LI><B>Open secrets in Edit mode</B>: enable this to open secrets in Edit mode instead of Show mode.
+<LI><B>Enable Find</B>: enable the global find for iSecur. If disabled, iSecur will not respond to find requests.
+<LI><B>Empty Clipboard before exit</B>: enable this to have iSecur empty the clipboard before exit.
+<LI><B>Set Copy Prevention Bit</B>: enable this to prevent beaming of the database.
+<LI><B>Entry in list opens new</B>: if you're viewing data in a list and you enter a character it will open a new secret if this entry is checked. If unchecked a character entry will scroll to the item starting with that character.
+<LI><B>Edit secret: stay in category</B>: if you add/edit a secret and change the category then, after saving the secret, iSecur will return the originating category. Uncheck this item to return to the category just chosen.
+<LI><B>New template: inherit category</B>: check this to inherit the category the template is loaded from. If this is not checked the category on the Edit screen is used.
+<LI><B>5 way up/down is page up/down</B>: check this to have the 5 way up/down act like page up/down in lists. If this is unchecked only one line is scrolled up/down when using the 5 way up/down in lists.
+</UL>
+
+
+
+<P><BR><P><BR>
+<H3><A NAME="refs">References</A></H3>
+<OL>
+<LI>iSecur: <A HREF="http://www.schau.com/gz/palm/isecur/index.html">www.schau.com/gz/palm/isecur/index.html</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

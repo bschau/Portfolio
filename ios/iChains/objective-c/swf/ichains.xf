@@ -1,0 +1,21 @@
+fps "25"
+swfname "ichains.swf"
+version 8
+bbox 216x388
+output "ichains.sc"
+quality 100%
+type png
+lo 0%
+hi 100%
+generatehtml
+fadeframes 20
+pauseframes 50
+effect ftb
+picture frame1.png
+picture frame2.png
+picture frame3.png
+picture frame4.png
+picture frame5.png
+backgroundimage skin.png
+offsetx 16
+offsety 65

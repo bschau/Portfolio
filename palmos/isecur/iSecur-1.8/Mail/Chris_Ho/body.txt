@@ -1,0 +1,66 @@
+Hi there,
+
+I've just installed iSecur, and transferred the secrets from Secure It using the sit2secur program.
+
+I'm trying to do import and export of secrets in iSecur, and have checked the documentation.
+Seems it does not have any, unlike Secure It.
+
+Unless I'm missing something, can you help me out on this?
+Otherwise, iSecur would indeed be a better application and Secure It.
+
+Thanks!
+
+regards,
+Chris
+==============================================================================
+Hi Brian,
+
+Thanks for your reply. Glad to know the support for iSecure is indeed great.
+I will be looking out for your next versions then.
+
+Thanks, and have a good week ahead.
+
+regards,
+Chris
+
+At 04:05 PM 10/3/2006, you wrote:
+> Hi Chris,
+>
+>
+> There is no export/import function.   Many users have asked for it and
+> I will add it into v1.3 / v1.4.
+>
+> v1.2 will be released soon.
+>
+> Thanks for using iSecur - and please stay on as a user :-)   iSecur will
+> improve ...!
+>
+>
+> /brian
+>
+> > Hi there,
+> >
+> > I've just installed iSecur, and transferred the secrets from Secure
+> > It using the sit2secur program.
+> >
+> > I'm trying to do import and export of secrets in iSecur, and have
+> > checked the documentation.
+> > Seems it does not have any, unlike Secure It.
+> >
+> > Unless I'm missing something, can you help me out on this?
+> > Otherwise, iSecur would indeed be a better application and Secure It.
+> >
+> > Thanks!
+> >
+> > regards,
+> > Chris
+> >
+> >
+>
+>
+>
+>
+> -- 
+> No virus found in this incoming message.
+> Checked by AVG Free Edition.
+> Version: 7.1.407 / Virus Database: 268.12.12/461 - Release Date: 10/2/2006

@@ -1,0 +1,17 @@
+Hi.  Thanks for writing iSecur!  I have just installed it, so I haven't had much time to play with it yet.
+
+The question: Is the iSecur database copied to the desktop when I synchronize?  Your website doesn't seem to state this (maybe it doesn't need to be said?)
+
+The bug: I get a fatal exception when I go to the Preferences screen (forces warm-boot).  Everything else seems to run fine so far (but I haven't used it much yet).
+
+I use the Samsung SPH-I300 Palm based smartphone (version 3.5.2).  Since Samsung customized the OS for this phone, they don't guarantee that every Palm app will run, but I've had only one compatibility problem with it so far.  The only other apps I'm running are: Metro, Adobe Reader, QuickNotes, and PacMan (trial).  (Of course, I've lost track of the other stuff I've installed and then deleted later.  When you only have 1 MB to play with, this is a common occurrence.  I currently have 1,579 KB available.)
+
+Has anyone else reported this problem?
+
+Thanks,
+Bob Schnatterly
+
+_________________________________________________________________
+Fixing up the home? Live Search can help http://imagine-windowslive.com/search/kits/default.aspx?kit=improve&locale=en-US&source=hmemailtaglinenov06&FORM=WLMTAG
+
+

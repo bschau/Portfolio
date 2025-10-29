@@ -1,0 +1,67 @@
+#!/bin/bash
+DEFPREFIX="/usr"
+
+#
+# No-no below here ...
+#
+version="0.1"
+
+function usage()
+{
+	echo "emulators configuration version $version"
+	echo "Usage: configure [OPTIONS]"
+	echo ""
+	echo "  -h|--help          what you're reading now"
+	echo "     --prefix=PATH   install architecture-independent files in PATH"
+	echo "                     [$DEFPREFIX]"
+	echo ""
+}
+
+function configError()
+{
+	echo "configure: error: missing argument to --$1" >&2
+	exit 1
+}
+
+# main
+prev=""
+for option; do
+	if test -n "$prev"; then
+		eval "$prev=\$option"
+		prev=""
+		continue
+	fi
+
+	optarg="$(expr "x$option" : 'x[^=]*=\(.*\)')"
+	case $option in
+
+	-help|--help|--hel|--he|-h)
+		usage; exit 0 ;;
+
+	-prefix|--prefix)
+		prev=prefix ;;
+	-prefix=*|--prefix=*)
+		test -z "$optarg" && configError prefix
+		if test "$optarg" = "/"; then
+			DEFPREFIX=""
+		else
+			DEFPREFIX="$optarg"
+		fi
+		;;
+
+	-*)
+		echo "configure: error: unrecognized option: $option" >&2
+		echo "Try configure --help for more information." >&2
+		exit 1
+		;;
+	esac
+done
+
+if test -n "$prev"; then
+	option="$(echo $prev | sed 's/_/-/g')"
+	configError $option
+fi
+
+sed -e "s?@@prefix@@?$DEFPREFIX?g" Makefile.in > Makefile
+
+exit 0

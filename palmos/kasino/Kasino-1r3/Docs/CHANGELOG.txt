@@ -1,0 +1,11 @@
+Changelog for Kasino.
+
+v1r3 (2005-04-22)
+	Never released (code cleanup).
+
+v1r2 (2003-06-03)
+	Added backup bit to databases. Databases will now be backed up to your
+	desktop PC during hotsync.
+
+v1r1 (2002-11-26)
+	Initial release

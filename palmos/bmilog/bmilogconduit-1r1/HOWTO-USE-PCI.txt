@@ -1,0 +1,44 @@
+C:\PalmDev\Palm\Eventor\1r1\Conduit\install>pci /o "c:\temp" "PERV" "C:\temp\Eve
+ntor\bin" "Eventor10.dll" "Eventor" "EventorData.dat" "Eventor Data" "Eventor (P
+CI)" 2 "Installed by PCI"
+
+
+/o:
+	overwrite (use /u to uninstall).
+
+c:\temp	
+	Copy CondMgr.dll and HSAPI.dll to this directory. The files can
+	be removed afterwards.
+
+PERV
+	Creator ID.
+
+c:\temp\Eventor\bin
+	The conduit dll must reside in this directory (installation directory).
+
+Eventor10.dll
+	Name of conduit dll.
+
+Eventor
+	Conduit data directory.
+
+EventorData.dat
+	Name of output file from conduit (ie. data file).
+
+Eventor Data
+	Name of database on handheld.
+
+Eventor (PCI)
+	Display name of conduit.
+
+2
+	Priority.
+
+Installed by PCI
+	Information.
+
+
+To uninstall:
+
+/u c:\temp PERV
+

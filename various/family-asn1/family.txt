@@ -1,0 +1,30 @@
+#
+# Mellemrum er ikke tilladt.
+# Kommentarer kan skrives hvis de startes med '#' i 1. kolonne - kommentaren
+# str‘kker sig linjen ud.
+#
+# Format:
+#
+# efternavn
+# far fornavn
+# far mellemnavn
+# far f›dselsdato
+# mor fornavn
+# mor mellemnavn
+# mor f›dselsdato
+# barn1 fornavn
+# barn1 mellemnavn
+# barn1 f›dseldato
+# barn2 ...
+# .
+# .
+# .
+# barnX fornavn
+# barnX mellemnavn
+# barnX f›dselsdato
+#
+Fictive,John,H,20030926,Jane,,20040926,Bob,,20100926,Sally,W,20100926
+Claus,Santa,,17730101,Mrs,,17730101
+Schau-Kristensen,Klaus,,,Maiken,,,Kristian,,,Katrine,,,Ida,,
+Perfect,Mr,Very,19000101,Mrs,Very,19010101,Not,So,20010101
+Schau & Funch,Brian,,19710612,Charlotte,,19730317

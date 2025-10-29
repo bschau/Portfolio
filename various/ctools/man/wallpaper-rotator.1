@@ -1,0 +1,17 @@
+.TH WALLPAPER-ROTATOR 1L
+.SH NAME
+wallpaper-rotator \- create wallpaper slideshow from pictures in folder
+.SH SYNOPSIS
+.B wallpaper-rotator
+[\fI-r rotation-speed\fR] /path/to/pictures
+.SH DESCRIPTION
+wallpaper-rotator randomly picks from pictures in /path/to/pictures and set the selected picture as the current desktop wallpaper.
+It then sleeps for "rotation-speed" seconds. The default is 1800 seconds (half an hour).
+The picture path pointed to is re-read everytime a new picture is selected.
+.SH OPTIONS
+.TP
+\fB-r rotation-speed\fR
+Seconds to wait between changes.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

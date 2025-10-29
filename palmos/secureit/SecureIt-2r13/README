@@ -1,0 +1,60 @@
+Secure It
+=========
+
+Extra for v2r6:
+
+The preferences structure used internal have been reorganized.  This will
+most likely destroy your current settings.  Please check the Options->Visual
+and Options->Security settings when starting v2r6 for the first time!
+
+
+Important notice if you are upgrading to v2r5 or later:
+
+Please backup your databases before running Secure It v2rX (X>=5).  In v2r5
+the Creator ID and Database Type changed.   Under normal conditions you
+shouldn't notice anything (except that Secure It Secrets and Secure It
+Templates has vanished from the info menu in Launcher :)    But better be
+safe than sorry ...
+
+
+Important notice if you are upgrading from any previous version:
+
+The database format has changed dramatically between v1 and v2 of Secure It.
+When Secure It v2rX starts for the first time it will, if a database in the
+new format is not found, try to open any older version of the database and
+convert it to the new format.   Depending of the size of your database this
+might take some time.
+The new database is named 'Secure It Secrets'.   This database can coexist
+with the older 'secureit-db'.   If you feel happy about how Secure It v2rX
+works feel free to delete the 'secureit-db' database.
+Please also note that the 'Secure It Templates' database is used to hold your
+templates - it should be backed up also.
+
+
+
+Legal Stuff:
+
+Secure It comes as is - if it breaks you get to keep both pieces.   Secure It
+is free to use. 
+
+
+
+To install Secure It:
+
+1) Start the standard Palm Install tool.
+2) Select 'Add'.
+3) Browse to 'sit.prc'.  Highlight 'sit.prc' and press 'open'.
+4) Make sure that the Hotsync Manager is running.
+5) Insert your Palm in the Craddle and start Hotsync.
+
+
+
+Secure It (and translations) can be found at:
+
+	http://www.schau.com/sit/
+
+
+
+Thanks for taking the time to evaluate Secure It.
+
+Brian Schau <brian@schau.com>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>iSecur</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>iSecur v1.6</H1>
+<P><IMG SRC="iSecur.jpg" WIDTH="244" HEIGHT="340" ALT="iSecur"><I>iSecur</I> is a Personal Information Manager which lets you store secrets safely. <I>iSecur</I> is the successor of <A HREF="/gz/palm/sit/index.html">Secure It</A> and provides stronger encryption (SHA256 and AES), icons, intelligent templates and more.
+<P><I>iSecur</I> is released under the GNU General Public License v2 and requires Palm OS 3.5 or better to work.
+
+<UL>
+<LI>Downloads - please read the README file before installing. Select language: <A HREF="iSecur-English-1.6.zip">English</A>, <A HREF="iSecur-Danish-1.6.zip">Danish</A>
+<LI><A HREF="iSecur-1.6.tar.gz">Download</A> the source code archive.
+<LI><A HREF="manual/manual.html">User Manual</A>.
+<LI>Support ... <A HREF="mailto:brian@schau.com?Subject=[iSecur] Hmmm ... I wonder why ...">Drop me a mail</A>.
+</UL>
+<P>You can support this project by <A HREF="http://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=brian@schau.com">donating</A> any amount to my Pay Pal account.
+
+<P><BR><P>
+<H3>Translations</H3>
+<P><A HREF="http://www.geocities.com/marceloams/">Brazilian Portuguese</A> - by Marcelo Silva (<B>Note!</B> This is a very old version of iSecur!)
+
+<P><BR><P>
+<H3>Desktop</H3>
+<P>I've created a small desktop companion which lets you view (<B>not</B> edit) the iSecur data file:
+<UL>
+<LI><A HREF="/gz/csharp/isecurviewer/index.html">iSecurViewer</A> - requires Microsoft .NET Framework 2.0.
+</UL>
+
+<P><BR><P>
+<H3>Upgrading from Secure It</H3>
+<P>iSecur can be installed side by side with Secure It. Each application uses its own database so data in one application cannot be seen in the other. I've created a program which lets you transfer secrets and templates from Secure It to iSecur:
+<UL>
+<LI><A HREF="/gz/palm/sit2isecur/index.html">Sit2iSecur</A>.
+</UL>
+
+<P><BR><P>
+<H3>Thanks</H3>
+<P>The following persons deserves a huge <B>Thank You</B>:
+<UL>
+<LI>Tony Vincent for creating the nice application icons. Visit Tonys website at <A HREF="http://www.learninginhand.com/">www.learninginhand.com</A>.
+<LI>Leslie Franke for creating the small icons. Visit Leslies website at <A HREF="http://lesliefranke.com/">lesliefranke.com</A>.
+<LI>Marcelo Silva <!-- marcams at ig dot com dot br --> for the Brazilian Portuguese translation of iSecur.
+</UL>
+
+<P><BR><P>
+<H3>ChangeLog</H3>
+<P>
+<PRE>
+v1.6 (2006-12-21)	AKA: "The Christmas Release"
+	Annoying bug fixed: iSecur no longer deletes an item when exiting (yay!
+	this one has been going on since v1.0 :-)
+	When importing you can now set a icon for all the imported items.
+	iSecur is now prepared for translation.
+	iSecur is also released in Danish :-)
+	iSecur no longer crashes if the Password Generator is brought up on a
+	non-field object.
+	5 way navigation on the Show form is now corrected.
+
+v1.5 (2006-12-01)	* THIS RELEASE WAS ONLY RELEASED TO TESTERS *
+	Added keyboard - everybodys favourite!
+
+v1.4 (2006-11-28)
+	When doing a find inside iSecur the entire secret is searched.
+	Fixed a bug where the Quick Find on the main list would bomb if a
+	secret was added and then immediately was deleted.
+	Preferences item added: if you add a new secret or edit an existing
+	secret and you change the category you now have the option to stay in
+	the category you're coming from.
+	Preferences item added: if you load a template you have the option to
+	store the secret in the same category as the template.
+	The function of the 5 way up/down can now be changed so that up/down
+	on a focused list without any selections is page up/down. Normal GUI
+	guidelines states that 5 way up/down should move between GUI elements
+	much like 5 way left/right does.
+	Fixed some 5 way navigator related bugs.
+	When you load a template into a secret which already contains some text
+	you can now add to the secret instead of replacing the original text.
+	The Password Generator Icon should now come up with the right image
+	all the time.
+	You can now set a hint about your password. The hint can be brought up
+	on the "Enter password" dialog.
+	Double clicking on the "Select Icon" icon on the edit screen no longer
+	crashes iSecur.
+	iSecur installs itself into the "Main" category of your launcher by
+	default (if such a category exists).
+	Import from Memo/Export to Memo implemented.
+	Text can now be copied from the secret to clipboard in Show mode.
+
+v1.3 (2006-10-26)
+	Simple passwords are now expanded so that a trimmed down password won't
+	log you in.
+	The Password Change alarm system has been reworked. It is simpler and
+	hopefully more stable.
+	The password generator can now be used on the Edit and Keywords screens.
+	Templates in Find results are highlighted.
+	Find now works again.
+	Keywords are now properly saved.
+
+v1.2 (2006-10-04)
+	Enhanced navigation on OS 5 devices.
+	Added the "Entry on list opens new" option.
+	Added the 'password' keywords macro.
+	Added menu items for most accessed functions.
+	Enter on the password forms now submits the form (one entry) or moves
+	between the fields (multiple entries).
+	
+v1.1 (2006-08-07)
+	Fixed a bug where secrets were truncated at 255 characters. They can
+	now be up to 16K.
+	Added a "Load" button on the main screen to create secrets from
+	templates.
+
+v1.0 (2006-07-10)
+	First public release.
+</PRE>
+<P><A HREF="/index.html">Home</A>
+
+</BODY>
+</HTML>

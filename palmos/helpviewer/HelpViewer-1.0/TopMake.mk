@@ -1,0 +1,2 @@
+APPNAME	=	HelpViewer
+VERSION	=	1.0

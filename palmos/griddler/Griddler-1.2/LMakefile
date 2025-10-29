@@ -1,0 +1,33 @@
+include TopMake.mk
+
+all:	distclean
+	compile
+	mkdir $(APPNAME)
+	puzzles
+	cp src/Griddler.prc $(APPNAME)
+	cp PuzzleCvt/PuzzleCvt.exe $(APPNAME)
+	cp Docs/* $(APPNAME)
+	zip -r $(APPNAME).zip $(APPNAME)/*
+
+compile:
+	lmake -C src initall
+	lmake -C src -DDEBUG=0
+
+puzzles:
+	lmake -C PuzzleCvt
+	PuzzleCvt$/PuzzleCvt.exe PuzzleCvt/PlayTsunami.txt "PlayTsunami.Com Puzzles" $(APPNAME)/PlayTsunami.pdb
+
+clean:
+	lmake -C src clean
+	lmake -C PuzzleCvt clean
+	rm -fr $(APPNAME) $(APPNAME).zip
+	rm -f *~ Docs/*~
+
+distclean:	clean
+	lmake -C src distclean
+	find . -type f -name "*~" -exec rm -f {} \;
+
+archive:	distclean
+	basename $(CWD)
+	C = $-
+	tar cjvf ../$(C).tar.bz2 ../$(C)

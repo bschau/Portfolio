@@ -1,0 +1,2 @@
+APPNAME=Kasino
+VERSION=1r3

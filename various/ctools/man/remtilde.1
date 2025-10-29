@@ -1,0 +1,37 @@
+.TH REMTILDE 1
+
+.SH NAME
+remtilde \- remove tilde (~) files
+
+.SH SYNOPSIS
+.B remtilde
+[-h] [-i] [-q] [-s] [path1 ... pathX]
+.br
+
+.SH DESCRIPTION
+.B remtilde
+looks for FILE~ files in the specified directories and any child directories
+below that directory and removes the files. If no directory is given the current
+directory (and directories below) are searched.
+  
+.SH OPTIONS
+.PP
+.TP
+.I "\-h"
+Help page.
+.BR
+.TP
+.I "\-i"
+Also remove hidden files (files starting with a dot)
+.BR
+.TP
+.I "\-q"
+Quiet, do not output anything
+.BR
+.TP
+.I "\-s"
+Show which files will be deleted but do not delete them
+.BR
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

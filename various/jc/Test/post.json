@@ -1,0 +1,20 @@
+{
+	"Message": "[[$Message]]",
+	"Now": "[[now]]",
+	"InOneSecond": "[[now:1S]]",
+	"InOneMinute": "[[now:1M]]",
+	"InOneHour": "[[now:1H]]",
+	"InOneDay": "[[now:1d]]",
+	"InOneMonth": "[[now:1m]]",
+	"InOneYear": "[[now:1y]]",
+	"InOneWeek": "[[now:1w]]",
+	"OneSecondAgo": "[[now:-1S]]",
+	"OneMinuteAgo": "[[now:-1M]]",
+	"OneHourAgo": "[[now:-1H]]",
+	"OneDayAgo": "[[now:-1d]]",
+	"OneMonthAgo": "[[now:-1m]]",
+	"OneYearAgo": "[[now:-1y]]",
+	"OneWeekAgo": "[[now:-1w]]",
+	"FileContent": "[[file:[[$templates]]/jcrc]]",
+	"Base64": "[[base64:[[$templates]]/jcrc]]"
+}

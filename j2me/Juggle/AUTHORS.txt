@@ -1,0 +1,4 @@
+Juggle is currently maintained by:
+
+	Brian Schau <brian@schau.com>
+

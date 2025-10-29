@@ -1,0 +1,12 @@
+; CondInst.def : Declares the module parameters for the DLL. 
+
+LIBRARY CondInst.dll
+DESCRIPTION 'Palm Conduit Installer Dynamic Link Library' 
+
+EXPORTS
+InstallConduit @1
+UninstallConduit @2
+DecodePCIErrorCode @3
+InstallShieldInstallConduit @4
+InstallShieldUninstallConduit @5
+GetPalmDesktopPath @6

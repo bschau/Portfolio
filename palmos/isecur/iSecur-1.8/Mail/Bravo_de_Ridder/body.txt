@@ -1,0 +1,8 @@
+Hi,
+
+You must have gotten this question many times before. What can I do when I forgot the master password for the iSecur database? I guess it cannot be retrieved (that would make iSecur not that secure) but how can I "reset" the database (and probalby loose any data within it).
+
+Regards,
+
+
+Bavo De Ridder

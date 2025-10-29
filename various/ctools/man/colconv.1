@@ -1,0 +1,37 @@
+.TH COLCONV 1
+
+.SH NAME
+colconv \- convert between different color specifier values
+
+.SH SYNOPSIS
+.B colconv
+xxxxxx | r,g,b | r-gl,g-gl,b-gl
+.br
+
+.SH DESCRIPTION
+.B colconv
+convert between color specifiers in hex code (xxxxxx), rgb (r,g,b) or OpenGL
+rgb (r-gl,g-gl,b-gl).
+There may be some minor rounding errors when converting from OpenGL to any of
+the other specifiers.
+  
+.SH EXAMPLES
+.PP
+.TP
+.I colconv 123456
+(gives 18,52,86 and 0.07,0.20,0.34)
+.BR
+.TP
+.I colconv 0.10,0.20,0.30
+(gives #19334C and 25,51,76)
+.BR
+.TP
+.I colconv 78,92,110
+(gives 4E5C6E and 0.31,0.36,0.43)
+.BR
+
+.SH NOTE
+OpenGL input must be given as 0.xx - that is, two digits after the point.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

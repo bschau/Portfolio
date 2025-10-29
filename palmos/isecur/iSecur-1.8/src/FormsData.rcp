@@ -1,0 +1,1086 @@
+#include "Resources.h"
+#include "PublicResources.h"
+
+/*
+ * Globals.
+ */
+VERSION "@@VERSION@@"
+LAUNCHERCATEGORY "Main"
+FONT ID 1000 FONTID dotFont "data/dot.pfn"
+FONT ID 1001 FONTID scissorFont "data/scissor.pfn"
+FONT ID 1002 FONTID miscFont "data/misc.pfn"
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+CATEGORIES ID defCategories "@@defCat1@@" "@@defCat2@@" "@@defCat3@@" "@@defCat4@@" "@@defCat5@@" "" "" "" "" "" "" "" "" "" "" ""
+
+BITMAPFAMILYEX ID SLetLargeIcon
+COMPRESS
+BEGIN
+	BITMAP "data/sletl1.bmp" BPP 1
+	BITMAP "data/sletl1-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID SLetSmallIcon
+COMPRESS
+BEGIN
+	BITMAP "data/slets1.bmp" BPP 1
+	BITMAP "data/slets1-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID bmpKeyboard
+COMPRESS
+BEGIN
+	BITMAP "data/keyboard1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/keyboard8.bmp" BPP 8
+	BITMAP "data/keyboard8-hd.bmp" BPP 8 DENSITY 2
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "@@strAboutText@@"
+STRINGTABLE ID strPasswordDialog "" "@@pwdFormStr1@@" "@@pwdFormStr2@@" "@@pwdFormStr3@@" "@@pwdFormStr4@@"
+STRINGTABLE ID strPasswordDialogTitle "" "@@pwdFormTitle1@@" "@@pwdFormTitle2@@"
+STRINGTABLE ID strShowDialog "" "@@strShowDialog@@"
+STRINGTABLE ID strDefEntryCard "" "@@tmplCreditCardCategory@@" "@@tmplCreditCardTitle@@" "@@tmplCreditCardBody@@"
+STRINGTABLE ID strDefEntryPassword "" "@@tmplPasswordCategory@@" "@@tmplPasswordTitle@@" "@@tmplPasswordBody@@"
+STRINGTABLE ID strIEAction "" "@@ieActionImport@@" "@@ieActionExport@@"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "@@aBadRomT@@"
+	MESSAGE "@@aBadRomB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "@@aCannotOpenDatabaseT@@"
+	MESSAGE "@@aCannotOpenDatabaseB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aPasswordChanged
+INFORMATION
+BEGIN
+	TITLE "@@aPasswordChangedT@@"
+	MESSAGE "@@aPasswordChangedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aDeleteRecord
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aDeleteRecordT@@"
+	MESSAGE "@@aDeleteRecordB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aClearAll
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aClearAllT@@"
+	MESSAGE "@@aClearAllB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aNotificationError
+INFORMATION
+BEGIN
+	TITLE "@@aNotificationErrorT@@"
+	MESSAGE "@@aNotificationErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aPwdGenError
+INFORMATION
+BEGIN
+	TITLE "@@aPwdGenErrorT@@"
+	MESSAGE "@@aPwdGenErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aPwdGenNone
+INFORMATION
+BEGIN
+	TITLE "@@aPwdGenNoneT@@"
+	MESSAGE "@@aPwdGenNoneB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aPwdChangeReminder
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aPwdChangeReminderT@@"
+	MESSAGE "@@aPwdChangeReminderB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aPwdChange
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aPwdChangeT@@"
+	MESSAGE "@@aPwdChangeB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aNoCopyPrevention
+INFORMATION
+BEGIN
+	TITLE "@@aNoCopyPreventionT@@"
+	MESSAGE "@@aNoCopyPreventionB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aCopyPrevBitSet
+INFORMATION
+BEGIN
+	TITLE "@@aCopyPrevBitSetT@@"
+	MESSAGE "@@aCopyPrevBitSetB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aIRSocketError
+INFORMATION
+BEGIN
+	TITLE "@@aIRSocketErrorT@@"
+	MESSAGE "@@aIRSocketErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "@@aIRSendErrorT@@"
+	MESSAGE "@@aIRSendErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aIRReceiveNotInApp
+INFORMATION
+BEGIN	
+	TITLE "@@aIRReceiveNotInAppT@@"
+	MESSAGE "@@aIRReceiveNotInAppB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoRecByID
+INFORMATION
+BEGIN
+	TITLE "@@aNoRecByIDT@@"
+	MESSAGE "@@aNoRecByIDB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aSletAlreadyExist
+INFORMATION
+BEGIN
+	TITLE "@@aSletAlreadyExistT@@"
+	MESSAGE "@@aSletAlreadyExistB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aCannotCreateSlet
+INFORMATION
+BEGIN
+	TITLE "@@aCannotCreateSletT@@"
+	MESSAGE "@@aCannotCreateSletB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aSletCreated
+INFORMATION
+BEGIN
+	TITLE "@@aSletCreatedT@@"
+	MESSAGE "@@aSletCreatedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aCannotOpenSlet
+INFORMATION
+BEGIN
+	TITLE "@@aCannotOpenSletT@@"
+	MESSAGE "@@aCannotOpenSletB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aLetDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aLetDeleteT@@"
+	MESSAGE "@@aLetDeleteB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aLetDeleteError
+INFORMATION
+BEGIN
+	TITLE "@@aLetDeleteErrorT@@"
+	MESSAGE "@@aLetDeleteErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoLibrary
+INFORMATION
+BEGIN
+	TITLE "@@aNoLibraryT@@"
+	MESSAGE "@@aNoLibraryB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoSuchLet
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aNoSuchLetT@@"
+	MESSAGE "@@aNoSuchLetB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aPruneLet
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aPruneLetT@@"
+	MESSAGE "@@aPruneLetB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aPruneStatus
+INFORMATION
+BEGIN
+	TITLE "@@aPruneStatusT@@"
+	MESSAGE "@@aPruneStatusB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aPruneNoneDeleted
+INFORMATION
+BEGIN
+	TITLE "@@aPruneNoneDeletedT@@"
+	MESSAGE "@@aPruneNoneDeletedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aIRSendEntryError
+INFORMATION
+BEGIN
+	TITLE "@@aIRSendEntryErrorT@@"
+	MESSAGE "@@aIRSendEntryErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aIRReceiveMustBeInApp
+INFORMATION
+BEGIN	
+	TITLE "@@aIRReceiveMustBeInAppT@@"
+	MESSAGE "@@aIRReceiveMustBeInAppB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoFocus
+INFORMATION
+BEGIN
+	TITLE "@@aNoFocusT@@"
+	MESSAGE "@@aNoFocusB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aAddOrReplace
+CONFIRMATION
+BEGIN
+	TITLE "@@aAddOrReplaceT@@"
+	MESSAGE "@@aAddOrReplaceB@@"
+	BUTTONS "@@aABRBefore@@" "@@aABRAfter@@" "@@aABRReplace@@"
+END
+
+ALERT ID aNothingToImport
+INFORMATION
+BEGIN
+	TITLE "@@aNothingToImportT@@"
+	MESSAGE "@@aNothingToImportB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNothingToExport
+INFORMATION
+BEGIN
+	TITLE "@@aNothingToExportT@@"
+	MESSAGE "@@aNothingToExportB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aImpNothingSelected
+INFORMATION
+BEGIN
+	TITLE "@@aImpNothingSelectedT@@"
+	MESSAGE "@@aImpNothingSelectedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aImpImported
+INFORMATION
+BEGIN
+	TITLE "@@aImpImportedT@@"
+	MESSAGE "@@aImpImportedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aExpNothingSelected
+INFORMATION
+BEGIN
+	TITLE "@@aExpNothingSelectedT@@"
+	MESSAGE "@@aExpNothingSelectedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aExpExported
+INFORMATION
+BEGIN
+	TITLE "@@aExpExportedT@@"
+	MESSAGE "@@aExpExportedB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aSetNewHint
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aSetNewHintT@@"
+	MESSAGE "@@aSetNewHintB@@"
+	BUTTONS "@@abYes@@" "@@abNo@@"
+END
+
+ALERT ID aNoPasswordHint
+INFORMATION
+BEGIN
+	TITLE "@@aNoPasswordHintT@@"
+	MESSAGE "@@aNoPasswordHintB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aPasswordHint
+INFORMATION
+BEGIN
+	TITLE "@@aPasswordHintT@@"
+	MESSAGE "^1"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoPose
+INFORMATION
+BEGIN
+	TITLE "@@aNoPoseT@@"
+	MESSAGE "@@aNoPoseB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "@@fAboutTitle@@ iSecur"
+
+	LABEL "iSecur" AUTOID AT (CENTER 20) FONT 7
+	LABEL "@@fAboutVersion@@ @@VERSION@@" AUTOID AT (CENTER 42)
+	FIELD ID cAboutTxt AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "@@fbDone@@" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutTxt cAboutScrBar
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "iSecur"
+
+	POPUPTRIGGER "" ID cMainPopup AT (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "" ID cMainList AT (86 1 72 AUTO) NONUSABLE
+	POPUPLIST ID cMainPopup cMainList
+
+	LIST "" cMainSecretsList AT (1 20 158 121) VISIBLEITEMS MainSecretsListLines
+
+	BUTTON "@@fMainNew@@" ID cMainNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fMainLoad@@" ID cMainTmpl AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+
+	POPUPTRIGGER "" ID cMainPopFilter AT (RIGHT@160 148 0 13) RIGHTANCHOR
+	LIST "@@fMainAll@@" "@@fMainSecrets@@" "@@fMainTemplates@@" ID cMainLstFilter AT (RIGHT@160 148 50 AUTO) VISIBLEITEMS 3 NONUSABLE
+	POPUPLIST ID cMainPopFilter cMainLstFilter
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainPopup
+	BOTTOMLEFTOBJECTID cMainNew
+	NAVIGATIONMAP
+		ROW cMainPopup cMainList
+		ROW cMainSecretsList
+		ROW cMainNew cMainTmpl cMainPopFilter cMainLstFilter
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "@@mMainActions@@"
+	BEGIN
+		MENUITEM "@@mActionsNewT@@" ID mMainNew "@@mActionsNewK@@"
+		MENUITEM "@@mActionsNewTmplT@@" ID mMainNewTmpl "@@mActionsNewTmplK@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mActionsBeamT@@" ID mMainBeam
+		MENUITEM "@@mActionsManageT@@" ID mMainManage
+	END
+
+	PULLDOWN "@@mMainImpExp@@"
+	BEGIN
+		MENUITEM "@@mIEImportT@@" ID mMainImport "@@mIEImportK@@"
+		MENUITEM "@@mIEExportT@@" ID mMainExport "@@mIEExportK@@"
+	END
+
+	PULLDOWN "@@mMainOptions@@"
+	BEGIN
+		MENUITEM "@@mOptionsChangeT@@" ID mMainChange
+		MENUITEM "@@mOptionsHintT@@" ID mMainPasswordHint
+		MENUITEM SEPARATOR
+		MENUITEM "@@mOptionsPrefsT@@" ID mMainPreferences
+	END
+
+	PULLDOWN "@@mMainHelp@@"
+	BEGIN
+		MENUITEM "@@mHelpAboutT@@" ID mMainAbout
+	END
+END
+
+FORM ID fNewDatabase AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "iSecur - @@fNewDatabaseTitle@@"
+
+	LABEL "@@fNewDatabaseLine1@@" AUTOID AT (CENTER 16) FONT 1
+	LABEL "@@fNewDatabaseLine2@@" AUTOID AT (4 30) FONT 0
+	LABEL "@@fNewDatabaseLine3@@" AUTOID AT (4 42) FONT 0
+	LABEL "@@fNewDatabaseLine4@@" AUTOID AT (4 56) FONT 0
+	LABEL "@@fNewDatabaseLine5@@" AUTOID AT (4 68) FONT 0
+	LABEL "@@fNewDatabaseLine6@@" AUTOID AT (4 80) FONT 0
+	LABEL "@@fNewDatabaseLine7@@" AUTOID AT (4 92) FONT 0
+	LABEL "@@fNewDatabaseLine8@@" AUTOID AT (4 104) FONT 0
+	LABEL "@@fNewDatabaseLine9@@" AUTOID AT (4 116) FONT 0
+	LABEL "@@fNewDatabaseLine10@@" AUTOID AT (4 130) FONT 0
+	LABEL "@@fNewDatabaseLine11@@" AUTOID AT (PREVRIGHT+2 130) FONT 1
+	LABEL "@@fNewDatabaseLine12@@" AUTOID AT (PREVRIGHT+2 130) FONT 0
+
+	BUTTON "@@fNewDatabaseLine11@@" ID cNewDatabaseNext AT (CENTER BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fNewDatabase
+	INITIALSTATE 1
+	INITIALOBJECTID cNewDatabaseNext
+	BOTTOMLEFTOBJECTID cNewDatabaseNext
+	NAVIGATIONMAP
+		ROW cNewDatabaseNext
+END
+
+FORM ID fCreateDatabase AT (0 0 160 160)
+NOFRAME
+BEGIN
+	LABEL "@@fCreateDatabaseLine1@@" AUTOID AT (8 12)
+	LABEL "@@fCreateDatabaseLine2@@" AUTOID AT (8 24)
+	LABEL "@@fCreateDatabaseLine3@@" AUTOID AT (8 36)
+	LABEL "@@fCreateDatabaseLine4@@" AUTOID AT (8 48)
+	LABEL "@@fCreateDatabaseLine5@@" AUTOID AT (8 60)
+	LABEL "@@fCreateDatabaseLine6@@" AUTOID AT (8 72)
+	LABEL "@@fCreateDatabaseLine7@@" AUTOID AT (RIGHT@78 92)
+
+	LABEL "@@fCreateDatabaseLine8@@" AUTOID AT (8 112)
+	LABEL "@@fCreateDatabaseLine9@@" AUTOID AT (8 124)
+	LABEL "@@fCreateDatabaseLine10@@" AUTOID AT (8 136)
+END
+
+FORM ID fPassword AT (0 0 160 160)
+NOFRAME
+MENUID mPassword
+BEGIN
+	LABEL "@@fPasswordPwd@@:" ID cPasswordRPwdLabel AT (RIGHT@46 48) NONUSABLE
+	FIELD ID cPasswordRPwd AT (48 48 102 33) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED NONUSABLE
+	BUTTON "12" ID cPasswordRPwdKbd AT (10 63 24 16) FONT miscFont NONUSABLE
+
+	LABEL "@@fPasswordConfirm@@:" ID cPasswordRConfirmLabel AT (RIGHT@46 84) NONUSABLE
+	FIELD ID cPasswordRConfirm AT (48 84 102 33) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED NONUSABLE
+	BUTTON "12" ID cPasswordRConfirmKbd AT (10 99 24 16) FONT miscFont NONUSABLE
+
+	LABEL "@@fPasswordPwd@@:" ID cPasswordPwdLabel AT (RIGHT@46 76) NONUSABLE
+	FIELD ID cPasswordPwd AT (48 76 102 33) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED NONUSABLE
+	BUTTON "12" ID cPasswordPwdKbd AT (10 91 24 16) FONT miscFont NONUSABLE
+
+	BUTTON "@@fbOK@@" ID cPasswordOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cPasswordCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+
+	GRAFFITISTATEINDICATOR AT (100 147)
+
+	BUTTON "G" ID cPasswordGenerate AT (116 BOTTOM@159 11 11) RECTFRAME NONUSABLE FONT miscFont
+
+	BUTTON "?" ID cPasswordHint AT (116 BOTTOM@159 11 11) RECTFRAME NONUSABLE FONT miscFont
+
+	PUSHBUTTON "D" ID cPasswordPwdDot AT (136 BOTTOM@159 11 11) GROUP 1 FONT miscFont
+	PUSHBUTTON "T" ID cPasswordPwdTxt AT (148 BOTTOM@159 11 11) GROUP 1 FONT miscFont
+END
+
+NAVIGATION ID fPassword
+	INITIALSTATE 1
+	INITIALOBJECTID cPasswordCancel
+	BOTTOMLEFTOBJECTID cPasswordOK
+	NAVIGATIONMAP
+		ROW cPasswordRPwdKbd cPasswordRPwd
+		ROW cPasswordRConfirmKbd cPasswordRConfirm
+		ROW cPasswordPwdKbd cPasswordPwd
+		ROW cPasswordOK cPasswordCancel
+		ROW cPasswordGenerate cPasswordHint cPasswordPwdDot cPasswordPwdTxt
+END
+
+MENU mPassword
+BEGIN
+	PULLDOWN "@@mEditT@@"
+	BEGIN
+		MENUITEM "@@mEditUndoT@@" ID 10000 "@@mEditUndoK@@"
+		MENUITEM "@@mEditCutT@@" ID 10001 "@@mEditCutK@@"
+		MENUITEM "@@mEditCopyT@@" ID 10002 "@@mEditCopyK@@"
+		MENUITEM "@@mEditPasteT@@" ID 10003 "@@mEditPasteK@@"
+		MENUITEM "@@mEditSelectT@@" ID 10004 "@@mEditSelectK@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mEditKeyboardT@@" ID 10006 "@@mEditKeyboardK@@"
+		MENUITEM "@@mEditGraffitiT@@" ID 10007 "@@mEditGraffitiK@@"
+	END
+
+	PULLDOWN "@@mPasswordActionsT@@"
+	BEGIN
+		MENUITEM "@@mPasswordActionsNewT@@" ID mPasswordGenerate "@@mPasswordActionsNewK@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mPasswordActionsMaskT@@" ID mPasswordMask "@@mPasswordActionsMaskK@@"
+		MENUITEM "@@mPasswordActionsUnmaskT@@" ID mPasswordUnmask "@@mPasswordActionsUnmaskK@@"
+	END
+END
+
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+MENUID mEdit
+DEFAULTBUTTON cEditCancel
+BEGIN
+	TITLE "@@fEditT@@"
+
+	POPUPTRIGGER "" ID cEditPopup At (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "" ID cEditList AT (86 1 72 AUTO) NONUSABLE
+	POPUPLIST ID cEditPopup cEditList
+
+	LABEL "@@fEditTitle@@:" AUTOID AT (1 18) FONT 1
+	FIELD ID cEditFldTitle AT (40 18 112 11) MULTIPLELINES MAXCHARS TitleLength UNDERLINED FONT 0
+
+	LABEL "@@fEditSecret@@:" AUTOID AT (1 32) FONT 1
+	GRAFFITISTATEINDICATOR AT (150 32)
+	FIELD ID cEditFldSecret AT (1 44 150 77) MULTIPLELINES HASSCROLLBAR MAXCHARS SecretLength UNDERLINED FONT 0
+	SCROLLBAR ID cEditScrBarSecret AT (152 44 7 77) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+
+	CHECKBOX "@@fEditTemplate@@" ID cEditChkTemplate AT (1 126 AUTO AUTO)
+
+	BUTTON "G" ID cEditGenerate AT (CENTER 126 11 11) RECTFRAME FONT miscFont
+
+	LABEL "@@fEditIcon@@" ID cEditLblIcon AT (118 126) NONUSABLE
+	BUTTON "" ID cEditIcon AT (140 126 10 9) NONUSABLE  NOFRAME
+
+	BUTTON "@@fbOK@@" ID cEditOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cEditCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbLoad@@" ID cEditLoad AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbDelete@@" ID cEditDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fEdit
+	INITIALSTATE 1
+	INITIALOBJECTID cEditFldTitle
+	BOTTOMLEFTOBJECTID cEditOK
+	NAVIGATIONMAP
+		ROW cEditPopup cEditList
+		ROW cEditFldTitle
+		ROW cEditFldSecret
+		ROW cEditChkTemplate cEditIcon
+		ROW cEditOK cEditCancel cEditLoad cEditDelete
+END
+
+MENU mEdit
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "@@mEditUndoT@@" ID 10000 "@@mEditUndoK@@"
+		MENUITEM "@@mEditCutT@@" ID 10001 "@@mEditCutK@@"
+		MENUITEM "@@mEditCopyT@@" ID 10002 "@@mEditCopyK@@"
+		MENUITEM "@@mEditPasteT@@" ID 10003 "@@mEditPasteK@@"
+		MENUITEM "@@mEditSelectT@@" ID 10004 "@@mEditSelectK@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mEditKeyboardT@@" ID 10006 "@@mEditKeyboardK@@"
+		MENUITEM "@@mEditGraffitiT@@" ID 10007 "@@mEditGraffitiK@@"
+	END
+
+	PULLDOWN "@@mEditActions@@"
+	BEGIN
+		MENUITEM "@@mEditActionsGenT@@" ID mEditGenerate "@@mEditActionsGenK@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mEditActionsLoadT@@" ID mEditLoad "@@mEditActionsLoadK@@"
+		MENUITEM "@@mEditActionsDeleteT@@" ID mEditDelete "@@mEditActionsDeleteK@@"
+	END
+
+	PULLDOWN "@@mEditLet@@"
+	BEGIN
+		MENUITEM "@@mEditLetCreateT@@" ID mEditCreate
+	END
+END
+
+FORM ID fIcon AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "@@fIconTitle@@"
+
+	GADGET ID cIconIcon AT (IconX IconY IconW IconH)
+
+	BUTTON "@@bIconNone@@" ID cIconNone AT (4 BOTTOM@151 AUTO AUTO)
+	BUTTON "" ID cIconUp AT (116 BOTTOM@151 11 8) NOFRAME FONT 5
+	BUTTON "" ID cIconDown AT (PREVRIGHT+4 BOTTOM@151 11 8) NOFRAME FONT 5
+END
+
+NAVIGATION ID fIcon
+	INITIALSTATE 1
+	INITIALOBJECTID cIconNone
+	BOTTOMLEFTOBJECTID cIconNone
+	NAVIGATIONMAP
+		ROW cIconIcon
+		ROW cIconNone cIconUp cIconDown
+END
+
+FORM ID fShow AT (0 0 160 160)
+NOFRAME
+MENUID mShow
+BEGIN
+	TITLE "@@fShowTitle@@"
+
+	BUTTON "" ID cShowPrev AT (142 16 9 11) NOFRAME FONT 4
+	BUTTON "" ID cShowNext AT (151 16 9 11) NOFRAME FONT 4
+
+	FIELD ID cShowFldSecret AT (1 30 150 110) MULTIPLELINES HASSCROLLBAR MAXCHARS SecretLength FONT 0 NONEDITABLE
+	SCROLLBAR ID cShowScrBarSecret AT (152 30 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE ShowSecretLines-1
+
+	BUTTON "@@fbDone@@" ID cShowDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbBeam@@" ID cShowBeam AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbEdit@@" ID cShowEdit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+	BUTTON " " ID cShowToggle AT (RIGHT@159 BOTTOM@159 11 11) FONT miscFont NOFRAME
+END
+
+NAVIGATION ID fShow
+	INITIALSTATE 1
+	INITIALOBJECTID cShowDone
+	BOTTOMLEFTOBJECTID cShowDone
+	NAVIGATIONMAP
+		ROW cShowPrev cShowNext
+		ROW cShowFldSecret
+		ROW cShowDone cShowBeam cShowEdit cShowToggle
+END
+
+MENU mShow
+BEGIN
+	PULLDOWN "@@mShowActions@@"
+	BEGIN
+		MENUITEM "@@mShowActionsBeamT@@" ID mShowBeam "@@mShowActionsBeamK@@"
+		MENUITEM "@@mShowActionsEditT@@" ID mShowEdit "@@mShowActionsEditK@@"
+		MENUITEM SEPARATOR
+		MENUITEM "@@mEditCopyT@@" ID 10002 "@@mEditCopyK@@"
+		MENUITEM "@@mEditSelectT@@" ID 10004 "@@mEditSelectK@@"
+	END
+
+	PULLDOWN "@@mShowLet@@"
+	BEGIN
+		MENUITEM "@@mShowLetCreateT@@" ID mShowCreate
+	END
+END
+
+FORM ID fPreferences AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cPreferencesCancel
+BEGIN
+	TITLE "@@fPrfTitle@@"
+
+	POPUPTRIGGER "" ID cPreferencesPopup At (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "@@dlPrfPage1@@" "@@dlPrfPage2@@" "@@dlPrfPage3@@" ID cPreferencesList AT (RIGHT@160 1 72 AUTO) NONUSABLE VISIBLEITEMS 3
+	POPUPLIST ID cPreferencesPopup cPreferencesList
+
+	/* Password policy */
+	CHECKBOX "@@fPrf1RememberP@@:" ID cPreferencesChkRemember AT (1 20 AUTO AUTO) NONUSABLE
+	FIELD ID cPreferencesFldRemember AT (PREVRIGHT+2 20 6 AUTO) UNDERLINED NUMERIC MAXCHARS 1 RIGHTALIGN NONUSABLE
+	LABEL "@@fPrf1RememberS@@" ID cPreferencesLblRemember AT (PREVRIGHT+2 20) NONUSABLE
+
+	CHECKBOX "@@fPrf1RemindChk@@" ID cPreferencesChkRemind AT (1 34 AUTO AUTO) NONUSABLE
+	LABEL "@@fPrf1RemindP@@" ID cPreferencesLblRemind1 AT (18 46) NONUSABLE
+	FIELD ID cPreferencesFldRemind AT (PREVRIGHT+2 46 18 AUTO) UNDERLINED NUMERIC MAXCHARS 3 RIGHTALIGN NONUSABLE
+	LABEL "@@fPrf1RemindS@@" ID cPreferencesLblRemind2 AT (PREVRIGHT+2 46) NONUSABLE
+
+	/* Log In/Out */
+	CHECKBOX "@@fPrf2FailedLogins@@:" ID cPreferencesChkMax AT (1 20 AUTO AUTO) NONUSABLE
+	FIELD ID cPreferencesFldMax AT (PREVRIGHT+2 20 6 AUTO) UNDERLINED NUMERIC MAXCHARS 1 RIGHTALIGN NONUSABLE
+
+	CHECKBOX "@@fPrf2DeleteDB1@@" ID cPreferencesChkDestroyDB AT (1 34 AUTO AUTO) NONUSABLE
+	LABEL "@@fPrf2DeleteDB2@@" ID cPreferencesLblDestroyDB AT (19 46) NONUSABLE
+
+	CHECKBOX "@@fPrf2Logout@@" ID cPreferencesChkLogOut AT (1 60 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf2Timeout@@" ID cPreferencesChkTimeOut AT (1 74 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf2AutoPopup@@" ID cPreferencesChkAutoPopup AT (1 88 AUTO AUTO) NONUSABLE
+
+	/* Miscellaneous */
+	CHECKBOX "@@fPrf3EditMode@@" ID cPreferencesChkOpenEdit AT (1 20 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf3EnableFind@@" ID cPreferencesChkFind AT (1 34 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf3EmptyClip@@" ID cPreferencesChkClipboard AT (1 48 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf3CopyPrevention@@" ID cPreferencesChkNoBeam AT (1 62 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf3ListNew@@" ID cPreferencesChkNewSecret AT (1 76 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "@@fPrf3Stay@@" ID cPreferencesChkSecretStay AT (1 90 AUTO AUTO) NONUSABLE
+	CHECKBOX "@@fPrf3Inherit@@" ID cPreferencesChkTemplateInherit AT (1 104 AUTO AUTO) NONUSABLE
+	CHECKBOX "@@fPrf35Way@@" ID cPreferencesChk5Way AT (1 118 AUTO AUTO) NONUSABLE
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "@@fbOK@@" ID cPreferencesOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fPreferences
+	INITIALSTATE 1
+	INITIALOBJECTID cPreferencesCancel
+	BOTTOMLEFTOBJECTID cPreferencesOK
+	NAVIGATIONMAP
+		ROW cPreferencesPopup cPreferencesList
+		ROW cPreferencesChkRemember cPreferencesFldRemember
+		ROW cPreferencesChkRemind cPreferencesFldRemind
+		ROW cPreferencesChkMax cPreferencesFldMax
+		ROW cPreferencesChkDestroyDB
+		ROW cPreferencesChkLogOut
+		ROW cPreferencesChkTimeOut
+		ROW cPreferencesChkOpenEdit
+		ROW cPreferencesChkFind
+		ROW cPreferencesChkClipboard
+		ROW cPreferencesChkNoBeam
+		ROW cPreferencesChkNewSecret
+		ROW cPreferencesOK cPreferencesCancel
+END
+
+FORM ID fTemplate AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cTemplateCancel
+BEGIN
+	TITLE "@@fTmplTitle@@"
+
+	LABEL "@@fTmplCategory@@:" AUTOID AT (4 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT 18) FONT 0
+
+	POPUPTRIGGER "" ID cTemplatePopup AT (56 17 0 13) LEFTANCHOR
+	LIST "" ID cTemplateList AT (58 18 94 AUTO) NONUSABLE
+	POPUPLIST ID cTemplatePopup cTemplateList
+
+	LIST "" cTemplateItems AT (4 34 148 99) VISIBLEITEMS TemplateItemsLines
+
+	BUTTON "@@fbCancel@@" ID cTemplateCancel AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fTemplate
+	INITIALSTATE 1
+	INITIALOBJECTID cTemplateCancel
+	BOTTOMLEFTOBJECTID cTemplateCancel
+	NAVIGATIONMAP
+		ROW cTemplatePopup cTemplateList
+		ROW cTemplateItems
+		ROW cTemplateCancel
+END
+
+FORM ID fKeywords AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cKeywordsCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "@@fKeywordsTitle@@"
+
+	GRAFFITISTATEINDICATOR AT (140 14)
+
+	FIELD ID cKeywordsF1 AT (4 26 132 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS1 AT (141 27 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF2 AT (4 51 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS2 AT (141 52 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF3 AT (4 76 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS3 AT (141 77 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF4 AT (4 101 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS4 AT (141 102 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF5 AT (4 126 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS5 AT (141 127 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	BUTTON "" ID cKeywordsUp AT (142 138 11 6) NOFRAME FONT 5
+	BUTTON "" ID cKeywordsDown AT (142 146 11 6) NOFRAME FONT 5
+
+	BUTTON "@@fbOK@@" ID cKeywordsOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cKeywordsCancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+	BUTTON "@@fbClear@@" ID cKeywordsClearAll AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+	BUTTON "G" ID cKeywordsGenerate AT (PREVRIGHT+4 BOTTOM@153 11 11) RECTFRAME FONT miscFont
+END
+
+NAVIGATION ID fKeywords
+	INITIALSTATE 1
+	INITIALOBJECTID cKeywordsCancel
+	BOTTOMLEFTOBJECTID cKeywordsOK
+	NAVIGATIONMAP
+		ROW cKeywordsF1 cKeywordsS1
+		ROW cKeywordsF2 cKeywordsS2
+		ROW cKeywordsF3 cKeywordsS3
+		ROW cKeywordsF4 cKeywordsS4
+		ROW cKeywordsF5 cKeywordsS5
+		ROW cKeywordsUp cKeywordsDown
+		ROW cKeywordsOK cKeywordsCancel cKeywordsClearAll
+END
+
+FORM ID fPwdGen AT (2 52 156 106)
+MODAL
+DEFAULTBUTTON cPwdGenCancel
+BEGIN
+	TITLE "@@fPwdGenTitle@@"
+
+	LABEL "@@fPwdGenLength@@:" AUTOID AT (RIGHT@58 18)
+	PUSHBUTTON "6" ID cPwdGenL6 AT (60 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "8" ID cPwdGenL8 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "10" ID cPwdGenL10 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "12" ID cPwdGenL12 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "20" ID cPwdGenL20 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+
+	LABEL "@@fPwdGenContains@@:" AUTOID AT (RIGHT@58 34)
+	PUSHBUTTON "a-z" ID cPwdGenLower AT (60 34 AUTO AUTO)
+	PUSHBUTTON "A-Z" ID cPwdGenUpper AT (PREVRIGHT 34 AUTO AUTO)
+	PUSHBUTTON "0-9" ID cPwdGenDigits AT (PREVRIGHT 34 AUTO AUTO)
+	PUSHBUTTON "#$*" ID cPwdGenSpecials AT (PREVRIGHT 34 AUTO AUTO)
+
+	LABEL "@@fPwdGenPassword@@:" AUTOID AT (RIGHT@58 52)
+	FIELD ID cPwdGenPassword AT (60 52 90 33) NONEDITABLE MAXCHARS GeneratePasswordLength MULTIPLELINES FONT 1
+
+	BUTTON "@@fbUse@@" ID cPwdGenUse AT (4 BOTTOM@103 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cPwdGenCancel AT (PREVRIGHT+4 BOTTOM@103 AUTO AUTO)
+	BUTTON "@@fbGenerate@@" ID cPwdGenGenerate AT (PREVRIGHT+4 BOTTOM@103 AUTO AUTO)
+END
+
+NAVIGATION ID fPwdGen
+	INITIALSTATE 1
+	INITIALOBJECTID cPwdGenCancel
+	BOTTOMLEFTOBJECTID cPwdGenUse
+	NAVIGATIONMAP
+		ROW cPwdGenL6 cPwdGenL8 cPwdGenL10 cPwdGenL12 cPwdGenL20
+		ROW cPwdGenLower cPwdGenUpper cPwdGenDigits cPwdGenSpecials
+		ROW cPwdGenUse cPwdGenCancel cPwdGenGenerate
+END
+
+FORM ID fLet AT (2 92 156 66)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cLetCancel
+BEGIN
+	TITLE "@@fLetNameTitle@@"
+
+	LABEL "@@fLetName@@:" AUTOID AT (4 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 18) FONT 0
+	FIELD ID cLetFldName AT (4 30 150 12) MAXCHARS 31 MULTIPLELINES UNDERLINED
+	GRAFFITISTATEINDICATOR AT (140 53)
+
+	BUTTON "@@fbOK@@" ID cLetOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cLetCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+NAVIGATION ID fLet
+	INITIALSTATE 1
+	INITIALOBJECTID cLetCancel
+	BOTTOMLEFTOBJECTID cLetOK
+	NAVIGATIONMAP
+		ROW cLetFldName
+		ROW cLetOK cLetCancel
+END
+
+FORM ID fLetManage AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cLetManageDone
+BEGIN
+	TITLE "@@fLetManTitle@@"
+
+	LIST "" cLetManageList AT (4 15 148 121) VISIBLEITEMS LetManageListLines NONUSABLE
+	LABEL "@@fLetManNone@@" ID cLetManageLbl AT (CENTER 73) FONT 1 NONUSABLE
+
+	BUTTON "@@fbDone@@" ID cLetManageDone AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "@@fbPrune@@" ID cLetManagePrune AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fLetManage
+	INITIALSTATE 1
+	INITIALOBJECTID cLetManageDone
+	BOTTOMLEFTOBJECTID cLetManageDone
+	NAVIGATIONMAP
+		ROW cLetManageList
+		ROW cLetManageDone cLetManagePrune
+END
+
+FORM ID fIE AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cIEDone
+BEGIN
+	TITLE ""
+
+	POPUPTRIGGER "" ID cIEPopup AT (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "" ID cIEList AT (86 1 72 AUTO) NONUSABLE
+	POPUPLIST ID cIEPopup cIEList
+
+	LIST "" cIEItems AT (1 20 158 121) VISIBLEITEMS IEListLines
+
+	BUTTON "@@fbDone@@" ID cIEDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbAll@@" ID cIEAll AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbNone@@" ID cIENone AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@fbImport@@" ID cIEImport AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+	BUTTON "@@fbExport@@" ID cIEExport AT (PREVLEFT BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fIE
+	INITIALSTATE 1
+	INITIALOBJECTID cIEPopup
+	BOTTOMLEFTOBJECTID cIEDone
+	NAVIGATIONMAP
+		ROW cIEPopup cIEList
+		ROW cIEItems
+		ROW cIEDone cIEAll cIENone cIEImport cIEExport
+END
+
+FORM ID fImportSettings AT (2 64 156 94)
+MODAL
+DEFAULTBUTTON cImportSettingsCancel
+BEGIN
+	TITLE "@@fImpSetTitle@@"
+
+	LABEL "@@fImpSetImportTo@@:" AUTOID AT (RIGHT@54 18) 
+
+	POPUPTRIGGER "" ID cImportSettingsPopup AT (56 17 0 13) LEFTANCHOR
+	LIST "" ID cImportSettingsList AT (58 18 94 AUTO) NONUSABLE
+	POPUPLIST ID cImportSettingsPopup cImportSettingsList
+
+	CHECKBOX "@@fImpSetDelete@@" ID cImportSettingsDelete AT (4 32 AUTO AUTO)
+	CHECKBOX "@@fImpSetTmpl@@" ID cImportSettingsTemplate AT (4 46 AUTO AUTO)
+
+	BUTTON "" ID cImportSettingsIcon AT (4 60 10 9) NONUSABLE  NOFRAME
+	LABEL "@@fImpSetIcon@@" ID cImportSettingsLblIcon AT (21 60) NONUSABLE
+
+	BUTTON "@@fbCancel@@" ID cImportSettingsCancel AT (4 BOTTOM@91 AUTO AUTO)
+	BUTTON "@@fbImport@@" ID cImportSettingsImport AT (PREVRIGHT+4 BOTTOM@91 AUTO AUTO)
+
+END
+
+NAVIGATION ID fImportSettings
+	INITIALSTATE 1
+	INITIALOBJECTID cImportSettingsCancel
+	BOTTOMLEFTOBJECTID cImportSettingsCancel
+	NAVIGATIONMAP
+		ROW cImportSettingsPopup cImportSettingsList
+		ROW cImportSettingsDelete
+		ROW cImportSettingsTemplate
+		ROW cImportSettingsCancel cImportSettingsImport cImportSettingsIcon
+END
+
+FORM ID fExportSettings AT (2 92 156 66)
+MODAL
+DEFAULTBUTTON cExportSettingsCancel
+BEGIN
+	TITLE "@@fExpSetTitle@@"
+
+	LABEL "@@fExpSetExportTo@@:" AUTOID AT (RIGHT@54 18) 
+
+	POPUPTRIGGER "" ID cExportSettingsPopup AT (56 17 0 13) LEFTANCHOR
+	LIST "" ID cExportSettingsList AT (58 18 94 AUTO) NONUSABLE
+	POPUPLIST ID cExportSettingsPopup cImportSettingsList
+
+	CHECKBOX "@@fExpSetDelete@@" ID cExportSettingsDelete AT (4 32 AUTO AUTO)
+
+	BUTTON "@@fbCancel@@" ID cExportSettingsCancel AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "@@fbExport@@" ID cExportSettingsExport AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+NAVIGATION ID fExportSettings
+	INITIALSTATE 1
+	INITIALOBJECTID cExportSettingsCancel
+	BOTTOMLEFTOBJECTID cExportSettingsCancel
+	NAVIGATIONMAP
+		ROW cExportSettingsPopup cExportSettingsList
+		ROW cExportSettingsDelete
+		ROW cExportSettingsCancel cExportSettingsExport
+END
+
+FORM ID fPasswordHint AT (2 92 156 66)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cPasswordHintCancel
+BEGIN
+	TITLE "@@fPwdHintTitle@@"
+
+	LABEL "@@fPwdHintLabel@@:" AUTOID AT (4 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 18) FONT 0
+	FIELD ID cPasswordHintField AT (4 30 150 12) MAXCHARS PasswordHintLength MULTIPLELINES UNDERLINED
+	GRAFFITISTATEINDICATOR AT (140 53)
+
+	BUTTON "@@fbOK@@" ID cPasswordHintOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "@@fbCancel@@" ID cPasswordHintCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+NAVIGATION ID fPasswordHint
+	INITIALSTATE 1
+	INITIALOBJECTID cPasswordHintField
+	BOTTOMLEFTOBJECTID cPasswordHintOK
+	NAVIGATIONMAP
+		ROW cPasswordHintField
+		ROW cPasswordHintOK cPasswordHintCancel
+END

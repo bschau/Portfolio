@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="@Tracker" default="roll" basedir=".">
+	<property environment="env" />
+	<import file="../common.xml" />
+	<property name="lang" value="en" />
+	<property name="midlet.class" value="${project}MIDlet" />
+
+	<property name="src.d" value="." />
+	<property name="temp" value="../temp" />
+	<property name="classes.d" value="${temp}/classes" />
+	<property name="preverified.d" value="${temp}/preverfied" />
+	<property name="final.d" value="${temp}/final" />
+	<property name="incs.d" value="." />
+	<property name="resources.d" value="../resources" />
+
+	<path id="midpclasses">
+		<pathelement path="/opt/j2medev/lib/cldcapi11.jar" />
+		<pathelement path="/opt/j2medev/lib/midpapi20.jar" />
+		<pathelement path="/opt/j2medev/lib/jsr75.jar" />
+	</path>
+
+	<target name="setup">
+		<condition property="lang" value="${env.lang}">
+			<isset property="env.lang" />
+		</condition>
+
+		<echo message='public class Version { public static final String VERSION="${version}"; }' file="Version.java" />
+	</target>
+
+	<target name="compile" depends="setup">
+		<echo message="Building for LANG: ${lang}" />
+		<taskdef name="trl" classname="com.schau.TrlClassCreator" classpath="/opt/AntTasks/TrlClassCreator.jar" />
+		<trl base="locale/en.trl" strings="locale/${lang}.trl" destfile="Trl.java" encoding="utf-8" />
+		<mkdir dir="${classes.d}" />
+		<javac srcdir="${src.d}" destdir="${classes.d}" includeAntRuntime="no" classpathref="midpclasses" source="1.4" target="1.4" encoding="utf-8">
+			<compilerarg value="-Xlint" />
+		</javac>
+	</target>
+
+	<target name="preverify" depends="compile">
+		<mkdir dir="${preverified.d}" />
+		<exec executable="/opt/j2medev/bin/preverify">
+			<arg line="-d ${preverified.d}" />
+			<arg value="-classpath" />
+			<arg pathref="midpclasses" />
+			<arg value="${classes.d}" />
+		</exec>
+	</target>
+
+	<target name="manifest" depends="preverify">
+		<taskdef name="manifestbuilder" classname="com.schau.ManifestBuilder" classpath="/opt/AntTasks/ManifestBuilder.jar" />
+		<manifestbuilder showversion="true"
+			manifest="${temp}/manifest.mf"
+			name="${project}"
+			vendor="${vendor}"
+			version="${version}"
+			midp="2.0"
+			cldc="1.1">
+			<midlet name="${realname}" entry="${midlet.class}" icon="/icon.png" />
+		</manifestbuilder>
+	</target>
+
+	<target name="jar" depends="manifest">
+		<mkdir dir="${final.d}" />
+		<jar destfile="${final.d}/${project}-${lang}.jar" manifest="${temp}/manifest.mf">
+			<fileset dir="${preverified.d}" />
+			<fileset dir="${resources.d}" />
+		</jar>
+	</target>
+
+	<target name="buildjad">
+		<taskdef name="jadbuilder" classname="com.schau.JadBuilder" classpath="/opt/AntTasks/JadBuilder.jar" />
+		<jadbuilder showversion="true"
+			jadfile="${final.d}/${project}-${lang}.jad"
+			jarfile="${final.d}/${project}-${lang}.jar"
+			name="${project}"
+			vendor="${vendor}"
+			version="${version}">
+			<midlet name="${realname}" entry="${midlet.class}" icon="/icon.png" />
+		</jadbuilder>
+	</target>
+
+	<target name="jad" depends="jar,buildjad" />
+
+	<target name="clean">
+		<delete dir="${classes.d}" />
+		<delete dir="${prepped.d}" />
+		<delete dir="${jars.d}" />
+		<delete file="${temp}/manifest.mf" />
+		<delete verbose="true">
+			<fileset dir="${src.d}" defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+			<fileset dir="${resources.d}" defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete file="Trl.java" />
+		<delete file="Version.java" />
+	</target>
+
+	<target name="distclean" depends="clean">
+		<delete dir="${final.d}" />
+		<delete dir="${temp}" />
+	</target>
+
+	<target name="run">
+		<java fork="true" classname="org.microemu.app.Main">
+			<classpath>
+				<pathelement location="/opt/microemu/microemulator.jar" />
+				<pathelement location="/opt/microemu/lib/microemu-jsr-75.jar" />
+				<!-- <pathelement location="/opt/microemu/devices/microemu-device-large.jar" /> -->
+			</classpath>
+			<!-- <arg line="-device org/microemu/device/large/device.xml" /> -->
+			<arg line="-impl org.microemu.cldc.file.FileSystem" />
+			<arg value="org.microemu.examples.fcview.FCViewMIDlet" />
+			<arg value="${final.d}/${project}-${lang}.jad" />
+		</java>
+	</target>
+
+	<target name="roll" depends="jad,run" />
+
+	<target name="all" depends="clean,jad" />
+</project>

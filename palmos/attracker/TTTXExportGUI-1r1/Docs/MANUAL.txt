@@ -1,0 +1,44 @@
+TTTXExportGUI
+-------------
+
+
+TTTXExportGUI is a simple wrapper around tttxexport.  Using TTTXExportGUI you
+can (most of the time) forget about the command line.
+You need to have at least tttxexport.exe v1r3 installed for TTTXExportGUI to
+work.
+
+A short description of the 5 fields:
+
+TTTXExport
+	The full path to tttxexport.exe.  This will normally be set to the
+	latest installed version of tttxexport.exe.   Hit the Browse button
+	next to the field to locate a different version of tttxexport.exe.
+
+Options
+	Extra options to tttxexport.exe.   If you add a -o file switch the
+	content of the Output field will be ignored.   See the manual for
+	tttxexport for switches.
+
+Output
+	Where to store the exported archive.   This is the path to a directory.
+	Hit the Browse button next to the field to locate a suitable directory.
+
+Archive
+	Which archive to export.   This is stored in:
+
+	\Program Files\Palm\{HotSyncID}\Backup
+
+	The \Program Files\Palm part of the path is the same path you gave
+	when installing Palm Desktop.   The {HotSyncID} part is your HotSync
+	name.
+	The archive is TTTX_{name}.pdb.   The TTTX_atTracker_Data.PDB is not
+	a atTracker archive and thus cannot be exported.
+
+Format
+	Export archive to format.   See the manual page for tttxexport.exe for
+	more informations.
+
+
+When satisfied click Export to export the archive.
+
+

@@ -1,0 +1,29 @@
+#!/bin/ksh
+SPOOL=/var/spool/qmta
+machine="$(hostname).$(domainname)"
+sender="$(whoami)@$machine"
+dato="$(date +'%a, %d %b %Y %H:%M:%S %z')"
+rcpt="bsc@mgw.schau.dk"
+
+{
+	cat <<EOF
+ $rcpt
+EOF
+} > $SPOOL/rXXXXXX
+chown mta $SPOOL/rXXXXXX
+
+cp $HOME/origmails/brisse $SPOOL/mXXXXXX
+chown mta $SPOOL/mXXXXXX
+
+{
+	cat <<EOF
+C$(date +'%s')
+M0
+Fbsc@stacy.bschome.dk
+S0
+T$(date +'%s')
+EOF
+} > $SPOOL/sXXXXXX
+chown mta $SPOOL/sXXXXXX
+
+exit 0

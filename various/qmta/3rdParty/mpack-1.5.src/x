@@ -1,0 +1,3 @@
+#!/bin/ksh
+./munpack /tmp/ll
+exit $?

@@ -1,0 +1,27 @@
+#
+# Translated to danish by Brian Schau <brian@pixel44.dk>.
+#
+
+#: archiver.php:33 archiver.php:78 archiver.php:96 archiver.php:181
+msgid   "Archive"
+msgstr  "Arkiver"
+
+#: archiver.php:45
+msgid   "Archive Category"
+msgstr  "Arkiv kategori"
+
+#: archiver.php:23
+msgid   "Archiver"
+msgstr  "Arkivering"
+
+#: archiver.php:69
+msgid   "Save Changes"
+msgstr  "Gem ændringer"
+
+#: archiver.php:117
+msgid   "The post will not be archived if the above is not set."
+msgstr  "Indlægget bliver kun arkiveret hvis ovenstående er udfyldt."
+
+#: archiver.php:114
+msgid   "day month year"
+msgstr  "dag måned år"

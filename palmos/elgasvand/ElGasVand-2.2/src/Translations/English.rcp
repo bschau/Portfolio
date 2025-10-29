@@ -1,0 +1,58 @@
+TRANSLATION "English"
+BEGIN
+	"@@AboutText@@" = "El, Gas, Vand programmed by:\n\nBrian Schau\n\nPlease visit the website at:\n\nhttp://www.schau.com/\n\nOn the website you will find the latest version of El, Gas, Vand a user manual.\n\nEl, Gas, Vand is released under the GNU General Public License v2.\n\n"
+	"@@SelectDay@@" = "Select Date"
+	"@@StringDiff@@" = "Diff."
+	"@@StringPleaseWait@@" = "Please Wait!"
+	"@@StringMeter@@" = "Meter"
+	"@@StringUsage@@" = "Usage"
+	"@@StringAverage@@" = "Avg."
+	"@@StringCount@@" = "Readouts"
+	"@@StringLo@@" = "Lowest"
+	"@@StringHi@@" = "Highest"
+	"@@StringDate@@" = "Date"
+
+	"@@aBadRomTitle@@" = "Palm OS Too Old"
+	"@@aBadRomText@@" = "The Palm OS version in this device is too old. You need at least Palm OS v3.0 to run this program."
+
+	"@@aDatabaseErrorTitle@@" = "Database Error"
+	"@@aDatabaseErrorText@@" = "Cannot open the ^1 database."
+
+	"@@aDeleteTitle@@" = "Delete?"
+	"@@aDeleteText@@" = "Delete this entry?"
+
+	"@@aNoStatisticsTitle@@" = "No Statistics"
+	"@@aNoStatisticsText@@" = "You need at least two readouts to be able to create the statistics."
+
+	"@@fAboutTitle@@" = "About"
+	"@@fAboutVersion@@" = "Version"
+
+	"@@fMainDate@@" = "Date"
+	"@@fMainEl@@" = "Elec."
+	"@@fMainGas@@" = "Gas"
+	"@@fMainWater@@" = "Water"
+	"@@fMainListAll@@" = "All"
+	"@@fMainListEl@@" = "Electricity"
+	"@@fMainListGas@@" = "Gas"
+	"@@fMainListWater@@" = "Water"
+
+	"@@fEditTitle@@" = "Add/Edit"
+	"@@fEditDate@@" = "Date:"
+	"@@fEditElectricity@@" = "Electricity"
+	"@@fEditGas@@" = "Gas"
+	"@@fEditWater@@" = "Water"
+	"@@fEditNew@@" = "New"
+
+	"@@fStatisticsTitle@@" = "Statistics"
+
+	"@@mMainHelp@@" = "Help"
+	"@@mMainAbout@@" = "About"
+
+	"@@bOK@@" = "OK"
+	"@@bNew@@" = "New"
+	"@@bYes@@" = "Yes"
+	"@@bNo@@" = "No"
+	"@@bCancel@@" = "Cancel"
+	"@@bDelete@@" = "Delete"
+	"@@bStat@@" = "Statistics"
+END

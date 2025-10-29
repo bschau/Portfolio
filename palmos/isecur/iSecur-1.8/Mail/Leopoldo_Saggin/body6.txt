@@ -1,0 +1,24 @@
+Brian Schau ha scritto:
+>> 1. It told me that was not able to import record from 178 to  188 (or 
+> What error message did you get?
+
+Well the situation was this. I tried to import from my PalmOne Backup (on C:\Programs\Palmone\Username\backup) the file iSec_iSecur_Data.pdb
+to my Palm Simulator where iSecure 1.7 is running.
+
+I dragged & dropped the file and a window whose title was
+"Can't  import record" warned me:
+"Skipped record 177 while importing C:\programs....\isec_iSecur_Data.pdb
+I clicked the "Ok"  butto on this window ant the message was repeted for about 10 times (record number 177 and following).
+I have about 180 records, so it seems like the last records were skipped. But I did not find apparently none lacking.
+
+>> 2. The categoy "unfiled" whose Italian translation is "Non archiviate" whose translation I think is managed by PalmOS as it is a common one for
+>
+> Yes and no.   The meaning of the Unfiled category is handled by Palm OS.
+> The name of the unfiled category is handled by the application.
+
+If so, "unfiled" should be a string to be translated. Am I wrong?
+
+Leopoldo
+
+
+

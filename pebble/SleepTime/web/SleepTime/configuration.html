@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>SleepTime Configuration</title>
+</head>
+<body>
+<p>S&aelig;t natte-start og natte-stop tid:</p>
+<p>Start: <input type="text" id="nightstart" value="1930" /></p>
+<p>Stop: <input type="text" id="nightstop" value="0500" /></p>
+<p><input type="button" id="submit" value="S&aelig;t" /></p>
+<script>
+function get_value(selector, default_value)
+{
+	var value = document.getElementById(selector).value;
+	var result = 0;
+
+	if (value.length == 3) {
+		result = parseInt(value.substring(0, 1)) * 60;
+		result += parseInt(value.substring(1));
+	} else {
+		result = parseInt(value.substring(0, 2)) * 60;
+		result += parseInt(value.substring(2));
+	}
+
+	if (result < 0 || result > (24 * 60)) {
+		return default_value;
+	}
+
+	return result;
+}
+
+function get_query_param(variable, default_value)
+{
+	var query = location.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		if (pair[0] === variable) {
+			return decodeURIComponent(pair[1]);
+		}
+	}
+
+	return default_value || false;
+}
+
+	var submitButton = document.getElementById('submit');
+
+	submitButton.addEventListener('click', function() {
+		var night_start = get_value('nightstart', (19 * 60) + 30);
+		var night_stop = get_value('nightstop', 5 * 60);
+
+		var options = {
+			'night_start': night_start,
+			'night_stop': night_stop
+		};
+
+		var return_to = get_query_param('return_to', 'pebblejs://close#');
+
+		document.location = return_to + encodeURIComponent(JSON.stringify(options));
+});
+</script>
+</body>
+</html>

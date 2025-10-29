@@ -1,0 +1,18 @@
+﻿/* 
+   Localizable.strings
+   Angles
+
+   Created by Brian Schau on 10/11/09.
+   Copyright 2009 iPhoneChi. All rights reserved.
+ */
+"pts" = "pts";
+"Invalid guess!" = "Invalid guess!";
+"Please enter a value between 1 and 360." = "Please enter a value between 1 and 360.";
+"OK" = "OK";
+"Yes" = "Yes";
+"No" = "No";
+"Please enter a valid guess." = "Please enter a valid guess.";
+"Ok to reset?" = "Ok to reset?";
+"Changing the reflex angle setting requires a restart. Is that ok?" = "Changing the reflex angle setting requires a restart. Is that ok?";
+"You're in Top 5!" = "You're in Top 5!";
+"Congratulations!\nYou're in Top 5\n- please enter your name:\n\n\n" = "Congratulations!\nYou're in Top 5\n- please enter your name:\n\n\n";

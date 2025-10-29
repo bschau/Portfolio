@@ -1,0 +1,10 @@
+syslib { "iSecur Keyboard" iSec backup ok-to-install-newer }
+export {
+	KeyboardLibOpen
+	KeyboardLibClose
+	KeyboardLibSleep
+	KeyboardLibWake
+	KeyboardLibVersion
+	KeyboardLibAPIVersion
+	KeyboardLibRun
+}

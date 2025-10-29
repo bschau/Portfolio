@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>Options.c</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<STYLE TYPE="text/css">
+body { font-family: Verdana, Arial, serif } table { border-spacing: 10px; } h1 {} td.left { vertical-align: top; } a.left { font-color: red; } td.right {} p.global {} p.entry { font-size: 1.1em; font-weight: bold; } div.signature { margin-left: 2cm; } p.desc { margin-left: 2cm; } p.right { font-weight: bold; margin-left: 2cm; } .npr { margin-left: 4cm; margin-top: -1em; } h3 { border: solid 1px; width: 100%; background-color: #87cefa; color: black; } code {} a.index {} a.selected { font-size: 1.1em; border: 1px solid black; }
+</STYLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR>
+<TD>&nbsp;</TD><TD><H1>Options.c</H1></TD></TR>
+<TR><TD CLASS="left"><A HREF="index.html" CLASS="left"><I>Index</I></A><BR><A HREF="doc1.html" CLASS="selected">Options.c</A>
+<BR><A HREF="doc2.html" CLASS="left">StringBuilder.c</A>
+<BR><A HREF="doc3.html" CLASS="left">Utils.c</A>
+<BR><A HREF="doc4.html" CLASS="left">Main.c</A>
+<BR><A HREF="doc5.html" CLASS="left">Output.c</A>
+<BR><A HREF="doc6.html" CLASS="left">Parse.c</A>
+<BR><A HREF="doc7.html" CLASS="left">XUtils.c</A>
+</TD><TD CLASS="right">
+<P CLASS="global">Options parsing and handling. Attempts to emulate the unix way. Really, one should use getopt etc. om Linux/Unix ...<H3>Functions</H3>
+<P CLASS="right"><A NAME="OptionInit"></A><P CLASS="entry">OptionInit<DIV CLASS="signature"><PRE>void OptionInit (<BR>        void<BR>)</PRE></DIV><P CLASS="desc">Initialize options. This must be done before iterating the argument list.<A NAME="OptionNext"></A><P CLASS="entry">OptionNext<DIV CLASS="signature"><PRE>int OptionNext (<BR>        int argc,<BR>        char * const *argv,<BR>        const char *optStr<BR>)</PRE></DIV><P CLASS="desc">Get next argument from the argument list. May set optArg.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>argc</CODE> - Arg count.<BR>
+<CODE>argv</CODE> - Arg list.<BR>
+<CODE>optStr</CODE> - Option string.<BR>
+</DIV>
+<P CLASS="right">Returns:<P CLASS="npr">option.</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

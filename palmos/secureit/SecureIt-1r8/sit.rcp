@@ -1,0 +1,466 @@
+#include "resources.h"
+
+/*******************************************************************************
+*GLOBAL
+*	Global data.	
+*/
+VERSION "1r8"
+ICON "lock-large.bmp"
+SMALLICON "lock-small.bmp"
+
+BITMAP ID pincodeswitchon "swon.bmp"
+BITMAP ID pincodeswitchoff "swoff.bmp"
+
+ALERT ID alertwrongentries
+INFORMATION
+BEGIN
+	TITLE "Missing data"
+	MESSAGE "You must enter data in\nboth the Description\nand the Content fields."
+	BUTTONS "OK"
+END
+
+ALERT ID alertoom
+INFORMATION
+BEGIN
+	TITLE "Out of memory"
+	MESSAGE "The system seems to be\nout of memory.\nYour request was\nnot fulfilled."
+	BUTTONS "OK"
+END
+
+ALERT ID alertonechar
+INFORMATION
+BEGIN
+	TITLE "Empty password"
+	MESSAGE "You must enter at\nleast one character -\nand preferably more.\nEmpty passwords are\nnot allowed."
+	BUTTONS "OK"
+END
+
+ALERT ID alertpwdmismatch
+INFORMATION
+BEGIN
+	TITLE "Password mismatch"
+	MESSAGE "The two passwords\nentered does not\nmatch.\nPlease enter new\npassword again."
+	BUTTONS "OK"
+END
+
+ALERT ID alertnodbi
+INFORMATION
+BEGIN
+	TITLE "No Database Info"
+	MESSAGE "Cannot open\nDatabase info."
+	BUTTONS "OK"
+END
+
+ALERT ID alertillcred
+INFORMATION
+BEGIN
+	TITLE "Incorrect password"
+	MESSAGE "Incorrect password.\nPlease try again."
+	BUTTONS "OK"
+END
+
+ALERT ID alertrom20
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old"
+	MESSAGE "The PalmOS in this\ndevice is too old.\nPalmOS 2.0 or better\nis required to run\nthis program."
+	BUTTONS "OK"
+END
+
+ALERT ID alertpwdoldeqnew
+INFORMATION
+BEGIN
+	TITLE "Nothing changed"
+	MESSAGE "The new password\nis the same as\nthe old password.\nNothing will be\nchanged."
+	BUTTONS "OK"
+END
+
+ALERT ID alertcannotcreatetmp
+INFORMATION
+BEGIN
+	TITLE "Cannot create"
+	MESSAGE "Cannot create\ntemporary database."
+	BUTTONS "OK"
+END
+
+ALERT ID alertlastchance
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Last chance"
+	MESSAGE "Is it ok to change\npassword on all\nyour secrets?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID alertdeadentry
+INFORMATION
+BEGIN
+	TITLE "Dead entry"
+	MESSAGE "Detected ^1 dead\nentries ..."
+	BUTTONS "OK"
+END
+
+ALERT ID alertsetdbinfo
+INFORMATION
+BEGIN
+	TITLE "Cannot set"
+	MESSAGE "Cannot set protection."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456-Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+MENU globaleditmenu
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" globaleditundo "U"
+		MENUITEM "Cut" globaleditcut "X"
+		MENUITEM "Copy" globaleditcopy "C"
+		MENUITEM "Paste" globaleditpaste "P"
+		MENUITEM "Select All" globaleditselectall "S"
+		MENUITEM "-" AUTOID
+		MENUITEM "Keyboard ..." globaleditkeyboard "K"
+		MENUITEM "Graffiti ..." globaleditgraffiti "G"
+	END
+END
+
+/*******************************************************************************
+*START
+*	Forms, menus etc. for the start form.
+*/
+FORM ID formstart AT (0 0 160 160)
+NOFRAME
+MENUID startmenu
+BEGIN
+	TITLE "Secure It"
+	POPUPTRIGGER "?" ID sfcatpopup AT (RIGHT@160 BOTTOM@159 AUTO AUTO) RIGHTANCHOR FONT 2
+	LIST "" ID sfcatlist AT (RIGHT@160 BOTTOM@159 100 AUTO) NONUSABLE FONT 2
+	POPUPLIST ID sfcatpopup sfcatlist
+
+	LIST "" sfmainlist AT (0 15 160 120) USABLE FONT 2
+
+	BUTTON "New" ID sfnew AT (1 BOTTOM@159 AUTO AUTO) FONT 2
+END
+
+FORM ID formstartnqa AT (0 0 160 160)
+NOFRAME
+MENUID startmenu
+BEGIN
+	TITLE "Secure It"
+	POPUPTRIGGER "?" ID sfcatpopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" ID sfcatlist AT (RIGHT@160 1 100 AUTO) NONUSABLE
+	POPUPLIST ID sfcatpopup sfcatlist
+
+	LIST "" sfmainlist AT (0 15 160 122) USABLE
+
+	BUTTON "New" ID sfnew AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+/* In categories below "Unfiled" is not editable, "Business" and "Personal"
+   are.  Hint: CATNONEDITABLES */
+CATEGORIES ID sfmaincat "Unfiled" "Business" "Personal"
+
+MENU startmenu
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Visuals" sfmvisual
+		MENUITEM "Security" sfmsecurity
+		MENUITEM "Change Password" sfmchpwd
+	END
+	
+	PULLDOWN "About"
+	BEGIN
+		MENUITEM "Secure It" sfmabout
+		MENUITEM "Support" sfmsupport
+		MENUITEM "Algorithms" sfmalgorithms
+		MENUITEM "Thanks" sfmthanks
+	END
+END
+
+/*******************************************************************************
+*EDITENTRY
+*	Forms, menus etc. for the editentry form.
+*/
+FORM ID formeditentry AT (0 0 160 160)
+NOFRAME
+MENUID globaleditmenu
+BEGIN
+	TITLE "?"
+	LABEL "Store in:" AUTOID AT (1 20)
+	POPUPTRIGGER "?" ID eefcatpopup AT (49 20 AUTO AUTO) LEFTANCHOR
+	LIST "" ID eefcatlist AT (49 20 110 AUTO) NONUSABLE
+	POPUPLIST ID eefcatpopup eefcatlist
+
+	LABEL "Description:" AUTOID AT (1 36)
+	FIELD ID eefdescf AT (8 48 150 24) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 32
+	LABEL "Content:" AUTOID AT (1 76)
+	FIELD ID eefcontf AT (8 88 150 48) EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 64
+	GRAFFITISTATEINDICATOR AT (140 BOTTOM@159)
+
+	BUTTON "OK" ID eefok AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID eefcancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) 
+END
+
+/*******************************************************************************
+*SHOWENTRY
+*	Forms, menus etc. for the show entry form.
+*/
+FORM ID formshowentry AT (2 80 156 78)
+MODAL
+BEGIN
+	TITLE "?"
+	FIELD ID seffield AT (8 15 150 48) NONEDITABLE MULTIPLELINES MAXCHARS 64
+
+	BUTTON "Done" ID sefdone AT (4 BOTTOM@75 AUTO AUTO) FONT 2
+	BUTTON "Edit..." ID sefedit AT (PREVRIGHT+4 BOTTOM@75 AUTO AUTO) FONT 2
+	BUTTON "Delete..." ID sefdelete AT (PREVRIGHT+4 BOTTOM@75 AUTO AUTO) FONT 2
+END
+
+FORM ID formshowentrynqa AT (2 80 156 78)
+MODAL
+BEGIN
+	TITLE "?"
+	FIELD ID seffield AT (8 15 150 48) NONEDITABLE MULTIPLELINES MAXCHARS 64
+
+	BUTTON "Done" ID sefdone AT (4 BOTTOM@75 AUTO AUTO)
+	BUTTON "Edit..." ID sefedit AT (PREVRIGHT+4 BOTTOM@75 AUTO AUTO)
+	BUTTON "Delete..." ID sefdelete AT (PREVRIGHT+4 BOTTOM@75 AUTO AUTO)
+END
+
+/*******************************************************************************
+*DELETEENTRY
+*	Forms, menus etc. for the delete entry form.
+*/
+FORM ID formdeleteentry AT (2 95 156 63)
+MODAL
+BEGIN
+	TITLE "Delete entry"
+	LABEL "Is it ok to delete entry?" AUTOID AT (4 15)
+	CHECKBOX "Ask again?" ID defcheckbox AT (4 32 AUTO AUTO) 
+	BUTTON "Yes" ID defyes AT (4 BOTTOM@60 AUTO AUTO) 
+	BUTTON "No" ID defno AT (PREVRIGHT+4 BOTTOM@60 AUTO AUTO) 
+END
+
+/*******************************************************************************
+*VISUAL AND SECURITY
+*	Forms, menus etc. for the visual and security forms
+*/
+FORM ID formvisual AT (2 63 156 95)
+MODAL
+BEGIN
+	TITLE "Visual"
+
+	CHECKBOX "Quick access" ID vquickchk AT (4 15 AUTO AUTO)
+	CHECKBOX "Always confirm delete" ID vconfirmchk AT (4 27 AUTO AUTO)
+	LABEL "PIN layout:" AUTOID AT (4 43)
+	POPUPTRIGGER "" ID vpinpopup AT (52 43 AUTO AUTO) LEFTANCHOR
+	LIST "Shuffle" "Phonepad" "Calculator" "Textual" ID vpinlist AT (52 43 60 AUTO) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST ID vpinpopup vpinlist
+
+	BUTTON "Done" ID vdone AT (4 BOTTOM@92 AUTO AUTO) 
+	BUTTON "Cancel" ID vcancel AT (PREVRIGHT+4 BOTTOM@92 AUTO AUTO) 
+END
+
+FORM ID formsecurity AT (2 63 156 95)
+MODAL
+BEGIN
+	TITLE "Security"
+
+	CHECKBOX "Protect Database from HotSync" ID secprotect AT (3 15 AUTO AUTO)
+
+	LABEL "Max idle time:" AUTOID AT (21 31)
+	POPUPTRIGGER "" ID secalapopup AT (84 31 AUTO AUTO) LEFTANCHOR
+	LIST "30 seconds" "1 minute" "2 minutes" "3 minutes" ID secalalist AT (84 31 AUTO AUTO) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST ID secalapopup secalalist
+
+	LABEL "Max failed logins:" AUTOID AT (8 46)
+	POPUPTRIGGER "" ID seckaboompopup AT (84 46 AUTO AUTO) LEFTANCHOR
+	LIST "Unlimited" "1 failed" "3 failed" "5 failed" ID seckaboomlist AT (84 46 AUTO AUTO) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST ID seckaboompopup seckaboomlist
+
+	BUTTON "Done" ID secdone AT (4 BOTTOM@92 AUTO AUTO) 
+	BUTTON "Cancel" ID seccancel AT (PREVRIGHT+4 BOTTOM@92 AUTO AUTO) 
+END
+
+/*******************************************************************************
+*PINCODE
+*	Forms, menus etc. for the pincode form
+*/
+FORM ID formpincode AT (0 0 160 160)
+MODAL
+BEGIN
+	TITLE "?"
+
+	BUTTON "" ID pinbuttoggle AT (PINCODETOGGLEX PINCODETOGGLEY 9 9) NOFRAME
+
+	BUTTON "" ID pinbut00 AT (2 35 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut01 AT (56 35 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut02 AT (110 35 48 28) FRAME FONT 2
+
+	BUTTON "" ID pinbut03 AT (2 67 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut04 AT (56 67 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut05 AT (110 67 48 28) FRAME FONT 2
+
+	BUTTON "" ID pinbut06 AT (2 99 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut07 AT (56 99 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut08 AT (110 99 48 28) FRAME FONT 2
+
+	BUTTON "CLEAR" ID pinbutclear AT (2 131 48 28) FRAME FONT 2
+	BUTTON "" ID pinbut09 AT (56 131 48 28) FRAME FONT 2
+	BUTTON "OK" ID pinbutok AT (110 131 48 28) FRAME FONT 2
+END
+
+/*******************************************************************************
+*TEXTUAL
+*	Forms, menus etc. for the textual form
+*/
+FORM ID formtextual AT (0 0 160 160)
+MODAL
+MENUID globaleditmenu
+BEGIN
+	TITLE "?"
+
+	LABEL "Warning!" AUTOID AT (CENTER 25) FONT 2
+	LABEL "Your password will be" AUTOID AT (CENTER 43)
+	LABEL "shown as you type." AUTOID AT (CENTER 55)
+	LABEL "Password:" AUTOID AT (4 85)
+	FIELD ID txtpwd1 AT (24 97 132 24) MULTIPLELINES MAXCHARS PASSWORDLEN UNDERLINED
+	BUTTON "OK" ID txtok AT (4 BOTTOM@159 AUTO AUTO)
+END
+
+/*******************************************************************************
+*ABOUT
+*	Forms, menus etc. for the about forms
+*/
+FORM ID formaboutsit AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Secure It"
+
+	LABEL "Secure It" AUTOID AT (4 15) FONT 2
+	LABEL "By Brian Schau <brian@schau.dk>" AUTOID AT (4 32)
+	LABEL "Version 1r8" AUTOID AT (4 42)
+	LABEL "This program uses the Blowfish" AUTOID AT (4 60)
+	LABEL "crypto-algorithm developed by" AUTOID AT (4 72)
+	LABEL "Bruce Schneier." AUTOID AT (4 84)
+	LABEL "This program also uses the MD5" AUTOID AT (4 100)
+	LABEL "Message Digest algorithm" AUTOID AT (4 112)
+	LABEL "developed by Ronald L. Rivest." AUTOID AT (4 124)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formaboutalgorithms AT (2 14 156 144)
+MODAL
+BEGIN
+	TITLE "Algorithms"
+
+	LABEL "A description of the Blowfish" AUTOID AT (4 15)
+	LABEL "crypto algorithm can be found" AUTOID AT (4 27)
+	LABEL "at:" AUTOID AT (4 39)
+	LABEL "http://www.counterpane.com" AUTOID AT (CENTER 53)
+
+	LABEL "A description of the MD5" AUTOID AT (4 70)
+	LABEL "Message Digest algorithm can" AUTOID AT (4 82)
+	LABEL "be found at:" AUTOID AT (4 94)
+	LABEL "http://www.rsasecurity.com" AUTOID AT (CENTER 108)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@141 AUTO AUTO)
+END
+
+FORM ID formnewdb AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "New database"
+
+	LABEL "A new database to hold your secrets" AUTOID AT (4 15)
+	LABEL "has been created.  When exiting this" AUTOID AT (4 27)
+	LABEL "this dialog, you will be prompted to" AUTOID AT (4 39)
+	LABEL "enter a new password twice.  Select a" AUTOID AT (4 51)
+	LABEL "password you can easily remember -" AUTOID AT (4 63)
+	LABEL "at least 4 characters or more.  All" AUTOID AT (4 75)
+	LABEL "your secrets will be encrypted using" AUTOID AT (4 87)
+	LABEL "this password." AUTOID AT (4 99)
+	LABEL "Use the password to gain access to" AUTOID AT (4 111)
+	LABEL "your secrets next time ..." AUTOID AT (4 123)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formnopassword AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "No password"
+
+	LABEL "The secrets database is currently" AUTOID AT (4 15)
+	LABEL "not encrypted.  When exiting this" AUTOID AT (4 27)
+	LABEL "dialog you will be prompted to enter" AUTOID AT (4 39)
+	LABEL "a new password twice." AUTOID AT (4 51)
+	LABEL "Select a password you can easily" AUTOID AT (4 63)
+	LABEL "remember - at least 4 characters or" AUTOID AT (4 75)
+	LABEL "more.  All your secrets will be encrypted" AUTOID AT (4 87)
+	LABEL "using this password." AUTOID AT (4 99)
+	LABEL "Use the password to gain access to" AUTOID AT (4 111)
+	LABEL "your secrets next time ..." AUTOID AT (4 123)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formaboutchangepwd AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Change password"
+
+	LABEL "When exiting this dialog you will be" AUTOID AT (4 15)
+	LABEL "prompted to enter a new password" AUTOID AT (4 27)
+	LABEL "twice.   Select a password you can" AUTOID AT (4 39)
+	LABEL "easily remember - at least 4" AUTOID AT (4 51)
+	LABEL "characters more." AUTOID AT (4 63)
+	LABEL "Please do a HotSync" AUTOID AT (CENTER 80) FONT 2
+	LABEL "before changing the" AUTOID AT (CENTER 98) FONT 2
+	LABEL "password!" AUTOID AT (CENTER 116) FONT 2
+	BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID formaboutsupport AT (2 26 156 132)
+MODAL
+BEGIN
+	TITLE "Support"
+
+	LABEL "Secure It comes as is - if it breaks" AUTOID AT (4 15)
+	LABEL "in any way, you get to keep both" AUTOID AT (4 27)
+	LABEL "pieces." AUTOID AT (4 39)
+	LABEL "For latest version, FAQ and user" AUTOID AT (4 63)
+	LABEL "manual go to:" AUTOID AT (4 75)
+	LABEL "http://www.brisse.dk/palm/secureit" AUTOID AT (CENTER 95)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@129 AUTO AUTO)
+END
+
+FORM ID formaboutthanks AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Thanks"
+
+	LABEL "The following individuals have given" AUTOID AT (4 15)
+	LABEL "quite valuable feedback, improving" AUTOID AT (4 27)
+	LABEL "the overall quality of Secure It:" AUTOID AT (4 39)
+
+	LABEL "Allan Marillier" AUTOID AT (CENTER 55)
+	LABEL "Jan Lund Thomsen" AUTOID AT (CENTER 67)
+	LABEL "Michael Stone" AUTOID AT (CENTER 79)
+	LABEL "Mike Hanson" AUTOID AT (CENTER 91)
+	
+	LABEL "Thanks guys - you're feedback is" AUTOID AT (4 107)
+	LABEL "much appreciated!" AUTOID AT (4 119)
+	
+	BUTTON "OK" AUTOID AT (4 BOTTOM@153 AUTO AUTO)
+END

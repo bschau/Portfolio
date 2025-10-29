@@ -1,0 +1,12 @@
+Icons
+-----
+
+You can only install one icon set.   The set in 'std' is the standard icon
+set provided with iSecur.
+The icons in 'Ignacio_Sueiras' was kindly provided by Ignacio Sueiras
+(<iknatius@iknatius.net>).
+
+If you want to contribute icons to iSecur get in touch with me - my address
+can be found in the README.txt file ...
+
+

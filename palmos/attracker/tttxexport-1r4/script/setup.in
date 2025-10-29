@@ -1,0 +1,36 @@
+[Setup]
+OutputDir=.
+OutputBaseFilename=tttxexport-@@VERSION@@
+AppName=tttxexport
+AppVerName=tttxexport v@@VERSION@@
+AppPublisher=Schau.Com
+AppPublisherURL=http://www.schau.com/attracker/index.html
+AppSupportURL=http://www.schau.com/attracker/index.html
+AppUpdatesURL=http://www.schau.com/attracker/index.html
+AppVersion=@@VERSION@@
+DefaultDirName={pf}\Schau.Com\atTracker\tttxexport\v@@VERSION@@
+DefaultGroupName=atTracker
+DisableProgramGroupPage=yes
+UsePreviousAppDir=no
+
+[Types]
+Name: "full"; Description: "Install tttxexport and related files."
+
+[Components]
+Name: "main"; Description: "Main Files"; Types: full; Flags: fixed
+
+[Files]
+Source: "Docs\CHANGELOG.txt"; DestDir: "{app}"; Components: main; Flags: ignoreversion
+Source: "Docs\LICENSE.txt"; DestDir: "{app}"; Components: main; Flags: ignoreversion
+Source: "Docs\MANUAL.txt"; DestDir: "{app}"; Components: main; Flags: ignoreversion
+Source: "Docs\README.txt"; DestDir: "{app}"; Components: main; Flags: isreadme ignoreversion
+Source: "tttxexport\Release\tttxexport.exe"; DestDir: "{app}"; Components: main; Flags: ignoreversion
+
+[Icons]
+Name: "{group}\tttxexport\Changelog"; Filename: "{app}\CHANGELOG.txt"
+Name: "{group}\tttxexport\License"; Filename: "{app}\LICENSE.txt"
+Name: "{group}\tttxexport\Manual"; Filename: "{app}\MANUAL.txt"
+Name: "{group}\tttxexport\Read Me"; Filename: "{app}\README.txt"
+
+[Registry]
+Root: HKCU; Subkey: "Software\Schau.Com\TTTXExportGUI"; ValueType: string; ValueName: "Current"; ValueData: "{app}\tttxexport.exe"; Flags: uninsdeletekeyifempty;

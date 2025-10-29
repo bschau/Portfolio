@@ -1,0 +1,320 @@
+#include "resources.h"
+
+/*******************************************************************************
+*GLOBAL
+*	Global data.	
+*/
+VERSION "1r3"
+ICONFAMILY "gfx/p0lsl1.bmp" "" "" "gfx/p0lsl8.bmp"
+SMALLICONFAMILY "gfx/p0lss1.bmp" "" "" "gfx/p0lss8.bmp"
+
+MENU menuglobal
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" menuundo "U"
+		MENUITEM "Cut" menucut "X"
+		MENUITEM "Copy" menucopy "C"
+		MENUITEM "Paste" menupaste "P"
+		MENUITEM "Select All" menuselectall "S"
+		MENUITEM "-" AUTOID
+		MENUITEM "Keyboard ..." menukeyboard "K"
+		MENUITEM "Graffiti ..." menugraffiti "G"
+	END
+
+	PULLDOWN "Help"
+	BEGIN
+		MENUITEM "About" menuabout
+	END
+END
+
+ALERT ID alertrom20
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old"
+	MESSAGE "The PalmOS in this\ndevice is too old.\nPalmOS 2.0 or better\nis required to run\nthis program."
+	BUTTONS "OK"
+END
+
+ALERT ID alertoom
+INFORMATION
+BEGIN
+	TITLE "Out of memory"
+	MESSAGE "The system seems to be\nout of memory.\nYour request was\nnot fulfilled."
+	BUTTONS "OK"
+END
+
+ALERT ID alertvalues
+INFORMATION
+BEGIN
+	TITLE "Value out of bounds"
+	MESSAGE "^1 <= ^2 <= ^3"
+	BUTTONS "OK"
+END
+
+ALERT ID alertaxiomerr
+INFORMATION
+BEGIN
+	TITLE "Error in Axiom"
+	MESSAGE "One or more erronous\ncharacters in Axiom.\nOr empty Axiom ..."
+	BUTTONS "OK"
+END
+
+ALERT ID alertruleerr
+INFORMATION
+BEGIN
+	TITLE "Error in Rule"
+	MESSAGE "Error in rule ^1."
+	BUTTONS "OK"
+END
+
+ALERT ID alertconaxerr
+INFORMATION
+BEGIN
+	TITLE "Undefined rule"
+	MESSAGE "Rule ^1 used in Axiom\nis not defined."
+	BUTTONS "OK"
+END
+
+ALERT ID alertconruleerr
+INFORMATION
+BEGIN
+	TITLE "Undefined rule"
+	MESSAGE "Rule ^2 used in rule ^1\nis not defined."
+	BUTTONS "OK"
+END
+
+ALERT ID alertexerr
+INFORMATION
+BEGIN
+	TITLE "Out of memory"
+	MESSAGE "Out of memory while\nexpanding strings."
+	BUTTONS "OK"
+END
+
+ALERT ID alertstackunbal
+INFORMATION
+BEGIN
+	TITLE "Unbalanced stack"
+	MESSAGE "Too many pushes or pops."
+	BUTTONS "OK"
+END
+
+ALERT ID alertstringerr
+INFORMATION
+BEGIN
+	TITLE "String error"
+	MESSAGE "Turtle String is\ncorrupted."
+	BUTTONS "OK"
+END
+
+ALERT ID alertoffscrwin
+INFORMATION
+BEGIN
+	TITLE "No window"
+	MESSAGE "Cannot create offscreen window."
+	BUTTONS "OK"
+END
+
+ALERT ID alertdelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Ok to delete?"
+	MESSAGE "Is it ok to delete '^1'?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID alertnodelete
+INFORMATION
+BEGIN
+	TITLE "Nothing to delete"
+	MESSAGE "Please select a 0L system to delete."
+	BUTTONS "OK"
+END
+
+ALERT ID alertdeletefailed
+INFORMATION
+BEGIN
+	TITLE "Delete failed"
+	MESSAGE "Cannot delete '^1'."
+	BUTTONS "OK"
+END
+
+ALERT ID alertnoload
+INFORMATION
+BEGIN
+	TITLE "Nothing to load"
+	MESSAGE "Please select a 0L system to load."
+	BUTTONS "OK"
+END
+
+ALERT ID alertloadfailed
+INFORMATION
+BEGIN
+	TITLE "Load failed"
+	MESSAGE "Cannot load '^1'."
+	BUTTONS "OK"
+END
+
+ALERT ID alertnosave
+INFORMATION
+BEGIN
+	TITLE "No name"
+	MESSAGE "Please give the 0L system a name."
+	BUTTONS "OK"
+END
+
+ALERT ID alertsavefailed
+INFORMATION
+BEGIN
+	TITLE "Save failed"
+	MESSAGE "Cannot save '^1'."
+	BUTTONS "OK"
+END
+
+ALERT ID alertoverwrite
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Ok to overwrite?"
+	MESSAGE "Is it ok to overwrite '^1'?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456-Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*******************************************************************************
+*ABOUT
+*	Forms, menus etc. for the about form.
+*/
+FORM ID formabout AT (2 54 156 104)
+MODAL
+BEGIN
+	TITLE "About 0L Systems"
+
+	LABEL "0L Systems" AUTOID AT (4 15) FONT 2
+	LABEL "By Brian Schau <brian@schau.com>" AUTOID AT (4 32)
+	LABEL "Version 1r3" AUTOID AT (4 42)
+	LABEL "Home:" AUTOID AT (4 58)
+	LABEL"http://www.schau.com/palm/0lsys" AUTOID AT (4 70)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@102 AUTO AUTO)
+END
+
+/*******************************************************************************
+*START
+*	Forms, menus etc. for the start form.
+*/
+FORM ID formstart AT (0 0 160 160)
+NOFRAME
+MENUID menuglobal
+BEGIN
+	TITLE "0L Systems"
+
+	LABEL "General Setup" AUTOID AT (4 17) FONT 2
+
+	LABEL "Depth:" AUTOID AT (16 34)
+	FIELD ID fsdepth AT (50 34 10 AUTO) MAXCHARS 2 UNDERLINED NUMERIC
+	LABEL "Angle:" AUTOID AT (19 46)
+	FIELD ID fsangle AT (50 46 15 AUTO) MAXCHARS 3 UNDERLINED NUMERIC
+
+	LABEL "Axiom" AUTOID AT (4 66) FONT 2
+	FIELD ID fsaxiom AT (50 83 100 40) MULTIPLELINES MAXCHARS AXIOMLEN UNDERLINED AUTOSHIFT
+
+	BUTTON "Rules" ID fsrules AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Load" ID fsload AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+/*******************************************************************************
+*PRODRULES
+*	Forms, menus etc. for the production rules form.
+*/
+FORM ID formprodrules AT (0 0 160 160)
+NOFRAME
+MENUID menuglobal
+BEGIN
+	TITLE "Production rules"
+
+	LABEL "Override" AUTOID AT (4 17) FONT 2
+	LABEL "F:" AUTOID AT (8 34)
+	FIELD ID pruf AT (20 34 130 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+	LABEL "f:" AUTOID AT (8 46)
+	FIELD ID prlf AT (20 46 130 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+
+	LABEL "Rules" AUTOID AT (4 62) FONT 2
+	LABEL "0:" AUTOID AT (8 79)
+	FIELD ID prr0 AT (20 79 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+	LABEL "1:" AUTOID AT (88 79)
+	FIELD ID prr1 AT (100 79 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+
+	LABEL "2:" AUTOID AT (8 91)
+	FIELD ID prr2 AT (20 91 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+	LABEL "3:" AUTOID AT (88 91)
+	FIELD ID prr3 AT (100 91 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+
+	LABEL "4:" AUTOID AT (8 103)
+	FIELD ID prr4 AT (20 103 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+	LABEL "5:" AUTOID AT (88 103)
+	FIELD ID prr5 AT (100 103 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+
+	LABEL "6:" AUTOID AT (8 115)
+	FIELD ID prr6 AT (20 115 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+	LABEL "7:" AUTOID AT (88 115)
+	FIELD ID prr7 AT (100 115 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+
+	LABEL "8:" AUTOID AT (8 127)
+	FIELD ID prr8 AT (20 127 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+	LABEL "9:" AUTOID AT (88 127)
+	FIELD ID prr9 AT (100 127 56 AUTO) MAXCHARS PRODRULELEN UNDERLINED MULTIPLELINES
+
+	BUTTON "Generate" ID prgenerate AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Axiom" ID praxiom AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Clear" ID prclear AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+/*******************************************************************************
+*WORKING
+*	Forms, menus etc. for the working form.
+*/
+FORM ID formworking AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Working"
+
+	BUTTON "Cancel" ID fwcancel AT (CENTER BOTTOM@159 AUTO AUTO)
+END
+
+/*******************************************************************************
+*DISPLAY
+*	Forms, menus etc. for the display form.
+*/
+FORM ID formdisplay AT (0 0 160 160)
+NOFRAME
+BEGIN
+	BUTTON "Done" ID ddone AT (1 BOTTOM@159 AUTO AUTO) NONUSABLE
+	BUTTON "Save" ID dsave AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+/*******************************************************************************
+*IOFORM
+*	Forms, menus etc. for the load/save form.
+*/
+FORM ID formio AT (2 2 156 156)
+MODAL
+MENUID menuglobal
+BEGIN
+	TITLE "IO"
+	LIST "" ID iolist AT (4 15 148 108) VISIBLEITEMS 9
+	LABEL "Name:" AUTOID AT (4 122)
+	FIELD ID iofield AT (34 122 118 AUTO) MAXCHARS KEYSIZE UNDERLINED MULTIPLELINES
+	BUTTON "????" ID ioaction AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Delete" ID iodelete AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Cancel" ID iocancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END

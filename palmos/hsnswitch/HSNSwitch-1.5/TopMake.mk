@@ -1,0 +1,2 @@
+APPNAME=HSNSwitch
+VERSION=1.5

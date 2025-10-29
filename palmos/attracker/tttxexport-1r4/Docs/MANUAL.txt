@@ -1,0 +1,173 @@
+tttxexport
+----------
+
+tttxexport is used to convert a @Tracker archive to a format suitable in a
+desktop environment. Currently, tttxexport can export to:
+
+- debug format (plain format)
+- Excel CSV
+- Standard CSV
+- php serialized format
+
+Default usage (Windows):
+
+  1. In @Tracker, create a new archive using the Archive Manager. Export the
+     desired record to the new archive.
+  2. HotSync the archive to your desktop PC.
+  3. Locate the archive in the backup folder of your Palm folder (usually
+     c:\Program Files\Palm\{your_hotsync_name}\Backup). The name of the archive
+     is TTTX_{name_in_archive_manager}.pdb.     F.ex. if your HotSync name is
+     jones and you create a archive called June2004, the resulting archive will
+     be stored in c:\Program Files\Palm\jones\Backup\TTTX_June2004.pdb.
+  4. Copy the archive to a more convenient folder, say c:\tmp.
+  5. Open a MS DOS prompt, navigate to the folder (cd \tmp).
+  6. To export the archive to Excel format:
+
+         tttxexport -O excel TTTX_archivename.pdb
+
+
+Default usage (Linux):
+
+  1. Transfer the archive from your handheld using pilot-link, coldsync or
+     whatever tool you prefer.
+  2. To export the archive to standard CSV format:
+
+         tttxexport -O stdcsv TTTX_archivename.pdb
+
+
+
+Synopsis
+--------
+
+	tttxexport [OPTIONS] .pdb-file
+
+
+
+Options
+-------
+
+There are a couple of options to be given to tttxexport.
+
+-b buffersize		Set the internal buffer size. This is the start value.
+			The buffer grows dynamically. The default size is 1024.
+
+-c			Embed comments (if possible) in export file.
+
+-C lines,prefix		Set frequency of comments and comment prefix. This will
+			turn on comments. The defaults are 25,# - for every 25th
+			line write a comment line starting with a #.
+
+-d			Delimiter character. Set new delimiter character. If
+			set after any -O switch it will override the delimiter
+			character for that particular type.
+
+-D format		Output date format:
+
+			Format		Example
+			ymdslash	2004/06/23
+			ymddot		2004.06.23
+			ymddash		2004-06-23
+			mdyslash	06/23/2004
+			mdydot		06.23.2004	
+			mdydash		06-23-2004
+			dmyslash	23/06/2004
+			dmydot		23.06.2004
+			dmydash		23-06-2004
+
+			The default is ymddash (2004-06-23).
+
+-f fields		Output fields and order. Default is to write all fields
+			(category,date,duration,task). Specify one or more of:
+
+			category	Category name
+			date		Start date of task
+			duration	Duration of task
+			task		Task description
+
+-h			Write short help text.
+
+-L type			Set linefeed type:
+
+			Type	Description
+			m or M	Macintosh linefeed (\r)
+			u or U	Unix linefeed (\n)
+			w or W	Windows linefeed (\r\n)
+
+			Default is unix linefeed (\n).
+
+-o file			Output file.  Defaults to tttxexport.out.
+
+-O type			Output type.
+
+			Type	Description
+
+			debug	Plain format - written as is. Probably only
+				usable when debugging.
+			excel	Excel CSV format. This generates a output file
+				suitable for import in Microsoft Excel.
+			php	PHP format. This generates a plain ascii file
+				suitable to be read and unserialized in PHP.
+			stdcsv	Standard CSV. This generates a output file
+				suitable by most CSV aware applications
+
+			The default is excel.
+
+-T format		Output time format:
+
+			Format		Example
+
+			hmcolon		01:30
+			hmdot		01.30
+			hmcomma		01,30
+
+			The default is hmcolon (01:30).
+
+-W			When exporting _do not_ convert white space to a single
+			space.
+
+
+Examples
+--------
+
+  1. tttxexport -O stdcsv pdbfile
+     Convert pdbfile to a Standard CSV file. Output will be placed in
+     tttxexport.out.
+
+  2. tttxexport -C '10,!' -d ';' -f duration,date,task -o myout.exp pdbfile
+     Convert pdbfile to Excel CSV to a file named myout.exp (-o). Only output
+     duration,date and task (-f). Delimiter is set to a semicolon (-d).  Write
+     a comment every 10th line - prefix the comment with ! (-C).
+
+
+
+PHP-format
+----------
+
+To read the exported date use code similar to this:
+
+<?php
+	define("EXPFILE", "tttxexport.out");	// export file
+
+	// open and read file
+	$fH=@fopen(EXPFILE, "r") or die("Cannot open ".EXPFILE."\n");
+	$a=@fread($fH, filesize(EXPFILE)) or die("Cannot read from ".EXPFILE."\n");
+	@fclose($fH);
+
+	// unserialize
+	$archive=unserialize($a);
+	reset($archive);
+
+	// iterate
+	while (list($k, $v)=each($archive)) 
+		echo $v['date'].",".$v['duration'].",".$v['category'].",".$v['task']."\n";
+?>
+
+
+
+Support
+-------
+
+For support, go to:
+
+	http://www.schau.com/attracker/index.html
+

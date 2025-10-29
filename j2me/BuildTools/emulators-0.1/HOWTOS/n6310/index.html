@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>Nokia 6310i Emulator on Linux</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/howto/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>Nokia 6310i Emulator on Linux</H1>
+<P>The Nokia 6310i MIDP SDK 1.1 is for the Windows platform only (hmmm ... Java is not centered around any OS - the tools used in creating Java programs are .. that sucks!)&nbsp;&nbsp;&nbsp;This is bad when your primary platform is Linux. Nevertheless, it is entirely possible to get (at least) the Nokia 6310i Emulator running in Linux (under wine).
+<P>These instructions have been tested on a Slackware 10 box.
+<OL>
+<LI>Install <A HREF="http://www.winehq.com/">Wine</A>. It has probably already been compiled for your distribution - check your media CDs. I am using Wine 20040716.
+<LI>Download <A HREF="http://www.forum.nokia.com/main/0,6566,034-29,00.html">Nokia 6310i MIDP SDK 1.1</A> (You must have a valid Forum Nokia account to do so!). This is a 14MB download.
+<LI>Unzip the SDK:
+<PRE>
+    unzip -d n6310i n6310i_jme_sdk_v_1_1.zip
+</PRE>
+<LI>This reveals among other things a Microsoft Windows setup file. Unzip the setup file:
+<PRE>
+    cd n6310i
+    unzip setup.exe
+</PRE>
+<LI>Unzip the SDK:
+<PRE>
+    cd InstallerData
+    unzip Installer.zip
+</PRE>
+<LI>Copy the SDK to a more permanent place. I store all my Nokia SDKs in <TT>/opt/Nokia</TT>:
+<PRE>
+    cd C_/MIDP_Emulators
+    cp -dpR Nokia_6310i_MIDP_SDK_v1_1 /opt/Nokia/Devices
+</PRE>
+<LI>Delete the installation directory:
+<PRE>
+    cd ../../../../
+    rm -fr n6310i
+</PRE>
+<LI>And that's it!
+</OL>
+<P>To start the emulator:
+<PRE>
+    cd /opt/Nokia/Devices/Nokia_6310i_MIDP_SDK_v1_1/bin
+    wine Nokia_Emulator.exe -classpath '/opt/Nokia/Devices/Nokia_6310i_MIDP_SDK_v1_1/lib/classes.zip;/path/to/your/midlet.jar' /path/to/your/midlet.jad
+</PRE>
+<P>... or use <B>n6310i</B> from <A HREF="/gz/java/j2metools/index.html">J2ME Tools</A>.
+<P><BR><P>
+<H3>Screenshot</H3>
+<P>So, here it is - running <A HREF="/gz/java/yrthwyrm/index.html">YrthWyrm</A>:
+<P><IMG SRC="screenshot.jpg" WIDTH="512" HEIGHT="384" ALT="Screenshot"><BR>
+<P><BR><P>
+<H3>FAQ</H3>
+<DL>
+<DT>Can I build MIDlets using this SDK?</DT>
+<DD>Probably - I use the Series 30 SDK to build my MIDlets. I emulate using the Nokia 6310i Emulator.</DD>
+<DT>Why not just use the Series 30 Emulator?</DT>
+<DD>For 'normal' usage - yes, by all means use it. But if the MIDlet in question uses some of Nokias classes the Series 30 Emulator might not be sufficient. F.ex. using the <TT>drawPixels</TT> call on a Series 30 Emulator severely messes up the display whereas it looks good on the Nokia 6310i Emulator.</DD>
+<DT>What does this mean: <TT>err:wave:OSS_WaveOutInit /dev/mixer: Permission_denied</TT>?</DT>
+<DD>You sound is not working. A solution (for Slackware 10) could be:
+<PRE>
+    sudo chmod 666 /dev/sound/mixer
+</PRE></DD>
+</DL>
+
+<P><A HREF="/index.html">Home</A>
+
+</BODY>
+</HTML>

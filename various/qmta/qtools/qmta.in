@@ -1,0 +1,159 @@
+#!/bin/ksh
+QROOT=%%QROOT%%
+
+################################################################################
+#
+#	check_d
+#
+#	Check status of daemon.
+#
+#	Input:
+#		$1 - daemon name.
+#
+function check_d
+{
+	daemon="$1"
+
+	stat="$(status_d $daemon)"
+	case "$stat" in
+		*not*)
+			echo "$daemon did not start up"
+			;;
+		*)
+			echo "$daemon started"
+			;;
+	esac
+}
+
+################################################################################
+#
+#	status_d
+#
+#	Show status of daemon.
+#
+#	Input:
+#		$1 - daemon name.
+#
+function status_d
+{
+	daemon="$1"
+	case "$ostype" in
+		OSF1)
+			pids="$(ps -e -o pid,command | grep $daemon | grep -v grep | cut -b -6)"
+			;;
+		*)
+			pids="UNSUPPORTED"
+			;;
+	esac
+
+	if test "$pids" = "UNSUPPORTED"; then
+		echo "Sorry, the status command on this platform is not supported."
+		exit 1
+	fi
+
+	if test -s "${daemon}.pid"; then
+		mp="$(cat ${daemon}.pid)"
+	else
+		mp="dying"
+	fi
+
+	if test "$pids"; then
+		str="$daemon ($mp): $pids"
+	else
+		str="$daemon not running"
+	fi
+
+	echo $str
+}
+
+################################################################################
+#
+#	start_d
+#
+#	Start daemon.
+#
+#	Input:
+#		$1 - daemon name.
+#
+function start_d
+{
+	daemon="$1"
+
+	$QROOT/bin/$daemon
+}
+
+################################################################################
+#
+#	stop_d
+#
+#	Stop daemon.
+#
+#	Input:
+#		$1 - daemon name.
+#
+function stop_d
+{
+	daemon="$1"
+
+	if test -s "${daemon}.pid"; then
+		pid="$(cat ${daemon}.pid)"
+		echo "Sending SIGTERM to $daemon ($pid)"
+		kill $pid
+	fi
+}
+
+################################################################################
+#
+#	'main'
+#
+ostype="$(uname -s)"
+export ostype
+
+if test "$(whoami)" != "root"; then
+	echo "You must be root!"
+	exit 1
+fi
+
+case "$1" in
+	listqueue)
+		$QROOT/bin/qcntldump
+		;;
+	restart)
+		$0 stop
+		sleep 3
+		$0 start
+		;;
+	start)
+		sd="$($QROOT/bin/qcfgvar spooldirectory)"
+		rm -f $sd/core
+		start_d qoutputd
+		start_d qscand
+		start_d qinputd
+		sleep 3
+		cd $QROOT/var
+		check_d qoutputd
+		check_d qscand
+		check_d qinputd
+		;;
+	status)
+		cd $QROOT/var
+		status_d qinputd
+		status_d qscand
+		status_d qoutputd
+		;;
+	stop)
+		cd $QROOT/var
+		stop_d qinputd
+		stop_d qscand
+		stop_d qoutputd
+		echo "Daemons will shut down within a few seconds"
+		;;
+	time)
+		date +'%d/%m/%Y %H:%M:%S'
+		;;
+	*)
+		echo "Usage: $0 listqueue | restart | start | status | stop | time"
+		;;
+esac
+
+exit 0

@@ -1,0 +1,26 @@
+FAMILY DEFINITIONS ::=
+BEGIN
+
+FamilyRecord ::= --snacc isPdu:"TRUE" -- [APPLICATION 0] IMPLICIT SET
+{
+	familyName [0] IA5String,
+	father [1] Person,
+	mother [2] Person,
+	kids [3] IMPLICIT SEQUENCE OF Person DEFAULT {}
+}
+
+Person ::= SET
+{
+		    Name,
+	dateOfBirth [0] Date
+}
+
+Name ::= [APPLICATION 1] IMPLICIT SEQUENCE
+{
+	firstName IA5String,
+	initial IA5String OPTIONAL
+}
+
+Date ::= [APPLICATION 3] IMPLICIT IA5String -- YYYYMMDD
+
+END

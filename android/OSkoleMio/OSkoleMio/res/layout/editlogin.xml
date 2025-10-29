@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/relativeLayout1"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	
+	<ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffffff"
+        android:fillViewport="true"
+        android:textColor="#ff000000" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtlogo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/txtlogo" />
+
+            <TextView
+                android:id="@+id/txt01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvname" />
+
+            <EditText
+                android:id="@+id/tvname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/txt02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvurl" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout03"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/tvurl"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="textUri" />
+
+                <Button
+                    android:id="@+id/butschool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="buttonSchoolClicked"
+                    android:text="@string/butschool" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvlogin" />
+
+            <EditText
+                android:id="@+id/tvlogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/txt04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvpassword" />
+
+            <EditText
+                android:id="@+id/tvpassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="64dp"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/butok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="buttonOkClicked"
+                    android:text="@string/butok" />
+
+                <Button
+                    android:id="@+id/butcancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="buttonCancelClicked"
+                    android:text="@string/butcancel" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button android:id="@+id/butmenu"
+		android:layout_gravity="top|right"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:background="@drawable/button_menu"
+		android:onClick="onMenuButtonClick" />
+</FrameLayout>

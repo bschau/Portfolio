@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Main" default="clean">
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete dir="temp" />
+		<ant dir="src" target="clean" />
+	</target>
+
+	<target name="archive" depends="clean">
+		<zip destfile="../tripperlite-src.zip" basedir=".." includes="TripperLite/**" />
+	</target>
+</project>

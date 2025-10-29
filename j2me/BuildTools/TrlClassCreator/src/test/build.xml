@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Test" basedir="." default="all">
+	<target name="clean" description="Delete all generated files">
+		<delete verbose="true" failonerror="false" includeEmptyDirs="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete file="Trl.java" />
+	</target>
+
+	<target name="generate" description="Use">
+		<taskdef name="trl" classname="com.schau.TrlClassCreator" classpath="../TrlClassCreator.jar" />
+		<trl base="en.trl" strings="da.trl" destfile="Trl.java" package="com.schau.TrlTest">
+			<base key="poetry">Roses are red</base>
+			<string key="poetry">Roser er røde</string>
+		</trl>
+	</target>
+
+	<target name="all" depends="generate" />
+</project>

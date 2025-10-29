@@ -1,0 +1,17 @@
+
+An exponent is a number placed to the upper right of a base number. It shows the number of times the base number is multiplied by itself.
+
+Examples:
+3^2 = 3 x 3 = 9
+5^4 = 5 x 5 x 5 x 5 = 624
+8^6 = 8 x 8 x 8 x 8 x 8 x 8 = 262,144
+
+PowerPlay is a game where you guess missing bases or exponents in equations. You score fewer points the closer your guess is to the actual number that completes each equation. After 10 rounds, you are given a final score. Lower scores are better. The top 5 scores are recorded on the Leader Board for each level of play.
+
+Easy games use bases between 2-8 and 10.
+Easy games use exponents between 2 and 6.
+
+Hard games use bases between 4-9, 11 and 12.
+Hard games uses exponents between 5 and 12.
+
+

@@ -1,0 +1,16 @@
+Dear Brian,
+this is the second example concerning an incorrect screen management.
+Herein enclosed you find 3 different jpg.
+The first one (3.jpg) show the initial situation.
+I am in the "Select Template" (=Scelta Modello) situation.
+The second one (4.jpg") shows what happens if I choose a template which fill-in all the screen. The button on the right bottom which generates a password is partially covered.
+If, however I click on this button and then I cancel the operation of the generation of the password the screen comes ok (5.jpg)
+
+Leopoldo
+
+
+
+
+
+
+

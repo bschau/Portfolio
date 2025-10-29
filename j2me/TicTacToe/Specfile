@@ -1,0 +1,10 @@
+PACKAGE="TicTacToe"
+
+VERSION="1r1"
+VENDOR="Schau.Com"
+SCOPE="TicTacToe"
+RESOURCES="resources"
+
+midLet0_NAME="TicTacToe"
+midLet0_SOURCES="TicTacToeMIDlet"
+midLet0_JADINFO="Nokia-MIDlet-Category: Game"

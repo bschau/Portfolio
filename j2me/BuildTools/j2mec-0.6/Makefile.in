@@ -1,0 +1,26 @@
+A	=	$(shell basename `pwd`)
+
+all:	
+	make -C src initall
+	make -C src jar
+
+install:	all
+	mkdir -p @@INSTDIR@@
+	cp src/j2mec.jar @@INSTDIR@@
+	test -e @@BASE@@/current && rm -f @@BASE@@/current
+	ln -s @@INSTDIR@@ @@BASE@@/current
+
+clean:
+	make -C examples/HelloWorld clean
+	make -C examples/Test clean
+	make -C src clean
+	find . -type f -name "*~" -exec rm -f {} \;
+
+distclean:	clean
+	make -C examples/HelloWorld distclean
+	make -C examples/Test distclean
+	make -C src distclean
+	rm -f Makefile
+
+archive:	distclean
+	(cd ..; tar czf $(A).tar.gz $(A))

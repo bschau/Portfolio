@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MainSrc" default="roll" basedir=".">
+	<import file="../common.xml" />
+	<property name="midlet.class" value="${project}MIDlet" />
+
+	<property name="src.d" value="." />
+	<property name="temp" value="../temp" />
+	<property name="classes.d" value="${temp}/classes" />
+	<property name="preverified.d" value="${temp}/preverfied" />
+	<property name="final.d" value="${temp}/final" />
+	<property name="incs.d" value="." />
+	<property name="resources.d" value="../resources" />
+
+	<path id="midpclasses">
+		<pathelement path="/opt/j2medev/lib/cldcapi11.jar" />
+		<pathelement path="/opt/j2medev/lib/midpapi20.jar" />
+	</path>
+
+	<target name="setup">
+		<echo message='public class Version { public static final String VERSION="${version}"; }' file="Version.java" />
+	</target>
+
+	<target name="compile" depends="setup">
+		<mkdir dir="${classes.d}" />
+		<javac srcdir="${src.d}" destdir="${classes.d}" includeAntRuntime="no" classpathref="midpclasses" source="1.4" target="1.4" encoding="utf-8">
+			<compilerarg value="-Xlint" />
+		</javac>
+	</target>
+
+	<target name="preverify" depends="compile">
+		<mkdir dir="${preverified.d}" />
+		<exec executable="/opt/j2medev/bin/preverify">
+			<arg line="-d ${preverified.d}" />
+			<arg value="-classpath" />
+			<arg pathref="midpclasses" />
+			<arg value="${classes.d}" />
+		</exec>
+	</target>
+
+	<target name="meta">
+		<taskdef name="meta" classname="com.schau.MEDevTools.MetaCreator" classpath="/opt/AntTasks/MEDevTools.jar" />
+		<meta showversion="true"
+			buildjad="${buildjad}"
+			jadfile="${final.d}/${project}.jad"
+			jarfile="${final.d}/${project}.jar"
+			manifest="${temp}/manifest.mf"
+			name="${project}"
+			vendor="${vendor}"
+			version="${version}"
+			midp="2.0"
+			cldc="1.1">
+			<midlet name="${realname}" entry="${midlet.class}" icon="/icon.png" />
+		</meta>
+	</target>
+
+	<target name="manifest" depends="preverify">
+		<antcall target="meta">
+			<param name="buildjad" value="false" />
+		</antcall>
+	</target>
+
+	<target name="jar" depends="manifest">
+		<mkdir dir="${final.d}" />
+		<jar destfile="${final.d}/${project}.jar" manifest="${temp}/manifest.mf">
+			<fileset dir="${preverified.d}" />
+			<fileset dir="${resources.d}" />
+		</jar>
+	</target>
+
+	<target name="buildjad" depends="preverify">
+		<antcall target="meta">
+			<param name="buildjad" value="true" />
+		</antcall>
+	</target>
+
+	<target name="jad" depends="jar,buildjad" />
+
+	<target name="clean">
+		<delete dir="${classes.d}" />
+		<delete dir="${prepped.d}" />
+		<delete dir="${jars.d}" />
+		<delete file="${temp}/manifest.mf" />
+		<delete verbose="true">
+			<fileset dir="${src.d}" defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+			<fileset dir="${resources.d}" defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete file="Version.java" />
+	</target>
+
+	<target name="distclean" depends="clean">
+		<delete dir="${final.d}" />
+		<delete dir="${temp}" />
+	</target>
+
+	<target name="run">
+		<java fork="true" classname="org.microemu.app.Main">
+			<classpath>
+				<pathelement location="/opt/microemu/microemulator.jar" />
+				<pathelement location="/opt/microemu/devices/microemu-device-large.jar" />
+			</classpath>
+			<arg line="-device org/microemu/device/large/device.xml" />
+			<arg value="org.microemu.examples.fcview.FCViewMIDlet" />
+			<arg value="${final.d}/${project}.jad" />
+		</java>
+	</target>
+
+	<target name="roll" depends="jad,run" />
+
+	<target name="all" depends="clean,jad" />
+</project>

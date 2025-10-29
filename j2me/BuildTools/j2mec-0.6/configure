@@ -1,0 +1,32 @@
+#!/bin/sh
+
+function usage
+{
+	echo "configure [OPTIONS]"
+	echo
+	echo "[OPTIONS]"
+	echo "   --prefix=|-p=|-prefix=     Set new prefix (prefix is /usr/local)"
+	echo "   --help|-h|-help            Show help page (this)"
+	exit 0
+}
+
+version="$(basename $(pwd) | cut -f 2 -d -)"
+prefix="/usr/local"
+
+for option do
+	optarg=`expr "x$option" : 'x[^=]*=\(.*\)'`
+	case $option in
+		--prefix=* | -p=* | -prefix=*)
+			prefix=$optarg
+			;;
+		--help | -h | -help)
+			usage
+			;;
+	esac
+done
+
+base="${prefix}/j2mec"
+prefix="${base}/${version}"
+sed -e s?"@@BASE@@"?"$base"?g -e s?"@@INSTDIR@@"?"$prefix"?g Makefile.in > Makefile
+
+exit 0

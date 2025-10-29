@@ -1,0 +1,19 @@
+Brian Schau ha scritto:
+> Hi Leopoldo,
+>
+> I see random crashes from time to time as well on emu/sim as well.
+> I see them in all apps (even those not created by me).  As long as
+> iSecur runs ok on a real device I will do nothing about it but
+> make a mental note of investigating when time permits :-)
+> OTOH, if you get the crashes very frequently or can provoke it I
+> will definitely want to know about it!
+>
+
+I just imported my data created with iSecur in my Palm to PalmSim.
+Two strange things:
+1. It told me that was not able to import record from 178 to  188 (or similar). I don't understand why. I checked for all my records but apparently all of them were imported (I don't think to be able to check if all the fields were imported for each record, of course).
+2. The categoy "unfiled" whose Italian translation is "Non archiviate" whose translation I think is managed by PalmOS as it is a common one for every appl using categories, remain labelled as "unfiled" and not "non archiviate") when I imported my database I use in my handheld which has iSecur 1.6.
+Leopoldo
+
+
+

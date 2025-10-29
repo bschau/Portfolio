@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/scrollpane"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/background">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@color/background">
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/background"
+			android:id="@+id/instructionlayout">
+
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@color/background"
+				android:id="@+id/instructionlayout">
+
+				<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/image"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@null"
+					android:paddingLeft="8dp"
+					android:gravity="left" />
+
+				<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/whip"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@null"
+					android:layout_marginLeft="8dp"
+					android:layout_marginTop="20dp"
+					android:layout_gravity="center" />
+			</LinearLayout>
+
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@color/background"
+				android:id="@+id/instructionlayout">
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="top"
+					android:textColor="@color/text"
+					android:textSize="24dip" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/recommendation"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="top"
+					android:textColor="@color/text"
+					android:paddingTop="4dp"
+					android:textSize="14dip" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/scale_logo"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="top"
+					android:textColor="@color/text"
+					android:text="@string/scale_logo"
+					android:paddingTop="4dp"
+					android:textSize="14dip" />
+
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/scale"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="top"
+					android:textColor="@color/text"
+					android:paddingLeft="8dp"
+					android:textSize="14dip" />
+			</LinearLayout>			
+		</LinearLayout>
+				
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/description"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="top"
+			android:textColor="@color/text"
+			android:textSize="18dip"
+			android:paddingTop="4dp"
+			android:paddingBottom="4dp"
+			android:paddingLeft="8dp"
+			android:paddingRight="8dp" />
+		
+		<Button android:id="@+id/ok"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/ok" />
+	</LinearLayout>		
+</ScrollView>    

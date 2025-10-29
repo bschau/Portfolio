@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f processed.png doubleloop.tc
+java -cp classes com.schau.TrailTools.TrailMaker data/doubleloop.png doubleloop.tc

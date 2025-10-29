@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="20px" height="30px" viewBox="0 0 20 30" zoomAndPan="enabled">
+	<!-- MAN WALKING -->
+	<path d="M5,20 L4,24 1,27 3,29 7,25 8,22 z" fill="#63f32b" stroke="black" />
+	<path d="M12,20 L10,22 17,29 19,27 z" fill="#63f32b" stroke="black" />
+	<path d="M8,10 1,13 4,18 5,18 7,17 6,16 5,15 5,14 10,12 z" fill="#63f32b" stroke="black" />
+	<path d="M13,13 11,15 11,16 17,22 19,20 15,16 14,13 z" fill="#63f32b" stroke="black" />
+	<circle cx="10" cy="5" r="4" fill="#63f32b" stroke="black" />
+</svg>

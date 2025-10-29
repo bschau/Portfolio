@@ -1,0 +1,33 @@
+Hi Brian,
+Thanks for the credit and... attached you can find the two icon versions already splitted (IconManager is a wonderful full featured tool...).
+BTW: This is the first version of the icon set for iSecur. I will be very pleased to follow the job adding icons (of course, with the same icon number in the already created ones) so feel free to ask me for more icons or send me any icon request from anyone :-) in the future, I would be proud to offer the best pass/secure icon set. Not to say that if you are not very convinced about one icon, I will be pleased to study different options for the same idea.
+ 
+Enjoy,
+ 
+Ignacio
+ 
+2006/12/29, Brian Schau <brian@schau.com>:
+
+    > paint the high and low images at the same time, I though that palm were
+    > too cute to choose the correct (Hi-Low res) set from the same file...
+
+    yes, it can.  On newer devices it makes sense to have one file with both
+    set of icons.  On older devices, where space is a premium, a split icon
+    set is the best.
+
+    ... and iSecur supports older devices ... so ... :-)
+
+    > You have all my blessings. I would thank you to put my name somewhere in
+
+    Great.  I'll add the splitted file in the next release of iSecur.  And
+    you will be given full credit!
+
+
+
+    /brian
+
+
+
+
+-- 
+Iknatius 

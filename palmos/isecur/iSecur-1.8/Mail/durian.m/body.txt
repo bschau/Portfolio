@@ -1,0 +1,19 @@
+Great freeware.
+I was looking quite long for something like this. I have tried also 
+commercial software but it is unnecesserily comprehensive. On the other 
+hand, other freeware (YAPS, Keyring) are too simple and not Treo 5nav 
+compatible. Your iSecur is the right choice in the middle.
+
+Some ideas:
+1. Use more the built in password generator, e.g. if in the template is 
+something like [password], pwd generator icon will be displayed and generated password 
+will be automatically inserted in this field
+2. On initial screen, optíon for displaying numerical keyboard for quick 
+PIN entry.
+
+Something like this
+
+
+Regards
+__________________
+Martin Durian

@@ -1,0 +1,20 @@
+v1.5 (2005-10-17)
+	Changed versioning from 1rX to 1.X.
+	Fixed a bug in the Category system. Changes to the existing categories
+	and adding new categories are no longer reverted to the defaults when
+	launching Dictate (thanks Elaine Waters!)
+
+v1r4 (2005-08-30)
+	Added the 'All' button to the "Available Sentences" form.
+	Removed the "double-redraw" syndrome on tables.
+
+v1r3 (2005-05-19)
+	When viewing answers a correct sentence is only shown once (as in the
+	export score to Memo Pad option) (Tony Vincent).
+
+v1r2 (2005-05-19)
+	Fixed a bug where the some of the controls on the export sentences
+	form didn't respond as intended.
+
+v1r1 (2005-05-18)
+	First public release.

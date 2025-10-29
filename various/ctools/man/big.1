@@ -1,0 +1,38 @@
+.TH BIG 1
+
+.SH NAME
+big \- write text in big letters
+
+.SH SYNOPSIS
+.B big
+[-cs] [-g char] 'text1' 'text2' ...
+.br
+
+.SH DESCRIPTION
+.B big
+writes the specified strings in big letters on the terminal. A string can
+consist of up to 10 alphanumeric characters. If a string consist of one or
+more spaces it must be put in quotes.
+The character used defaults to '#'. This can be overridden by the '\-s'
+and '\-g' switches, see below.
+  
+.SH OPTIONS
+.PP
+.TP
+.I "\-c"
+Center the text.
+.BR
+.TP
+.I "\-g character"
+Use this character as graphics.
+.BR
+.TP
+.I "\-s"
+Use the letter to print as graphics.
+.BR
+
+.SH NOTE
+The terminal size has been hardcoded to 80 characters.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

@@ -1,0 +1,66 @@
+HI,
+
+The navigation issue is on the "show secret form" - it works fine on the edit secret form.
+
+The bulk change for the icon during import is a great place to do that.
+
+I dont have any hacks or utilities that would collide - That I know of, I have not installed any. If you want me to run some test code I will do that with pleasure. I can only imagine how frustrating I have been there before myself. Do you want step by step screen shots or something as I do the actions.
+
+Thanks about the quickfind - again can try send screen shots (will do with a camera). Thought you might have run out of steam on that one.
+
+Thanks again
+Anthony.
+
+----- Original Message ----- From: "Brian Schau" <brian@schau.com>
+To: "Anthony & Lynne Edelman" <edelfam@iprimus.com.au>
+Sent: Monday, December 04, 2006 7:29 PM
+Subject: Re: [iSecur] Hmmm ... Answers
+
+
+> Hi Anthony,
+>
+>
+>> using the 5 way navigation button, I can in the test version. The
+>
+> On which form do you see this error - the show secret form or the edit
+> secret form?
+>
+>> for another feature &quot;To do a bulk action on records ie. Category
+> change,
+>> icon allocation&quot; - since imports from memo no icon appears.
+>
+> Yes.  I am thinking about adding a tappable icon field on the import
+> settings screen where the icon for the secrets can be set.
+>
+>> - Wrong message on succesful export
+>
+> Ok.
+>
+>> - The deletion of records in the scenario below still occur
+>>
+>
+> Yes - and it is pissing me off (really!)   I can't replicate it on
+> my Z22, TX and I can't even replicate it in the Treo 650 simulator!
+> I can't see anything in my code which should trigger such a bug.
+> I do recognize that there may be a bug - I just can't trigger it!
+> I wonder if you may have something installed which collides with
+> iSecur - do you have any hacks/utilities installed which runs in
+> the background?
+>
+>> &gt; On a further note, quickfind still has navigation problems as follows
+>> &gt;
+>> &gt; Steps
+>
+> I'll look into that.  I had hoped the quickfind issues was resolved.
+>
+> Thanks for reporting.
+>
+>
+> /brian
+>
+> ________________________________________________
+> Message sent using UebiMiau 2.7.9
+>
+>
+
+

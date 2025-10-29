@@ -1,0 +1,51 @@
+ifndef a
+	include TopMake.mk
+endif
+
+LANGUAGES	=	Danish German English
+
+all:	distclean
+	setup
+	< $(LANGUAGES) > make
+
+distclean:
+	lmake -C src distclean
+	rm -fr releases
+	rm -f Docs/*~ *~
+
+setup:
+	lmake -C src initall
+	lmake -C src -DDEBUG=0
+	mkdir releases
+
+make:
+	resources $<
+	package $<
+
+resources:
+	echo Generating resources for $1
+	lmake -C src/build -f ../LMakefile -DLANGUAGE=$1 resources
+
+package:
+	echo Packaging $1	
+	a = $(APPNAME)\-$1\-$(VERSION)
+	r = releases/$(a)
+	mkdir releases$/$(a)
+	cp Docs/* $(r)
+	cp src/PXSc.prc $(r)
+	if -s src/TODO.txt
+		cp src/TODO.txt $(r)
+	endif
+	in releases zip -r $(a).zip $(a)
+
+zipit:
+	zip -r $(a).zip $(a)
+
+archive:	distclean
+	dos2unix *
+	dos2unix Docs/*
+	dos2unix src/*
+	dos2unix src/lang/*
+	a = $(APPNAME)\-$(VERSION)
+	tar czf ../$(a).tar.gz ../$(a)
+

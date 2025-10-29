@@ -1,0 +1,78 @@
+#!/bin/ksh
+QROOT=%%QROOT%%
+
+################################################################################
+#
+#	findprog
+#
+#	Search PATH for program.
+#
+#	Input:
+#		$1 - program.
+#	Output:
+#		path to program is written on stdout.
+#
+function findprog
+{
+	prog="$1"
+
+	oldIFS="$IFS"
+	IFS=":"
+	set -- $PATH
+	IFS="$oldIFS"
+
+	for p; do
+		if test -s $p/$prog; then
+			if test -x $p/$prog; then
+				echo "$p/$prog"
+				return
+			fi
+		fi
+	done
+
+	echo "Cannot find $prog in \$PATH ($PATH)" >&2
+	exit 1
+}
+	
+################################################################################
+#
+#	main
+#
+if test "$(whoami)" != "root"; then
+	echo "Sorry! You must be root."
+	exit 1
+fi
+
+PATH=$QROOT/bin:$PATH
+export PATH
+
+iam="$(basename $0)"
+
+UNZIP="$(findprog unzip)"
+WGET="$(findprog wget)"
+
+savihome="$(qcfgvar savihome)"
+if test -d "$savihome"; then
+	cd $savihome
+else
+	echo "SAVI not found in $savihome"
+	exit 1
+fi
+
+wgb="$(ls -l $savihome/ides.zip 2>/dev/null)"
+$WGET -N -UQIdeUpd $(qcfgvar ideurl) -q
+wga="$(ls -l $savihome/ides.zip 2>/dev/null)"
+
+if test "$wga" != "$wgb"; then
+	if test -s ides.zip; then
+		before="$(qsophos | grep Number | cut -f 2 -d ':')"
+		$UNZIP -oq ides.zip
+		after="$(qsophos | grep Number | cut -f 2 -d ':')"
+
+		lf="$(qcfgvar logfacility | cut -f 2 -d '_' | tr '[A-Z]' '[a-z]')"
+		logger -t$iam -i -p${lf}.info "Updated SAVI: $before -> $after"
+	fi
+fi
+
+exit 0
+

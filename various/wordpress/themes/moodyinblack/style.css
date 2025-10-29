@@ -1,0 +1,182 @@
+/*
+Theme Name: Moody in Black
+Theme URI: http://www.schau.dk
+Description: The theme for schau.dk.
+Author: Brian Schau
+Version: 3.0
+Tags: black, white, microformats
+*/
+
+
+/* Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+div.wise {
+	display: table;
+	margin: 0 auto;
+}
+
+div.innerwise {
+	display: table-cell;
+	border: 1px dotted #ababab;
+	padding: 1em;
+	font-size: 12px;
+}
+
+ol, ul {
+	margin-top: 1em;
+	margin-left: 2em;
+	list-style-position: inside;
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+	background: #faf8f0;
+	border: 1px solid #bebab0;
+}
+
+code {
+	display: block;
+	padding: 0.1em 0.5em;
+}
+
+a img { border: none; }
+
+body {
+	font-family: 'MS Sans Serif', Geneva, sans-serif;
+	background-color: #000000;
+	line-height: 1;
+}
+
+div#header {
+	height: 200px;
+	color: white;
+	text-align: center;
+}
+
+.small { font-size: 80%; }
+
+.italic { font-style: italic; }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'MS Serif', Georgia, serif;
+	font-weight: normal;
+	clear: both;
+	margin-top: 1em;
+}
+
+div#superwrap {
+	background: #ffffff url(white.png) repeat;
+	overflow: hidden;
+	line-height: 1.5;
+}
+
+div#wrap {
+	width: 900px;
+	margin: 0 auto 1em auto;
+}
+
+div#main {
+	width: 730px;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+#main p { margin-top: 1em; }
+
+div#sidebar {
+	width: 150px;
+	float: right;
+	padding: 0;
+	margin-left: 20px;
+}
+
+#sidebar ul {
+	margin-left: 0;
+	list-style-position: inside;
+}
+
+div#footer {
+	height: 200px;
+	color: white;
+	text-align: center;
+}
+
+.notepad {
+	width: 90px;
+	height: 100px;
+	text-align: left;
+	float: left;
+	clear: both;
+	margin-top: 1em;
+}
+
+.post {
+	width: 630px;
+	text-align: left;
+	float: right;
+}
+
+#navbuttons {
+	padding: 40px;
+	font-size: 36px;
+	color: white;
+}
+
+#navbuttons a {
+	color: white;
+	text-decoration: none;
+}
+
+.break {
+	clear: both;
+	height: 2em;
+}
+
+.page_item, .cat-item {
+	font-size: 10px;
+	list-style-type: none;
+}
+
+#s {
+	font-size: 10px;
+	width: 80px;
+}
+
+#searchsubmit {
+	font-size: 10px;
+	width: 50px;
+}
+
+#sidebar p { margin-top: 8px; }
+
+dl { margin-top: 1em; }
+
+dt { color: green; }
+
+dd { margin-left: 1em; }
+
+tbody tr:nth-child(odd) { background-color: rgba(128, 255, 128, 0.3); }
+
+.children { padding-left: 1em; }
+
+ul.children, ol.children { margin-top: 0; }

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>One Click Clipping Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>One Click Clipping Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P><B>One Click Clipping</B> (<B>OCC</B>) is a way of making a PQA which does not require any static data on the client PDA. The user of the client taps the OCC and the content of the OCC is fetched from the server. Much like the way a traditional web browser works.
+<P>To be able to use OCC you must have the Mobile Internet Kit installed (or use a Palm VII/i705).
+<P>The One Click Clipping suite of tools is free software.
+
+<P><BR>
+<H3>Description of the technology</H3>
+<P>A normal PQA requires some sort of HTML to be compiled into the PQA itself. This requires that the user have to fill out a form or click a link before the actual clipping is being served. In the case where no form data is required this is a waste of time for some people. It would be nice if you could just launch the PQA and see the clipping without any interaction.
+<P>OCC addresses this. A OCC comes in one of two forms - either as a trimmed down file or as a full blown executable. Both has their strong points and weaknesses.
+<P>The traditional OCC uses OCCMan to launch Viewer to fetch the clipping. A standalone OCC bypasses the OCCMan step and uses Viewer to fetch the clipping.
+<P>The traditional OCC is usually around 300-400 bytes in size whereas the standalone OCC normally weighs in at around 1.2-1.4Kb.
+<P>The traditional OCC can be deleted directly from the launcher whereas the standalone OCC must be removed using OCCMan.
+<P>So - what can a standalone OCC do that a traditional OCC cannot (except waste more bytes :o)? The obvious answer is "nothing". Which isn't entirely true. Consider this scenario ... A salesman is attending a tradeshow. On his Palm Device he has created a standalone OCC containing the URL to the company website of a product to be promoted on the tradeshow. A potential customer approaches the salesman and ask him for more information about the product. The salesman beams the OCC to the potential customer who taps the OCC and is brought to the company website for the product.
+<P>If the salesman had made the OCC as a traditional OCC he would have to make sure that the customer had installed OCCMan to be able to launch the OCC.
+<P>OCCMan can be used to create OCCs on your device.
+
+<P><BR><P><BR>
+<H3>Installation of OCCMan</H3>
+<P>Installation of One Click Clipping Manager is no more different than installation of any other Palm OS program. Windows users:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] the suite.
+<LI>Unpack the <B>occ-w.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the <B>occ-w.zip</B> archive. Highlight the <B>occman.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>Linux users:
+<OL>
+<LI>Download [<A HREF="#refs">4</A>] the suite.
+<LI>Unpack the <B>occ-l.tar.gz</B> archive using <B>tar xzf occ-l.tar.gz</B>.
+<LI>Install the <B>occman.prc</B> file using either pilot-link [<A HREF="#refs">5</A>] or ColdSync [<A HREF="#refs">6</A>].
+</OL>
+<P>When the synchronization is done you will have a 'OCCMan' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move Login Manager to another category.
+
+<P><BR><P><BR>
+<H3>OCCMan</H3>
+<P>OCCMan is the manager program for OCCs. Using OCCMan you can view details about OCCs, delete OCCs as well as create OCCs. OCCMan is also used by traditional OCCs to communicate with Viewer.
+<P>When launching OCCMan it will show a list of currently installed OCCs:<P><IMG SRC="gfx/main.gif" WIDTH="160" HEIGHT="160" ALT="Main view"><BR>
+<P>To add a new OCC press <I>New</I>. This will bring up the Edit form - see below.
+<P>To view the details of or delete a OCC tap the name ...<P><IMG SRC="gfx/view.gif" WIDTH="160" HEIGHT="160" ALT="View details"><BR>
+<P>Select <I>OK</I> to dismiss the dialog or <I>Delete</I> to delete the OCC - you will be asked to confirm your action.
+<P>Press <I>Edit</I> to edit this OCC:<P><IMG SRC="gfx/edit.gif" WIDTH="160" HEIGHT="160" ALT="Edit or New"><BR>
+<P>Enter a name a URL and indicate if this should be a Standalone OCC. You do not need to prefix the URL with http:// - OCCMan will take care of that.
+
+<P><BR><P><BR>
+<H3>Deleting OCCs</H3>
+<P>Care should be taken when deleting OCCs. The safest way to delete a OCC is using OCCMan. A traditional OCC can be deleted using the <B>Delete</B> menu item in Launcher.
+<P>A standalone OCC can also be delete using the <B>Delete</B> menu item in Launcher but it will wipe all other OCCs and OCCMan as well. The reason for this is that a standalone OCC shares the same Creator ID as OCCMan and other OCCs. The way that the <B>Delete</B> menu item works is that it will delete the executable and all other files with the same Creator ID.
+<P>You have been warned! Always use OCCMan to delete OCCs!
+
+<P><BR><P><BR>
+<H3>Creating OCCs</H3>
+<P>You use <B>occmake.exe</B> (Windows) or <B>occmake</B> (Linux) to create OCCs. Both binaries support the following options:
+<PRE>
+    Usage:
+
+        occmake [options] occ-name url
+
+    Options:
+
+    -e           Make standalone executable.
+    -l bmpname   BMP file to use for large icon.
+    -n prcname   Name of OCC in database (ie. in launcher).
+    -s bmpname   BMP file to use for small icon.
+</PRE>
+<P>To create a minimal OCC:
+<PRE>
+    occmake test www.cnn.com
+</PRE>
+<P>... this will create a <B>test.prc</B> in the current directory. The name of the OCC in Launcher will be <B>test</B>. The clipping/url fetched is <A HREF="http://www.cnn.com/">http://www.cnn.com</A>.
+<P>A more elegant OCC:
+<PRE>
+    occmake -l largeicon.bmp -s smallicon.bmp -n "Test OCC" test www.cnn.com
+</PRE>
+<P>... this will create a <B>test.prc</B> in the current directory. The name of the OCC in Launcher will be <B>Test OCC</B>. The OCC will have its own set of icons. The clipping/url fetched is <A HREF="http://www.cnn.com">http://www.cnn.com</A>.
+<P>To create a standalone OCC executable specify the <B>-e</B> switch.
+<P><B>Notes</B>:
+<UL>
+<LI>Url. Occmake will prepend the url with <B>http://</B> if the protocol is missing. It is perfectly valid to specify either <B>http://www.cnn.com</B> or <B>www.cnn.com</B> as an url to occmake.
+<LI>Icons. The format of the icons must follow these rules:
+<OL>
+<LI>Size must be 32x22 pixels (large icon) and 15x9 pixels (small icon).
+<LI>Depth must be 1 (black and white icon).
+<LI>Colour 0 must be black.
+<LI>Colour 1 must be white.
+</OL>
+</UL>
+<P>Default icons are:<P><IMG SRC="gfx/large.gif" WIDTH="32" HEIGHT="22" ALT="Large Icon">&nbsp;&nbsp;&nbsp;<IMG SRC="gfx/small.gif" WIDTH="15" HEIGHT="9" ALT="Small Icon">
+
+<P><BR><P><BR>
+<H3>Demonstration</H3>
+<P>To see how a OCC work download the demonstration [<A HREF="#refs">7</A>] archive. Unpack it and HotSync the <B>demo.prc</B> and <B>demo-e.prc</B> to your device. The demo also requires <B>OCCMan</B> to be installed.
+<P>Launch either one of the demo prcs - after a while an informal greeting should be shown ...
+<P>The demo OCCs was compiled with:
+<PRE>
+    occmake -e -n "Demo Exe" -l large.bmp -s small.bmp demo-e www.schau.com/palm/occ/demo.php?type=exe
+</PRE>
+<P>(standalone executable) ... and:
+<PRE>
+    occmake -n "Demo" -l large.bmp -s small.bmp demo-e www.schau.com/palm/occ/demo.php?type=norm
+</PRE>
+<P>(normal OCC).
+
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>Download One Click Clipping for Windows - <A HREF="http://www.schau.com/gz/palm/occ/occ-w.zip">www.schau.com/gz/palm/occ/occ-w.zip</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+<LI>Download One Click Clipping for Linux - <A HREF="http://www.schau.com/gz/palm/occ/occ-l.tar.gz">www.schau.com/gz/palm/occ/occ-l.tar.gz</A>
+<LI>pilot-link can be gotten from - <A HREF="http://www.pilot-link.org/">www.pilot-link.org</A>.
+<LI>ColdSync can be gotten from - <A HREF="http://www.ooblick.com/software/coldsync/">www.ooblick.com/software/coldsync</A>
+<LI>Example on this site - <A HREF="http://www.schau.com/gz/palm/occ/demo.zip">www.schau.com/gz/palm/occ/demo.zip</A>
+</OL>
+</BODY>
+</HTML>

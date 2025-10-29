@@ -1,0 +1,21 @@
+Please read the following!
+
+Sit2iSecur is used to copy your secrets and templates from Secure It to iSecur.
+
+You are adviced to do this with an empty iSecur database but no damage will be done if you use a non-empty database.
+
+No data will be deleted from your Secure It databases.
+
+Sit2iSecur will attempt to create the same categories etc. in iSecur as present in Secure It.
+
+If too many categories are present in Secure It then secrets belonging to those categories will be stored in the Unfiled category in iSecur.
+
+Templates will be stored in iSecur in a category called Templates if it exists.
+If it doesn't exist it will be created if possible - failing that, templates will be stored in the Unfiled category.
+
+
+If you have not already done so, please launch iSecur and create a database.
+
+Press Next to start ...
+
+

@@ -1,0 +1,68 @@
+{
+    "author": "brian@schau.dk",
+    "dependencies": {
+        "pebble-clay": "^1.0.2"
+    },
+    "keywords": [
+        "pebble-app"
+    ],
+    "name": "sleeptime",
+    "pebble": {
+        "capabilities": [
+            "configurable"
+        ],
+        "displayName": "SleepTime",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "AppKeyNightStart2": 2,
+            "AppKeyNightStop2": 3
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/night.png",
+                    "name": "NIGHT",
+                    "targetPlatforms": [
+                        "aplite",
+                        "basalt",
+                        "chalk"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/menu.png",
+                    "menuIcon": true,
+                    "name": "MENU",
+                    "targetPlatforms": [
+                        "aplite",
+                        "basalt",
+                        "chalk"
+                    ],
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/day.png",
+                    "name": "DAY",
+                    "targetPlatforms": [
+                        "aplite",
+                        "basalt",
+                        "chalk"
+                    ],
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk"
+        ],
+        "uuid": "8db3aec1-194c-4932-949b-9d32d33c8160",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.2.0"
+}

@@ -1,0 +1,19 @@
+Brian,
+first thank You for excelent SecureIt and Isecur SW.
+
+My english is bad, maybe I write all correct ...
+I have 2 please:
+1) I have IconDB with 221 Icons. Isecur show only first 216 icons (27*8).
+When i add to my Icon set next 3 (to be 224 - (28*80), Isecur stay show only
+216. I must create Icon set with 225 icons, to show my 224 icons.
+
+2) I use DateBk. In this Icons is show as group of 1-13 in first collum,
+14-.. in next... Maybe if I remember OK, Agendust show icons as well,
+IconMgr too. Isecur show icons in rows, not in collums. Is possible change
+or set to select this order ? Is possible skip in icon view not as rows, but
+as pages ?
+
+Thanks for Your time, Happy new Year to Your and all your friends ...
+
+Vlastimil Danek
+

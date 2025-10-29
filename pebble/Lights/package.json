@@ -1,0 +1,169 @@
+{
+    "author": "schau.dk",
+    "dependencies": {},
+    "keywords": [],
+    "name": "lights",
+    "pebble": {
+        "displayName": "Lights",
+        "enableMultiJS": false,
+        "messageKeys": {},
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/yellow-on.png",
+                    "memoryFormat": "8Bit",
+                    "name": "YELLOW_ON",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/yellow-off.png",
+                    "memoryFormat": "8Bit",
+                    "name": "YELLOW_OFF",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/turquoise-on.png",
+                    "memoryFormat": "8Bit",
+                    "name": "TURQUOISE_ON",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/turquoise-off.png",
+                    "memoryFormat": "8Bit",
+                    "name": "TURQUOISE_OFF",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/red-on.png",
+                    "memoryFormat": "8Bit",
+                    "name": "RED_ON",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/red-off.png",
+                    "memoryFormat": "8Bit",
+                    "name": "RED_OFF",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/pink-on.png",
+                    "memoryFormat": "8Bit",
+                    "name": "PINK_ON",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/pink-off.png",
+                    "memoryFormat": "8Bit",
+                    "name": "PINK_OFF",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/lights-canvas.png",
+                    "memoryFormat": "8Bit",
+                    "name": "LIGHTS_CANVAS",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heartf.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEARTF",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart9.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART9",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart8.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART8",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart7.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART7",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart6.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART6",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart5.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART5",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart4.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART4",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart3.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART3",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart2.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART2",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart1.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART1",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/heart0.png",
+                    "memoryFormat": "8Bit",
+                    "name": "HEART0",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/green-on.png",
+                    "memoryFormat": "8Bit",
+                    "name": "GREEN_ON",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/green-off.png",
+                    "memoryFormat": "8Bit",
+                    "name": "GREEN_OFF",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/blue-on.png",
+                    "memoryFormat": "8Bit",
+                    "name": "BLUE_ON",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/blue-off.png",
+                    "memoryFormat": "8Bit",
+                    "name": "BLUE_OFF",
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "021244a5-6452-4c5f-adcc-922a9752e3a4",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}

@@ -1,0 +1,264 @@
+# Rules text
+RulesChapter1		Introduktion
+RulesText1		Dette er reglerne til Kasino som det spilles i Danmark.\n\n
+			Kasino kan spilles af 2 til 4 spillere. Der bruges
+			 52 kort uden Jokere.\n\n
+			Det g\xe6lder om at samle points ved at tage s\xe5 mange
+			 kort ind som muligt. Is\xe6r de points givende kort er
+			 vigtige at f\xe5 ind.
+
+RulesChapter2		Kortgivning
+RulesText2		Hver spiller f\xe5r 4 kort. Desuden l\xe6gges 4 kort
+			 p\xe5 bordet med billedsiden opad.\n\nNormalt g\xf8res
+			 dette ved at give hver modspiller 2 kort, derefter 2
+			 til kortgiveren og derefter 2 kort til bordet. Dette
+			 gentages.\n\n
+			Efter at alle kort p\xe5 h\xe5nden er spillet gives
+			 uddeler kortgiveren 4 nye kort som beskrevet ovenfor.\n
+			\nDog gives der ingen nye kort til bordet efter
+			 f\xf8rste runde.
+
+RulesChapter3		Kortenes V\xe6rdi
+RulesText3		I Kasino spiller det enkelte korts kul\xf8r ingen rolle.
+			\n\nKortene har f\xf8lgende v\xe6rdier:\n\n
+			To - Ti: 2 - 10\n
+			Kn\xe6gt: 11\n
+			Dame: 12\n
+			Konge: 13\n
+			Es: 1 eller 14\n
+			Spar 2: 2 eller 15\n
+			Ruder 10: 10 eller 16\n\n
+			Spar 2 kaldes ogs\xe5 for Lille Kasino.\nRuder 10 kaldes
+			 ogs\xe5 for Store Kasino.
+
+RulesChapter4		Spillets Gang
+RulesText4		N\xe5r det er din tur har du 3 muligheder:\n\n
+			- du kan tage kort ind\n
+			- du kan l\xe6gge kort ud\n
+			- du kan bygge\n\n
+			Du kan tage kort fra bordet hvis:\n\n
+			- du har et kort med samme v\xe6rdi som et eller
+			 flere kort p\xe5 bordet. For eksempel kan en eller
+			 flere Kn\xe6gte tages med en Kn\xe6gt.\n
+			- der er 2 eller flere kort p\xe5 bordet der sammenlagt
+			 giver v\xe6rdien af et kort p\xe5 din h\xe5nd.
+			 For eksempel kan 5 + 4 + 3 (12 = Dame) tages med en
+			 Dame.\n\n
+			Ovenst\xe5ende regler kan kombineres. En konge
+			 kan derved tage en Konge + 9 + 4 (9 + 4 = Konge) i et
+			 snuptag.\n\n
+			Kortene vendes med bagsiden opad i din bunke.\n\n
+			Hvis du ikke kan tage kort bliver du n\xf8dt til at
+			 l\xe6gge et kort p\xe5 bordet. Men v\xe6r opm\xe6rksom
+			 p\xe5 hvilke kort du l\xe6gger. Hvis du ved at din
+			 modspiller sidder med en Dame p\xe5 h\xe5nden og der
+			 ligger 9 p\xe5 bordet skal du ikke naturligvis ikke
+			 l\xe6gge 3 (9 + 3 = Dame) da du derved giver din
+			 modspiller mulighed for at tr\xe6kke 3 + 9 + Dame ind.
+			\nPas ogs\xe5 p\xe5 med at l\xe6gge de points givende
+			 kort ud.\n\n
+			Det er ogs\xe5 muligt at Bygge. Du bygger for senere at
+			 tage kortene ind. Du l\xe6gger et af dine kort p\xe5
+			 et eller flere kort p\xe5 bordet.\n
+			Summen af dit kort og de kort du bygger p\xe5 skal
+			 svare til v\xe6rdien af et kort du har p\xe5 h\xe5nden.
+			\n\nDe n\xe6ste par kapitler viser hvordan der kan
+			 bygges p\xe5 forskellige m\xe5der.
+
+RulesChapter5		Bygge - Enkelt
+RulesText5		Der ligger Es + 5 (=6) p\xe5 bordet og du sidder med
+			 2 + 8. Du kan l\xe6gge 2 p\xe5 (Es + 5) (= 6 + 2) og
+			 sige at du bygger 8.
+			\n\nN\xe6ste gang det bliver din tur kan du tage kortene
+			 ind med din sidste 8.
+
+RulesChapter6		Bygge - Dobbelt
+RulesText6		Du sidder med 2 Damer p\xe5 h\xe5nden. P\xe5 bordet
+			 ligger der 7 + 5 (7 + 5 = Dame). Istedet for at tage
+			 kortene med din ene Dame l\xe6gger du istedet denne
+			 p\xe5 7 + 5 og siger at du bygger dobbelt Dame.\n\n
+			N\xe6ste gang det bliver din tur kan du tage kortene
+			 med din Dame.\n\n
+			Du kan bygge dobbelt flere gange. P\xe5 bordet ligger
+			 7 + 6 (7 + 6 = Konge). Du har 2 Konger og 5 p\xe5
+			 h\xe5nden. Du l\xe6gger din ene Konge p\xe5 7 + 6 og
+			 siger at du bygger dobbelt Konge. Din modspiller
+			 l\xe6gger 8 p\xe5 bordet. Du tager din 5 og bordets 8
+			 (5 + 8 = Konge) og l\xe6gger dem p\xe5 bunken og siger
+			 igen at du bygger dobbelt Konge.\n\n
+			N\xe6ste gang det bliver din tur tager du bunken med
+			 din sidste konge.
+
+RulesChapter7		Bygge - Andres Bunker
+RulesText7		Du kan tage de andres bunker.\n\nDer ligger 3 + 9 p\xe5
+			 bordet. Du sidder selv med 4 + 8 p\xe5 h\xe5nden.
+			 Din modspiller l\xe6gger 5 p\xe5 3 (=8) og siger at han
+			 bygger 8.\n\nDu kan n\xe5r det bliver din tur tage
+			 bunken med din 8.\n\n
+			Du kan bygge p\xe5 de andres bunker. Der ligger 2 + 3
+			 p\xe5 bordet. Din modspiller l\xe6gger 4 p\xe5 2 + 3
+			 og siger at han bygger 9. P\xe5 h\xe5nden har du
+			 5 + Es. Du l\xe6gger 5 p\xe5 bunken (2 + 3 + 4 + 5 =
+			 Es) og siger at du bygger et Es.\n\n
+			N\xe6ste gang det bliver din tur tager du bunken med
+			 dit Es.
+
+RulesChapter8		Bygge - Andre Regler
+RulesText8		Du m\xe5 kun bygge hvis du kan tage bygningen ind med
+			 et af de kort du har p\xe5 h\xe5nden.\n\n
+			Du m\xe5 ikke bygge videre p\xe5 dobbeltbygninger - du
+			 m\xe5 gerne bygge ovenp\xe5.\n\n
+			Du m\xe5 kun bygge p\xe5 en bygning af gangen.\n\n
+			Har du bygget skal du i n\xe6ste omgang tage bygningen
+			 ind eller bygge videre.
+
+RulesChapter9		Svupper
+RulesText9		Hvis du rydder bordet n\xe5r du tager kort ind f\xe5r
+			 du en Svupper. Du vender et af de kort du har taget
+			 ind med billedsiden opad. Dette er en Svupper.\n\n
+			F\xe5r din modspiller ogs\xe5 en Svupper vender i
+			 begge jeres Svupper-kort med bagsiden opad idet
+			 Svupperne neutralisere hinanden.
+
+RulesChapter10		Specialkort
+RulesText10		Der er 3 speciel kort: Ruder 10, Spar 2 og Spar 5.\n\n
+			Ruder 10. Ruder 10 g\xe6lder for 10 eller 16 n\xe5r du
+			 har den p\xe5 h\xe5nden. P\xe5 bordet er v\xe6rdien
+			 10.\nRuder 10 kaldes ogs\xe5 for Store Kasino.\n\n
+			Spar 2. Spar 2 g\xe6lder for 2 eller 15 n\xe5r du
+			 har den p\xe5 h\xe5nden. P\xe5 bordet er v\xe6rdien
+			 2.\nSpar 2 kaldes ogs\xe5 for Lille Kasino.\n\n
+			Spar 5. Spar 5 rydder bordet - du f\xe5r derved en
+			 Svupper. Ligger Spar 5 p\xe5 bordet er v\xe6rdien 5.
+
+RulesChapter11		Slutspil
+RulesText11		Den der tager det sidste stik ind f\xe5r lov til at
+			 tage alle de resterende kort ind n\xe5r alle spillere
+			 har lagt deres kort p\xe5 bordet.\n\n
+			Det sidste stik kaldes for Sidsten og er points
+			 givende.\n\n
+			N\xe5r alle kort er taget ind t\xe6lles points op og en
+			 ny runde begynder.
+
+RulesChapter12		Pointgivning
+RulesText12		I Kasino gives f\xf8lgende points:\n\n
+			Ruder 10: 2 points\n
+			Spar 2: 1 point\n
+			Hvert Es: 1 point\n
+			Flest Spar: 2 points\n
+			Flest Kort: 1 point\n
+			Sidsten: 1 point\n\n
+			Derudover gives 1 point pr. Svupper.\n\n
+			Spar 2 skal t\xe6lles med n\xe5r Flest Spar opg\xf8res.
+			\n\n3 og 4 personers Kasino. Det kan h\xe6nde at der er
+			flere personer der har lige mange Spar eller Kort. De
+			 f\xe5r s\xe5 2 points (Flest Spar) eller 1 point (Flest
+			 Kort) hver.
+
+# Edit menu - sysEditMenuID
+EditMenuName		Rediger
+EditMenuUndo		Fortryd
+EditMenuCut		Klip
+EditMenuCopy		Kopier
+EditMenuPaste		Inds\xe6t
+EditMenuSelect		V\xe6lg Alt
+EditMenuKeyboard	Tastatur
+EditMenuGraffiti	Graffiti
+
+# Game Menu - mMain
+GameMenuName		Spil
+GameMenuNew		Nyt
+GameMenuNames		Navne
+GameMenuAbout		Om
+GameMenuRules		Regler
+
+# Alerts
+AlertButtonOK		OK
+AlertHmmms		Hmmm ...
+aRom20Title		Forkert version
+aRom20Text		Operativsystemet i denne PDA er for gammelt. Version
+			 2.0 eller bedre kr\xe6ves for at benytte dette
+			 program.
+
+aNoSuchFormTitle	Ukendt form.
+aNoSuchFormText		Programmet fors\xf8gte at bruge en ikke defineret form.
+
+aNotEnoughPlayersTitle	Ikke nok spillere
+anotEnoughPlayersText	Der skal v\xe6re mindst 2 spillere til Kasino.
+
+aLastSweepText		Hvem fik Sidsten?
+aTenOfDiamondsText	Hvem fik Ruder 10?
+aTwoOfSpadesText	Hvem fik Spar 2?
+aSpadesText		Hvem fik de fleste Spar?
+aCardsText		Hvem fik de fleste Kort?
+aAcesText		Summen af Esserne skal v\xe6re 4!
+
+aDeleteNameTitle	Slet Navn?
+aDeleteNameText		Skal det valgte navn slettes?
+aDeleteNameYes		Ja
+aDeleteNameNo		Nej
+
+# ifRound + ifPoint
+iOK			OK
+iCancel			Forkast
+iRTitle			Runder
+iRText			Angiv nyt antal runder
+iPTitle			Point
+iPText			Angiv nyt antal point
+
+# fMain
+fMTitle			Kasino - stilling
+fMCurRound		Denne runde
+fMMaxRounds		Max Runder
+fMMaxPoints		Max Point
+fMEndRound		Afslut runde
+
+# fNewGame
+fNGTitle		Kasino - nyt spil
+fNGPly1			Spiller 1
+fNGPly2			Spiller 2
+fNGPly3			Spiller 3
+fNGPly4			Spiller 4
+fNGRounds		Runder
+fNGUnlimited		Uendeligt
+fNGOther		Andre
+fNGPoints		Point
+fNGBegin		Begynd
+fNGNames		Navne
+fNGRules		Regler
+
+# fAbout
+fATitle			Om Kasino
+fACasino		Kasino
+fAVersion		Version
+fAWebsite		Websted
+fAOK			OK
+
+# fScores
+fSTitle			Kasino - resultat
+fSLastSweep		Sidsten
+fSAces			E
+fSSweeps		s
+fSUpdate		Opdater
+
+# fStatus
+fStTitle		Resultat, denne runde
+fStOK			OK
+fStCancel		Forkast
+
+# fNames
+fNaTitle		Navne
+fNaOK			OK
+fNaCancel		Forkast
+fNaDelete		Slet
+
+# fWinners
+fWTitle			Spillet er slut
+fWHScore		Point
+fWHName			Spiller
+fWNewGame		Nyt Spil
+
+# fRules
+fRTitle			Regler
+fRSelect		Kapitel
+fROK			OK

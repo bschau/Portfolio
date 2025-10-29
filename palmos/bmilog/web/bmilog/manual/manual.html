@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>BMILog User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>BMILog User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>BMILog is a Body Mass Index logger. BMILog helps you keep track of your health with regards to your weight.
+<P>Some features of BMILog:
+<UL>
+<LI>BMILog runs on any Palm OS 3.0 or better device.
+<LI>BMILog handles several persons using different metrics (American/European).
+<LI>BMILog uses one of two BMI scales - you can switch between the scales as much as you like.
+<LI>Extras: find optimal weight, find optimal height, conversion ...
+<LI>BMILog is free - that is, you do not have to pay me anything.
+</UL>
+
+<P><BR><P><BR>
+<H3>Body Mass Index</H3>
+<P>What is Body Mass Index (BMI)? BMI is an objective measure that can help you decide whether you weight is right for you or not. BMI is a figure calculated from your height and weight and can be used to determine if you are overweight, underweight or at a healthy weight.
+<P>There is no such thing as an ideal weight. There is such a thing as an ideal weight range. The BMI tells you, if you fall within this range. This BMI calculation is only intended for adults, not children. If you're less than 150 cm (5 feet) tall the calculation is likely to overestimate body fat. Please see disclaimer below.
+<P>So how is the BMI calculated? Simple ...
+<H5>BMI metric formula</H5>
+<PRE>
+        weight
+  -------------------
+    height * height
+</PRE>
+<P>... the weight is measured in kilos and the height is measured in meters. So a person weighing 90 kg, being 180 cm tall:
+<PRE>
+        90
+   -------------  =  27
+     1.8 * 1.8
+</PRE>
+<P>The BMI for this person is 27.
+<H5>BMI in pounds and inches</H5>
+<PRE>
+    weight * 704.5
+  -------------------
+    height * height
+</PRE>
+<P>... the weight is measured in pounds and the height is measured in inches. So a person weighing 198 lbs, being 5"11' tall:
+<PRE>
+    198 * 704.5 
+   -------------  =  27
+      71 * 71
+</PRE>
+<P>The BMI for this person is 27.
+<P>The BMI in itself is not useful. You need "something" to relate the BMI to. Various health agencies operates with different BMI tables. The two most common tables are the American table and the European table:
+<PRE>
+      American        European
+      0 - 19.9        0 - 18.4     Underweight
+     20 - 24.5     18.5 - 24.5     Healthy weight
+     25 -            25 -          Overweight
+</PRE>
+<P>A BMI between 30 and 34.9 indicates Obesity. Between 35 and 39.9, Great Obesity. Over 40, Extreme Obesity.
+<P>Our person from the calculations above would with a BMI of 27 be classified as Overweight. This person should probably consider losing some weight :o)
+<P>The Body Mass Index is recommended by the <I>National Institute of Health</I> (USA) and <I>Sundhedsstyrelsen</I> (Denmark).
+
+<P><BR><P><BR>
+<H3>Disclaimer</H3>
+<P>This BMI Logger is provided for your information only. It is not a substitute for professional medical advice, and may not represent your true individual medical situation.
+<P>It does not take all possible factors into account in its assessment of your healthy weight.
+<P> For example, it tends to overestimate body fat in very muscular individuals or in people who are less than 150 cm. (5 feet) tall, and may underestimate body fat in people who have lost muscle mass, such as the elderly.
+<P>Do not use this information to make significant changes in your diet, exercise regimen, or other aspects of your lifestyle without consulting your personal
+physician or other qualified health care provider as recommended by your physician.
+<P>Please contact your physician if you have any questions or concerns.
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of BMILog is like installing any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] BMILog.
+<LI>Unpack the <B>BMILog-en.zip</B> or <B>BMILog-dk.zip</B> archive using WinZip [<A HREF="#refs">3</A>] or UnZip [<A HREF="#refs">4</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the archive. Highlight the <B>BMILog.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a 'BMILog' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move BMILog to another category.
+<P>If you use Microsoft Windows you might want to install the BMILog Conduit as well:
+<OL>
+<LI>Download [<A HREF="#refs">2</A>] the BMILog Conduit.
+<LI>Double click the <B>.exe</B> file and follow the instructions.
+</OL>
+
+<P><BR><P><BR>
+<H3>Using BMILog</H3>
+<P><IMG SRC="gfx/main.gif" WIDTH="160" HEIGHT="160" ALT="Main Screen"> On the main screen all persons are shown. Tap <I>New</I> to add a person. Tap the little note icon in the leftmost column to edit that person. Tap the smiley to get the latest BMI of that person. Tap the name to add a BMI entry. The smileys indicate your health - a green (happy) smiley means you're in perfect health. A yellow smiley (so-so mood) means you're under-/overweight. A read smiley (unhappy) means you're much overweight and you should consider losing some weight :o)
+
+<P><BR><IMG SRC="gfx/edit.gif" WIDTH="160" HEIGHT="160" ALT="Edit Person"> Enter a name in the <B>Name</B> field. If a person with that name already exists, you will be notified. Select a format for this person by selecting from the drop down list. Take care, though. Once set, this format can not be changed for the person.
+
+<P><BR><IMG SRC="gfx/history.gif" WIDTH="160" HEIGHT="160" ALT="History"> Tapping a persons name on the main form brings up the history form for that person. Tapping any of the columns offers an opportunity to delete that entry. Tap <I>New</I> to add a new BMI entry. The <I>Print</I> button will only be shown if you have <A HREF="http://www.stevenscreek.com/palm/palmprint.shtml">Palm Print</A> installed. Tap the button to get a printout of the history for this person. This have been tested on my Tungsten|T using a bluetooth connection to a <A HREF="http://www.mpitech.com/bpa/">MPI bluetooth printer adapter</A> driving an Epson Stylus Color 640 printer.
+
+<P><BR><IMG SRC="gfx/bmi.gif" WIDTH="160" HEIGHT="160" ALT="Add BMI Entry"> When adding a new entry all fields will be pre set to the following. <B>Date</B> will contain the current date - tap the date field to change. <B>Height</B> and <B>Weight</B> will contain the height and weight of the last entry. For an adult you would normally only want to change the weight ... :o)
+
+<P><BR><IMG SRC="gfx/bmiinfo.gif" WIDTH="160" HEIGHT="160" ALT="BMI Info"> If you tap on a smiley on the main form an info box with the latest BMI for that person is shown.
+
+<P><BR><P>Use the menus to reach some of the extra functionality of BMILog:
+<P><IMG SRC="gfx/querymenu.gif" WIDTH="160" HEIGHT="160" ALT="Query Menu"> <IMG SRC="gfx/optionsmenu.gif" WIDTH="160" HEIGHT="160" ALT="Options Menu"> <IMG SRC="gfx/aboutmenu.gif" WIDTH="160" HEIGHT="160" ALT="About Menu">
+<P><BR>... going from right to left. The <B>About</B> menu contains some text for you to read - so go ahead, do just that!
+
+<P><BR><IMG SRC="gfx/preferences.gif" WIDTH="160" HEIGHT="160" ALT="Preferences"> In the <B>Options</B> menu you will find the <B>Preferences</B> form. Select the desired <B>BMI Table</B> from the drop down list. Currently, you can only choose from two tables - the American table and the European table. In the <B>Format</B> drop down list you can select the default format for new persons.
+
+<P><BR><IMG SRC="gfx/findheight.gif" WIDTH="160" HEIGHT="160" ALT="Find Height"> Enter your weight in the <B>Kg</B> or <B>Lbs</B> fields, select the <B>BMI Table</B> to use and then tap <I>Solve</I>. The <B>Optimal Height</B> readout will show you the optimal height range for the weight. Depending on the <B>BMI Table</B> used, the ranges will, when used in a BMI calculation fall within the <I>Healthy Weight</I> range. In other words, use this to find the proper height for your weight ... and then start growing! :o)
+
+<P><BR><IMG SRC="gfx/findweight.gif" WIDTH="160" HEIGHT="160" ALT="Find Weight"> Enter your height in the <B>Cm</B> or <B>Feet/Inch</B> fields, select the <B>BMI Table</B> to use and then tap <I>Solve</I>. The <B>Optimal Weight</B> readout will show you the optimal weight range for the height. Depending on the <B>BMI Table</B> used, the ranges will, when used in a BMI calculation fall within the <I>Healthy Weight</I> range. In other words, use this to find the proper weight for your height ...
+
+<P><BR><IMG SRC="gfx/conversion.gif" WIDTH="160" HEIGHT="160" ALT="Conversion"> Enter heights or weights in any of the fields. Then tap <I>Solve</I> to get the converted values.
+
+<P><BR><P><BR>That is all there is to it. Enjoy! :o)
+
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>BMILog: <A HREF="http://www.schau.com/gz/palm/bmilog/index.html">www.schau.com/gz/palm/bmilog/index.html</A> (various languages).
+<LI>BMILog Conduit: <A HREF="http://www.schau.com/gz/palm/bmilog/BMILogConduit-1r1.exe">www.schau.com/gz/palm/bmilog/BMILogConduit-1r1.exe</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

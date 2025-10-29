@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CitiZr</string>
+	<string name="url">https://nesclub.nespresso.com/id/login/</string>
+	
+	<string name="email_to">brian@schau.dk</string>
+	<string name="email_subject">[CitiZr] Forspørgsel</string>
+	<string name="email_body">Indtast din forspørgsel angående CitiZr her &#8230;</string>
+
+	<!-- menus -->
+	<string name="menuaddlogin">Akkreditiver</string>
+	<string name="menuabout">Om</string>
+	<string name="menulist">Oversigt</string>
+	<string name="menuclub">Nespresso Club</string>
+	<string name="menuinstructions">Instruktioner</string>
+	
+	<!-- credentials -->
+	<string name="txtlogo">Indtast dit brugernavn og din adgangskode til Club Nespresso:</string>
+    <string name="tvlogin">Brugernavn:</string>
+    <string name="tvpassword">Adgangskode:</string>
+    <string name="butok">Gem</string>
+    <string name="butcancel">Afbryd</string>
+
+	<!-- instructions -->
+	<string name="scale_logo">Blandingsforhold:</string>
+    <string name="instructions_recommended">Anbefales med</string>
+    <string name="instructions_caffelatte_name">Caffe Latte</string>
+    <string name="instructions_caffelatte_body">Tilbered en Lungo i et højt glas (350 ml) og tilsæt varm mælk.\nTilsæt sukker efter ønske.</string>
+    <string name="instructions_caffelatte_mixing">&#189; varm mælk\n&#189; Lungo</string>
+    <string name="instructions_caffelatte_capsule">Vivalto eller Decaffeinato Lungo</string>
+
+    <string name="instructions_cappuccino_name">Cappuccino</string>
+    <string name="instructions_cappuccino_body">Tilbered en Espresso i en Cappuccino kop og tilsæt varm mælkeskum.\nTilsæt sukker og drys med kakao efter ønske.</string>
+    <string name="instructions_cappuccino_mixing">2/3 varmt mælkeskum\n1/3 Espresso</string>
+    <string name="instructions_cappuccino_capsule">Ristretto, Arpeggio eller Decaffeinato Intenso</string>
+
+    <string name="instructions_icedcappuccino_name">Iscappuccino</string>
+    <string name="instructions_icedcappuccino_body">Tilbered en Lungo i et højt glas (350 ml) og tilsæt sukker efter ønske.\nHæld den op i et stort glas sammen med fire til fem knuste isterninger.\nTilbered koldt mælkeskum med mælkeopskummeren.\nTilsæt forsigtigt tre til fire teskefulde mælkeskum i toppen af glasset.\nDrys med kanel, muskatnød eller kakao efter ønske.</string>
+    <string name="instructions_icedcappuccino_mixing">&#189; koldt mælkeskum\n&#189; Lungo</string>
+    <string name="instructions_icedcappuccino_capsule">Vivalto eller Decaffeinato Lungo</string>
+
+    <string name="instructions_lattemacchiato_name">Latte Macchiato</string>
+    <string name="instructions_lattemacchiato_body">Fyld et højt glas (350 ml) med mælkeskum.\nTilbered en Espresso og hæld den langsomt ned i glasset langs siden så der opnås en graduering af kaffens farve gennem mælken. Resultatet er en tre-lags effekt - varm mælk i bunden, kaffe i midten og mælkeskum i toppen.</string>
+    <string name="instructions_lattemacchiato_mixing">2/3 varmt mælkeskum\n1/3 Espresso</string>
+    <string name="instructions_lattemacchiato_capsule">Ristretto, Arpeggio eller Decaffeinato Intenso</string>
+
+    <!-- shop -->
+    <string name="shop_username">dit brugernavn</string>
+    <string name="shop_password">din adgangkode</string>
+    <string name="shop_fetching">Henter …</string>
+    <string name="shop_error">Du mangler at angive</string>
+
+    <!-- about -->
+    <string name="about">CitiZr er lavet af Brian Schau.</string>
+    <string name="about_about">Om</string>
+    <string name="about_version">Version:</string>
+    <string name="about_send_email">Send mail …</string>
+    <string name="about_noemail">Øv - email programmet er ikke konfigureret ordentligt</string>
+
+    <!-- button -->
+    <string name="ok">OK</string>
+    <string name="help">Hjælp</string>
+
+    <!-- cups -->
+    <string name="coffee_cup1">Halv espresso kop (Ristretto)</string>
+    <string name="coffee_cup2">Hel espresso kop</string>
+	<string name="coffee_cup3">Cappuccino kop</string>
+	<string name="coffee_cup4">Lungo kop</string>
+	
+    <!-- coffee categories -->
+    <string-array name="capsulecategory">
+    	<item>Ukendt</item>
+    	<item>Pure Origin</item>
+    	<item>Espresso</item>
+    	<item>Lungo</item>
+    	<item>Limited Edition</item>
+        <item>Variations</item>
+        <item>Intenso</item>
+    </string-array>
+    
+    <!-- content descriptions -->
+    <string name="capsuleimage">Kapsel</string>
+    <string name="strengthimage">Styrke</string>
+    <string name="tastingimage">Kaffetype</string>
+    <string name="whipimage">Pisker</string>
+
+    <!-- Capsules -->
+    <string name="variations_hazelnut_name">Hasselnød - variations</string>
+    <string name="variations_hazelnut_head">Variations Hasselnød</string>
+    <string name="variations_hazelnut_body">Kombinationen af letristede hasselnødder og Livanto Grand Cru afslører en smag af praliner som giver en behagelig balance.</string>
+    <string name="variations_macadamia_name">Macadamia - variations</string>
+    <string name="variations_macadamia_head">Variations Macadamia</string>
+    <string name="variations_macadamia_body">Den rige smagsoplevelse af macadamia nød kombineret med Livanto Grand Cru, udvikler en overraskende friskhed med afslørende citrus undertoner.</string>
+    <string name="new_dulsao_do_brasil_name">Dulsão do Brasil - ny</string>
+    <string name="new_dulsao_do_brasil_head">Sød og blød</string>
+    <string name="new_dulsao_do_brasil_body">En ren Arabica kaffe. Dulsão do Brasil er en delikat blanding af røde og gule Bourbon bønner med en karakteristisk undertone af ristet korn. Bønnerne bliver tørret for at lade plantesukkeret tilføre bønnen fyldighed, og derefter separat ristet for at afsløre en elegant balanceret og silkeblød sød smag med undertoner af ristet korn.</string>
+    <string name="indriya_from_india_name">Indriya from India</string>
+    <string name="indriya_from_india_head">Kraftfuld og krydret</string>
+    <string name="indriya_from_india_body">Denne intense, fyldige Espresso er en blanding af Arabica og Robusta fra Sydindien. Dens vedvarende men hurtige ristning afbalancerer dens stærke karakter og frembringer duft af kakao og krydrede toner af kløver, peber og muskat. Indriya udtrykker hele sin lidenskab i en halv espresso-kop (25 ml).</string>
+    <string name="rosabaya_de_colombia_name">Rosabaya de Colombia</string>
+    <string name="rosabaya_de_colombia_head">Frugtig og afbalanceret</string>
+    <string name="rosabaya_de_colombia_body">På en blød basis udvikler denne blanding af colombianske Arabica-bønner typiske toner af røde frugter og genlyd af vinagtige dufte. Dyrket på små colombianske plantager håndplukkes kaffen og tilberedes med vådmetoden. En separat ristning af bønnerne fremhæver de frugtige toner og syrligheden og giver kaffen fylde.</string>
+    <string name="ristretto_name">Ristretto</string>
+    <string name="ristretto_head">Kraftfuld og kontrastfyldt</string>
+    <string name="ristretto_body">Med sin stærke aroma og fylde kombinerer Ristretto de bedste sydamerikanske Arabica-bønner fra dyrkningssteder som Colombia og Brasilien med fantastiske østafrikanske Arabica-bønner og fin skarphed med et anstrøg af Robusta for ekstra kraft. Den langsomme Split Roasting af bønnerne skaber en kontrastfyldt bouquet og sammensætter fine frugtige og syrlige toner med intense ristede og chokoladefyldte toner.</string>
+    <string name="arpeggio_name">Arpeggio</string>
+    <string name="arpeggio_head">Intens og cremet</string>
+    <string name="arpeggio_body">Arpeggio får sin særprægede karakter og store fylde fra en blanding af Syd- og Centralamerikanske Arabica-bønner. Den langvarige ristning giver hvert enkelt aspekt mulighed for at udvikle sig til en intens bouquet ved at sammensætte ristede, træ- og kakaoduftende toner.</string>
+    <string name="roma_name">Roma</string>
+    <string name="roma_head">Fyldig og afbalanceret</string>
+    <string name="roma_body">Med sin perfekte balance mellem styrke, finesse og fylde skiller Roma sig ud med sine træagtige og ristede toner. Arabica-bønner fra Central og Sydamerika kombineret med Robusta er blevet let ristet for at bevare blandingens delikate aroma. Roma er den ideelle kaffe til dem, der leder efter en Espresso, som både er kort og mild.</string>
+    <string name="decaffeinato_intenso_name">Decaffeinato Intenso</string>
+    <string name="decaffeinato_intenso_head">Tæt og kraftfuld</string>
+    <string name="decaffeinato_intenso_body">Decaffeinato Intenso er en stærk Espresso  med en tæt fylde og fine toner af kakao og ristet korn. Foreningen af sydamerikanske Arabica-bønner med et strejf af Robusta er genstand for en kort intens ristning som ophvirvler aromaerne og understreger denne blandings styrke.</string>
+    <string name="livanto_name">Livanto</string>
+    <string name="livanto_head">Rund og afbalanceret</string>
+    <string name="livanto_body">Denne blanding af Syd- og Centralamerikanske Arabica-bønner er middelristet for at få en rund og meget afbalanceret bouquet frem. Den fremmaner duften af frisk ristet kaffe, som strømmer ud fra kafferisteren: karameliserede og ristede toner kombineret med lette toner af frugt.</string>
+    <string name="capriccio_name">Capriccio</string>
+    <string name="capriccio_head">Fyldig og karakteristisk</string>
+    <string name="capriccio_body">Capriccio er en Espresso med en afbalanceret bouquet, en let syrlig og meget karakteristisk tone af korn. Den er sammensat af Arabica-bønner fra Sydamerika herunder Brasilien i ideelle blandingsforhold og med et strejf af let ristet Robusta.</string>
+    <string name="volluto_name">Volluto</string>
+    <string name="volluto_head">Sød og frugtig</string>
+    <string name="volluto_body">Den herligt duftende Volluto har en rund fylde med søde toner af kiks og frugt. Med dens sammensætning af brasilianske og colombianske Arabica-bønner giver dens lette ristning denne Grand Cru lov til at udfolde hele sin finesse.</string>
+    <string name="cosi_name">Cosi</string>
+    <string name="cosi_head">Let og citronagtig</string>
+    <string name="cosi_body">Denne blanding af østafrikanske, syd- og centralamerikanske Arabica-bønner, er blevet let ristet for at bevare den delikate citrustone, som skaber den personlighed, der kendetegner Cosi. Denne meget forfriskende tone af citrus udvikles på en let fylde.</string>
+    <string name="decaffeinato_name">Decaffeinato</string>
+    <string name="decaffeinato_head">Frugtig og delikat</string>
+    <string name="decaffeinato_body">En let og koffeinfri kaffe. Denne Grand Cru forener elegant tonerne af rød frugt, tørret frugt og korn. En perfekt sammensætning af adskillige sydamerikanske Arabica-bønner, især colombianske og med et strejf af let ristet Robusta. Decaffeinato er en meget mild Espresso.</string>
+    <string name="finezzo_lungo_name">Finezzo Lungo</string>
+    <string name="finezzo_lungo_head">Blomsterrig og forfriskende</string>
+    <string name="finezzo_lungo_body">Denne lette og læskende Lungo udsender en blomsterbouquet af jasmin, orangeblomster og bergamot. Med sin let ristede blanding af blomsterduftende østafrikanske Arabica-bønner og duftende Arabica-bønner fra Syd- og Centralamerika forfriskes Finezzo Lungo med et strejf af bitterhed.</string>
+    <string name="fortissio_lungo_name">Fortissio Lungo</string>
+    <string name="fortissio_lungo_head">Fyldig og intens</string>
+    <string name="fortissio_lungo_body">Denne meget fyldige Lungo er kendetegnet ved toner af mørkristede bønner. Med en blanding af syd- og centralamerikanske Arabica-bønner med et strejf af Robusta giver Fortissio Lungo en liflig bitterhed og en udsøgt fylde til ganen.</string>
+    <string name="vivalto_lungo_name">Vivalto Lungo</string>
+    <string name="vivalto_lungo_head">Kompleks og afbalanceret</string>
+    <string name="vivalto_lungo_body">En kompleks og alligevel afbalanceret forening mellem sydamerikanske Arabica-bønner dyrket på højtliggende områder, heriblandt \"Cerrádo\" fra Brasilien og østafrikanske Arabica-bønner. Vivalto Lungo kombinerer ristede og fine blomstertoner. Split Roasting af bønnerne gør det muligt at forstærke karakteren af hver enkelt kaffesort.</string>
+    <string name="decaffeinato_lungo_name">Decaffeinato Lungo</string>
+    <string name="decaffeinato_lungo_head">Let og aromarig</string>
+    <string name="decaffeinato_lungo_body">Decaffeinato Lungos olieagtige fylde indhyller ristede og kornagtige toner. Med bare et strejf af omhyggeligt udvalgt Robusta er de fineste Arabica-bønner fra Brasilien og Colombia blevet langsomt og mildt ristet for at fremhæve de ristede toner.</string>
+    <string name="crealto_name">Crealto</string>
+    <string name="crealto_head">Rund og varig eftersmag</string>
+    <string name="crealto_body">Med en blandning af vaskede Arabica-bønner, er Crealto ristet meget langsomt ved en lav temperatur. Denne langvarige ristningsproces, som er inspireret af know-how fra Nespressos kaffeeksperter og den prisbelønnede kok Mauro Colagreco, afslører ristede aromaer med overraskende runde og varig eftersmag.</string>
+    <string name="naora_name">Naora</string>
+    <string name="naora_head">Aromatisk fyldighed</string>
+    <string name="naora_body">I deres konstante stræben efter nye aromatiske profiler har Nespressos kaffeeksperter hentet inspiration i ønologien og samarbejdet tæt med de colombianske kaffebønder om at udvikle en dristig og kompleks høstproces der foregår senere end normalt. Takket være den sene høst udvikler kaffebærrene søde undertoner af solbær og blåbær, der kendetegner colombiansk Arabica kaffe.</string>
+    <string name="dhjana_name">Dhjana</string>
+    <string name="dhjana_head">Intens, fyldig og fløjlsblød</string>
+    <string name="dhjana_body">Dhjana er en blanding af de absolut bedste Brasilianske, Colombianske og Costa Ricanske Arabica kaffer samt Indisk Robusta kaffe. Dhjana afslører de aromatiske undertoner fra hvert af de oprindelseslande den kommer fra. En intens, fyldig og fløjsblød espresso med undertoner af mælk som friskes op af et strejf af frugt.</string>
+    <string name="kazaar_name">Kazaar</string>
+    <string name="kazaar_head">Intensitet i sin reneste form</string>
+    <string name="kazaar_body">En modig blanding af to Robusta kaffer særligt fremstillet til Nespresso og en Arabica kaffe fra Syd og Central Amerika, separat ristet, Kazaar er en kaffe med enestående intensitet. Dens kraftfulde bitterhed og undertoner af peber er balanceret af en fyldig og cremet konsistens.</string>
+    <string name="linizio_lungo_name">Linizio Lungo</string>
+    <string name="linizio_lungo_head">Den ideelle morgenkaffe</string>
+    <string name="linizio_lungo_body">Linizio Lungo er en velafrundet blanding af ren Arabica fra Sydamerika fremstillet af brasiliansk og colombiansk kaffe. Split-ristningen giver en maltet note, der er typisk for Bourbon-varianten, men fastholder samtidig dens milde og bløde karakter.</string>
+	<string name="napoli_name">Napoli</string>
+	<string name="napoli_head">Dristig og aggressiv</string>
+	<string name="napoli_body">Med en intensitet på 11 er Napoli dristig og aggressiv takket være dens sirupsagtige fylde. Denne blanding af Arabica fra Sydamerika, Afrika og Asien med et anstrøg af Robusta afdækker fine røgede noter og nydes bedst som en Ristretto (25 ml). Dens aromatiske træagtige aroma har en let duft med nuancer af tørre sorte teblade.</string>
+    <string name="trieste_name">Trieste</string>
+    <string name="trieste_head">Forfriskende frugtigt anstrøg</string>
+    <string name="trieste_body">Med en intensitet på 9 har denne delikate blanding af Arabica fra Sydamerika og Østafrika en rund konsistens med en duft af chokolade og friske noter af hasselnødder. Et forfriskende frugtigt anstrøg fremhæver den fantastiske finesse i denne kaffe, der afdækker dens fulde intensitet, når den nydes på den italienske måde - som en Ristretto (ca. 25 ml).</string>
+    <string name="caramelito_name">Caramelito</string>
+    <string name="caramelito_head">Karamel og creme</string>
+    <string name="caramelito_body">Den søde smag fra karamel blødgør de ristede noter af Livanto Grand Cru. Denne delikate gourmet-forbindelse vækker den cremede smag af blød karamel.</string>
+    <string name="vanilio_name">Vanilio</string>
+    <string name="vanilio_head">Vanilje, blød og silkeagtig</string>
+    <string name="vanilio_body">En afbalanceret harmoni mellem de fyldige og fløjlsbløde aromaer fra vanilje og den saftige smag er Livanto Grand Cru. En blanding, der er udsøgt for sin fyldige smag og silkeblød mod ganen.</string>
+    <string name="ciocattino_name">Ciocattino</string>
+    <string name="ciocattino_head">Chokolade og karamel</string>
+    <string name="ciocattino_body">Mørke og bitre chokoladenoter møder de karamelliserede, ristede noter fra Livanto Grand Cru. En fyldig kombination, der minder om et stykke mørk chokolade.</string>
+    <string name="dharkan_name">Dharkan</string>
+    <string name="dharkan_head">Fløjlsblød med en lang ristning</string>
+    <string name="dharkan_body">Denne blanding af Arabica fra Latinamerika og Asien afslører hele dens karakter takket være teknikken fra en lang ristning ved lav temperatur. Den kraftige personlighed afdækker stærke ristede noter sammen med anstrøg af bittert kakaopulver og ristet korn, der udtrykker sig i en silkeagtig og fløjlsblød konsistens.</string>
+</resources>

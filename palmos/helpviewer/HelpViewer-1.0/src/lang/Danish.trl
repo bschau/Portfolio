@@ -1,0 +1,64 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of Plua Help Viewer to get a feeling of how the various screens are
+# laid out.
+# You can install Plua Help Viewer to a Palm OS Simulator or Emulator and have
+# the english version running while translating the text.
+#
+# This is the default language file for the Danish language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Brian Schau <brian@schau.com>
+#
+
+# Strings
+Str01			Help Viewer er lavet af\n\nBrian Schau.\n\nVenligst besøg min hjemmeside:\n\n  http://www.schau.com/\n\nPå hjemmesiden findes den nyeste version af Help Viewer, en bruger manual og en FAQ.\n\n
+
+# Alerts
+aOK			OK
+
+aBadRomTitle		PalmOS For Gammel
+aBadRomText		PalmOS i denne PDA er for gammel. Der kræves som minimum PalmOS v3.0.
+aNoHelpFilesTitle	Ingen Hjælpefiler
+aNoHelpFilesText	Der er ingen Plua hjælpefiler installeret. Installer Plua 1 og/eller Plua 2 hjælpefilen.
+aNotInstalledTitle	Ej Installeret
+aNotInstalledText	Den valgte hjælpefil er ikke installeret.
+
+# Menus
+Help			Hjælp
+About			Om
+
+# Buttons
+ButtonDone		Færdig
+
+# fMain
+MainTitle		Help Viewer
+MainTopics		Emner
+MainList1		Plua1 Hjælpefil
+MainList2		Plua2 Hjælpefil
+
+# fAbout
+AboutTitle		Om Help Viewer
+AboutLabel1		Help Viewer
+AboutLabel2		Version

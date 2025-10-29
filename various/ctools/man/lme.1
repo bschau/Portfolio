@@ -1,0 +1,33 @@
+.TH LME 1L "23 September 2007" "ltools"
+.SH NAME
+lme \- little macro expander
+.SH SYNOPSIS
+.B lme
+[\fI-S tag\fR] [\fI-E tag\fR] [\fI-h\fR] [\fI-f file\fR] [\fI-o dir\fR] [\fI-p file\fR] [\fR-v\fR]
+.SH DESCRIPTION
+lme is a macro expander. It reads through a source file and substitute parts of it based on various macros which can be defined in properties files. lme also has a limited set of build in commands. The full documentation to lme can be found at \fIhttp://www.schau.com/\fR.
+.SH OPTIONS
+.TP
+\fB-S tag\fR
+Start tag to scan for - the default is $(.
+.TP
+\fB-E tag\fR
+End tag to scan for - the default is ).
+.TP
+\fB-h\fR
+Show help page.
+.TP
+\fB-f file\fR
+Output to file.
+.TP
+\fB-o dir\fR
+Output to dir.
+.TP
+\fB-p file\fR
+Properties file (can be given multiple times).
+.TP
+\fB-v\fR
+Raise verbosity.
+.SH SEE ALSO
+lme does far more than what can be described here - go to
+\fIhttp://www.schau.com/\fR

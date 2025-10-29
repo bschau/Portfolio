@@ -1,0 +1,264 @@
+# Rules text
+RulesChapter1		Introduction
+RulesText1		This is the rules for Casino as it is played in Denmark.\n\n
+			Casino is played by 2 to 4 players. A standard deck of
+			 cards is used.\n\n
+			The aim of the game is to score as many points as
+			 possible by getting as many card as possible.
+
+RulesChapter2		The Deal
+RulesText2		Each player is dealt 4 cards. Furthermore 4 cards are
+			 placed face up on the table.\n\nA traditional procedure
+			 is to give each player 2 cards, then place 2 cards
+			 face up on the table, then repeat.\n\n
+			After all the cards are played from the hand the same
+			 dealer will deal a new 4-card set to each player but
+			 no more cards on the table.
+
+RulesChapter3		The Card Values
+RulesText3		The color of the cards is of no matter. The cards have
+			 these values:\n\n
+			Two - Ten: 2 - 10\n
+			Jack: 11\n
+			Queen: 12\n
+			King: 13\n
+			Ace: 14\n
+			2 of Spades: 2 or 15\n
+			10 of Diamonds: 10 or 16\n\n
+			The 2 of Spades is called Small Casino.\nThe 10 of
+			 Diamonds is called Big Casino.
+
+RulesChapter4		The Play
+RulesText4		When it is your turn you have 3 choices of play:\n\n
+			- take cards from the table\n
+			- put card on the table\n
+			- build\n\n
+			You can take cards from the table if:\n\n
+			- you have a card with the same value as one or more
+			 cards on the table. F.ex. one or more Jacks can be
+			 taken with one Jack.\n
+			- there is 2 or more cards which values adds up to the
+			 value of one of your cards on hand. F. ex. 5 + 4 + 3
+			 (12 = Queen) can be taken by one Queen.\n\n
+			You can combine those two rules. One King on hand can
+			 be used to take a King + 9 + 4 (9 + 4 = King) in one
+			 go.\n\n
+			The cards are placed backside up in your pile.\n\n
+			If you cannot build or take cards from the table you
+			 must put a card on the table. But beware which card
+			 you put down. If you know that your opponent have a
+			 Queen on hand and there is a 9 on the table, do not
+			 put down a 3 (9 + 3 = Queen) as this will allow your
+			 opponent to take in 3 + 9 + Queen.\n
+			Also beware putting the points giving card on the
+			 table.\n\n
+			You can Build. You build by placing one of your cards
+			 on one or more of the cards on the table.\n
+			The sum of the cards in your building must equal the
+			 value of one of the cards on your hand.\n
+			The next couple of chapters shows how to do various
+			 builds.
+
+RulesChapter5		Build - Simple
+RulesText5		The table contains Ace + 5 (=6) and you have 2 + 8
+			 on hand. You can place 2 on (Ace + 5) (= 6 + 2) and
+			 say you build 8.\n\n
+			In your next turn you take the cards with your
+			 remaining 8.
+
+RulesChapter6		Build - Doubles
+RulesText6		You have 2 Queens on hand. The table contains 7 + 5
+			 (7 + 5 = Queen). Instead of taking the cards with one
+			 of your Queens, you place the Queen on (7 + 5) and
+			 say you build Double Queen.\n\n
+			In your next turn you take the cards with your
+			 remaining Queen.\n\n
+			You can do Doubles several times. The table contains
+			 7 + 6 (7 + 6 = King). On hand you have 2 Kings and a
+			 5. You place on King on 7 + 6 and say you build
+			 Double King. You opponent plays 8 to the table.
+			 You take your 5 and his 8 (5 + 8 = King) and place
+			 them on your previous building. Again you state that
+			 you build Double King.\n\n
+			On your next turn you take the cards with your
+			 remaining King.
+
+RulesChapter7		Build - Others
+RulesText7		You are free to take your opponents buildings.\n\nThe
+			 table contains 3 + 9. You have 4 + 8 on your hand.
+			 Your opponent plays 5 on the 3 (=8) and says he builds
+			 8.\n\nWhen it is your turn you can take the cards with
+			 your 8.
+			You can use your opponents buildings as foundation for
+			 your own building. The table contains 2 + 3. Your
+			 opponent plays 4 on the 2 + 3 and says he builds 9.
+			 You have 5 and an Ace on your hand. You play 5 on your
+			 opponents building (2 + 3 + 4 + 5 = Ace) and says you
+			 build an Ace.\n\n
+			On your next turn you take the cards with your Ace.
+
+RulesChapter8		Build - Other Rules
+RulesText8		You are only allowed to build if you later can take in
+			 the building with one of your cards on hand.\n\n
+			You are not allowed add to the value of a Double
+			 building - it is ok to place cards of the same value
+			 on the building.\n\n
+			You are only allowed to do one building at a time.\n\n
+			If you have started a building you must either take it
+			 in or do further construction the building on your
+			 next turn.
+
+RulesChapter9		The Sweep
+RulesText9		If you take all cards from the table you have made a
+			 Sweep. You turn one of your cards face from your pile.
+			\n\nIf your opponent is also awarded a Sweep both of
+			 you turn one of your Sweep cards backside up as the
+			 two Sweeps neutralizes each other.
+
+RulesChapter10		Special Cards
+RulesText10		In Casino you have 3 special cards: 10 of Diamonds,
+			 2 of Spades and 5 of Spades.\n\n
+			10 of Diamonds. The value of 10 of Diamonds on your hand
+			 is either 10 or 16. On the table the value is 10. 10 of
+			 Diamonds is called Big Casino.\n\n
+			2 of Spades. The value of 2 of Spades on your hand is
+			 either 2 or 15. On the table the values is 2. 2 of
+			 Spades is called Small Casino.\n\n
+			5 of Spades. If you have 5 of Spades on hand you can
+			 use it to take all cards from the table, thus earning
+			 yourself a Sweep. On table (if dealt to the table) the
+			 value is 5.
+
+RulesChapter11		The End Game
+RulesText11		The player taking the last card or cards from the table
+			 is given any remaining cards on the table. This is
+			 known as getting the Last Sweep and will earn that
+			 player a point.\n\n
+			When all cards has been dealt from the deck and taken
+			 from the table the score is settled and a new round
+			 begins.
+
+RulesChapter12		Scores
+RulesText12		The following points are given:\n\n
+			10 of Diamonds: 2 points\n
+			2 of Spades: 1 point\n
+			Each Ace: 1 point\n
+			The most Spades: 2 points\n
+			The most Cards: 1 point\n
+			The Last Sweep: 1 point\n
+			Each Sweep: 1 point\n
+			2 of Spades should be counted when counting who has the
+			 most Spades.\n\n
+			In Casino played by 3 or 4 players it is possible that
+			 2 or more players has the same amount of cards or
+			 Spades and that this amount is the largest. Each of
+			 these players are awarded points as if the player was
+			 the only one having the most cards or Spades.
+
+# Edit menu - sysEditMenuID
+EditMenuName		Edit
+EditMenuUndo		Undo
+EditMenuCut		Cut
+EditMenuCopy		Copy
+EditMenuPaste		Paste
+EditMenuSelect		Select All
+EditMenuKeyboard	Keyboard
+EditMenuGraffiti	Graffiti
+
+# Game Menu - mMain
+GameMenuName		Game
+GameMenuNew		New
+GameMenuNames		Names
+GameMenuAbout		About
+GameMenuRules		Rules
+
+# Alerts
+AlertButtonOK		OK
+AlertHmmms		Hmmm ...
+aRom20Title		PalmOS too Old
+aRom20Text		The PalmOS in this device is too old. PalmOS 2.0
+			 or better is required to run this program.
+
+aNoSuchFormTitle	No such form
+aNoSuchFormText		The program tried to initialize a fake form. This
+			 shouldn't happen - shoot the programmer!
+
+aNotEnoughPlayersTitle	Not enough players
+anotEnoughPlayersText	At least two players are needed for a game of Casino.
+
+aLastSweepText		Who got the Last Sweep?
+aTenOfDiamondsText	Who got the 10 of Diamonds?
+aTwoOfSpadesText	Who got the 2 of Spades?
+aSpadesText		Who got the Spades?
+aCardsText		Who got the most Cards?
+aAcesText		The sum of Aces must be 4!
+
+aDeleteNameTitle	Delete Name?
+aDeleteNameText		Delete selected name?
+aDeleteNameYes		Yes
+aDeleteNameNo		No
+
+# ifRound + ifPoint
+iOK			OK
+iCancel			Cancel
+iRTitle			Rounds
+iRText			Enter number of rounds
+iPTitle			Points
+iPText			Enter number of points
+
+# fMain
+fMTitle			Casino
+fMCurRound		Current Round
+fMMaxRounds		Max Rounds
+fMMaxPoints		Max Points
+fMEndRound		End Round
+
+# fNewGame
+fNGTitle		Casino
+fNGPly1			Player 1
+fNGPly2			Player 2
+fNGPly3			Player 3
+fNGPly4			Player 4
+fNGRounds		Rounds
+fNGUnlimited		Unlimited
+fNGOther		Other
+fNGPoints		Points
+fNGBegin		Begin
+fNGNames		Names
+fNGRules		Rules
+
+# fAbout
+fATitle			About Casino
+fACasino		Casino
+fAVersion		Version
+fAWebsite		Website
+fAOK			OK
+
+# fScores
+fSTitle			Casino
+fSLastSweep		Last Sweep
+fSAces			A
+fSSweeps		s
+fSUpdate		Update
+
+# fStatus
+fStTitle		Points, this round
+fStOK			OK
+fStCancel		Cancel
+
+# fNames
+fNaTitle		Names
+fNaOK			OK
+fNaCancel		Cancel
+fNaDelete		Delete
+
+# fWinners
+fWTitle			Game Over
+fWHScore		Points
+fWHName			Player
+fWNewGame		New Game
+
+# fRules
+fRTitle			Rules
+fRSelect		Chapter
+fROK			OK

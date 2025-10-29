@@ -1,0 +1,16 @@
+SOURCES	=	Main
+DEPS	=	
+DST	=	lhd$(EXE)
+
+ifndef BUILD
+	include ..$/Common.mk
+else
+	include ..$/..$/Common.mk
+endif
+
+clean:	Cclean
+	$(RM) scripts/*~
+
+distclean:	Cdistclean
+
+cdoc:	Cdoc

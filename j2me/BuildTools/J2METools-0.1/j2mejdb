@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# j2mejdb
+#
+# Wrapper script for jdb - fits hand in hand with the emulators.
+#
+# Created and maintained by Brian Schau <brian@schau.com>
+
+# j2mejdb is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+
+# j2mejdb is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+
+# You should have received a copy of the GNU Lesser General Public
+# License along with j2mejdb; if not, write to the Free
+# Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+# 02111-1307 USA.
+HOSTNAME="localhost"
+PORT="4452"
+
+function Usage()
+{
+	echo "Usage: $0 [OPTIONS] file"
+	echo
+	echo "[OPTIONS]"
+	echo "  -H host   Host to debug"
+	echo "  -h        Help (this ..)"
+	echo "  -p num    Port number"
+	exit 1
+}
+
+OPTS=`getopt -o H:hp: -n j2mejdb -- "$@"` || exit 1
+eval set -- "$OPTS"
+
+while :; do
+	case "$1" in
+	-H)	HOSTNAME="$2"; shift 2;;
+	-h)	Usage;;
+	-p)	PORT="$2"; shift 2;;
+	--)	shift ; break;;
+	*)	Usage ;;
+	esac
+done
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=$HOSTNAME,port=$PORT
+exit 0

@@ -1,0 +1,49 @@
+2r1:
+* Udvidelse af database, så key og content felternes længde ikke er begrænset.
+  ("Brian Schau" <brian@schau.dk>)
+
+* I forbindelse med udvidelsen skal db omdøbes til "Secure It.db".   Kan gøres
+  i reo.   Læs fra "secureit-db", skriv til "Secure It.db".
+  ("Brian Schau" <brian@schau.dk>)
+
+* Databasen skal navngives med 32 tegn.  Pad med 0 efter 'Secure It.db'.
+  ("Brian Schau" <brian@schau.dk>)
+
+* Scrollbars til key og content felter.  Både i view og edit mode.
+  ("Allan Marillier" <amarillier@yahoo.com>)
+
+1r8
+DONE
+* Preferences formen skal splittes op i flere forme.  Således burde visuals
+  trækkes ud i en form for sig og security i en form for sig.
+  ("Brian Schau" <brian@schau.dk>)
+
+DONE
+* "Thanks" i about menuen.
+  ("Brian Schau" <brian@schau.dk> (common decency))
+
+DONE
+* Mulighed for phone-pad (123456789) og calculator (789456123) view ved
+  pinkode indtastning.
+  ("Jan Lund Thomsen" <kwed@kwed.org>)
+
+DONE
+* Mulighed for at bruge keyboard til indtastning af kodeord.
+  ("Mike Hanson" <mhanson@deq.state.ut.us>)
+
+DONE
+* Det skal være muligt at tage backup af databasen.  Sæt dmHdrAttrBackup i
+  attributes på databasen.
+  ("Michael Stone" <w.michael.stone@pobox.com>)
+
+DONE
+* Programmet skal fødes med Personal/Business/Unfiled i kategorier.
+  ("Jan Lund Thomsen" <kwed@kwed.org>)
+
+DONE
+* I non-quick-access placeres kategorier i øverste højre hjørne.
+  ("Jan Lund Thomsen" <kwed@kwed.org>)
+
+DONE
+* Tools-menuen burde hedde options og options hedde about.
+  ("Jan Lund Thomsen" <kwed@kwed.org>)

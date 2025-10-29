@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>@Tracker User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<STYLE TYPE="text/css">
+BODY, P, LI, H1 {
+	background-color: #ffffff;
+	color: #444444;
+	font-family: tahoma,verdana,geneva,arial,helvetica,sans-serif;
+}
+
+TT, PRE {
+	background-color: #ffffff;
+	color: #444444;
+	font-family: Courier New,Courier,monospace;
+}
+
+DT {
+	background-color: #ffffff;
+	color: green;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<H1>@Tracker User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>@Tracker is a small Activity Time Tracker used to record time spent in various tasks. The target audience are users in need of tracking time spent in f.ex. project related tasks in their daily job.
+<P>Tracking the time is as easy as hitting a button, setting a date, setting time spent, describing what was done and then adding the task to a category.
+<P>Some features of @Tracker:
+<UL>
+<LI>@Tracker runs on any Palm OS 3.1 or better device.
+<LI>Depending on the capabilities of your device, @Tracker can present output in color and multilined.
+<LI>A quick summary can be calculated.
+<LI>Based on configurable criterias, selected archives can be moved or copied to archives. These archives can then be HotSync'ed to your desktop computer where, using tttxexport [<A HREF="#refs">4</A>], the archive can be exported to Excel CSV, Standard CSV, PHP format or plain format.
+</UL>
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of @Tracker is no more different than installation of any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] @Tracker.
+<LI>Unpack the <B>atTracker.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the <B>atTracker.zip</B> archive. Highlight the <B>atTracker.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a '@Tracker' icon (depicting a old hour glass) in the <I>Unfiled</I> category on your Palm PDA. Feel free to move @Tracker to another category.
+
+<P><BR><P><BR>
+<H3>Working with @Tracker</H3>
+<P>When opening @Tracker you will be met by the Main Task view - this is the where all your recorded tasks are listed sorted by date (newest first) and category:
+<P><IMG SRC="gfx/main.gif" WIDTH="160" HEIGHT="160" ALT="Main Task view">
+<P>In the lower right corner you have a filter drop down:
+<P><IMG SRC="gfx/filter.gif" WIDTH="160" HEIGHT="160" ALT="Filter">
+<P>By selecting one of the entries you limit what is shown in the Main Task view. There are 7 predefined filters:
+<OL>
+<LI><B>All</B>: Show All tasks.
+<LI><B>Today</B>: Show tasks recorded today.
+<LI><B>Yesterday</B>: Show tasks record today.
+<LI><B>Last 7 Days</B>: Show tasks recorded within the last 7 days.
+<LI><B>Last Week</B>: Show tasks recorded last week. That is, show tasks recorded from Monday to Sunday in the previous week.
+<LI><B>Last 31 Days</B>: Show tasks recorded within the last 31 days.
+<LI><B>Last Month</B>: Show tasks recorded last month. That is, if today is in June, show tasks recorded in May.
+</OL>
+<P>You can define a filter using the <B>Range...</B> entry.
+<P><BR><P>By tapping the <B>New</B> button in the lower left corner or by selecting a task in the Main Task view you bring up the <I>Edit</I> screen:
+<P><IMG SRC="gfx/edit.gif" WIDTH="160" HEIGHT="160" ALT="Edit">&nbsp;&nbsp;&nbsp;<IMG SRC="gfx/quicktextlist.gif" WIDTH="160" HEIGHT="160" ALT="Quick Text List">
+<P>In the upper left corner you can set the date of the task. This will always default to todays date if a new Task is created. In the upper right corner (below the line) you can set the duration of/time spent in the task. Enter a description in the Task field. As much as possible of this description will be shown in the Main Task view. Finally, place the Task in the right category by using the category selector in the upper right corner (above the line).
+<P>Tap the little double note icon to the left of the Task text field. This will popup a list with pre-defined Short Texts or Quick Texts. Select a Quick Text from the list and the Quick Text will be transferred to the Task text field. Select <B>Edit ...</B> at the bottom of the list to go to the Quick Text Manager.
+
+<P><BR><P><BR>
+<H3>Quick Text Manager</H3>
+<P>To start the Quick Text Manager select the <I>Options-&gt;Quick Text</I> menu item:
+<P><IMG SRC="gfx/quicktextmanager.gif" WIDTH="160" HEIGHT="160" ALT="Quick Text Manager">
+<P>Click <B>New</B> to create a new Quick Text. Select a Quick Text and click <B>Edit</B> to edit the selected Quick Text. Click <B>OK</B> when done.
+<P>You can define up to 16 Quick Texts each of 31 characters.
+
+<P><BR><P><BR>
+<H3>Actions</H3>
+<P>From the <I>Actions</I> menu you have the choice of:
+<OL>
+<LI>Calculating a quick summary:
+<P><IMG SRC="gfx/summary.gif" WIDTH="160" HEIGHT="160" ALT="Summary">
+<P>Define one or all of the options. Enter any search string (word or part of a word) in the <B>Containing</B> field to summarize based on content. By pressing <B>OK</B> a summary of the time spent in the tasks matching the criteria will be shown.
+<LI>Cleaning up if you've got to many obsolete entries:
+<P><IMG SRC="gfx/cleanup.gif" WIDTH="160" HEIGHT="160" ALT="Clean Up">
+<P>This works much the same way as the <I>Summary</I> screen above. Tasks will be permanently deleted when pressing <B>OK</B>.
+
+<LI>Printing. This will print the list of Tasks in the Main Task view. You need to have <A HREF="http://www.stevenscreek.com/palm/palmprint.shtml">Palm Print</A> installed for this to work.
+</OL>
+
+<P><BR><P><BR>
+<H3>Archives</H3>
+<P>Whenever you like, you can archive some (or all) of the entries in the Main Task view. Maybe a project was finished and now you want to get rid of the Tasks associated with that project.
+<OL>
+<LI>Select the <I>Archive-&gt;Archive</I> menu item to archive:
+<P><IMG SRC="gfx/archive.gif" WIDTH="160" HEIGHT="160" ALT="Archive">
+<P>This dialog behaves much the same as the <I>Summary</I> and <I>Clean Up</I> dialogs above. Select <B>Archive name</B> to bring up the <I>Archive Manager</I> to select or add archives. Select <B>Move Tasks</B> to move tasks to the archive. If <B>Copy Tasks</B> is selected, the matching Tasks are copied to the archive. Press <B>OK</B> to start archiving.
+<LI>Select the <I>Archive-&gt;Restore</I> menu item to restore previously archived Tasks:
+<P><IMG SRC="gfx/restore.gif" WIDTH="160" HEIGHT="160" ALT="Restore">
+<P>The Tasks within the selected archive will be restored to the <I>Unfiled</I> category. This is by design and will probably not be changed.
+<LI>Select the <I>Archive-&gt;Manager</I> menu item to bring up the <I>Archive Manager</I> dialog:
+<P><IMG SRC="gfx/manager.gif" WIDTH="160" HEIGHT="160" ALT="Archive Manager">
+<P>Using the <I>Archive Manager</I> you can add archives, delete archives, rename archives and so forth.
+</OL>
+<P>To convert the archive files you can f.ex. use the <A HREF="/gz/online/webexport/index.php">@Tracker Web Export</A> tool.
+
+<P><BR><P><BR>
+<H3>Preferences</H3>
+<P>You can setup some personal settings by selecting the <I>Options-&gt;Preferences</I> menu item:
+<P><IMG SRC="gfx/preferences.gif" WIDTH="160" HEIGHT="160" ALT="Preferences">
+<P><B>Note!</B> Depending on the capabilites of your device not all of these settings might be shown.
+<UL>
+<lI>Setting a <B>Default Time</B> implies, that whenever you add a new Task the duration for the new Task is prefilled with the time entered here.
+<LI>Toggle the multiline view in the Main Task view by checking/unchecking the <B>Show details in 'All' view</B> checkbox.
+<lI>If you want every even line number to be in an alternate color check the <B>Alternate line color</B> checkbox. Set the color by clicking the color box - this will bring up the system Color Pick dialog.
+</UL>
+
+<P><BR><P><BR>
+<H3>Bottom Line</H3>
+<P>So .. Tasks, Projects, Categories - a lot of terms without context. This is how I use @Tracker. I am a consultant at a large IT Company. I have to track the time spent on the various assignments. Once in a while (preferably once a week) I enter the time in a central time tracking utility.
+<P>The time I enter is among other things used to evaluate me and forms the basis for the bills shipped to my clients so the data entered needs to be pretty precise. And this is where it normally fails - performing my job on a client site (on a clients premises) normally means that I do not have a connection back to my employer (and the central time tracking utility). So time spent was previously recorded on scrap paper, in notepad, added to the calender on my cellular or whatever (and .. mind you, 3 weeks after a task was done it is pretty hard to remember the details when you have no notes to lean upon :-)
+<P>I add any new Project to the Category list. Work done on the Project, that is the individual Task, is recorded and placed in the category for that Project.
+<P>Come time when I have to enter the time in the central time tracking utility I browse the <B>All</B> category, entering the date and duration of the task and any special notes I might have entered.
+<P>When a project is finished, I archive the category and HotSync the archive to my desktop PC. On the desktop PC I use tttxexport [<A HREF="#refs">4</A>] to export the archive to Excel CSV. Then I backup the Excel CSV file to a permanent storage.
+<P>Once in a while my manager calls me up asking me to give a summary of the time spent on various jobs/task in a Project. Well, easy, just bring up the <I>Summary</I> screen ...
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>Download @Tracker - <A HREF="http://www.schau.com/gz/palm/attracker/index.html">www.schau.com/gz/palm/attracker/index.html</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+<LI>Download tttxexport - <A HREF="http://www.schau.com/gz/palm/attracker/index.html">www.schau.com/gz/palm/attracker/index.html</A>
+</OL>
+</BODY>
+</HTML>

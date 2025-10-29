@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@color/background"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@color/background"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+		<Button android:id="@+id/pausebutton"
+    	    	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_pause"
+        		android:layout_gravity="left" />
+    	<TextView android:layout_gravity="fill_horizontal"
+    			android:layout_height="fill_parent"
+    			android:layout_width="0dip"
+    			android:layout_weight="1" />
+  		<Button android:id="@+id/stopbutton"
+    	   		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:maxWidth="140dp"
+        		android:maxHeight="140dp"
+        		android:adjustViewBounds="true"
+        		android:background="@drawable/button_stop"
+        		android:layout_gravity="right" />
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:background="@color/background"
+		android:layout_width="fill_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1"
+    	android:orientation="vertical">
+		<dk.schau.vkm.view.RunningView android:id="@+id/runningview"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:layout_gravity="center" />
+	</LinearLayout>
+</LinearLayout>

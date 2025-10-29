@@ -1,0 +1,196 @@
+#include "Resources.h"
+#include "Translations/Danish.rcp"
+#include "Translations/English.rcp"
+
+/*
+ * Globals.
+ */
+VERSION "2.2"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8 TRANSPARENT 255 0 0
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 0
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8 TRANSPARENT 255 0 0
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 0
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "@@AboutText@@"
+STRING ID strSelectDay "@@SelectDay@@"
+STRING ID strMeterE "@@fEditElectricity@@"
+STRING ID strMeterG "@@fEditGas@@"
+STRING ID strMeterW "@@fEditWater@@"
+STRING ID strEl "@@fMainEl@@"
+STRING ID strGas "@@fMainGas@@"
+STRING ID strWater "@@fMainWater@@"
+STRING ID strDiff "@@StringDiff@@"
+STRING ID strPleaseWait "@@StringPleaseWait@@"
+STRING ID strSMeter "@@StringMeter@@"
+STRING ID strSUsage "@@StringUsage@@"
+STRING ID strSAverage "@@StringAverage@@"
+STRING ID strSCount "@@StringCount@@"
+STRING ID strSLo "@@StringLo@@"
+STRING ID strSHi "@@StringHi@@"
+STRING ID strSDate "@@StringDate@@"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "@@aBadRomTitle@@"
+	MESSAGE "@@aBadRomText@@"
+	BUTTONS "@@bOK@@"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "@@aDatabaseErrorTitle@@"
+	MESSAGE "@@aDatabaseErrorText@@"
+	BUTTONS "@@bOK@@"
+END
+
+ALERT ID aDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "@@aDeleteTitle@@"
+	MESSAGE "@@aDeleteText@@"
+	BUTTONS "@@bYes@@" "@@bNo@@"
+END
+
+ALERT ID aNoStatistics
+INFORMATION
+BEGIN
+	TITLE "@@aNoStatisticsTitle@@"
+	MESSAGE "@@aNoStatisticsText@@"
+	BUTTONS "@@bOK@@"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "@@fAboutTitle@@"
+
+	LABEL "El, Gas, Vand V2.2" AUTOID AT (CENTER 20) FONT 7
+	FIELD ID cAboutText AT (4 48 140 77) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 48 7 77) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "@@bOK@@" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "El, Gas, Vand"
+
+	POPUPTRIGGER "" ID cMainPopup AT (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "@@fMainListAll@@" "@@fMainListEl@@" "@@fMainListGas@@" "@@fMainListWater@@" ID cMainList AT (RIGHT@160 1 72 AUTO) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST cMainPopup cMainList
+
+	LABEL "@@fMainDate@@" AUTOID AT (RIGHT@26 18) FONT 1
+	LABEL " " AUTOID AT (153 18) FONT 0
+	TABLE ID cMainTable AT (1 29 150 110) ROWS MainTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cMainScrollBar AT (152 29 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MainTableLines-1
+
+	BUTTON "@@bNew@@" ID cMainNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "@@bStat@@" ID cMainStatistics AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "@@mMainHelp@@"
+	BEGIN
+		MENUITEM "@@mMainAbout@@" ID mMainAbout
+	END
+END
+
+FORM ID fEdit AT (2 27 156 131)
+MODAL
+DEFAULTBUTTON cEditCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "@@fEditTitle@@"
+
+	LABEL "@@fEditDate@@" AUTOID AT (RIGHT@78 18)
+	SELECTORTRIGGER "" ID cEditSelector AT (80 18 50 AUTO)
+
+	LABEL "@@fEditNew@@" AUTOID AT (4 32)
+
+	CHECKBOX "@@fEditElectricity@@" ID cEditChkE AT (4 46 70 11)
+	SELECTORTRIGGER "" ID cEditSelE AT (80 46 70 11)
+
+	CHECKBOX "@@fEditGas@@" ID cEditChkG AT (4 64 70 11)
+	SELECTORTRIGGER "" ID cEditSelG AT (80 64 70 11)
+
+	CHECKBOX "@@fEditWater@@" ID cEditChkW AT (4 82 70 11)
+	SELECTORTRIGGER "" ID cEditSelW AT (80 82 70 11)
+
+	BUTTON "@@bOK@@" ID cEditOK AT (4 BOTTOM@127 AUTO AUTO)
+	BUTTON "@@bCancel@@" ID cEditCancel AT (PREVRIGHT+4 BOTTOM@127 AUTO AUTO)
+	BUTTON "@@bDelete@@" ID cEditDelete AT (PREVRIGHT+4 BOTTOM@127 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fKeyboard AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cKeyboardButCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE ""
+
+	FIELD ID cKeyboardField AT (CENTER 22 60 16) EDITABLE MAXCHARS 10 UNDERLINED FONT 7 NUMERIC
+
+	BUTTON "7" ID cKeyboardBut7 AT (6 48 32 22) FONT 1
+	BUTTON "8" ID cKeyboardBut8 AT (43 48 32 22) FONT 1
+	BUTTON "9" ID cKeyboardBut9 AT (80 48 32 22) FONT 1
+
+	BUTTON "4" ID cKeyboardBut4 AT (6 75 32 22) FONT 1
+	BUTTON "5" ID cKeyboardBut5 AT (43 75 32 22) FONT 1
+	BUTTON "6" ID cKeyboardBut6 AT (80 75 32 22) FONT 1
+
+	BUTTON "1" ID cKeyboardBut1 AT (6 102 32 22) FONT 1
+	BUTTON "2" ID cKeyboardBut2 AT (43 102 32 22) FONT 1
+	BUTTON "3" ID cKeyboardBut3 AT (80 102 32 22) FONT 1
+
+	BUTTON "0" ID cKeyboardBut0 AT (6 129 32 22) FONT 1
+
+	BUTTON "\x03" ID cKeyboardButBS AT (117 48 32 22) FONT 3
+	BUTTON "\x10" ID cKeyboardButC AT (117 75 32 22) FONT 3
+	BUTTON "\x07" ID cKeyboardButCancel AT (117 102 32 22) FONT 3
+	BUTTON "OK" ID cKeyboardButOK AT (117 129 32 22) FONT 1
+
+	GRAFFITISTATEINDICATOR AT (CENTER 139)
+END
+
+FORM ID fStatistics AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "@@fStatisticsTitle@@"
+
+	POPUPTRIGGER "" ID cStatisticsPopup AT (RIGHT@160 0 0 13) RIGHTANCHOR NONUSABLE
+	LIST "@@fMainListAll@@" "@@fMainListEl@@" "@@fMainListGas@@" "@@fMainListWater@@" ID cStatisticsList AT (RIGHT@160 1 72 AUTO) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST cStatisticsPopup cStatisticsList
+
+	BUTTON "@@bOK@@" ID cStatisticsOK AT (1 BOTTOM@159 AUTO AUTO) NONUSABLE
+END

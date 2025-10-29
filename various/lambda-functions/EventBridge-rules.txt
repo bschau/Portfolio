@@ -1,0 +1,10 @@
+Function	EventBridge		Expression
+comics		comics-cron		cron(0 9 * * ? *)
+dkjokes		dkjokes-cron		cron(0 8 * * ? *)
+events		events-cron		cron(0 7 ? * * *)
+explosm		explosm-cron		cron(0 9 * * ? *)
+kwed		kwed-cron		cron(30 8 * * ? *)
+lichess		lichess-cron		rate(6 hours)
+newsfeed	newsfeed-cron		rate(4 hours)
+trellotodo	trellotodo-cron		cron(30 6 * * ? *)
+

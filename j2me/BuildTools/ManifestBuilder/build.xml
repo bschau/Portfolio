@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Main" default="doItAll">
+	<import file="common.xml" />
+	<property name="release.d" value="ManifestBuilder-${version}" />
+
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<delete dir="${release.d}" />
+		<ant dir="src" target="clean" />
+	</target>
+
+	<target name="doItAll" depends="compile" />
+
+	<target name="compile">
+		<ant dir="src" target="jar"/>
+	</target>
+
+	<target name="archive" depends="clean">
+		<zip destfile="../${project}-${version}-src.zip" basedir=".." includes="${project}/**" />
+	</target>
+
+	<target name="release" depends="clean,compile">
+		<mkdir dir="${release.d}" />
+		<copy file="AUTHORS.txt" todir="${release.d}" />
+		<copy file="CHANGELOG.txt" todir="${release.d}" />
+		<copy file="LICENSE.txt" todir="${release.d}" />
+		<copy file="ManifestBuilder.html" todir="${release.d}" />
+    		<copy file="src/ManifestBuilder.jar" todir="${release.d}" />
+    		<zip destfile="../ManifestBuilder-${version}.zip" basedir="." includes="${release.d}/**" />
+	</target>
+</project>

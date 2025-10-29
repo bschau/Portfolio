@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* AnglesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AnglesAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* AnglesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* AnglesViewController.m */; };
+		4B02B74B10803C88008310DC /* EndGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B02B74A10803C88008310DC /* EndGame.m */; };
+		4B0AEB36108259A700C49E7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B0AEB34108259A700C49E7A /* Localizable.strings */; };
+		4B0AEB4F10825C5300C49E7A /* AnglesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0AEB4E10825C5300C49E7A /* AnglesViewController.xib */; };
+		4B0AEB971082611700C49E7A /* GameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0AEB961082611700C49E7A /* GameController.xib */; };
+		4B0C2450107A7CD500AE4A8F /* PrefsMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C244F107A7CD500AE4A8F /* PrefsMgr.m */; };
+		4B3E6D9D1083AFD500BA972B /* EndGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3E6D9C1083AFD500BA972B /* EndGame.xib */; };
+		4B62C18A1073DE7500AB7E1E /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B62C1891073DE7500AB7E1E /* GameController.m */; };
+		4B62C2901074076E00AB7E1E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B62C28E1074076E00AB7E1E /* Default.png */; };
+		4B62C2911074076E00AB7E1E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B62C28F1074076E00AB7E1E /* Icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* AnglesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnglesAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AnglesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnglesAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Angles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Angles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AnglesViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* AnglesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnglesViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* AnglesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnglesViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Angles_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Angles_Prefix.pch; sourceTree = "<group>"; };
+		4B02B74910803C88008310DC /* EndGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndGame.h; sourceTree = "<group>"; };
+		4B02B74A10803C88008310DC /* EndGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGame.m; sourceTree = "<group>"; };
+		4B02B77E10803DA0008310DC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/EndGame.xib; sourceTree = "<group>"; };
+		4B0AEB35108259A700C49E7A /* da */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B0AEB37108259B600C49E7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B0AEB8010825ECB00C49E7A /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/AnglesViewController.xib; sourceTree = "<group>"; };
+		4B0AEB981082612200C49E7A /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/GameController.xib; sourceTree = "<group>"; };
+		4B0C244E107A7CD500AE4A8F /* PrefsMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsMgr.h; sourceTree = "<group>"; };
+		4B0C244F107A7CD500AE4A8F /* PrefsMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsMgr.m; sourceTree = "<group>"; };
+		4B3E6DAB1083B12A00BA972B /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/EndGame.xib; sourceTree = "<group>"; };
+		4B62C1881073DE7500AB7E1E /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		4B62C1891073DE7500AB7E1E /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		4B62C18C1073DEE700AB7E1E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/GameController.xib; sourceTree = "<group>"; };
+		4B62C28E1074076E00AB7E1E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
+		4B62C28F1074076E00AB7E1E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = resources/Icon.png; sourceTree = "<group>"; };
+		4B679186108F9D5200F44D48 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Angles-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Angles-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* AnglesAppDelegate.h */,
+				1D3623250D0F684500981E51 /* AnglesAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* AnglesViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* AnglesViewController.m */,
+				4B62C1881073DE7500AB7E1E /* GameController.h */,
+				4B62C1891073DE7500AB7E1E /* GameController.m */,
+				4B0C244E107A7CD500AE4A8F /* PrefsMgr.h */,
+				4B0C244F107A7CD500AE4A8F /* PrefsMgr.m */,
+				4B02B74910803C88008310DC /* EndGame.h */,
+				4B02B74A10803C88008310DC /* EndGame.m */,
+				4B679186108F9D5200F44D48 /* Constants.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Angles.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Angles_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B62C28E1074076E00AB7E1E /* Default.png */,
+				4B62C28F1074076E00AB7E1E /* Icon.png */,
+				4B0AEB4E10825C5300C49E7A /* AnglesViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Angles-Info.plist */,
+				4B0AEB961082611700C49E7A /* GameController.xib */,
+				4B3E6D9C1083AFD500BA972B /* EndGame.xib */,
+				4B0AEB34108259A700C49E7A /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Angles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Angles" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Angles;
+			productName = Angles;
+			productReference = 1D6058910D05DD3D006BFB54 /* Angles.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Angles" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				da,
+				en,
+				Danish,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Angles */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				4B0AEB4F10825C5300C49E7A /* AnglesViewController.xib in Resources */,
+				4B0AEB971082611700C49E7A /* GameController.xib in Resources */,
+				4B62C2901074076E00AB7E1E /* Default.png in Resources */,
+				4B62C2911074076E00AB7E1E /* Icon.png in Resources */,
+				4B3E6D9D1083AFD500BA972B /* EndGame.xib in Resources */,
+				4B0AEB36108259A700C49E7A /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* AnglesAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* AnglesViewController.m in Sources */,
+				4B62C18A1073DE7500AB7E1E /* GameController.m in Sources */,
+				4B0C2450107A7CD500AE4A8F /* PrefsMgr.m in Sources */,
+				4B02B74B10803C88008310DC /* EndGame.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4B0AEB34108259A700C49E7A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B0AEB35108259A700C49E7A /* da */,
+				4B0AEB37108259B600C49E7A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4B0AEB4E10825C5300C49E7A /* AnglesViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2899E5210DE3E06400AC0155 /* English */,
+				4B0AEB8010825ECB00C49E7A /* da */,
+			);
+			name = AnglesViewController.xib;
+			sourceTree = "<group>";
+		};
+		4B0AEB961082611700C49E7A /* GameController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B62C18C1073DEE700AB7E1E /* English */,
+				4B0AEB981082612200C49E7A /* da */,
+			);
+			name = GameController.xib;
+			sourceTree = "<group>";
+		};
+		4B3E6D9C1083AFD500BA972B /* EndGame.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B02B77E10803DA0008310DC /* English */,
+				4B3E6DAB1083B12A00BA972B /* da */,
+			);
+			name = EndGame.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Angles_Prefix.pch;
+				INFOPLIST_FILE = "Angles-Info.plist";
+				PRODUCT_NAME = Angles;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Angles_Prefix.pch;
+				INFOPLIST_FILE = "Angles-Info.plist";
+				PRODUCT_NAME = Angles;
+			};
+			name = Release;
+		};
+		4BE83E0D10941D6100049162 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brian Schau";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1A53EA9E-CBFE-4BAF-89D4-A963EE699324";
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Distribution;
+		};
+		4BE83E0E10941D6100049162 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Angles_Prefix.pch;
+				INFOPLIST_FILE = "Angles-Info.plist";
+				PRODUCT_NAME = Angles;
+			};
+			name = Distribution;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6ED0B6D6-B983-4E13-86E6-EC75BCEEBC79";
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian Schau (Q9XMSN66DZ)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6ED0B6D6-B983-4E13-86E6-EC75BCEEBC79";
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Angles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				4BE83E0E10941D6100049162 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Angles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				4BE83E0D10941D6100049162 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

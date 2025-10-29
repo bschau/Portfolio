@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>Trams for Palm OS - Conversion</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/hp/stylesheet.css">
+<SCRIPT TYPE="text/javascript">
+<!--
+function OpenWindow(num)
+{
+	NewWindow=window.open("wizard.php?p="+num, "", "width=600,height=510");
+}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+<TABLE><TR>
+<TD STYLE="vertical-align: top"><IMG SRC="../trams.gif" WIDTH="48" HEIGHT="44" ALT="Trams for Palm OS"></TD>
+<TD>   </TD>
+<TD STYLE="vertical-align: top"><H1>Conversion</H1></TD>
+</TR></TABLE>
+<P>Trams for Palm OS uses some of the Trams Mobile files. However, they must be converted to Trams for Palm OS before use. I would have loved to include a set of converted files but as they change from country to country - and also from time to time - it seems pointless to do so.
+<P>(If a co-worker already has done this, then just get his/hers database file - it's much easier :-)
+
+<P><BR><P>
+<H3>Update Trams Mobile</H3>
+<P>Run the Refresh batch job from the Trams folder. It will refresh the various files, thus giving you a fresh set of data.
+
+<P><BR><P>
+<H3>Convert Database</H3>
+<P>Run the <B>TramsCvt</B> program for the Trams for Palm OS suite (pictures opens in separate windows).
+<P><A HREF="javascript:OpenWindow(1)"><IMG SRC="gfx/wizard1s.jpg" WIDTH="136" HEIGHT="119" ALT="Wizard 1: Welcome screen"></A>
+<P><BR>The welcome screen.
+
+<P><A HREF="javascript:OpenWindow(2)"><IMG SRC="gfx/wizard2s.jpg" WIDTH="136" HEIGHT="104" ALT="Wizard 2: Data Collection"></A>
+<P><BR>Data Collection screen. Enter the full path to the <I>expcat.dat</I> file in the Trams Mobile folder in the <B>Trams Mobile Expenses Category Database</B> field (or use the <B>Browse...</B> button).
+<P>Enter the output path in the <B>Palm Database Output Path</B> (or use the <B>Browse...</B> button).
+<P>On Microsoft Windows you also have the choice to queue the database files for HotSync during the conversion. Tick the <B>Install to Palm Profile</B> checkbox and select the target profile in the drop down list.
+
+<P>TramsCvt will work a bit and ...
+
+<P><A HREF="javascript:OpenWindow(3)"><IMG SRC="gfx/wizard3s.jpg" WIDTH="136" HEIGHT="104" ALT="Wizard 3: Conversion Status"></A>
+<P><BR>Everything usually runs smooth ... sometimes you get errors but then go back and retry the conversion process.
+
+<P><BR><P>
+<H3>What To Do Then?</H3>
+<P>On Microsoft Windows you have the option to queue the database files for HotSync during the conversion process. If you de-select this option you have to manually queue the database file - it will be transferred on next HotSync.
+<!-- <P>On non-Microsoft Windows you have to manually install the database file stored in the output path to your handheld by whatever means you normally uses to install prc/pdb files. --><!-- Heh .. Trams for Palm OS is not yet available for Linux :-) -->
+
+<P><BR><P><A HREF="/index.html">Home</A>&nbsp;&nbsp;&nbsp;<A HREF="../index.html">Back</A>
+
+</BODY>
+</HTML>

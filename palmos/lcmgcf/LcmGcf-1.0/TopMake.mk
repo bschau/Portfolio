@@ -1,0 +1,2 @@
+APPNAME=LcmGcf
+VERSION=1.0

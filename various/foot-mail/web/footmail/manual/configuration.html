@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>FootMail - Configuration Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/apachephp/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>FootMail - Configuration Manual</H1>
+<P>To configure FootMail point your web browser to either of:
+<UL>
+<LI><PRE>http://your.domain/FootMail-x.y/</PRE> - then select the <B>Configure</B> link, or
+<LI><PRE>http://your.domain/FootMail-x.y/configure.php</PRE> (direct).
+</UL>
+<P><IMG SRC="gfx/configure.gif" WIDTH="160" HEIGHT="160" ALT="Configure">Part of the Configure screen as viewed by the PalmScape web browser on a Palm M505.
+<P><BR>The following parameters can be changed:
+<P><TABLE>
+<TR>
+	<TH ALIGN="left">Parameter</TH>
+	<TH>&nbsp;&nbsp;&nbsp;</TH>
+	<TH ALIGN="left">Mandatory</TH>
+	<TH>&nbsp;&nbsp;&nbsp;</TH>
+	<TH ALIGN="left">Description</TH>
+</TR>
+<TR>
+	<TD>POP3 Server</TD>
+	<TD> </TD>
+	<TD>Yes</TD>
+	<TD> </TD>
+	<TD>Hostname or IP address of your POP3 server, such as pop3.yourdomain.com</TD>
+</TR>
+
+<TR>
+	<TD>POP3 Server Port</TD>
+	<TD> </TD>
+	<TD>No - defaults to 110</TD>
+	<TD> </TD>
+	<TD>The server port the POP3 server is listening on.</TD>
+</TR>
+
+<TR>
+	<TD>POP3 User Name</TD>
+	<TD> </TD>
+	<TD>Yes</TD>
+	<TD> </TD>
+	<TD>Your username to access the Inbox on the POP3 server.</TD>
+</TR>
+
+
+<TR>
+	<TD>POP3 Password</TD>
+	<TD> </TD>
+	<TD>Yes</TD>
+	<TD> </TD>
+	<TD>Your password for the username.</TD>
+</TR>
+
+<TR>
+	<TD>Email Address</TD>
+	<TD> </TD>
+	<TD>Yes</TD>
+	<TD> </TD>
+	<TD>Your email address. This is the from address which will be used when sending mail (new, reply and forward).</TD>
+</TR>
+
+<TR>
+	<TD>Time Zone</TD>
+	<TD> </TD>
+	<TD>No - defaults to 2</TD>
+	<TD> </TD>
+	<TD>The time zone the POP3 server is placed in. Use 2 for GMT+2, -3 for GMT-3 etc.</TD>
+</TR>
+
+<TR>
+	<TD>Page Size</TD>
+	<TD> </TD>
+	<TD>No - defaults to 5</TD>
+	<TD> </TD>
+	<TD>The page size of your Inbox. On devices with small displays use a small setting. On PDAs a larger setting can be used. This is the number of lines shown on the Inbox page. F.ex. if Page Size is 3 then 3 mails will be shown on the Inbox page.</TD>
+</TR>
+
+<TR>
+	<TD>Remove Reply Prefixes</TD>
+	<TD> </TD>
+	<TD>No - defaults to 're: sv:'</TD>
+	<TD> </TD>
+	<TD>When replying to a mail, FootMail can remove the prefixes in the subject line as given in this parameter. Separate prefixes with a space.</TD>
+</TR>
+
+<TR>
+	<TD>Default Reply Prefix</TD>
+	<TD> </TD>
+	<TD>No - defaults to Re:</TD>
+	<TD> </TD>
+	<TD>This is the default Reply prefix at the start of the subject line when replying to mails.</TD>
+</TR>
+
+<TR>
+	<TD>Indent String</TD>
+	<TD> </TD>
+	<TD>No</TD>
+	<TD> </TD>
+	<TD>When replying/forwarding mails the original mail text will be indented with this string.</TD>
+</TR>
+
+<TR>
+	<TD>Auto-check Deleted checkbox</TD>
+	<TD> </TD>
+	<TD>unchecked</TD>
+	<TD> </TD>
+	<TD>Automatically check all checkboxes in the mail list view in the inbox. Unselect the few mails to keep and then tap delete ... this is a real time saver!</TD>
+</TR>
+</TABLE>	
+<P>Click <B>Configure</B> when satisfied with the settings. Click <B>Try Connect</B> to try the connection settings.
+
+<P><BR><P><A HREF="../index.html">Back</A>&nbsp;&nbsp;<A HREF="installation.html">Installation Manual</A>&nbsp;&nbsp;<A HREF="user.html">User Manual</A>
+
+</BODY>
+</HTML>

@@ -1,0 +1,16 @@
+TODO
+----
+
+
+These are the things which would be nice to have in Griddler:
+
+* A solver.  There exists numerous algorithm on the net.  I need to find the
+  time to download and understand one of these  :-)
+
+* Puzzle entry.   Should be easy to do.  Ask for sizes and then present 'sizes' 
+  text entry fields where one can enter the clues.   The entered puzzles should
+  be stored in a database.
+
+* Beaming - both databases and individual puzzles should be beamable.
+
+* Better icons. Yes, I suck at drawing icons!

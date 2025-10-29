@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>XUtils.c</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<STYLE TYPE="text/css">
+body { font-family: Verdana, Arial, serif } table { border-spacing: 10px; } h1 {} td.left { vertical-align: top; } a.left { font-color: red; } td.right {} p.global {} p.entry { font-size: 1.1em; font-weight: bold; } div.signature { margin-left: 2cm; } p.desc { margin-left: 2cm; } p.right { font-weight: bold; margin-left: 2cm; } .npr { margin-left: 4cm; margin-top: -1em; } h3 { border: solid 1px; width: 100%; background-color: #87cefa; color: black; } code {} a.index {} a.selected { font-size: 1.1em; border: 1px solid black; }
+</STYLE>
+</HEAD>
+<BODY>
+<TABLE>
+<TR>
+<TD>&nbsp;</TD><TD><H1>XUtils.c</H1></TD></TR>
+<TR><TD CLASS="left"><A HREF="index.html" CLASS="left"><I>Index</I></A><BR><A HREF="doc1.html" CLASS="left">Options.c</A>
+<BR><A HREF="doc2.html" CLASS="left">StringBuilder.c</A>
+<BR><A HREF="doc3.html" CLASS="left">Utils.c</A>
+<BR><A HREF="doc4.html" CLASS="left">Main.c</A>
+<BR><A HREF="doc5.html" CLASS="left">Output.c</A>
+<BR><A HREF="doc6.html" CLASS="left">Parse.c</A>
+<BR><A HREF="doc7.html" CLASS="selected">XUtils.c</A>
+</TD><TD CLASS="right">
+<P CLASS="global">Misc. utility functions.<H3>Functions</H3>
+<P CLASS="right"><A NAME="XError"></A><P CLASS="entry">XError<DIV CLASS="signature"><PRE>void XError (<BR>        void *ctx,<BR>        const char *fmt,<BR>        ...<BR>)</PRE></DIV><P CLASS="desc">Write error to stderr and exit.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>ctx</CODE> - Ignored.<BR>
+<CODE>fmt</CODE> - Format string.<BR>
+<CODE>...</CODE> - Varargs.<BR>
+</DIV>
+<A NAME="XOut"></A><P CLASS="entry">XOut<DIV CLASS="signature"><PRE>void XOut (<BR>        int lvl,<BR>        const char *fmt,<BR>        ...<BR>)</PRE></DIV><P CLASS="desc">Output string if verbose level is equal to strings verbose level.<P CLASS="right">Parameters:<DIV CLASS="npr"><CODE>lvl</CODE> - String level.<BR>
+<CODE>fmt</CODE> - Format string.<BR>
+<CODE>...</CODE> - Varargs.<BR>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

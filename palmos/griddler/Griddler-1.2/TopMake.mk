@@ -1,0 +1,2 @@
+APPNAME	=	Griddler
+VERSION	=	1.2

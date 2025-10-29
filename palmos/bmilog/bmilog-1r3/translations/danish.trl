@@ -1,0 +1,215 @@
+# \xe5 †   \xe6  ‘   \xf8  ›
+# Globals
+strSelectDate		V\xe6lg Dato
+strWhatIsTitle		Hvad er BMI?
+strWhatIsText		Hvad er Body Mass Index (BMI)\n\nBMI er en objektiv m\xe5de at m\xe5le om din h\xf8jde og dr\xf8jde stemmer overens.\nBMI er et tal beregnet ud fra din h\xf8jde og din v\xe6gt, der kan bruges til at bestemme, om du er overv\xe6gtig, underv\xe6gtig eller om du har en sund v\xe6gt.\n\n\n
+			BMI formular (meter):\n\n
+			   v (kg) / (h (m) * h (m))\n\n
+			F.eks. findes f\xf8lgende BMI for en person der vejer 90 kg og er 180 cm h\xf8j:\n\n
+			   90 / (1.80 * 1.80) = 27\n\n
+			BMI er her 27.\n\n\n
+			BMI formular (pund og tommer):\n\n
+			   (v (pund) * 704.5) / (h (') * h ('))\n\n
+			F.eks. findes f\xf8lgende BMI for en person der vejer 198 pund og er 5\"11' h\xf8j:\n\n
+			   (198 * 704.5) / (71 * 71) = 27\n\n
+			BMI er her 27.\n\n\n\n
+			Advarsel: Denne BMI Logger skal ikke bruges i professionelt \xf8jemed. Denne BMI Logger kan ikke erstatte en l\xe6ges udtalelser og den repr\xe6senterer ikke n\xf8dvendigvis din sundhedstilstand. BMI Loggeren tager ikke alle v\xe6gt faktorer i betragtning n\xe5r BMI skal beregnes.\n
+			For personer der er under 150 cm. (5 fod) overestimeres kroppens fedt depoter. Ligeledes underestimeres kroppens fedt depoter for personer der har tabt muskel masse, s\xe5som \xe6ldre mennesker.\n\n
+			Derfor: brug ikke informationerne fra dette program til at \xe6ndre dine kostvaner og/eller motionsvaner uden du har konsulteret en l\xe6ge f\xf8rst! Kontakt venligst din l\xe6ge med tvivlssp\xf8rgsm\xe5l.\n\n\n
+strBMITableTitle	BMI Tabel
+strBMITableTextAmerican		\n\nBMI\n\n
+			0-19.9      Underv\xe6gtig\n
+			20-24.9    Ideel v\xe6gt\n
+			25-            Overv\xe6gtig\n\n\n
+			En BMI mellem 30 og 34.9 indikerer Fedme.\nMellem 35 og 39.9, Sv\xe6r Fedme.\nOver 40, Ekstrem Fedme.\n\n
+			Dette er den Amerikanske BMI tabel.\n\n
+strBMITableTextEuropean		\n\nBMI\n\n
+			0-18.4          Underv\xe6gtig\n
+			18.5-24.9    Ideel v\xe6gt\n
+			25-                Overv\xe6gtig\n\n\n
+			En BMI mellem 30 og 34.9 indikerer Fedme.\nMellem 35 og 39.9, Sv\xe6r Fedme.\nOver 40, Ekstrem Fedme.\n\n
+			Dette er den Europ\xe6iske BMI tabel.\n\n
+strCm			cm
+strFeet			\"
+strInch			'
+strKg			kg
+strLbs			pund
+strAbout		BMILog er skrevet af Brian Schau.\n\nBes\xf8g venligst websitet:\n\n    http://www.schau.com/bmilog\n\nP\xe5 websitet findes den seneste version af BMILog samt en conduit til Microsoft Windows.\n\nDette program indeholder ogs\xe5 code fra MathLib biblioteket.\nMathLib biblioteket kan findes p\xe5:\n\nhttp://www.radiks.net/~rhuebner/mathlib.html\n\nDette program er oversat til fransk af:\n\nAntoine - freewarefrance.com\n\n\nDette program er freeware - brug det som du lyster!\n\n
+strName			Navn
+strDate			Dato
+strBMI			BMI
+strFeetInch		\" '
+
+# Edit menu - sysEditMenuID
+EditMenuName		Ret
+EditMenuUndo		Fortryd
+EditMenuCut		Klip
+EditMenuCopy		Kopier
+EditMenuPaste		Inds\xe6t
+EditMenuSelect		V\xe6lg Alt
+EditMenuKeyboard	Tastatur
+EditMenuGraffiti	Graffiti
+
+# Main Menu
+QueryMenu		Beregn
+QueryFindHeight		Beregn H\xf8jde
+QueryFindWeight		Beregn V\xe6gt
+QueryConversion		Omregn
+OptionsMenu		Muligheder
+OptionsPreferences	Indstillinger
+AboutMenu		Om
+AboutBMITable		BMI Tabel
+AboutWhatIs		Hvad er BMI?
+AboutAbout		Om BMILog
+
+# Alerts
+AlertButtonOK		OK
+AlertButtonYes		Ja
+AlertButtonNo		Nej
+
+aBadRomTitle		PalmOS for gammel
+aBadRomText		Operativsystemet i denne PDA er for gammelt. Der skal bruges version 3.0 eller bedre.
+
+aNoSuchFormTitle	Ingen dialog
+aNoSuchFormText		Der findes ingen dialog med dette id. Burde ikke ske - kild programm\f8ren!
+
+aNameExistsTitle	Navnet findes
+aNameExistsText		Denne person findes allerede - benyt venligst et andet navn.
+
+aCannotOpenDatabaseTitle	Kan ikke \xf8bne database
+aCannotOpenDatabaseText	Kan ikke \xf8bne ^1 databasen.
+
+aDeletePersonTitle	Slet?
+aDeletePersonText	Er det ok at slette ^1?
+
+aNotNullTitle		Tomt felt
+aNotNullText		Du skal indtaste et navn i Navne feltet.
+
+aKgCmHeightInvalidTitle	Ugyldig h\xf8jde
+aKgCmHeightInvalidText	H\xf8jden skal v\xe6re mellem 1 og 999.
+
+aWeightInvalidTitle	Ugyldig v\xe6gt
+aWeightInvalidText	V\xe6gten skal v\xe6re mellem 1 og 999.
+
+aDeleteBMIEntryTitle	Slet BMI optegnelse?
+aDeleteBMIEntryText	Er det ok at slette den valgt BMI optegnelse?
+
+aBMIInfoTitle		BMI Info
+aBMIInfoText		Din BMI er ^1.
+
+aFeetHeightInvalidTitle	Ugyldig h\xf8jde (fod)
+aFeetHeightInvalidText	H\xf8jden (i fod) skal v\xe6re mellem 1 og 99.
+
+aInchHeightInvalidTitle	Ugyldig h\xf8jde (tommer)
+aInchHeightInvalidText	H\xf8jden (i tommer) skal v\xe6re mellem 0 og 11.
+
+aEitherKgOrLbsTitle	Kun en ...
+aEitherKgOrLbsText	Du skal kun angive en v\xe6gt i et af felterne.
+
+aEitherCmOrFeetInchTitle	Kun en ...
+aEitherCmOrFeetInchText	Du skal kun angive en h\xf8jde i det ene s\xe6t felter.
+
+aBMIExistsTitle		Findes allerede
+aBMIExistsText		Der findes allerede en BMI optegnelse for denne dag. Er det OK at overskrive denne?
+
+aNothingToPrintTitle	Intet at udskriv
+aNothingToPrintText	Der er intet at udskrive.
+
+# fMain
+fMTitle			BMI Logger
+fMButtonNew		Ny
+
+# fEditPerson
+fEPTitle		Ret Person
+fEPLabel		Navn
+fEPFormat		Format
+fEPOK			Accepter
+fEPCancel		Forkast
+fEPDelete		Slet
+
+# fHistory - both
+fHistoryTitle		Historik
+fHistoryName		Navn
+fHistoryDone		Tilbage
+fHistoryPrint		Udskriv
+fHistoryNew		Ny
+fHistoryDate		Dato
+fHistoryCm		cm
+fHistoryKg		kg
+fHistoryLbs		pund
+fHistoryFeetInch	\" \'
+fHistoryBMI		BMI
+
+# fHistoryEdit - both
+fHistoryEditTitle	Tilf\xf8j ny BMI optegnelse
+fHistoryEditDate	Dato
+fHistoryEditWeight	V\xe6gt
+fHistoryEditHeight	H\xf8jde
+fHistoryEditOK		Accepter
+fHistoryEditCancel	Forkast
+fHistoryEditCm		cm
+fHistoryEditKg		kg
+fHistoryEditFeet	\"
+fHistoryEditInch	\'
+fHistoryEditLbs		pund
+
+# fAbout
+fAboutAbout		Om
+fAboutVersion		Version
+fAboutDone		Tilbage
+
+# fPreferences
+fPreferences		Indstillinger
+fPreferencesTable	BMI Tabel
+fPreferencesTable1	Europ\xe6isk
+fPreferencesTable2	Amerikansk
+fPreferencesFormat1	kg og cm
+fPreferencesFormat2	pund og fod/tommer
+fPreferencesFormat	Format
+fPreferencesOK		Accepter
+fPreferencesCancel	Forkast
+
+# fAboutHelp
+fAboutHelpDone		Tilbage
+
+# fConversion
+fConversionTitle	Omregn
+fConversion1		Fra fod/tommer til cm
+fConversion2		Fra cm til fod/tommer
+fConversion3		Fra pund til kg
+fConversion4		Fra kg til pund
+fConversionFeet		\"
+fConversionInch		'
+fConversionCm		cm
+fConversionLbs		pund
+fConversionKg		kg
+fConversionDone		Tilbage
+fConversionSolve	L\xf8s
+fConversionClear	Ryd
+
+# fQueryFindHeight
+fQueryFindHeightTitle	Beregn Ideel H\xf8jde
+fQueryFindHeightTable	BMI Tabel
+fQueryFindHeightDone	Tilbage
+fQueryFindHeightSolve	L\xf8s
+fQueryFindHeightClear	Ryd
+fQueryFindHeightKg	kg
+fQueryFindHeightLbs	pund
+fQueryFindHeightOptimal	Ideel H\xf8jde
+fQueryFindHeightOptimalCm	cm
+fQueryFindHeightOptimalFeet	\"
+fQueryFindHeightOptimalInch	'
+
+# fQueryFindWeight
+fQueryFindWeightTitle	Beregn Ideel V\xe6gt
+fQueryFindWeightTable	BMI Tabel
+fQueryFindWeightDone	Tilbage
+fQueryFindWeightSolve	L\xf8s
+fQueryFindWeightClear	Ryd
+fQueryFindWeightCm	cm
+fQueryFindWeightFeetInch	fod/tommer
+fQueryFindWeightFeet	\"
+fQueryFindWeightInch	'
+fQueryFindWeightOptimal	Ideel V\xe6gt
+fQueryFindWeightOptimalKg	kg
+fQueryFindWeightOptimalLbs	pund

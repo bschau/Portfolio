@@ -1,0 +1,73 @@
+.TH D64 1
+
+.SH NAME
+d64 \- query / extract d64 disk image files
+
+.SH SYNOPSIS
+.B d64
+[-h] [-n name] [-o outputfile] [-v]
+.B COMMAND
+.B disk-image
+[track specs]
+
+.SH DESCRIPTION
+.PP
+d64 is used to query or extract from d64 disk image files.
+
+.SH OPTIONS
+.TP
+\fB\-h\fR
+help
+.TP
+\fB\-n name\fR
+Set tape name (only for extract, x)
+.TP
+\fB\-o file\fR
+Output to file (only for extract, x)
+.TP
+\fB\-v\fR
+print version and exit
+
+.SH COMMANDS
+.TP
+\fBb\fR
+List Block Availability Map (BAM)
+.TP
+\fBf prog-num\fR
+Follow track/sector links for program number #prog-num
+.TP
+\fBl\fR
+List contents of disk image file
+.TP
+\fBt\fR
+List type of disk image file
+.TP
+\fBx trackspecs\fR
+Extract the given tracks from the disk image file to a t64 tape archive
+
+.SH TRACK SPECS
+.TP
+\fBi1\fR
+Extract track i1
+.TP
+\fBi1,i2,i4\fR
+Extract tracks i1, i2 and i4
+.TP
+\fBi1\-i3\fR
+Extract tracks i1, i2 and i3
+.TP
+\fBi1,i3-i7,i9\fR
+Extract tracks i1, i3, i4, i5, i6, i7 and i9
+
+.SH AUTHOR
+Written by Brian Schau
+
+.SH "REPORTING BUGS"
+Report bugs to <brian@schau.dk>.
+
+.SH COPYRIGHT
+Copyright 2008 Brian Schau
+License GPLv2: GNU GPL version 2 <http://gnu.org/licenses/old-licenses/gpl-2.0.html>
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

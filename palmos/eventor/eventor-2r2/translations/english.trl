@@ -1,0 +1,109 @@
+# Globals
+dcUnfiled		Unfiled
+dcAnniversaries		Anniversaries
+dcBirthdays		Birthdays
+gDate			Date
+gEvent			Event
+gCategory		Category
+gOK			OK
+gCancel			Cancel
+gDone			Done
+gYes			Yes
+gNo			No
+gEdit			Edit
+gDelete			Delete
+
+# EditMenu
+EditMenuName		Edit
+EditMenuUndo		Undo
+EditMenuUndoSC		U
+EditMenuCut		Cut
+EditMenuCutSC		X
+EditMenuCopy		Copy
+EditMenuCopySC		C
+EditMenuPaste		Paste
+EditMenuPasteSC		P
+EditMenuSelect		Select All
+EditMenuSelectSC	S
+EditMenuKeyboard	Keyboard
+EditMenuKeyboardSC	K
+EditMenuGraffiti	Graffiti
+EditMenuGraffitiSC	G
+
+# Strings
+strTomorrow		Tomorrow
+strInDays		in %ld days
+strToday		Today
+strNotSet		Not Set
+strNewEvent		New Event
+strEditEvent		Edit Event
+strSetDate		Set Date
+strSetNewAlarm		Set New Alarm
+strOnTheDay		on the day
+strDaysBefore		%d day%s before
+strDaysBeforeP		s
+strRepeating		repeating
+strNever		Never
+strAboutText		Eventor was made by Brian Schau.\n\nPlease visit the website at:\n\n  http://www.schau.com/eventor\n\nOn the website you will find the latest version of Eventor, a Conduit for Microsoft Windows, a User Manual and a FAQ.\n\n\nThis program is freeware - you can use it as you please.\n\n	
+
+# Alerts
+aBadRomTitle		PalmOS too old
+aBadRomText		The PalmOS in this device is too old. PalmOS 3.0 or better is required to run this program.
+
+aNoSuchFormTitle	No such form
+aNoSuchFormText		The program tried to initialize a fake form. This shouldn't happen - shoot the programmer!
+
+aCannotOpenDatabaseTitle	Cannot open database
+aCannotOpenDatabaseText		Cannot open the ^1 database.
+
+aEmptyEventTitle	Empty event
+aEmptyEventText		You must supply an Event description.
+
+aInvalidDateTitle	Date not set
+aInvalidDateText	You must specify a date for this event.
+
+aDeleteTitle		Delete?
+aDeleteText		Is it OK to delete this event?
+
+aNoEventsTitle		No events
+aNoEventsText		There are no events.
+
+aNothingToPrintTitle	Nothing to print
+aNothingToPrintText	There are no events in this category to print.
+
+# Main form
+mainNew			New
+mainNext		Next
+mainPrint		Print
+mainMenuOptions		Options
+mainMenuNotifications	Notifications
+mainMenuNotificationsSC	N
+mainMenuPreferences	Preferences
+mainMenuPreferencesSC	P
+mainMenuAbout		About Eventor
+
+# Edit form
+editRemindMe		Remind me
+editDays		day(s) before event.
+editRepeat		Repeat every day to event.
+
+# View form
+viewTitle		View Event
+viewReminder		Reminder
+
+# About form
+aboutAbout		About
+aboutVersion		Version
+
+# Alarm form
+alarmEventDue		Event due
+
+# Preferences form
+prefsTitle		Preferences
+prefsAlarmAt		Alarm at
+prefsSoundAlarm		Sound alarm.
+prefsShow		Show notifications on power up.
+
+# TimeSelector form
+tsAm			AM
+tsPm			PM

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="dk.schau.CitiZr"
+      android:versionCode="35"
+      android:versionName="3.5">
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18" />
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowBackup="true">
+        <activity android:name=".CitiZrActivity.CitiZrActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+		<activity android:name=".CredentialsActivity.CredentialsActivity" android:label="@string/app_name" />
+
+		<activity android:name=".ShopActivity.ShopActivity" android:label="@string/app_name" />
+		
+		<activity android:name=".InstructionsActivity.InstructionsActivity" android:label="@string/app_name" />
+    </application>
+</manifest>

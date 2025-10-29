@@ -1,0 +1,4 @@
+1. There's an icon on the key that's suppose to bring up the password generator box. Is there a way to choose/change the icon ? (see attached picture)
+ 
+2. I chose the option not to open the secrets in edit mode because in edit mode, one may erase some letters and I'd rather be sure to have my secret complete at all times. However, I sometimes have to select-copy some parts of them. Is it possible to have the select-copy working in view mode ?
+ 

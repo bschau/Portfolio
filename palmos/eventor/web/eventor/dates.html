@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>How to enter dates quickly in Eventor.</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>How to enter dates quickly in Eventor.</H1>
+<P>When you create a new event in Eventor you need to set, among other things, the date of the event. Eventor uses the standard Date Selector to do this. The Date Selector is in normal operations pretty good - but if you need to add a lot of events starting before, say, year 2000, you have to tap a lot of times on the little left arrow in the Date Selector, as the Date Selector have no provisions for manual date entry.
+<P>This, as a lot of people have found out, is quite annoying. It will be addressed in the next release of Eventor.
+<P>There is, however, a quick work around:
+<OL>
+<LI>Install the Eventor Conduit (download it from the <A HREF="http://www.schau.com/gz/palm/eventor/">Eventor Mainpage</A>).
+<LI>Enter the events in Eventor. Set the date in the Date Selector to "Today".
+<LI>Perform a HotSync. You will now have a <I>Eventor</I> data directory in your Palm HotSync directory containing two files, <I>EventorData.BAK</I> and <I>EventorData.dat</I>. Your Palm HotSync directory is normally <B>C:\Palm\{your hotsync name}\</B> or <B>C:\Program Files\Palm\{your hotsync name}</B>.
+<LI>Open the <B>EventorData.dat</B> file in <B>notepad</B> and make your changes as described below.
+<LI>Perform yet another HotSync - this will transfer your changes to your handheld.
+<LI>Voila! You're done.
+</OL>
+<H1>How to change the EventorData.dat file</H1>
+<P>The <B>EventorData.dat</B> file is made up of two sections. The first section lists all the categories and meta data about the categories. The second section lists all the events and meta data about the events. The following (short) file will be used as an example:
+<P><PRE>
+ev3
+2
+1       1       0       Happenings
+2       2       0       Birthdays
+3
+13541377        2       -       1973-3-17       YY      7       Charlotte
+13541378        2       -       1997-12-9       YY      7       Kristian
+13541379        1       -       2009-12-24      YY      7       Christmas Eve, in 6 years
+</PRE>
+<P>The first line, <B>ev3</B>, is a fixed identification string. The second line, <B>2</B>, is the number of categories. Line 3 and 4 is the data describing the categories. Line 5, <B>3</B>, is the number of events. Starting on line 6 follows the events.
+<P>Each event line is made up of 7 colums separated by TABs (tabulations):
+<P><PRE>
+ID      Category   Attributes    Date    Flags    Days    Event
+</PRE>
+<P>Columns 3 (<B>Attributes</B>) and column 4 (<B>Date</B>) are of interest to us. The Date column lists the date of the event in YYYY-{m}M-{d}D format. The year value is always four digits. The month and day values may be one or two digits.
+<P>To change the date of an event change the date in column 4. Then put a uppercase M in column 3 to indicate to the HotSync process that the record/line has been modified.
+<P>Do not, however, change any other values.
+<P>Example. Suppose that I need to change the date for Charlottes birthday to 1973-3-18. I would change line 6 in the file to read:
+<PRE>
+13541377        2       M       1973-3-18       YY      7       Charlotte
+</PRE>
+
+
+<P><A HREF="/index.html">Home</A>
+
+</BODY>
+</HTML>

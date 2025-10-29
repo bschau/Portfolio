@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1F11B2170F0AA294002B2921 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F11B2150F0AA294002B2921 /* GLView.m */; };
+		1F3B9A2D0EF2145700286867 /* iStarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* iStarAppDelegate.m */; };
+		1FF0216C0EF21FA500761551 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF0216B0EF21FA500761551 /* MainWindow.xib */; };
+		2D500B940D5A79C200DBA0E3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */; };
+		2D500B9A0D5A79CF00DBA0E3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */; };
+		4B00E9310FCDCC2D00C10946 /* WallMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B00E9300FCDCC2D00C10946 /* WallMgr.m */; };
+		4B0F77D00FB9FE1500F78BB4 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F77CF0FB9FE1500F78BB4 /* Vector.m */; };
+		4B1674B60FC14EC000CD9AB5 /* ThingMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1674B50FC14EC000CD9AB5 /* ThingMgr.m */; };
+		4B688B020FB2166B00003AF3 /* StarsMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B688B010FB2166B00003AF3 /* StarsMgr.m */; };
+		4B72B5870FC1D8930003AE98 /* PlanetMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B72B5860FC1D8930003AE98 /* PlanetMgr.m */; };
+		4BC989160FC7D5E90047DC76 /* DeflectorMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC989150FC7D5E90047DC76 /* DeflectorMgr.m */; };
+		4BCDB34D0FC87C4E000C26D0 /* WormholeMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDB34C0FC87C4E000C26D0 /* WormholeMgr.m */; };
+		4BD35E690FB89F660099AED3 /* PlayerMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD35E680FB89F660099AED3 /* PlayerMgr.m */; };
+		4BD35F810FB8B5F90099AED3 /* GameMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD35F800FB8B5F90099AED3 /* GameMgr.m */; };
+		4BE1C9660FCF259F00C4B326 /* PaddleMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1C9650FCF259F00C4B326 /* PaddleMgr.m */; };
+		4BE1FF970FB7534A001D8E2A /* GfxMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1FF960FB7534A001D8E2A /* GfxMgr.m */; };
+		4BE1FFCE0FB758E3001D8E2A /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE1FFCD0FB758E3001D8E2A /* sprites.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* iStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F11B2150F0AA294002B2921 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLView.m; path = Classes/GLView.m; sourceTree = SOURCE_ROOT; };
+		1F11B2160F0AA294002B2921 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLView.h; path = Classes/GLView.h; sourceTree = SOURCE_ROOT; };
+		1F3B9A2B0EF2145700286867 /* iStarAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iStarAppDelegate.m; path = Classes/iStarAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		1F3B9A2C0EF2145700286867 /* iStarAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iStarAppDelegate.h; path = Classes/iStarAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		1F3B9A820EF2151B00286867 /* iStar_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStar_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		1FF0216B0EF21FA500761551 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4B00E92F0FCDCC2D00C10946 /* WallMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallMgr.h; sourceTree = "<group>"; };
+		4B00E9300FCDCC2D00C10946 /* WallMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallMgr.m; sourceTree = "<group>"; };
+		4B0F77CE0FB9FE1500F78BB4 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		4B0F77CF0FB9FE1500F78BB4 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
+		4B1674B40FC14EC000CD9AB5 /* ThingMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThingMgr.h; sourceTree = "<group>"; };
+		4B1674B50FC14EC000CD9AB5 /* ThingMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThingMgr.m; sourceTree = "<group>"; };
+		4B688B000FB2166B00003AF3 /* StarsMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarsMgr.h; sourceTree = "<group>"; };
+		4B688B010FB2166B00003AF3 /* StarsMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarsMgr.m; sourceTree = "<group>"; };
+		4B72B5850FC1D8930003AE98 /* PlanetMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetMgr.h; sourceTree = "<group>"; };
+		4B72B5860FC1D8930003AE98 /* PlanetMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetMgr.m; sourceTree = "<group>"; };
+		4B72B59C0FC1DB860003AE98 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4BC989140FC7D5E90047DC76 /* DeflectorMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeflectorMgr.h; sourceTree = "<group>"; };
+		4BC989150FC7D5E90047DC76 /* DeflectorMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeflectorMgr.m; sourceTree = "<group>"; };
+		4BCDB34B0FC87C4E000C26D0 /* WormholeMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WormholeMgr.h; sourceTree = "<group>"; };
+		4BCDB34C0FC87C4E000C26D0 /* WormholeMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WormholeMgr.m; sourceTree = "<group>"; };
+		4BD35E670FB89F660099AED3 /* PlayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerMgr.h; sourceTree = "<group>"; };
+		4BD35E680FB89F660099AED3 /* PlayerMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerMgr.m; sourceTree = "<group>"; };
+		4BD35F7F0FB8B5F90099AED3 /* GameMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMgr.h; sourceTree = "<group>"; };
+		4BD35F800FB8B5F90099AED3 /* GameMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMgr.m; sourceTree = "<group>"; };
+		4BE1C9640FCF259F00C4B326 /* PaddleMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaddleMgr.h; sourceTree = "<group>"; };
+		4BE1C9650FCF259F00C4B326 /* PaddleMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddleMgr.m; sourceTree = "<group>"; };
+		4BE1FF950FB7534A001D8E2A /* GfxMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GfxMgr.h; sourceTree = "<group>"; };
+		4BE1FF960FB7534A001D8E2A /* GfxMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GfxMgr.m; sourceTree = "<group>"; };
+		4BE1FFCD0FB758E3001D8E2A /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sprites.png; path = resources/sprites.png; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */,
+				2D500B940D5A79C200DBA0E3 /* OpenGLES.framework in Frameworks */,
+				2D500B9A0D5A79CF00DBA0E3 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iStar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				2D500B1D0D5A766B00DBA0E3 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1F3B9A820EF2151B00286867 /* iStar_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BE1FFCD0FB758E3001D8E2A /* sprites.png */,
+				1FF0216B0EF21FA500761551 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */,
+				2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */,
+				2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1F3B9A2C0EF2145700286867 /* iStarAppDelegate.h */,
+				1F3B9A2B0EF2145700286867 /* iStarAppDelegate.m */,
+				1F11B2160F0AA294002B2921 /* GLView.h */,
+				1F11B2150F0AA294002B2921 /* GLView.m */,
+				4B688B000FB2166B00003AF3 /* StarsMgr.h */,
+				4B688B010FB2166B00003AF3 /* StarsMgr.m */,
+				4BE1FF950FB7534A001D8E2A /* GfxMgr.h */,
+				4BE1FF960FB7534A001D8E2A /* GfxMgr.m */,
+				4BD35E670FB89F660099AED3 /* PlayerMgr.h */,
+				4BD35E680FB89F660099AED3 /* PlayerMgr.m */,
+				4BD35F7F0FB8B5F90099AED3 /* GameMgr.h */,
+				4BD35F800FB8B5F90099AED3 /* GameMgr.m */,
+				4B0F77CE0FB9FE1500F78BB4 /* Vector.h */,
+				4B0F77CF0FB9FE1500F78BB4 /* Vector.m */,
+				4B1674B40FC14EC000CD9AB5 /* ThingMgr.h */,
+				4B1674B50FC14EC000CD9AB5 /* ThingMgr.m */,
+				4B72B5850FC1D8930003AE98 /* PlanetMgr.h */,
+				4B72B5860FC1D8930003AE98 /* PlanetMgr.m */,
+				4B72B59C0FC1DB860003AE98 /* Constants.h */,
+				4BC989140FC7D5E90047DC76 /* DeflectorMgr.h */,
+				4BC989150FC7D5E90047DC76 /* DeflectorMgr.m */,
+				4BCDB34B0FC87C4E000C26D0 /* WormholeMgr.h */,
+				4BCDB34C0FC87C4E000C26D0 /* WormholeMgr.m */,
+				4B00E92F0FCDCC2D00C10946 /* WallMgr.h */,
+				4B00E9300FCDCC2D00C10946 /* WallMgr.m */,
+				4BE1C9640FCF259F00C4B326 /* PaddleMgr.h */,
+				4BE1C9650FCF259F00C4B326 /* PaddleMgr.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iStar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iStar" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iStar;
+			productName = foo;
+			productReference = 1D6058910D05DD3D006BFB54 /* iStar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iStar" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iStar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FF0216C0EF21FA500761551 /* MainWindow.xib in Resources */,
+				4BE1FFCE0FB758E3001D8E2A /* sprites.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1F3B9A2D0EF2145700286867 /* iStarAppDelegate.m in Sources */,
+				1F11B2170F0AA294002B2921 /* GLView.m in Sources */,
+				4B688B020FB2166B00003AF3 /* StarsMgr.m in Sources */,
+				4BE1FF970FB7534A001D8E2A /* GfxMgr.m in Sources */,
+				4BD35E690FB89F660099AED3 /* PlayerMgr.m in Sources */,
+				4BD35F810FB8B5F90099AED3 /* GameMgr.m in Sources */,
+				4B0F77D00FB9FE1500F78BB4 /* Vector.m in Sources */,
+				4B1674B60FC14EC000CD9AB5 /* ThingMgr.m in Sources */,
+				4B72B5870FC1D8930003AE98 /* PlanetMgr.m in Sources */,
+				4BC989160FC7D5E90047DC76 /* DeflectorMgr.m in Sources */,
+				4BCDB34D0FC87C4E000C26D0 /* WormholeMgr.m in Sources */,
+				4B00E9310FCDCC2D00C10946 /* WallMgr.m in Sources */,
+				4BE1C9660FCF259F00C4B326 /* PaddleMgr.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iStar_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = iStar;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = GLGravity;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				PRODUCT_NAME = iStar;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PRODUCT_NAME = iStar;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

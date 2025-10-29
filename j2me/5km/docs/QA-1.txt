@@ -1,0 +1,64 @@
+5km has been commented by Jerry (NS-QA).
+
+Failed QA.Failed Java Verifies Test # FN11,Failed Java Verifies Test # AC1,Failed Java Verifies Test # ST1,Failed Java Verifies Test # UI1.
+ISSUE #1:SUMMARY: "About" and "Exit" are not included in the application.
+STEPS TO REPRODUCE:
+1. Download and install the content.
+2. Launch the application
+3. Check "About", "help", "exit" in the application.
+ACTUAL RESULT: "About" and "Exit" are not included in the application.
+EXPECTED RESULTS: The application should include "Exit", "About" and "Help". And "About" option must include the following information:
+• About must include:
+a) Developer name.
+b) Application name.
+c) The exact version number of the application.
+• It's consistent with the information found in the JAD file and JAR's manifest as follows:
+a) Developer name: MIDlet-Vendor
+b) Application name: MIDlet-Name
+c) The version number: MIDlet-Version
+AFFECTED JAVA VERIFIED TEST CRITERIA: Java Verified Test # FN11.
+
+ISSUE #2:SUMMARY: Invalid application flow.
+EXPECTED RESULT: The information in the flow of the application must be provided according to the application specification.
+ACTUALT RESULT:  Application flow has not been provided.
+AFFECTED JAVA VERIFIED TEST CRITERIA: Java Verified Test # AC1.
+
+ISSUE #3:SUMMARY: Error message "Failed to initialize program.please go to..." pops up when launching.
+EXPECTED RESULT: The application is properly launched and no error message is displayed.
+AFFECTED DEVICES: All S40 devices and S60 3rd Edition FP1 platforms.
+AFFECTED JAVA VERIFIED TEST CRITERIA: Java Verified Test # ST1.
+
+ISSUE #4:SUMMARY: The content is not displayed correctly after switching from Portrait to Landscape.
+STEPS TO REPRODUCE:
+1. Download and install the content.
+2. Launch the application in Portrait mode.
+3. Switch the phone in Landscape mode.
+ACTUAL RESULTS: The application does not scale in full screen in Landscape mode and the bottom part of the display is cropped.
+EXPECTED RESULT: Content is displayed on device screen without any issues and is free of any illegibility and cropping issues. The application is fully functional in all screen resolutions and/or orientations.
+AFFECTED DEVICES: All supported Landscape mode devices.
+FREQUENCY REPRODUCED: 100%.
+CORRECTIVE ACTIONS:
+Suggested fix #1: When switching from Portrait to Landscape, there should be a message displayed to the user that reads "Landscape view is not supported. Please switch back to Portrait view".
+Suggested fix #2: When switching from Portrait to Landscape view, it is also acceptable for the application to remain locked to Portrait view.
+Suggested fix #3: The application should fully work in Landscape mode without any scaling, illegibility, or cropping issues.
+
+NOTE #1:NOTE: S40 6th Edition,S40 6th Edition FP1,S60 3rd Edition,S60 3rd Edition FP1 and S60 3rd Edition FP2 platform do not have FULLY TESTED device.
+EXPECTED RESULTS: For each platform you wish to distribute your content you must have at least one device FULLY TESTED.
+CORRECTIVE ACTIONS: Steps to modify the file:
+1. Press "Edit File" button.
+2. Check the "Compatibility" declarations for each platform of devices.
+3. Select device compatibility "FULLY TESTED" for at least one device in the platform.
+4. Press "Submit changes to QA" button.
+When FULLY TESTED device fails in QA, the whole platform will fail. Please select devices FULLY TESTED only if that is the situation.
+
+NOTE #2:Devices left pending are not supported by Ovi Store. Ovi Store supported device list can be found from https://publish.ovi.com/help/content_providers.
+
+You can view the whole comment thread at
+https://publish.ovi.com/download_items/show/242249
+
+Should you have any questions, please contact us through the Support page at https://publish.ovi.com/help/feedback or email us at PublishToOvi.Support@nokia.com.
+
+Regards,
+
+Ovi Store Publisher Support
+https://publish.ovi.com/

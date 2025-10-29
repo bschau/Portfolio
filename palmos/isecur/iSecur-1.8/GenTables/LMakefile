@@ -1,0 +1,18 @@
+if $(OS) == WIN32
+	CC	=	tcc.exe
+	CFLAGS	=	-Wall
+else
+	CC	=	gcc
+	CFLAGS	=	-Wall -O2
+endif
+
+SOURCES	=	GenTables
+DST	=	GenTables$(EXE)
+
+all:
+	depend $(DST) $(SOURCES).c || $(CC) $(CFLAGS) -o $(DST) $(SOURCES).c
+
+clean:
+	rm -f $(DST) *~ *.bin
+
+distclean:	clean

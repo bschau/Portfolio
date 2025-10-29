@@ -1,0 +1,52 @@
+ifndef DEBUG
+	DEBUG	=	1
+endif
+ifdef BUILD
+	include ../../TopMake.mk
+endif
+APPNAME	=	atTracker
+DST	=	$(APPNAME).prc
+SOURCES	=	BMH DateTime DB Find PalmPrint PilotMain QuickText String TimeSelector UI fAbout fArchive fCleanUp fEdit fMain fManager fPreferences fRange fRestore fSummary
+DEPS	=	../Resources.h ../Include.h
+CC	=	m68k-palmos-gcc
+AS	=	m68k-palmos-as
+CFLAGS	=	-O2 -Wall -I ..
+LIBS	=	-lPalmOSGlue
+if $(DEBUG) == 1
+	SOURCES	=	$(SOURCES) Debug
+	CFLAGS	=	$(CFLAGS) -DDEBUG=1
+	ifdef SYS
+		CFLAGS	=	$(CFLAGS) -DSYS=$(SYS)
+	else
+		if $(OS) == WIN32
+			CFLAGS	=	$(CFLAGS) -DSYS=1
+		else
+			CFLAGS	=	$(CFLAGS) -DSYS=0
+		endif
+	endif
+endif
+
+all:
+	lmake -C build -DBUILD -f ../LMakefile build
+
+initall:
+	mkdir build
+
+build:	depend $(APPNAME)-sections.s ../$(APPNAME).def || multigen
+	< $(SOURCES) > compile
+	depend code0000.exe $(SOURCES).o || $(CC) -T text_64k $(CFLAGS) -o $(APPNAME).ex $(APPNAME)-sections.ld $(APPNAME)-sections.o $(SOURCES).o $(LIBS)
+	pilrc -q -I .. -I ../../api/ -allowEditID atTracker.rcp
+	build-prc -o ../$(DST) ../$(APPNAME).def *.bin *.ex
+
+multigen:
+	m68k-palmos-multigen ../$(APPNAME).def
+	$(AS) -o $(APPNAME)-sections.o $(APPNAME)-sections.s
+
+compile:
+	depend $<.o ../$<.c $(DEPS) || $(CC) $(CFLAGS) -c ../$<.c
+
+clean:
+	rm -f *~ build/* *.prc data/*~ lang/*~
+
+distclean:	clean
+	rm -fr build

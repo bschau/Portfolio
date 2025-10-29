@@ -1,0 +1,180 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+h2, #podcast-duration, #podcast-album {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+} 
+
+.center {
+	text-align: center;
+}
+
+/** logon */
+#login, #login-page-error, #fetching, #select-podcast, #no-podcasts,
+#player, #podcast-ended {
+	display: none;
+}
+
+.img-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 15px;
+}
+
+.button:hover {
+	opacity: 0.8;
+}
+
+.container {
+	padding: 16px;
+}
+
+#login-page-error {
+	border: 1px solid #d8000c;
+	background-color: #ffd2d2;
+	color: #d8000c;
+	text-align: center;
+	padding: 0.5em;
+	border-radius: 15px;
+}
+
+.logout-button {
+	padding: 2px 6px;
+	background-color: #eee;
+	color: #911dff;
+	border: 1px solid #911dff;
+	text-decoration: none;
+}
+
+/** Buttons */
+.base-button {
+	padding: 14px 20px;
+	margin: 8px 0px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	font-size: 1em;
+	border-radius: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.button-grey {
+	background-color: #e7e7e7;
+	color: black;
+}
+
+.button-purple {
+	background-color: #911dff;
+	color: white;
+}
+
+
+.button-green {
+	background-color: #1daa91;
+	color: white;
+}
+
+/** Spinner */
+.spinner {
+	display: block;
+	position: relative;
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+}
+
+.spinner div {
+	box-sizing: border-box;
+	display: block;
+	position: absolute;
+	width: 51px;
+	height: 51px;
+	margin: 6px;
+	border: 6px solid #911dff;
+	border-radius: 50%;
+	animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	border-color: #911dff transparent transparent transparent;
+}
+
+.spinner-ring div:nth-child(1) {
+	animation-delay: -0.45s;
+}
+
+.spinner-ring div:nth-child(2) {
+	animation-delay: -0.3s;
+}
+
+.spinner-ring div:nth-child(3) {
+	animation-delay: -0.15s;
+}
+
+@keyframes spinner-ring {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/** Fetching-page */
+#fetching h1, #fetching p {
+	text-align: center;
+}
+
+/** Select-page */
+#select-podcast {
+	text-align: center;
+}
+
+.small {
+	font-size: 80%;
+}
+
+/** Audio player*/
+audio {
+	cursor: pointer;
+	width: 100%;
+}
+
+#podcast-title, #podcast-album {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#player-controls {
+	display: inline-table;
+	text-align: center;
+	width: 100%;
+}
+
+.purple {
+	color: #911dff;
+}
+
+.player-button {
+	margin: 2px 5px;
+	cursor: pointer;
+}
+
+#duration-panel {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+}

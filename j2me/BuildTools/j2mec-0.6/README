@@ -1,0 +1,51 @@
+j2mec
+-----
+
+j2mec is a tool to compile midlets.	j2mec is meant to be a all-in-one
+tool which works in conjunction with Makefiles (yes, some of us still thinks
+that Makefiles are great! :-)
+
+j2mec gather it's instructions from a Build.properties file, then preprocesses
+and compiles the source code.	The object code is then verified and placed
+into an archive - lastly, a jad file is written.
+
+The Build.properties file is used to tailer the various processes.
+
+Please go to http://www.schau.com/j2mec/index.html for the latest version of
+j2mec, manual etc.
+
+
+Installation
+------------
+
+To install j2mec (in Linux):
+
+1) Run configure
+2) make install
+
+The default installation prefix is /usr/local.	Thus, j2mec will be placed in
+/usr/local/j2mec/0.6/j2mec.	A link will be placed in /usr/local/j2mec/current pointing to /usr/local/j2mec/0.6
+The installation prefix can be changed by supplying the "--prefix=" option to
+configure.
+Installing in the default location (probably) requires root privileges.
+
+
+To install j2mec (in Windows):
+
+1) Run windows.bat
+2) Copy the resulting j2mec.jar to somewhere on your filesystem.
+
+See the samples in the 'examples' directory on how to use j2mec.
+
+
+BEWARE!	This is version 0.6 software ... bugs may exist! :-)
+
+
+Thanks for evaluation j2mec.
+
+
+Regards,
+Brian Schau
+<brian@schau.com>
+
+

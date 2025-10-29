@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Main" default="clean">
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+			</fileset>
+		</delete>
+		<ant dir="client" target="clean" />
+	</target>
+
+	<target name="archive" depends="clean">
+		<zip destfile="../thingfling-src.zip" basedir=".." includes="ThingFling/**" />
+	</target>
+</project>

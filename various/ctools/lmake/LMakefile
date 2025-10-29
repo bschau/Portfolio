@@ -1,0 +1,22 @@
+SOURCES	=	Command Context Expand External LMParse LMake Lexer Main OS TIf Var XUtils ../common/HashTable ../common/Options ../common/StringBuilder ../common/Utils
+DEPS	=	../Include.h
+DST	=	lmake$(EXE)
+
+if $(OS) == WIN32
+	SOURCES	=	$(SOURCES) ../common/WinUtils
+endif
+
+ifndef BUILD
+	DEPS = $(DEPS) ../common/Common.h
+	include ..$/Common.mk
+else
+	DEPS = $(DEPS) ../../common/Common.h
+	include ..$/..$/Common.mk
+endif
+
+clean:	Cclean
+	$(RM) scripts/*~
+
+distclean:	Cdistclean
+
+cdoc:	Cdoc

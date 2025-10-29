@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">O Skole Mio</string>
+
+    <string name="menu_back">Tilbage</string>
+    <string name="menu_new">Tilføj</string>
+    <string name="menu_update">Opdater</string>
+    <string name="menu_about">Om O Skole Mio</string>
+    <string name="menu_email">Min skole mangler</string>
+    <string name="menu_select">Vælg skole</string>
+    
+    <string name="txtlogo">Opret eller rediger et login:</string>
+    <string name="tvname">Navn:</string>
+    <string name="tvurl">ForældreIntra Mobil URL:</string>
+    <string name="butschool">Skoler&#8230;</string>
+    <string name="tvlogin">Brugernavn:</string>
+    <string name="tvpassword">Adgangskode:</string>
+
+    <string name="butok">Gem</string>
+    <string name="butcancel">Afbryd</string>
+    
+    <string name="msgtitle">Læs venligst dette!</string>
+    <string name="msgbody">Velkommen til O Skole Mio.\r\n\r\nDer er en OK knap i bunden af denne dialog - det kan være, at du skal scrolle ned for at se den.\r\n\r\nHar du spørgsmål til brugen af app\'en eller støder du på en fejl så brug venligst email linket i \"Info\" menu-punktet.\r\n\r\nTak.\r\n/brian\r\n\r\n</string>
+    <string name="ok">OK</string>
+    
+    <string name="email_to">brian@oskolemio.dk</string>
+    <string name="email_subject">[OSkoleMio] Mangler skole</string>
+	<string name="email_body">Hej Brian, jeg mangler denne skole i O Skole Mio: </string>
+	
+	<string name="listitemcontentdescription">image</string>
+	
+	<string name="assetsschoolfile">schools.xml.png</string>
+	<string name="schoolsfile">schools.xml</string>
+</resources>

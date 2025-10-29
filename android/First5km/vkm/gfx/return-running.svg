@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="29px" height="30px" viewBox="0 0 29 30" zoomAndPan="enabled">
+	<!-- MAN RUNNING -->
+	<path d="M9,19 L1,27 3,29 11,21 z" fill="#63f32b" stroke="black" />
+	<path d="M13,16 L11,18 16,23 13,26 15,28 20,23 z" fill="#63f32b" stroke="black" />
+	<path d="M12,3 L6,9 8,11 12,7 16,11 18,9 z" fill="#63f32b" stroke="black" />
+	<path d="M19,11 L16,14 16,16 A1 1 0 0 0 17 17 L25,17 A1 1 0 0 0 26 16 L26,15 A1 1 0 0 0 25 14 L19,14 z" fill="#63f32b" stroke="black" />
+
+	<circle cx="24" cy="5" r="4" fill="#63f32b" stroke="black" />
+</svg>

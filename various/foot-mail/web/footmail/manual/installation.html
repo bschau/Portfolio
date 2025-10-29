@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>FootMail - Installation Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>FootMail - Installation Manual</H1>
+<P>FootMail is a collection of php scripts. FootMail should be able to run on most apache+php or iis+php combinations if the following requirements are met:
+<UL>
+<LI>A newer version of PHP is required, at least version 4.3.x. FootMail is developed and run on PHP-5.0.3.
+<LI>PHP must support the imap library, at least version 2000.
+<LI>Your webserver must be able to access your POP3 server.
+</UL>
+<P>FootMail is a single user installation. FootMail can run in a multiuser environment but it must be installed for every user.
+
+<P><BR><P>
+<H3>Installation</H3>
+<P>Installation is simple:
+<OL>
+<LI>Transfer the <B>FootMail.tar.gz</B> archive to your Web server.
+<LI>Unpack the archive: <PRE>tar xjf FootMail.tar.gz</PRE>
+<LI>You now have a directory on your webserver called <B>FootMail-x.y</B>. Open up a webbrowser and point to to <PRE>http://your.domain/FootMail-x.y/</PRE> and click the Configure link to Configure FootMail.
+</OL>
+
+<P><BR><P>
+<H3>Security</H3>
+<P>As you will have noticed by now, there is absolutely no built in security in FootMail. However, do not despair! You can enhance the security of the FootMail directory by:
+<OL>
+<LI>Apache: place a .htaccess file in the directory.
+<LI>IIS: add the FootMail directory as a web resource and place the appropriate permissions on the directory (and sub-directories/files).
+</OL>
+<P>If your client supports it, FootMail can be placed in a secure area of your webserver guarded by SSL or the like.
+
+<P><BR><P><A HREF="../index.html">Back</A>&nbsp;&nbsp;<A HREF="configuration.html">Configuration Manual</A>&nbsp;&nbsp;<A HREF="user.html">User Manual</A>
+
+</BODY>
+</HTML>

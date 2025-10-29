@@ -1,0 +1,215 @@
+# Globals
+strSelectDate		Select Date
+strWhatIsTitle		What Is BMI?
+strWhatIsText		What is Body Mass Index (BMI)?\n\nBMI is an objective measure that can help you decide whether your weight is right for you or not.\nBMI is a figure calculated from your height and weight and can be used to determine if you are overweight, underweight or at a healthy weight.\n\n\n
+			BMI metric formula:\n\n
+			   w (kg) / (h (m) * h (m))\n\n
+			F.ex. a person weighing 90kg, being 180 cm. tall:\n\n
+			   90 / (1.80 * 1.80) = 27\n\n
+			The BMI is 27.\n\n\n
+			BMI formula in pounds and inches:\n\n
+			   (w (lbs) * 704.5) / (h (') * h ('))\n\n
+			F.ex. a person weighing 198lbs, being 5\"11' tall:\n\n
+			   (198 * 704.5) / (71 * 71) = 27\n\n
+			The BMI is 27.\n\n\n\n
+			Disclaimer: This BMI Logger is provided for your information only. It is not a substitute for professional medical advice, and may not represent your true individual medical situation.\nIt does not take all possible factors into account in its assessment of your healthy weight.\n
+			For example, it tends to overestimate body fat in very muscular individuals or in people who are less than 150 cm. (5 feet) tall, and may underestimate body fat in people who have lost muscle mass, such as the elderly.\n\n
+			Do not use this information to make significant changes in your diet, exercise regimen, or other aspects of your lifestyle without consulting your personal physician or other qualified health care provider as recommended by your physician. Please contact your physician if you have any questions or concerns.\n\n\n
+strBMITableTitle	The BMI Table Used
+strBMITableTextAmerican		\n\nBMI\n\n
+			0-19.9      Underweight\n
+			20-24.9    Ideal weight\n
+			25-            Overweight\n\n\n
+			A BMI between 30 and 34.9 indicates Obesity.\nBetween 35 and 39.9, Great Obesity.\nOver 40, Extreme Obesity.\n\n
+			This is the American BMI table.\n\n
+strBMITableTextEuropean		\n\nBMI\n\n
+			0-18.4          Underweight\n
+			18.5-24.9    Ideal weight\n
+			25-                Overweight\n\n\n
+			A BMI between 30 and 34.9 indicates Obesity.\nBetween 35 and 39.9, Great Obesity.\nOver 40, Extreme Obesity.\n\n
+			This is the European BMI table.\n\n
+strCm			cm
+strFeet			\"
+strInch			'
+strKg			kg
+strLbs			lbs
+strAbout		BMILog was made by Brian Schau.\n\nPlease visit the website at:\n\n    http://www.schau.com/bmilog\n\nOn the website you will find the latest version and a conduit for Microsoft Windows.\n\nThis program also contains code from the MathLib library.\nThe MathLib library can be found at:\n\nhttp://www.radiks.net/~rhuebner/mathlib.html\n\nThis program has been translated to french by:\n\nAntoine - freewarefrance.com\n\n\nThis program is freeware - you can use it as you please.\n\n
+strName			Name
+strDate			Date
+strBMI			BMI
+strFeetInch		\" '
+
+# Edit menu - sysEditMenuID
+EditMenuName		Edit
+EditMenuUndo		Undo
+EditMenuCut		Cut
+EditMenuCopy		Copy
+EditMenuPaste		Paste
+EditMenuSelect		Select All
+EditMenuKeyboard	Keyboard
+EditMenuGraffiti	Graffiti
+
+# Main Menu
+QueryMenu		Query
+QueryFindHeight		Find Height
+QueryFindWeight		Find Weight
+QueryConversion		Conversion
+OptionsMenu		Options
+OptionsPreferences	Preferences
+AboutMenu		About
+AboutBMITable		BMI Table Used
+AboutWhatIs		What Is BMI?
+AboutAbout		About BMILog
+
+# Alerts
+AlertButtonOK		OK
+AlertButtonYes		Yes
+AlertButtonNo		No
+
+aBadRomTitle		PalmOS too old
+aBadRomText		The PalmOS in this device is too old. PalmOS 3.0 or better is required to run this program.
+
+aNoSuchFormTitle	No such form
+aNoSuchFormText		The program tried to initialize a fake form. This
+			 shouldn't happen - shoot the programmer!
+
+aNameExistsTitle	Name exists
+aNameExistsText		The name already exists. Please enter another name.
+
+aCannotOpenDatabaseTitle	Cannot open database
+aCannotOpenDatabaseText	Cannot open the ^1 database.
+
+aDeletePersonTitle	Delete?
+aDeletePersonText	Is it ok to delete ^1?
+
+aNotNullTitle		Empty field
+aNotNullText		You must enter a name into the Name field.
+
+aKgCmHeightInvalidTitle	Height invalid
+aKgCmHeightInvalidText	The height must be between 1 and 999.
+
+aWeightInvalidTitle	Weight invalid
+aWeightInvalidText	The weight must be between 1 and 999.
+
+aDeleteBMIEntryTitle	Delete BMI entry?
+aDeleteBMIEntryText	Is it ok to delete the selected BMI entry?
+
+aBMIInfoTitle		BMI Info
+aBMIInfoText		Your current BMI is ^1.
+
+aFeetHeightInvalidTitle	Height (feet) invalid
+aFeetHeightInvalidText	The height (in feet) must be between 1 and 99
+
+aInchHeightInvalidTitle	Height (inch) invalid
+aInchHeightInvalidText	The height (in inches) must be between 0 and 11
+
+aEitherKgOrLbsTitle	Only one ...
+aEitherKgOrLbsText	You cannot enter a weight in both fields.
+
+aEitherCmOrFeetInchTitle	Only one ...
+aEitherCmOrFeetInchText	You cannot enter a height in both set of fields.
+
+aBMIExistsTitle		Entry exists
+aBMIExistsText		You have already recorded a BMI entry for this day. Is it OK to overwrite?
+
+aNothingToPrintTitle	Nothing to print
+aNothingToPrintText	There is nothing to print.
+
+# fMain
+fMTitle			BMI Logger
+fMButtonNew		New
+
+# fEditPerson
+fEPTitle		Edit Person
+fEPLabel		Name
+fEPFormat		Format
+fEPOK			OK
+fEPCancel		Cancel
+fEPDelete		Delete
+
+# fHistory - both
+fHistoryTitle		History
+fHistoryName		Name
+fHistoryDone		Done
+fHistoryNew		New
+fHistoryPrint		Print
+fHistoryDate		Date
+fHistoryCm		cm
+fHistoryKg		kg
+fHistoryLbs		lbs
+fHistoryFeetInch	\" \'
+fHistoryBMI		BMI
+
+# fHistoryEdit - both
+fHistoryEditTitle	Add New BMI Entry
+fHistoryEditDate	Date
+fHistoryEditWeight	Weight
+fHistoryEditHeight	Height
+fHistoryEditOK		OK
+fHistoryEditCancel	Cancel
+fHistoryEditCm		cm
+fHistoryEditKg		kg
+fHistoryEditFeet	\"
+fHistoryEditInch	\'
+fHistoryEditLbs		lbs
+
+# fAbout
+fAboutAbout		About
+fAboutVersion		Version
+fAboutDone		OK
+
+# fPreferences
+fPreferences		Preferences
+fPreferencesTable	BMI Table
+fPreferencesTable1	European
+fPreferencesTable2	American
+fPreferencesFormat1	kg and cm
+fPreferencesFormat2	lbs and feet/inches
+fPreferencesFormat	Format
+fPreferencesOK		OK
+fPreferencesCancel	Cancel
+
+# fAboutHelp
+fAboutHelpDone		Done
+
+# fConversion
+fConversionTitle	Conversion
+fConversion1		From feet/inch to cm
+fConversion2		From cm to feet/inch
+fConversion3		From lbs to kg
+fConversion4		From kg to lbs
+fConversionFeet		\"
+fConversionInch		'
+fConversionCm		cm
+fConversionLbs		lbs
+fConversionKg		kg
+fConversionDone		Done
+fConversionSolve	Solve
+fConversionClear	Clear
+
+# fQueryFindHeight
+fQueryFindHeightTitle	Find Optimal Height
+fQueryFindHeightTable	BMI Table
+fQueryFindHeightDone	Done
+fQueryFindHeightSolve	Solve
+fQueryFindHeightClear	Clear
+fQueryFindHeightKg	kg
+fQueryFindHeightLbs	lbs
+fQueryFindHeightOptimal	Optimal Height
+fQueryFindHeightOptimalCm	cm
+fQueryFindHeightOptimalFeet	\"
+fQueryFindHeightOptimalInch	'
+
+# fQueryFindWeight
+fQueryFindWeightTitle	Find Optimal Weight
+fQueryFindWeightTable	BMI Table
+fQueryFindWeightDone	Done
+fQueryFindWeightSolve	Solve
+fQueryFindWeightClear	Clear
+fQueryFindWeightCm	cm
+fQueryFindWeightFeetInch	feet/inch
+fQueryFindWeightFeet	\"
+fQueryFindWeightInch	'
+fQueryFindWeightOptimal	Optimal Weight
+fQueryFindWeightOptimalKg	kg
+fQueryFindWeightOptimalLbs	lbs

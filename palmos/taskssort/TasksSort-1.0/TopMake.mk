@@ -1,0 +1,2 @@
+APPNAME	=	TasksSort
+VERSION	=	1.0

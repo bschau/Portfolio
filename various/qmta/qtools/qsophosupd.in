@@ -1,0 +1,84 @@
+#!/bin/ksh
+QROOT=%%QROOT%%
+
+################################################################################
+#
+#	'main'
+#
+ostype="$(uname -s)"
+export ostype
+
+if test "$(whoami)" != "root"; then
+	echo "You must be root!"
+	exit 1
+fi
+
+if test -x "$QROOT/bin/qsophos"; then
+	qsophos="$QROOT/bin/qsophos"
+else
+	echo "qsophos not found."
+	exit 1
+fi
+
+if test "$1"; then
+	dutar="$1"
+else
+	dutar="/tmp/digitalunix.tar"
+fi
+
+if test -s "$dutar"; then
+	before="$($qsophos | grep "Number of" | cut -f 2 -d ':' | tr -d ' ')"
+	echo "Unpacking $dutar to /tmp."
+	cd /tmp
+	rm -rf sav-install
+	tar xvf $dutar
+
+	MANPATH=$MANPATH:/usr/local/man
+	export MANPATH
+
+	if test -s "$QROOT/var/qscand.pid"; then
+		echo "Stopping qscand."
+		kill "$(cat $QROOT/var/qscand.pid)"
+		while :; do
+			if test -s "$QROOT/var/qscand.pid"; then
+				sleep 1
+			else
+				break
+			fi
+		done
+	fi
+
+	echo "Backing up files to ${bd}."
+	cd /usr/local/sav
+	bd="backup-$(date +'%y%m%d-%H%m')"
+	mkdir $bd
+	cp *.ide $bd
+	cp vdl-*.dat $bd
+	cp ../lib/libsavi* $bd
+	rm -f *.ide vdl-*.dat vdl.dat ../lib/libsavi*
+
+	echo "Installing new SAVI."
+	cd /tmp/sav-install
+	./install.sh -ni
+
+	echo "Relinking."
+	cd /usr/local/lib
+	ln -s libsavi.so.2 libsavi.so
+
+	echo "Starting qscand."
+	$QROOT/bin/qscand
+
+	echo "The following backup sets exists:"
+	cd /usr/local/sav
+	ls -d backup-*
+
+	after="$($qsophos | grep "Number of" | cut -f 2 -d ':' | tr -d ' ')"
+	echo "Number of vira before update: $before"
+	echo "Number of vira after update:  $after"
+	echo "Done."
+else
+	echo "Cannot find ${dutar}."
+	exit 1
+fi
+
+exit 0

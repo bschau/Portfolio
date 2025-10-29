@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center_vertical"
+	android:background="@color/background">
+	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/selectdanish"
+		android:text="@string/select_danish"
+		android:textColor="@color/text"
+		android:drawableLeft="@drawable/da"
+		android:drawablePadding="10dp"
+		android:gravity="left|center_vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:onClick="onButtonClick" />
+
+	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_marginTop="20dp"
+		android:id="@+id/selectenglish"
+		android:text="@string/select_english"
+		android:textColor="@color/text"
+		android:drawableLeft="@drawable/en"
+		android:drawablePadding="10dp"
+		android:gravity="left|center_vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:onClick="onButtonClick" />
+</LinearLayout>

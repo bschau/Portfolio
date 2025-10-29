@@ -1,0 +1,2 @@
+APPNAME=Trams
+VERSION=1.0

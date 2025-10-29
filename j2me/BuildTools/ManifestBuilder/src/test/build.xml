@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test" default="use">
+	<property name="dst" value="MANIFEST.MF" />
+
+	<target name="clean">
+		<delete verbose="true" failonerror="false" includeEmptyDirs="true">
+			<fileset dir="." defaultexcludes="no">
+				<include name="**/*~" />
+				<include name="${dst}" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="manifest">
+		<taskdef name="manifestbuilder" classname="com.schau.ManifestBuilder" classpath="../ManifestBuilder.jar" />
+		<manifestbuilder showVersion="true"
+			manifest="${dst}"
+			name="My Funky MidLet suite"
+			vendor="Schau.Com"
+			version="0.9.2b1"
+			midp="2.0"
+			cldc="1.1">
+			<midlet name="MidLet1" entry="com.some.class.m1" icon="/main-m1.png" />
+			<midlet name="MidLet2" entry="com.some.class.m2" icon="/main-m2.png" />
+			<midlet name="MidLet3" entry="com.some.class.m3" icon="/main-m3.png" />
+			<attribute name="attr1" value="some value" />
+			<attribute name="attr2" value="some_other_value" />
+		</manifestbuilder>
+	</target>
+
+	<target name="use" depends="manifest" />
+</project>

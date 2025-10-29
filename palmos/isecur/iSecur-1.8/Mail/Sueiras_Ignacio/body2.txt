@@ -1,0 +1,64 @@
+Hi Brian,
+Just a couple of lines to tell you that although I do not write you emails "asking for palm soft" or contributing to the soft idea we have in mind, I am still alive (although travelling a lot al over Spain...) and working on my part (looking for icons and so...).
+
+I have just downloaded iSecureViewer-1.5; ¿do you plan to make an editable version?, if only I had a little time... my C++ Qt win/Linux programming days are not so far for me to have forgotten everything and I could make that program and the conduit... Let's cross fingers and see if I find the time to keep on developing... (if you like it, of course).
+
+On the other hand... I do have the time to make translations... If you like iSecure to be translated, just send me a file with the works/phrases and I will do my best.
+
+Regards,
+Ignacio
+
+BTW: A college from Danfoss told me that "real cold have just arrived..." on that lands... Take care and enjoy the snow for me  :-) 
+
+-----Original Message-----
+From: Brian Schau [mailto:brian@schau.com] 
+Sent: miércoles, 29 de noviembre de 2006 13:56
+To: undisclosed-recipients
+Subject: iSecur-1.4 & iSecurViewer-1.5 released!
+
+Hello,
+
+
+I just wanted to tell you that iSecur-1.4 and iSecurViewer-1.5 is
+out!
+
+
+Highlights of iSecur-1.4:
+
+* When doing a find inside iSecur the entire secret is searched.
+* Fixed a bug where the Quick Find on the main list would bomb if a
+   secret was added and then immediately was deleted.
+* Preferences item added: if you add a new secret or edit an existing
+   secret and you change the category you now have the option to stay in
+   the category you're coming from.
+* Preferences item added: if you load a template you have the option to
+   store the secret in the same category as the template.
+* The function of the 5 way up/down can now be changed so that up/down
+   on a focused list without any selections is page up/down. Normal GUI
+   guidelines states that 5 way up/down should move between GUI elements
+   much like 5 way left/right does.
+* Fixed some 5 way navigator related bugs.
+* When you load a template into a secret which already contains some
+   text you can now add to the secret instead of replacing the original
+   text.
+* The Password Generator Icon should now come up with the right image
+   all the time.
+* You can now set a hint about your password. The hint can be brought up
+   on the "Enter password" dialog.
+* Double clicking on the "Select Icon" icon on the edit screen no longer
+   crashes iSecur.
+* iSecur installs itself into the "Main" category of your launcher by
+   default (if such a category exists).
+* Import from Memo/Export to Memo implemented.
+* Text can now be copied from the secret to clipboard in Show mode.
+
+You can get both from:
+
+http://www.schau.com/gz/palm/isecur/index.html
+
+
+Kind regards,
+Brian
+
+
+

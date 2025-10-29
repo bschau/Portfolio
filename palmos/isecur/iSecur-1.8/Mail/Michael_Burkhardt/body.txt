@@ -1,0 +1,73 @@
+Thanks for the quick responses. I didn't have a good backup copy of
+the database (that'll teach me!) Fortunately, I still have most of my
+passwords in SecureIt so I was able to re-transfer those. Thanks for a
+great tool!
+
+-mhb
+
+
+On 10/24/06, Brian Schau <brian@schau.com> wrote:
+> Hi Michael,
+>
+>
+> I just replied to your previous mail :-)   Thanks for the bug report.
+> I will try to replicate it ...!
+>
+>
+> /brian
+>
+> > I have been experimenting with iSecur 1.2 since the issue I reported
+> > below. I believe that I have identified a bug in the app. I can
+> > reproduce it reliably by following these steps:
+> >
+> > 1. Install iSecure
+> > 2. Move stylus around for seed
+> > 3. At initial password prompt, tap the generate password icon.
+> > 4. Note the intially generated password.
+> > 5. Hit Cancel
+> > 6. Enter my own password at the two prompts.
+> > 7. Exit the application
+> > 8. Start iSecure
+> >
+> > At this point, neither the unused generated password (noted in step 4)
+> > nor the password entered in step 6 works.
+> >
+> > Please let me know if you need any additional information.
+> >
+> > Thanks,
+> > -Michael
+> >
+> >
+> >
+> > On 10/24/06, Michael Burkhardt <mihobu@gmail.com> wrote:
+> > > I've been using SecureIt for quite some time. I recently switched to
+> iSecur
+> > > and I like the new features. This morning I changed my password
+> using the
+> > > "Change Password" menu option. My palm powered off after a minute or
+> two of
+> > > inactivity. When I woke it up and started iSecur, neither the old
+> password
+> > > nor the new password would unlock my database. Now I can't access my
+> data.
+> > > Have you seen this situation before? Is there anything I can do?
+> > >
+> > > Thanks,
+> > > -Michael
+> > >
+> > >
+> > > --
+> > > Michael Burkhardt
+> >
+> >
+> > --
+> > Michael Burkhardt
+> >
+> >
+>
+>
+>
+
+
+-- 
+Michael Burkhardt

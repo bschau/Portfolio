@@ -1,0 +1,45 @@
+Note for developers
+-------------------
+
+You need to have Trams and Trams mobile installed.  Before compiling, please
+run DevConv.exe in DevConv to create the country and currency tables.
+
+
+
+
+TRAMS
+-----
+
+This seems to be the homepage of Trams:
+
+http://finance.hp.com/POLAND/Operations/Travel_Expense_Reimbursement/index.asp
+
+
+
+DLL files
+---------
+
+The following dll files must be placed in the root folder of TramsCvt.exe:
+
+	Instaide.dll
+
+
+
+
+Wizard
+------
+
+The Wizard component used in this project is from:
+
+	http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp
+
+
+
+
+CondInst
+--------
+
+CondInst is from:
+
+	http://www.schau.com/
+

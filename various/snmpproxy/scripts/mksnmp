@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+#	Used on target HP-UX system.   Copy this script to somewhere in your
+#	$PATH on the target system.   Then copy the snmpproxy.tar.gz archive
+#	to your home directory.
+#	Then:
+#
+#		cd
+#		mksnmp
+#
+#	When the command returns the resulting compressed binary are in the
+#	parent directory of the snmpproxy directory.
+#
+#	Note. This scripts delete a directory called 'snmpproxy' and files
+#	called 'snmpproxy.tar' and 'snmpproxy.gz' before unpacking the
+#	snmpproxy.tar.gz archive.
+#
+rm -fr snmpproxy
+rm -f snmpproxy.tar snmpproxy.gz
+gunzip -c snmpproxy.tar.gz | tar xf -
+cd snmpproxy
+make bingz
+mv snmpproxy.gz ..
+exit 0

@@ -1,0 +1,74 @@
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+
+CC = @CC@
+CFLAGS = @CFLAGS@ -I. -I../include -D@OSTYPE@
+QROOT = @QROOT@
+LIBS = ../libqmta/libqmta.a @LIBS@
+DEPS = ../libqmta/libqmta.a
+DST1 = qcfgdump
+DST2 = qcfghelp
+DST3 = qcfgvar
+DST4 = qsophos
+DST5 = qmta
+DST6 = qwebctl
+DST7 = qcntldump
+DST8 = qspamcheck
+DST9 = qsophosupd
+DSTA = qideupd
+DSTB = qqueuecu
+
+all:	$(DST1) $(DST2) $(DST3) $(DST4) $(DST5) $(DST6) $(DST7) $(DST8) $(DST9) $(DSTA) $(DSTB)
+
+$(DST1):	$(DEPS) $(DST1).c
+	$(CC) $(CFLAGS) -o $(DST1) $(DST1).c $(LIBS)
+
+$(DST2):	$(DEPS) $(DST2).c
+	$(CC) $(CFLAGS) -o $(DST2) $(DST2).c $(LIBS)
+
+$(DST3):	$(DEPS) $(DST3).c
+	$(CC) $(CFLAGS) -o $(DST3) $(DST3).c $(LIBS)
+
+$(DST4):	$(DEPS) $(DST4).c
+	$(CC) $(CFLAGS) -o $(DST4) $(DST4).c $(LIBS) -lsavi
+
+$(DST5):	$(DEPS) $(DST5).in
+	sed -e s?%%QROOT%%?$(QROOT)?g $(DST5).in > $(DST5)
+
+$(DST6):	$(DEPS) $(DST6).in
+	sed -e s?%%QROOT%%?$(QROOT)?g $(DST6).in > $(DST6)
+
+$(DST7):	$(DEPS) $(DST7).c
+	$(CC) $(CFLAGS) -o $(DST7) $(DST7).c $(LIBS)
+
+$(DST8):	$(DEPS) $(DST8).c
+	$(CC) $(CFLAGS) -o $(DST8) $(DST8).c $(LIBS)
+
+$(DST9):	$(DEPS) $(DST9).in
+	sed -e s?%%QROOT%%?$(QROOT)?g $(DST9).in > $(DST9)
+
+$(DSTA):	$(DEPS) $(DSTA).in
+	sed -e s?%%QROOT%%?$(QROOT)?g $(DSTA).in > $(DSTA)
+
+$(DSTB):	$(DEPS) $(DSTB).in
+	sed -e s?%%QROOT%%?$(QROOT)?g $(DSTB).in > $(DSTB)
+
+clean:
+	rm -f *.o $(DST1) $(DST2) $(DST3) $(DST4) $(DST5) $(DST6) $(DST7) $(DST8) $(DST9) $(DSTA) $(DSTB)
+
+distclean:	clean
+	rm -f Makefile
+
+install:	$(DST1) $(DST2) $(DST3) $(DST4) $(DST5) $(DST6) $(DST7) $(DST8) $(DST9) $(DSTA) $(DSTB)
+	../install.sh $(DST1) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST2) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST3) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST4) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST5) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST6) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST7) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST8) $(QROOT)/bin 755 mta mta
+	../install.sh $(DST9) $(QROOT)/bin 755 mta mta
+	../install.sh $(DSTA) $(QROOT)/bin 755 mta mta
+	../install.sh $(DSTB) $(QROOT)/bin 755 mta mta

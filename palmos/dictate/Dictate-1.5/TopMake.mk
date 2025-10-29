@@ -1,0 +1,2 @@
+APPNAME=Dictate
+VERSION=1.5

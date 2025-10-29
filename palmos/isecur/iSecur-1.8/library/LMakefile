@@ -1,0 +1,32 @@
+CC	=	m68k-palmos-gcc
+AS	=	m68k-palmos-as
+CFLAGS	=	-Wall -O2 -I ../../src
+SOURCES	=	iSecurLib AES SHA256
+DEPS	=	../Include.h ../iSecurLib.h
+
+all:	
+	lmake -C build -f ../LMakefile build
+
+initall:
+	test -d build || mkdir build
+	test -d tables || mkdir tables
+	lmake -C ../GenTables
+	../GenTables/GenTables$(EXE) tables
+
+build:
+	m68k-palmos-stubgen ../iSecurLib.def
+	$(AS) -o iSecurLib-dispatch.o iSecurLib-dispatch.s
+	< $(SOURCES) > compile
+	$(CC) -nostartfiles -o iSecurLib.ex $(SOURCES).o iSecurLib-dispatch.o
+	pilrc ../iSecurLib.rcp
+	build-prc -t 'libr' -o ../iSecur-Library.prc ../iSecurLib.def iSecurLib.ex *.bin
+
+compile:
+	depend $<.o ../$<.c $(DEPS) || $(CC) $(CFLAGS) -c ../$<.c
+
+clean:
+	rm -f build/* *~
+	rm -f iSecur-Library.prc
+
+distclean:	clean
+	rm -fr build tables

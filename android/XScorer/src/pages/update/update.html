@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{player.name}}</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="presentScore()">
+				<ion-icon name="help"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-item>
+	<ion-label>Points, this phase:</ion-label>
+	<ion-input type="number" value="{{this.points}}" [(ngModel)]="this.points"></ion-input>
+	</ion-item>
+
+	<ion-list radio-group [(ngModel)]="player.phase">
+		<ion-list-header>Phase</ion-list-header>
+		<ion-item *ngFor="let phase of singleton.phases; let i = index">
+			<ion-label>{{phase}}</ion-label>
+			<ion-radio value="{{i}}" ></ion-radio>
+		</ion-item>
+	</ion-list>
+</ion-content>

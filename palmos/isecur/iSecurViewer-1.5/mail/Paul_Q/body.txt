@@ -1,0 +1,5 @@
+Great application. 
+
+I did detect a problem in the iSecurViewer V1.4.  When I select a category, the entries for that category are not always associated with that category, but when I open the entry, it does show the proper category.
+
+Just thought I would let you know.

@@ -1,0 +1,467 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.9"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+BITMAPFAMILYEX ID bmpStop
+COMPRESS
+BEGIN
+	BITMAP "gfx/stop1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/stop8.bmp" BPP 8
+	BITMAP "gfx/stop-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 0 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "MathAce was made by\n\nBrian Schau.\n\nThe icons was created by\n\nTony Vincent\n\n\nPlease visit my website at:\n\nhttp://www.schau.com/\n\nOn my website you will find the latest version of MathAce and a user manual.\n\n\nMathAce is released under the Gnu General Public License v2.\n"
+STRING ID strPreferencesHelp "On the Preferences form you can tailor the level of difficulty of the quizzes presented by MathAce.\n\nThe Quiz Type can be set to Calculate or Solve.\nIn Calculate mode you have to calculate the value of a quiz.\nIn Solve mode you have to find the missing value.\n\nUse the Solve option to specify which fields to blank - Left hand side only means that the blank field only will be on the left hand side of the equation. Both sides means that the blank field can be anywhere in the equation.\n\nThe scoring selects how scores are tallied.\nFirst guess means that the initial answer determines if you get a point or not. Correct guess means that you will get a point whenever you enter a correct guess.\n\nThe Max Operand dictates the size of each operand.\n\nThe Max Answer dictates the size of the entire quiz. This will force the Operations to be Addition and Subtraction.\nIf Max Answer is selected then quizzes of the form\n\nx+y=z\n\nwhere x, y and z is below the Max Answer value is guaranteed.\n\nBy checking any or all of the Operations you can setup the quiz to test any or all of the disciplines.\n\nCheck the Allow Negative Numbers if negative numbers should be allowed for any or all of the operands.\n\nThe Timed mode lets you select the duration of the quiz. If the Minutes field is blank or set to 0 the quiz runs forever.\n\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS too old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aReset
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Reset?"
+	MESSAGE "Do you really want to reset your score?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aEndQuiz
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "End Quiz?"
+	MESSAGE "Do you want to end the quiz?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNoOperationSelected
+INFORMATION
+BEGIN
+	TITLE "No Operation Selected"
+	MESSAGE "As none of the Addition, Subtraction, Multiplication or Division checkboxes has been selected the quiz will only contain Additions."
+	BUTTONS "OK"
+END
+
+ALERT ID aExported
+INFORMATION
+BEGIN
+	TITLE "List Exported"
+	MESSAGE "The Last 10 Scores list has been exported to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aNotNull
+INFORMATION
+BEGIN
+	TITLE "Not Null"
+	MESSAGE "The Max Operand / Max Answer field cannot be 0."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "IR Send Error"
+	MESSAGE "Cannot beam preferences for MathAce."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRReceiveError
+INFORMATION
+BEGIN
+	TITLE "IR Receive Error"
+	MESSAGE "Error while receiving preferences for MathAce."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotReceive
+INFORMATION
+BEGIN
+	TITLE "Cannot Receive"
+	MESSAGE "Cannot receive preferences settings while the Preferences form is open."
+	BUTTONS "OK"
+END
+
+ALERT ID aClearScores
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Clear Scores?"
+	MESSAGE "Do you want clear the Last 10 Scores list?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About MathAce"
+
+	LABEL "MathAce" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.9" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutText
+		ROW cAboutDone
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID mGame
+BEGIN
+	TITLE "MathAce"
+
+	BUTTON "" ID cGameStop AT (148 1 11 11) NOFRAME GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStop
+
+	FIELD ID cGameAnswer AT (1 1 AnswerFieldWidth 16) EDITABLE NONUSABLE MAXCHARS 6 UNDERLINED FONT 7
+
+	BUTTON "7" ID cGameBut7 AT (14 67 30 20) FONT 1
+	BUTTON "8" ID cGameBut8 AT (48 67 30 20) FONT 1
+	BUTTON "9" ID cGameBut9 AT (82 67 30 20) FONT 1
+
+	BUTTON "4" ID cGameBut4 AT (14 91 30 20) FONT 1
+	BUTTON "5" ID cGameBut5 AT (48 91 30 20) FONT 1
+	BUTTON "6" ID cGameBut6 AT (82 91 30 20) FONT 1
+
+	BUTTON "1" ID cGameBut1 AT (14 115 30 20) FONT 1
+	BUTTON "2" ID cGameBut2 AT (48 115 30 20) FONT 1
+	BUTTON "3" ID cGameBut3 AT (82 115 30 20) FONT 1
+
+	BUTTON "0" ID cGameBut0 AT (14 139 30 20) FONT 1
+
+	BUTTON "\x03" ID cGameButBS AT (116 67 30 20) FONT 3
+	BUTTON "\x10" ID cGameButC AT (116 91 30 20) FONT 3
+	BUTTON "-" ID cGameButSign AT (116 115 30 20) FONT 1
+	BUTTON "OK" ID cGameButOK AT (116 139 30 20) FONT 1
+
+	GRAFFITISTATEINDICATOR AT (151 147)
+END
+
+NAVIGATION ID fGame
+	INITIALSTATE 1
+	INITIALOBJECTID cGameButOK
+	BOTTOMLEFTOBJECTID cGameBut0
+	NAVIGATIONMAP
+		ROW cGameStop
+		ROW cGameAnswer
+		ROW cGameBut7 cGameBut8 cGameBut9 cGameButBS
+		ROW cGameBut4 cGameBut5 cGameBut6 cGameButC
+		ROW cGameBut1 cGameBut2 cGameBut3 cGameButSign
+		ROW cGameBut0 cGameButOK
+END
+
+MENU mGame
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" ID 10000 "U"
+		MENUITEM "Cut" ID 10001 "X"
+		MENUITEM "Copy" ID 10002 "C"
+		MENUITEM "Paste" ID 10003 "P"
+		MENUITEM "Select All" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Reset Score" ID mGameReset
+		MENUITEM "End Quiz" ID mGameEndQuiz
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mGameAbout
+	END
+END
+
+FORM ID fPreferences AT (2 2 156 156)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cPreferencesCancel
+HELPID strPreferencesHelp
+BEGIN
+	TITLE "Preferences"
+
+	LABEL "Quiz Type:" AUTOID AT (RIGHT@50 16)
+	POPUPTRIGGER "?" ID cPreferencesTypePopup AT (52 16 AUTO AUTO) LEFTANCHOR
+	LIST "Solve" "Calculate" ID cPreferencesTypeList AT (52 16 50 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesTypePopup cPreferencesTypeList
+
+	LABEL "Solve:" AUTOID AT (RIGHT@50 28)
+	POPUPTRIGGER "?" ID cPreferencesSolvePopup AT (52 28 AUTO AUTO) LEFTANCHOR
+	LIST "Left hand side only" "Both sides" ID cPreferencesSolveList AT (52 28 90 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesSolvePopup cPreferencesSolveList
+
+	LABEL "Scoring:" AUTOID AT (RIGHT@50 40)
+	POPUPTRIGGER "?" ID cPreferencesScorePopup AT (52 40 AUTO AUTO) LEFTANCHOR
+	LIST "First Guess" "Correct Guess" ID cPreferencesScoreList AT (52 40 70 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesScorePopup cPreferencesScoreList
+
+	POPUPTRIGGER "?" ID cPreferencesMaxPopup AT (RIGHT@77 52 80 AUTO) RIGHTANCHOR
+	LIST "Max Answer" "Max Operand" ID cPreferencesMaxList AT (RIGHT@77 52 60 24) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cPreferencesMaxPopup cPreferencesMaxList
+	LABEL ":" AUTOID AT (80 52)
+	FIELD ID cPreferencesMax AT (82 52 18 12) EDITABLE MAXCHARS 3 UNDERLINED NUMERIC
+
+	LABEL "Min Operand" AUTOID AT (RIGHT@77 64)
+	LABEL ":" AUTOID AT (80 64)
+	FIELD ID cPreferencesMin AT (82 64 18 12) EDITABLE MAXCHARS 3 UNDERLINED NUMERIC
+
+	LABEL "Operations:" AUTOID AT (4 74)
+	CHECKBOX "Addition" ID cPreferencesAdd AT (4 86 AUTO AUTO)
+	CHECKBOX "Subtraction" ID cPreferencesSub AT (4 98 AUTO AUTO)
+	CHECKBOX "Multiplication" ID cPreferencesMul AT (76 86 AUTO AUTO)
+	CHECKBOX "Division" ID cPreferencesDiv AT (76 98 AUTO AUTO)
+
+	CHECKBOX "Allow Negative Numbers" ID cPreferencesSigned AT (4 112 AUTO AUTO)
+
+	LABEL "Timed Quiz:" AUTOID AT (RIGHT@72 124)
+	FIELD ID cPreferencesTimedMins AT (74 124 18 12) EDITABLE MAXCHARS 3 UNDERLINED NUMERIC RIGHTALIGN
+	LABEL "Minutes" AUTOID AT (PREVRIGHT+2 124)
+
+	GRAFFITISTATEINDICATOR AT (140 140)
+
+	BUTTON "OK" ID cPreferencesOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Cancel" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fPreferences
+	INITIALSTATE 1
+	INITIALOBJECTID cPreferencesCancel
+	BOTTOMLEFTOBJECTID cPreferencesOK
+	NAVIGATIONMAP
+		ROW cPreferencesTypePopup cPreferencesTypeList
+		ROW cPreferencesSolvePopup cPreferencesSolveList
+		ROW cPreferencesScorePopup cPreferencesScoreList
+		ROW cPreferencesMaxPopup cPreferencesMaxList cPreferencesMax
+		ROW cPreferencesMin
+		ROW cPreferencesAdd cPreferencesMul
+		ROW cPreferencesSub cPreferencesDiv
+		ROW cPreferencesSigned
+		ROW cPreferencesTimedMins
+		ROW cPreferencesOK cPreferencesCancel
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "MathAce"
+
+	LABEL "MathAce" AUTOID AT (CENTER 46) FONT 7
+
+	BUTTON "Preferences" ID cMainPreferences AT (CENTER 70 100 AUTO)
+	BUTTON "Beam Preferences" ID cMainBeam AT (CENTER 88 100 AUTO)
+	BUTTON "Show Scores" ID cMainScores AT (CENTER 106 100 AUTO)
+	BUTTON "Clear Scores" ID cMainClear AT (CENTER 124 100 AUTO)
+	BUTTON "Start Quiz" ID cMainStart AT (CENTER 142 100 AUTO)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainStart
+	BOTTOMLEFTOBJECTID cMainStart
+	NAVIGATIONMAP
+		ROW cMainPreferences
+		ROW cMainBeam
+		ROW cMainScores
+		ROW cMainClear
+		ROW cMainStart
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Start Quiz" ID mMainStart "S"
+		MENUITEM "Clear Scores" ID mMainClear
+		MENUITEM "Show Scores" ID mMainScores
+		MENUITEM "Preferences" ID mMainPreferences
+		MENUITEM "Beam Preferences" ID mMainBeam
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fQuizOver AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Quiz Over"
+
+	LABEL "Q U I Z   O V E R" AUTOID AT (CENTER 30) FONT 7
+	LABEL "You scored" AUTOID AT (CENTER 60)
+
+	LABEL "Please enter your name:" AUTOID AT (CENTER 104)
+	FIELD ID cQuizOverName AT (PREVLEFT 118 PREVWIDTH 12) EDITABLE MAXCHARS NameLength UNDERLINED 
+
+	BUTTON "Save Score" ID cQuizOverOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Don't Save Score" ID cQuizOverDont AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	GRAFFITISTATEINDICATOR AT (147 147)
+END
+
+NAVIGATION ID fQuizOver
+	INITIALSTATE 1
+	INITIALOBJECTID cQuizOverOK
+	BOTTOMLEFTOBJECTID cQuizOverOK
+	NAVIGATIONMAP
+		ROW cQuizOverName
+		ROW cQuizOverOK cQuizOverDont
+END
+
+FORM ID fScores AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "Last 10 Scores"
+
+	LABEL "#" AUTOID AT (RIGHT@16 16) FONT 1
+	LABEL "Name" AUTOID AT (20 16) FONT 1
+	LABEL "S/R" AUTOID AT (RIGHT@159 16) FONT 1
+
+	GADGET ID cScores00 AT (0 29 160 11)
+	GADGET ID cScores01 AT (0 40 160 11)
+	GADGET ID cScores02 AT (0 51 160 11)
+	GADGET ID cScores03 AT (0 62 160 11)
+	GADGET ID cScores04 AT (0 73 160 11)
+	GADGET ID cScores05 AT (0 84 160 11)
+	GADGET ID cScores06 AT (0 95 160 11)
+	GADGET ID cScores07 AT (0 106 160 11)
+	GADGET ID cScores08 AT (0 117 160 11)
+	GADGET ID cScores09 AT (0 128 160 11)
+
+	BUTTON "Done" ID cScoresDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Export" ID cScoresExport AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fScores
+	INITIALSTATE 1
+	INITIALOBJECTID cScoresDone
+	BOTTOMLEFTOBJECTID cScoresDone
+	NAVIGATIONMAP
+		ROW cScores00
+		ROW cScores01
+		ROW cScores02
+		ROW cScores03
+		ROW cScores04
+		ROW cScores05
+		ROW cScores06
+		ROW cScores07
+		ROW cScores08
+		ROW cScores09
+		ROW cScoresDone cScoresExport
+END
+
+FORM ID fDetails AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Details"
+
+	FIELD ID cDetailsName AT (4 16 148 12) NONEDITABLE MAXCHARS NameLength+1 FONT 1
+
+	LABEL "Started:" AUTOID AT (RIGHT@52 30)
+	FIELD ID cDetailsStarted AT (54 30 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Stopped:" AUTOID AT (RIGHT@52 42)
+	FIELD ID cDetailsStopped AT (54 42 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Timed:" AUTOID AT (RIGHT@52 54)
+	FIELD ID cDetailsTimed AT (54 54 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Score:" AUTOID AT (RIGHT@52 66)
+	FIELD ID cDetailsScore AT (54 66 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Operations:" AUTOID AT (RIGHT@52 78)
+	FIELD ID cDetailsOperations AT (54 78 40 12) NONEDITABLE MAXCHARS 6
+
+	LABEL "Mode:" AUTOID AT (RIGHT@52 90)
+	FIELD ID cDetailsMode AT (54 90 60 12) NONEDITABLE MAXCHARS DateTimeLength
+
+	LABEL "Max:" AUTOID AT (RIGHT@52 102)
+	FIELD ID cDetailsMax AT (54 102 98 12) NONEDITABLE MAXCHARS DateTimeLength
+
+	LABEL "Min:" AUTOID AT (RIGHT@52 114)
+	FIELD ID cDetailsMin AT (54 114 98 12) NONEDITABLE MAXCHARS DateTimeLength
+	LABEL "Negative Numbers were allowed" ID cDetailsSigned AT (CENTER 126) NONUSABLE
+
+	BUTTON "Done" ID cDetailsDone AT (CENTER BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fDetails
+	INITIALSTATE 1
+	INITIALOBJECTID cDetailsDone
+	BOTTOMLEFTOBJECTID cDetailsDone
+	NAVIGATIONMAP
+		ROW cDetailsDone
+END
+
+FORM ID fExport AT (2 97 156 61)
+MODAL
+DEFAULTBUTTON cExportCancel
+BEGIN
+	TITLE "Export List"
+
+	LABEL "Export To:" AUTOID AT (RIGHT@58 18)
+	POPUPTRIGGER "?" ID cExportPopup AT (60 18 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cExportList AT (60 18 100 AUTO) NONUSABLE
+	POPUPLIST ID cExportPopup cExportList
+
+	BUTTON "Export" ID cExportExport AT (4 BOTTOM@58 AUTO AUTO)
+	BUTTON "Cancel" ID cExportCancel AT (PREVRIGHT+4 BOTTOM@58 AUTO AUTO)
+END
+
+NAVIGATION ID fExport
+	INITIALSTATE 1
+	INITIALOBJECTID cExportCancel
+	BOTTOMLEFTOBJECTID cExportExport
+	NAVIGATIONMAP
+		ROW cExportPopup cExportList
+		ROW cExportExport cExportCancel
+END

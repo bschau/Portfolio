@@ -1,0 +1,42 @@
+#!/bin/ksh
+
+if test $# -ne 2; then
+	echo "Usage: $0 prefix lf|crlf"
+	exit 1
+fi
+
+prefix=$1
+PREFIX="$(echo $prefix | tr 'a-z' 'A-Z')"
+INCLUDE="${prefix}text.h"
+CFILE="${prefix}text.c"
+
+if test "$2" = "lf"; then
+	lineterm="\\n"
+else
+	lineterm="\\r\\n"
+fi
+
+echo "#ifndef ${PREFIX}TEXT_H" >$INCLUDE
+echo "#define ${PREFIX}TEXT_H" >>$INCLUDE
+echo "" >>$INCLUDE
+rm -f $CFILE
+while read code; do
+	echo "extern char *${prefix}${code};" >>$INCLUDE
+
+	res="char *${prefix}${code}=\""
+	while :; do
+		read line
+		if test -z "$line"; then
+			res="${res}\";"
+			echo "$res" >>$CFILE
+			break;
+		fi
+
+		line="$(echo $line | tr '#' ' ')"
+		res="${res}$line$lineterm"
+	done
+done
+
+echo "" >>$INCLUDE
+echo "#endif" >>$INCLUDE
+exit 0

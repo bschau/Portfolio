@@ -1,0 +1,29 @@
+ifndef a
+	include TopMake.mk
+endif
+
+LANGUAGES	=	English
+
+all:	distclean
+	lmake -C src initall
+	lmake -C src -DDEBUG=0
+	mkdir releases
+	a = $(APPNAME)\-$(VERSION)
+	r = releases/$(a)
+	mkdir releases$/$(a)
+	cp Docs/* $(r)
+	cp src/atTracker.prc $(r)
+	in releases zip -r $(a).zip $(a)
+
+distclean:
+	lmake -C src distclean
+	rm -fr releases
+	rm -f Docs/*~ *~
+
+archive:	distclean
+	dos2unix *
+	dos2unix Docs/*
+	dos2unix src/*
+	a = $(APPNAME)\-$(VERSION)
+	tar czf ../$(a).tar.gz ../$(a)
+

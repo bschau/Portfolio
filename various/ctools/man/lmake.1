@@ -1,0 +1,36 @@
+.TH LMAKE 1L "23 September 2007" "ltools"
+.SH NAME
+lmake \- little make replacement
+.SH SYNOPSIS
+.B lmake
+[\fI-C directory\fR] [\fI-D var[=val]\fR] [\fI-U var\fR] [\fI-V\fR] [\fI-d\fR] [\fI-f file\fR] [\fI-v\fR]
+.SH DESCRIPTION
+lmake is a little make replacement. It tries to put a little more structure and easeness to makefiles than the ordinary make does. The full documentation to lmake can be found at \fIhttp://www.schau.com/\fR.
+.SH OPTIONS
+.TP
+\fB-C directory\fR
+Change to \fIdirectory\fR before processing files.
+.TP
+\fB-D var[=val]\fR
+Define variable and optionally set value. If \fIval\fR is omitted, set value to 1.
+.TP
+\fB-U var\fR
+Undefine variable.
+.TP
+\fB-V\fR
+Print version string and exit.
+.TP
+\fB-d\fR
+Dry run. Run through rules as normal but don't do anything except show which rules would have been run.
+.TP
+\fB-f file\fR
+Use file as LMakefile.
+.TP
+\fB-h\fR
+Show a brief help page.
+.TP
+\fB-v\fR
+Raise verbosity.
+.SH SEE ALSO
+lmake does far more than what can be described here - go to
+\fIhttp://www.schau.com/\fR

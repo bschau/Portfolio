@@ -1,0 +1,19 @@
+DSTDIR	=	@@prefix@@/bin
+A	=	$(shell basename `pwd`)
+
+all:	install
+
+install:	s30emul n6310i n6230 n7210
+	install -m 755 s30emul $(DSTDIR)
+	install -m 755 n6310i $(DSTDIR)
+	install -m 755 n6230 $(DSTDIR)
+	install -m 755 n7210 $(DSTDIR)
+
+clean:
+	rm -f *~
+
+distclean:	clean
+	rm -f Makefile
+
+archive:	distclean
+	(cd ..; tar cjf $(A).tar.bz2 $(A))

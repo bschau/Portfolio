@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">5km</string>
+
+    <string name="select_danish">Vælg dansk som sprog</string>
+    <string name="select_english">Select english language</string>
+    
+    <string name="image_content_description">Image</string>
+    <string name="email_to">brian@schau.dk</string>
+    <string name="email_subject">[SUPPORT] 5km</string>
+    <string name="email_send">Send email &#8230;</string>
+</resources>

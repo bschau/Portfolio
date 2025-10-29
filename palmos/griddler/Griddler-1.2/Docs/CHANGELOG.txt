@@ -1,0 +1,14 @@
+v1.2 (2006-08-08)
+	Fixed a bug where the picture on the Congratulations would be all
+	black.
+	Fixed a memory leak.
+	Fixed the 'Roof Howler' puzzle.
+	Fixed a bug where blank rows or columns were unsolveable.
+	Fixed some graphical bugs on older devices.
+	Added navigation arrows on the game screen.
+
+v1.1 (2006-06-08)
+	Added the option to clear the playfield.
+
+v1.0 (2006-05-25)
+	First public release.

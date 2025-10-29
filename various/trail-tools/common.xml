@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="common">
+	<property name="project" value="TrailTools" />
+	<property name="main.class" value="com.schau.TrailTools.Main" />
+	<!-- please also update VERSION in TrailMaker.java -->
+	<property name="version" value="1.0" />
+</project>

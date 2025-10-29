@@ -1,0 +1,97 @@
+I enjoy your program iSecur.  Good work.
+
+I do have one problem.
+
+Occassionally, am working on an existing Secret, the entire secret is entirely lost when
+
+1) Iam in updating a Secret
+
+2) iSecur exit out either by system timeout or I manually turn off the Palm.
+
+I could understand if it was a New Secret and I didn't hit ok.
+
+But why would I previous data entirely when I working on an existing Secret.
+
+The strange part is that I cannot recreate this scenario consistently, thus I can figure out what exactly I do that causes this.
+
+Thank you.
+
+Allen Gee
+Allen Gee - Senior Underwriter
+Premier Access Insurance
+allen@premierlife.com
+(916) 563 6036
+===============================================================================
+Thanks for replying Brian,
+
+1) Yes, the Secret is completely gone from my Palm Tx.  They cannot be
+located in any category (ALL, Unfiled, etc)
+
+2) Palm Tx (OS 5?),  Im not astute as to identifying patches and updates,
+but I do have wide eclectic array of programs loaded into the Palm.
+
+I try to be more aware when Im in iSecur and hope to discover a pattern.
+Thanks. 
+
+-----Original Message-----
+From: Brian Schau [mailto:brian@schau.com] 
+Sent: Thursday, August 17, 2006 5:08 AM
+To: Allen Gee
+Subject: Re: [iSecur] Hmmm ... I wonder why ...
+
+Hi Allan,
+
+
+I've tried to reproduce what you describe - without success.   I cannot
+get iSecur to lose a secret.   So:
+
+1) What do you mean by "Entirely lost" - is the secret no longer present
+when you re-enter iSecur?      Have you looked in another category?
+Is the filter in the lower right corner set to "All"?
+
+2) I know you can't recreate it - but at least you can tell me what kind of
+device(s) are you using and what version of the Palm OS are you running
+(incl. patches/updates).
+
+
+/brian
+
+
+> > This is a multi-part message in MIME format.
+> > 
+> > 
+> > I enjoy your program iSecur.  Good work.
+> > 
+> > I do have one problem.
+> > 
+> > Occassionally, am working on an existing Secret, the entire secret is 
+> > entirely lost when
+> > 
+> > 1) Iam in updating a Secret
+> > 
+> > 2) iSecur exit out either by system timeout or I manually turn off the 
+> > Palm.
+> > 
+> > I could understand if it was a New Secret and I didn't hit ok.
+> > 
+> > But why would I previous data entirely when I working on an existing 
+> > Secret.
+> > 
+> > The strange part is that I cannot recreate this scenario consistently, 
+> > thus I can figure out what exactly I do that causes this.
+> > 
+> > Thank you.
+> > 
+> > Allen Gee
+> > Allen Gee - Senior Underwriter
+> > Premier Access Insurance
+> > allen@premierlife.com
+> > (916) 563 6036
+> > 
+> > 
+> > 
+> > 
+
+
+
+

@@ -1,0 +1,947 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Designer centric Wizard control - The Code Project - C# Controls</title>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="MS.LOCALE" content="en-US">
+<meta name="Description" content="A Wizard control designed for design time development.">
+<meta name="Search.TopicType" content="kbArticle">
+<meta name="Author" content="Al Gardner">
+<meta name="Search.PublishDate" content="05 Sep 2004 14:00:00 GMT">
+<meta name="Search.RevisedDate" content="15 Dec 2004 14:04:00 GMT"><!--<meta name="Search.UserRating"  content="86 %" /> -->
+
+
+<meta name="keywords" content="Free source code, C# Controls, Visual C++, MFC, Windows, Designer Wizard C# .Net Gui Forms Control">
+<meta name="Copyright" content="Article content copyright Al Gardner, 2004, everthing else Copyright © CodeProject, 1999-2006, All Rights Reserved.">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All topics" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - MFC / C++" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - ASP.NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=4">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - .NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=5">
+<meta http-equiv="Reply-to" content="mailto:webmaster@codeproject.com">
+<link rel="icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="SHORTCUT ICON" href="http://www.codeproject.com/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="DesignTimeWizard.asp_files/global.css">
+<script language="javascript" src="DesignTimeWizard.asp_files/oncopy.js"></script>
+<link rel="stylesheet" type="text/css" href="DesignTimeWizard.asp_files/netscape6.css"></head><body style="background-color: rgb(255, 255, 255);" topmargin="3" leftmargin="3" oncopy="return copyCode();" alink="red" bgcolor="white" link="blue" text="black" vlink="purple">
+
+
+<!-- COPYRIGHT 2006 I/PRO Corporation ALL RIGHTS RESERVED. - Page view auditing -->
+<script language="JavaScript">
+var LSPT="";
+LSPT += "?durl=" + escape(document.URL);
+LSPT += "&hostname=" + location.hostname;
+LSPT += "&url=" + location.pathname;
+LSPT += "&query=" + escape(location.search) + escape(location.hash);
+LSPT += "&referrer=" + escape(document.referrer);
+LSPT += "&browser=" + escape(navigator.appName);
+LSPT += "&version=" + escape(navigator.appVersion);
+LSPT += "&os=" + escape(navigator.platform);
+LSPT += "&xdomain=codeproject.com";
+LSPT += "&custid=codeproject";
+</script>
+<script language="Javascript">
+document.write('<img src=http://'+'content.ipro.com/images/pixel.gif'+LSPT+' height="1" width="1" style="position:absolute; top:0px; left:0px">');
+</script><img src="DesignTimeWizard.asp_files/pixel.gif" style="position: absolute; top: 0px; left: 0px;" height="1" width="1">
+<noscript>
+<img src="http://content.ipro.com/images/pixel?version=nonjava" height="1" width="1" style="position:absolute;top:0px;left:0px">
+</noscript>
+<!-- END I/PRO PAGE TAG -->
+
+
+<table bgcolor="#ff9900" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="100%">
+<table bgcolor="#ff9900" border="0" cellpadding="0" cellspacing="1" width="100%"><tbody><tr>
+
+<td valign="top"><a href="http://www.codeproject.com/">
+<img src="DesignTimeWizard.asp_files/logo225x72.gif" alt="The Code Project" border="0" height="72" width="225"></a></td>
+<td align="right"><span id="AdBanner4"><table cellpadding="0" cellspacing="0"><tbody><tr><td><a class="AdLink" href="http://www.codeproject.com/script/admentor/ads.asp">View our advertisers</a></td><td align="right"><a class="AdLink" href="http://www.codeproject.com/info/mediakit">Advertise with us</a></td></tr><tr><td colspan="2"><script language="javascript">document.write("<a href=\"/script/admentor/admentorredir.asp?id=1405&way=ban\" target=_blank><img src=\"/script/ann/ServeImg.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FDundas%5F468x60%5FChart5%2Egif&C=False&id=1405\" alt=\"Dundas Chart for .NET\" border=0 width=468 height=60></a>");</script><a href="http://www.codeproject.com/script/admentor/admentorredir.asp?id=1405&amp;way=ban" target="_blank"><img src="DesignTimeWizard.asp_files/ServeImg_002.htm" alt="Dundas Chart for .NET" border="0" height="60" width="468"></a></td></tr></tbody></table></span></td>
+
+</tr>
+
+<tr><td colspan="2" bgcolor="#fbedbb">
+<table bgcolor="#fbedbb" border="0" cellpadding="3" width="100%">
+
+<tbody><tr valign="top">
+	<td width="100%">
+		<font style="font-size: 8pt;"><a href="http://www.codeproject.com/?cat=1">All Topics</a>, <a href="http://www.codeproject.com/?cat=3">C#</a>, <a href="http://www.codeproject.com/?cat=5">.NET</a> &gt;&gt; <a href="http://www.codeproject.com/cs/miscctrl/">C# Controls</a> &gt;&gt; <a href="http://www.codeproject.com/cs/miscctrl/#Design+time+controls">Design time controls</a></font><br>
+
+		<br><b><font style="font-size: 16pt;" size="4">Designer centric Wizard control</font></b><br><b>
+		By <a href="http://www.codeproject.com/script/profile/whos_who.asp?id=354369">Al Gardner</a>
+		</b>
+		<br><br><font style="font-size: 9pt;">A Wizard control designed for design time development.&nbsp;</font>
+	</td>
+	<td align="right" valign="top">
+		<table border="0" cellpadding="1" cellspacing="0" width="200">	
+
+		<tbody><tr valign="top"><td>&nbsp;</td><td class="SmallText">C#<br> Windows, .NET (.NET 1.0, .NET 1.1)<br> Win32, VS (VS.NET2003, VS.NET2002)<br> Dev</td></tr>
+		<tr><td>&nbsp;</td><td class="SmallText" nowrap="nowrap">Posted 6 Sep 2004 0:00</td></tr>
+
+		<tr><td>&nbsp;</td><td class="SmallText">Updated 16 Dec 2004 0:04</td></tr>
+	
+		<tr valign="top"><td><img src="DesignTimeWizard.asp_files/hlp.gif" height="16" width="16"></td><td class="SmallText" nowrap="nowrap"><a href="http://www.codeproject.com/script/Articles/list_articles.asp?userid=354369">Articles by this author</a></td></tr>
+
+		<tr valign="top"><td></td><td class="SmallText" nowrap="nowrap"><b>67,284</b> views</td></tr>
+
+		</tbody></table>
+	</td>
+</tr>
+
+
+</tbody></table>
+</td></tr>
+
+<tr><td colspan="2">
+
+
+
+<table id="tblSiteToolbar" border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr>
+<form method="post" action="/info/search.asp" name="Search"></form>
+<td align="left" valign="top" width="100%">
+<table border="0" cellpadding="1" cellspacing="0"><tbody><tr valign="center">
+<td class="smallText"><b><font color="white">Search:</font></b></td>
+<td class="navbar" nowrap="nowrap"><input class="smallText" name="target" size="10" maxlength="255"></td><td valign="top"><select class="smallText" name="st">
+<option value="kw">Articles</option>
+<option value="au">Authors</option>
+</select></td>
+<td><input class="formButton" value="Go" type="submit"></td>
+</tr></tbody></table></td>
+
+
+
+<td>
+<div id="MenuPos" style="position: relative; width: 380px; height: 20px;">
+
+<table cellpadding="2" cellspacing="0" height="20" width="375"><tbody><tr>
+<td><a href="http://www.codeproject.com/info/faq.asp" class="NavMenuItem">Help!</a></td>
+<td><a href="http://www.codeproject.com/info/latest.asp" class="NavMenuItem">Articles</a></td>
+<td><a href="http://www.codeproject.com/script/comments/forums.asp" class="NavMenuItem">Message Boards</a></td>
+<td><a href="http://www.codeproject.com/store/" class="NavMenuItem">StoreFront</a></td>
+<td><a href="http://www.codeproject.com/lounge.asp" class="NavMenuItem">Lounge</a></td>
+</tr></tbody></table>
+</div>
+</td>
+
+
+</tr></tbody></table>
+
+
+<script type="text/javascript">function Go(){return}</script>
+<script type="text/javascript" src="DesignTimeWizard.asp_files/cpmenu_var.js"></script>
+<script type="text/javascript" src="DesignTimeWizard.asp_files/menu10_com.js"></script>
+
+</td></tr>
+
+</tbody></table></td></tr></tbody></table>
+
+<table border="0" cellpadding="1" cellspacing="0">
+
+<tbody><tr valign="top">
+	<td rowspan="2" bgcolor="#fbedbb" valign="top">
+	<table border="0" cellpadding="0" cellspacing="0">
+		
+
+<script language="javascript">
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fcs%2Fmiscctrl%2FDesignTimeWizard%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fcs%2Fmiscctrl%2FDesignTimeWizard%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</script>
+
+<tbody><tr><td>
+<table cellpadding="0" cellspacing="3">
+<tbody><tr valign="top"><td></td><td></td></tr><tr valign="top"><td><img src="DesignTimeWizard.asp_files/support_icon.gif" height="16" width="16"></td><td class="smallText"><a href="http://www.codeproject.com/store/"><b>Ultimate Combo<br>MFC tools $399</b></a></td></tr><tr valign="top"><td></td><td></td></tr>
+
+<tr valign="top">	
+      <td><img src="DesignTimeWizard.asp_files/mail.gif" height="16" width="16"></td>
+      <td class="SmallText">
+<a href="http://www.codeproject.com/script/recommend/form.asp?guid=DesignTimeWizard%2Fcs%2Fmiscctrl9%2F6%2F2004">Send to a friend</a></td>
+</tr>
+<tr valign="top"><td></td><td></td></tr><tr valign="top"><td></td><td class="InfoBarHeader">My Profile</td></tr><tr><td colspan="2" bgcolor="black"><img src="DesignTimeWizard.asp_files/space.gif" height="1" width="1"></td></tr><tr valign="top"><td><img src="DesignTimeWizard.asp_files/profile_small.gif" height="16" width="16"></td><td class="smallText"><a href="http://www.codeproject.com/script/profile/modify.asp?ct=/cs/miscctrl/DesignTimeWizard.asp">My Settings</a></td></tr><tr valign="top"><td><img src="DesignTimeWizard.asp_files/submit_small.gif" height="16" width="16"></td><td class="smallText"><a href="http://www.codeproject.com/script/articles/list_articles.asp?userid=737893">My Articles</a></td></tr><tr valign="top"><td><img src="DesignTimeWizard.asp_files/bookmarks.gif" height="16" width="16"></td><td class="smallText"><a href="http://www.codeproject.com/script/profile/bookmark_list.asp">My Bookmarks</a></td></tr><tr valign="top"><td><img src="DesignTimeWizard.asp_files/logoff_small.gif" height="16" width="16"></td><td class="smallText"><a href="http://www.codeproject.com/script/profile/logoff.asp?ct=/cs/miscctrl/DesignTimeWizard.asp">Sign out</a></td></tr><tr><td colspan="2" bgcolor="black"><img src="DesignTimeWizard.asp_files/space.gif" height="1" width="1"></td></tr>
+</tbody></table></td></tr>
+
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>
+		
+<center><script language="javascript">document.write("<a href=\"/script/admentor/admentorredir.asp?id=1580&way=ban\" target=_blank><img src=\"/script/ann/ServeImg.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fbcl+skyscraper%2Egif&C=False&id=1580\" alt=\"Create PDF with just 3 lines of code\" border=0 width=120 height=600></a>");</script><a href="http://www.codeproject.com/script/admentor/admentorredir.asp?id=1580&amp;way=ban" target="_blank"><img src="DesignTimeWizard.asp_files/ServeImg_003.htm" alt="Create PDF with just 3 lines of code" border="0" height="600" width="120"></a><br>
+
+</center><br>
+
+		</td></tr>
+	</tbody></table>
+	</td>
+	<td rowspan="2" width="5">
+		<img src="DesignTimeWizard.asp_files/space.gif" height="1" width="5">	
+	</td>
+
+
+
+	<td align="right" bgcolor="white" width="100%">
+
+
+<table width="100%"><tbody><tr valign="top"><td class="smallText" nowrap="nowrap" valign="top"><table><tbody><tr><td class="smallText" bgcolor="#ffffff"><img src="DesignTimeWizard.asp_files/print.gif" align="absmiddle"> <a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?print=true" target="_print">Print</a></td><td class="smallText" bgcolor="#ffffff"><img src="DesignTimeWizard.asp_files/sitebuild_icon.gif" align="absmiddle"><a href="http://www.codeproject.com/script/submit/ReportProblem.asp?GUID=DesignTimeWizard%2Fcs%2Fmiscctrl9%2F6%2F2004">Broken Article?</a></td><td class="smallText" bgcolor="#ffffff"><img src="DesignTimeWizard.asp_files/link.gif" align="absmiddle"><a href="http://www.codeproject.com/script/profile/add_bookmark.asp?t=0&amp;ct=%2Fcs%2Fmiscctrl%2FDesignTimeWizard%2Easp&amp;guid=DesignTimeWizard%2Fcs%2Fmiscctrl9%2F6%2F2004">Bookmark</a></td><td class="smallText" bgcolor="#ffffff"><img src="DesignTimeWizard.asp_files/mail_small.gif" align="absmiddle"> <a href="#__comments">Discuss</a></td></tr></tbody></table>
+</td>
+<td align="right" nowrap="nowrap"><a name="__top"></a><table><tbody><tr><td class="smallText" align="right">53 votes  for this article.</td><td>
+<table border="2" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><img src="DesignTimeWizard.asp_files/red.gif" border="0" height="5" width="20"></td>
+<td><img src="DesignTimeWizard.asp_files/red.gif" border="0" height="5" width="20"></td>
+<td><img src="DesignTimeWizard.asp_files/red.gif" border="0" height="5" width="20"></td>
+<td><img src="DesignTimeWizard.asp_files/red.gif" border="0" height="5" width="20"></td>
+<td><img src="DesignTimeWizard.asp_files/red.gif" border="0" height="5" width="16"><img src="DesignTimeWizard.asp_files/white.gif" border="0" height="5" width="4"></td>
+</tr></tbody></table>
+</td></tr><tr><td colspan="2" class="smallText" align="right"><a href="http://www.codeproject.com/script/articles/top_articles.asp?st=2" title="Calculated as rating x Log10(# votes)">Popularity: 8.25</a>. Rating: <b>4.79</b> out of 5.</td></tr></tbody></table></td></tr></tbody></table>
+
+	</td>
+</tr>
+<tr>
+	<td valign="top" width="100%">
+
+<div id="contentdiv">
+
+
+<!-- Article Starts -->
+
+
+<ul class="download">
+<li><a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard/DesignTimeWizard.zip">Download source - 59.7 Kb</a> </li></ul>
+<p><img alt="Sample screenshot" src="DesignTimeWizard.asp_files/WizardExamples.png" height="442" width="561"></p>
+<h2>Introduction</h2>
+<p>There are many wizard controls out there: <a href="http://www.divil.co.uk/net/controls/wizardcontrol/" target="_blank">Wizard Control</a>, <a href="http://www.codeproject.com/cs/miscctrl/ak_wizard.asp">.NET Wizard control</a>, and of course the <a href="http://www.dotnetmagic.com/" target="_blank">magic library</a>. Here's another one, that might meet your needs when others don't.</p>
+<h2>Background</h2>
+<p>Last year, I was writing an application that needed a wizard
+control. I looked around and found none of the controls quite suited my
+needs, and so I wrote my own. However, following the loss of both the
+working source code and the CVS tree, I now found myself re-writing
+from scratch something I have already done once before. The advantage
+with this method is that my prototype really looked into every single
+problem that I could have encountered beforehand, and I believe I am
+left with a nice, neat, and clean result.</p>
+<p>It comes in three controls, the first <code>Wizard</code> handles all the functionality of the wizard, and provides a collection of <code>WizardPage</code>s
+that you can author upon. Pressing the Back and Next buttons moves
+through the pages as you would expect (even at design time).</p>
+<p>In order to provide the correct look, two additional controls are provided, <code>InfoPage</code> and <code>Header</code>. These take the correct colors from the <code>System.Colors</code> namespace and render the expected <code>Wizard</code>
+look in lightweight and simple controls. This approach means the GUI
+can be customized by inheriting or implementing entirely separate
+controls, and of course, these controls can provide the UI in other
+forms of your application without needing to use a <code>Wizard</code> control.</p>
+<p>One very important point to remember with Wizards is that they are
+supposed to support a single task and make it easy for an user. It is
+very easy to add extra features into a Wizard when actually you should
+split your task into multiple Wizards. Consider that a Wizard can be
+used to create/edit an object, but not delete it.</p>
+<p>v1.1 of this Wizard adds another feature that can be used badly.
+This is the provision of multiple Finish pages (see below). A Finish
+page is usually a text only summary of what will happen after Finish is
+pressed, a last chance to change your mind; however, it can be easier
+to build this summary on a separate page and have a unique back path.</p>
+<h2>Using the code</h2>
+<p>I have subsequently reused this code in several applications; you
+can either create a DLL or copy it into the same project, whichever
+your preference.</p>
+<p>If you move the code out of the project it is in, you will get three compilation errors:</p><pre lang="text">The type or namespace name 'ParentControlDesigner' could not be found 
+(are you missing a using directive or an assembly reference?).</pre>
+<p>These can be easily fixed by adding a reference in the project to the <i>System.Design.dll</i>.</p>
+<h2>Design Time Features</h2>
+<p>First, let's have a look at the pretty stuff, via the designer. We
+will come to real code, event hookup, and manually calling methods,
+later.</p>
+<h3>Adding the Wizard to a Form</h3>
+<p><img alt="ToolBox showing the three controls" src="DesignTimeWizard.asp_files/WizardToolbox.png" align="right" height="139" width="107"></p>
+<p>Once compiled, three controls will be added to your toolbox in user
+controls. If they don't appear, then you may simply need to open each
+of them in design mode.</p>
+<p>Start by adding a <code>Wizard</code> control to your form. This one shown below is as dropped on the form and has not been docked or anchored into the form yet.</p>
+<p>Please note after first adding that you do not have a control
+surface to add controls to (as indicated by the lack of a grid inside
+the control).</p>
+<p><img alt="Sample form with undocked Wizard" src="DesignTimeWizard.asp_files/Wizard1.png" height="345" width="512"></p>
+<p>Once the page has been added, either change the <code>Docked</code> property to <code>Full</code> or set the <code>Anchors</code>, <code>Size</code> and <code>Position</code> via the <code>Wizard</code> properties.</p>
+<h3>Adding Pages to the wizard</h3>
+<p><img alt="WizardPage Collection Editor" src="DesignTimeWizard.asp_files/WizardPages.PNG" align="right" height="165" width="487"></p>
+<p>In order to add pages, go to the <code>Pages</code> property and
+click the ellipsis (...) button. This opens the Collection editor which
+can be used to add pages to the collection. The example comes with
+three pages already added.</p>
+<p>While writing this article, I realize I have not implemented the <code>AddTab</code> and <code>RemoveTab</code> verbs for the control. Since a <code>WizardDesigner</code>
+is already implemented in this solution, the addition of the verbs and
+the tying up of the events should be a relatively small piece of work
+which I shall post up shortly.</p>
+<p>Each <code>WizardPage</code> is an overridden <code>Panel</code> control, so any other Windows <code>Control</code> can be dropped straight onto the <code>WizardPage</code>.
+This allows you to build up complex Wizard interfaces as you may
+require; however, this control is currently lacking the standard look
+of a Wizard as you know it.</p>
+<h3>Defining a Finish Page</h3>
+<p>The final page of the Wizard will always be a Finish Page. This
+means that the Next button will display the word "Finish" and clicking
+this will return a <code>DialogResult.OK</code>.</p>
+<p>Should you design a Wizard that requires multiple different Finish
+Pages, then additional pages can also become Finish Pages by setting <code lang="cs">IsFinishPage=<span class="cs-keyword">true</span></code> on the desired <code>WizardPage</code>.</p>
+<h3>Adding a Wizard Look</h3>
+<p><img alt="An InfoPage Control" src="DesignTimeWizard.asp_files/infopage.png" align="right" height="107" width="422"></p>
+<p>The remaining three controls are now used to add the correct look to
+the Wizard. Start and End pages within the Wizard are handled by using
+either an <code>InfoPage</code> or <code>InfoContainer</code> control.</p>
+<p>The <code>InfoPage</code> contains a full height right docked image,
+a title and a section of descriptive text. It does not easily support
+contained controls. The main properties of interest are <code>Image</code>, <code>PageText</code>, and <code>PageTitle</code>. <code>Image</code> takes an <code>image</code> that is the same size as the left image standard system Wizard, i.e., it is 164 pixels wide. However, should your <code>Form</code> be taller than the image, it will repeat at the bottom. An example image (<i>wizBigOnlineFolder.gif</i>) is included in the project in order that you modify it. <code>PageTitle</code> is the text which appears in the title section, and <code>PageText</code> is that which appears below.</p>
+<p>The <code>InfoContainer</code> is very similar to <code>InfoPage</code>
+but only shows a title and image. At its name suggests, it supports
+contained controls at design time and therefore allows any combination
+of controls to be added to build up your initial/final page. If the
+form is Sizable, then I would advise that attention is paid to
+correctly anchoring contained controls, and that <code>RichTextBox</code>es with <code>BorderStyle</code>=<code>None</code>, <code>ReadOnly</code>=<code lang="cs"><span class="cs-keyword">true</span></code>, <code>Background</code>=<code>White</code>, and <code>Scrollbars</code>=<code>Vertical</code> are useful instead of labels where a possibly large piece of text is needed to be displayed.</p>
+<p><img alt="Header Control" src="DesignTimeWizard.asp_files/header.png" align="right" height="65" width="214"></p>
+<p>The <code>Header</code> is used at the top of every <code>WizardPage</code> that does not include an <code>InfoPage</code>. Once again, the interesting properties are the <code>Image</code>, <code>Title</code>, and <code>Description</code>. <code>Image</code> will resize if possible to best fit the image in. <code>Title</code> is shown in larger font, and <code>Description</code> the smaller font below.</p>
+<p>Both of these controls resize, while attempting to be as accurate to the Wizards used in Windows XP as possible.</p>
+<h2>Code Features</h2>
+<p>This section focuses on the <code>Wizard</code> control as the others are really only GUI placeholders.</p>
+<h3>Events raised during Wizard operation</h3>
+<p>In order to allow the most complicated Wizards to be facilitated, there are five events that are thrown by the <code>Wizard</code>, four from the <code>WizardPage</code> and one from the <code>wizard</code> control.</p>
+<p>The <code>wizard</code> control throws an event whenever somebody
+clicks the Cancel button. If you decide to prevent the Close of the
+Wizard, then set the <code>Cancel</code> of the <code>CancelEvent</code> to <code lang="cs"><span class="cs-keyword">true</span></code>.</p><pre lang="cs"> <span class="cs-comment">///&lt;summary&gt;</span>
+<span class="cs-comment">/// Called when the cancel button is pressed, before the form is </span>
+<span class="cs-comment">/// closed. Set e.Cancel to true if </span>
+<span class="cs-comment">/// you do not wish to close the wizard.</span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+<span class="cs-keyword">public</span> <span class="cs-keyword">event</span> CancelEventHandler CloseFromCancel;</pre>
+<p>Pressing Next or Back, however, raises two events from the <code>WizardPage</code>, one to close the existing page and another to open the new page.</p><pre lang="cs"><span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Event called before this page is closed when the back button is </span>
+<span class="cs-comment">/// pressed. If you don't want to show the next page then set </span>
+<span class="cs-comment">/// e.page to be the new page that you wish to show</span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+<span class="cs-keyword">public</span> <span class="cs-keyword">event</span> PageEventHandler CloseFromBack;
+<span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Event called before this page is closed when the next button is </span>
+<span class="cs-comment">/// pressed. If you don't want to show the previous page then set </span>
+<span class="cs-comment">/// e.page to be the new page that you wish to show </span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+<span class="cs-keyword">public</span> <span class="cs-keyword">event</span> PageEventHandler CloseFromNext;
+<span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Event called after this page is shown when the back button is pressed.</span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+<span class="cs-keyword">public</span> <span class="cs-keyword">event</span> EventHandler ShowFromBack;
+<span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Event called after this page is shown when the next button is pressed. </span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+<span class="cs-keyword">public</span> <span class="cs-keyword">event</span> EventHandler ShowFromNext;</pre>
+<p>As you can see, the Closing events pass a more complex <code>eventArgs</code>. The Closing events allow you to override the Next or Previous <code>Page</code> that will be shown after this <code>Page</code> closes. The <code>PageEventArgs</code> provides you with the option of setting the following <code>Page</code> via either its index (this is not advised for safe code however) or by passing a <code>WizardPage</code> itself.</p><pre lang="cs"><span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Arguments passed to an application when Page is </span>
+<span class="cs-comment">/// closed in a wizard. The Next page to be displayed </span>
+<span class="cs-comment">/// can be changed, by the application, by setting </span>
+<span class="cs-comment">/// the NextPage to a wizardPage which is part of the </span>
+<span class="cs-comment">/// wizard that generated this event.</span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+<span class="cs-keyword">public</span> <span class="cs-keyword">class</span> PageEventArgs : EventArgs
+{
+    <span class="cs-comment">/// &lt;summary&gt;</span>
+    <span class="cs-comment">/// Gets/Sets the wizard page that will be displayed </span>
+    <span class="cs-comment">/// next. If you set this it must be to a wizardPage </span>
+    <span class="cs-comment">/// from this wizard.</span>
+    <span class="cs-comment">/// &lt;/summary&gt;</span>
+    <span class="cs-keyword">public</span> WizardPage Page [..]
+    
+    <span class="cs-comment">/// &lt;summary&gt;</span>
+    <span class="cs-comment">/// Gets the index of the page </span>
+    <span class="cs-comment">/// &lt;/summary&gt;</span>
+    <span class="cs-keyword">public</span> <span class="cs-keyword">int</span> PageIndex [..]
+}</pre>
+<h3>Page Validation</h3>
+<p>The <code>CloseFromBack</code>/<code>CloseFromNext</code> events give the developer a final chance to validate each control on the <code>WizardPage</code>. Ideally, you have already used an <code>ErrorProvider</code>
+to indicate to the User the problems with validation on each control,
+but during this event, you can double check the values and allow or
+deny the move to the next <code>WizardPage</code>.</p><pre lang="cs"><span class="cs-keyword">private</span> <span class="cs-keyword">void</span> wpLogin_CloseFromNext(<span class="cs-keyword">object</span> sender, Gui.Wizard.PageEventArgs e)
+{
+    <span class="cs-keyword">if</span> (&lt;field_1_Validation&gt; == <span class="cs-keyword">true</span> &amp;&amp; &lt;field_2_Validation&gt; == <span class="cs-keyword">true</span>)
+    {
+        <span class="cs-comment">//All successful, do nothing</span>
+    }
+    <span class="cs-keyword">else</span>
+    {
+       <span class="cs-comment">//Tell the user Why</span>
+       MessageBox.Show(&#8220;Failed Validation&#8221;);
+       <span class="cs-comment">//Stay on the correct page</span>
+       e.Page = wpLogin;
+    }
+}</pre>
+<p>N.B.: I find that writing the logic to check for success is easier
+to read than checking for a fail. You are free to use DeMorgans Theorem
+and reverse this to check for a fail should you wish.</p>
+<h3>Controlling the Wizard Buttons</h3>
+<p>The <code>Wizard</code> also has the ability to enable or disable
+its buttons depending on your requirements. Since the state of these
+are expected to change with each page, the state is not saved as part
+of the design process. They will always default to enabled, and you
+have the option of disabling them in each <code>Show</code> event for the page.</p><pre lang="cs"><span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Gets/Sets the enabled state of the Next button. </span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+[Category(<span class="cpp-string">"Wizard"</span>)]
+[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+<span class="cs-keyword">public</span> <span class="cs-keyword">bool</span> NextEnabled [..]
+<span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Gets/Sets the enabled state of the Back button. </span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+[Category(<span class="cpp-string">"Wizard"</span>)]
+[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+<span class="cs-keyword">public</span> <span class="cs-keyword">bool</span> BackEnabled [..]
+<span class="cs-comment">/// &lt;summary&gt;</span>
+<span class="cs-comment">/// Gets/Sets the enabled state of the Cancel button. </span>
+<span class="cs-comment">/// &lt;/summary&gt;</span>
+[Category(<span class="cpp-string">"Wizard"</span>)]
+[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+<span class="cs-keyword">public</span> <span class="cs-keyword">bool</span> CancelEnabled [..]</pre>
+<p>The second page of this example code attempts to demonstrate this
+with the well known License agreement page. The only code added to the
+form is as follows:</p><pre lang="cs"><span class="cs-keyword">private</span> <span class="cs-keyword">void</span> wizardPage2_ShowFromNext(<span class="cs-keyword">object</span> sender, System.EventArgs e)
+{
+    wizard1.NextEnabled = checkBox1.Checked;
+}
+<span class="cs-keyword">private</span> <span class="cs-keyword">void</span> checkBox1_CheckedChanged(<span class="cs-keyword">object</span> sender, System.EventArgs e)
+{
+    wizard1.NextEnabled = checkBox1.Checked;
+}</pre>
+<h2>Non-Wizard behavior processing</h2>
+<p>Finally, there are four methods that have recently been added to the Wizard. <code>Next()</code> and <code>Back()</code>
+simply allow a programmatic means of going to the following or previous
+pages respectively. These methods step outside the normal processing of
+the wizard, so if you can achieve the results you desire via the above
+methods, I advise you to do so.</p>
+<p>Slightly more dangerous are <code>NextTo(WizardPage)</code> and <code>BackTo(WizardPage)</code>. These methods skip raising the <code>WizardPage</code> <code>Close</code> event, which of course means that your validation is not performed. My reasoning for this is because the <code>Close</code>
+event allows you to specify which page you want to go to. So, if you
+first tell the Wizard to display a particular page via a call to <code>NextTo()</code>,
+and the closing event was called and informs the Wizard to go to a
+different page, which page should I go to? I have assumed that, as the
+coder, we understand enough to validate first and only then call <code>NextTo</code> or <code>BackTo</code>. An example of this is included in the penultimate page in the demonstration project.</p>
+<p>Given, I am issuing the above warning, why should I wish to release
+these additional methods out to the wild? Well, they solve a couple of
+unusual circumstances.</p>
+<h3>The Perform Processing Page and Next() example</h3>
+<p>On occasions, you wish to display a Wizard page and have it perform
+processing. When the processing is done, you may wish to change to the
+next page automatically. (I have unfortunately seen users watch a
+progress control complete, and then leave a screen sitting there that
+says 'Press Next to continue...'.)</p>
+<p>See the example on the third page of the Wizard to see this in
+action. (N.B.: the use of the timer is not a very good way of
+performing processing in the Wizard and receiving updates, but it was
+simple to code for this example.)</p>
+<h3>The Button to jump around the Wizard</h3>
+<p>The final example page has several buttons that allow you to directly access pages in a Wizard. 99% of the time, this <b>can</b> be avoided by setting the <code>Page</code> property of the <code>Close</code> event, and I urge you to do so. Please note the difference between using <code>NextTo</code> and <code>BackTo</code> compared to any other movement.</p>
+<p>One (bad) example where this is of use is, if you are using a Wizard
+to build a new object and you have to choose something, where different
+choices then lead to different pages. (It's not a good thing to do, as
+you have to work out how to navigate back to the correct pages too.
+Instead, it's better to have one new Form/Wizard to handle selecting
+which type of object we want to handle, and another Wizard to perform
+the operation on that Wizard, just like Add Printer in Windows 2000+).</p>
+<h2>Points of Interest</h2>
+<h3>Using the collection editor</h3>
+<p>Adding pages caused many problems. The implementation of the <code>PageCollection</code>
+and capturing the events is vital in order to work with the VS.NET
+Collection Editor. If you fail to catch the events, you end up with <code>Control</code>s that do not get correctly added to the form and frequently are valid only in the code.</p>
+<h3>Detecting the Next and Back buttons at design time</h3>
+<p>This also caused many problems and had several work-arounds until I
+looked at the code behind the other alternative Wizards listed at the
+start of the article. Thanks go to the authors of these examples (and
+many others) posted on CodeProject.</p>
+<h4>Update (v1.1)</h4>
+<p>This has now been rewritten from scratch. Have a look at the <code>WizardDesigner</code> for the full code, but it basically works by overloading the <code>ControlDesigner.GetHitTest</code> to detect where the buttons are, and allow <code>MouseDown</code> and <code>MouseUp</code> events to be generated.</p><pre lang="cs"><span class="cs-keyword">protected</span> <span class="cs-keyword">override</span> <span class="cs-keyword">bool</span> GetHitTest(Point point)
+{
+    Wizard wiz = <span class="cs-keyword">this</span>.Control <span class="cs-keyword">as</span> Wizard; 
+    <span class="cs-keyword">if</span> (wiz.btnNext.Enabled &amp;&amp; 
+        wiz.btnNext.ClientRectangle.Contains(wiz.btnNext.PointToClient(point))) 
+    {
+        <span class="cs-comment">//Next can handle that</span>
+        <span class="cs-keyword">return</span> <span class="cs-keyword">true</span>; 
+    }
+    <span class="cs-keyword">if</span>(wiz.btnBack.Enabled &amp;&amp; 
+       wiz.btnBack.ClientRectangle.Contains(wiz.btnBack.PointToClient(point)))
+    {
+        <span class="cs-comment">//Back can handle that</span>
+        <span class="cs-keyword">return</span> <span class="cs-keyword">true</span>; 
+    } 
+    <span class="cs-comment">//Nope not interested</span>
+    <span class="cs-keyword">return</span> <span class="cs-keyword">false</span>; 
+}</pre>
+<p>In the Wizard, we then add handlers for <code>MouseDown</code> on <code>btnBack</code> and <code>btnNext</code> and which only work in <code>DesignMode</code>.</p><pre lang="cs"><span class="cs-keyword">private</span> <span class="cs-keyword">void</span> btnBack_MouseDown(<span class="cs-keyword">object</span> sender, System.Windows.Forms.MouseEventArgs e)
+{
+    <span class="cs-keyword">if</span> (DesignMode == <span class="cs-keyword">true</span>)
+        Back();
+}</pre>
+<h2>History</h2>
+<ul>
+<li>v1.1 - 15<sup>th</sup> Dec 2004. Rewrote to better use Designer features. Now uses <code>GetHitTest</code> instead of <code>WndProc</code>. Verified to be compatible with SharpDevelop by user Validate. 
+</li><li>v1.0.1 - 9<sup>th</sup> Dec 2004. Added multiple finish pages. Not released to CodeProject. 
+</li><li>v1.0 - 15<sup>th</sup> Nov 2004. Considered stable. (10,000+ page views, 4.54 rating). Update with <code>InfoContainer</code>, and validation to prevent controls in Wizard (instead of pages) as suggested by user vbnetuk. 
+</li><li>v0.1b - 7<sup>th</sup> Sep 2004. Fixed the description of <code>Next</code>, <code>NextTo</code>, <code>Back</code>, <code>BackTo</code>, and added the main picture. 
+</li><li>V0.1a - 6<sup>th</sup> Sep 2004. Initial release. </li></ul>
+
+<!-- Article Ends -->
+
+</div>
+
+<script language="javascript" defer="defer">Highlight(Array());</script>
+<h2>About Al Gardner</h2>
+<table border="0" width="100%"><tbody><tr valign="top"><td class="smallText" nowrap="nowrap"><img src="DesignTimeWizard.asp_files/22BA36E4-3FCC-42FA-9998-8B5261909D77.jpg"><br></td><td class="smallText" width="100%">** Apologies but my daughter was born in October 2004, and so coding now comes second. My reponses tend to take a lot longer**<br><br>I've
+been coding since I got my first ZX Spectrum. From Basic to assembly,
+through C,C++ and arriving at C#. On the way I've throughly enjoyed
+Perl, Lisp and XML.<br><br>I find I can make the intellectual leap to
+understand the problem, I love big picture designs, patterns and reuse.
+I may be addicted to abstract classes <img src="DesignTimeWizard.asp_files/smiley_smile.gif" align="absmiddle"> GOF has a lot to answer for. I miss delete() even though I spent too much time finding the leaks.<br><br>My
+favourite part of coding is in UI design because of the complexity, the
+event driven nature, and the fact its (virtually) tactile. I hate GUI's
+that don't follow system guidelines, don't resize, and don't display
+properly when you change system colour and font.<br><p class="smallText">Click <a href="http://www.codeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=354369">here</a> to view Al Gardner's online profile.</p></td></tr></tbody></table><br><table border="0" cellpadding="4" width="100%"><tbody><tr valign="top"><td width="100%"><h2>Other popular  articles:</h2><ul><li><a href="http://www.codeproject.com/cs/miscctrl/TreeDiagrams.asp">On tree diagrams and XML</a><br><span class="smalltext">A control to edit tree structures is described with an emphasis on its XML capabilities and the underlying layout algorithms.</span></li><li><a href="http://www.codeproject.com/cs/miscctrl/mdiclientcontroller.asp">Getting a "Handle" on the MDI Client</a><br><span class="smalltext">A component to customize the MDI area of a Form with color, images, border styles, and more.</span></li><li><a href="http://www.codeproject.com/cs/miscctrl/SizableColumnHdrDataGrid.asp">DataGrid with Sizable Multiline Column Headers</a><br><span class="smalltext">Allows user defined sizing of DataGrid column header height to support multi-line header text.</span></li><li><a href="http://www.codeproject.com/cs/miscctrl/XPTable.asp">XPTable - .NET ListView meets Java's JTable</a><br><span class="smalltext">A fully customisable ListView style control based on Java's JTable.</span></li></ul></td><td width="360"><script language="javascript">document.write("<IFRAME src=\"/script/ann/ServeHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</script><iframe src="DesignTimeWizard.asp_files/ServeHTML.htm" border="0" frameborder="0" height="250" scrolling="no" width="300"></iframe></td></tr></tbody></table>
+		<form action="/script/rating/code/app/insert_vote.asp" method="post">
+		<input name="vote_name" value="DesignTimeWizard/cs/miscctrl9/6/2004" type="hidden">
+		<input name="goal" value="/cs/miscctrl/DesignTimeWizard.asp" type="hidden">
+
+<table bgcolor="#ff9900" border="0" cellpadding="1" cellspacing="0" width="100%">
+<tbody><tr><td width="100%">
+<table bgcolor="#fbedbb" border="0" cellpadding="4" cellspacing="0" width="100%"><tbody><tr>
+<td class="smalltext" valign="middle">[<a href="#__top">Top</a>]</td>
+<td align="right" nowrap="nowrap" valign="middle">
+<i><b>Rate this Article for us!</b></i>&nbsp;&nbsp;&nbsp;&nbsp; <i>Poor</i><input value="1" name="rate" type="radio"><input value="2" name="rate" type="radio"><input value="3" name="rate" type="radio"><input value="4" name="rate" type="radio"><input value="5" name="rate" type="radio"><i>Excellent</i>&nbsp;&nbsp;<input value="Vote" class="FormButton" type="submit">
+</td></tr>
+</tbody></table></td></tr></tbody></table>
+</form>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top">
+<td valign="top"><center><script language="javascript">document.write("<a href=\"/script/admentor/admentorredir.asp?id=1407&way=ban\" target=_blank><img src=\"/script/ann/ServeImg.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fdundas%5Fbluelogo%5F12060CP%2Egif&C=False&id=1407\" alt=\"Dundas for .NET\" border=0 width=120 height=60></a>");</script><a href="http://www.codeproject.com/script/admentor/admentorredir.asp?id=1407&amp;way=ban" target="_blank"><img src="DesignTimeWizard.asp_files/ServeImg.htm" alt="Dundas for .NET" border="0" height="60" width="120"></a></center><br></td>
+<td align="center" nowrap="nowrap" valign="top"><span id="AdBanner5"><script language="javascript">document.write("<a href=\"/script/admentor/admentorredir.asp?id=1320&way=ban\" target=_blank><img src=\"/script/ann/ServeImg.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FMSDN%5F468x60%5Fsecurity%2Egif&C=False&id=1320\" alt=\"\" border=0 width=468 height=60></a>");</script><a href="http://www.codeproject.com/script/admentor/admentorredir.asp?id=1320&amp;way=ban" target="_blank"><img src="DesignTimeWizard.asp_files/ServeImg_004.htm" alt="" border="0" height="60" width="468"></a></span></td>
+</tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<a name="__comments"></a>
+   
+<script language="JavaScript">
+
+function MsgCategoryForm(UserID, MsgID, MsgType)
+{
+	document.write("Rate this message: ");
+	document.write("<a href='#xx" + MsgID.toString() + "xx' onclick='CatMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + MsgVoteGood.toString() + ")'>Good " + MsgType + "</a> ");
+	document.write("<a href='#xx" + MsgID.toString() + "xx' onclick='CatMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + MsgVoteBad.toString() + ")'>Bad " + MsgType + "</a> ");
+	document.write("<a href='#xx" + MsgID.toString() + "xx' onclick='CatMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + MsgVoteWrong.toString() + ")'>Innapropriate / Offtopic</a> ");
+	document.write("<a href='#xx" + MsgID.toString() + "xx' onclick='CatMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + MsgVoteOffensive.toString() + ")'>Offensive</a> ");
+}
+function CatMsg(userid, msgid, Category) 
+{ 
+	open("/script/comments/vote.asp?js=1&user="+userid.toString()+"&msg="+msgid.toString()+"&score="+Category.toString() ,"helpful","toolbar=no,resizable=yes,scrollbars=yes,directories=no,menubar=no,width=300,height=200");
+	return false;
+}
+
+
+function MsgVoteForm(UserID, MsgID)
+{
+	document.write("<span id=\"MVF" + MsgID + "\">");
+	document.write("Rate this message: ");
+	for (var i=1; i<=5;i++)
+		document.write("<a href='#xx" + MsgID.toString() + "xx' title='give this message a vote of " + i.toString() + "' onclick='return RateMsg(" + UserID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ")'><b>" + i.toString() + "</b></a> ");
+	document.write(" (out of 5)");
+	document.writeln("</span>");
+}
+
+
+// bit is wrapped in a <span> or something with the id of "vote99999" where 99999 is the message ID
+function RateMsg(userid, msgid, score)
+{
+
+   var req = new XMLHttpRequest();
+
+   req.onreadystatechange = function()
+   {
+      if ( req.readyState == 4 )
+      {
+         if ( req.status == 200 )
+         {
+            if ( req.responseText.match(/You have already voted/) )
+               status.innerHTML = "<b style='color:red'>Sorry, can't vote twice... <img src='/script/images/smiley_wink.gif'></b>";
+            else
+               status.innerHTML = "<b>Voted: " + score + "</b>";
+         }
+         else
+         {
+            status.innerHTML = "<b style='color:red'>Failed!" + req.statusText + "</b>";
+         }
+      }
+   }
+   
+   var status = document.getElementById("MVF" + msgid);
+   if (!status)
+      return;  // should never happen...   
+   status.innerHTML = "<b style='color:green'>Voting...</b>";
+   
+   var strAction = "/script/comments/vote.asp?js=1&user="+userid+"&msg="+msgid+"&score="+score;
+   req.open("GET", strAction, true);
+   req.send(null);
+   return false;
+}
+
+</script> 
+
+<script language="JavaScript">
+
+var Selected = "";
+var AdTime = new Date();
+
+function SwitchMessage(elm)
+{
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+
+// does its best to make a message visible on-screen (vs. scrolled off somewhere).
+// Shogified
+function EnsureMessageVisible(msgID, bShowTop)
+{
+   var msgHeader = document.getElementById(msgID + "_h0");
+   var msgBody = document.getElementById(msgID + "_h1");
+   
+   // determine scroll position of top and bottom
+   var scrollContainer = document.body;
+   var top = getRealPos(msgHeader, 'Top');
+   var bottom = getRealPos(msgBody, 'Top') + msgBody.offsetHeight;
+   
+   // if not already visible, scroll to make it so
+   if ( scrollContainer.scrollTop > top && !bShowTop)
+      scrollContainer.scrollTop = top;
+   if ( scrollContainer.scrollTop+scrollContainer.clientHeight < bottom )
+      scrollContainer.scrollTop = bottom-scrollContainer.clientHeight;
+   if ( scrollContainer.scrollTop > top && bShowTop)
+      scrollContainer.scrollTop = top;
+}
+
+// utility
+// Shogified
+function getRealPos(i,which) 
+{
+   iPos = 0
+   while (i!=null) 
+   {
+      iPos += i["offset" + which];
+      i = i.offsetParent;
+   }
+   return iPos
+}
+
+function SwitchThisMessage()
+{
+	return SwitchMessage(this);
+}
+
+</script>
+<table bgcolor="#ff9900" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td width="100%"><table id="ForumTable" bgcolor="#ff9900" border="0" cellpadding="0" cellspacing="1" width="100%"><form action="/script/comments/app/do_filtermessages.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677" method="post"></form><tbody><tr><td><table bgcolor="white" border="0" cellpadding="3" cellspacing="0" width="100%"><tbody><tr bgcolor="#fbedbb"><td class="smalltext" nowrap="nowrap"><a href="http://www.codeproject.com/script/comments/faq.asp"><img src="DesignTimeWizard.asp_files/forum_faq.GIF" align="absmiddle" border="0" height="16" width="16"> <b>FAQ</b></a>&nbsp;</td><td class="smalltext" align="right" nowrap="nowrap" valign="top">Noise tolerance <select size="1" name="noise" class="smalltext"><option value="1">Very High</option>
+<option value="2">High</option>
+<option selected="selected" value="3">Medium</option>
+<option value="4">Low</option>
+<option value="5">Very low</option>
+</select>&nbsp;&nbsp;</td><td class="smalltext" colspan="2" align="right" nowrap="nowrap" valign="middle"><a href="http://www.codeproject.com/script/comments/search_comments.asp?forumid=101677"><img src="DesignTimeWizard.asp_files/forum_search.gif" border="0" height="15" width="16"> Search comments</a> &nbsp;</td><td align="right" valign="top"><input value="Set Options" name="submit" class="FormButton" type="submit"></td></tr><tr bgcolor="#ff9900"><td width="100%">&nbsp;</td><td class="smalltext" align="right" nowrap="nowrap" valign="top">View <select size="1" name="expand" class="smalltext"><option value="0">Normal (slow)</option>
+<option value="2">Preview (slow)</option>
+<option selected="selected" value="5">Message View</option>
+<option value="6">Topic View</option>
+<option value="1">Thread View</option>
+<option value="3">Expanded (Supporters only)</option>
+</select>&nbsp;&nbsp;</td><td class="smalltext" nowrap="nowrap" valign="top">Per page <select size="1" name="perpage" class="smalltext"><option value="10">10</option>
+<option selected="selected" value="25">25</option>
+<option value="50">50</option>
+</select></td><td colspan="2">&nbsp;</td></tr></tbody></table>
+</td></tr><tr bgcolor="#fbedbb"><td><a name="xx0xx"></a><table bgcolor="#fbedbb" border="0" cellpadding="2" width="100%"><tbody><tr><td class="messagetitle"><img src="DesignTimeWizard.asp_files/forum_newmsg.gif" align="top" border="0" height="16" width="16"><a href="http://www.codeproject.com/script/comments/user_new.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677" class="HoverLink" target="_top" name="HoverNL" title="Add a new message to the discussions"><b>New Message</b></a></td><td class="messagetitle">Msgs 1 to 25 of 107 (Total: 107) (<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677">Refresh</a>)</td><td align="right" nowrap="nowrap"><font class="messagetitle"><span class="HoverLink">First</span> <span class="HoverLink">Prev</span> <a class="HoverLink" name="HoverNL" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;fr=26">Next</a> <span class="HoverLink">&nbsp;&nbsp;&nbsp;&nbsp;</span> </font></td></tr></tbody></table>
+</td></tr><tr bgcolor="white"><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2" bgcolor="#fbedbb" width="70%"><table border="0" cellpadding="2" cellspacing="0" width="100%"><tbody><tr><td class="messagetitle">Subject&nbsp;</td></tr></tbody></table></td><td bgcolor="#fbedbb" width="140"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="1" width="1"></td></tr><tr><td class="messagetitle">Author&nbsp;</td></tr><tr><td><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="1" width="1"></td></tr></tbody></table></td><td bgcolor="#fbedbb" width="12%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="1" width="1"></td></tr><tr><td class="messagetitle" align="right">Date&nbsp;</td></tr><tr><td><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="1" width="1"></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr id="1364120_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1364120xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1364120" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1364120#xx1364120xx"><b>Add a page stack</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=53567"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>mtan</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>11:10 8 Feb '06</b>&nbsp;</font></td></tr>
+<tr id="1364120_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">This control is great.<br><br>When I develop wizards with lots of branches, I always find I need to follow the reverse route back.<br><br>So,
+I added a page stack in the code. This way, I don't have to worry about
+adding codes to "CloseFromBack" to determine which page i should go
+back to. Hope it helps.<br><br>In "Wizard" class, add the following memebers:<br><br>		public bool UsePageStack<br>		{<br>			get { return usePageStack; }<br>			set { usePageStack = value; }<br>		} bool usePageStack = true;<br><br>		internal Stack PageStack<br>		{<br>			get<br>			{<br>				if(pageStack == null)<br>					pageStack = new Stack();<br>				return pageStack;<br>			}<br>		} Stack pageStack;<br><br>In "Next" method of "Wizard" class, add codes to add current page to stack:<br><br>			Debug.Assert(this.PageIndex &gt;=0,"Page Index was below 0");<br>			//Push the current page into stack<br>			if(this.UsePageStack)<br>				PageStack.Push(this.PageIndex);<br>			//Tell the Application I just closed a Page<br>			int newPage = vActivePage.OnCloseFromNext(this);<br><br>In "OnCloseFromNext" method of "WizardPage" class, add codes to pop up previous page and go back:<br><br>			//Use page stack if possible<br>			int index = 0;<br>			if(wiz.UsePageStack &amp;&amp; wiz.PageStack.Count &gt; 0)<br>				index = (int)wiz.PageStack.Pop();<br>			else if(wiz.PageIndex &gt; 0)<br>				index = wiz.PageIndex - 1;<br>			//Event args thinks that the next pgae will be the one before this one<br>			PageEventArgs e = new PageEventArgs(index, wiz.Pages);<br><br><img src="DesignTimeWizard.asp_files/smiley_laugh.gif" align="absmiddle"> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1364120" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1364120" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1364120&amp;forumid=101677&amp;select=1364120#xx1364120xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1364120#xx1364120xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(53567,1364120);</script><span id="MVF1364120">Rate this message: <a href="#xx1364120xx" title="give this message a vote of 1" onclick="return RateMsg(53567, 1364120, 1)"><b>1</b></a> <a href="#xx1364120xx" title="give this message a vote of 2" onclick="return RateMsg(53567, 1364120, 2)"><b>2</b></a> <a href="#xx1364120xx" title="give this message a vote of 3" onclick="return RateMsg(53567, 1364120, 3)"><b>3</b></a> <a href="#xx1364120xx" title="give this message a vote of 4" onclick="return RateMsg(53567, 1364120, 4)"><b>4</b></a> <a href="#xx1364120xx" title="give this message a vote of 5" onclick="return RateMsg(53567, 1364120, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1308991_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1308991xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1308991" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1308991#xx1308991xx"><b>Getting Design Time Errors with Visual Studio 2005</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=1445433"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>nordhaus</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>12:00 16 Dec '05</b>&nbsp;</font></td></tr>
+<tr id="1308991_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">I
+love this wizard, it is by far the best of several that I have tested.
+But I have recently upgraded to VS 2005 and am now having difficulty
+working on my wizards in the IDE, I am getting design time errors.<br><br>Is there any chance we can see a VS-2005 tested update to this control? <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1308991" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1308991" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1308991&amp;forumid=101677&amp;select=1308991#xx1308991xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1308991#xx1308991xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(1445433,1308991);</script><span id="MVF1308991">Rate this message: <a href="#xx1308991xx" title="give this message a vote of 1" onclick="return RateMsg(1445433, 1308991, 1)"><b>1</b></a> <a href="#xx1308991xx" title="give this message a vote of 2" onclick="return RateMsg(1445433, 1308991, 2)"><b>2</b></a> <a href="#xx1308991xx" title="give this message a vote of 3" onclick="return RateMsg(1445433, 1308991, 3)"><b>3</b></a> <a href="#xx1308991xx" title="give this message a vote of 4" onclick="return RateMsg(1445433, 1308991, 4)"><b>4</b></a> <a href="#xx1308991xx" title="give this message a vote of 5" onclick="return RateMsg(1445433, 1308991, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="6" width="1"></td></tr><tr id="1368082_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1368082xx"></a><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1368082" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1368082#xx1368082xx">Re: Getting Design Time Errors with Visual Studio 2005</a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=1284827"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle">Felipe Amorim&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle">10:13 12 Feb '06&nbsp;</font></td></tr>
+<tr id="1368082_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">I
+tested this wizard last night and worked perfectly in VS 2005, i just
+had to compile it and add the reference do System.Design before opening
+in Designer View. <br>A good thing to do might be adding Smart Tags.
+I`m currently working on giving a little bit more freedom to it, to be
+able to define the text for the buttons and a few more goodies when i
+have something solid i`ll post here.<br><br>Great job. <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1368082" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1368082" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1308991&amp;forumid=101677&amp;select=1368082#xx1368082xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1368082#xx1368082xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(1284827,1368082);</script><span id="MVF1368082">Rate this message: <a href="#xx1368082xx" title="give this message a vote of 1" onclick="return RateMsg(1284827, 1368082, 1)"><b>1</b></a> <a href="#xx1368082xx" title="give this message a vote of 2" onclick="return RateMsg(1284827, 1368082, 2)"><b>2</b></a> <a href="#xx1368082xx" title="give this message a vote of 3" onclick="return RateMsg(1284827, 1368082, 3)"><b>3</b></a> <a href="#xx1368082xx" title="give this message a vote of 4" onclick="return RateMsg(1284827, 1368082, 4)"><b>4</b></a> <a href="#xx1368082xx" title="give this message a vote of 5" onclick="return RateMsg(1284827, 1368082, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1287050_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1287050xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1287050" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1287050#xx1287050xx"><b>Need help with translation</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=533189"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Jeff Bowman</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>21:01 22 Nov '05</b>&nbsp;</font></td></tr>
+<tr id="1287050_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi, great control--thanks!<br><br>I'm translating to VB.NET, and I'm having trouble getting the designer to respond to Next/Back clicks.<br><br>I've
+included your new GetHitTest() code, but still no luck. It works fine
+in C#, but not in VB.NET. What needs to be in place for this to
+work--is there some trick or another I need to do? How to debug this?<br><br>Thanks,<br>Jeff Bowman<br>Fairbanks, Alaska<br> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1287050" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1287050" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1287050&amp;forumid=101677&amp;select=1287050#xx1287050xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1287050#xx1287050xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(533189,1287050);</script><span id="MVF1287050">Rate this message: <a href="#xx1287050xx" title="give this message a vote of 1" onclick="return RateMsg(533189, 1287050, 1)"><b>1</b></a> <a href="#xx1287050xx" title="give this message a vote of 2" onclick="return RateMsg(533189, 1287050, 2)"><b>2</b></a> <a href="#xx1287050xx" title="give this message a vote of 3" onclick="return RateMsg(533189, 1287050, 3)"><b>3</b></a> <a href="#xx1287050xx" title="give this message a vote of 4" onclick="return RateMsg(533189, 1287050, 4)"><b>4</b></a> <a href="#xx1287050xx" title="give this message a vote of 5" onclick="return RateMsg(533189, 1287050, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="6" width="1"></td></tr><tr id="1287084_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1287084xx"></a><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1287084" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1287084#xx1287084xx">Re: Need help with translation</a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=533189"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle">Jeff Bowman&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle">22:01 22 Nov '05&nbsp;</font></td></tr>
+<tr id="1287084_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Oooops...!<br><br>I wasn't using the Designer attribute when declaring the Wizard class.<br><br>Now, don't I feel silly.<br> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1287084" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1287084" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1287050&amp;forumid=101677&amp;select=1287084#xx1287084xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1287084#xx1287084xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(533189,1287084);</script><span id="MVF1287084">Rate this message: <a href="#xx1287084xx" title="give this message a vote of 1" onclick="return RateMsg(533189, 1287084, 1)"><b>1</b></a> <a href="#xx1287084xx" title="give this message a vote of 2" onclick="return RateMsg(533189, 1287084, 2)"><b>2</b></a> <a href="#xx1287084xx" title="give this message a vote of 3" onclick="return RateMsg(533189, 1287084, 3)"><b>3</b></a> <a href="#xx1287084xx" title="give this message a vote of 4" onclick="return RateMsg(533189, 1287084, 4)"><b>4</b></a> <a href="#xx1287084xx" title="give this message a vote of 5" onclick="return RateMsg(533189, 1287084, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1259841_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1259841xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1259841" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1259841#xx1259841xx"><b>Override Finish button</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=986426"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Macca18</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>5:38 21 Oct '05</b>&nbsp;</font></td></tr>
+<tr id="1259841_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi,<br><br>Great control. I just have a question you may be able to answer for me.<br><br>I have an application that has a treeview in left pane and outputs what is selected in the treeview in the right pane.<br><br>The
+treeview has a number of nodes. One of these nodes will start a wizard
+that will prompt the user to enter info on a number of screens and when
+finished will output a report.<br><br>So for this node I have put the wizard in the right hand pane.<br><br>What
+i'd like to know is how to stop the whole application closing when the
+user selects the finish button on the wizard. What i would like is the
+report to be kicked off after the user has selected finish and go back
+to a default screen in the main app without it closing.<br><br>Is there anyway to control/override the finish event?<br><br>Regards<br>Macca <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1259841" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1259841" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1259841&amp;forumid=101677&amp;select=1259841#xx1259841xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1259841#xx1259841xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(986426,1259841);</script><span id="MVF1259841">Rate this message: <a href="#xx1259841xx" title="give this message a vote of 1" onclick="return RateMsg(986426, 1259841, 1)"><b>1</b></a> <a href="#xx1259841xx" title="give this message a vote of 2" onclick="return RateMsg(986426, 1259841, 2)"><b>2</b></a> <a href="#xx1259841xx" title="give this message a vote of 3" onclick="return RateMsg(986426, 1259841, 3)"><b>3</b></a> <a href="#xx1259841xx" title="give this message a vote of 4" onclick="return RateMsg(986426, 1259841, 4)"><b>4</b></a> <a href="#xx1259841xx" title="give this message a vote of 5" onclick="return RateMsg(986426, 1259841, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="6" width="1"></td></tr><tr id="1260638_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1260638xx"></a><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_answer.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1260638" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1260638#xx1260638xx">Re: Override Finish button</a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=354369"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle">Al Gardner&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle">20:51 21 Oct '05&nbsp;</font></td></tr>
+<tr id="1260638_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Macca,<br>You
+will have to edit the code to do that, the easy way is to simply remove
+the code, which without digging about is probably something like<br><code>  .FindForm().Close();</code><br><br>However
+I have to ask whether you really want to do this. In theory, the user
+could close the wizard at any time, by reselecting an item from the
+treeview. So usually once you start a process like a wizard, you
+usually do it in a modal dialog (i.e. a seperate form). This means the
+user has to cancel the wizard from the cancel button or window chrome. <br><br>All the best, <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1260638" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1260638" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1259841&amp;forumid=101677&amp;select=1260638#xx1260638xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1260638#xx1260638xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(354369,1260638);</script><span id="MVF1260638">Rate this message: <a href="#xx1260638xx" title="give this message a vote of 1" onclick="return RateMsg(354369, 1260638, 1)"><b>1</b></a> <a href="#xx1260638xx" title="give this message a vote of 2" onclick="return RateMsg(354369, 1260638, 2)"><b>2</b></a> <a href="#xx1260638xx" title="give this message a vote of 3" onclick="return RateMsg(354369, 1260638, 3)"><b>3</b></a> <a href="#xx1260638xx" title="give this message a vote of 4" onclick="return RateMsg(354369, 1260638, 4)"><b>4</b></a> <a href="#xx1260638xx" title="give this message a vote of 5" onclick="return RateMsg(354369, 1260638, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1247994_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1247994xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1247994" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1247994#xx1247994xx"><b>Dropping Header Control Problem</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=1995485"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Aggalitsa</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>17:47 7 Oct '05</b>&nbsp;</font></td></tr>
+<tr id="1247994_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi there,<br>I am experiencing a problem when trying to add the following controls: InfoContainer, InfoPage or Header to a wizard page. <br><br>The
+error reads: An exception occurred while trying to create an instance
+of Gui.Wizard.Header/InofContainer/InfoPage. Th exception was &#8220;Could
+not find any resources appropriate for the specified culture(or neutral
+culture) in the given assembly. Make sure &#8220;Header.resources&#8221; was
+correctly embedded or linked into assembly &#8220;wizard&#8221;.<br>baseName:
+Header locationInfo: Gui.Wizard.Header resource file name:
+Header.resources assembly: wizard, Version = 1.1.2106, Culture =
+neutral, PublicKeyToken = null <br><br>If anyone can help I would much appreciate it!<br>Thanks<br><br><br><br> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1247994" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1247994" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1247994&amp;forumid=101677&amp;select=1247994#xx1247994xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1247994#xx1247994xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(1995485,1247994);</script><span id="MVF1247994">Rate this message: <a href="#xx1247994xx" title="give this message a vote of 1" onclick="return RateMsg(1995485, 1247994, 1)"><b>1</b></a> <a href="#xx1247994xx" title="give this message a vote of 2" onclick="return RateMsg(1995485, 1247994, 2)"><b>2</b></a> <a href="#xx1247994xx" title="give this message a vote of 3" onclick="return RateMsg(1995485, 1247994, 3)"><b>3</b></a> <a href="#xx1247994xx" title="give this message a vote of 4" onclick="return RateMsg(1995485, 1247994, 4)"><b>4</b></a> <a href="#xx1247994xx" title="give this message a vote of 5" onclick="return RateMsg(1995485, 1247994, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1243808_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1243808xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1243808" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1243808#xx1243808xx"><b>Blank Form1</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=117363"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>skletty</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>13:16 3 Oct '05</b>&nbsp;</font></td></tr>
+<tr id="1243808_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">I
+was excited to check out this control, I downloaded the source, opened
+the project VS2003 and when I debug, the form is blank. It worked the
+first time, then I widened Form1 and ran debug again... blank.<br><br>I
+made things work by overwriting the form1.cs and resx files while I had
+the project open, VS then asked me if I wanted to reload the files, I
+said "yes" and then Form1 designer showed all the controls(it was blank
+before)<br><br>Very odd. I will continue to play with it and see if I
+can find out what's happening. Thanks for the control, I hope I can get
+it to work in my application. <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1243808" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1243808" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1243808&amp;forumid=101677&amp;select=1243808#xx1243808xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1243808#xx1243808xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(117363,1243808);</script><span id="MVF1243808">Rate this message: <a href="#xx1243808xx" title="give this message a vote of 1" onclick="return RateMsg(117363, 1243808, 1)"><b>1</b></a> <a href="#xx1243808xx" title="give this message a vote of 2" onclick="return RateMsg(117363, 1243808, 2)"><b>2</b></a> <a href="#xx1243808xx" title="give this message a vote of 3" onclick="return RateMsg(117363, 1243808, 3)"><b>3</b></a> <a href="#xx1243808xx" title="give this message a vote of 4" onclick="return RateMsg(117363, 1243808, 4)"><b>4</b></a> <a href="#xx1243808xx" title="give this message a vote of 5" onclick="return RateMsg(117363, 1243808, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="6" width="1"></td></tr><tr id="1243902_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1243902xx"></a><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_answer.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1243902" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1243902#xx1243902xx">Re: Blank Form1</a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=354369"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle">Al Gardner&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle">15:30 3 Oct '05&nbsp;</font></td></tr>
+<tr id="1243902_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Sorry
+to say I have seen that many times in VS, not just with this control.
+If you ever find out what causes it, please let me know. I think MS has
+done some work in 2005 to solve this. <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1243902" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1243902" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1243808&amp;forumid=101677&amp;select=1243902#xx1243902xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1243902#xx1243902xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(354369,1243902);</script><span id="MVF1243902">Rate this message: <a href="#xx1243902xx" title="give this message a vote of 1" onclick="return RateMsg(354369, 1243902, 1)"><b>1</b></a> <a href="#xx1243902xx" title="give this message a vote of 2" onclick="return RateMsg(354369, 1243902, 2)"><b>2</b></a> <a href="#xx1243902xx" title="give this message a vote of 3" onclick="return RateMsg(354369, 1243902, 3)"><b>3</b></a> <a href="#xx1243902xx" title="give this message a vote of 4" onclick="return RateMsg(354369, 1243902, 4)"><b>4</b></a> <a href="#xx1243902xx" title="give this message a vote of 5" onclick="return RateMsg(354369, 1243902, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1237812_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1237812xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1237812" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1237812#xx1237812xx"><b>Thanks for a simple neat control</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=6095"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>solo</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>5:13 27 Sep '05</b>&nbsp;</font></td></tr>
+<tr id="1237812_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi,
+I'd just want to thank you for a neat simple wiz control, just the one
+I currently need. I think the Page collection should be exted with a
+indexer that takes a name so it won't be to order fixed the retrieval
+of pages, eg:<br><br>		/// <summary><br>		/// Finds the Page in the collection<br>		/// </summary><br>		public WizardPage this[String csPageName]<br>		{<br>			get<br>			{<br>				foreach(WizardPage page in List)<br>				{<br>					if (page.Name == csPageName)<br>						return page;<br>				}<br>				<br>				return null;<br>			}<br>		}<br><br>Many Regards,<br> Mario <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1237812" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1237812" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1237812&amp;forumid=101677&amp;select=1237812#xx1237812xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1237812#xx1237812xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(6095,1237812);</script><span id="MVF1237812">Rate this message: <a href="#xx1237812xx" title="give this message a vote of 1" onclick="return RateMsg(6095, 1237812, 1)"><b>1</b></a> <a href="#xx1237812xx" title="give this message a vote of 2" onclick="return RateMsg(6095, 1237812, 2)"><b>2</b></a> <a href="#xx1237812xx" title="give this message a vote of 3" onclick="return RateMsg(6095, 1237812, 3)"><b>3</b></a> <a href="#xx1237812xx" title="give this message a vote of 4" onclick="return RateMsg(6095, 1237812, 4)"><b>4</b></a> <a href="#xx1237812xx" title="give this message a vote of 5" onclick="return RateMsg(6095, 1237812, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1214786_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1214786xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1214786" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1214786#xx1214786xx"><b>still close</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=750345"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Unruled Boy</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>0:11 3 Sep '05</b>&nbsp;</font></td></tr>
+<tr id="1214786_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">WizardPage1,WizardPage2,WizardPage3<br><br>each could be the finish page depending on some condictions.<br><br>when
+WizardPage2 is the finish page, WizardPage2_CloseFromNext triggered,
+some validations made, not valid, so I should make it NOT close. <br><br>but e.Page = WizardPage2 makes no effect, still close.<br><br>why &amp; how to solve? <br><br>Regards,<br>unruledboy@hotmail.com<br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1214786" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1214786" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1214786&amp;forumid=101677&amp;select=1214786#xx1214786xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1214786#xx1214786xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(750345,1214786);</script><span id="MVF1214786">Rate this message: <a href="#xx1214786xx" title="give this message a vote of 1" onclick="return RateMsg(750345, 1214786, 1)"><b>1</b></a> <a href="#xx1214786xx" title="give this message a vote of 2" onclick="return RateMsg(750345, 1214786, 2)"><b>2</b></a> <a href="#xx1214786xx" title="give this message a vote of 3" onclick="return RateMsg(750345, 1214786, 3)"><b>3</b></a> <a href="#xx1214786xx" title="give this message a vote of 4" onclick="return RateMsg(750345, 1214786, 4)"><b>4</b></a> <a href="#xx1214786xx" title="give this message a vote of 5" onclick="return RateMsg(750345, 1214786, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="6" width="1"></td></tr><tr id="1223513_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1223513xx"></a><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_answer.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1223513" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1223513#xx1223513xx">Re: still close</a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=531757"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle">matthias_hartmann&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle">10:34 12 Sep '05&nbsp;</font></td></tr>
+<tr id="1223513_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">I think, there is a small bug in wizard.cs.<br><br>		public void Next()<br>		{<br>                        ....<br>			//Did I just press Finish instead of Next<br>			if (this.PageIndex &lt; vPages.Count <b>-1</b><br>				&amp;&amp; (vActivePage.IsFinishPage == false || DesignMode == true))<br><br>the -1 is wrong and should be removed.<br><br>To stop the wizard from closing in the CloseFromNext Event Handler:<br>		private void wpFinish_CloseFromNext(object sender, Gui.Wizard.PageEventArgs e)<br>		{<br>			wpFinish.IsFinishPage = true;<br>			if (DontCloseMe) {<br>				wpFinish.IsFinishPage = <b>false</b>;<br>				e.Page = wpFinish;<br>			}<br>		}<br> <br><br>Have fun<br><br>Matthias Hartmann<br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1223513" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1223513" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1214786&amp;forumid=101677&amp;select=1223513#xx1223513xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1223513#xx1223513xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(531757,1223513);</script><span id="MVF1223513">Rate this message: <a href="#xx1223513xx" title="give this message a vote of 1" onclick="return RateMsg(531757, 1223513, 1)"><b>1</b></a> <a href="#xx1223513xx" title="give this message a vote of 2" onclick="return RateMsg(531757, 1223513, 2)"><b>2</b></a> <a href="#xx1223513xx" title="give this message a vote of 3" onclick="return RateMsg(531757, 1223513, 3)"><b>3</b></a> <a href="#xx1223513xx" title="give this message a vote of 4" onclick="return RateMsg(531757, 1223513, 4)"><b>4</b></a> <a href="#xx1223513xx" title="give this message a vote of 5" onclick="return RateMsg(531757, 1223513, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1197220_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1197220xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1197220" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1197220#xx1197220xx"><b>license?</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=750345"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Unruled Boy</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>4:11 17 Aug '05</b>&nbsp;</font></td></tr>
+<tr id="1197220_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">I wanna use your code in my shareware, what kind of license does it have? <br><br>Regards,<br>unruledboy@hotmail.com<br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1197220" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1197220" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1197220&amp;forumid=101677&amp;select=1197220#xx1197220xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1197220#xx1197220xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right">Score: 3.0 (2 votes).  <script language="Javascript">MsgVoteForm(750345,1197220);</script><span id="MVF1197220">Rate this message: <a href="#xx1197220xx" title="give this message a vote of 1" onclick="return RateMsg(750345, 1197220, 1)"><b>1</b></a> <a href="#xx1197220xx" title="give this message a vote of 2" onclick="return RateMsg(750345, 1197220, 2)"><b>2</b></a> <a href="#xx1197220xx" title="give this message a vote of 3" onclick="return RateMsg(750345, 1197220, 3)"><b>3</b></a> <a href="#xx1197220xx" title="give this message a vote of 4" onclick="return RateMsg(750345, 1197220, 4)"><b>4</b></a> <a href="#xx1197220xx" title="give this message a vote of 5" onclick="return RateMsg(750345, 1197220, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1164031_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1164031xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1164031" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1164031#xx1164031xx"><b>Fix or Suggestion</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=164"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>norm.net</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>4:27 15 Jul '05</b>&nbsp;</font></td></tr>
+<tr id="1164031_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">The line:<br><code>		protected override void OnInsertComplete(int index, object value)<br>		{<br>			base.OnInsertComplete (index, value);<br>			//Showthe page added<br>			vParent.PageIndex = index;<br>		}</code><br><br>Should be :<br><br><code>		protected override void OnInsertComplete(int index, object value)<br>		{<br>			base.OnInsertComplete (index, value);<br>			//Showthe page added<br>		}</code><br><br>Reason,
+if have say 5 Pages and on the 1st Page you need to decide which
+2,3,4,5 Pages you need to add/remove focus is switch to the most
+recently added page.<br><br>A simple suggestion/fix would be removing<br><code>vParent.PageIndex = index;</code><br><br>BTW: you got my 5!<br> <br><br><font color="#000080" face="Arial" size="2">Blogless</font><br><br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1164031" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1164031" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1164031&amp;forumid=101677&amp;select=1164031#xx1164031xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1164031#xx1164031xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(164,1164031);</script><span id="MVF1164031">Rate this message: <a href="#xx1164031xx" title="give this message a vote of 1" onclick="return RateMsg(164, 1164031, 1)"><b>1</b></a> <a href="#xx1164031xx" title="give this message a vote of 2" onclick="return RateMsg(164, 1164031, 2)"><b>2</b></a> <a href="#xx1164031xx" title="give this message a vote of 3" onclick="return RateMsg(164, 1164031, 3)"><b>3</b></a> <a href="#xx1164031xx" title="give this message a vote of 4" onclick="return RateMsg(164, 1164031, 4)"><b>4</b></a> <a href="#xx1164031xx" title="give this message a vote of 5" onclick="return RateMsg(164, 1164031, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1140933_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1140933xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" style="color: rgb(170, 0, 0);" width="100%"><a class="messagetitle" style="color: rgb(170, 0, 0);" id="DynMessLink" name="1140933" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1140933#xx1140933xx"><b>Visual Studio 2005 (Beta 2)</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=94117"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle" style="color: rgb(170, 0, 0);"><b>Karl Waugh</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle" style="color: rgb(170, 0, 0);"><b>18:23 20 Jun '05</b>&nbsp;</font></td></tr>
+<tr id="1140933_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Has
+anyone been able to get this to work with Visual Studio 2005 (Beta 2).
+I'm getting the errors below when I try top open the design view of
+InfoPage.cs. Additionally, trying to add the components to a form from
+the tool box results in "Failed to load toolbox item 'Header'. It will
+be removed from the toolbox." etc.<br><br>NB: I can view the other
+wizard components in design view, just not the InfoPage.cs (due to
+inheritance from other Gui.Wizard components?). <br><br>----- Begin InfoPage.cs [Design] error -----<br><br>One
+or more errors encountered while loading the designer. The errors are
+listed below. Some errors can be fixed by rebuilding your project,
+while others may require code changes. Clicking on each error will take
+you to the line of code that caused it. <br><br>The designer could not
+be shown for this file because none of the classes within it can be
+designed. The designer inspected the following classes in the file:
+InfoPage --- The base class 'Gui.Wizard.InfoContainer' could not be
+loaded. Ensure the assembly has been referenced and compiled. <br><br>Hide <br><br>at System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.EnsureDocument(IDesignerSerializationManager manager)<br>at System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformLoad(IDesignerSerializationManager manager)<br>at
+Microsoft.VisualStudio.Design.Serialization.CodeDom.VSCodeDomDesignerLoader.PerformLoad(IDesignerSerializationManager
+serializationManager)<br>at System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad(IDesignerLoaderHost host) <br><br>----- End InfoPage.cs [Design] error -----<br> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1140933" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1140933" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1140933&amp;forumid=101677&amp;select=1140933#xx1140933xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1140933#xx1140933xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right">Score: 5.0 (1 vote).  <script language="Javascript">MsgVoteForm(94117,1140933);</script><span id="MVF1140933">Rate this message: <a href="#xx1140933xx" title="give this message a vote of 1" onclick="return RateMsg(94117, 1140933, 1)"><b>1</b></a> <a href="#xx1140933xx" title="give this message a vote of 2" onclick="return RateMsg(94117, 1140933, 2)"><b>2</b></a> <a href="#xx1140933xx" title="give this message a vote of 3" onclick="return RateMsg(94117, 1140933, 3)"><b>3</b></a> <a href="#xx1140933xx" title="give this message a vote of 4" onclick="return RateMsg(94117, 1140933, 4)"><b>4</b></a> <a href="#xx1140933xx" title="give this message a vote of 5" onclick="return RateMsg(94117, 1140933, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1131345_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1131345xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1131345" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1131345#xx1131345xx"><b>Removing Tabs</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=539144"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Rick Campbell</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>13:40 9 Jun '05</b>&nbsp;</font></td></tr>
+<tr id="1131345_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">In
+your article, you mentioned that you had not implemented the AddTab and
+RemoveTab verbs. Is that the reason why an exception is thrown if you
+delete a page from the Wizard's pages collection and then click the
+Back/Next buttons in design mode? If so, were you going to address that
+issue? <br><br>Rick<br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1131345" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1131345" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1131345&amp;forumid=101677&amp;select=1131345#xx1131345xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1131345#xx1131345xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right">Score: 2.0 (1 vote).  <script language="Javascript">MsgVoteForm(539144,1131345);</script><span id="MVF1131345">Rate this message: <a href="#xx1131345xx" title="give this message a vote of 1" onclick="return RateMsg(539144, 1131345, 1)"><b>1</b></a> <a href="#xx1131345xx" title="give this message a vote of 2" onclick="return RateMsg(539144, 1131345, 2)"><b>2</b></a> <a href="#xx1131345xx" title="give this message a vote of 3" onclick="return RateMsg(539144, 1131345, 3)"><b>3</b></a> <a href="#xx1131345xx" title="give this message a vote of 4" onclick="return RateMsg(539144, 1131345, 4)"><b>4</b></a> <a href="#xx1131345xx" title="give this message a vote of 5" onclick="return RateMsg(539144, 1131345, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1121159_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1121159xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1121159" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1121159#xx1121159xx"><b>Error:Overflow or underflow in the arithmetic operation</b></a></td></tr></tbody></table></td><td valign="bottom"><img src="DesignTimeWizard.asp_files/usersuss.gif" alt="Unconfirmed/Anonymous posting" height="13" width="15">&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Anonymous</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>0:18 31 May '05</b>&nbsp;</font></td></tr>
+<tr id="1121159_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi<br><br>I can run the wizard control in my <b>windows appliaction </b>properly.(I use VB.NET to run the control)<br><br>But when I create an <b>class library(dll)</b> which has an wizard form in it and use "form1.show" to run the form, the error occurs!<br><br>Error:Overflow or underflow in the arithmetic operation<br><br>So I traced the code and got the following error when initialize the wizard conponent:<br><br>System.NullReferenceException: <i>Object reference not set to an instance of an object</i>.<br>   at WizardDesigner.Gui.Wizard.<b>Wizard.ActivatePage(Int32 index)</b> in xxx<br>   at WizardDesigner.Gui.Wizard.<b>Wizard.Wizard_Load</b>(Object sender, EventArgs e) in xxx<br>...<br>...<br><br>Can anyone help??<img src="DesignTimeWizard.asp_files/smiley_cry.gif" align="absmiddle"><br><br>Thanks<br><br> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1121159" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1121159&amp;forumid=101677&amp;select=1121159#xx1121159xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1121159#xx1121159xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right">[<a href="http://www.codeproject.com/script/comments/owner_modify_pw.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1121159"><i>Modify</i></a>|<a href="http://www.codeproject.com/script/comments/owner_delete_pw.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1121159"><i>Delete</i></a>]<br> <script language="Javascript">MsgVoteForm(0,1121159);</script><span id="MVF1121159">Rate this message: <a href="#xx1121159xx" title="give this message a vote of 1" onclick="return RateMsg(0, 1121159, 1)"><b>1</b></a> <a href="#xx1121159xx" title="give this message a vote of 2" onclick="return RateMsg(0, 1121159, 2)"><b>2</b></a> <a href="#xx1121159xx" title="give this message a vote of 3" onclick="return RateMsg(0, 1121159, 3)"><b>3</b></a> <a href="#xx1121159xx" title="give this message a vote of 4" onclick="return RateMsg(0, 1121159, 4)"><b>4</b></a> <a href="#xx1121159xx" title="give this message a vote of 5" onclick="return RateMsg(0, 1121159, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1117707_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1117707xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1117707" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1117707#xx1117707xx"><b>Display another form,after clicking  the finish button.</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=1836541"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>chetanrpai2000</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>8:05 26 May '05</b>&nbsp;</font></td></tr>
+<tr id="1117707_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi,<br>Working with the wizard control has been a pleasure until I realised that <br>I've got to display a form after Finish is clicked,I couldn't find a way...Could you put some light on this...<br><br>Thanks, <br><br>Chetan<br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1117707" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1117707" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1117707&amp;forumid=101677&amp;select=1117707#xx1117707xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1117707#xx1117707xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right">Score: 1.0 (1 vote).  <script language="Javascript">MsgVoteForm(1836541,1117707);</script><span id="MVF1117707">Rate this message: <a href="#xx1117707xx" title="give this message a vote of 1" onclick="return RateMsg(1836541, 1117707, 1)"><b>1</b></a> <a href="#xx1117707xx" title="give this message a vote of 2" onclick="return RateMsg(1836541, 1117707, 2)"><b>2</b></a> <a href="#xx1117707xx" title="give this message a vote of 3" onclick="return RateMsg(1836541, 1117707, 3)"><b>3</b></a> <a href="#xx1117707xx" title="give this message a vote of 4" onclick="return RateMsg(1836541, 1117707, 4)"><b>4</b></a> <a href="#xx1117707xx" title="give this message a vote of 5" onclick="return RateMsg(1836541, 1117707, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1106600_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1106600xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" style="color: rgb(170, 0, 0);" width="100%"><a class="messagetitle" style="color: rgb(170, 0, 0);" id="DynMessLink" name="1106600" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1106600#xx1106600xx"><b>Finish Button Event</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=1960003"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle" style="color: rgb(170, 0, 0);"><b>RobboQld</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle" style="color: rgb(170, 0, 0);"><b>3:29 13 May '05</b>&nbsp;</font></td></tr>
+<tr id="1106600_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Just
+wanted to say that I changed the code to raise an event
+(CloseFromFinish) when the finish button is pressed instead of just
+closing the parent form, needed to do a lot of processing when finish
+was pressed, and not close the form<br><br>Easy to do if anyone is
+wondering, in Wizard.cs just create an event handler for the finish
+button click event, then replace where it closes the parent form with
+raising that event, then in the form that is implementing the wizard
+just create an event handler for that event.<br><br>Easy <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1106600" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1106600" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1106600&amp;forumid=101677&amp;select=1106600#xx1106600xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1106600#xx1106600xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right">Score: 5.0 (1 vote).  <script language="Javascript">MsgVoteForm(1960003,1106600);</script><span id="MVF1106600">Rate this message: <a href="#xx1106600xx" title="give this message a vote of 1" onclick="return RateMsg(1960003, 1106600, 1)"><b>1</b></a> <a href="#xx1106600xx" title="give this message a vote of 2" onclick="return RateMsg(1960003, 1106600, 2)"><b>2</b></a> <a href="#xx1106600xx" title="give this message a vote of 3" onclick="return RateMsg(1960003, 1106600, 3)"><b>3</b></a> <a href="#xx1106600xx" title="give this message a vote of 4" onclick="return RateMsg(1960003, 1106600, 4)"><b>4</b></a> <a href="#xx1106600xx" title="give this message a vote of 5" onclick="return RateMsg(1960003, 1106600, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1092011_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1092011xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1092011" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1092011#xx1092011xx"><b>Setting the active page</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=4958"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Luis Alonso Ramos</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>19:54 25 Apr '05</b>&nbsp;</font></td></tr>
+<tr id="1092011_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hello,<br><br>First of all, congratulations on the great work, it's simply awesome!<br><br>I'm
+having one little problem. In the constructor for my form, I initialize
+some controls, and depending on some results, I try to automatically
+advance to the next page.<br><br>I've tried calling <code>Next</code>, <code>ActivatePage</code> and setting <code>PageIndex</code> to 1 (I want the second page in a two-page wizard.)<br><br>I've stepped into the <code>Next</code> code, and somehow, the resulting <code>PageIndex</code> is 2. I also noticed my <code>CloseFromNext</code> handler is not called. I'm calling this after the <code>InitializeComponent</code>.<br><br>[EDIT: More debugging shows that <code>PageIndex</code> is 1 when I call <code>Next</code>, even though I can see the first page displayed. Shouldn't it be zero?]<br><br>Any ideas?<br><br>  -- LuisR <br><br><center><hr width="75%"><br><b>Luis Alonso Ramos</b><br><a href="http://www.intelectix.com/">Intelectix</a> - Chihuahua, Mexico<br><br><small>Not much here: <a href="http://www.codeproject.com/script/profile/whos_who.asp?id=4958">My CP Blog!</a></small><br></center><br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1092011" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1092011" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1092011&amp;forumid=101677&amp;select=1092011#xx1092011xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1092011#xx1092011xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(4958,1092011);</script><span id="MVF1092011">Rate this message: <a href="#xx1092011xx" title="give this message a vote of 1" onclick="return RateMsg(4958, 1092011, 1)"><b>1</b></a> <a href="#xx1092011xx" title="give this message a vote of 2" onclick="return RateMsg(4958, 1092011, 2)"><b>2</b></a> <a href="#xx1092011xx" title="give this message a vote of 3" onclick="return RateMsg(4958, 1092011, 3)"><b>3</b></a> <a href="#xx1092011xx" title="give this message a vote of 4" onclick="return RateMsg(4958, 1092011, 4)"><b>4</b></a> <a href="#xx1092011xx" title="give this message a vote of 5" onclick="return RateMsg(4958, 1092011, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="6" width="1"></td></tr><tr id="1281697_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1281697xx"></a><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1281697" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1281697#xx1281697xx">Re: Setting the active page</a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=1877962"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle">Krishnakovuru&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle">1:26 15 Nov '05&nbsp;</font></td></tr>
+<tr id="1281697_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/ind.gif" height="1" width="18"><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent"><img src="DesignTimeWizard.asp_files/smiley_snore.gif" align="absmiddle">  Hi I also have a same problem, incase u got any solution can u please <br>forward me the same.<br><br>Thanks in Advance <img src="DesignTimeWizard.asp_files/smiley_smile.gif" align="absmiddle"><br>Tapan <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1281697" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1281697" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1092011&amp;forumid=101677&amp;select=1281697#xx1281697xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1281697#xx1281697xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(1877962,1281697);</script><span id="MVF1281697">Rate this message: <a href="#xx1281697xx" title="give this message a vote of 1" onclick="return RateMsg(1877962, 1281697, 1)"><b>1</b></a> <a href="#xx1281697xx" title="give this message a vote of 2" onclick="return RateMsg(1877962, 1281697, 2)"><b>2</b></a> <a href="#xx1281697xx" title="give this message a vote of 3" onclick="return RateMsg(1877962, 1281697, 3)"><b>3</b></a> <a href="#xx1281697xx" title="give this message a vote of 4" onclick="return RateMsg(1877962, 1281697, 4)"><b>4</b></a> <a href="#xx1281697xx" title="give this message a vote of 5" onclick="return RateMsg(1877962, 1281697, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1089499_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1089499xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1089499" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1089499#xx1089499xx"><b>Changing images</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=401872"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>klpenn</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>16:11 21 Apr '05</b>&nbsp;</font></td></tr>
+<tr id="1089499_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">The control is great but I cannot figure out how to change the images. <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1089499" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1089499" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1089499&amp;forumid=101677&amp;select=1089499#xx1089499xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1089499#xx1089499xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(401872,1089499);</script><span id="MVF1089499">Rate this message: <a href="#xx1089499xx" title="give this message a vote of 1" onclick="return RateMsg(401872, 1089499, 1)"><b>1</b></a> <a href="#xx1089499xx" title="give this message a vote of 2" onclick="return RateMsg(401872, 1089499, 2)"><b>2</b></a> <a href="#xx1089499xx" title="give this message a vote of 3" onclick="return RateMsg(401872, 1089499, 3)"><b>3</b></a> <a href="#xx1089499xx" title="give this message a vote of 4" onclick="return RateMsg(401872, 1089499, 4)"><b>4</b></a> <a href="#xx1089499xx" title="give this message a vote of 5" onclick="return RateMsg(401872, 1089499, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1088141_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1088141xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1088141" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1088141#xx1088141xx"><b>It is looking good.</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=948506"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b><font color="#ffd700">^^o000o^^</font></b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>8:23 20 Apr '05</b>&nbsp;</font></td></tr>
+<tr id="1088141_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">Hi, <br>I
+liked your work. Thanks for the good article. I have not gone through
+the article but overlooking it, it looks good and useful. <br><br>Cheers <img src="DesignTimeWizard.asp_files/smiley_redface.gif" align="absmiddle"><br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1088141" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1088141" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1088141&amp;forumid=101677&amp;select=1088141#xx1088141xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1088141#xx1088141xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(948506,1088141);</script><span id="MVF1088141">Rate this message: <a href="#xx1088141xx" title="give this message a vote of 1" onclick="return RateMsg(948506, 1088141, 1)"><b>1</b></a> <a href="#xx1088141xx" title="give this message a vote of 2" onclick="return RateMsg(948506, 1088141, 2)"><b>2</b></a> <a href="#xx1088141xx" title="give this message a vote of 3" onclick="return RateMsg(948506, 1088141, 3)"><b>3</b></a> <a href="#xx1088141xx" title="give this message a vote of 4" onclick="return RateMsg(948506, 1088141, 4)"><b>4</b></a> <a href="#xx1088141xx" title="give this message a vote of 5" onclick="return RateMsg(948506, 1088141, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr><tr height="1"><td colspan="4" bgcolor="#ff9900"><img src="DesignTimeWizard.asp_files/t.gif" height="1" width="1"></td></tr><tr id="1075756_h0" bgcolor="#fef9e7"><td width="70%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="white"><a name="xx1075756xx"></a><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle">&nbsp;</td>
+<td class="messagetitle" width="100%"><a class="messagetitle" id="DynMessLink" name="1075756" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;select=1075756#xx1075756xx"><b>BUG and fix.... when deleting</b></a></td></tr></tbody></table></td><td valign="bottom"><a href="http://www.codeproject.com/script/profile/whos_who.asp?id=124759"><img src="DesignTimeWizard.asp_files/userinfo.gif" title="Click for User Profile" border="0" height="15" width="14"></a>&nbsp;</td><td nowrap="nowrap" width="140"><font class="messagetitle"><b>Trillo</b>&nbsp;</font></td><td align="right" nowrap="nowrap" width="12%"><font class="messagetitle"><b>15:24 5 Apr '05</b>&nbsp;</font></td></tr>
+<tr id="1075756_h1" style="display: none;"><td colspan="4" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="DesignTimeWizard.asp_files/news_blank.gif" align="absmiddle">&nbsp;</td><td bgcolor="#d5eaff" width="100%"><table border="0" cellpadding="0" cellspacing="5" width="100%"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="2"><font class="messagecontent">I think it's an excelent job!! Very well done!!<br><br>I
+used your code as a base for developing a little control I needed
+(something like a tab control but without the tabs; should the .Net
+TabControl have a "TabsVisible" property I wouldn't have written my
+control).<br><br>However I found a bug. First, add your wizard control
+on a form; add some pages to the wizard. Next, select one of the pages
+(by clicking on the page inside your control) and press the delete key.
+The page has been deleted from the control (and form) but a reference
+to the page still exists in the collection, thus the collection has not
+been affected. If you play with the Back and Next buttons you'll get
+and exception because the wizard can't find the page. I hope you can
+reproduce this bug. The .Net TabControl, for example, handles this
+situation correctly.<br><br>Looking around in the documentation and tweaking the code, <img src="DesignTimeWizard.asp_files/smiley_doh.gif" align="absmiddle"> I found that you can fix this bug by overriding the OnControlRemoved method in the wizard class, like this.<br><br><code>protected override void OnControlRemoved (System.Windows.Forms.ControlEventArgs e)<br>{<br>	if (m_cPanels.Contains((Panel)e.Control))<br>		m_cPanels.Remove((Panel)e.Control);<br>}</code><br><br>Note: in my code, m_cPanels is an instance of the collection class. <img src="DesignTimeWizard.asp_files/smiley_line.gif" align="absmiddle"> <br>&nbsp;</font></td></tr><tr valign="top"><td class="messagetitle">[<a href="http://www.codeproject.com/script/comments/user_reply.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1075756" title="Reply to this current thread">Reply</a>][<a href="http://www.codeproject.com/script/comments/user_mail.asp?main=/cs/miscctrl/DesignTimeWizard.asp&amp;df=100&amp;forumid=101677&amp;select=1075756" title="Email a reply to the author of this message">Email</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;tid=1075756&amp;forumid=101677&amp;select=1075756#xx1075756xx" title="View only messages within this thread">View Thread</a>][<a href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?msg=1075756#xx1075756xx" title="Get the URL for this message">Get Link</a>]</td><td class="messagetitle" align="right"> <script language="Javascript">MsgVoteForm(124759,1075756);</script><span id="MVF1075756">Rate this message: <a href="#xx1075756xx" title="give this message a vote of 1" onclick="return RateMsg(124759, 1075756, 1)"><b>1</b></a> <a href="#xx1075756xx" title="give this message a vote of 2" onclick="return RateMsg(124759, 1075756, 2)"><b>2</b></a> <a href="#xx1075756xx" title="give this message a vote of 3" onclick="return RateMsg(124759, 1075756, 3)"><b>3</b></a> <a href="#xx1075756xx" title="give this message a vote of 4" onclick="return RateMsg(124759, 1075756, 4)"><b>4</b></a> <a href="#xx1075756xx" title="give this message a vote of 5" onclick="return RateMsg(124759, 1075756, 5)"><b>5</b></a>  (out of 5)</span>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+<tr><td colspan="4"><img src="DesignTimeWizard.asp_files/t.gif" border="0" height="5" width="1"></td></tr></tbody></table></td></tr><tr bgcolor="#fbedbb"><td><table cellpadding="2" width="100%"><tbody><tr><td class="messagetitle">Last Visit: 17:35 Wednesday 15th February, 2006</td><td align="right" nowrap="nowrap"><font class="messagetitle"><span class="HoverLink">First</span> <span class="HoverLink">Prev</span> <a class="HoverLink" name="HoverNL" href="http://www.codeproject.com/cs/miscctrl/DesignTimeWizard.asp?df=100&amp;forumid=101677&amp;fr=26">Next</a> <span class="HoverLink">&nbsp;&nbsp;&nbsp;&nbsp;</span> </font></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>
+<p class="smallText"><img src="DesignTimeWizard.asp_files/news_general.gif" align="absmiddle"> General comment &nbsp;&nbsp; <img src="DesignTimeWizard.asp_files/news_info.gif" align="absmiddle"> News / Info &nbsp;&nbsp; <img src="DesignTimeWizard.asp_files/news_question.gif" align="absmiddle"> Question &nbsp;&nbsp; <img src="DesignTimeWizard.asp_files/news_answer.gif" align="absmiddle"> Answer &nbsp;&nbsp; <img src="DesignTimeWizard.asp_files/news_game.gif" align="absmiddle"> Joke / Game &nbsp;&nbsp; <img src="DesignTimeWizard.asp_files/news_sticky.gif" align="absmiddle"> Admin message</p>
+		<script language="javascript">
+		var table = document.getElementById("ForumTable");
+		var links = table.getElementsByTagName("a");
+		for (var i = 0; i < links.length; i++) {
+		    if (links[i].id == "DynMessLink")
+		    	links[i].onclick = SwitchThisMessage;
+		}
+		</script>
+
+<br>
+
+
+<table cellspacing="5" width="100%">
+<tbody><tr valign="top"><td>
+<font style="font-size: 7pt;" size="1"><a href="http://www.codeproject.com/?cat=1">All Topics</a>, <a href="http://www.codeproject.com/?cat=3">C#</a>, <a href="http://www.codeproject.com/?cat=5">.NET</a> &gt;&gt; <a href="http://www.codeproject.com/cs/miscctrl/">C# Controls</a> &gt;&gt; <a href="http://www.codeproject.com/cs/miscctrl/#Design+time+controls">Design time controls</a>
+<br>Updated: 16 Dec 2004 0:04
+</font>
+</td><td align="right">
+<font style="font-size: 7pt;" size="1">
+Article content copyright Al Gardner, 2004<br>
+everything else Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2006.
+
+<br>
+Web03 |
+<a href="http://www.codeproject.com/info/MediaKit">Advertise on The Code Project</a> | <a href="http://www.codeproject.com/info/privacy.asp">Privacy</a>
+
+</font></td></tr>
+</tbody></table>
+
+<br>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="95%">
+<tbody><tr><td bgcolor="#ff9900" height="1"><img src="DesignTimeWizard.asp_files/space.gif" height="1"></td></tr>
+<tr>
+<td align="center"><font size="1">
+
+<a href="http://www.theultimatetoolbox.com/">The Ultimate Toolbox</a> &#8226;
+<a href="http://www.aspalliance.com/">ASP Alliance</a> &#8226;
+<a href="http://www.developerfusion.co.uk/">Developer Fusion</a> &#8226;
+<a href="http://www.developersdex.com/">Developersdex</a> &#8226;
+<a href="http://www.devguru.com/">DevGuru</a> &#8226;
+<a href="http://www.programmersheaven.com/">Programmers Heaven</a> &#8226;
+<a href="http://www.planet-source-code.com/">Planet Source Code</a> &#8226;
+<a href="http://www.tek-tips.com/">Tek-Tips Forums</a> &#8226;
+
+</font>	
+</td>
+</tr>
+</tbody></table>
+</center>
+
+<div style="position: absolute; visibility: visible; background-color: rgb(255, 153, 0); z-index: 101; width: 373px; height: 22px; top: 239px; left: 561px;"><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 43px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 2px;">Help!</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 58px; height: 16px; padding-left: 2px; padding-top: 2px; left: 48px; top: 2px;">Articles</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 118px; height: 16px; padding-left: 2px; padding-top: 2px; left: 109px; top: 2px;">Message Boards</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 78px; height: 16px; padding-left: 2px; padding-top: 2px; left: 230px; top: 2px;">StoreFront</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 58px; height: 16px; padding-left: 2px; padding-top: 2px; left: 311px; top: 2px;">Lounge</div></div><div style="position: absolute; visibility: hidden; background-color: rgb(255, 153, 0); z-index: 102; width: 194px; height: 98px; top: 0pt; left: 0pt;"><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 188px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 2px;">What is 'The Code Project'?</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 188px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 21px;">General FAQ</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 188px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 40px;">Post a Question</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 188px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 59px;">Site Directory</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 188px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 78px;">About Us</div></div><div style="position: absolute; visibility: hidden; background-color: rgb(255, 153, 0); z-index: 102; width: 154px; height: 136px; top: 0pt; left: 0pt;"><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 2px;">Latest</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 21px;">Most Popular</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 40px;">Search</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 59px;">Site Directory</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 78px;">Submit an Article</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 97px;">Update an Article</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 116px;">Article Competition</div></div><div style="position: absolute; visibility: hidden; background-color: rgb(255, 153, 0); z-index: 102; width: 154px; height: 364px; top: 0pt; left: 0pt;"><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 2px;">Visual C++</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 21px;">ATL / WTL / STL</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 40px;">COM</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 59px;">C++/CLI</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 78px;">C#</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 97px;">ASP.NET</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 116px;">VB.NET</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 135px;">Web Development</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 154px;">.NET Framework</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 173px;">SQL / ADO / ADO.NET</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 192px;">XML / XSL</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 211px;">OS / SysAdmin</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 230px;">Work Issues</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 249px;">Article Requests</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 268px;">Collaboration</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 287px;">General Discussions</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 306px;">Hardware</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 325px;">Suggestions</div><div style="overflow: hidden; position: absolute; visibility: inherit; cursor: pointer; background-color: rgb(255, 153, 0); color: Black; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-weight: bold; font-style: normal; text-align: left; width: 148px; height: 16px; padding-left: 2px; padding-top: 2px; left: 2px; top: 344px;">The Soapbox</div></div></body></html>

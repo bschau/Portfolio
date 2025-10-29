@@ -1,0 +1,2 @@
+APPNAME=HSNDetect
+VERSION=1r1

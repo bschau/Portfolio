@@ -1,0 +1,17 @@
+fps "25"
+swfname "ftb.swf"
+version 8
+# this is a comment
+bbox 39x39
+output "ftb.sc"
+quality 100%
+type png
+lo 0%
+hi 100%
+generatehtml
+fadeframes 20
+pauseframes 50
+effect ftb
+picture circle.png
+picture diamond.png
+picture square.png

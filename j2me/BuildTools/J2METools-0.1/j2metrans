@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# j2metrans
+#
+# Install J2ME file to Nokia phone.
+#
+# Created and maintained by Brian Schau <brian@schau.com>
+
+# j2metrans is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+
+# j2metrans is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+USAGE="Usage: j2metrans [OPTIONS] prog1 prog2 ... progN"
+
+function die
+{
+	echo $*
+	exit 1
+}
+
+function ShowHelp
+{
+	echo "$USAGE"
+	echo
+	echo "[OPTIONS]"
+	echo "  -c configNum      Gammu configuration"
+	echo "  -d debugLevel     Gammu debug level (nothing|text|textall|binary|errors)"
+	echo "  -g group          Group name (Application|Game)"
+	echo "  -h                This page"
+}
+
+GAMMU="$(type -p gammu)" || die "Cannot find gammu"
+
+debugLevel="nothing"
+group="Application"
+configNum=""
+
+OPTS=`getopt -o c:d:g:h -n j2metrans -- "$@"`|| die "Invalid configuration option"
+eval set -- "$OPTS"
+
+while :; do
+	case "$1" in
+	-c)	configNum="$2"; shift 2 ;;
+	-d)	verbose="$2"; shift 2 ;;
+	-g)	group="$2"; shift 2 ;;
+	-h)	ShowHelp; exit 0 ;;
+	--)	shift; break ;;
+	*)	die "$USAGE" ;;
+	esac
+done
+	
+if test $# -lt 1; then
+	die "$USAGE"
+fi
+
+for p; do
+	ext="${p#*.}"
+	if test -s "${p}.jad" -a -s "${p}.jar"; then
+		$GAMMU $configNum $debugLevel --nokiaaddfile $group $p
+	else
+		echo "Cannot install $p"
+		echo "${p}.jad and/or ${p}.jar not found"
+	fi
+done
+exit 0

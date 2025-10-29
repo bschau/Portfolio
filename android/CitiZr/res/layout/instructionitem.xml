@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="@color/background"
+	android:orientation="horizontal">
+
+	<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:contentDescription="@string/capsuleimage"
+		android:id="@+id/image"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:background="@null"
+		android:layout_marginLeft="4dp"
+        android:gravity="left" />
+
+	<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:contentDescription="@string/whipimage"
+		android:id="@+id/whip"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:background="@null"
+		android:layout_marginLeft="4dp"
+		android:layout_marginRight="4dp"
+		android:scaleType="centerInside"
+        android:gravity="right" />
+		
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:textColor="@color/text"
+		android:textSize="24dp"
+		android:layout_marginLeft="4dp" />
+</LinearLayout>

@@ -1,0 +1,795 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.1"
+FONT ID 1000 FONTID dotFont "data/dot.pfn"
+FONT ID 1001 FONTID scissorFont "data/scissor.pfn"
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+CATEGORIES ID defCategories "Non archiviate" "Lavoro" "Carte di credito" "Password" "Personali" "" "" "" "" "" "" "" "" "" "" ""
+BITMAP ID bmpPwdDot "data/bpwddot.bmp"
+BITMAP ID bmpPwdTxt "data/bpwdtxt.bmp"
+BITMAP ID bmpGenerate "data/bgenerate.bmp"
+
+BITMAPFAMILYEX ID SLetLargeIcon
+COMPRESS
+BEGIN
+	BITMAP "data/sletl1.bmp" BPP 1
+	BITMAP "data/sletl1-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAPFAMILYEX ID SLetSmallIcon
+COMPRESS
+BEGIN
+	BITMAP "data/slets1.bmp" BPP 1
+	BITMAP "data/slets1-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "iSecur è opera di Brian Schau.\n\nLe belle icone dell'applicazione sono di Tony Vincent.\n\nLe icone di piccole dimensioni sono fornite da Leslie Franke (http://lesliefranke.com/).\n\nVisitate il mio sito:\n\n   http://www.schau.com/\n\Qui si può trovare l'ultima versione di iSecur e il manuale online. Grazie!\n\n\niSecur è rilasciato sotto la Gnu General Public License v2.\n"
+STRINGTABLE ID strPasswordDialog "" "Le password non coincidono!" "Password non valida!" "Inserire la password, per favore!" "Password già usata!"
+STRINGTABLE ID strPasswordDialogTitle "" "Autenticazione..." "Inserire una nuova password..."
+STRINGTABLE ID strShowDialog "" "Non archiviate"
+STRINGTABLE ID strDefEntryCard "" "Carte di credito" "[Carte di credito]" "Numero: [Numero]\nData di scadenza: [Scadenza]\nNome sulla carta: [Nome]\nCodice di controllo: [Codice]\n"
+STRINGTABLE ID strDefEntryPassword "" "Password" "[Sistema]" "Nome utente: [Nome Utente]\nPassword: [Password]\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS incompatibile"
+	MESSAGE "Il PalmOS di questo palmare è incompatibile. Per funzionare, iSecur richiede PalmOS v3.5 o superiori."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Errore del database"
+	MESSAGE "Non posso aprire il database ^1."
+	BUTTONS "OK"
+END
+
+ALERT ID aPasswordChanged
+INFORMATION
+BEGIN
+	TITLE "Cambio password"
+	MESSAGE "La password è stata cambiata. Al prossimo accesso utilizzare la nuova password."
+	BUTTONS "OK"
+END
+
+ALERT ID aDeleteRecord
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Eliminazione segreto"
+	MESSAGE "Eliminare questo segreto?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aClearAll
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Azzeramento delle parole-chiave"
+	MESSAGE "Vuoi azzerare tutte le parole-chiave inserite?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aNotificationError
+INFORMATION
+BEGIN
+	TITLE "Nessuna notifica"
+	MESSAGE "Non posso configurare le notifiche. E' disabilitata l'uscita da iSecur quando il palmare va in riposo energetico."
+	BUTTONS "OK"
+END
+
+ALERT ID aPwdGenError
+INFORMATION
+BEGIN
+	TITLE "Nessuna password"
+	MESSAGE "Non posso generare la password poiché non si sono scelti i caratteri ammessi."
+	BUTTONS "OK"
+END
+
+ALERT ID aPwdGenNone
+INFORMATION
+BEGIN
+	TITLE "Nessuna Password"
+	MESSAGE "Non ci sono password utilizzabili."
+	BUTTONS "OK"
+END
+
+ALERT ID aPwdChangeReminder
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Avviso"
+	MESSAGE "E' consigliabile cambiare la password di iSecur. Lo si vuole fare adesso?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aPwdChange
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Avviso"
+	MESSAGE "E' tempo di cambiare la password. Lo si vuole fare adesso?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aNoCopyPrevention
+INFORMATION
+BEGIN
+	TITLE "Protezione da copia"
+	MESSAGE "Impossibile immettere/togliere il bit che impedisce la copia."
+	BUTTONS "OK"
+END
+
+ALERT ID aCopyPrevBitSet
+INFORMATION
+BEGIN
+	TITLE "Protezione da copia attiva"
+	MESSAGE "Non è possibile trasmettere il database tramite IR poiché è attivo il bit che protegge dalla copia."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSocketError
+INFORMATION
+BEGIN
+	TITLE "Errore di connessione IR"
+	MESSAGE "Non è possibile accettare connessioni IR in ingresso."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "Errore di invio IR"
+	MESSAGE "Non è possibile trasmettere il database tramite IR."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRReceiveNotInApp
+INFORMATION
+BEGIN	
+	TITLE "Ricezione impossibile"
+	MESSAGE "Quando iSecur è attivo non è possibile ricevere database!"
+	BUTTONS "OK"
+END
+
+ALERT ID aNoRecByID
+INFORMATION
+BEGIN
+	TITLE "Record assente"
+	MESSAGE "Impossibile trovare il record mediante il suo ID."
+	BUTTONS "OK"
+END
+
+ALERT ID aSletAlreadyExist
+INFORMATION
+BEGIN
+	TITLE "iSecurLet esistente"
+	MESSAGE "Un iSecurLet con tale nome esiste già."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotCreateSlet
+INFORMATION
+BEGIN
+	TITLE "Impossibile creare iSecurLet"
+	MESSAGE "Impossibile creare l'iSecurLet."
+	BUTTONS "OK"
+END
+
+ALERT ID aSletCreated
+INFORMATION
+BEGIN
+	TITLE "Eseguito"
+	MESSAGE "L'iSecurLet è stato creato."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenSlet
+INFORMATION
+BEGIN
+	TITLE "Apertura impossibile"
+	MESSAGE "Impossibile aprire l'iSecurLet selezionato."
+	BUTTONS "OK"
+END
+
+ALERT ID aLetDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Eliminazione iSecurLet"
+	MESSAGE "Si vuole veramente eliminare questo iSecurLet?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aLetDeleteError
+INFORMATION
+BEGIN
+	TITLE "Impossibile eliminare iSecurLet"
+	MESSAGE "Eliminazione dell'iSecurLet selezionato non riuscita."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoLibrary
+INFORMATION
+BEGIN
+	TITLE "Libreria assente"
+	MESSAGE "iSecur Library v1.0 non trovata. Installare questa libreria prima di continuare. Grazie!"
+	BUTTONS "OK"
+END
+
+ALERT ID aNoSuchLet
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "iSecurLet assente"
+	MESSAGE "Il segreto collegato a questo iSecurLet non esiste.\nSi vuole eliminare l'iSecurLet?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aPruneLet
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Rimozione iSecurLet"
+	MESSAGE "Si vogliono rimuovere tutti gli iSecurLet collegati a segreti inesistenti?"
+	BUTTONS "Sì" "No"
+END
+
+ALERT ID aPruneStatus
+INFORMATION
+BEGIN
+	TITLE "Status"
+	MESSAGE "^1 iSecurLet^2 eliminato."
+	BUTTONS "OK"
+END
+
+ALERT ID aPruneNoneDeleted
+INFORMATION
+BEGIN
+	TITLE "Nessun iSecurLet eliminato"
+	MESSAGE "Tutti gli iSecurLet sono collegati a dati validi. Nessun iSecurLet eliminato."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendEntryError
+INFORMATION
+BEGIN
+	TITLE "Errore di trasmissione IR"
+	MESSAGE "Invio di ^1 tramite IR non riuscito."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRReceiveMustBeInApp
+INFORMATION
+BEGIN	
+	TITLE "Ricezione impossibile"
+	MESSAGE "Se iSecur non è in esecuzione è impossibile ricevere dati singoli."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Avviso"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Info su iSecur"
+
+	LABEL "iSecur" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Versione 1.1" AUTOID AT (CENTER 42)
+	FIELD ID cAboutTxt AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "OK" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutTxt cAboutScrBar
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "iSecur"
+
+	POPUPTRIGGER "" ID cMainPopup AT (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "" ID cMainList AT (86 1 72 AUTO) NONUSABLE
+	POPUPLIST ID cMainPopup cMainList
+
+	LIST "" cMainSecretsList AT (1 20 158 121) VISIBLEITEMS MainSecretsListLines
+
+	BUTTON "Nuovo" ID cMainNew AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Carica" ID cMainTmpl AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+
+	POPUPTRIGGER "" ID cMainPopFilter AT (RIGHT@160 148 0 13) RIGHTANCHOR
+	LIST "Tutti" "Segreti" "Modelli" ID cMainLstFilter AT (RIGHT@160 148 50 AUTO) VISIBLEITEMS 3 NONUSABLE
+	POPUPLIST ID cMainPopFilter cMainLstFilter
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainPopup
+	BOTTOMLEFTOBJECTID cMainNew
+	NAVIGATIONMAP
+		ROW cMainPopup cMainList
+		ROW cMainSecretsList
+		ROW cMainNew cMainTmpl cMainPopFilter cMainLstFilter
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Azioni"
+	BEGIN
+		MENUITEM "Trasmissione database" ID mMainBeam
+		MENUITEM "Gestione iSecurLet" ID mMainManage
+	END
+
+	PULLDOWN "Opzioni"
+	BEGIN
+		MENUITEM "Cambio password" ID mMainChange
+		MENUITEM SEPARATOR
+		MENUITEM "Preferenze" ID mMainPreferences
+	END
+
+	PULLDOWN "Guida"
+	BEGIN
+		MENUITEM "Info" ID mMainAbout
+	END
+END
+
+FORM ID fNewDatabase AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "iSecur - Nuovo Database"
+
+	LABEL "Benvenuto in iSecur" AUTOID AT (CENTER 16) FONT 1
+
+	LABEL "Non è stato trovato alcun database di iSecur," AUTOID AT (4 30) FONT 0
+	LABEL "pertanto ne verrà creato uno nuovo." AUTOID AT (4 42) FONT 0
+
+	LABEL "Il database verrà crittografato usando" AUTOID AT (4 56) FONT 0
+	LABEL "una chiave casuale." AUTOID AT (4 68) FONT 0
+	LABEL "Nella schermata seguente bisogna" AUTOID AT (4 80) FONT 0
+	LABEL "creare il seme necessario per generare tale chiave" AUTOID AT (4 92) FONT 0
+	LABEL "toccando (tap) e trascinando (drag)" AUTOID AT (4 104) FONT 0
+	LABEL "lo stilo sullo schermo del palmare." AUTOID AT (4 116) FONT 0
+	LABEL "Tocca (tap)" AUTOID AT (30 130) FONT 0
+	LABEL "Successivo" AUTOID AT (PREVRIGHT+2 130) FONT 1
+	LABEL "quando si è pronti..." AUTOID AT (PREVRIGHT+2 130) FONT 0
+
+	BUTTON "Successivo" ID cNewDatabaseNext AT (CENTER BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fNewDatabase
+	INITIALSTATE 1
+	INITIALOBJECTID cNewDatabaseNext
+	BOTTOMLEFTOBJECTID cNewDatabaseNext
+	NAVIGATIONMAP
+		ROW cNewDatabaseNext
+END
+
+FORM ID fCreateDatabase AT (0 0 160 160)
+NOFRAME
+BEGIN
+	LABEL "In questa schermata toccare (tap) e trascinare" AUTOID AT (8 12)
+	LABEL "(drag) lo stilo sullo schermo. Le coordinate verranno" AUTOID AT (8 24)
+	LABEL "usate per creare il seme necessario alla" AUTOID AT (8 36)
+	LABEL "generazione della chiave di crittografazione." AUTOID AT (8 48)
+	LABEL "Si suggerisce di usare una combinazione di colpi di" AUTOID AT (8 60)
+	LABEL "stilo aventi variabile lunghezza e velocità." AUTOID AT (8 72)
+	LABEL "Sinistra:" AUTOID AT (RIGHT@78 92)
+	LABEL "Quando tutti i dati saranno stati ottenuti, verrà" AUTOID AT (8 112)
+	LABEL "richiesto di inserire una password - dopodiché" AUTOID AT (8 124)
+	LABEL "verrà creato il database." AUTOID AT (8 136)
+END
+
+FORM ID fPassword AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	LABEL "Password:" ID cPasswordRPwdLabel AT (RIGHT@46 48) NONUSABLE
+	FIELD ID cPasswordRPwd AT (48 48 102 33) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED NONUSABLE
+	LABEL "Conferma:" ID cPasswordRConfirmLabel AT (RIGHT@46 84) NONUSABLE
+	FIELD ID cPasswordRConfirm AT (48 84 102 33) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED NONUSABLE
+
+	LABEL "Password:" ID cPasswordPwdLabel AT (RIGHT@46 76) NONUSABLE
+	FIELD ID cPasswordPwd AT (48 76 102 33) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED NONUSABLE
+
+
+	BUTTON "OK" ID cPasswordOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Annulla" ID cPasswordCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+
+	GRAFFITISTATEINDICATOR AT (100 147)
+
+	BUTTON "" ID cPasswordGenerate AT (116 BOTTOM@159 11 11) GRAPHICAL BITMAPID bmpGenerate SELECTEDBITMAPID bmpGenerate RECTFRAME NONUSABLE
+
+	PUSHBUTTON "" ID cPasswordPwdDot AT (136 BOTTOM@159 11 11) GRAPHICAL GROUP 1 BITMAPID bmpPwdDot SELECTEDBITMAPID bmpPwdDot
+	PUSHBUTTON "" ID cPasswordPwdTxt AT (148 BOTTOM@159 11 11) GRAPHICAL GROUP 1 BITMAPID bmpPwdTxt SELECTEDBITMAPID bmpPwdTxt
+END
+
+NAVIGATION ID fPassword
+	INITIALSTATE 1
+	INITIALOBJECTID cPasswordCancel
+	BOTTOMLEFTOBJECTID cPasswordOK
+	NAVIGATIONMAP
+		ROW cPasswordRPwd
+		ROW cPasswordRConfirm
+		ROW cPasswordPwd
+		ROW cPasswordOK cPasswordCancel
+		ROW cPasswordGenerate cPasswordPwdDot cPasswordPwdTxt
+END
+
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+MENUID mEdit
+DEFAULTBUTTON cEditCancel
+BEGIN
+	TITLE "Modifica"
+
+	POPUPTRIGGER "" ID cEditPopup At (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "" ID cEditList AT (86 1 72 AUTO) NONUSABLE
+	POPUPLIST ID cEditPopup cEditList
+
+	LABEL "Titolo:" AUTOID AT (1 18) FONT 1
+	FIELD ID cEditFldTitle AT (34 18 118 11) MULTIPLELINES MAXCHARS TitleLength UNDERLINED FONT 0
+
+	LABEL "Segreto:" AUTOID AT (1 32) FONT 1
+	FIELD ID cEditFldSecret AT (1 44 150 77) MULTIPLELINES HASSCROLLBAR MAXCHARS SecretLength UNDERLINED FONT 0
+	SCROLLBAR ID cEditScrBarSecret AT (152 44 7 77) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+
+	CHECKBOX "Modello" ID cEditChkTemplate AT (1 126 AUTO AUTO)
+
+	LABEL "Icona" ID cEditLblIcon AT (118 126) NONUSABLE
+	BUTTON "" ID cEditIcon AT (140 126 10 9) NONUSABLE  NOFRAME
+
+	GRAFFITISTATEINDICATOR AT (151 147)
+
+	BUTTON "OK" ID cEditOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Annulla" ID cEditCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Carica" ID cEditLoad AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Elimina" ID cEditDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fEdit
+	INITIALSTATE 1
+	INITIALOBJECTID cEditFldTitle
+	BOTTOMLEFTOBJECTID cEditOK
+	NAVIGATIONMAP
+		ROW cEditPopup cEditList
+		ROW cEditFldTitle
+		ROW cEditFldSecret cEditScrBarSecret
+		ROW cEditChkTemplate cEditIcon
+		ROW cEditOK cEditCancel cEditLoad cEditDelete
+END
+
+MENU mEdit
+BEGIN
+	PULLDOWN "iSecurLet"
+	BEGIN
+		MENUITEM "Crea" ID mEditCreate
+	END
+
+	PULLDOWN "Modifica"
+	BEGIN
+		MENUITEM "Annulla" ID 10000 "U"
+		MENUITEM "Taglia" ID 10001 "X"
+		MENUITEM "Copia" ID 10002 "C"
+		MENUITEM "Incolla" ID 10003 "P"
+		MENUITEM "Seleziona tutto" ID 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Tastiera" ID 10006 "K"
+		MENUITEM "Graffiti" ID 10007 "G"
+	END
+END
+
+FORM ID fIcon AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Scelta Icona"
+
+	BUTTON "Nessuna Icona" ID cIconNone AT (CENTER 18 AUTO AUTO)
+
+	BUTTON "" ID cIconUp AT (116 BOTTOM@151 11 8) NOFRAME FONT 5
+	BUTTON "" ID cIconDown AT (PREVRIGHT+4 BOTTOM@151 11 8) NOFRAME FONT 5
+END
+
+NAVIGATION ID fIcon
+	INITIALSTATE 1
+	INITIALOBJECTID cIconNone
+	BOTTOMLEFTOBJECTID cIconUp
+	NAVIGATIONMAP
+		ROW cIconNone
+		ROW cIconUp cIconDown
+END
+
+FORM ID fShow AT (0 0 160 160)
+NOFRAME
+MENUID mShow
+BEGIN
+	TITLE "Segreto"
+
+	BUTTON "" ID cShowPrev AT (142 16 9 11) NOFRAME FONT 4
+	BUTTON "" ID cShowNext AT (151 16 9 11) NOFRAME FONT 4
+
+	FIELD ID cShowFldSecret AT (1 30 150 110) MULTIPLELINES HASSCROLLBAR MAXCHARS SecretLength FONT 0 NONEDITABLE
+	SCROLLBAR ID cShowScrBarSecret AT (152 30 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE ShowSecretLines-1
+
+	BUTTON "OK" ID cShowDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Trasmetti" ID cShowBeam AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Modifica" ID cShowEdit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fShow
+	INITIALSTATE 1
+	INITIALOBJECTID cShowDone
+	BOTTOMLEFTOBJECTID cShowDone
+	NAVIGATIONMAP
+		ROW cShowPrev cShowNext
+		ROW cShowFldSecret cShowScrBarSecret
+		ROW cShowDone cShowEdit
+END
+
+MENU mShow
+BEGIN
+	PULLDOWN "iSecurLet"
+	BEGIN
+		MENUITEM "Crea" ID mShowCreate
+	END
+END
+
+FORM ID fPreferences AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cPreferencesCancel
+BEGIN
+	TITLE "Preferenze"
+
+	POPUPTRIGGER "" ID cPreferencesPopup At (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "Criteri password" "Accesso/Uscita" "Varie" ID cPreferencesList AT (RIGHT@160 1 72 AUTO) NONUSABLE VISIBLEITEMS 3
+	POPUPLIST ID cPreferencesPopup cPreferencesList
+
+	/* Password policy */
+	CHECKBOX "Ricorda le ultime:" ID cPreferencesChkRemember AT (1 20 AUTO AUTO) NONUSABLE
+	FIELD ID cPreferencesFldRemember AT (PREVRIGHT+2 20 6 AUTO) UNDERLINED NUMERIC MAXCHARS 1 RIGHTALIGN NONUSABLE
+	LABEL "password" ID cPreferencesLblRemember AT (PREVRIGHT+2 20) NONUSABLE
+
+	CHECKBOX "Avvisa di cambiare password" ID cPreferencesChkRemind AT (1 34 AUTO AUTO) NONUSABLE
+	LABEL "ogni" ID cPreferencesLblRemind1 AT (18 46) NONUSABLE
+	FIELD ID cPreferencesFldRemind AT (PREVRIGHT+2 46 18 AUTO) UNDERLINED NUMERIC MAXCHARS 3 RIGHTALIGN NONUSABLE
+	LABEL "giorno/i" ID cPreferencesLblRemind2 AT (PREVRIGHT+2 46) NONUSABLE
+
+	/* Log In/Out */
+	CHECKBOX "N. max di accessi sbagliati:" ID cPreferencesChkMax AT (1 20 AUTO AUTO) NONUSABLE
+	FIELD ID cPreferencesFldMax AT (PREVRIGHT+2 20 6 AUTO) UNDERLINED NUMERIC MAXCHARS 1 RIGHTALIGN NONUSABLE
+
+	CHECKBOX "Elimina il database quando il n. massimo di" ID cPreferencesChkDestroyDB AT (1 34 AUTO AUTO) NONUSABLE
+	LABEL "accessi sbagliati viene raggiunto." ID cPreferencesLblDestroyDB AT (19 46) NONUSABLE
+	CHECKBOX "Esci da iSecur allo spegnimento del palmare" ID cPreferencesChkLogOut AT (1 60 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "Esci da iSecur quando il sistema va in riposo energetico" ID cPreferencesChkTimeOut AT (1 74 AUTO AUTO) NONUSABLE
+
+	/* Miscellaneous */
+	CHECKBOX "Apri i segreti in modalità Modifica" ID cPreferencesChkOpenEdit AT (1 20 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "Abilita Cerca" ID cPreferencesChkFind AT (1 34 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "Svuota la memoria-tampone prima di uscire" ID cPreferencesChkClipboard AT (1 48 AUTO AUTO) NONUSABLE
+
+	CHECKBOX "Attiva il bit che impedisce la copia" ID cPreferencesChkNoBeam AT (1 62 AUTO AUTO) NONUSABLE
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+
+	BUTTON "OK" ID cPreferencesOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Annulla" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fPreferences
+	INITIALSTATE 1
+	INITIALOBJECTID cPreferencesCancel
+	BOTTOMLEFTOBJECTID cPreferencesOK
+	NAVIGATIONMAP
+		ROW cPreferencesPopup cPreferencesList
+		ROW cPreferencesChkRemember cPreferencesFldRemember
+		ROW cPreferencesChkRemind cPreferencesFldRemind
+		ROW cPreferencesChkMax cPreferencesFldMax
+		ROW cPreferencesChkDestroyDB
+		ROW cPreferencesChkLogOut
+		ROW cPreferencesChkTimeOut
+		ROW cPreferencesChkOpenEdit
+		ROW cPreferencesChkFind
+		ROW cPreferencesChkClipboard
+		ROW cPreferencesChkNoBeam
+		ROW cPreferencesOK cPreferencesCancel
+END
+
+FORM ID fTemplate AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cTemplateCancel
+BEGIN
+	TITLE "Scelta Modello"
+
+	LABEL "Categoria:" AUTOID AT (4 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT 18) FONT 0
+
+	POPUPTRIGGER "" ID cTemplatePopup AT (56 17 0 13) LEFTANCHOR
+	LIST "" ID cTemplateList AT (58 18 94 AUTO) NONUSABLE
+	POPUPLIST ID cTemplatePopup cTemplateList
+
+	LIST "" cTemplateItems AT (4 34 148 99) VISIBLEITEMS TemplateItemsLines
+
+	BUTTON "Annulla" ID cTemplateCancel AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fTemplate
+	INITIALSTATE 1
+	INITIALOBJECTID cTemplateCancel
+	BOTTOMLEFTOBJECTID cTemplateCancel
+	NAVIGATIONMAP
+		ROW cTemplatePopup cTemplateList
+		ROW cTemplateItems
+		ROW cTemplateCancel
+END
+
+FORM ID fKeywords AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cKeywordsCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Immissione parole-chiave"
+
+	FIELD ID cKeywordsF1 AT (4 26 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS1 AT (141 27 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF2 AT (4 51 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS2 AT (141 52 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF3 AT (4 76 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS3 AT (141 77 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF4 AT (4 101 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS4 AT (141 102 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	FIELD ID cKeywordsF5 AT (4 126 136 11) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS KeywordLength NONUSABLE
+	BUTTON "S" ID cKeywordsS5 AT (141 127 13 9) NONUSABLE NOFRAME FONT scissorFont
+
+	BUTTON "" ID cKeywordsUp AT (142 138 11 6) NOFRAME FONT 5
+	BUTTON "" ID cKeywordsDown AT (142 146 11 6) NOFRAME FONT 5
+
+	GRAFFITISTATEINDICATOR AT (130 144)
+
+	BUTTON "OK" ID cKeywordsOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Annulla" ID cKeywordsCancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Azzera tutto" ID cKeywordsClearAll AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fKeywords
+	INITIALSTATE 1
+	INITIALOBJECTID cKeywordsCancel
+	BOTTOMLEFTOBJECTID cKeywordsOK
+	NAVIGATIONMAP
+		ROW cKeywordsF1 cKeywordsS1
+		ROW cKeywordsF2 cKeywordsS2
+		ROW cKeywordsF3 cKeywordsS3
+		ROW cKeywordsF4 cKeywordsS4
+		ROW cKeywordsF5 cKeywordsS5
+		ROW cKeywordsUp cKeywordsDown
+		ROW cKeywordsOK cKeywordsCancel cKeywordsClearAll
+END
+
+FORM ID fPwdGen AT (2 52 156 106)
+MODAL
+DEFAULTBUTTON cPwdGenCancel
+BEGIN
+	TITLE "Generatore di password"
+
+	LABEL "Lunghezza:" AUTOID AT (RIGHT@58 18)
+	PUSHBUTTON "6" ID cPwdGenL6 AT (60 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "8" ID cPwdGenL8 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "10" ID cPwdGenL10 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "12" ID cPwdGenL12 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+	PUSHBUTTON "20" ID cPwdGenL20 AT (PREVRIGHT 18 AUTO AUTO) GROUP 1
+
+	LABEL "Caratteri ammessi:" AUTOID AT (RIGHT@58 34)
+	PUSHBUTTON "a-z" ID cPwdGenLower AT (60 34 AUTO AUTO)
+	PUSHBUTTON "A-Z" ID cPwdGenUpper AT (PREVRIGHT 34 AUTO AUTO)
+	PUSHBUTTON "0-9" ID cPwdGenDigits AT (PREVRIGHT 34 AUTO AUTO)
+	PUSHBUTTON "#$*" ID cPwdGenSpecials AT (PREVRIGHT 34 AUTO AUTO)
+
+	LABEL "Password:" AUTOID AT (RIGHT@58 52)
+	FIELD ID cPwdGenPassword AT (60 52 90 33) NONEDITABLE MAXCHARS GeneratePasswordLength MULTIPLELINES FONT 1
+
+	BUTTON "Usa" ID cPwdGenUse AT (4 BOTTOM@103 AUTO AUTO)
+	BUTTON "Annulla" ID cPwdGenCancel AT (PREVRIGHT+4 BOTTOM@103 AUTO AUTO)
+	BUTTON "Crea" ID cPwdGenGenerate AT (PREVRIGHT+4 BOTTOM@103 AUTO AUTO)
+END
+
+NAVIGATION ID fPwdGen
+	INITIALSTATE 1
+	INITIALOBJECTID cPwdGenCancel
+	BOTTOMLEFTOBJECTID cPwdGenUse
+	NAVIGATIONMAP
+		ROW cPwdGenL6 cPwdGenL8 cPwdGenL10 cPwdGenL12 cPwdGenL20
+		ROW cPwdGenLower cPwdGenUpper cPwdGenDigits cPwdGenSpecials
+		ROW cPwdGenUse cPwdGenCancel cPwdGenGenerate
+END
+
+FORM ID fLet AT (2 92 156 66)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cLetCancel
+BEGIN
+	TITLE "Nome iSecurLet"
+
+	LABEL "Nome iSecurLet:" AUTOID AT (4 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 18) FONT 0
+	FIELD ID cLetFldName AT (4 30 150 12) MAXCHARS 31 MULTIPLELINES UNDERLINED
+	GRAFFITISTATEINDICATOR AT (140 53)
+
+	BUTTON "OK" ID cLetOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Annulla" ID cLetCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+NAVIGATION ID fLet
+	INITIALSTATE 1
+	INITIALOBJECTID cLetCancel
+	BOTTOMLEFTOBJECTID cLetOK
+	NAVIGATIONMAP
+		ROW cLetFldName
+		ROW cLetOK cLetCancel
+END
+
+FORM ID fLetManage AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "Gestione iSecurLet"
+
+	LIST "" cLetManageList AT (4 15 148 121) VISIBLEITEMS LetManageListLines NONUSABLE
+	LABEL "iSecurLet non trovati!" ID cLetManageLbl AT (CENTER 73) FONT 1 NONUSABLE
+
+	BUTTON "OK" ID cLetManageDone AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Rimuovi" ID cLetManagePrune AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO) NONUSABLE
+END
+
+NAVIGATION ID fLetManage
+	INITIALSTATE 1
+	INITIALOBJECTID cLetManageDone
+	BOTTOMLEFTOBJECTID cLetManageDone
+	NAVIGATIONMAP
+		ROW cLetManageList
+		ROW cLetManageDone cLetManagePrune
+END

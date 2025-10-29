@@ -1,0 +1,7 @@
+2005-02-24
+
+	* added the j2metrans script
+	* added the j2mejdb script
+	* added the -D and -d (debug) flags to n6230
+	* added the -d and -p flags to s30emul
+	* renamed the suite from emulators to J2METools

@@ -1,0 +1,171 @@
+===============================================================================
+Dear Brian:
+I didn't receive any answer from you so I'm not sure you get the message I sent on Aug, 9th. I'm sending it again. Please let me know if you got it.
+Regards,
+Carlos
+
+
+Subject:
+Done
+From:
+Carlos Corso <corso@smandes.com.ar>
+Date:
+Wed, 09 Aug 2006 19:36:16 -0300
+To:
+Brian Schau <brian@schau.com>
+
+Dear Brian:
+I am enclosing the first draft of the Spanish translation. Give it a look and tell me what I missed.
+Please note that I translated the Hot Letters in the menues like in the following example to match the Hot Letters in the Spanish translation of Palm OS.
+Original:
+       MENUITEM "Undo" ID 10000 "U"
+       MENUITEM "Cut" ID 10001 "X"
+       MENUITEM "Copy" ID 10002 "C"
+       MENUITEM "Paste" ID 10003 "P"
+       MENUITEM "Select All" ID 10004 "S"
+       MENUITEM SEPARATOR
+       MENUITEM "Keyboard" ID 10006 "K"
+       MENUITEM "Graffiti" ID 10007 "G"
+Translated:
+       MENUITEM "Deshacer" ID 10000 "Z"
+       MENUITEM "Cortar" ID 10001 "X"
+       MENUITEM "Copiar" ID 10002 "C"
+       MENUITEM "Pegar" ID 10003 "V"
+       MENUITEM "Seleccionar Todo" ID 10004 "E"
+       MENUITEM SEPARATOR
+       MENUITEM "Teclado" ID 10006 "T"
+       MENUITEM "Ayuda de Graffiti" ID 10007 "G"
+
+Also, I would like to include my own credits in the translated version. If you agree, please insert the following sentence:
+"Traducido al castellano por Carlos Corso - Argentina"
+
+Hope to hear from you
+Regards,
+Carlos
+===============================================================================
+ Dear Brian:
+It was a pleasure to work on the translation. It's my way to thank you for your effort producing and giving iSecur for free.
+If you ever think visiting Argentina, please let me know.
+If you want to see some pics of me and family, take a look at http://carlos.karina.fotopic.net
+Have a nice day.
+Carlos
+
+Brian Schau escribió:
+> Hi Carlos,
+>
+>
+> I am sorry. I guess your mail may have been caught by my spam filter.
+> Please have the word "iSecur" somewhere in the subject line in future
+> postings.
+>
+> I will add your translation as soon as possible.  When it is done, I
+> will send you an email :-)
+>
+> Thanks for your effort.
+>
+>
+> /brian
+>
+>
+>   
+>> This is a multi-part message in MIME format.
+>>
+>> Dear Brian:
+>> I didn't receive any answer from you so I'm not sure you get the message 
+>> I sent on Aug, 9th. I'm sending it again. Please let me know if you
+>>     
+> got it.
+>   
+>> Regards,
+>> Carlos
+>>
+>>
+>>     
+>
+>
+>
+>
+>   
+===============================================================================
+ Hi Brian:
+I'm not a developer. I'm an ophthalmologist but I've been helping to translate some Palm and PC software. All of them have been freeware o software with some social benefit purposes. This is my way as a user to say thank you to all the people that believe in freeware or social oriented projects.
+I can find for you some ophthalmologists here but will be unable to find software developers :-D !
+What about you? I visited your webpage and found you are from Denmark, aren't you? What do yo do for living? Of course, you are released to answer any of these questions. I was just curious as I found the net as a wonderful place to meet people and know about the world.
+Regards,
+Carlos
+
+Brian Schau escribió:
+> Hi Carlos,
+>
+>
+> Thanks for your support.   Are you by any chance a developer?   Or
+> do you have contact to some developers?
+>
+>
+> /brian
+>
+>   
+>> Thanks Brian for contacting me. Of course I will download and use your 
+>> new version of iSecur. I wish to let you know that I really appeciate 
+>> all the effort you do in developing iSecur and I can reassure you that 
+>> I'm still in the front line for the translation of iSecur into Spanish. 
+>> Just let me know what you need.
+>> Take care and enjoy your family!
+>> Best,
+>> Carlos Corso
+>> Argentina
+>>
+>> Brian Schau escribió:
+>>     
+>>> Hello,
+>>>
+>>>
+>>> You have contacted with me in the past with a bug report,
+>>> a request for enhancement or even an offer to help with
+>>> the development for iSecur.
+>>>
+>>> Well, v1.2 is out.
+>>>
+>>> I also want to send you this mail to extend my apology for
+>>> not getting back to you earlier.
+>>> A few things have happened in my life which have distracted
+>>> me from my course on improving iSecur.
+>>> Stuff like moving house, getting my daughter started in day
+>>> care (while mom and dad is hard at work) just takes a lot
+>>> of time :-)   (Yes, I know, it's called "life" :-)
+>>>
+>>> Anyway, a couple of things have changed in v1.2 of iSecur.
+>>> As a totally new thing the TODO list is publicly available.
+>>> Also:
+>>>
+>>> * Enhanced navigation on OS 5 devices.
+>>> * Added the "Entry on list opens new" option.
+>>> * Added the 'password' keywords macro.
+>>> * Added menu items for most accessed functions.
+>>> * Enter on the password forms now submits the form (one entry)
+>>>   or moves between the fields (multiple entries).
+>>>
+>>> Translators: you have not been forgotten. Your effort is highly
+>>> valued and I would like to extend my apologies for not getting
+>>> back to you earlier. Your translation didn't make it to v1.2 but
+>>> it is high up on the list - so please be patient and stay with me!
+>>>
+>>> iSecur v1.2 can be gotten from:
+>>>
+>>>     http://www.schau.com/gz/palm/isecur/index.html
+>>>
+>>> Thanks for using/supporting iSecur.
+>>>
+>>>
+>>> Kind regards,
+>>> Brian   
+>>>
+>>>
+>>>       
+>>     
+>
+>
+>
+>
+>   
+===============================================================================

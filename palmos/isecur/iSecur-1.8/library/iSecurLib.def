@@ -1,0 +1,18 @@
+syslib { "iSecur Library" iSec backup ok-to-install-newer }
+export {
+	iSecurLibOpen
+	iSecurLibClose
+	iSecurLibSleep
+	iSecurLibWake
+	iSecurLibVersion
+	iSecurLibAESOpen
+	iSecurLibAESClose
+	iSecurLibAESCreateKeys
+	iSecurLibAESEncrypt
+	iSecurLibAESDecrypt
+	iSecurLibSHA256Open
+	iSecurLibSHA256Close
+	iSecurLibSHA256Init
+	iSecurLibSHA256Transform
+	iSecurLibSHA256Final
+}

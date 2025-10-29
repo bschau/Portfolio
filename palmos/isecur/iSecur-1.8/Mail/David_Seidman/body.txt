@@ -1,0 +1,10 @@
+> I loaded iSecur onto a Handspring Visor, Palm OS v. 3.5.2H3.0.  I opened
+the program, then closed it and ran your database converter program.  (I've
+been happily using Securit for several years.)  I opened iSecur again and
+selected Preferences from the menu.  That resulted in a Fatal Alert: form.c,
+Line1728, Object not in form.  This happened each time I tried it.
+>
+> iSecur v.1.6
+> iSecurLib 1.0
+> version 0.0 of the icons (I would have loaded the low res ones).
+>

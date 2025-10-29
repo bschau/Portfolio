@@ -1,0 +1,616 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of iSecur to get a feeling of how the various screens are laid out.
+# You can install iSecur to a Palm OS Simulator or Emulator and have the
+# english version running while translating the text.
+#
+# This is the default language file for the Danish language.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Brian Schau <brian@schau.com>
+#
+
+# Default categories
+defCat1				Ukategoriseret
+defCat2				Professionelt
+defCat3				Betalingskort
+defCat4				Kodeord
+defCat5				Personligt
+
+# The string in the Help->About form
+# Feel free to add your name, like in: Translated by ...
+strAboutText			iSecur er lavet af Brian Schau\n\nProgram ikoner er lavet af Tony Vincent.\n\nDe små ikoner er venligst stillet til rådighed af Leslie Franke (http://lesliefranke.com/).\n\nBesøg min webside:\n\n   http://www.schau.com/\n\nPå websiden findes den nyeste version af iSecur, en bruger manual samt relaterede produkter.\n\n\niSecur er frigivet under Gnu General Public License v2.\n
+
+# The next four strings are the error messages given on the login form.
+#
+# "Password Mismatch"		User are about to set a new password but has
+#				entered two differing passwords.
+# "Invalid Password"		User tried to login using a invalid password.
+# "Please Enter Password"	User tried to login using a blank password.
+# "Password Used Before"	User are about to set a new password but the
+#				password has been used before (the password is
+#				present on the retention list). 
+pwdFormStr1			Kodeordene er forskellige!
+pwdFormStr2			Forkert kodeord!
+pwdFormStr3			Indtast kodeord!
+pwdFormStr4			Kodeordet er brugt før!
+
+# Title written on the Login/Password form.
+pwdFormTitle1			Log venligst på ...
+pwdFormTitle2			Angiv nyt kodeord ...
+
+# If a secret without a title is shown, this string will be copied to the
+# title field.
+strShowDialog			Titleløs
+
+# This is the strings for the Credit Card template. *Category is the name of
+# the template category. *Title is the title of the template. *Body is the
+# content of the template.
+# tmplCreditCardCategory must match defCat3 (above)
+tmplCreditCardCategory		Betalingskort
+tmplCreditCardTitle		[Betalingskort]
+tmplCreditCardBody		Kort nummer: [Kort nummer]\nUdløbsdato: [Udløbsdato]\nKortholders navn: [Kortholders navn]\nKontrolkode: [Kontrolkode]\n
+
+# This is the strings for the Password template. *Category is the name of
+# the template category. *Title is the title of the template. *Body is the
+# content of the template.
+# tmplPasswordCategory must match defCat4 (above)
+tmplPasswordCategory		Kodeord
+tmplPasswordTitle		[System]
+tmplPasswordBody		Brugernavn: [Brugernavn]\nKodeord: [Kodeord]\n
+
+# These are the titles for the Import/Export form.
+ieActionImport			Importer
+ieActionExport			Eksporter
+
+# Alerts
+#
+# These are the generic alert buttons.
+abOK				OK
+abYes				Ja
+abNo				Nej
+
+#
+# All *T keys are the alert title.  All *B keys are the alert body text.
+# ^1, ^2 and ^3 sequences must be left intact.  The ^1 (/2/3) will be
+# substituted at runtime.
+# All *T should be short as they have to fit on one display text line.
+#
+# Shown if the users device is too old.
+aBadRomT			PalmOS For Gammel
+aBadRomB			PalmOS versionen i denne enhed er for gammel! iSecur kræver PalmOS v3.5 eller bedre.
+
+# Shown if the iSec_iSecur Data database cannot be opened.
+aCannotOpenDatabaseT		Database Fejl
+aCannotOpenDatabaseB		Kan ikke åbne ^1 databasen.
+
+# Shown if the password was successfully changed.
+aPasswordChangedT		Kodeord Ændret
+aPasswordChangedB		Dit kodeord er nu ændret. Brug det nye kodeord ved fremtidige log ons.
+
+# If the user wishes to delete a record we ask for confirmation.
+aDeleteRecordT			Slet Emne?
+aDeleteRecordB			Vil du slette dette emne?
+
+# If the user wishes to delete all keywords on the keywords screen we ask for
+# confirmation.
+aClearAllT			Slet Alle Nøgleord?
+aClearAllB			Vil du slette alle nøgleord?
+
+# If notifications are enabled but something goes wrong when setting up
+# notification.
+aNotificationErrorT		Ingen Notifikationer
+aNotificationErrorB		Kan ikke konfigurere notifikationer - auto log ud kan ikke eksekveres.
+
+# If the masks on the Password Generator form is all empty.
+aPwdGenErrorT			Intet Kodeord
+aPwdGenErrorB			Kan ikke danne et kodeord da Indeholder: feltet ikke er sat.
+
+# If the password generator generated a blank password (really, this should
+# never happen! :-)
+aPwdGenNoneT			Intet Kodeord
+aPwdGenNoneB			Hmmm .. der er intet kodeord.
+
+# When the user is reminded outside iSecur to change the password.
+aPwdChangeReminderT		Påmindelse
+aPwdChangeReminderB		iSecur meddeler, at det nu ville være et godt tidspunkt at ændre dit koderord.
+
+# When the user is reminded to change the password.
+aPwdChangeT			Påmindelse
+aPwdChangeB			Nu er det tid til at ændre dit kodeord. Skal det gøres nu?
+
+# If the user asks to set the Copy Prevention bit on the database but the
+# operation fails.
+aNoCopyPreventionT		Kopibeskyttelse
+aNoCopyPreventionB		Kan ikke sætte/fjerne kopi beskyttelsen på databasen.
+
+# If user tries to beam the database when the Copy Prevention bit is set.
+aCopyPrevBitSetT		Kopibeskyttet
+aCopyPrevBitSetB		Kan ikke sende databasen da kopibeskyttelsen er aktiveret.
+
+# Infrared receive error.
+aIRSocketErrorT			IR Socket Fejl
+aIRSocketErrorB			Kan ikke validere forbindelsen.
+
+# Something went wrong when we tried to beam the database.
+aIRSendErrorT			IR Sende Fejl
+aIRSendErrorB			Kan ikke sende databasen.
+
+# Cannot receive iSecur database when iSecur is running ...
+aIRReceiveNotInAppT		Modtagefejl
+aIRReceiveNotInAppB		Kan ikke modtage en database fil når iSecur er aktiv.
+
+# We got a secret by infrared but it disappeared.
+aNoRecByIDT			Intet Emne
+aNoRecByIDB			Kan ikke finde emnet givet emnets id.
+
+# The iSecurLet already exist.
+aSletAlreadyExistT		iSecurLet Findes
+aSletAlreadyExistB		En iSecurLet med det navn findes allerede.
+
+# Cannot create the iSecurLet.
+aCannotCreateSletT		iSecurLet Oprettelsesfejl
+aCannotCreateSletB		Kan ikke lave iSecurLetten.
+
+# The iSecurLet was successfully created.
+aSletCreatedT			OK
+aSletCreatedB			iSecurLetten er færdiglavet.
+
+# The user tapped an iSecurLet which is locked by the system.
+aCannotOpenSletT		Åbn Fejl
+aCannotOpenSletB		Kan ikke åbne iSecurLetten.
+
+# Do the user really want to delete this iSecurLet?
+aLetDeleteT			Slet?
+aLetDeleteB			Vl du slette denne iSecurLet?
+
+# iSecurLet deletion failed.
+aLetDeleteErrorT		Slette Fejl
+aLetDeleteErrorB		Kan ikke slette iSecurLetten.
+
+# Whoops - user forgot to install iSecur-Library.
+aNoLibraryT			Biblioteksfejl
+aNoLibraryB			iSecur Library v1.0 er ikke installeret.
+
+# The iSecurLet was successfully opened but the secret cannot be found - ask
+# user if the iSecurLet should be deleted.
+# NOTE: please keep the \n!
+aNoSuchLetT			iSecurLet Fejl
+aNoSuchLetB			Emnet som denne iSecurLet peger på findes ikke.\nVil du slette iSecurLetten?
+
+# Should all iSecurLet which points to non-existing secrets be deleted?
+aPruneLetT			Slette?
+aPruneLetB			Vil du slette alle de iSecurLetter der peger på ikke-eksisterende emner?
+
+# So, how many iSecurLets was deleted?
+aPruneStatusT			Status
+aPruneStatusB			^1 iSecurLet(ter) slettet.
+
+# No iSecurLets deleted.
+aPruneNoneDeletedT		Ingen Slettet
+aPruneNoneDeletedB		Alle iSecurLetter peger på eksisterende emner så ingen iSecurLetter blev slettet.
+
+# Cannot send secret by infrared.
+aIRSendEntryErrorT		IR Sende Fejl
+aIRSendEntryErrorB		Kan ikke sende ^1.
+
+# When receiving a secret iSecur must be running.
+aIRReceiveMustBeInAppT		Modtagefejl
+aIRReceiveMustBeInAppB		Kan ikke modtage emne når iSecur ikke er aktiveret.
+
+# The user created a password using the password generator - however there is
+# no field to receive the password (on the edit form).
+aNoFocusT 			Modtagefelt
+aNoFocusB			Hvilket felt skal modtage kodeordet? Venligst sætte Indsætningspunktet.
+
+# The user loads an fills in a template. The receiving secret already has some
+# text - should the new template content be added before or after the existing
+# text or should the new template content replace what's already there?
+aAddOrReplaceT 			Emne Ej Blankt
+aAddOrReplaceB			Emnet indeholder allerede tekst. Vil du indsættet den nye tekst før eller efter det eksisterende tekst eller skal den nye tekst erstatte den eksisterende tekst?
+# Buttons for the Add/Replace alert.
+aABRBefore			Før
+aABRAfter			Efter
+aABRReplace			Erstat
+
+# There are no memos to import.
+aNothingToImportT 		Importer
+aNothingToImportB		Der er ingen emner i Memo.
+
+# There are no secrets/templates to export.
+aNothingToExportT		Eksporter
+aNothingToExportB		Der er ingen emner at eksportere.
+
+# The user tapped import when no memos where selected.
+aImpNothingSelectedT 		Intet Valgt
+aImpNothingSelectedB		Venligst vælg de emner der skal importeres.
+
+# Import status.
+aImpImportedT			Import Status
+aImpImportedB			^1 Memo(er) blev importeret.
+
+# The user tapped export when no secrets/templates where selected.
+aExpNothingSelectedT		Intet Valgt
+aExpNothingSelectedB		Venligst vælg de emner der skal eksporteres.
+
+# Export status
+aExpExportedT 			Eksport Status
+aExpExportedB			^1 Emne(r) blev eksporteret.
+
+# User created a new database - set new password hint?
+aSetNewHintT 			Kodeords Vink
+aSetNewHintB			Vil du sætte en antydning/vink om dette kodeord?
+
+# User recalled password hint - but it was no previously set.
+aNoPasswordHintT 		Intet Vink
+aNoPasswordHintB		Der er intet vink/antydning om dette kodeord.
+
+# User recalled password hint. NOTE: aPasswordHintB is fixed at ^1!
+aPasswordHintT 			Vink
+
+# Brian screwed up and released a debug version of iSecur. Debug versions can
+# only run on Palm OS Emulator/Simulator ...
+aNoPoseT 			Pose/Simulator
+aNoPoseB			Nederen! Brian kvajede sig - dette er en debug version af iSecur der ikke kan eksekveres på rigtige enheder.
+
+#
+# Forms. These are the actual screens of iSecur.
+#
+
+# Generic form buttons
+fbDone				Færdig
+fbOK				OK
+fbCancel			Afbryd
+fbLoad				Hent
+fbDelete			Slet
+fbBeam				Send
+fbEdit				Tilret
+fbClear				Fjern
+fbUse				Brug
+fbGenerate			Generer
+fbPrune				Fjern
+fbAll				Alle
+fbNone				Ingen
+fbImport			Import
+fbExport			Eksport
+
+# The generic Edit menu.  The *T's are the menu item label, the *K's are the
+# shortcut keys.
+mEditT				Ret
+mEditUndoT			Fortryd
+mEditUndoK			U
+mEditCutT			Klip
+mEditCutK			X
+mEditCopyT			Kopier
+mEditCopyK			C
+mEditPasteT			Sæt Ind
+mEditPasteK			P
+mEditSelectT			Vælg Alt
+mEditSelectK			S
+mEditKeyboardT			Tastatur
+mEditKeyboardK			K
+mEditGraffitiT			Graffiti
+mEditGraffitiK			G
+
+###############################################################################
+# The About form
+#
+
+fAboutTitle			Om
+fAboutVersion			Version
+
+###############################################################################
+# The Main form
+#
+
+# New Secret button
+fMainNew			Ny
+
+# Load secret from template button.
+fMainLoad			Hent
+
+# Filter entries
+fMainAll			Alle
+fMainSecrets			Emner
+fMainTemplates			Skabeloner
+
+# Main form menu headers
+mMainActions			Emner
+mMainImpExp			I/E
+mMainOptions			Valg
+mMainHelp			Hjælp
+
+# Entries in the Actions menu. *T is the actual text, *K is the short cut key.
+mActionsNewT			Nyt
+mActionsNewK			N
+mActionsNewTmplT		Nyt Fra Skabelon
+mActionsNewTmplK		T
+mActionsBeamT			Send Database
+mActionsManageT			Organiser iSecurLetter
+
+# Entries in the I/E menu.
+mIEImportT			Importer
+mIEImportK			I
+mIEExportT			Eksporter
+mIEExportK			E
+
+# Entries in the Options menu.
+mOptionsChangeT			Ændr Kodeord
+mOptionsHintT			Kodeords Vink
+mOptionsPrefsT			Konfigurer
+
+# Entries in the Help menu.
+mHelpAboutT			Om
+
+###############################################################################
+# The New Database form
+#
+
+# The complete title will be: iSecur - New Database
+fNewDatabaseTitle		Ny Database
+
+# Line 1 will be shown in bold
+fNewDatabaseLine1		Velkommen til iSecur
+
+fNewDatabaseLine2		iSecur databasen findes ikke så en
+fNewDatabaseLine3		ny database skal skabes.
+fNewDatabaseLine4		Indholdet af databasen krypteres
+fNewDatabaseLine5		med en tilfældig nøgle.
+fNewDatabaseLine6		På den næste skærm skal du danne
+fNewDatabaseLine7		grundlaget for denne nøgle ved at
+fNewDatabaseLine8		bevæge stylusen fra side til side
+fNewDatabaseLine9		og op og ned.
+
+# Line10 to 12 is shown on 1 line ("Tap Next when ready ...")  "Next" is
+# shown in bold face.
+fNewDatabaseLine10		Vælg
+# Line 11 is also used as the button label
+fNewDatabaseLine11		Næste
+fNewDatabaseLine12		når du er klar ...
+
+###############################################################################
+# The Create Database form
+#
+
+fCreateDatabaseLine1		Pres stylusen ned og ryk den rundt
+fCreateDatabaseLine2		på skærmen. Koordinaterne vil blive
+fCreateDatabaseLine3		brugt til at danne grundlaget for
+fCreateDatabaseLine4		krypterings nøglen.
+fCreateDatabaseLine5		Tegn både kruseduller, korte og
+fCreateDatabaseLine6		lange streger.
+# Line 7 will be centered - keep it short!
+fCreateDatabaseLine7		Tilbage:
+fCreateDatabaseLine8		Når tælleren når 0 bliver du bedt om
+fCreateDatabaseLine9		at indtaste et kodeord - efter dette
+fCreateDatabaseLine10		vil iSecur databasen blive lavet.
+
+###############################################################################
+# The Set Password/Enter Password form
+#
+
+fPasswordPwd			Kodeord
+fPasswordConfirm		Gentag
+
+# The Actions menu
+mPasswordActionsT		Emner
+mPasswordActionsNewT		Nyt Kodeord
+mPasswordActionsNewK		N
+mPasswordActionsMaskT		Masker Kodeord
+mPasswordActionsMaskK		M
+mPasswordActionsUnmaskT		Vis Kodeord
+mPasswordActionsUnmaskK		V
+
+###############################################################################
+# The Edit form
+#
+
+# Title of form
+fEditT				Ret
+
+# labels
+fEditTitle			Titel
+fEditSecret			Emne
+fEditTemplate			Skabelon
+fEditIcon			Ikon
+
+# Menus
+mEditActions			Emner
+mEditLet			iSecurLet
+
+# Entries in the Actions menu
+mEditActionsGenT		Dan Kodeord
+mEditActionsGenK		D
+mEditActionsLoadT		Hent
+mEditActionsLoadK		H
+mEditActionsDeleteT		Slet
+mEditActionsDeleteK		L
+
+# Entries in the iSecurLet menu
+mEditLetCreateT			Opret
+
+###############################################################################
+# The Icon form
+#
+
+# Title of form
+fIconTitle			Vælg Ikon
+
+# The "No Icon" button
+bIconNone			Intet Ikon
+
+###############################################################################
+# The Show form
+#
+
+# Title of form
+fShowTitle			Emne
+
+# Menus
+mShowActions			Emner
+mShowLet			iSecurLet
+
+# Entries in the Actions menu
+mShowActionsBeamT		Send
+mShowActionsBeamK		S
+mShowActionsEditT		Ret
+mShowActionsEditK		R
+
+# Entries in the iSecurLet menu
+mShowLetCreateT			Opret
+
+###############################################################################
+# The Preferences form
+#
+
+# The preferences form is a monster!  It currently is a multi page form made
+# up of three pages - in one form.
+
+# Title of form
+fPrfTitle			Præferencer
+
+# These are the page names - shown in the drop down list in the upper right
+# corner
+dlPrfPage1			Kodeords Politik
+dlPrfPage2			Log Af/På
+dlPrfPage3			Diverse
+
+# Page 1: Password Policy
+
+# "Remember Last: ___ passwords"
+fPrf1RememberP			Husk sidste
+fPrf1RememberS			kodeord
+
+# "X Remind me to change password
+#  every ___ days"
+fPrf1RemindChk			Påmindelse om ændring af
+fPrf1RemindP			kodeord hver
+fPrf1RemindS			dag
+
+# Page 2: Log In/Out
+fPrf2FailedLogins		Max fejlede logon
+
+# "X Delete database when Max failed
+#    logins are reached.
+fPrf2DeleteDB1			Slet database efter Max fejlede
+fPrf2DeleteDB2			logon
+
+fPrf2Logout			Log af ved Power Off
+fPrf2Timeout			Log af når systemet går i dvale
+fPrf2AutoPopup			Auto vis tastatur
+
+# Page 3: Miscellaneous
+
+fPrf3EditMode			Vis emner i retbar tilstand
+fPrf3EnableFind			Tillad Find
+fPrf3EmptyClip			Tøm udklipsholder før log af
+fPrf3CopyPrevention		Sæt kopisikring på databasen
+fPrf3ListNew			Indtastning i lister åbner ny
+fPrf3Stay			Ret emne: bliv i kategori
+fPrf3Inherit			Ny skabelon: arv kategori
+fPrf35Way			5 way op/ned er side op/ned
+
+###############################################################################
+# The Template form
+#
+
+# Title of form
+fTmplTitle			Vælg Skabelon
+
+# "Category" label
+fTmplCategory			Kategori
+
+###############################################################################
+# The Keywords form
+#
+
+# Title of form
+fKeywordsTitle			Indtast Nøgleord
+
+###############################################################################
+# The Password Generator form
+#
+
+# Title of form
+fPwdGenTitle			Kodeordsgenerator
+
+# Length, Contains and Password labels
+fPwdGenLength			Længde
+fPwdGenContains			Indeholder
+fPwdGenPassword			Kodeord
+
+###############################################################################
+# The iSecurLet Name form
+#
+
+# Title of form
+fLetNameTitle			iSecurLet Navn
+
+# Label
+fLetName			iSecurLet Navn
+
+###############################################################################
+# The Manage iSecurLets form
+#
+
+# Title of form
+fLetManTitle			Håndter iSecurLetter
+
+# This label is only shown if no iSecurLets are found
+fLetManNone			Ingen iSecurLetter!
+
+###############################################################################
+# The Import/Export form
+#
+
+# No entries on the Import/Export form - but please keep this header anyway!
+
+###############################################################################
+# The Import Settings form
+#
+
+# Title of form
+fImpSetTitle			Indstillinger
+
+fImpSetImportTo			Importer til
+fImpSetDelete			Slet efter import
+fImpSetTmpl			Importer skabeloner
+fImpSetIcon			Ikon
+
+###############################################################################
+# The Export Settings form
+#
+
+# Title of form
+fExpSetTitle			Indstillinger
+
+fExpSetExportTo			Eksporter til
+fExpSetDelete			Slet efter eksport
+
+###############################################################################
+# The Password Hint form
+#
+
+# Title of form
+fPwdHintTitle			Vink
+
+fPwdHintLabel			Ikke-krypteret vink

@@ -1,0 +1,37 @@
+# serverlist filename
+serverlist ../test/Fictivity-Servers.csv
+
+# server servername,cpu,memory,network,disk
+server srv0,10,20,30,40
+
+# reservation cpu,memory,network,disk
+# reservations can be:
+#
+# X
+# X%
+reservation 10%,128,10%,0
+
+# set max stack pr. phantom
+stack 15
+
+# phantom phantomname cpu,memory,network,disk [reservation]
+phantom phantom0 900,256,100,0
+
+# phantoms count cpu,memory,network,disk [reservation]
+phantoms 20 4000,16384,1000,0 20%,20%,20%,20%
+phantoms 50 4000,16384,1000,0
+
+# map[phantomname] server1 ... serverX
+#map[phantomX] srvname1 srvname2 ... srvnameX
+map[phantom0] srv0
+
+selectors cmn
+
+# model @modelname [reservation]
+# model cpu,memory,network,disk [reservation]
+#
+ScenarioName Fictivity - fun in productivity!
+
+#Stylesheet ../Fictivity-Styles.css
+
+model 800,2048,1000,0 10%,10%,10%,0

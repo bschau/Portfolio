@@ -1,0 +1,12 @@
+#!/bin/ksh
+make distclean
+cd mpack-1.5.src
+make clean
+cd ..
+
+find . -type f -name core -exec rm {} \; 2>/dev/null
+touch LASTARCHIVED
+cd ..
+tar cvf qmta.tar qmta
+gzip -f qmta.tar
+exit 0

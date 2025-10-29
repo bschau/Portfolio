@@ -1,0 +1,58 @@
+.TH ZEN 1L
+.SH NAME
+zen \- one man command line Agile Zen story board
+
+.SH SYNOPSIS
+.B zen
+[\fI-h\fR] [command] [command-args]
+
+.SH DESCRIPTION
+zen implements a small Agile Zen'ish (http://www.agilezen.com) command line story board. zen has the necessary commands to add, delete, modify, close, reopen and view stories.
+zen is meant to be used in one-man projects. zen keeps it's story file together with the project.
+
+.SH OPTIONS
+.TP
+\fB-h\fR
+Show a brief help page.
+
+.SH COMMANDS
+zen understands the following commands:
+.TP
+\fBadd ["story" | @story]\fR
+Add a new story with content from either the command line ("story") or a file (@story). If "story" or @story is omitted, launch the editor in the $ZEN_EDITOR or $EDITOR variable and use the output as the story text.
+.TP
+\fBclose id1 id2 .. idN\fR
+Close the stories with ids id1, id2, .. idN.
+.TP
+\fBdelete id1 id2 .. idN\fR
+Delete the stories with ids id1, id2, .. idN.
+.TP
+\fBinit\fR
+Initialize this directory as the root directory of the zen story board.
+.TP
+\fBlist [all]\fR
+List open stories or, if the optional 'all' argument is given, list all stories.
+.TP
+\fBmodify id ["story" | @story]\fR
+Modify the story with id 'id'. The content is taken from either the command line ("story") or a file (@story). If "story" or @story is omitted, launch the editor in the $ZEN_EDITOR or $EDITOR variable and use the output as the story text.
+.TP
+\fBreopen id1 id2 .. idN\fR
+Reopen the stories with ids id1, id2, .. idN.
+.TP
+\fBstatus [id1 id2 .. idN]\fR
+Show the status of the stories with id1, id2, .. idN or, if omitted, the status of all stories.
+.TP
+\fBview id\fR
+View the content of the story id.
+
+.SH FILES
+zen creates the following files:
+.TP
+\fB_zen\fR
+The story file - if you delete this, all you're stories will go away ...
+.TP
+\fB~zenXXXXXX\fR
+XXXXXX denotes something random. This is the temporary files that zen creates when adding or modifying stories. zen in general deletes these by itself but if for some reason a file cannot be delete then you can remove it by hand.
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

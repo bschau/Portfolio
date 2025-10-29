@@ -1,0 +1,11 @@
+INSTALL
+-------
+
+
+You need mbs installed.   You can get mbs from:
+
+	http://www.schau.com/midlets/mbs/index.html
+
+
+1) Run 'mlc -F' in the folder with the Specfile
+2) Install the resulting TicTacToe.jar.

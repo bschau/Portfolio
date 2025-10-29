@@ -1,0 +1,52 @@
+#include "Resources.h"
+#include "PublicResources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.0"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v2.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Test Keyboard"
+
+	LABEL "Password:" AUTOID AT (1 18)
+	FIELD ID cMainField AT (1 32 158 22) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED
+
+	BUTTON "Keyboard ..." ID cMainKeyboard AT (CENTER 70 AUTO AUTO)
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainKeyboard
+	BOTTOMLEFTOBJECTID cMainKeyboard
+	NAVIGATIONMAP
+		ROW cMainField
+		ROW cMainKeyboard
+END

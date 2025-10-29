@@ -1,0 +1,11 @@
+2011-11-16	v3.7
+	* Now compiles on Mac OS X Lion
+
+2011-10-11	v3.6
+	* Fixed a bug in d64
+
+2011-09-27	v3.5
+	* moved to Git
+	* added installer for Windows
+	* added the zen program
+

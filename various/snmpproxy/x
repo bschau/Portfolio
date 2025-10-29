@@ -1,0 +1,2 @@
+rm -f /tmp/snmpproxy1.out
+./snmpproxy -d -F ../conf

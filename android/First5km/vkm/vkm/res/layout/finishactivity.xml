@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@color/background"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+
+	<Button android:id="@+id/finishbutton"
+   	    	android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+			android:layout_marginTop="8sp"
+			android:layout_marginBottom="8sp"
+       		android:adjustViewBounds="true"
+       		android:background="@drawable/button_finish"
+    		android:layout_centerInParent="true" />
+
+	<TextView android:id="@+id/finish1text"
+			android:editable="false"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_above="@id/finishbutton"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:textSize="20sp"
+			android:textColor="@color/text" />
+
+	<TextView android:id="@+id/finish2text"
+			android:editable="false"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/finishbutton"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:textSize="20sp"
+			android:textColor="@color/text" />
+</RelativeLayout>

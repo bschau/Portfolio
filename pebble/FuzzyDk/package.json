@@ -1,0 +1,82 @@
+{
+    "author": "brian@schau.dk",
+    "dependencies": {},
+    "keywords": [],
+    "name": "fuzzy-dk",
+    "pebble": {
+        "displayName": "Fuzzy Dk",
+        "enableMultiJS": false,
+        "messageKeys": {},
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/menu_icon.png",
+                    "menuIcon": true,
+                    "name": "IMAGE_MENU_ICON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat9.png",
+                    "name": "BATTERY_9",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat8.png",
+                    "name": "BATTERY_8",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat7.png",
+                    "name": "BATTERY_7",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat6.png",
+                    "name": "BATTERY_6",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat5.png",
+                    "name": "BATTERY_5",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat4.png",
+                    "name": "BATTERY_4",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat3.png",
+                    "name": "BATTERY_3",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat2.png",
+                    "name": "BATTERY_2",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat1.png",
+                    "name": "BATTERY_1",
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bat0.png",
+                    "name": "BATTERY_0",
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt"
+        ],
+        "uuid": "decd7b72-c92a-4076-ba58-0527b87ae0c5",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.2.0"
+}

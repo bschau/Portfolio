@@ -1,0 +1,74 @@
+{
+    "author": "brian@schau.dk",
+    "dependencies": {},
+    "keywords": [],
+    "name": "whip",
+    "pebble": {
+        "displayName": "Whip",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/splash.png",
+                    "name": "SPLASH",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/paused.png",
+                    "name": "PAUSED",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/finish.png",
+                    "name": "FINISH",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/running_home.png",
+                    "name": "RUNNING_HOME",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/walking_home.png",
+                    "name": "WALKING_HOME",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/running.png",
+                    "name": "RUNNING",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/walking.png",
+                    "name": "WALKING",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/menu.png",
+                    "menuIcon": true,
+                    "name": "MENU",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "3e32190e-6192-486f-ab19-910f2bc72897",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}

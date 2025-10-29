@@ -1,0 +1,19 @@
+Subject: Virus i email / Delivery failure
+
+
+Du har sendt en mail til %Y, som modtageren ikke har modtaget.
+
+Vores antivirus-software konstaterer, at mailen muligvis indeholder en virus.
+
+Systemet har derfor slettet mailen, og du opfordres hermed til at virusscanne din computer.
+
+
+
+Our mailserver couldn't deliver your mail to %Y as one or more of the attachments was infected with one or more vira.
+
+Please use an antivirus program to clean all vira from your computer.
+
+--------------------------
+
+%E
+

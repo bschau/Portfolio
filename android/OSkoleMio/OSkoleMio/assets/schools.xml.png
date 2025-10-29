@@ -1,0 +1,4021 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE schools [
+<!ELEMENT schools (school+)>
+<!ELEMENT school (name, url)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+]>
+<schools>
+	<school>
+		<name>10 i Campus</name>
+		<url>http://www.10icampus.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>10. Klasse-Centret Gladsaxe</name>
+		<url>https://www.10kc.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>10. ved Kløften</name>
+		<url>https://si.kloeftenskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>4kløverskolen</name>
+		<url>https://www.4kloeverskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Abildgårdskolen</name>
+		<url>https://si.abildgaardskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Agedrup Skole</name>
+		<url>https://www.agedrupskole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Agerbæk Skole</name>
+		<url>https://www.agerbaekskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ahlmann-Skolen</name>
+		<url>https://www.ahlmann-skolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Albertslund Lille Skole</name>
+		<url>https://www.albertslundlilleskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Alkjærskolen</name>
+		<url>https://www.alkjaerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Allerslev Skole</name>
+		<url>https://www.allerslev-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Alme Skole</name>
+		<url>https://www.almeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Alminde-Viuf Fællesskole</name>
+		<url>https://www.alminde-viuf-skole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Alquds skole</name>
+		<url>https://www.alqudsskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Amager Fælled Skole</name>
+		<url>https://www.afs.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Amagerskolen</name>
+		<url>https://www.amagerskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Anna Trolles Skole</name>
+		<url>http://www.annatrollesskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Antvorskov Skole</name>
+		<url>https://www.antvorskovskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Arden Skole</name>
+		<url>https://www.ardenskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Arenaskolen</name>
+		<url>https://www.arenaskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Asgård Skole</name>
+		<url>https://www.asgaard-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Assens Skole</name>
+		<url>https://www.assensskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Assensskolen</name>
+		<url>https://www.assensskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Augustenborg Skole</name>
+		<url>https://www.augustenborgskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aulum Byskole</name>
+		<url>https://www.aulumbyskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Auning Skole</name>
+		<url>https://www.auning-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Avedøre Skole</name>
+		<url>https://www.avedoereskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Baggesenskolen</name>
+		<url>https://www.baggesenskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bagsværd Friskole</name>
+		<url>https://www.bagsvaerdfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bagsværd Kostskole og Gymnasium</name>
+		<url>https://www.bagkost.skoleintra.dk/Mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bagsværd Skole</name>
+		<url>https://www.bagsvaerdskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bagterpskolen</name>
+		<url>https://www.bagterpskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bakkegårdskolen Trige</name>
+		<url>https://www.bakkegaardsskolen.skoleintra.dk/Mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bakkegårdsskolen Gentofte</name>
+		<url>https://www.bakkegaard.gentofte-skoler.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bakkehusene</name>
+		<url>https://www.bakkehusene.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bakkeskolen Fredericia</name>
+		<url>https://www.bakke-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bakkeskolen Hørning</name>
+		<url>https://www.bakkesko.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bakkeskolen Kolding</name>
+		<url>https://www.bakkeskolen.kolding.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Bakkevejens Skole</name>
+		<url>https://www.bakkevejensskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Balleskolen</name>
+		<url>https://www.balleskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Balsmoseskolen</name>
+		<url>https://www.balsmoseskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bangsbostrand Skole</name>
+		<url>https://www.bangsbostrand.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Baunehøjskolen</name>
+		<url>https://www.baunehoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bavnebakkeskolen</name>
+		<url>https://www.bavnebakkeskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bavnehøj Skole</name>
+		<url>https://www.bav.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bavneskolen</name>
+		<url>https://www.bavneskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Beder Skole</name>
+		<url>https://www.beder-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bellahøj Skole - Københavns Idrætsskole</name>
+		<url>https://www.bellahoej.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Benløse Skole</name>
+		<url>https://www.benlose-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Biersted Skole</name>
+		<url>https://www.bierstedskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Billeshave Efterskole</name>
+		<url>https://www.billeshave.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>BillundSkolen</name>
+		<url>https://www.billundskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Birkelundskolen</name>
+		<url>https://www.birkelundskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Birkerød Privatskole</name>
+		<url>https://www.birkerodprivatskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Birkhovedskolen</name>
+		<url>https://www.birkhovedskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bistrupskolen</name>
+		<url>https://www.bistrup.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bjergby Undervisningssted</name>
+		<url>https://www.bjergby-mygdalskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Blicherskolen</name>
+		<url>https://www.blicherskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Blære skole</name>
+		<url>https://www.blaereskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Blæsenborgafdelingen</name>
+		<url>https://www.xn--mariboskole-blsenborg-s3b.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Blåbjerggårdskolen</name>
+		<url>https://www.blaabjerggaardskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Blågård Skole</name>
+		<url>https://www.blg.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Blåvandshuk Skole</name>
+		<url>https://www.blaahuk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bobjergskolen</name>
+		<url>https://www.bobjergskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Boesagerskolen</name>
+		<url>https://www.boesagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bogø Kostskole</name>
+		<url>https://www.bk.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Boldesager Skole</name>
+		<url>https://www.boldesagerskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Borgerskolen</name>
+		<url>https://www.borgerskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Borup Privatskole</name>
+		<url>https://www.borupprivatskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Borup Ris Skolen</name>
+		<url>http://www.boruprisskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Borup Skole</name>
+		<url>https://www.borupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brahetrolleborg Skole</name>
+		<url>https://www.brahetrolleborg-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bramdrup Skole</name>
+		<url>https://www.bramdrup-skole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bramsnæsvigskolen</name>
+		<url>https://www.bramsnaesvigskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bredagerskolen</name>
+		<url>https://www.bredagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bredsten-Gadbjerg skole</name>
+		<url>https://www.bredsten-gadbjergskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brobyskolerne</name>
+		<url>https://www.brobyskolerne.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brorsonskolen</name>
+		<url>https://www.brorsonskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Broskolen</name>
+		<url>https://www.broskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Broskolen afd. Bøgehøj</name>
+		<url>https://www.bro-skolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brovst Skole</name>
+		<url>https://www.brovstskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brundlundskolen</name>
+		<url>https://www.brund.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brylle Skole</name>
+		<url>https://www.brylle-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bryndum Skole</name>
+		<url>https://www.bryndumskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bryrup Skole</name>
+		<url>https://www.bryrup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brædstrup Skole</name>
+		<url>https://si.br.skole.braedstrup.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brændgårdskolen</name>
+		<url>https://www.braendgaardskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brændkjærskolen</name>
+		<url>https://www.brkskolen.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brøndagerskolen</name>
+		<url>https://www.broendager.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brøndby Idræts Efterskole</name>
+		<url>https://www.brondby-ie.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brøndby Strand Skole</name>
+		<url>https://www.brondbystrandskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brøndbyvester Skole</name>
+		<url>https://www.brondbyvesterskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brøndbyøster Skole</name>
+		<url>https://www.brondbyosterskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brønshøj Skole</name>
+		<url>https://www.brh.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brørupskolen</name>
+		<url>https://www.broerupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Brårup Skole</name>
+		<url>https://www.braarup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Buddinge Skole</name>
+		<url>https://www.buddingeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Buskelundskolen</name>
+		<url>https://www.buskelundskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Byens Skole</name>
+		<url>https://www.byens-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bylderup Skole</name>
+		<url>https://www.bylderupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Byplanvejens Skole</name>
+		<url>https://www.byplanvejensskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Byskolen Nakskov</name>
+		<url>https://www.fjordskolen-byskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Byskovskolen</name>
+		<url>https://www.byskovskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Byvangskolen</name>
+		<url>https://www.byvangskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bækkegårdsskolen</name>
+		<url>https://www.baekkegaardsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bække Skole</name>
+		<url>https://www.baekkeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Bøgeskovskolen</name>
+		<url>https://www.boegeskovskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Børneuniversitetet</name>
+		<url>https://www.borneuni.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Campusskolen Ringsted</name>
+		<url>https://www.campusskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Capionskolen</name>
+		<url>https://www.capionskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Carl Nielsen Skolen</name>
+		<url>https://www.carlnielsenskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Center-10, Aarhus High School</name>
+		<url>https://www.center10-aarhus.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Charlotteskolen Hedehusene</name>
+		<url>https://www.charlotte-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Charlotteskolen Vejle</name>
+		<url>https://www.charlotteskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Christiansfeld Skole</name>
+		<url>https://www.christiansfeldskole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Christianshavns Døttreskole</name>
+		<url>http://www.doettreskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dagmarskolen</name>
+		<url>https://www.dagmarskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dagnæsskolen</name>
+		<url>https://www.dagnaesskolen.horsens.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dalmose Centralskole</name>
+		<url>https://www.dalmoseskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dalumskolen</name>
+		<url>https://www.dalumskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Damagerskolen</name>
+		<url>https://www.damagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Damhavens Skole</name>
+		<url>https://www.damhaven.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Danehofskolen</name>
+		<url>http://www.danehofskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Danmarksgades Skole</name>
+		<url>https://www.danmarksgadesskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dansborgskolen</name>
+		<url>https://www.dansborgskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Den Kristne Friskole</name>
+		<url>https://www.denkristnefriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Den lille Skole</name>
+		<url>https://www.denlilleskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>DIA Privatskole</name>
+		<url>https://www.dia-privatskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Distrikt Ørum</name>
+		<url>https://www.oerumskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Djurslandsskolen</name>
+		<url>https://www.djurslandsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dragør Skole</name>
+		<url>https://www.dragoerskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dragør Skole Nord</name>
+		<url>https://www.nordstrandskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dueholmskolen</name>
+		<url>https://www.dueholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dybkærskolen</name>
+		<url>https://www.dybkaerskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dyhrs Skole</name>
+		<url>https://www.dyhrs-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dyvekeskolen</name>
+		<url>https://www.dyveke.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Dåstrup Skole</name>
+		<url>https://www.daastrup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ebberup Skole</name>
+		<url>https://www.ebberupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Efterskolen Flyvesandet</name>
+		<url>https://www.flyvesandet.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Egebjergskolen Ballerup</name>
+		<url>https://www.egebjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Egebjergskolen Horsens</name>
+		<url>https://si.egebjergskolen.horsens.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Egekratskolen</name>
+		<url>https://www.egekratskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Egelundskolen</name>
+		<url>https://www.egelundskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Egeskovskolen</name>
+		<url>https://www.egeskovskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Eggeslevmagle Skole</name>
+		<url>https://www.eggeslevmagle-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Egholmskolen</name>
+		<url>https://www.egholmskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Egtved Skole</name>
+		<url>https://www.egtvedskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ejby Skole</name>
+		<url>https://www.ejby-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Elise Smiths Skole</name>
+		<url>https://www.ess-aarhus.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ellebjerg Skole</name>
+		<url>https://www.ellebjergskole.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ellebækskolen</name>
+		<url>https://www.ellebaekskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ellekildeskolen</name>
+		<url>https://www.ellekildeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ellemarkskolen</name>
+		<url>https://www.ellemarkskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Elling Skole</name>
+		<url>https://www.ellingskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Elsted Skole</name>
+		<url>https://www.elsted-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Elverdamsskolen</name>
+		<url>https://www.elverdamsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engbjergskolen</name>
+		<url>http://www.engbjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engdalskolen</name>
+		<url>https://www.engdalskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engelsborgskolen</name>
+		<url>https://www.en-ltk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engesvang Skole</name>
+		<url>https://www.engesvangskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Enghavegård Skole</name>
+		<url>https://www.enghavegaard.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Enghaveskolen, Halsnæs</name>
+		<url>https://www.enghaveskolen.halsnaes.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engholmskolen</name>
+		<url>https://www.engholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Englystskolen</name>
+		<url>https://www.englystskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engskolen</name>
+		<url>https://www.engskolen.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engskovskolen</name>
+		<url>https://www.engskovskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Engum Skole</name>
+		<url>https://www.engum-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Erritsø Centralskole</name>
+		<url>https://www.erritsoecentralskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Esajasskolen</name>
+		<url>https://www.esajasskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Esbjerg Realskole</name>
+		<url>https://www.esbjergrealskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Eskilstrup Skole</name>
+		<url>https://www.eskilstrupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Espergærde Skole</name>
+		<url>https://www.ny-espergaerde.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Espergærdeskolen</name>
+		<url>https://www.espergaerdeskolen.helsingor.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Espe Skole</name>
+		<url>https://www.espeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Falkenborgskolen</name>
+		<url>https://www.falkenborgskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Farsø Skole</name>
+		<url>https://www.farsoe-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Faster Skole</name>
+		<url>https://www.faster-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Favrdalen/Fjelstrup</name>
+		<url>https://www.fff.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Felsted Centralskole</name>
+		<url>https://www.felsted-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ferritslev Friskole</name>
+		<url>https://www.ferfri.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ferslev Skole</name>
+		<url>https://www.ferslevskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ferslev Skole Skibby</name>
+		<url>https://www.ferslev-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Filipskolen</name>
+		<url>https://www.filipskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Filskov Friskole</name>
+		<url>https://www.filskovfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Filstedvejens Skole</name>
+		<url>https://www.filstedvejensskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Finderuphøj Skole</name>
+		<url>https://www.finderuphoej.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Firkløverskolen Lejre</name>
+		<url>https://www.firkloeverskolen-lejre.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fjelsted Harndrup Børneunivers</name>
+		<url>https://www.fjelstedharndrupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fjordskolen - Dannelunde afdeling</name>
+		<url>https://www.fjordskolen-dannelunde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fjordskolen Guldborgsund</name>
+		<url>https://www.fjordskolen-guldborgsund.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fjordskolen Madeskovafdelingen</name>
+		<url>https://www.fjordskolen-madeskov.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fladsåskolen</name>
+		<url>https://www.fladsaaskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fløng Skole</name>
+		<url>https://www.floengskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Forlev Friskole</name>
+		<url>https://www.forlevfriskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fourfeldtskolen</name>
+		<url>https://www.fourfeldtskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fredensborg Skole</name>
+		<url>https://www.fredensborgskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fredericia Realskole</name>
+		<url>https://www.f-realskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frederiksborg Byskole</name>
+		<url>https://www.frederiksborgbyskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frederiks Skole, SFO og Klub</name>
+		<url>https://www.frederiks-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frejlev Skole</name>
+		<url>https://www.frejlev-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frijsendal Friskole</name>
+		<url>https://www.frijsendal-friskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frisholm Skole</name>
+		<url>https://www.frisholm-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Friskolen i Jordløse</name>
+		<url>https://www.friskolenijordlose.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Friskolen Skive</name>
+		<url>https://www.friskoleniskive.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Friskolen Øster Egesborg</name>
+		<url>https://www.egesborg.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frydenhøjskolen</name>
+		<url>https://www.frydenhoejskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frydenstrandskolen</name>
+		<url>https://www.frydenstrandskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fryndesholm Skole</name>
+		<url>https://si.fryndesholm.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Frøslev-Padborg Skole</name>
+		<url>https://www.frpskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fuglsanggårdsskolen</name>
+		<url>https://www.fuglsanggaardsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Funder Skole</name>
+		<url>https://www.funder.skole.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fynslundskolen</name>
+		<url>https://www.fynslundskolen.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fællesskolen Give/Givskud/Elkjær 280334</name>
+		<url>https://www.fallesskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fællesskolen Hammelev Sct. Severin</name>
+		<url>https://www.fhs.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fællesskolen Hoptrup Marstrup Vilstrup</name>
+		<url>https://www.faellesskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Fællesskolen Nustrup Sommersted</name>
+		<url>https://www.fns.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Faaborg Sundskole</name>
+		<url>https://www.faaborg-sundskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gadehaveskolen</name>
+		<url>https://www.gadehaveskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gadstrup Skole</name>
+		<url>https://www.gadstrupskole.skoleintra.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Galten Friskole</name>
+		<url>https://www.galten-friskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gammelgaardsskolen</name>
+		<url>https://www.gammelgaardsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gammel Hasseris Skole</name>
+		<url>https://www.gammelhasserisskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gandrup Skole</name>
+		<url>https://www.gandrupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ganløse Skole</name>
+		<url>https://www.ganloese-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gasværksvejens Skole</name>
+		<url>https://www.gas.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gauerslund Skole</name>
+		<url>https://www.gauerslund-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gedsted Skole</name>
+		<url>https://www.gedsted-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gedved Skole</name>
+		<url>https://www.gedved-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gentofte Skole</name>
+		<url>http://www.gentofte.gentofte-skoler.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gerbrandskolen</name>
+		<url>https://www.gerbrandskolen.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gildbroskolen</name>
+		<url>https://www.gildbroskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gilleleje Skole</name>
+		<url>https://www.gillelejeskole.skoleintra.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Gimsing Skole</name>
+		<url>https://www.gimsingskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gistrup Skole</name>
+		<url>https://www.gistrup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Give Skole</name>
+		<url>https://www.giveskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gjellerupskolen</name>
+		<url>https://www.gjellerupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gjern Skole</name>
+		<url>https://www.gjernskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gjerrild-Bønnerup Friskole</name>
+		<url>https://www.gbfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gladsaxe Skole</name>
+		<url>https://www.gladsaxeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Glamsbjerg Fri-og Efterskole</name>
+		<url>https://www.gfeskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Glamsbjergskolen</name>
+		<url>https://www.glamsbjergskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gl. Lindholm Skole</name>
+		<url>https://www.gllindholm-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Glostrup Skole, Søndervang</name>
+		<url>https://www.sondervang.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gl Rye skole</name>
+		<url>https://www.gl-rye.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Glud Skole</name>
+		<url>https://www.glud-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Glyngøre Skole</name>
+		<url>https://www.glyngoere-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Godthåbskolen</name>
+		<url>https://www.godthaabskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grantofteskolen</name>
+		<url>https://www.grantofteskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grauballe Skole</name>
+		<url>https://www.grauballe-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gredstedbro Skole</name>
+		<url>https://www.gredstedbroskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Greve Privatskole</name>
+		<url>https://www.greve-privatskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gribskolen</name>
+		<url>https://www.gribskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grindsted Søndre Skole</name>
+		<url>https://www.soendreskole-grindsted.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grindsted Vestre Skole</name>
+		<url>http://www.vestre-skole-grindsted.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Græse Bakkebyskolen</name>
+		<url>https://www.graesebakkebyskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grøndalsvængets Skole</name>
+		<url>https://www.gvs.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grønhøjskolen</name>
+		<url>https://www.gronhoj.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grønnemose Skole</name>
+		<url>https://www.groennemose.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grønnevang Skole</name>
+		<url>https://www.gronnevangskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Grønvangskolen</name>
+		<url>https://www.gronvangskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gråsten Skole</name>
+		<url>https://www.graastenskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gungehusskolen</name>
+		<url>https://www.gl-gungehusskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gyldenstenskolen</name>
+		<url>https://www.gyldenstenskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gyvelhøjskolen</name>
+		<url>https://www.gyvelhoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gødvadskolen</name>
+		<url>https://www.goedvadskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gørding Skole</name>
+		<url>https://www.goerdingskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Gåsetårnskolen</name>
+		<url>https://www.gaasetaarnskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hadbjerg Skole</name>
+		<url>https://www.hadbjergskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Haderslev Realskole</name>
+		<url>https://www.haderslevreal.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hadsten Skole</name>
+		<url>https://www.hadstenskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hadsund Skole</name>
+		<url>https://www.hadsund-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hald Ege Skole</name>
+		<url>https://www.ha.viborgskoler.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Haldum-Hinnerup Skolen</name>
+		<url>https://www.haldum-hinnerupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Halgård Skole</name>
+		<url>https://www.halgaardskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Halsnæs Heldagsskole</name>
+		<url>https://www.heldagsskole.halsnaes.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hals Skole</name>
+		<url>https://www.halsskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hammershøj Skole</name>
+		<url>https://www.hammershoejskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hammerum Skole</name>
+		<url>https://www.hammerum-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hampelandskolen</name>
+		<url>http://www.hampelandskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hanebjerg Skole</name>
+		<url>https://www.hanebjergskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hanssted Skole</name>
+		<url>https://www.hanssted.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Harboøre Skole</name>
+		<url>https://www.harboore-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hareskov Skole</name>
+		<url>https://www.hareskovskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hasle Skole Århus</name>
+		<url>https://www.hasle-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Haslev Privatskole</name>
+		<url>https://www.haslevprivatskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hasselager Skole</name>
+		<url>https://www.hasselager-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hastrupskolen</name>
+		<url>https://www.hastrupskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hattingskolen</name>
+		<url>https://si.hattingskolen.horsens.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Havdrup Skole</name>
+		<url>https://www.havdrupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>H. C. Andersen Skolen</name>
+		<url>https://www.hcandersenskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hedegårdenes Skole</name>
+		<url>https://www.hedegaardenesskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hedegårdsskolen Ballerup</name>
+		<url>https://www.hedegaardsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hedegårdsskolen Brønderslev</name>
+		<url>https://www.hedegaardsskolen9700.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hedehusene Skole</name>
+		<url>https://www.hedehusene.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hedelyskolen</name>
+		<url>https://www.hedelyskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hedensted Skole</name>
+		<url>https://www.hedensted-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Heibergskolen</name>
+		<url>https://www.heibergskolen.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hejnsvig Skole</name>
+		<url>https://www.hejnsvigskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hellebækskolen</name>
+		<url>https://www.hellebaekskolen.helsingor.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hellerup Skole</name>
+		<url>https://www.hellerupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Helms Skole</name>
+		<url>https://www.helmsskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Helsinge Skole</name>
+		<url>http://www.helsingeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Helsingør Byskole</name>
+		<url>https://www.byskolen.helsingor.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Helsingør Skole</name>
+		<url>https://www.helsingoerskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hendriksholm Skole</name>
+		<url>https://www.hendriksholm-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herfølge Privatskole</name>
+		<url>https://www.herfoelge-privatskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herfølge Skole</name>
+		<url>https://www.herfoelge.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herlev Byskole</name>
+		<url>https://www.herlevbyskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herlufmagle Skole</name>
+		<url>https://www.herlufmagleskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herningsholmskolen</name>
+		<url>https://www.herningsholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herningvej Skole</name>
+		<url>https://www.herningvej-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herskindskolen</name>
+		<url>https://www.herskindskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herstedlund Skole</name>
+		<url>https://www.herstedlundskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herstedvester Skole</name>
+		<url>https://www.herstedvesterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Herstedøster Skole</name>
+		<url>https://www.herstedosterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hesselager Skole</name>
+		<url>https://www.hesselagerskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hestehaveskolen</name>
+		<url>https://www.hestehaveskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hestlund Efterskole</name>
+		<url>https://www.hestlund.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hillerslev Skole (Kridthuset)</name>
+		<url>https://www.hillerslev-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hillerød Lille Skole</name>
+		<url>https://hillerod-lilleskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hillerødsholmskolen</name>
+		<url>https://www.hillerodsholm.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hillerød Vest Skolen</name>
+		<url>https://www.hillerodvestskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Himmelev skole</name>
+		<url>https://si.himmelevskole.roskilde.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Hindsholmskolen</name>
+		<url>https://www.hindsholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hirtshals Skolecenter</name>
+		<url>https://www.hirtshalsskolecenter.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjallerup Skole</name>
+		<url>https://www.hjallerupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjalleseskolen</name>
+		<url>https://www.hjalleseskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjemly Idrætsefterskole</name>
+		<url>https://www.hjemlyefterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjerting Skole</name>
+		<url>https://www.hjertingskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjordkær Skole</name>
+		<url>https://hjordkaer-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjortholmskolen</name>
+		<url>https://www.a-afdelingen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hjørring Private Realskole</name>
+		<url>https://www.hpr.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hobro Søndre Skole</name>
+		<url>https://www.hobrosondreskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holbergskolen</name>
+		<url>https://www.holberg-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holbæk Private Realskole</name>
+		<url>http://www.realskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holluf Pile Skole</name>
+		<url>https://www.hollufpileskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holmeagerskolen</name>
+		<url>https://www.holmeagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holmebækskolen</name>
+		<url>https://www.holmebaekskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holmegaardskolen</name>
+		<url>https://www.holmegaard.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holmegårdsskolen Hvidovre</name>
+		<url>https://www.holmegaards-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holme Skole</name>
+		<url>https://www.holme-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Holsted Skole</name>
+		<url>https://www.holstedskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hornbæk Skole</name>
+		<url>https://www.hornbaek-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Horne-Tistrup Skolerne</name>
+		<url>https://www.horne-tistrup.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hornum Skole</name>
+		<url>https://www.hornumskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Horsens Byskole</name>
+		<url>https://www.horsensbyskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hotherskolen</name>
+		<url>https://www.hotherskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Houlkær Skolen</name>
+		<url>https://www.ho.viborgskoler.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hovedgård Skole</name>
+		<url>https://www.hovedgaard-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hulvej Skole</name>
+		<url>https://si.hulvejskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Humlebæk skole</name>
+		<url>http://www.humlebaekskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Humlehøj-Skolen</name>
+		<url>https://www.humlehoj-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Humlum Skole</name>
+		<url>https://www.humlum-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hummeltofteskolen</name>
+		<url>https://www.hummeltofteskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hunderupskolen</name>
+		<url>https://www.hunderupskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hundested Skole</name>
+		<url>https://www.hundestedskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hundige Lille Skole</name>
+		<url>https://www.hundige-ls.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hurup Skole</name>
+		<url>https://www.hurupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hvalsø Skole</name>
+		<url>https://www.hvalsoe-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hvidebækskolen</name>
+		<url>https://www.hvidebaekskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hvilebjergskolen</name>
+		<url>https://www.hvilebjergskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hvinningdalskolen</name>
+		<url>https://www.hvinningdalskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hyldgårdsskolen</name>
+		<url>https://www.hyldgaardsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hylleholt Skole</name>
+		<url>https://www.hylleholtskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hyllehøjskolen</name>
+		<url>https://www.hyllehoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hyllinge skole</name>
+		<url>https://www.hyllingeskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hærvejsskolen</name>
+		<url>https://www.haervejsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højagerskolen</name>
+		<url>https://www.hoejagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højboskolen</name>
+		<url>https://www.hoejboskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højby Skole</name>
+		<url>https://www.hoejbyskole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højdevangens Skole</name>
+		<url>https://www.hvs.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Høje Kolstrup Skole</name>
+		<url>https://www.hkolstrupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højelse Skole</name>
+		<url>https://www.hoejelse-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højene Skole</name>
+		<url>https://www.hoejeneskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højgårdskolen</name>
+		<url>https://www.hoejgaardskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højmarkskolen</name>
+		<url>https://www.hoejmarkskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højmeskolen</name>
+		<url>https://www.hojmeskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højslev Skole</name>
+		<url>https://www.hoejslev-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højvangskolen Horsens</name>
+		<url>https://si.hoejvangskolen.horsens.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højvangskolen Svenstrup</name>
+		<url>https://www.hoejvangskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Højvangskolen Århus</name>
+		<url>https://www.hoejvangskolenaarhus.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Høng Skole</name>
+		<url>https://www.hoeng-komskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hørby Efterskole</name>
+		<url>https://www.hu-ungdom.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hørsholm Skole</name>
+		<url>https://si.hoersholmskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hørup Centralskole</name>
+		<url>https://www.hoerup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Haahrs Skole</name>
+		<url>https://www.haahrs.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hånbækskolen</name>
+		<url>https://www.haanbaekskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Haarby Skole</name>
+		<url>https://www.haarbyskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Hårup Skole</name>
+		<url>https://www.haarup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ilskov Skole</name>
+		<url>https://www.ilskov-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Institut Sankt Joseph</name>
+		<url>https://www.isj.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Interskolen</name>
+		<url>http://www.interskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Isefjordskolen</name>
+		<url>https://www.isefjordskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Iselingeskolen</name>
+		<url>https://www.iselingeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Islev Skole</name>
+		<url>https://www.islevskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jakobskolen Aarhus</name>
+		<url>https://www.jakobskolen-aarhus.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Janderup Skole</name>
+		<url>https://www.janderup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jellebakkeskolen</name>
+		<url>https://www.jellebakkeskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jels Skole</name>
+		<url>https://www.jelsskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jens Jessen Skolen</name>
+		<url>https://www.jensjessenskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jersie Skole</name>
+		<url>https://www.jersieskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jerup Skole</name>
+		<url>https://www.jerupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jetsmark Skole</name>
+		<url>https://www.jetsmarkskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Juelsminde Skole</name>
+		<url>https://www.juelsminde-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jyderup Kommuneskole</name>
+		<url>https://www.jyderupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jyllinge Skole</name>
+		<url>https://www.jyllingeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Jægerspris Skole</name>
+		<url>https://www.jpskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kalbyrisskolen</name>
+		<url>https://www.kalbyrisskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kalundborg Friskole</name>
+		<url>https://www.kalfri.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Karensmindeskolen</name>
+		<url>https://www.karensmindeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Karlslunde Skole</name>
+		<url>https://www.karlslundeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Karrebæk Skole</name>
+		<url>https://www.karrebaekskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Karup Skole</name>
+		<url>https://www.karupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kastrupgårdsskolen</name>
+		<url>https://kg.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kathøjskolen</name>
+		<url>https://www.kathoej.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Katrinebjergskolen</name>
+		<url>https://www.katrinebjergskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Katrinedals Skole</name>
+		<url>https://www.katrinedal.kk.dk/Mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kattegatskolen</name>
+		<url>https://www.kattegatskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kerteminde Skole</name>
+		<url>https://www.kerteminde-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildebakkeskolen</name>
+		<url>https://www.kildebakkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildegård Privatskole</name>
+		<url>https://www.kildegaard.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildegårdskolen</name>
+		<url>https://www.kildegaardskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildegårdskolen Øst og Vest</name>
+		<url>https://www.kildegaardskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildemarkskolen</name>
+		<url>https://www.kildemarkskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildevangens Skole</name>
+		<url>https://www.kildevangensskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kildevældsskolen</name>
+		<url>https://www.kildevaeld.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kingoskolen</name>
+		<url>https://www.kingoskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirkebakkeskolen</name>
+		<url>https://www.kirkebakkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirkebjerg Skole</name>
+		<url>https://www.kirkebjergskole.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirke-Helsinge Skole</name>
+		<url>https://www.kirke-helsingeskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirke Hyllinge Skole</name>
+		<url>https://www.krhskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirke Saaby Skole</name>
+		<url>https://www.kirkesaaby-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirsebærhavens Skole</name>
+		<url>https://www.kir.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirstinedalsskolen</name>
+		<url>https://www.kirstine.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kirstine Seligmanns Skole</name>
+		<url>https://www.kss.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kjellerup Skole</name>
+		<url>https://www.kjellerupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Klostermarksskolen</name>
+		<url>https://si.klostermarksskolen.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kløver- Skolen</name>
+		<url>https://www.klover-skolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kokkedal Skole</name>
+		<url>https://www.kokkedalskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kolding Realskole</name>
+		<url>https://www.koldingrealskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kollegievejens Skole</name>
+		<url>https://www.kollegievejensskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kollerup Skole</name>
+		<url>https://www.kollerupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kolt Skole</name>
+		<url>https://www.kolt-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kongehoejskolen</name>
+		<url>https://www.kongehoejskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kongerslev Skole</name>
+		<url>https://www.sdrkongerslev-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kongeskærskolen</name>
+		<url>https://www.kongeskaerskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kongevejens Skole</name>
+		<url>https://www.kongevejensskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>KonTiki - børnenes skole</name>
+		<url>https://www.kontiki.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kornmarkskolen</name>
+		<url>https://www.kornmarkskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Korsager Skole</name>
+		<url>https://www.korsager.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Korsholm Skole</name>
+		<url>https://www.korsholmskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Korskildeskolen</name>
+		<url>https://www.korskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Korsvejens Skole</name>
+		<url>https://www.ko.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Korup Skole</name>
+		<url>https://www.korupskole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kroggårdsskolen</name>
+		<url>https://www.kroggaardsskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kulsbjerg Skole</name>
+		<url>https://www.kulsbjergskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kvaglundskolen</name>
+		<url>https://www.kvaglundskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kærbyskolen</name>
+		<url>https://www.kaerbyskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Køge Private Realskole</name>
+		<url>https://www.koegeprivaterealskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Kølkær Skole</name>
+		<url>https://www.koelkaerskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lagoniskolen</name>
+		<url>https://www.lagoniskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Landsgrav Friskole</name>
+		<url>https://www.landsgravfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langebjergskolen</name>
+		<url>https://www.langebjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langebækskolen</name>
+		<url>https://www.langebaekskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langelinieskolen og SPK</name>
+		<url>https://www.langelinieskolen.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langholt Skole</name>
+		<url>https://www.langholtskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langhøjskolen Hvidovre</name>
+		<url>https://www.langhoejskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langhøjskolen Struer</name>
+		<url>https://www.langhojskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langmarkskolen</name>
+		<url>https://www.langmarkskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langskov Skole</name>
+		<url>https://www.langskov-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langsøskolen</name>
+		<url>https://www.langsoeskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Langå Skole</name>
+		<url>https://www.langaa-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Learnmark Horsens, Step 10</name>
+		<url>https://www.10-klasse.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lergravsparkens Skole</name>
+		<url>https://www.lps.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Levring Efterskole</name>
+		<url>https://www.levring-efterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lille Næstved Skole</name>
+		<url>https://www.lille-naestved-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lillerød Skole</name>
+		<url>https://www.lilleroedskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lille Værløse Skole</name>
+		<url>https://www.lille-vaerloese.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lilleåskolen</name>
+		<url>https://www.lilleaaskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lindebjergskolen</name>
+		<url>https://www.lindebjerg-skolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lindegårdskolen</name>
+		<url>https://www.lindegaardskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lindehøjskolen</name>
+		<url>https://www.lindehoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lindeskovskolen</name>
+		<url>https://www.lindeskovskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lindevangskolen</name>
+		<url>https://www.frb-li.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lisbjergskolen</name>
+		<url>https://www.lisbjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lomborg Gymnastik- og Idrætsefterskole</name>
+		<url>https://www.lomborg-efterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lumby Skole</name>
+		<url>https://si.lumbyskole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundebakkeskolen</name>
+		<url>https://www.lundebakkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundebjergskolen</name>
+		<url>https://www.lundebjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundehusskolen</name>
+		<url>https://www.lundehus.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>LundeKvong Skole</name>
+		<url>https://www.lundekvong-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundergårdskolen</name>
+		<url>https://www.lundergaardskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundgårdskolen</name>
+		<url>https://www.lundgaardskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundskolen</name>
+		<url>https://www.lundskolen.horsens.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lundtofte Skole</name>
+		<url>https://www.lu-ltk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lykkesgårdskolen</name>
+		<url>https://www.lykkesgaardskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lyngby Private Skole</name>
+		<url>https://www.lps.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lynge Skole</name>
+		<url>https://www.lyngeskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lyngholmskolen</name>
+		<url>https://www.lyngholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lynghøj Efterskole</name>
+		<url>https://www.lynghoj.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lynghøjskolen</name>
+		<url>https://www.lynghojskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lyreskovskolen</name>
+		<url>https://www.lyreskovskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lysabild Børneunivers</name>
+		<url>https://www.lysabild-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lysholm Skole</name>
+		<url>https://www.lysholmskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lyshøjskolen</name>
+		<url>https://www.lyshoejskolen.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lystrup Skole</name>
+		<url>https://www.lystrup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Lærkeskolen</name>
+		<url>https://www.laerkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Læssøesgades Skole</name>
+		<url>https://www.l-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Løgumkloster Distriktsskole</name>
+		<url>https://www.ds-l.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Løjtegårdsskolen</name>
+		<url>https://www.lg.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Løjt Kirkeby Skole</name>
+		<url>https://www.lojtskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Løsning Skole</name>
+		<url>https://www.loesning-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Løve-Ørslev Skole</name>
+		<url>https://www.loeve-oerslev.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Løvvangskolen</name>
+		<url>https://www.loevvangskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Låsby Skole</name>
+		<url>https://www.laasby-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Maglebjergskolen</name>
+		<url>https://www.maglebjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Maglehøjskolen</name>
+		<url>http://www.maglehojskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Malling Skole</name>
+		<url>https://www.malling-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Marbækskolen</name>
+		<url>https://www.marbaekskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Margretheskolen</name>
+		<url>https://www.margrethe-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mariager Skole</name>
+		<url>https://www.mariagerskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Maribo Skole, Østofteafdelingen</name>
+		<url>https://www.landskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Marie Mørks Skole</name>
+		<url>https://www.mms.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mariendal Friskole</name>
+		<url>https://www.mariendalfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Marienhoffskolen</name>
+		<url>https://www.marienhoffskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Marievangsskolen</name>
+		<url>https://www.marievangsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Markusskolen</name>
+		<url>https://www.markusskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Marslev Skole og Børnehus</name>
+		<url>https://www.marslev-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Marstal Skole</name>
+		<url>https://www.marstalskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>M.C. Holms Skole</name>
+		<url>https://www.mcholms.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Melby Skole Halsnæs</name>
+		<url>https://www.melbyskole.halsnaes.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Midtbyskolen</name>
+		<url>https://si.midtbyskolen.horsens.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Midtskolen</name>
+		<url>https://www.midtskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Molsskolen</name>
+		<url>https://si.molsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Morten Børup Skolen</name>
+		<url>https://www.mortenboerup.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mosedeskolen</name>
+		<url>https://www.mosedeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mou Skole</name>
+		<url>https://www.mou-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Munkebjergskolen</name>
+		<url>https://www.munkebjergskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Munkegårdsskolen</name>
+		<url>https://www.munkegaardsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Munkekærskolen</name>
+		<url>https://www.munkekaer.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Munkevængets Skole</name>
+		<url>https://www.munkevaengets-skole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mølholm Skole</name>
+		<url>https://www.moelholm-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mølholm Skole Vejle</name>
+		<url>https://www.moelholm-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mølkærskolen</name>
+		<url>https://www.moelkaerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mølleholmskolen</name>
+		<url>https://www.moelleholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Møllehøjskolen</name>
+		<url>https://www.moellehoejskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mølleskolen</name>
+		<url>https://www.moelleskolen-ry.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Møllevangskolen Århus</name>
+		<url>https://www.moellevang-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Møllevangsskolen</name>
+		<url>https://www.moellevangsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Møn Skole</name>
+		<url>https://www.moen-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mønsted Skole</name>
+		<url>https://www.moensted.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mørkhøj Skole</name>
+		<url>https://www.morkhoj-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Måløv Skole</name>
+		<url>https://www.maaloevskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Mårslet Skole</name>
+		<url>https://www.maarslet-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Naur-Sir Skole</name>
+		<url>https://www.naur-sir-sk.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nibe Skole</name>
+		<url>https://www.nibe-bislevskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Niels Ebbesen Skolen</name>
+		<url>https://www.nes-skanderborg.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nivå Skole</name>
+		<url>https://www.nivaaskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordbakkeskolen</name>
+		<url>https://www.nordbakkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordborg Skole</name>
+		<url>https://www.nordborg-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordby Skole</name>
+		<url>https://www.nordbyskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordbyskolen og Nordbyskolens SFO</name>
+		<url>https://www.nordbyskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordenskov Skole</name>
+		<url>https://www.nordenskovskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordregårdsskolen</name>
+		<url>https://www.ng.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordre Skole Bramming</name>
+		<url>https://www.nordresk.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordstjerneskolen</name>
+		<url>https://www.helsinge-ramloese.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordstjerneskolen Frederikshavn</name>
+		<url>https://www.nordstjerneskolen.frederikshavn.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordstjerneskolen Helsinge</name>
+		<url>https://www.helsinge-ramloese.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordvangskolen</name>
+		<url>https://www.nordvangskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordvangskolen Glostrup</name>
+		<url>https://www.nordvang.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordvestskolen Ravnsborgafdelingen</name>
+		<url>https://www.nordvestskolen-ravnsborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordvestskolen - Ravnsborgafdelingen</name>
+		<url>https://www.nordvestskolen-ravnsborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nordvestskolen Stormarkafdelingen</name>
+		<url>https://www.nordvestskolen-stormark.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nr Felding Skole</name>
+		<url>https://www.nrfeldingskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nr. Jernløse Skole</name>
+		<url>https://www.nrjs.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nr. Lyndelse Skole</name>
+		<url>https://www.nr-lyndelse-friskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nr. Søby Skole</name>
+		<url>https://www.nrsoebyskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nr.Vium-Troldhede Skole</name>
+		<url>https://www.viumtrold.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nyager Skole</name>
+		<url>https://www.nyager.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nyboder Skole</name>
+		<url>https://www.nyboderskole.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nyborg Friskole</name>
+		<url>https://www.nyborgfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nyborg Private Realskole</name>
+		<url>https://www.nyborgprivaterealskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nydamskolen</name>
+		<url>https://www.nydamskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ny Hollænderskolen</name>
+		<url>https://www.frb-nh.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nykøbing Falster Realskole</name>
+		<url>https://www.nykfrealskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nymarkskolen</name>
+		<url>https://www.nymarkskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nyrupskolen</name>
+		<url>https://www.nyrupskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nysted Skole</name>
+		<url>https://www.nystedskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nyvangsskolen</name>
+		<url>https://www.nyvangsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Næsbjerg Skole</name>
+		<url>https://www.naesbjergskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Næsby Skole</name>
+		<url>https://www.naesby-skole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Næshøjskolen</name>
+		<url>https://www.naeshoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørhalne Skole</name>
+		<url>https://www.norhalneskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørholm Skole</name>
+		<url>https://www.noerholmskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørre Alslev Skole</name>
+		<url>https://www.norrealslev-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørrebjergskolen</name>
+		<url>https://www.norrebjergskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørrebro Park Skole</name>
+		<url>https://www.nps.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørremarksskolen</name>
+		<url>https://www.noerremarksskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørre-Nebel Skole</name>
+		<url>https://norre-nebelskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørre Nissum Skole (Region øst)</name>
+		<url>https://www.regionoest.lemvig.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørre-Snede Skole</name>
+		<url>https://www.nsskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørre Uttrup Skole</name>
+		<url>https://www.nruttrup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørrevangsskolen</name>
+		<url>https://www.noerrevangsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nørre Aaby Skole</name>
+		<url>https://www.naas.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nøvling Skole</name>
+		<url>https://www.noevling-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Nøvlingskov Efterskole</name>
+		<url>https://www.noevlingskov.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Oddenseskole</name>
+		<url>http://www.oddenseskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Odden Skole</name>
+		<url>https://www.oddenskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ordblindeinstituttet</name>
+		<url>https://www.oi.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ordrup Skole</name>
+		<url>https://www.ordrupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Osted Fri og Efterskole</name>
+		<url>https://www.ofe-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Osted Skole</name>
+		<url>https://www.osted.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Overlund Skole</name>
+		<url>https://www.overlundskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Paradisbakkeskolen Afdeling Nexø</name>
+		<url>https://www.nexoe.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Paradisbakkeskolen Svaneke Afdeling</name>
+		<url>https://www.svaneke.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Parkskolen</name>
+		<url>https://www.parkskolen-struer.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Parkskolen Herning</name>
+		<url>https://www.parkskolen-herning.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Peder Syv Skolen</name>
+		<url>https://www.pedersyvskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Petersmindeskolen</name>
+		<url>https://www.petersmindeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Pilegårdsskolen</name>
+		<url>https://www.pg.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Pilehaveskolen</name>
+		<url>https://www.pilehaveskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Pindstrupskolen Specialcenter Syddjurs</name>
+		<url>https://www.pindstrupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Privatskolen Als</name>
+		<url>https://www.privatskolen-als.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Privatskolen i Frederikshavn</name>
+		<url>https://www.pif.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Privatskolen Nakskov</name>
+		<url>https://www.privatskolen-nakskov.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Provstegårdskolen</name>
+		<url>https://www.provstegaardskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Præstegårdsskolen</name>
+		<url>https://www.praestegaardsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Præstemoseskolen</name>
+		<url>https://www.praestemoseskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Præstø Skole</name>
+		<url>https://www.praestoe-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Paarup Skole</name>
+		<url>https://www.paarupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Randersgades Skole</name>
+		<url>https://www.rg.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Randers Realskole</name>
+		<url>https://www.randers-realsk.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rantzausminde Skole</name>
+		<url>https://www.rantzausmindeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ranum Skole</name>
+		<url>https://www.ranum-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rask Mølle Skole</name>
+		<url>https://www.rask-moelle-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rasmus Rask Skolen</name>
+		<url>https://si.rasmusraskskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ravnsholtskolen</name>
+		<url>https://www.ravnsholtskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Resen Skole</name>
+		<url>https://www.resen-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ringsted Ny Friskole</name>
+		<url>https://www.ringstednyfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rise Skole</name>
+		<url>https://www.riseskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Risingskolen</name>
+		<url>https://www.risingskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rismølleskolen</name>
+		<url>https://www.rismoelleskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rolf Krake Skolen</name>
+		<url>https://www.rolf-krake-sk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rosendalskolen</name>
+		<url>https://www.rosendalskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rosengårdskolen</name>
+		<url>https://www.rosengaardskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rosenlundskolen</name>
+		<url>https://www.rosenlundskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rosenvangskolen</name>
+		<url>https://www.rosenvangskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Roskilde Private Realskole</name>
+		<url>https://www.rprroskilde.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Roslev Skole</name>
+		<url>https://www.roslev-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rudersdal Lilleskole</name>
+		<url>https://www.rudersdal-lilleskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rudolf Steiner Skolen i Skanderborg</name>
+		<url>https://www.rss8660.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ruds Vedby Skole</name>
+		<url>https://www.rudsvedbyskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rugvængets Skole</name>
+		<url>https://www.rugvaengetsskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rundhøjskolen</name>
+		<url>https://www.rundhoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rydhave Slots Ungdomsskole</name>
+		<url>https://www.rydhave.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ryslinge Høj- og Efterskole</name>
+		<url>https://www.ryslinge-efterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rækker Mølle Skolen</name>
+		<url>https://www.raekkermoelleskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rødekro Skole</name>
+		<url>https://si.roedekro-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rødkilde Skole</name>
+		<url>https://www.roed.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rødkærsbro Skole</name>
+		<url>https://www.roedkaersbro.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rødovre Skole</name>
+		<url>https://www.roedovre-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rønbækskolen</name>
+		<url>https://roenbaekskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rønde Privatskole</name>
+		<url>https://www.roende-privatskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rønde Skole</name>
+		<url>https://www.roende-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rønne Privatskole</name>
+		<url>https://www.roenne-privsk.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rønneskolen afd.Åvang</name>
+		<url>https://si.aavangsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rørby Skole</name>
+		<url>https://www.roerby-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rørkjær Skole</name>
+		<url>https://www.roerkjaerskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Rådmandsgades Skole</name>
+		<url>https://www.rmg.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sabro-Korsvejskolen</name>
+		<url>https://www.sabro-korsvejskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sakskøbing Skole</name>
+		<url>https://www.sakskoebing.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Salbrovadskolen</name>
+		<url>https://www.salbrovadskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sanderumskolen</name>
+		<url>https://www.sanderumskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sankt Annæ Gymnasiums Grundskole</name>
+		<url>http://www.sag.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sankt Birgitta Skole</name>
+		<url>https://www.sanktbirgitta.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sankt Pauls Skole</name>
+		<url>https://www.sanktpaulsskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Hans Skole</name>
+		<url>https://www.scthans.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Ibs Skole</name>
+		<url>https://www.sctibs.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Jacobi Skole</name>
+		<url>https://www.sct-jacobi-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Joseph Søstrenes Skole</name>
+		<url>https://www.sct-joseph.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct Joseph Søstrenes Skole i Nykøbing</name>
+		<url>https://www.sct-joseph-nyk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Jørgens Skole Holstebro</name>
+		<url>https://www.sct-joergens-sk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Jørgens Skole Næstved</name>
+		<url>https://www.sjs.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Jørgens Skole Roskilde</name>
+		<url>https://www.sctjorgensskole.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Mariæ Skole</name>
+		<url>https://www.sct-mariae-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sct. Michaels Skole</name>
+		<url>https://www.sct-michaels-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sdr.Bjert Centralskole</name>
+		<url>https://www.sdr-bjert-centralskole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sdr. Feldings Efterskole</name>
+		<url>https://www.sdrfeldingefterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sdr. Felding Skole</name>
+		<url>https://www.sdrfelding-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sdr. Jernløse Lilleskole</name>
+		<url>https://www.sj-lilleskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sdr. Stenderup Centralskole</name>
+		<url>https://www.sdr-stenderup-centralskole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sdr Vang Skole</name>
+		<url>https://www.sdr-vang-skole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Seden Skole</name>
+		<url>https://www.sedenskole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sejergaardsskolen</name>
+		<url>https://www.sejergaardsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sejs Skole</name>
+		<url>https://www.sejs.skole.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Seminarieskolen</name>
+		<url>https://www.seminarieskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sengeløse Skole</name>
+		<url>https://www.sengeloese.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sevel Skole</name>
+		<url>https://www.sevel-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sigerslevøster Privatskole</name>
+		<url>https://www.sigerslev.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sjælsøskolen</name>
+		<url>https://www.sjaelsoe.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sjølund-Hejls Skole</name>
+		<url>https://www.sjoelund-hejls-skole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sjørslev Skole</name>
+		<url>https://www.sjorslevskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skads Skole</name>
+		<url>https://www.skadsskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skagen Skole</name>
+		<url>https://www.skagenskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skalmejeskolen</name>
+		<url>https://www.skalmejeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skanderborg Realskole</name>
+		<url>https://www.skanderborg-real.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skanderup-Hjarup Forbundsskole</name>
+		<url>https://www.forbundsskolen.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skansevejens Skole Fredericia</name>
+		<url>https://www.skansevejensskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skansevejens Skole Nørresundby</name>
+		<url>https://www.skansevejens-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skave Skole</name>
+		<url>https://www.skave-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skelgårdsskolen</name>
+		<url>https://www.sg.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skivehus Skole</name>
+		<url>https://www.skivehusskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skjern Kristne Friskole</name>
+		<url>https://www.skrif.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skjoldborgvejens Skole</name>
+		<url>https://www.skjoldborgvejensskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skjoldhøjskolen</name>
+		<url>https://www.skjoldhojskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolegades skole (Serritslev skole)</name>
+		<url>https://www.skolegadesskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen på Duevej</name>
+		<url>https://www.duevej.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen på Fjorden</name>
+		<url>https://www.skolenpaafjorden.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen på Herredsåsen</name>
+		<url>https://www.herredsaasen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen på Islands Brygge</name>
+		<url>https://www.sib.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen på la Cours Vej</name>
+		<url>https://www.frb-lc.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen på Sønderager</name>
+		<url>https://www.soenderagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen ved Bulowsvej</name>
+		<url>https://www.skolenbulowsvej.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen ved Gurrevej</name>
+		<url>https://www.gurrevej.skole.helsingor.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen ved Sundet</name>
+		<url>https://www.svs.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen ved Søerne</name>
+		<url>https://www.skolenvedsoerne.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolen ved Tuse Næs</name>
+		<url>https://www.skolenvedtusenaes.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolerne i Elev og Hårup</name>
+		<url>https://www.elev-haarup.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skolerne i Nykøbing</name>
+		<url>https://www.siny.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skottegårdsskolen</name>
+		<url>https://www.sk.uvtaarnby.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovbakkeskolen</name>
+		<url>https://www.skovbakkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovboskolen</name>
+		<url>https://www.skovboskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovbrynet Skole</name>
+		<url>https://www.skovbrynet.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovbyskolen</name>
+		<url>https://www.skovbyskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovlund efterskole</name>
+		<url>https://www.ske.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovvangskolen Allerød</name>
+		<url>https://www.skov-vang-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovvangskolen Glostrup</name>
+		<url>https://www.skovvangskolen-glostrup.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovvangskolen Hammel</name>
+		<url>https://www.skovvangskolen-hammel.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skovvangskolen Aarhus</name>
+		<url>https://www.skovvang.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skuldelev Skole</name>
+		<url>https://www.skuldelev-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skælskør Skole</name>
+		<url>https://www.skaelskoer-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skærbæk Distriktsskole</name>
+		<url>https://www.ds-s.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skæring Skole</name>
+		<url>https://www.skaering-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skødstrup Skole</name>
+		<url>https://www.skoedstrup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skørping Skole</name>
+		<url>https://www.skoerpingskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skårup Skole</name>
+		<url>https://www.skaarupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Skårup skole</name>
+		<url>https://www.skaarupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Slagslunde Skole</name>
+		<url>https://www.slagslunde-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sletten Skole</name>
+		<url>https://www.slettenskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Snedsted Skole</name>
+		<url>https://www.snedsted-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Snekkersten Skole</name>
+		<url>https://www.snekkerstenskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sofielundskolen</name>
+		<url>https://www.sofielundskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sofiendalskolen</name>
+		<url>https://www.sofiendal-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sofie Rifbjerg Efterskole</name>
+		<url>https://www.sofierifbjerg.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Solvangsskolen</name>
+		<url>https://www.solvangskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sophienborgskolen</name>
+		<url>https://www.sophienborgskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sorgenfriskolen</name>
+		<url>https://www.sorgenfriskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sortebakkeskolen</name>
+		<url>https://www.sortebakkeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sortedamskolen</name>
+		<url>https://www.sortedamskolen.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sorø Privatskole</name>
+		<url>https://www.sprs.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Spangsbjergskolen</name>
+		<url>https://www.spangsbjergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stauning Skole</name>
+		<url>https://www.stauningskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stavnsholtskolen</name>
+		<url>https://stavnsholtskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stenballeskolen</name>
+		<url>https://www.stensballeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stenderup Skole</name>
+		<url>https://www.stenderup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stengård Skole</name>
+		<url>https://www.stengaard.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stengårdsskolen</name>
+		<url>https://www.stengaardsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stenhus Kostskole</name>
+		<url>https://www.stenhus.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stenlille Skole</name>
+		<url>https://www.stenlille-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stenløse Privatskole</name>
+		<url>https://www.stenpriv.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stensagerskolen</name>
+		<url>https://www.stensagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stensnæsskolen</name>
+		<url>https://www.stensnaesskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stige Friskole</name>
+		<url>https://www.stigefriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stilling Skole</name>
+		<url>https://www.stilling-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stjernevejskolen</name>
+		<url>https://www.stjernevejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stoholm Skole</name>
+		<url>https://www.stoholm.viborgskoler.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stokkebækskolen</name>
+		<url>http://www.stokkebaekskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stolpedalsskolen</name>
+		<url>https://www.stolpedalsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Storebæltskolen</name>
+		<url>https://www.storebaeltskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Store Heddinge Skole</name>
+		<url>https://www.storeheddingeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Store Magleby Skole</name>
+		<url>https://www.st-magleby.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Store Merløse Centralskole</name>
+		<url>https://www.st-merlose-centralskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Storåskolen - kommunal specialskole</name>
+		<url>https://www.storaaskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strandby Skole - Farsø</name>
+		<url>https://www.strandby-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strandby Skole - Strandby</name>
+		<url>https://www.strandbyskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strandgårdskolen</name>
+		<url>https://www.strandgaardskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strandskolen i Greve</name>
+		<url>https://www.strandskolen-greve.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strandvejsskolen Østerbro</name>
+		<url>https://www.strandvejsskolen.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strib Skole</name>
+		<url>https://www.stribskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Strøbyskolen</name>
+		<url>https://www.stroebyskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Stubbekøbing Skole</name>
+		<url>https://si.stubbekoebing-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Suldrup Skole</name>
+		<url>http://www.suldrup-skole.skoleintra.dk/Infoweb/Fi2/Default.asp</url>
+	</school>
+	<school>
+		<name>Sulsted Skole</name>
+		<url>https://www.sulsted-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>SUNDskolen</name>
+		<url>https://www.sundskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sunds Skole</name>
+		<url>https://www.sunds-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Svartingedal - Skole Nord</name>
+		<url>https://www.hasleskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Svebølle Skole</name>
+		<url>https://www.sveboelle-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Svend Gønge-Skolen</name>
+		<url>https://www.svendgoengeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Svenstrup Efterskole</name>
+		<url>https://www.svenstrup-efterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Svindinge Friskole og Børnehave</name>
+		<url>https://www.svindingefriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Svinninge Skole</name>
+		<url>https://www.svinningeskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sydbyskolen</name>
+		<url>https://www.sydbyskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sydkystens privatskole</name>
+		<url>https://www.sydkystens-privatskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Syvstjerneskolen</name>
+		<url>https://www.syvstjerneskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søagerskolen</name>
+		<url>https://www.soeagerskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søborg Skole</name>
+		<url>https://www.soeborgskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sødalskolen</name>
+		<url>https://www.soedalskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søholmskolen</name>
+		<url>https://www.soeholmskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søhusskolen</name>
+		<url>https://www.soehusskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sølystskolen Egå</name>
+		<url>https://www.soelystskolen-egaa.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sølystskolen Silkeborg</name>
+		<url>https://www.soelystskolen.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndergades Skole</name>
+		<url>https://www.sondergades-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sønderholm Skole</name>
+		<url>https://www.soenderholmskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndermarkskolen</name>
+		<url>https://www.sondermarkskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndermarksskolen Vejle</name>
+		<url>https://www.soendermarksskolen-vejle.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sønder Otting Skole</name>
+		<url>https://www.sdros.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Sønderrisskolen</name>
+		<url>https://www.soenderrisskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndersøskolen Nordfyn</name>
+		<url>https://www.sonderso-sk.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndersøskolen Værløse</name>
+		<url>https://www.soendersoe-vaerloese.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndervangskolen</name>
+		<url>https://www.soendervangskolen-hammel.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndre Skole Holeby</name>
+		<url>https://www.holeby-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndre Skole, Rødby</name>
+		<url>https://www.rodbyskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søndre Skole Viborg</name>
+		<url>https://www.soendreskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Søvind Skole</name>
+		<url>https://www.soevind-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tallerupskolen</name>
+		<url>https://www.tallerupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tarm Skole</name>
+		<url>https://www.tarm-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tarup Skole</name>
+		<url>https://www.tarupskole.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Taulov Skole</name>
+		<url>https://www.taulovskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>TCR TiendeklasseCenter Roskilde</name>
+		<url>https://www.tcr.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Terndrup Skole</name>
+		<url>https://www.terndrup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Thise Skole</name>
+		<url>https://www.thiseskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Th. Langs Skole</name>
+		<url>https://www.thlang.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Thomasskolen</name>
+		<url>https://www.thomasskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Thorning Skole</name>
+		<url>https://www.thorningskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Thurø Skole</name>
+		<url>https://www.thuroeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Thyregod Skole</name>
+		<url>https://www.thyregodskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tibberupskolen</name>
+		<url>https://www.tibberupskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tikøb Skole</name>
+		<url>https://www.tikob-skole.helsingor.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tilst Skole</name>
+		<url>https://www.tilst-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tinderhøj Skole</name>
+		<url>https://www.tinderhoej-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tingagerskolen</name>
+		<url>https://www.tingagerskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tingkærskolen</name>
+		<url>https://www.tingkaerskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tinglev Skole</name>
+		<url>https://www.tinglevskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tingløkkeskolen</name>
+		<url>https://si.tingloekke.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tingstrup Skole</name>
+		<url>https://www.tingstrup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tirsdalens Skole</name>
+		<url>https://www.tirsdalensskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tjæreborg Skole</name>
+		<url>https://www.tjaereborgskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tjørnegårdskolen Roskilde</name>
+		<url>https://www.tjornegaardskolen.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tjørnegårdsskolen</name>
+		<url>https://www.tjoernegaard.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tjørnelyskolen</name>
+		<url>https://www.tjoernelyskolen-greve.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tjørring Skole</name>
+		<url>https://www.tjoerring-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Toftehøjskolen</name>
+		<url>https://www.toftehojskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Toftlund Distriktsskole</name>
+		<url>https://www.ds-tl.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tornhøjskolen</name>
+		<url>https://www.tornhoejskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tornvedskolen</name>
+		<url>https://www.tornvedskolen.skoleintra.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Torstedskolen</name>
+		<url>https://si.torstedskolen.horsens.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Torstorp Skole</name>
+		<url>https://www.torstorpskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Toubro Børneby</name>
+		<url>https://www.toubroskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tove Ditlevsens Skole</name>
+		<url>https://www.tds.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tranbjerg Skole</name>
+		<url>https://www.tranbjerg-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tre Ege Skolen, Kværndrup</name>
+		<url>https://www.kvaerndrup-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tre Ege Skolen, Ryslinge</name>
+		<url>https://www.treegeskolen-ryslinge.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Trekronerskolen</name>
+		<url>https://www.trekronerskolen.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Treldevejens Skole</name>
+		<url>https://www.treldevejensskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Trongårdsskolen</name>
+		<url>https://www.tr-ltk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Trællerupskolen</name>
+		<url>https://www.traellerupskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Trørødskolen</name>
+		<url>https://www.troeroedskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tune Skole</name>
+		<url>https://www.tuneskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tungelundskolen</name>
+		<url>https://www.tungelund.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tvis Skole</name>
+		<url>https://www.tvisskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tybjerg Privatskole</name>
+		<url>https://www.tybjergprivatskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tylstrup Skole</name>
+		<url>https://www.tylstrup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tølløse Privat- og Efterskole</name>
+		<url>https://www.baptisternes-skoler.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tølløse Skole</name>
+		<url>https://www.tollose-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tønder Distriktsskole</name>
+		<url>https://www.ds-t.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tørring Skole</name>
+		<url>https://www.toerring-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Taarbæk Skole</name>
+		<url>https://taarbaekskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tårnborg Skole</name>
+		<url>https://www.taarnborgskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Tårs Skolecenter</name>
+		<url>https://www.taarsskolecenter.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Taastrup Realskole</name>
+		<url>https://www.taastruprealskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ubby Fri- og Efterskole</name>
+		<url>https://www.ubby.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ugerløse Skole</name>
+		<url>https://www.ugerloseskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Uglegårdsskolen</name>
+		<url>https://www.uglegaardsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Uhre Friskole</name>
+		<url>https://www.uhrefriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ulfborg Skole</name>
+		<url>https://www.ulfborg-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ulkebøl Skole</name>
+		<url>https://www.ulkebol.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ullits skole</name>
+		<url>https://www.ullits-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ulsted Skole</name>
+		<url>https://www.ulstedskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Usserød Skole</name>
+		<url>https://skoleintra.usseroedskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Utterslev Skole</name>
+		<url>https://www.utterslevskole.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vadehavsskolen</name>
+		<url>https://www.vadehavsskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vadgård Skole</name>
+		<url>https://www.vadgaardskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Valby Skole</name>
+		<url>https://www.valbyskole.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Valdemarskolen Ribe</name>
+		<url>https://www.valdemarskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Valdemarskolen Ringsted</name>
+		<url>https://www.valdemarskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Valhøj Skole</name>
+		<url>https://www.valhoj-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vallensbæk Skole</name>
+		<url>https://www.vallensbaekskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Valsgaard Skole</name>
+		<url>https://www.valsgaardskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vanløse Skole</name>
+		<url>https://www.van.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Varnæs Skole</name>
+		<url>https://www.varnaes-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vejgård Østre Skole</name>
+		<url>https://www.vejgaardoestreskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vejle Midtbyskole</name>
+		<url>http://www.vejlemidtbyskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Veksø Skole</name>
+		<url>https://www.veksoe-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vemb Skole</name>
+		<url>https://www.vemb-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vemmelev Skole</name>
+		<url>https://www.skole.korsoer.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestbjerg Skole</name>
+		<url>https://www.vestbjergskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vesterbakkeskolen</name>
+		<url>https://www.vesterbakkeskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vesterbro Ny Skole</name>
+		<url>https://www.vesterbronyskole.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestergårdsskolen</name>
+		<url>https://www.vestergaardsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vester Hassing Skole</name>
+		<url>https://www.vesterhassingskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vester Hornum Skole</name>
+		<url>https://www.vester-hornum-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vesterkærets Skole</name>
+		<url>https://www.vesterkaeretsskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vesterlund Efterskole</name>
+		<url>https://www.vesterlund-efterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestermarie Skole</name>
+		<url>https://www.vestermarie.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestermarkskolen</name>
+		<url>https://www.vester-markskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestermarkskolen Odder</name>
+		<url>https://www.vestermark-skolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vester Skerninge Friskole</name>
+		<url>https://www.vskfri.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestervang Skole</name>
+		<url>https://www.vestervangskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestervangskolen</name>
+		<url>https://www.vestervangskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestervangskolen Glostrup</name>
+		<url>https://www.vester-vang.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestervangskolen Herning</name>
+		<url>https://www.vestervang-skolen-herning.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestervig Skole</name>
+		<url>https://www.vestervig-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestfjendsskolen</name>
+		<url>https://www.vestfjendsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestre Skole Grenå</name>
+		<url>https://www.vestre-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestre Skole Middelfart</name>
+		<url>https://www.vestreskole-middelfart.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestre Skole Silkeborg</name>
+		<url>https://www.vestre.skole.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestre Skole Svendborg</name>
+		<url>https://www.vestre.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestsalling Skole og Dagtilbud</name>
+		<url>https://www.vestsallingskoleogdagtilbud.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vestskolen</name>
+		<url>https://www.vestskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vibeholmskolen</name>
+		<url>https://www.vibeholmskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vibenshus Skole</name>
+		<url>https://www.vi.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vibeskolen</name>
+		<url>https://www.vibeskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Viborg Private Realskole</name>
+		<url>https://www.viborgrealskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Viborg Ungdomsskole</name>
+		<url>https://www.viborgungdomsskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Videbæk kristne Friskole</name>
+		<url>https://www.vkfri.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vigerslev Allés Skole</name>
+		<url>https://www.vas.kk.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vigersted Skole</name>
+		<url>https://www.vigersted-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vig Skole</name>
+		<url>https://www.vig-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vildbjerg Skole</name>
+		<url>https://www.vildbjerg-skole.dk/mobil/mobil_fi/Loginside.asp</url>
+	</school>
+	<school>
+		<name>Vindblæs Friskole</name>
+		<url>https://www.vindblaes.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vinderup Skole</name>
+		<url>https://www.vinderup-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vindinge Skole</name>
+		<url>https://www.vindingeskole.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vinding Skole Sørvad</name>
+		<url>https://www.vinding-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vinding Skole Vejle</name>
+		<url>https://www.vindingskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vintersbølle Skole</name>
+		<url>https://www.vintersboelleskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Virklund Skole</name>
+		<url>https://www.virklund.skole.silkeborg.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Virring Skole</name>
+		<url>https://www.virring-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Virum skole</name>
+		<url>https://www.virumskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Virupskolen</name>
+		<url>https://www.virupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vissenbjerg Skole</name>
+		<url>https://www.vissenbjergskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vittenbergskolen</name>
+		<url>https://www.vittenbergskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vivild Børneby</name>
+		<url>https://www.langhoj.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vodskov Skole</name>
+		<url>https://www.vodskovskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Voel Skole</name>
+		<url>https://www.voel-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vokslev Friskole</name>
+		<url>https://www.vokslevfriskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vorbasse Skole</name>
+		<url>https://www.vorbasseskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vor Frue Skole Næstved</name>
+		<url>https://www.vorfrue-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vor Frue Skole Roskilde</name>
+		<url>https://www.vorfrueskole.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vorup Skole</name>
+		<url>https://www.vorupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Vrå Skole</name>
+		<url>http://www.vraaskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Waldemarsbo Efterskole</name>
+		<url>https://www.waldemarsbo.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ærø Efterskole</name>
+		<url>https://www.aeroe-efterskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ø. Brønderslev Centralskole</name>
+		<url>https://www.oebc.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ødis Skole</name>
+		<url>https://www.oedis-skole.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ødsted Skole</name>
+		<url>https://www.oedstedskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ølgod Skole</name>
+		<url>https://www.oelgodskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ørkildskolen</name>
+		<url>https://www.orkildskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ørsted Børneby - Rougsøskolen</name>
+		<url>https://www.rougsoeskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ørum skole</name>
+		<url>https://www.orumskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østbirk Skole</name>
+		<url>https://www.oestbirk-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Øster Brønderslev Centralskole</name>
+		<url>https://www.oebc.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østerbyskolen</name>
+		<url>https://www.osterbyskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østerhøjskolen</name>
+		<url>https://www.osterhojskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østerild Skole</name>
+		<url>https://www.oesterild-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Øster Jølby Skole</name>
+		<url>https://www.joelby-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østermarkskolen</name>
+		<url>https://www.oestermarkskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Øster Nykirke Skole</name>
+		<url>https://www.oesternykirkeskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Øster Snede Skole</name>
+		<url>https://www.oester-snede-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Øster Starup Skole</name>
+		<url>https://www.oesterstarupskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østervangskolen Hadsten</name>
+		<url>https://www.oestervangskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østervangsskolen</name>
+		<url>https://si.ostervangsskolen.roskilde.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Øster Åby Friskole</name>
+		<url>https://www.voresfriskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østre Skole - Middelfart</name>
+		<url>https://www.oestre-middelfart.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østre Skole - Nykøbing Falster</name>
+		<url>https://www.oestre.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østre Skole - Thisted</name>
+		<url>https://www.ostre-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Østskolen</name>
+		<url>https://www.oestskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aabybro Skole</name>
+		<url>https://www.aabybroskole.dk/Mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Åby Skole</name>
+		<url>https://www.aaby-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalens Privatskole</name>
+		<url>https://www.aadalprivat.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalens Skole</name>
+		<url>https://www.aadalensskole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalskolen</name>
+		<url>https://www.aadal-skolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalskolen, Fangel Friskole</name>
+		<url>https://www.aada.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalskolen i Ringsted</name>
+		<url>https://www.aadalskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalskolen i Skive</name>
+		<url>http://www.aadalskolen-skive.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Ådalsskolen i Mørke</name>
+		<url>https://www.aadalsskolen.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aakjærskolen</name>
+		<url>https://www.aakjaerskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aalestrup Realskole</name>
+		<url>https://www.aalestrup-real.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aalestrup Skole</name>
+		<url>https://www.aalestrupskole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aalykkeskolen</name>
+		<url>https://www.aalykkeskolen.kolding.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Åløkkeskolen Odense</name>
+		<url>https://www.aaloekkeskolen.odense.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Årby Skole</name>
+		<url>https://www.aarby-skole.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aars Skole</name>
+		<url>https://www.aars-skole.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+	<school>
+		<name>Aarupskolen</name>
+		<url>https://www.aarupskolen.skoleintra.dk/mobil/Mobil_FI/LoginSide.asp</url>
+	</school>
+</schools>

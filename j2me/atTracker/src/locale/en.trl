@@ -1,0 +1,139 @@
+# Database names
+dbName1		@Tracker Tasks database
+dbName2		@Tracker Period Data database
+
+# Weekdays
+monl		Monday
+tuel		Tuesday
+wedl		Wednesday
+thul		Thursday
+fril		Friday
+satl		Saturday
+sunl		Sunday
+
+# Months
+jan		Jan
+feb		Feb
+mar		Mar
+apr		Apr
+may		May
+jun		Jun
+jul		Jul
+aug		Aug
+sep		Sep
+oct		Oct
+nov		Nov
+dec		Dec
+
+# Alerts
+errUnrec		Unrecoverable error.
+errBackup		Backup error.
+errThreadTitle		Thread error.
+errThreadBody		Failed to start thread.
+errNoRebuildList	Cannot rebuild the list.
+errNoRootTitle		No root selected.
+errNoWRootBody		You must select a root folder to backup to.
+errNoRRootBody		You must select a root folder to restore from.
+errNoBackupTitle	No backups found.
+errNoBackupBody		Cannot find a valid @Tracker Backup file on any \
+			external media.
+errRestoreTitle		Restore error.
+errRestoreBody		Cannot restore from backup.
+noDB			Cannot open database.
+noJSR75title		Missing JSR-75.
+noJSR75body		Your mobile phone does not support accessing an \
+			external storage card such as a SD-, MMC- or M2-card.
+noMainView		Failed to create Main view.
+noTasksListView		Failed to create TasksList view.
+noRRecord		Failed to read record.
+noWRecord		Failed to write record.
+noTasksList		Failed to rebuild Tasks List.
+noMatchesTitle		No matches.
+noMatchesBody		No period data matched the supplied constraints.
+noSummarize		Failed to summarize.
+noDelete		Cannot delete record.
+noBackupTitle		No roots.
+noBackupBody		No card inserted.
+btrtDone		Done.
+btDone			Backup completed.
+rtDone			Restore completed.
+
+# Confirmations
+okToRestoreTitle	Ok to restore?
+okToRestoreBody		Is it ok to restore from backup? This will overwrite \
+			all your tasks and period data.
+okToCopyPeriodTitle	Ok to copy period?
+okToCopyPeriod1		Is it ok to copy the data from the period
+okToCopyPeriod2		to the current period
+okToClearPeriodTitle	Ok to clear period?
+okToClearPeriodBody	Is it ok to remove all entries for the period
+Yes			Yes
+No			No
+
+# BackupThread	
+btWrite			Cannot write to the @Tracker backup file.
+btCreate		Failed to create backup file.
+btTasks			Cannot write tasks to backup file.
+btPeriods		Cannot write period data to backup file.
+
+# GUI
+cmdBack			Back
+cmdCancel		Cancel
+cmdOptions		Options
+cmdSave			Save
+cmdNew			New
+cmdDelete		Delete
+cmdSummarize		Summarize
+cmdBackup		Backup
+cmdRestore		Restore
+
+gAboutTitle		About
+gAboutVersion		Version
+gAboutURL		URL
+gEditCG			Taskslist
+gEditTask		Task
+gTasksListTitle		Tasks
+gSummaryTitle		Summary
+gSummaryKeywords	Keywords
+gSummaryStart		Start date
+gSummaryEnd		End date
+gMainOptsBack		Back
+gMainOptsCopy		Copy previous period
+gMainOptsClear		Clear period
+gMainOptsTools		Tools
+gMainOptsAbout		About
+gMainOptsExit		Exit
+gToolsTasks		Tasks List
+gToolsSummary		Summary
+gToolsBackup		Backup databases
+gToolsRestore		Restore databases
+gBackupTitle		Backup
+gBackupTo		Backup to
+gRestoreTitle		Restore
+gRestoreFrom		Restore from
+
+# IOGUIThread
+ioPleaseWait		Please wait!
+ioTasks			tasks
+ioPeriods		periods
+
+# MainCanvas
+mcNoRecs		No records.
+mcBackingUp		Backing up ...
+mcRestoring		Restoring ...
+
+# Record
+rNoPack			Failed to pack Period Data record.
+rNoLoad			Failed to load Period Data record.
+
+# RestoreThread
+rtNoOpen		Failed to open @Tracker backup file.
+rtNotValid		Not a valid @Tracker backup file.
+rtTasks			Cannot read tasks from backup file.
+rtPeriods		Cannot read period data from backup file.
+
+# SummaryResult
+srTime			Total time
+
+# Task
+tNoPack			Failed to pack Tasks record.

@@ -1,0 +1,225 @@
+#include "resources.h"
+
+/*
+**	Global data.	
+*/
+VERSION "1.1"
+ICON "../gfx/occmanl.bmp"
+SMALLICON "../gfx/occmans.bmp"
+
+/*
+**	Alerts.
+*/
+ALERT ID aRom31
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old"
+	MESSAGE "The PalmOS in this device is too old. PalmOS 3.1 or better is required to run this program."
+	BUTTONS "OK"
+END
+
+ALERT ID aClipper
+INFORMATION
+BEGIN
+	TITLE "Viewer Error"
+	MESSAGE "The web clipping application viewer is required to open web clipping applications."
+	BUTTONS "OK"
+END
+
+ALERT ID aDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Entry?"
+	MESSAGE "Is it ok to delete this entry?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNoExe
+INFORMATION
+BEGIN
+	TITLE "OCC Not Found"
+	MESSAGE "'^1' not found."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotDelete
+INFORMATION
+BEGIN
+	TITLE "Cannot Delete"
+	MESSAGE "Cannot delete '^1'."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoSuchOCC
+INFORMATION
+BEGIN
+	TITLE "Cannot Find OCC"
+	MESSAGE "Cannot find '^1'."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoUrl
+INFORMATION
+BEGIN
+	TITLE "No URL"
+	MESSAGE "'^1' does not contain a valid URL chunk."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotGet
+INFORMATION
+BEGIN
+	TITLE "Cannot Get Data"
+	MESSAGE "Cannot get data from OCC. This OCC cannot be edited."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotBackup
+INFORMATION
+BEGIN
+	TITLE "Cannot Backup"
+	MESSAGE "Cannot backup existing OCC. OCC will not be changed."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotDeleteOCC
+INFORMATION
+BEGIN
+	TITLE "Cannot Delete Backup"
+	MESSAGE "Cannot delete backup OCC. You now have a stray OCC. Creator Id is OccX, type is '.OLD'. You may delete them manually."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotCreateOCC
+INFORMATION
+BEGIN
+	TITLE "Cannot Create OCC"
+	MESSAGE "Cannot create occ. Make sure you have enough storage left for this operation. A couple of K is needed."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotRollback
+INFORMATION
+BEGIN
+	TITLE "Cannot Rollback OCC"
+	MESSAGE "Your old OCC was backed up. The new one failed to install. Cannot rollback your old OCC."
+	BUTTONS "OK"
+END
+
+ALERT ID aMissingField
+INFORMATION
+BEGIN
+	TITLE "Empty Field(s)"
+	MESSAGE "You must enter something in the Name and URL fields."
+	BUTTONS "OK"
+END
+
+ALERT ID aOCCAlreadyExist
+INFORMATION
+BEGIN
+	TITLE "OCC Already Exists"
+	MESSAGE "An OCC with this name already exists. Please enter another name."
+	BUTTONS "OK"
+END
+
+ALERT ID aDebug
+INFORMATION
+BEGIN
+	TITLE "Debug alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+**	Main Form.
+*/
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "OCC Manager"
+	TABLE ID fMainTable AT (2 24 144 108) ROWS 10 COLUMNS 1 COLUMNWIDTHS 144
+	SCROLLBAR ID fMainScrollbar AT (150 22 7 114) VALUE 0 MIN 0 MAX 0 PAGESIZE MaxLinesInTable
+
+	BUTTON "New" ID fMainNew AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+MENU ID mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mMainOptionsAbout
+	END
+END
+
+/*
+**	About Form.
+*/
+FORM ID fAbout AT (2 46 156 112)
+MODAL
+BEGIN
+	TITLE "About OCC Manager"
+
+	LABEL "One Click Clipping Manager" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.2" AUTOID AT (CENTER 42)
+
+	LABEL "Website:" AUTOID AT (4 62)
+	LABEL "http://www.schau.com/palm/occ" AUTOID AT (CENTER 74)
+
+	BUTTON "OK" AUTOID AT (4 BOTTOM@109 AUTO AUTO)
+END
+
+/*
+**	View Form.
+*/
+FORM ID fView AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "OCC Manager - View"
+	
+	LABEL "Standalone:" AUTOID AT (4 20)
+	FIELD ID fViewStandalone AT (PREVRIGHT+4 20 80 12) NONEDITABLE
+
+	LABEL "Url:" AUTOID AT (4 34)
+	FIELD ID fViewUrl AT (12 46 130 96) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID fViewScrollbar AT (150 45 7 90) VALUE 0 MIN 0 MAX 0 PAGESIZE 9
+	BUTTON "OK" ID fViewOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Delete" ID fViewDelete AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Edit" ID fViewEdit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+/*
+**	Edit Form.
+*/
+FORM ID fEdit AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON 1
+MENUID sysEditMenuID
+BEGIN
+	TITLE "OCC Manager - Edit"
+	LABEL "Name:" AUTOID AT (4 20)
+	FIELD ID fEditName AT (PREVRIGHT+4 20 120 12) UNDERLINED MULTIPLELINES MAXCHARS 31
+	LABEL "Url:" AUTOID AT (4 34)
+	FIELD ID fEditUrl AT (12 46 130 72) UNDERLINED MULTIPLELINES MAXCHARS 2048 HASSCROLLBAR
+	SCROLLBAR ID fEditScrollbar AT (150 45 7 70) VALUE 0 MIN 0 MAX 0 PAGESIZE 9
+	CHECKBOX "Standalone" ID fEditStandalone AT (4 121 AUTO AUTO) LEFTANCHOR
+
+	BUTTON "OK" ID fEditOK AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Cancel" ID fEditCancel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU sysEditMenuID
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo" 10000 "U"
+		MENUITEM "Cut" 10001 "X"
+		MENUITEM "Copy" 10002 "C"
+		MENUITEM "Paste" 10003 "P"
+		MENUITEM "Select" 10004 "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Keyboard" 10006 "K"
+		MENUITEM "Graffiti Help" 10007 "G"
+	END
+END

@@ -1,0 +1,331 @@
+/*
+Theme Name: Wicked Wiki
+Theme URI: http://www.schau.dk/
+Description: The schau.dk wiki theme.
+Author: Brian Schau
+Version: 3.0
+Tags: simple
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-size: 100%;
+}
+
+:root {
+	font-size: calc(1rem + 0.25vw);
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	height: 100%;
+	margin: 0 auto;
+	color: #111;
+}
+
+pre {
+	background-color: #eee;
+	padding: 0.5em 1em;
+	border-left: 2px solid #888;
+	overflow: scroll;
+	font-size: 90%;
+}
+
+code {
+	font-family: 'Courier New', monospace;
+}
+
+a, a:visited, a:hover, a:active {
+	font-weight: bold;
+	text-decoration: none;
+	color: #558;
+}
+				     
+a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: #99c;
+	border-bottom: 1px dotted #111;
+}
+
+h1 {
+	color: #5c6366;
+	font-family: Garamond, serif;
+	clear: both;
+}
+
+h2, h3, h4, h5, h6 {
+	color: #8F9699;
+	font-family: Garamond, serif;
+	clear: both;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+#footer {
+	clear: both;
+	font-size: 60%;
+	font-style: italic;
+	text-align: center;
+}
+
+#page { margin: 0 auto; }
+
+.alignleft, img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+
+.alignright, img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+
+.aligncenter, img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Search box
+ */
+#search-box {
+	margin: 1em auto;
+	width: 100%;
+	text-align: center;
+	display: block;
+	overflow: hidden;
+}
+
+#search-text {
+	font-size: 1rem;
+	color: #999;
+	padding: 8px;
+	margin-right: 10px;
+	-moz-box-shadow: inset 2px 2px 5px #ccc;
+	box-shadow: inset 2px 2px 5px #ccc;
+	border: 1px solid #b8b8b8;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-transition: background-color 0.3s linear;
+	-moz-transition: background-color 0.3s linear;
+	-o-transition: background-color 0.3s linear;
+}
+
+.button-blue {
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	-pie-background: linear-gradient(top,  #00adee,  #0078a5);
+	border: 1px solid #034462;
+	color: #fff;
+	font-size: 1rem;
+	padding: 8px;
+	border-radius: 6px;
+	display: inline-block;
+	width: 20%;
+}
+
+.button-blue:hover {
+	color: #ddd;
+}
+
+/**
+ * Main
+ */
+.lists {
+	margin: 0 auto;
+}
+
+.lists ul, .lists ol { list-style: none; }
+
+.cat-item {
+	padding: 0.25em 1em;
+	background-color: #f0ffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d0dddd), to(#f0ffff));
+	background: -moz-linear-gradient(top,  #d0dddd,  #f0ffff);
+	-pie-background: linear-gradient(top,  #d0dddd,  #f0ffff);
+	border: 1px solid #a0aaaa;
+	margin-bottom: 0.2em;
+	border-radius: 6px;
+}
+
+.cat-item:hover {
+	background-color: #d0dddd;
+}
+
+.cat-item a, .post-item a, .page_item a {
+	color: black;
+	text-decoration: none;
+}
+
+.cat-item a:hover, .post-item a:hover, .page_item a:hover {
+	text-decoration: underline dotted;
+}
+
+.post-item {
+	padding: 0.25em 1em;
+	background-color: #f0fff0;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d0ddd0), to(#f0fff0));
+	background: -moz-linear-gradient(top,  #d0ddd0,  #f0fff0);
+	-pie-background: linear-gradient(top,  #d0ddd0,  #f0fff0);
+	border: 1px solid #a0aaa0;
+	margin-bottom: 0.2em;
+	border-radius: 6px;
+}
+
+.post-item:hover {
+	background-color: #d0ddd0;
+}
+
+.page_item {
+	padding: 0.25em 1em;
+	background-color: #fff0ff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ddd0dd), to(#fff0ff));
+	background: -moz-linear-gradient(top,  #ddd0dd,  #fff0ff);
+	-pie-background: linear-gradient(top,  #ddd0dd,  #fff0ff);
+	border: 1px solid #aaa0aa;
+	margin-bottom: 0.2em;
+	border-radius: 6px;
+}
+
+.page_item:hover {
+	background-color: #ddd0dd;
+}
+
+.wwh1 {
+	font-weight: normal;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+dt { color: #226611; }
+dt { margin-top: 0.5em; }
+dl a { margin-right: 0.5em; }
+
+/**
+ * Breadcrumb trail
+ */
+.breadcrumb, .breadcrumb a {
+/*	font-size: 0.9rem;	*/
+	font-size: 90%;
+	color: #999;
+}
+
+/**
+ * Posts
+ */
+p { margin-top: 1em; }
+
+.page-content { padding: 0 2em; }
+
+h1 { margin: 1em 0 1em 0; }
+h2, h3, h4, h5, h6 { margin: 0.5em 0 0.5em 0; }
+
+h3 { color: #248; }
+
+h4 { text-style: italic; }
+
+ul, ol { list-style-position: inside; }
+
+li > ul, li > ol { margin-left: 2em; }
+
+table {
+	margin-top: 1em;
+	background: #D3E4E5;
+	border: 1px solid gray;
+	border-collapse: collapse;
+	color: #fff;
+	font-size: 90%;
+}
+
+caption {
+	border: 1px solid #5C443A;
+	color: #5C443A;
+	font-weight: bold;
+	letter-spacing: 20px;
+	padding: 6px 4px 8px 0px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+td, th {
+	color: #363636;
+	padding: .4em;
+}
+
+tr { border: 1px dotted gray; }
+
+thead th, tfoot th {
+	background: #5C443A;
+	color: #FFFFFF;
+	padding: 3px 10px 3px 10px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+tbody td a {
+	color: #363636;
+	text-decoration: none;
+}
+
+tbody td a:visited {
+	color: gray;
+	text-decoration: line-through;
+}
+
+tbody td a:hover { text-decoration: underline; }
+
+tbody th a {
+	color: #363636;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+tbody th a:hover { color: #363636; }
+
+
+tbody th, tbody td {
+	text-align: left;
+	vertical-align: top;
+}
+
+tfoot td {
+	background: #5C443A;
+	color: #FFFFFF;
+	padding-top: 3px;
+}
+
+tr:nth-child(odd) { background: #fff; }
+
+tbody tr:hover {
+	background: #99BCBF;
+	border: 1px solid #03476F;
+	color: #000000;
+}

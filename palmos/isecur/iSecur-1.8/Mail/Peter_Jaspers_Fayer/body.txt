@@ -1,0 +1,29 @@
+Brian Schau, (on 2007-01-14 14:11) sent:
+
+> Thanks for your donation.
+
+You're welcome.  I've been using Secure-IT for years, and when I looked
+it up to show them where to download it, I was surprised to find iSecure,
+and saw the PayPal link.
+
+I am happy to report that the migration to iSecure was seamless
+(I guess I could have used export from SecureIT and import to iSecure,
+but your program made it dead easy!)
+
+Now if I could only come to some better way of organizing and filing
+all the stuff in there to make things easy to find, things would be
+perfect. (My own fault).
+
+> If you... have any... requests for enhancements...
+
+Only it would be nice if the "up/down" rocker would move up and down
+the list. (I have a Treo 650).  As well, if I type 2 or more letters
+within less than (say) two seconds, it would be nice if it would then
+jump down to entries starting with those letters. (it works for one
+now ). This seems to be the way "one-handed" lookups are going.
+-- 
+ /PJ, Peter Jaspers-Fayer, L&ITS pjf@ovc.uoguelph.ca 519 824-4120 x54777
+     1601 OVC/ University of Guelph/ Guelph, Ontario/ N1G 2W1/ Canada.
+
+
+

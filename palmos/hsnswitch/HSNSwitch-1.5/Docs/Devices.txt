@@ -1,0 +1,19 @@
+HSNSwitch are known to work on the following devices:
+
+Device Name		OS	Notes
+Tungsten T		5.0	Base architecture
+				Brian Schau <brian@schau.com>
+T|X			5.4	Same as T|T
+				Brian Schau <brian@schau.com>
+Z22			5.4	Same as T|T
+				Brian Schau <brian@schau.com>
+Tungsten E		5.2.1	Same as T|T
+				George String <legio_abdo@yahoo.com>
+GSM Treo 650		5.4.7	Same as T|T
+				Colin Quek <colinq@singnet.com.sg>
+Tungsten T3		?	Same as T|T
+				Gustavoe A Betancourt <gustavoa@ohm.utp.edu.co>
+Tungsten E2		5.4	Same as T|T
+				Jeffrey Leung <admin@curriegrad2004.ca>
+Treo 680		?	Same as T|T
+				Chan <chankulatunga@gmail.com>

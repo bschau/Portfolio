@@ -1,0 +1,57 @@
+===============================================================================
+Hello Brian!,
+    on Sun, 20 Aug 2006 23:03:28 +0200 I sent you my translation of iSecur 1.1 into Italian.
+I did not see any reply, comment, news from you, so I was wondering if you received it.
+If not, please let me know and I will resubmit it.
+Ciao,
+Leopoldo
+===============================================================================
+Brian Schau ha scritto:
+> Hi Leopoldo,
+>
+> Well, I think I sent you a reply :-)   Anyway, your effort will be
+> used.  I am in the process of upgrading iSecur to v1.2 - which will
+> incorporate a bunch of changes and translations to italian and
+> argentin.
+> I will sent the .rcp file to you in the near future for you to do
+> a bit more translating - only a couple of lines or so.
+
+Ok, no problem, I would like just to know ;)
+Leopoldo 
+===============================================================================
+Brian Schau ha scritto:
+> Hi Leopoldo,
+> Sounds good!  Enjoy your vacation.
+
+Hello Brian!,
+As I promised, herein you find enclosed my italian version.
+I thgink the traslation should be good enough. The only real problem to test is if the strings I used fit in the "farme" they have to use.
+So as soon as you have recompiled the program, I want to test it in order to modify strings if necessary.
+Leopoldo
+===============================================================================
+Brian Schau ha scritto:
+> Hello,
+
+[skip]
+
+> Translators: you have not been forgotten. Your effort is highly
+> valued and I would like to extend my apologies for not getting
+> back to you earlier. Your translation didn't make it to v1.2 but
+> it is high up on the list - so please be patient and stay with me!
+
+Of course ;-)
+
+Maybe I have already spoken to you that when I was involved in another traslation, ie A5 Agenda for Palm (http://www.a5agenda.com) I had to use a .po editor (poledit).
+This way the author writes all the strings in a .pol file and the translator has to fill in the part concerning his/her translation.
+If some new strings have to been added in a new version (or even have to be changed) then they appear as untranslated in the .po file.
+This way I could fine tune my translation even 2 or 3 times in a day because it was very simple to recompile the program for the author.
+Please note this is just in case you didn't know about this method and/or your compilator allow to use this system.
+
+Leopoldo Saggin
+===============================================================================
+===============================================================================
+===============================================================================
+===============================================================================
+===============================================================================
+===============================================================================
+===============================================================================

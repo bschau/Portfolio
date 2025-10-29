@@ -1,0 +1,28 @@
+2005-05-25	0.6	Brian Schau
+
+	* Added the ${$sysvar} sequence.
+
+2005-02-20	0.5	Brian Schau
+
+	* Bugfix: // in strings were treated as comments (introduced in release
+	  0.4 ...)
+	* Bugfix: Processes no longer (hopefully!) dead locks when spawned.
+
+2005-02-19	0.4	Brian Schau
+
+	* Bugfix: ${..} should not be recognised when embedded in comments.
+
+2005-01-21	0.3	Brian Schau
+
+	* Fixed a bug where lines starting with } wouldn't be expanded.
+	* Added the ${@file} sequence.
+
+2005-01-17	0.2	Brian Schau
+
+	* Fixed some path issues on Windows systems.	Paths with blanks
+	  wasn't accepted.
+	* Added a simple compile bat file for windows.
+
+2005-01-17	0.1	Brian Schau
+
+	* Inital release.

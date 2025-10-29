@@ -1,0 +1,558 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.10"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/iconl8.bmp" BPP 8 TRANSPARENT 0 255 0
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 255 0
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/icons8.bmp" BPP 8 TRANSPARENT 0 255 0
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 255 0
+END
+
+BITMAP ID bmpButtonLeftAlign "gfx/butla.bmp"
+BITMAP ID bmpButtonRightAlign "gfx/butra.bmp"
+BITMAP ID bmpButtonCenter "gfx/butc.bmp"
+BITMAP ID bmpButtonJustify "gfx/butj.bmp"
+BITMAP ID bmpButtonUpDown "gfx/butupdown.bmp"
+BITMAP ID bmpButtonLeftRight "gfx/butleftright.bmp"
+BITMAP ID bmpUp "gfx/up.bmp" TRANSPARENT 255 255 255
+BITMAPFAMILYEX ID bmpFolder
+COMPRESS
+BEGIN
+	BITMAP "gfx/folder1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/folder8.bmp" BPP 8 TRANSPARENT 255 0 0
+	BITMAP "gfx/folder8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 0
+END
+BITMAPFAMILYEX ID bmpBookmarks
+COMPRESS
+BEGIN
+	BITMAP "gfx/bookmarks1.bmp" BPP 1 DENSITY 1
+	BITMAP "gfx/bookmarks8.bmp" BPP 8 TRANSPARENT 255 0 0
+	BITMAP "gfx/bookmarks8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 0
+END
+CATEGORIES defCatHistory "Opened" "Read" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "Yadr was made by\n\tBrian Schau\n\nThe icons was created by\n\tTony Vincent\n\nPlease visit my website at:\n\n   http://www.schau.com/\n\nOn the website you will find the latest version of Yadr and a user manual.\n\n\nYadr is released under the Gnu General Public License v2.\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.5 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aMaxPathReached
+INFORMATION
+BEGIN
+	TITLE "Directory Error"
+	MESSAGE "Directory Path too deep."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoBookmarks
+INFORMATION
+BEGIN
+	TITLE "No Bookmarks"
+	MESSAGE "There are no bookmarks defined."
+	BUTTONS "OK"
+END
+
+ALERT ID aDeleteBookmark
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Bookmark?"
+	MESSAGE "Do you want to delete this bookmark?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aDeleteAllBookmarks
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete All Bookmarks?"
+	MESSAGE "Do you want to delete all bookmarks for the selected document?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aUnknownDocType
+INFORMATION
+BEGIN
+	TITLE "Unknown Type"
+	MESSAGE "Unknown document type."
+	BUTTONS "OK"
+END
+
+ALERT ID aInvalidDocument
+INFORMATION
+BEGIN
+	TITLE "Invalid Document"
+	MESSAGE "Yadr cannot render this document."
+	BUTTONS "OK"
+END
+
+ALERT ID aHistoryClear
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Clear History"
+	MESSAGE "Do you want to clear the history for this category?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aDeleteDetail
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete?"
+	MESSAGE "Do you want to delete the details?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aNoHistoryDB
+INFORMATION
+BEGIN
+	TITLE "Cannot Open History"
+	MESSAGE "Cannot open the History database. Go to Preferences and enable History tracking."
+	BUTTONS "OK"
+END
+
+ALERT ID aNothingSelected
+INFORMATION
+BEGIN
+	TITLE "Select Document"
+	MESSAGE "You must have a document selected to perform this command. To select a document, tap the name of the document."
+	BUTTONS "OK"
+END
+
+ALERT ID aDatabaseNotFound
+INFORMATION
+BEGIN
+	TITLE "Document Not Found"
+	MESSAGE "Cannot find ^1."
+	BUTTONS "OK"
+END
+
+ALERT ID aAlreadyExist
+INFORMATION
+BEGIN
+	TITLE "Destination Exists"
+	MESSAGE "Cannot rename database as a database with the new name already exist."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotRename
+INFORMATION
+BEGIN	
+	TITLE "Cannot Rename"
+	MESSAGE "Cannot rename database. Reason:\n^1."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotDelete
+INFORMATION
+BEGIN
+	TITLE "Cannot Delete"
+	MESSAGE "Cannot delete document. Reason:\n^1."
+	BUTTONS "OK"
+END
+
+ALERT ID aNoHeaderInfo
+INFORMATION
+BEGIN
+	TITLE "No Header Info"
+	MESSAGE "Cannot retrieve header info from document."
+	BUTTONS "OK"
+END
+
+ALERT ID aDBCopyPrevent
+INFORMATION
+BEGIN
+	TITLE "Cannot Beam"
+	MESSAGE "Cannot beam document as the Copy Prevention bit is set."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRSendError
+INFORMATION
+BEGIN
+	TITLE "Cannot Beam"
+	MESSAGE "Cannot beam document."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRReceiveError
+INFORMATION
+BEGIN
+	TITLE "Receive Error"
+	MESSAGE "Cannot receive document. Reason:\n^1."
+	BUTTONS "OK"
+END
+
+ALERT ID aIRDeleteDB
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Document Already Exists"
+	MESSAGE "The document already exists. Overwrite?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aDeleteDoc
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete Document?"
+	MESSAGE "Do you really want to delete this document?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aFindNotFound
+INFORMATION
+BEGIN
+	TITLE "Not Found ..."
+	MESSAGE "The search term was not found."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About Yadr"
+
+	LABEL "Yadr" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.10" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "Yadr"
+
+	POPUPTRIGGER "?" ID cMainPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR NONUSABLE
+	LIST "Memory" "Card" ID cMainList AT (RIGHT@160 1 40 AUTO) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cMainPopup cMainList
+
+	BUTTON "" ID cMainUp AT (1 16 11 10) NONUSABLE NOFRAME GRAPHICAL BITMAPID bmpUp SELECTEDBITMAPID bmpUp
+	LABEL "Path:" ID cMainPath AT (14 16) NONUSABLE
+
+	TABLE ID cMainTableMemory AT (1 18 150 121) ROWS MainTableLinesMemory COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cMainScrollBarMemory AT (152 18 7 121) NONUSABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MainTableLinesMemory-1
+
+	TABLE ID cMainTableCard AT (1 31 150 110) ROWS MainTableLinesCard COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cMainScrollBarCard AT (152 31 7 110) NONUSABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MainTableLinesCard-1
+
+	BUTTON "Read" ID cMainRead AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Edit" ID cMainEdit AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Bookmarks" ID mMainBookmarks "B"
+		MENUITEM "History" ID mMainHistory "H"
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Preferences" ID mMainPreferences
+	END
+
+	PULLDOWN "Help"
+	BEGIN
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fReader AT (0 0 160 160)
+NOFRAME
+MENUID mReader
+BEGIN
+	TITLE ""
+
+	POPUPTRIGGER "" ID cReaderBookmarksPopup AT (142 0 AUTO 13) GRAPHICAL BITMAPID bmpBookmarks SELECTEDBITMAPID bmpBookmarks RIGHTANCHOR
+	LIST "" ID cReaderBookmarksList AT (15 1 144 132) NONUSABLE VISIBLEITEMS 1
+	POPUPLIST ID cReaderBookmarksPopup cReaderBookmarksList
+
+	POPUPTRIGGER "?" ID cReaderPopup AT (RIGHT@140 1 AUTO AUTO) RIGHTANCHOR
+	LIST "Top" "10%" "20%" "30%" "40%" "50%" "60%" "70%" "80%" "90%" ID cReaderList AT (RIGHT@140 1 24 AUTO) NONUSABLE VISIBLEITEMS 10
+	POPUPLIST ID cReaderPopup cReaderList
+
+	GADGET ID cReaderControl AT (0 15 160 145)
+END
+
+FORM ID fReaderFullScreen AT (0 0 160 160)
+NOFRAME
+MENUID mReader
+BEGIN
+	GADGET ID cReaderControl AT (0 15 160 145)
+END
+
+MENU mReader
+BEGIN
+	PULLDOWN "Go"
+	BEGIN
+		MENUITEM "Document List" ID mReaderDocList "D"
+		MENUITEM SEPARATOR
+		MENUITEM "Formatting" ID mReaderFormatting 
+		MENUITEM SEPARATOR
+		MENUITEM "Top" ID mReaderTop "T"
+		MENUITEM "10%" ID mReader10
+		MENUITEM "20%" ID mReader20
+		MENUITEM "30%" ID mReader30
+		MENUITEM "40%" ID mReader40
+		MENUITEM "50%" ID mReader50
+		MENUITEM "60%" ID mReader60
+		MENUITEM "70%" ID mReader70
+		MENUITEM "80%" ID mReader80
+		MENUITEM "90%" ID mReader90
+	END
+
+	PULLDOWN "Find"
+	BEGIN
+		MENUITEM "Find" ID mReaderFind "F" 
+		MENUITEM "Find Next" ID mReaderFindNext "N" 
+	END
+
+	PULLDOWN "Bookmarks"
+	BEGIN
+		MENUITEM "Add" ID mReaderAdd "A"
+		MENUITEM "Go To" ID mReaderGoTo "G"
+		MENUITEM SEPARATOR
+		MENUITEM "Manage" ID mReaderManage "M"
+	END
+END
+
+FORM fFormatting AT (2 2 156 156)
+DEFAULTBUTTON cFormattingCancel
+MODAL
+BEGIN
+	TITLE "Formatting"
+
+	LABEL "Text Color:" AUTOID AT (RIGHT@76 20)
+	GADGET ID cFormattingGDGF AT (80 20 16 11)
+	LABEL "Background Color:" AUTOID AT (RIGHT@76 34)
+	GADGET ID cFormattingGDGB AT (80 34 16 11)
+
+	LABEL "Font:" AUTOID AT (RIGHT@76 52)
+	PUSHBUTTON "A" ID cFormattingFontPush1 AT (80 50 15 15) FONT 0 GROUP 1
+	PUSHBUTTON "A" ID cFormattingFontPush2 AT (PREVRIGHT 50 15 15) FONT 1 GROUP 1
+	PUSHBUTTON "A" ID cFormattingFontPush3 AT (PREVRIGHT 50 15 15) FONT 2 GROUP 1
+
+	LABEL "Align:" AUTOID AT (RIGHT@76 71)
+	PUSHBUTTON "" ID cFormattingAlignL AT (80 70 13 13) GRAPHICAL GROUP 2 BITMAPID bmpButtonLeftAlign SELECTEDBITMAPID bmpButtonLeftAlign
+	PUSHBUTTON "" ID cFormattingAlignR AT (PREVRIGHT+1 70 13 13) GRAPHICAL GROUP 2 BITMAPID bmpButtonRightAlign SELECTEDBITMAPID bmpButtonRightAlign
+	PUSHBUTTON "" ID cFormattingAlignC AT (PREVRIGHT+1 70 13 13) GRAPHICAL GROUP 2 BITMAPID bmpButtonCenter SELECTEDBITMAPID bmpButtonCenter
+	PUSHBUTTON "" ID cFormattingAlignJ AT (PREVRIGHT+1 70 13 13) GRAPHICAL GROUP 2 BITMAPID bmpButtonJustify SELECTEDBITMAPID bmpButtonJustify
+
+	LABEL "Line Spacing:" AUTOID AT (RIGHT@76 89)
+	POPUPTRIGGER "?" ID cFormattingSpacingPopup AT (80 89 AUTO AUTO) LEFTANCHOR
+	LIST "None" "1 pixel" "2 pixels" "3 pixels" "4 pixels" "5 pixels" ID cFormattingSpacingList AT (80 89 50 AUTO) NONUSABLE VISIBLEITEMS 6
+	POPUPLIST ID cFormattingSpacingPopup cFormattingSpacingList
+
+	LABEL "Page Control:" AUTOID AT (RIGHT@76 107)
+	PUSHBUTTON "" ID cFormattingUpDown AT (80 106 13 13) GRAPHICAL GROUP 3 BITMAPID bmpButtonUpDown SELECTEDBITMAPID bmpButtonUpDown
+	PUSHBUTTON "" ID cFormattingLeftRight AT (PREVRIGHT+1 106 13 13) GRAPHICAL GROUP 3 BITMAPID bmpButtonLeftRight SELECTEDBITMAPID bmpButtonLeftRight
+
+	LABEL "View:" AUTOID AT (RIGHT@76 125)
+	POPUPTRIGGER "?" ID cFormattingViewPopup AT (80 125 AUTO AUTO) LEFTANCHOR
+	LIST "Normal" "Full Screen" ID cFormattingViewList AT (80 125 50 AUTO) NONUSABLE VISIBLEITEMS 2
+	POPUPLIST ID cFormattingViewPopup cFormattingViewList
+
+	BUTTON "OK" ID cFormattingOK AT (4 BOTTOM@153 AUTO AUTO)
+	BUTTON "Cancel" ID cFormattingCancel AT (PREVRIGHT+4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fAddBookmark AT (2 98 156 60)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cAddBookmarkCancel
+BEGIN
+	TITLE "Add Bookmark"
+
+	LABEL "Name:" AUTOID AT (6 20)
+	FIELD ID cAddBookmarkName AT (PREVRIGHT+4 20 90 12) UNDERLINED MAXCHARS BookmarkLength-1
+
+	GRAFFITISTATEINDICATOR AT (140 47)
+	BUTTON "OK" ID cAddBookmarkOK AT (4 BOTTOM@57 AUTO AUTO)
+	BUTTON "Cancel" ID cAddBookmarkCancel AT (PREVRIGHT+4 BOTTOM@57 AUTO AUTO)
+END
+
+FORM ID fBookmarks AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cBookmarksDone
+BEGIN
+	TITLE "Bookmarks"
+
+	LABEL "Document:" AUTOID AT (1 16)
+	POPUPTRIGGER "" ID cBookmarksDocPopup AT (PREVRIGHT+2 16 96 11) LEFTANCHOR
+	LIST "" ID cBookmarksDocList AT (PREVLEFT 16 140 132) NONUSABLE VISIBLEITEMS 1
+	POPUPLIST ID cBookmarksDocPopup cBookmarksDocList
+
+	TABLE ID cBookmarksTable AT (1 30 150 110) ROWS BookmarksTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cBookmarksScrollBar AT (152 30 7 110) VALUE 0 MIN 0 MAX 0 PAGESIZE BookmarksTableLines-1
+
+	BUTTON "Done" ID cBookmarksDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Delete All" ID cBookmarksDeleteAll AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fEditBookmark AT (2 98 156 60)
+MODAL
+MENUID sysEditMenuID
+DEFAULTBUTTON cEditBookmarkCancel
+BEGIN
+	TITLE "Edit Bookmark"
+
+	LABEL "Name:" AUTOID AT (6 20)
+	FIELD ID cEditBookmarkName AT (PREVRIGHT+4 20 90 12) UNDERLINED MAXCHARS BookmarkLength-1
+
+	GRAFFITISTATEINDICATOR AT (140 47)
+	BUTTON "OK" ID cEditBookmarkOK AT (4 BOTTOM@57 AUTO AUTO)
+	BUTTON "Cancel" ID cEditBookmarkCancel AT (PREVRIGHT+4 BOTTOM@57 AUTO AUTO)
+	BUTTON "Delete" ID cEditBookmarkDelete AT (PREVRIGHT+4 BOTTOM@57 AUTO AUTO)
+END
+
+FORM ID fHistory AT (0 0 160 160)
+NOFRAME
+DEFAULTBUTTON cHistoryDone
+BEGIN
+	TITLE "History"
+
+	POPUPTRIGGER "?" ID cHistoryPopup AT (RIGHT@160 1 AUTO AUTO) RIGHTANCHOR
+	LIST "" "" ID cHistoryList AT (RIGHT@160 1 50 AUTO) NONUSABLE
+	POPUPLIST ID cHistoryPopup cHistoryList
+
+	LABEL "Document" AUTOID AT (1 16) FONT 1
+	LABEL "Last Seen" AUTOID AT (RIGHT@150 16) FONT 1
+	LABEL " " AUTOID AT (152 16) FONT 0
+
+	TABLE ID cHistoryTable AT (1 30 150 110) ROWS HistoryTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cHistoryScrollBar AT (152 30 7 110) VALUE 0 MIN 0 MAX 0 PAGESIZE HistoryTableLines-1
+
+	BUTTON "Done" ID cHistoryDone AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Clear" ID cHistoryClear AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+FORM ID fHistoryDetails AT (2 12 156 146)
+MODAL
+DEFAULTBUTTON cHistoryDetailsCancel
+BEGIN
+	TITLE "Details"
+
+	LABEL "Document Name:" AUTOID AT (4 16)
+	FIELD ID cHistoryDetailsName AT (8 28 144 11) FONT 1 NONEDITABLE MAXCHARS 64
+
+	LABEL "Opened First Time:" AUTOID AT (4 42)
+	FIELD ID cHistoryDetailsOpened AT (8 54 144 11) FONT 1 NONEDITABLE MAXCHARS 64
+
+	LABEL "Opened Last Time:" AUTOID AT (4 68)
+	FIELD ID cHistoryDetailsLast AT (8 80 144 11) FONT 1 NONEDITABLE MAXCHARS 64
+
+	LABEL "Document Status:" AUTOID AT (4 94)
+	POPUPTRIGGER "?" ID cHistoryDetailsPopup AT (8 106 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cHistoryDetailsList AT (8 106 50 AUTO) NONUSABLE
+	POPUPLIST ID cHistoryDetailsPopup cHistoryDetailsList
+
+	BUTTON "OK" ID cHistoryDetailsOK AT (4 BOTTOM@143 AUTO AUTO)
+	BUTTON "Cancel" ID cHistoryDetailsCancel AT (PREVRIGHT+4 BOTTOM@143 AUTO AUTO)
+	BUTTON "Delete" ID cHistoryDetailsDelete AT (PREVRIGHT+4 BOTTOM@143 AUTO AUTO)
+END
+
+FORM ID fPreferences AT (2 102 156 56)
+MODAL
+DEFAULTBUTTON cPreferencesCancel
+BEGIN
+	TITLE "Preferences"
+
+	CHECKBOX "Enable History Tracking" ID cPreferencesHistoryTracking AT (4 18 AUTO AUTO)
+
+	BUTTON "OK" ID cPreferencesOK AT (4 BOTTOM@53 AUTO AUTO)
+	BUTTON "Cancel" ID cPreferencesCancel AT (PREVRIGHT+4 BOTTOM@53 AUTO AUTO)
+END
+
+FORM ID fMainEdit AT (2 92 156 66)
+MODAL
+DEFAULTBUTTON cMainEditCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Edit"
+
+	LABEL "Document Name:" AUTOID AT (4 16)
+	FIELD ID cMainEditName AT (4 28 144 11) MAXCHARS DocNameLength-1 UNDERLINED MULTIPLELINES
+
+	GRAFFITISTATEINDICATOR AT (147 16)
+
+	BUTTON "OK" ID cMainEditOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Cancel" ID cMainEditCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Delete" ID cMainEditDelete AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Beam" ID cMainEditBeam AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+FORM ID fFind AT (2 88 156 70)
+MODAL
+DEFAULTBUTTON cFindCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Find In Document"
+
+	LABEL "Find:" AUTOID AT (8 18)
+	FIELD ID cFindTxtFind AT (30 18 120 11) MAXCHARS FindTermLength UNDERLINED MULTIPLELINES
+
+	CHECKBOX "Start from top" ID cFindChkFromTop AT (6 34 AUTO AUTO)
+
+	GRAFFITISTATEINDICATOR AT (144 58)
+
+	BUTTON "OK" ID cFindOK AT (4 BOTTOM@67 AUTO AUTO)
+	BUTTON "Cancel" ID cFindCancel AT (PREVRIGHT+4 BOTTOM@67 AUTO AUTO)
+END
+
+FORM ID fGoTo AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cGoToCancel
+BEGIN
+	TITLE "Go To Bookmark"
+
+	LIST "" ID cGoToList AT (4 15 148 121) VISIBLEITEMS GoToListLines
+
+	BUTTON "Cancel" ID cGoToCancel AT (4 BOTTOM@153 AUTO AUTO)
+END

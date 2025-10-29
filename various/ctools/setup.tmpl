@@ -1,0 +1,43 @@
+[Setup]
+OutputDir=.
+OutputBaseFilename=@@PROG@@
+AppName=bstools
+AppVerName=@@TITLE@@
+AppPublisher=Schau.Dk
+AppPublisherURL=http://www.schau.dk/
+AppSupportURL=http://www.schau.dk/
+AppUpdatesURL=http://www.schau.dk/
+AppVersion=@@VERSION@@
+DefaultDirName=c:\opt\bstools
+DefaultGroupName=bstools
+DisableProgramGroupPage=yes
+UsePreviousAppDir=no
+
+[Files]
+Source: "add\add.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "big\big.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "colconv\colconv.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "d2u\d2u.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "d64\d64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "gencdoc\gencdoc.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "lts\lts.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "remtilde\remtilde.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "setwallpaper\setwallpaper.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "swffx\swffx.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "uname\uname.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "wi\wi.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "zen\zen.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "README.txt"; DestDir: "{app}"; Flags: ignoreversion isreadme
+Source: "CHANGELOG.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+
+[Icons]
+Name: "{group}\Read Me"; Filename: "{app}\README.txt"
+Name: "{group}\ChangeLog"; Filename: "{app}\CHANGELOG.txt"
+Name: "{group}\License"; Filename: "{app}\LICENSE.txt"
+Name: "{group}\Uninstall bstools"; Filename: "{app}\unins000.exe"; WorkingDir: "{app}"
+
+[UninstallDelete]
+Type: dirifempty; Name: "{app}\Schau.Dk\bstools"
+Type: dirifempty; Name: "{app}\Schau.Dk"
+

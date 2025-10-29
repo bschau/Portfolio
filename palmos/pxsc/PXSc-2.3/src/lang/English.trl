@@ -1,0 +1,157 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of PXSc to get a feeling of how the various screens are laid out.
+# You can install PXSc to a Palm OS Simulator or Emulator and have the
+# english version running while translating the text.
+#
+# This is the default language file for the English language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Brian Schau <brian@schau.com>
+#
+
+# Strings
+Str01			Phase 10 Score Card was made by\n\nBrian Schau.\n\nPlease visit my website at:\n\n  http://www.schau.com/\n\nOn the website you will find the latest version of Phase 10 Score Card, a user manual and a FAQ.\n\nPhase 10 is a trademark of Ravensburger Spielverlag.\n\n\n
+Str02			Not Set
+Str03			Player Administration
+Str04			Select Player
+Str05			2 sets of 3
+Str06			1 set of 3 + 1 run of 4
+Str07			1 set of 4 + 1 run of 4
+Str08			1 run of 7
+Str09			1 run of 8
+Str10			1 run of 9
+Str11			2 sets of 4
+Str12			7 cards of one color
+Str13			1 set of 5 + 1 set of 2
+Str14			1 set of 5 + 1 set of 3
+Str15			Game started
+Str16			Game ended
+
+# Alerts
+aOK			OK
+aYes			Yes
+aNo			No
+
+aBadRomTitle		PalmOS too old.
+aBadRomText		The PalmOS in this device is too old. PalmOS v3.1 or better is required to run this application.
+aCannotOpenDatabaseTitle	Cannot open database
+aCannotOpenDatabaseText		Cannot open the database.
+aDeletePlayerTitle	Delete player?
+aDeletePlayerText	Do you want to delete this player?
+aNeedsPlayerTitle	Needs player
+aNeedsPlayerText	Please select player to edit.
+aSelectPlayerTitle	Select player
+aSelectPlayerText	Please select player before returning.
+aNeedsMorePlayersTitle	More players needed
+aNeedsMorePlayersText	For a game of Phase 10 you must be 2-6 players. Please select one or more additional players.
+aNeedsPointsTitle	Points not given
+aNeedsPointsText	Please enter at least 0 points in the points field before returning.
+aScoreMissingTitle	Missed one (or more)
+aScoreMissingText	Not all players performance have been evaluated.
+
+# Menus
+Edit			Edit
+Undo			Undo
+UndoKey			U
+Cut			Cut
+CutKey			X
+Copy			Copy
+CopyKey			C
+Paste			Paste
+PasteKey		P
+SelectAll		Select All
+SelectAllKey		S
+Keyboard		Keyboard
+KeyboardKey		K
+Graffiti		Graffiti
+GraffitiKey		G
+
+Actions			Actions
+Players			Players
+PlayersKey		P
+About			About
+NewGame			New Game
+
+# Buttons
+ButtonDone		Done
+ButtonOK		OK
+ButtonNew		New
+ButtonEdit		Edit
+ButtonCancel		Cancel
+ButtonDelete		Delete
+ButtonYes		Yes
+ButtonNo		No
+
+# fMain
+MainTitle		Phase 10 Score Card
+MainPlayer1		Player 1
+MainPlayer2		Player 2
+MainPlayer3		Player 3
+MainPlayer4		Player 4
+MainPlayer5		Player 5
+MainPlayer6		Player 6
+MainStart		Start Game
+
+# fAbout
+AboutTitle		About Phase 10 Score Card
+AboutLabel1		Phase 10 Score Card
+AboutLabel2		Version
+
+# fPlayersEdit
+PlayersEditTitle	Player
+PlayersEditLabel1	Enter new player name
+
+# fInGame
+InGameTitle		In Game
+InGameNext		Next Phase
+
+# fScore
+ScoreTitle		Player Score
+ScoreLabel1		Scoring
+ScoreLabel2		Cards 1-9: 5 points
+ScoreLabel3		Cards 10-12: 10 points
+ScoreLabel4		Skip card: 15 points
+ScoreLabel5		Wild card: 25 points
+ScoreLabel6		Player
+ScoreLabel7		Points
+ScoreCompleted		Phase Completed
+
+# fNewGame
+NewGameTitle		Start new game?
+NewGameLabel1		Do you want to start a new game?
+NewGameSame		Same players
+
+# fWinner
+WinnerTitle		Game Over
+WinnerLabel		WINNERS
+WinnerSame		Same players
+WinnerButton		New Game
+WinnerExport		Export
+
+# fExport
+ExportTitle		Export
+ExportLabel1		Memo Title:
+ExportLabel2		Export To:
+ExportExport		Export

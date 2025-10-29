@@ -1,0 +1,66 @@
+{
+    "author": "Brian Schau",
+    "dependencies": {},
+    "keywords": [
+        "pebble-app"
+    ],
+    "name": "first-5km",
+    "pebble": {
+        "displayName": "First 5km",
+        "enableMultiJS": false,
+        "messageKeys": {
+            "dummy": 0
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/walking_home.png",
+                    "name": "WALKING_HOME",
+                    "type": "png"
+                },
+                {
+                    "file": "images/walking.png",
+                    "name": "WALKING",
+                    "type": "png"
+                },
+                {
+                    "file": "images/running_home.png",
+                    "name": "RUNNING_HOME",
+                    "type": "png"
+                },
+                {
+                    "file": "images/running.png",
+                    "name": "RUNNING",
+                    "type": "png"
+                },
+                {
+                    "file": "images/paused.png",
+                    "name": "PAUSED",
+                    "type": "png"
+                },
+                {
+                    "file": "images/menu_icon.png",
+                    "menuIcon": true,
+                    "name": "IMAGE_MENU_ICON",
+                    "type": "png"
+                },
+                {
+                    "file": "images/finish.png",
+                    "name": "FINISH",
+                    "type": "png"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt"
+        ],
+        "uuid": "6cf8bffd-d204-4cba-901f-c779171b7c5d",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "2.1.0"
+}

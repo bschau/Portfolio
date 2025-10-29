@@ -1,0 +1,69 @@
+{
+    "author": "brian@schau.dk",
+    "dependencies": {
+        "pebble-clay": "^1.0.2"
+    },
+    "keywords": [
+        "pebble-app"
+    ],
+    "name": "lcd",
+    "pebble": {
+        "capabilities": [
+            "configurable"
+        ],
+        "displayName": "LCD",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "AppKeyDesign": 0,
+            "AppKeyDesign2": 1,
+            "AppKeyFiveSec": 2,
+            "AppKeyWatchType": 3
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "characterRegex": "[0-9:]",
+                    "file": "fonts/digital-7.ttf",
+                    "name": "FONT_LCD_50",
+                    "targetPlatforms": [
+                        "aplite",
+                        "basalt",
+                        "chalk",
+                        "diorite",
+                        "emery"
+                    ],
+                    "trackingAdjust": 2,
+                    "type": "font"
+                },
+                {
+                    "characterRegex": "[0-9*-]",
+                    "file": "fonts/digital-7-18.ttf",
+                    "name": "FONT_LCD_18",
+                    "targetPlatforms": [
+                        "aplite",
+                        "basalt",
+                        "chalk",
+                        "diorite",
+                        "emery"
+                    ],
+                    "trackingAdjust": 1,
+                    "type": "font"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite",
+            "emery"
+        ],
+        "uuid": "57849398-7267-4544-b9c2-e4a670b622a7",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "3.3.0"
+}

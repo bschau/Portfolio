@@ -1,0 +1,64 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of Plua Help Viewer to get a feeling of how the various screens are
+# laid out.
+# You can install Plua Help Viewer to a Palm OS Simulator or Emulator and have
+# the english version running while translating the text.
+#
+# This is the default language file for the English language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Brian Schau <brian@schau.com>
+#
+
+# Strings
+Str01			Help Viewer was made by\n\nBrian Schau.\n\nPlease visit my website at:\n\n  http://www.schau.com/\n\nOn the website you will find the latest version of Help Viewer, a user manual and a FAQ.\n\n
+
+# Alerts
+aOK			OK
+
+aBadRomTitle		PalmOS Too Old.
+aBadRomText		The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application.
+aNoHelpFilesTitle	No Help Files
+aNoHelpFilesText	No Plua Help files installed. Please install a Plua v1 or Plua v2 help file.
+aNotInstalledTitle	Not Installed
+aNotInstalledText	The selected Plua Help File is not installed.
+
+# Menus
+Help			Help
+About			About
+
+# Buttons
+ButtonDone		Done
+
+# fMain
+MainTitle		Help Viewer
+MainTopics		Topics
+MainList1		Plua 1 Help File
+MainList2		Plua 2 Help File
+
+# fAbout
+AboutTitle		About Help Viewer
+AboutLabel1		Help Viewer
+AboutLabel2		Version

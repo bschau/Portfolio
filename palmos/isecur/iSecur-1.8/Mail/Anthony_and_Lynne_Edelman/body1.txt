@@ -1,0 +1,148 @@
+Hi,
+
+Thanks for the quick response.
+
+> What do you mean by a "detailed search"? What kind of search option do
+> you need?
+- It is great that iSecur is integrated into the global search of the Palm.
+What about being able to search through the actual contents of the secrets.
+Now I am sure neither of us would want this integrated with the Palm search
+but if iSecur had its own internal search then all records and secret could
+be searched after the password has been capture. I have been looking around
+at a number of other password applications like yours and they all have a
+built in search.
+
+> The list of records is selected after app startup and not on the category
+> field - explanation
+- May as well ignore this one I was trying to figure out the quickfind and
+did not realise that it could be done while highlighting the category in the
+record view screen
+
+I don't understand this one. Please give some examples.
+> - How to do a page up or page down with keypad. ie. make left and right
+> move off the list of records field while up and down is page up or page
+> down of
+>> the list of records. >
+> I think this is a Treo specific thing. What exactly is the function of
+> the
+> left and right keys?
+
+- It may be a Treo only thing which is why I included the diagram of the
+Treo. The centre of the phone has a circle that has arrows point
+up,down,left,right. This is only a useability thing and does not cause any
+problems. When displaying the list of records the only way to move down is
+to do so one record at a time. The Treo was designed to function with one
+hand only. Thus moving down can be quite tedious if one has 100's of
+records. If the down and up arrows of this central button could act as a
+page up and page down then this process would be greatly enhanced.
+
+
+
+
+Is there any way to add more icons the ones you have are great but seem to
+refer a lot to cars and car parts. It is a bit of a shame to be able to
+create a completely blank record with no error.
+
+Another useability thing - if you create a new record in a category 'x' and
+then press OK when you return to the list of records view it shows you
+category 'x' from the new record instead of returning you to the view you
+were last in.
+
+Thanks for your response. I am keen to continue using iSecur and pay for it
+once it stops resetting my phone. Good luck with your TODO list.
+
+Regards
+Anthony.
+
+----- Original Message -----
+From: "Brian Schau" <brian@schau.com>
+To: <edelfam@iprimus.com.au>
+Sent: Friday, November 10, 2006 7:41 PM
+Subject: Re: ****SPAM**** [iSecur] Hmmm ...
+
+
+> Hi Anthony,
+>
+>
+> friendly
+>> interface that has been well put together.
+>
+> Thanks! :-)
+>
+>> - Incorrect category in new record from template
+>> =&gt; Open category 'x' in the list of records, then load a template from
+> another
+>> category eg. 'y', the new record that is created has a category of 'x'
+> instead
+>> of the category listed in the template 'y'
+>
+> I am not sure if this is a bug. I like to stuff all my templates in one
+> category (labelled 'Templates'). I wouldn't want all new records to
+> inherit this category.
+> However, I can add a preference setting to facilitate both your needs as
+> well as my needs :-)
+>
+>> - Incorrect quickfind
+>
+> I'll look into that.
+>
+>> - Quickfind after a delete (causes a reset)
+>
+> Sounds nasty. I'll look into that as well.
+>
+>> --Feature Request--
+>>
+>> - Internal application find - detailed search across all records
+>
+> What do you mean by a "detailed search"? What kind of search option do
+> you
+> need?
+>
+>> - The list of records is selected after app startup and not on the
+> category field
+>
+> I don't understand this one. Please give some examples.
+>
+>> - How to do a page up or page down with keypad. ie. make left and right
+> move
+>> off the list of records field while up and down is page up or page down
+>> of
+>> the list of records.
+>
+> I think this is a Treo specific thing. What exactly is the function of
+> the
+> left and right keys?
+>
+>>
+>> - When pressing 'Load' button to create a template within the current
+> record.
+>> Any way of copying the current record into the template screen. You
+> probably
+>> cannot parse the text but if title and secret fields were copied into
+> fields
+>> 1 and 2 of the template at least the secret contents will not be lost.
+> Could
+>> even prompt if the user wanted to do this after pressing the 'Load'
+> button.
+>>
+>
+> This is somehow already on the todo. It should be possible to load most
+> of the text when a template is selected. I haven't found a way to do it
+> in a good way. I'll look into your suggestion.
+>
+>
+> Thanks for reporting the bugs and for your good ideas. I can't say when
+> they will go into iSecur. They are on the TODO now so they will go into
+> iSecur at some times. Bugs are usually addressed first.
+>
+> /brian
+>
+>
+>
+> ________________________________________________
+> Message sent using UebiMiau 2.7.9
+>
+>
+
+
+

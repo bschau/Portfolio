@@ -1,0 +1,47 @@
+#include "Resources.h"
+
+VERSION "1.0"
+
+FONT ID ObjectIDStart FONTID FontStart "../dot.pfn"
+
+FORM ID fKeyboard AT (0 0 160 160)
+NOFRAME
+MENUID 10000
+BEGIN
+	GRAFFITISTATEINDICATOR AT (150 1)
+
+	FIELD ID cKeyboardPwd AT (1 1 143 22) MULTIPLELINES MAXCHARS PasswordLength UNDERLINED
+
+	BUTTON " " ID cKeyboard0 AT (1 28 35 29) FONT 1
+	BUTTON " " ID cKeyboard1 AT (42 28 35 29) FONT 1
+	BUTTON " " ID cKeyboard2 AT (83 28 35 29) FONT 1
+	BUTTON "\x03" cKeyboardBS AT (124 28 35 29) FONT 3
+
+	BUTTON " " ID cKeyboard3 AT (1 62 35 29) FONT 1
+	BUTTON " " ID cKeyboard4 AT (42 62 35 29) FONT 1
+	BUTTON " " ID cKeyboard5 AT (83 62 35 29) FONT 1
+	BUTTON "\x85" cKeyboardClear AT (124 62 35 29) FONT 1
+
+	BUTTON " " ID cKeyboard6 AT (1 96 35 29) FONT 1
+	BUTTON " " ID cKeyboard7 AT (42 96 35 29) FONT 1
+	BUTTON " " ID cKeyboard8 AT (83 96 35 29) FONT 1
+	BUTTON "\x10" ID cKeyboardMaskDot AT (124 96 35 29) FONT 3 NONUSABLE
+	BUTTON "A" ID cKeyboardMaskAlp AT (124 96 35 29) FONT 1 NONUSABLE
+
+	BUTTON " " ID cKeyboard9 AT (1 130 35 29) FONT 1
+	BUTTON "\x03" cKeyboardLayout AT (42 130 35 29) FONT 3
+	BUTTON "\xa4" ID cKeyboardCancel AT (83 130 35 29) FONT 1
+	BUTTON "\x16" ID cKeyboardOK AT (124 130 35 29) FONT 3
+END
+
+NAVIGATION ID fKeyboard
+	INITIALSTATE 1
+	INITIALOBJECTID cKeyboardPwd
+	BOTTOMLEFTOBJECTID cKeyboard9
+	NAVIGATIONMAP
+		ROW cKeyboardPwd
+		ROW cKeyboard0 cKeyboard1 cKeyboard2 cKeyboardBS
+		ROW cKeyboard3 cKeyboard4 cKeyboard5 cKeyboardClear
+		ROW cKeyboard6 cKeyboard7 cKeyboard8 cKeyboardMaskDot cKeyboardMaskAlp
+		ROW cKeyboard9 cKeyboardLayout cKeyboardCancel cKeyboardOK
+END

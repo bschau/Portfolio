@@ -1,0 +1,106 @@
+# Globals
+dcUnfiled		Ingen
+dcAnniversaries		M\xe6rkedage
+dcBirthdays		F\xf8dselsdage
+gDate			Dato
+gEvent			Begivenhed
+gCategory		Kategori
+gOK			OK
+gCancel			Forkast
+gDone			Tilbage
+gYes			Ja
+gNo			Nej
+gEdit			Rediger
+gDelete			Slet
+
+# EditMenu
+EditMenuName		Ret
+EditMenuUndo		Fortryd
+EditMenuUndoSC		U
+EditMenuCut		Klip
+EditMenuCutSC		X
+EditMenuCopy		Kopier
+EditMenuCopySC		C
+EditMenuPaste		Inds\xe6t
+EditMenuPasteSC		P
+EditMenuSelect		V\xe6lg Alt
+EditMenuSelectSC	S
+EditMenuKeyboard	Tastatur
+EditMenuKeyboardSC	K
+EditMenuGraffiti	Graffiti
+EditMenuGraffitiSC	G
+
+# Strings
+strTomorrow		I morgen
+strInDays		om %ld dage
+strToday		I dag
+strNotSet		Ej sat
+strNewEvent		Ny Begivenhed
+strEditEvent		Ret Begivenhed
+strSetDate		S\xe6t Dato
+strSetNewAlarm		S\xe6t Nyt Tidspunkt
+strOnTheDay		p\xe5 dagen
+strDaysBefore		%d dag%s f\xf8r
+strDaysBeforeP		e
+strRepeating		gentager
+strNever		Aldrig
+strAboutText		Eventor er skrevet af Brian Schau.\n\nBes\xf8g venligst websitet:\n\n  http://www.schau.com/eventor\n\nP\xe5 websitet findes den seneste version af Eventor, en Conduit beregnet til Microsoft Windows, Bruger manual samt en FAQ.\n\n\nDette program er freeware - brug det som du lyster!\n\n	
+
+# Alerts
+aBadRomTitle		PalmOS for gammel
+aBadRomText		Operativsystemet i denne PDA er for gammelt. Der skal bruges version 3.0 eller bedre.
+
+aCannotOpenDatabaseTitle	Kan ikke \xf8bne database
+aCannotOpenDatabaseText		Kan ikke \xf8bne ^1 databasen.
+
+aEmptyEventTitle	Tom tekst
+aEmptyEventText		Du skal angive en kort beskrivelse i Begivenheds feltet.
+
+aInvalidDateTitle	Dato ej sat
+aInvalidDateText	Du skal angive en gyldig dato.
+
+aDeleteTitle		Slet?
+aDeleteText		Er det ok at slette denne begivenhed?
+
+aNoEventsTitle		Ingen begivenheder
+aNoEventsText		Der er ingen begivenheder.
+
+aNothingToPrintTitle	Intet at udskrive
+aNothingToPrintText	Der er intet at udskrive.
+
+# Main form
+mainNew			Ny
+mainNext		N\xe6ste
+mainPrint		Udskriv
+mainMenuOptions		Muligheder
+mainMenuNotifications	Bekendtg\xf8relser
+mainMenuNotificationsSC	N
+mainMenuPreferences	Indstillinger
+mainMenuPreferencesSC	P
+mainMenuAbout		Om Eventor
+
+# Edit form
+editRemindMe		Mind mig om begivenheden
+editDays		dag(e) f\xf8r begivenheden
+editRepeat		Gentag hver dag indtil ...
+
+# View form
+viewTitle		Vis Begivenhed
+viewReminder		Mind om
+
+# About form
+aboutAbout		Om
+aboutVersion		Version
+
+# Alarm form
+alarmEventDue		Indtr\xe6ffer
+
+# Preferences form
+prefsTitle		Indstillinger
+prefsAlarmAt		Alarmer
+prefsSoundAlarm		Alarm lyd.
+prefsShow		Vis bekendtg\xf8relser ved start.
+
+# TimeSelector form
+tsAm			AM
+tsPm			PM

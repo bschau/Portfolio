@@ -1,0 +1,7 @@
+{
+	"Domain": "ngrok-domain or blank to autogenerate",
+	"AuthToken": "ngrok Auth Token",
+	"Extension": "file extension",
+	"DestDir": "Where to store files",
+	"MaxSize": "Maximum size of files as int"
+}

@@ -1,0 +1,2 @@
+APPNAME=MixedUp
+VERSION=1r1

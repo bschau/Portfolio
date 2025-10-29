@@ -1,0 +1,86 @@
+{
+    "author": "brian@schau.dk",
+    "dependencies": {},
+    "keywords": [],
+    "name": "vismawatchface",
+    "pebble": {
+        "displayName": "Visma Watchface",
+        "enableMultiJS": false,
+        "messageKeys": {},
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/menu.png",
+                    "menuIcon": true,
+                    "name": "MENU",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat9.png",
+                    "name": "BATTERY_9",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat8.png",
+                    "name": "BATTERY_8",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat7.png",
+                    "name": "BATTERY_7",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat6.png",
+                    "name": "BATTERY_6",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat5.png",
+                    "name": "BATTERY_5",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat4.png",
+                    "name": "BATTERY_4",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat3.png",
+                    "name": "BATTERY_3",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat2.png",
+                    "name": "BATTERY_2",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat1.png",
+                    "name": "BATTERY_1",
+                    "type": "png"
+                },
+                {
+                    "file": "images/bat0.png",
+                    "name": "BATTERY_0",
+                    "type": "png"
+                },
+                {
+                    "file": "images/background.png",
+                    "name": "BACKGROUND",
+                    "type": "png"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "1bea2654-afee-496a-96c0-bc1e0c868900",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}

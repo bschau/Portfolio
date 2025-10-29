@@ -1,0 +1,24 @@
+
+all:
+	in lmake/scripts %build.sh
+	lmake -C lme
+	lmake -C lhd
+	lmake -C lcdoc
+
+clean:
+	$(RM) *~
+	$(RM) docs$/*~
+	$(RM) man$/*~
+	$(RM) common$/*~
+
+distclean:	clean
+	lmake -C lmake distclean
+	lmake -C lhd distclean
+	lmake -C lcdoc distclean
+	lmake -C lme distclean
+	basename p $(CWD)
+	$(RM) $(p).exe
+
+archive: distclean
+	basename p $(CWD)
+	in .. tar czvf $(p).tar.gz $(p)

@@ -1,0 +1,67 @@
+===============================================================================
+Hello Brian,
+
+the successor of SecureIt is really a nice product.
+
+But two things I miss in this tool:
+
+1. The numeric pad for entering the password. It makes the input a lot easier than to write the Code in Grafitti.
+
+2. It should be possible to scroll through the list of secrects via hardware buttons. If the list has a lot of entries it is very comfortable to scroll with the buttons.
+
+This are only little ideas. Perhaps it is possible to realize this in a later  version of iSecure.
+
+Thanks again for zhis nice piece of software.
+
+-- Regards from Germany Uwe eMail: uwe_von_der_wege@gmx.net
+===============================================================================
+-------- Original-Nachricht --------
+Datum: Thu, 31 Aug 2006 09:16:26 +0200
+Von: Brian Schau <brian@schau.com>
+An: Uwe von der Wege <Uwe_von_der_Wege@gmx.net>
+Betreff: Re: [iSecur] Hmmm ... I wonder why ...
+
+> > Hi Uwe,
+> > 
+> > Hey!   I remember you from the past!  :-)
+> > 
+
+Yes, I really be happy with SecureIt a long time. It was a reliably companion for me. :-))
+
+>> > > 1. The numeric pad for entering the password. It makes the input a lot
+> > easier than to write the Code in Grafitti.
+> > 
+> > It will come in v1.2 - I am working on it ... :-)    I don't have a
+> > deadline for v1.2 yet, but it will be out "soonish" ...
+> > 
+
+Don't hurry. It would be a nice to have feature but it works with handish input, too.
+
+>> > > 2. It should be possible to scroll through the list of secrects via
+> > hardware buttons. If the list has a lot of entries it is very comfortable to
+> > scroll with the buttons.
+> > 
+> > Ehrm .. Could you please be more specific.  Pressing up and down should
+> > scroll the list ...   * BUT * - I may have made a mistake - I only have
+> > a Palm TX and a Z22 to test on and they feature the horribly Focus Ring
+> > which pretty much ruins how navigation on PDAs work ...
+> > What device are you using?
+> > 
+
+If I open iSecur and enter a category with more entries than to display on one screen I only can scroll up/down using the pen typing on the arrows on the right side. Pressing the hardware buttons up/down doesn't work.
+
+I'm using a m505 with OS 4.0. If you need it I could send you a ROM file for the Emulator to test this behaviour.
+
+>> > > 
+>> > > This are only little ideas. Perhaps it is possible to realize this in a
+> > later  version of iSecure.
+>> > > 
+>> > > Thanks again for zhis nice piece of software.
+>> > > 
+
+Thanks a lot for your quick answer.
+
+-- Regards Uwe.
+===============================================================================
+===============================================================================
+===============================================================================

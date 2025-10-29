@@ -1,0 +1,23 @@
+2009-03-09	v1.4
+
+	* Fixed backup/restore bugs.
+	* Fixed a bug where HMM format would fuck up atTracker.
+
+2009-03-09	v1.3
+
+	* Never released.
+	* Clean up of code.
+
+2009-02-26	v1.2
+
+	* The old backup file is renamed before creation of a new file.
+	* Time spent in period is now shown next to the period picker.
+
+2009-02-26	v1.1
+
+	* Backup/Restore now works.
+	* Numeric input on the Edit screen fixed.
+
+2009-02-21	v1.0
+
+	* Initial release.

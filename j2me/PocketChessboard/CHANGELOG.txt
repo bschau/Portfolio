@@ -1,0 +1,9 @@
+2009-11-22	v1.1
+
+	* Added default text to Add Mark text box.
+	* "Upper lefted" all graphics so it will fit more easily on all
+	  kinds of mobile phones :-)
+
+2009-03-09	v1.0
+
+	* Initial release.

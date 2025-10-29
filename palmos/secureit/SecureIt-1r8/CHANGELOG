@@ -1,0 +1,36 @@
+Changelog for Secure It.
+
+
+v1r8 (2001-07-26)
+	Added Business/Personal to the categories list (suggested by Jan Lund
+	Thomsen).
+	In non quick-access mode, categories is placed in upper right corner
+	as just about everybody is used to :)  (suggested by Jan Lund Thomsen).
+	Database can now be backed up (suggested by W. Michael Stone).
+	Menus reworked, new names (suggested by several people).
+	Added new password dialog - a single text field (suggested by
+	Mike Hanson).
+	Added new password dialog - calculator layout (suggested by Jan Lund
+	Thomsen).
+	'Thanks' in about menu (me).
+	Reworked companion website (http://www.brisse.dk/palm/secureit) - the
+	manual comes in several formats now.
+
+v1r7 (2001-06-28):
+	Added undo, copy, cut, paste and select all to the edit menu.
+
+v1r6 (2001-06-27):
+	Records are now tied to the category they reside in.   In older versions
+	it was possible for a new record in one category to overwrite a record
+	with the same key but in a different category.
+
+v1r5 (2001-06-15):
+	System should run on 2.0 now (largeBoldFont comes in OS 3.0 - changed
+	usage to largeFont).
+
+v1r4 (2001-06-03):
+	Added 'support' menu item.
+
+v1r3 (2001-06-01):
+	Disabled timeouts while system dialogs are shown.
+	Added Graffiti-state indicator.  Upper-/Lowercase now works.

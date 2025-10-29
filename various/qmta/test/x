@@ -1,0 +1,7 @@
+#!/bin/sh
+cd ../libqmta
+make
+cd -
+make clean mail
+./createtest
+./mail sXXXXXX

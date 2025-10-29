@@ -1,0 +1,20 @@
+
+all:	compile
+
+compile:
+	in .. lmake
+	test -d tmp || mkdir tmp
+	%..$/lme -v -v -v -v -p PropsFile -p RecurProps -o tmp src$/LMETest.java
+	javac -d . tmp$/LMETest.java
+	%cat tmp$/LMETest.java
+
+run:
+	!%java -cp . com.schau.ltools.LMETest
+
+clean:
+	$(RM) *~
+	$(RM) src$/*~ 
+	$(RD) com
+	$(RD) tmp
+
+distclean:	clean

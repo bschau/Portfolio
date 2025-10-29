@@ -1,0 +1,2 @@
+#!/bin/bash
+./snmpproxy -Da docs/snmpproxy.conf-example

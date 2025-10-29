@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>TrlClassCreator Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<style type="text/css">
+body {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: tahoma,verdana,geneva,sans-serif;
+}
+
+dt {
+	color: #008844;
+}
+
+th {
+	text-align: left;
+	vertical-align: top;
+	padding-right: 1em;
+}
+
+td {
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<h1>TrlClassCreator Manual</h1>
+	<h3>Introduction</h3>
+	<p>TrlClassCreator is an Ant task which can be used to create a Strings class files. The Strings class file can be used when localizing programs. Other means of doing the same is by using <a href="http://www.gnu.org/software/gettext/">GNU GetText</a>.</p>
+	<p>TrlClassCreator takes a set of strings and creates a java file with final identifiers.</p>
+	<p>Optionally, TrlClassCreater will overlay a set of strings on another set of strings and then output the combined set of strings.</p>
+
+	<h3>Requirements</h3>
+	<ul>
+		<li><a href="http://ant.apache.org/">Ant</a> (obviously ..) - I use ant-1.7.1.</li>
+		<li>Linux, Windows or Mac OS X. TrlClassCreator has been developed and used on Slackware Linux 12+, Windows Vista and Mac OS X 10.5 (leopard).</li>
+	</ul>
+
+	<h3>Installation</h3>
+	<h5>Binary</h5>
+	<p>Copy <code>TrlClassCreator.jar</code> to f.ex. the Ant <code>lib</code> directory or some other directory of your choice.</p>
+	<h5>Source</h5>
+	<p>You need <a href="http://ant.apache.org/">Ant</a> to build TrlClassCreator. In the top-level directory of the source distribution type <code>ant</code>. When ant is finished copy <code>src/TrlClassCreator.jar</code> to f.ex. the Ant <code>lib</code> directory or some other directory of your choice.</p>
+
+	<h3>TaskDef</h3>
+	<p>Before using TrlClassCreator you need to define it as a task within your project:</p>
+	<pre>
+        &lt;target name="init" description="Taskdef the TrlClassCreator task"&gt;
+            &lt;taskdef name="trl" classname="com.schau.TrlClassCreator" classpath="/path/to/TrlClassCreator.jar" /&gt;
+        &lt;/target&gt;
+	</pre>
+	<p>The <code>target</code> attributes are not that important but pay attention to the <code>taskdef</code> attributes! <code>name</code> (trl) is the name you want to use when referring to the TrlClassCreator task. <code>classname</code> must be <b>com.schau.TrlClassCreator</b>. If you copied the TrlClassCreator.jar to Ants <code>lib</code> directory you can omit the <code>classpath</code> attribute - if not, you have to enter the full path to the TrlClassCreator.jar.</p>
+	<p>Remember to <code>taskdef</code> before use!</p>
+
+	<h3>Usage</h3>
+	<p>To use TrlClassCreator:</p>
+	<pre>
+	&lt;trl showversion="true"
+                    strings=""
+                    base=""
+                    destfile="Trl.java"
+                    package=""
+                    usespaces="false"
+		    tabwidth="1"
+                    encoding="UTF-8"
+        &gt;
+            &lt;base key="str1name"&gt;str1value&lt;/base&gt;
+                         .
+                         .
+            &lt;base key="strXname"&gt;strXvalue&lt;/base&gt;
+
+            &lt;string key="str1name"&gt;str1value&lt;/string&gt;
+                           .
+                           .
+            &lt;string key="strXname"&gt;strXvalue&lt;/string&gt;
+        &lt;/trl&gt;
+	</pre>
+	<p>TrlClassCreator accepts the following attributes:</p>
+	<table>
+		<tr>
+			<th>showversion</th>
+			<td>Show version information when running TrlClassCreator. To show version information set to <code>true</code> or <code>on</code> or <code>1</code> or <code>yes</code>. Other values hides version information. Default is <code>true</code>.</td>
+		</tr>
+
+		<tr>
+			<th>strings</th>
+			<td>File with strings to output. See below.</td>
+		</tr>
+
+		<tr>
+			<th>base</th>
+			<td>A base set of strings. If given, these strings will be merged with the strings above.</td>
+		</tr>
+
+		<tr>
+			<th>dstfile</th>
+			<td>Where to store the class file. Default is <code>Trl.java</code>.</td>
+		</tr>
+
+		<tr>
+			<th>package</th>
+			<td>Set name of package in class file. Default is no package name.</td>
+		</tr>
+
+		<tr>
+			<th>usespaces</th>
+			<td>Use spaces instead of tabs in class file. Default is <code>false</code>.</td>
+		</tr>
+
+		<tr>
+			<th>tabwidth</th>
+			<td>Number of tabs/spaces to output. Default is <code>1</code>.</td>	
+		</tr>
+
+		<tr>
+			<th>encoding</th>
+			<td>Input/Output encoding. Default is <code>UTF-8</code>.</td>
+		</tr>
+	</table>
+
+	<p>Within a <code>&lt;trl&gt; .. &lt;/trl&gt;</code> pair you can have one or more <code>&lt;base&gt;</code> or <code>&lt;string&gt;</code> definitions.</p>
+	<pre>
+	&lt;base key="key"&gt;value&lt;/base&gt;
+	</pre>
+	<p>This will load the key <code>key</code> with the value <code>value</code> into the base tree.</p>
+
+	<pre>
+	&lt;string key="key"&gt;value&lt;/string&gt;
+	</pre>
+	<p>This will load the key <code>key</code> with the value <code>value</code> into the strings tree.</p>
+
+	<h3>String Files</h3>
+	<p>A string file to be used as a base or strings file must follow a simple pattern:</p>
+	<ul>
+		<li>The file contains one or more <code>key</code>/<code>value</code> pairs. The key is separated by the value by one or more whitespaces.</li>
+		<li>A comment is started using <b>#</b>. A comment can only start on the first column of the line.</li>
+		<li>A value which must span multiple lines must end in <b>\</b> on each line except for the last line.</li>
+		<li>Comments within multiple lines are ignored.</li>
+	</ul>
+
+	<h3>Example</h3>
+	<p>The following example will:</p>
+	<ol>
+		<li>create a Trl.java file with danish content.</li>
+		<li>the Trl.java belongs to the package <b>com.schau.TrlTest</b>.</li>
+	</ol>
+	<p>Note that the taskdef is done in the same target as the actual usage of TrlClassCreator. This is perfectly OK - just remember to <code>taskdef</code> before use!</p>
+
+	<pre>
+	&lt;target name="trl"&gt;
+            &lt;taskdef name="trl" classname="com.schau.TrlClassCreator" classpath="/opt/AntTasks/TrlClassCreator.jar" /&gt;
+	    &lt;trl base="en.trl"
+                   strings="da.trl"
+                   destfile="Trl.java"
+                   package="com.schau.TrlTest" &gt;
+                &lt;base key="poetry"&gt;Roses are red&lt;/base&gt;
+                &lt;string key="poetry"&gt;Roser er r&oslash;de&lt;/string&gt;
+            &lt;/trl&gt;
+        &lt;target&gt;
+	</pre>
+	<p><code>en.trl</code>:</p>
+	<pre>
+        greeting        Hello, world
+	</pre>
+	<p><code>da.trl</code>:</p>
+	<pre>
+        greeting        Hej, verden
+	</pre>
+
+	<p>The resulting Trl.java file looks like:</p>
+	<pre>
+        package com.schau.TrlTest;
+
+        class Trl {
+                public static final String poetry = "Roser er r&oslash;de";
+                public static final String greeting = "Hej, verden!";
+        }
+	</pre>
+</body>
+</html>

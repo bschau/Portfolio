@@ -1,0 +1,4 @@
+Changelog for Diploma
+
+v1r1 (2005-05-18)
+	First public release.

@@ -1,0 +1,11 @@
+v2.2 (2005-12-09)
+	The database now gets sorted after a HotSync.
+
+v2.1 (2005-12-08)
+	Added simple statistics module.
+
+v2.0 (2005-12-07)
+	Reworked the interface.
+
+v1.0 (2005-08-26)
+	First public release of this toy product.

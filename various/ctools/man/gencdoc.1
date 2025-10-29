@@ -1,0 +1,28 @@
+.TH GENCDOC 1L
+.SH NAME
+gencdoc \- c\-doc generator
+.SH SYNOPSIS
+.B gencdoc
+[\fI-S style\fR] [\fI-h\fR] [\fI-o dir\fR] [\fI-s\fR] [\fI-v\fR]
+.SH DESCRIPTION
+gencdoc is a little javadoc for c sources utility. It will extract comments and declarations from the c source code and pack it all into a nice set of html pages for viewing in a web browser.
+.SH OPTIONS
+.TP
+\fB-S style\fR
+Use stylesheet instead of the plain built in stylesheet.
+.TP
+\fB-h\fR
+Show a brief help page.
+.TP
+\fB-o directory\fR
+Output files to directory.
+.TP
+\fB-s\fR
+Also process static declarations.
+.TP
+\fB-v\fR
+Raise verbosity.
+.BR
+
+.SH AUTHOR
+Brian Schau <brian@schau.dk>

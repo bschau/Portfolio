@@ -1,0 +1,211 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.5"
+ICONFAMILYEX
+BEGIN
+	BITMAP "gfx/iconl8.bmp" BPP 8 TRANSPARENT 255 255 255
+	BITMAP "gfx/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "gfx/icons8.bmp" BPP 8 TRANSPARENT 255 255 255
+	BITMAP "gfx/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "HSNSwitch was made by\n\n\tBrian Schau.\n\nPlease visit my website at:\n\n\thttp://www.schau.com/\n\nOn my website you will find the latest version of HSNSwitch and a user manual.\n\n\n"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS version."
+	MESSAGE "This program must run under PalmOS 5.x."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aDelete
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Delete?"
+	MESSAGE "Do you want to delete this entry?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aAlreadyPresent
+INFORMATION
+BEGIN
+	TITLE "Already Set"
+	MESSAGE "A HotSync Name has already been set for this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aPurge
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Purge"
+	MESSAGE "Do you want to remove HotSync Name configurations for non-existing applications?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aDetectSlot
+INFORMATION
+BEGIN
+	TITLE "Preference Found"
+	MESSAGE "The HotSync preference was found at slot ^1."
+	BUTTONS "OK"
+END
+
+ALERT ID aDetectNotFound
+INFORMATION
+BEGIN
+	TITLE "Preference Not Found"
+	MESSAGE "Cannot find the HotSync preference."
+	BUTTONS "OK"
+END
+
+ALERT ID aHotSyncPlease
+INFORMATION
+BEGIN
+	TITLE "Please HotSync"
+	MESSAGE "Detection can not run reliably on a blank device - please HotSync once."
+	BUTTONS "OK"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About HSNSwitch"
+
+	LABEL "HSNSwitch" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.5" AUTOID AT (CENTER 42)
+	FIELD ID cAboutText AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrollBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "HSNSwitch"
+
+	SELECTORTRIGGER "" ID cMainSelector AT (RIGHT@159 1 AUTO 11) RIGHTANCHOR
+
+	LABEL "Application" AUTOID AT (1 18) FONT 1
+	LABEL "HotSync Name" AUTOID AT (RIGHT@150 18) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+1 18) FONT 0
+
+	TABLE ID cMainTable AT (1 31 150 110) ROWS MainTableLines COLUMNS 1 COLUMNWIDTHS 150
+	SCROLLBAR ID cMainScrollBar AT (152 31 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE MainTableLines-1
+
+	BUTTON "Add" ID cMainAdd AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Actions"
+	BEGIN
+		MENUITEM "Detect" ID mMainDetect
+		MENUITEM "Purge" ID mMainPurge
+	END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fAddApplication AT (2 2 156 156)
+MODAL
+DEFAULTBUTTON cAddApplicationCancel
+BEGIN
+	TITLE "Available Applications"
+
+	TABLE cAddApplicationTable AT (4 18 140 110) ROWS AddApplicationLines COLUMNS 1 COLUMNWIDTHS 140
+	SCROLLBAR ID cAddApplicationScrollBar AT (146 18 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE AddApplicationLines-1
+
+	BUTTON "Cancel" ID cAddApplicationCancel AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+FORM ID fDetails AT (2 62 156 96)
+MODAL
+DEFAULTBUTTON cDetailsCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Application Details"
+
+	LABEL "Application name:" AUTOID AT (4 16)
+	FIELD ID cDetailsApplicationName AT (4 30 148 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS NameLength AUTOSHIFT
+
+	LABEL "HotSync name:" AUTOID AT (4 46)
+	FIELD ID cDetailsHotSyncName AT (4 60 148 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS HotSyncNameLength AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (140 82)
+
+	BUTTON "OK" ID cDetailsOK AT (4 BOTTOM@93 AUTO AUTO)
+	BUTTON "Cancel" ID cDetailsCancel AT (PREVRIGHT+4 BOTTOM@93 AUTO AUTO)
+	BUTTON "Delete" ID cDetailsDelete AT (PREVRIGHT+4 BOTTOM@93 AUTO AUTO) NONUSABLE
+END
+
+FORM ID fDefaultHotSyncName AT (2 92 156 66)
+MODAL
+DEFAULTBUTTON cDefaultHotSyncNameCancel
+MENUID sysEditMenuID
+BEGIN
+	TITLE "Default HotSync Name"
+
+	LABEL "Enter default HotSync name:" AUTOID AT (4 16)
+	FIELD ID cDefaultHotSyncNameField AT (4 30 148 12) EDITABLE MULTIPLELINES UNDERLINED MAXCHARS HotSyncNameLength AUTOSHIFT
+
+	GRAFFITISTATEINDICATOR AT (140 52)
+
+	BUTTON "OK" ID cDefaultHotSyncNameOK AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Cancel" ID cDefaultHotSyncNameCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Current" ID cDefaultHotSyncNameCurrent AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END
+
+FORM ID fDetect AT (2 92 156 66)
+MODAL
+DEFAULTBUTTON cDetectCancel
+BEGIN
+	TITLE "Detect preference slot"
+
+	LABEL "# of slots to search:" AUTOID AT (4 20)
+
+	FIELD ID cDetectField AT (PREVRIGHT+2 20 30 12) EDITABLE UNDERLINED MAXCHARS 5 AUTOSHIFT NUMERIC
+
+	GRAFFITISTATEINDICATOR AT (140 52)
+
+	BUTTON "Detect" ID cDetectDetect AT (4 BOTTOM@63 AUTO AUTO)
+	BUTTON "Cancel" ID cDetectCancel AT (PREVRIGHT+4 BOTTOM@63 AUTO AUTO)
+END

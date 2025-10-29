@@ -1,0 +1,25 @@
+1. Did you get my e-mail about iSecurViewer, dated 18/11
+
+    Hi Brian,
+     
+    I'm dropping this e-mail because I'm changing my password manager from STRIP to iSecur. Their are many reasons why I'm doing so but the main reason is that iSecurViewer will enable me to access the data from my computer.
+     
+    But I can't seem to find a way to make it work.
+     
+    1. When I launch iSV, the window to select the profile does not show up.
+    2. The window to enter the password is the first one.
+    3. I type the password but there is "Load error" window saying "Arithmetical calculation generated a overflow problem" (actually it says something like that in French)
+     
+    I'm running iSV 1.4 and I have MS .NET installed. I've uninstalled iSV, cleaned the registry and re-installed it but it remains the same.
+     
+    Any idea about that kind of problem ?
+     
+    By the way, I'm still ready to help if you need a translation job (into French), as I've already proposed to you.
+     
+    Cheers,
+    Fred
+
+2. I erased the icon in the icon library and now there's a kind of black and white square or a maze. Is it the normal icon ?
+ 
+3. One more report after my investigation : in the main view (list of secrets/templates/both), when there are more secrets than the screen can display, it's not possible to scroll with the 5-way button. Clicking down or up just changes the selection from main area to the category selection (up) or the "new" button (down). Is it supposed to be that way ?
+ 

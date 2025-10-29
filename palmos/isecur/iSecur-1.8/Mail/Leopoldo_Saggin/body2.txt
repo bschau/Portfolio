@@ -1,0 +1,29 @@
+Brian Schau ha scritto:
+
+> I've attached an Italian version of iSecur.  Please note, that this
+> version of iSecur is under development.  At least the Icon screen is
+> broken (I am fixing it ...)
+
+Dear Brian,
+I tried to install your Italian 1.7 version both in the Palm simulator and Palm Emulator. In both cases there were some errors which crashed both Simulator and Emulator.
+In one case (Emulator) as soon as I arrived to try to finish to tap on the screen to generate the random seed to cryptate the database, a window appeared telling me that "Isecur read from a location memory 0x00033AA8 which is an unallocated chunck of mermory" and crashedd POSE.
+This happened 3 times.
+
+On the contrary Simulator, after an initial crash while inputting the password, seems to work.
+
+Anyway I found a couple of bugs in the refresh of the screen you probably didn't see because the English/Danish strings are too short to make them evident.
+I did not explain them now because I have no time and I would make the most of my corrections before to re-sumbit my translation to you togheter with the above considerations on the refresh of the screen (maybe I submit the snapshot of them).
+Moreover I think that if the author of icons changed (Ignacio Sueiras) this should also be reported in the info. Am I wrong?
+I hope I can resubmit my transaltion in few days.
+
+>
+> 5-way: I think you found a bug ... :-)
+>
+
+Ok.
+
+Ciao,
+Leopoldo
+
+
+

@@ -1,0 +1,2 @@
+APPNAME=PowerPlay
+VERSION=1.0

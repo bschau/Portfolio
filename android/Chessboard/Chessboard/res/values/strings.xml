@@ -1,0 +1,18 @@
+<resources>
+	<string name="app_name">Chessboard</string>
+	<string name="white">White</string>
+	<string name="black">Black</string>
+	<string name="status_line_inplaymode">%s to move.</string>
+	<string name="status_line_deleting">Erase square.</string>
+	<string name="status_line_selectpiecetoplace">Select piece to place.</string>
+	<string name="status_line_place">Place %s.</string>
+	<string name="status_line_whitepawnpromotion">Promote white pawn to?</string>
+	<string name="status_line_blackpawnpromotion">Promote black pawn to?</string>
+	<string name="status_line_inbuilder">Set up board.</string>
+
+	<!-- standout strings -->
+	<string name="window_icon">Window icon</string>
+	<string name="hide">Hide</string>
+	<string name="close">Close</string>
+	<string name="corner">Corner</string>
+</resources>

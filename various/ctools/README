@@ -1,0 +1,44 @@
+Linux
+-----
+
+To compile and install on linux run:
+
+	sudo make
+
+This will install everything in /usr/local/bin and /usr/local/man/man.1.
+
+
+
+Mac OS X
+--------
+
+To compile and install on Mac OS X you must first install the following
+libraries:
+
+gdbm (http://www.gnu.org.ua/software/gdbm/)
+zlib (http://www.zlib.net)
+libpng (http://www.libpng.org/pub/png/libpng.html)
+jpeg (http://libjpeg.sourceforge.net) (remember to sudo make install-lib)
+gd (http://www.boutell.com/gd/)
+freetype (http://sourceforge.net/projects/freetype/files)
+
+
+Windows
+-------
+
+Install MingW (gcc + make), then run:
+
+	make
+
+This will install everything into c:\opt\bin.
+
+
+
+All
+---
+
+Tweak everything in Common.mk ...
+
+
+
+/brian

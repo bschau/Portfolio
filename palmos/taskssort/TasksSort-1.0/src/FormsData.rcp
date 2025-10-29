@@ -1,0 +1,146 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "@@VERSION@@"
+LAUNCHERCATEGORY "@@catSystem@@"
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "@@strAboutText@@"
+STRING ID 1 "@@strHelp@@"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "@@aBadRomT@@"
+	MESSAGE "@@aBadRomB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoPose
+INFORMATION
+BEGIN
+	TITLE "@@aNoPoseT@@"
+	MESSAGE "@@aNoPoseB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoTasksDB
+INFORMATION
+BEGIN
+	TITLE "@@aNoTasksDBT@@"
+	MESSAGE "@@aNoTasksDBB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aCannotOpenDB
+INFORMATION
+BEGIN
+	TITLE "@@aCannotOpenDBT@@"
+	MESSAGE "@@aCannotOpenDBB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aNoDBInfo
+INFORMATION
+BEGIN
+	TITLE "@@aNoDBInfoT@@"
+	MESSAGE "@@aNoDBInfoB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID aVersionError
+INFORMATION
+BEGIN
+	TITLE "@@aVersionErrorT@@"
+	MESSAGE "@@aVersionErrorB@@"
+	BUTTONS "@@abOK@@"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "@@fAboutTitle@@ TasksSort"
+
+	LABEL "TasksSort" AUTOID AT (CENTER 20) FONT 7
+	LABEL "@@fAboutVersion@@ @@VERSION@@" AUTOID AT (CENTER 42)
+	FIELD ID cAboutTxt AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "@@fbDone@@" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutTxt cAboutScrBar
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+MODAL
+MENUID mMain
+HELPID 1
+BEGIN
+	TITLE "@@fMainTitle@@"
+
+	LABEL "@@fMainLabel@@" AUTOID AT (CENTER 18)
+	PUSHBUTTON "@@fMainPBAsc@@" ID cMainAsc AT (RIGHT@78 32 AUTO AUTO) GROUP 1
+	PUSHBUTTON "@@fMainPBDesc@@" ID cMainDesc AT (82 32 AUTO AUTO) GROUP 1
+
+	CHECKBOX "@@fMainChkLaunch@@" ID cMainChkLaunch AT (1 50 AUTO AUTO)
+	CHECKBOX "@@fMainChkHotKey@@:" ID cMainChkHotKey AT (1 62 AUTO AUTO) NONUSABLE
+	FIELD ID cMainFldHotKey AT (PREVRIGHT+4 62 6 11) UNDERLINED EDITABLE MAXCHARS 1 NONUSABLE
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+	BUTTON "@@fbSort@@" ID cMainSort AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainSort
+	BOTTOMLEFTOBJECTID cMainSort
+	NAVIGATIONMAP
+		ROW cMainAsc cMainDesc
+		ROW cMainChkLaunch
+		ROW cMainChkHotKey
+		ROW cMainFldHotKey
+		ROW cMainSort
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "@@mMainHelp@@"
+	BEGIN
+		MENUITEM "@@mHelpAboutT@@" ID mMainAbout
+	END
+END

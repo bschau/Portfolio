@@ -1,0 +1,29 @@
+2006-11-28	v1.5
+
+	*	Upgraded to match v1.4 of iSecur.
+	*	Optimized some of the main list and category list updates.
+
+2006-11-07	v1.4
+
+	*	Sorting in v1.3 didn't work. Reverted somewhat to what v1.2
+		did and it seems to work.
+
+2006-11-02	v1.3
+
+	*	Secrets on the main form are now sorted.
+	*	Switching Profiles now works as expected - you no longer have to
+		select the "Load Profile" menu item twice to switch profiles.
+
+2006-10-28	v1.2
+
+	*	Can now open databases created by iSecur-1.3.
+
+2006-10-05	v1.1
+
+	*	Now renders tabs in secrets.
+	*	Secrets can be copied to other programs.
+	*	If a secret is long it can now be scrolled.
+
+2006-07-10	v1.0
+
+	*	Initial version.

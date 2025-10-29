@@ -1,0 +1,16 @@
+﻿Knap:
+
+* Nyt, 140 x 140
+* Fill: 3a3aff
+* Circle select 160 x 160 så der kun skæres en bue
+* Invert
+* Clear bg (ffffff)
+* Invert
+* Shrink selection 10 pixels (shrink from image border)
+* Gradient: from 3a3aff -> 9f9fff, 45 grader lys går mod midten
+
+Trykket knap:
+
+* Brightness-Contrast:
+*	Brightness: 127
+*	Contrast: 60

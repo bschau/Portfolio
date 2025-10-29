@@ -1,0 +1,10 @@
+HOW TO RUN
+----------
+
+1)	Type 'make'
+2)	./public
+
+
+This will execute some basic tests ...
+
+(This test suite has only been verified on Linux 2.4.0 and PalmOS 3.5)

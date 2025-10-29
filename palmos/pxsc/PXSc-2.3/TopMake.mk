@@ -1,0 +1,2 @@
+APPNAME	=	PXSc
+VERSION	=	2.3

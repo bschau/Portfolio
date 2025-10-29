@@ -1,0 +1,319 @@
+#include "Resources.h"
+
+/*
+ * Globals.
+ */
+VERSION "1.0"
+ICONFAMILYEX
+BEGIN
+	BITMAP "data/iconl1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/iconl8.bmp" BPP 8 TRANSPARENT 255 255 255
+	BITMAP "data/iconl8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "data/icons1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/icons8.bmp" BPP 8 TRANSPARENT 255 255 255
+	BITMAP "data/icons8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 255 255
+END
+
+BITMAPFAMILYEX ID bmpStop
+COMPRESS
+BEGIN
+	BITMAP "data/stop1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/stop8.bmp" BPP 8
+	BITMAP "data/stop8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 0 0 255
+END
+
+BITMAPFAMILYEX ID bmpHelp
+COMPRESS
+BEGIN
+	BITMAP "data/help1.bmp" BPP 1 DENSITY 1
+	BITMAP "data/help8.bmp" BPP 8 TRANSPARENT 255 0 255
+	BITMAP "data/help8-hd.bmp" BPP 8 DENSITY 2 TRANSPARENT 255 0 255
+END
+
+BITMAP ID bmpEasy "data/easy.bmp" COMPRESS
+BITMAP ID bmpHard "data/hard.bmp" COMPRESS
+
+DATA "PPLY" ID BaseExpTableID "data/exptable.bin"
+
+/*
+ * Strings.
+ */
+STRING ID strAboutText "PowerPlay was made by Brian Schau.\n\nPlease visit my website at:\n\n   http://www.schau.com/\n\nOn the website you will find the latest version of PowerPlay and a user manual.\n\nThe PowerPlay icons was created by Tony Vincent.\n\nPlease visit Tonys website at:\n\nhttp://www.learninginhand.com/\n\n\nPowerPlay is released under the Gnu General Public License v2.\n"
+STRING ID strHelpText FILE "data/help.txt"
+
+/*
+ * Alerts.
+ */
+ALERT ID aBadRom
+INFORMATION
+BEGIN
+	TITLE "PalmOS Too Old."
+	MESSAGE "The PalmOS in this device is too old. PalmOS v3.0 or better is required to run this application."
+	BUTTONS "OK"
+END
+
+ALERT ID aCannotOpenDatabase
+INFORMATION
+BEGIN
+	TITLE "Database Error"
+	MESSAGE "Cannot open ^1 database."
+	BUTTONS "OK"
+END
+
+ALERT ID aEndGame
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "End Game?"
+	MESSAGE "Do you want to end the game?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID aExported
+INFORMATION
+BEGIN
+	TITLE "Exported"
+	MESSAGE "All Best Scorers tables have been exported to Memo Pad."
+	BUTTONS "OK"
+END
+
+ALERT ID aClear
+CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "Clear Tables?"
+	MESSAGE "Do you really want to clear the selected Best Scorers tables?"
+	BUTTONS "Yes" "No"
+END
+
+ALERT ID 3456
+INFORMATION
+BEGIN
+	TITLE "3456 Alert"
+	MESSAGE "^1\n^2\n^3"
+	BUTTONS "OK"
+END
+
+/*
+ * Forms.
+ */
+FORM ID fAbout AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "About PowerPlay"
+
+	LABEL "PowerPlay" AUTOID AT (CENTER 20) FONT 7
+	LABEL "Version 1.0" AUTOID AT (CENTER 42)
+	FIELD ID cAboutTxt AT (4 60 140 66) NONEDITABLE MULTIPLELINES HASSCROLLBAR
+	SCROLLBAR ID cAboutScrBar AT (146 60 7 66) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 6
+	BUTTON "Done" ID cAboutDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fAbout
+	INITIALSTATE 1
+	INITIALOBJECTID cAboutDone
+	BOTTOMLEFTOBJECTID cAboutDone
+	NAVIGATIONMAP
+		ROW cAboutDone
+END
+
+FORM ID fMain AT (0 0 160 160)
+NOFRAME
+MENUID mMain
+BEGIN
+	TITLE "PowerPlay"
+
+	POPUPTRIGGER "" ID cMainPopup AT (RIGHT@160 0 0 13) RIGHTANCHOR
+	LIST "Base - Easy" "Base - Hard" "Exponent - Easy" "Exponent - Hard" ID cMainList AT (80 1 78 AUTO) VISIBLEITEMS 4 NONUSABLE
+	POPUPLIST ID cMainPopup cMainList
+
+	BUTTON "Play" ID cMainPlay AT (1 BOTTOM@159 AUTO AUTO)
+	BUTTON "Level" ID cMainLevel AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+	BUTTON "Export" ID cMainExport AT (PREVRIGHT+4 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fMain
+	INITIALSTATE 1
+	INITIALOBJECTID cMainPlay
+	BOTTOMLEFTOBJECTID cMainPlay
+	NAVIGATIONMAP
+		ROW cMainPopup cMainList
+		ROW cMainPlay cMainLevel cMainExport
+END
+
+MENU mMain
+BEGIN
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "Clear" ID mMainClear
+		MENUITEM SEPARATOR
+		MENUITEM "About" ID mMainAbout
+	END
+END
+
+FORM ID fGame AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "PowerPlay"
+
+	LABEL "Guess the Base" ID cGameLblB AT (RIGHT@146 1) NONUSABLE
+	LABEL "Guess the Exponent" ID cGameLblE AT (RIGHT@146 1) NONUSABLE
+
+	LABEL "Round #" AUTOID AT (0 16)
+	LABEL "Score" AUTOID AT (RIGHT@160 16)
+
+	BUTTON "" ID cGameStop AT (148 1 11 11) NOFRAME GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStop
+
+	FIELD ID cGameField AT (0 0 14 14) MAXCHARS 2 NUMERIC NONUSABLE FONT 7
+
+	NOGRAFFITISTATEINDICATOR
+
+	BUTTON "Guess" ID cGameGuess AT (CENTER BOTTOM@159 AUTO AUTO)
+	BUTTON "" ID cGameHelp AT (144 145 16 15) NOFRAME GRAPHICAL BITMAPID bmpHelp SELECTEDBITMAPID bmpHelp
+END
+
+NAVIGATION ID fGame
+	INITIALSTATE 1
+	INITIALOBJECTID cGameField
+	BOTTOMLEFTOBJECTID cGameGuess
+	NAVIGATIONMAP
+		ROW cGameStop
+		ROW cGameField
+		ROW cGameGuess cGameHelp
+END
+
+FORM ID fPreferences AT (0 0 160 160)
+NOFRAME
+BEGIN
+	TITLE "PowerPlay"
+
+	BUTTON "" ID cPreferencesBack AT (148 1 11 11) NOFRAME GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStop
+
+	LABEL "Start a new game by tapping" AUTOID AT (CENTER 20)
+	LABEL "the button of the quiz type" AUTOID AT (PREVLEFT 32)
+	LABEL "you want to play." AUTOID AT (PREVLEFT 44)
+
+	LABEL "Guess the Base" AUTOID AT (CENTER 70) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 70) FONT 0
+	BUTTON "Easy" ID cPreferencesBEasy AT (RIGHT@70 88 AUTO AUTO)
+	BUTTON "Hard" ID cPreferencesBHard AT (90 88 AUTO AUTO)
+
+	LABEL "Guess the Exponent" AUTOID AT (CENTER 120) FONT 1
+	LABEL " " AUTOID AT (PREVRIGHT+2 120) FONT 0
+	BUTTON "Easy" ID cPreferencesEEasy AT (RIGHT@70 138 AUTO AUTO)
+	BUTTON "Hard" ID cPreferencesEHard AT (90 138 AUTO AUTO)
+END
+
+NAVIGATION ID fPreferences
+	INITIALSTATE 1
+	INITIALOBJECTID cPreferencesBEasy
+	BOTTOMLEFTOBJECTID cPreferencesEEasy
+	NAVIGATIONMAP
+		ROW cPreferencesBEasy cPreferencesBHard
+		ROW cPreferencesEEasy cPreferencesEHard
+END
+
+FORM ID fEnd AT (0 0 160 160)
+NOFRAME
+MENUID sysEditMenuID
+BEGIN
+	TITLE "PowerPlay"
+
+	LABEL "* G A M E     O V E R *" AUTOID AT (CENTER 30) FONT 7
+	LABEL " " AUTOID AT (PREVRIGHT+2 20) FONT 0
+
+	LABEL "Please enter your name for" ID cEndLbl1 AT (CENTER 84) NONUSABLE
+	LABEL "the Best Scorers Table:" ID cEndLbl2 AT (PREVLEFT 96) NONUSABLE
+	
+	FIELD ID cEndPos AT (RIGHT@30 116 30 16) MAXCHARS 3 NONUSABLE NONEDITABLE FONT 7 RIGHTALIGN
+	FIELD ID cEndName AT (32 116 106 16) MAXCHARS BestScorerNameLen NONUSABLE UNDERLINED FONT 7 MULTIPLELINES
+
+	GRAFFITISTATEINDICATOR AT (147 147)
+	BUTTON "Done" ID cEndDone AT (1 BOTTOM@159 AUTO AUTO)
+END
+
+NAVIGATION ID fEnd
+	INITIALSTATE 1
+	INITIALOBJECTID cEndDone
+	BOTTOMLEFTOBJECTID cEndDone
+	NAVIGATIONMAP
+		ROW cEndName
+		ROW cEndDone
+END
+
+FORM ID fExport AT (2 97 156 61)
+MODAL
+DEFAULTBUTTON cExportCancel
+BEGIN
+	TITLE "Export"
+
+	LABEL "Export To:" AUTOID AT (RIGHT@58 18)
+	POPUPTRIGGER "?" ID cExportPopup AT (60 18 AUTO AUTO) LEFTANCHOR
+	LIST "" ID cExportList AT (60 18 100 AUTO) NONUSABLE
+	POPUPLIST ID cExportPopup cExportList
+
+	BUTTON "Export" ID cExportExport AT (4 BOTTOM@58 AUTO AUTO)
+	BUTTON "Cancel" ID cExportCancel AT (PREVRIGHT+4 BOTTOM@58 AUTO AUTO)
+END
+
+NAVIGATION ID fExport
+	INITIALSTATE 1
+	INITIALOBJECTID cExportCancel
+	BOTTOMLEFTOBJECTID cExportExport
+	NAVIGATIONMAP
+		ROW cExportPopup cExportList
+		ROW cExportExport cExportCancel
+END
+
+FORM ID fHelp AT (2 2 156 156)
+MODAL
+BEGIN
+	TITLE "PowerPlay Help"
+
+	FIELD ID cHelpTxt AT (4 19 140 110) NONEDITABLE MULTIPLELINES HASSCROLLBAR USABLE
+	SCROLLBAR ID cHelpScrBar AT (146 19 7 110) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 9
+
+	BUTTON "Done" ID cHelpDone AT (4 BOTTOM@153 AUTO AUTO)
+END
+
+NAVIGATION ID fHelp
+	INITIALSTATE 1
+	INITIALOBJECTID cHelpDone
+	BOTTOMLEFTOBJECTID cHelpDone
+	NAVIGATIONMAP
+		ROW cHelpDone
+END
+
+FORM ID fClear AT (2 32 156 126)
+DEFAULTBTNID cClearCancel
+MODAL
+BEGIN
+	TITLE "PowerPlay - Clear Tables"
+	LABEL "Select the Best Scorers tables" AUTOID AT (CENTER 18)
+	LABEL "to clear:" AUTOID AT (PREVLEFT 30)
+
+	CHECKBOX "Guess the Base - Easy" ID cClearBE AT (4 46 AUTO AUTO) CHECKED
+	CHECKBOX "Guess the Base - Hard" ID cClearBH AT (4 60 AUTO AUTO) CHECKED
+	CHECKBOX "Guess the Exponent - Easy" ID cClearEE AT (4 74 AUTO AUTO) CHECKED
+	CHECKBOX "Guess the Exponent - Hard" ID cClearEH AT (4 88 AUTO AUTO) CHECKED
+
+	BUTTON "Clear" ID cClearClear AT (4 BOTTOM@123 AUTO AUTO)
+	BUTTON "Cancel" ID cClearCancel AT (PREVRIGHT+4 BOTTOM@123 AUTO AUTO)
+END
+
+NAVIGATION ID fClear
+	INITIALSTATE 1
+	INITIALOBJECTID cClearCancel
+	BOTTOMLEFTOBJECTID cClearClear
+	NAVIGATIONMAP
+		ROW cClearBE
+		ROW cClearBH
+		ROW cClearEE
+		ROW cClearEH
+		ROW cClearClear cClearCancel
+END

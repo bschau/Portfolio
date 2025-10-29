@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="common">
+	<property name="project" value="5km" />
+	<property name="realname" value="5km" />
+	<property name="vendor" value="skumr.com" />
+	<property name="version" value="1.1" />
+</project>

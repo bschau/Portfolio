@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD><TITLE>HSNSwitch User Manual</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="/gz/palm/stylesheet.css">
+</HEAD>
+<BODY>
+<H1>HSNSwitch User Manual</H1>
+<P><BR>
+<H3>Introduction</H3>
+<P>When adding a new PDA to your collection you might face the dilemma of having some application which is not able to run on the new device due to license obstacles.
+<P>I retired my Tungsten T when I got a new Palm handheld. The new PDA inherited the HotSync name as it was my primary PDA. My Tungsten T was going to be a replacement for my Gameboy - it would need a new HotSync name.
+<P>Unfortunately, by changing the HotSync name all the games I've bought wouldn't run in full mode as their license was bound to the old HotSync name.
+<P>Enter HSNSwitch. HSNSwitch will dynamically change the HotSync name when launching a program and reset the HotSync name to the previous name.
+
+<P><BR><P><BR>
+<H3>Installation</H3>
+<P>Installation of HSNSwitch is like installing any other Palm OS program:
+<OL>
+<LI>Download [<A HREF="#refs">1</A>] HSNSwitch.
+<LI>Unpack the <B>HSNSwitch.zip</B> archive using WinZip [<A HREF="#refs">2</A>] or UnZip [<A HREF="#refs">3</A>].
+<LI>Start the standard Palm Install tool. Select 'Add', then browse to where you unpacked the archive. Highlight the <B>HSNSwitch.prc</B> file and select 'Open'. Then select 'Done'.
+<LI>Start the HotSync Manager if it is not running.
+<LI>Insert your Palm PDA in the craddle, then press the HotSync button on the craddle.
+</OL>
+<P>When the synchronization is done you will have a 'HSNSwitch' icon in the <I>Unfiled</I> category on your Palm PDA. Feel free to move HSNSwitch to another category.
+
+<P><BR><P><BR>
+<H3>Warning</H3>
+<P>HSNSwitch was designed with Palm OS 5.0 (Tungsten T and others) in mind where it works flawlessly. Compatibility with OS 5.1 - 5.4 has been tested on the Palm Simulator and HSNSwitch was found to work on these OS versions as well. However, this has not been verified on a real-life device.
+<P>In any case - please do a full HotSync before using HSNSwitch!
+
+<P><BR><P><BR>
+<H3>Technology</H3>
+<P>HSNSwitch changes the content of the preferences record for the HotSync program. This record is where the HotSync name is stored and is the same record that applications may read (directly or indirectly) when calculating license keys.
+<P>HSNSwitch is sent a notification whenever an application is launched or when a application is quitting. When launching, the HotSync record is setup so that it matches the desired HotSync name. When quitting, the HotSync record is reset to the default value.
+
+<P><BR><P><BR>
+<H3>Using HSNSwitch</H3>
+<P>Before installing HSNSwitch you must do a full HotSync. That way, your device is given a default HotSync name.
+<P><IMG SRC="main.gif" WIDTH="160" HEIGHT="160" ALT="Main">Tap on the HSNSwitch icon. The list contains the applications (left) for which a special HotSync name (right should be used).
+<BR><P><IMG SRC="applications.gif" WIDTH="160" HEIGHT="160" ALT="Applications">Tap on <B>Add</B> to add a new application.
+<BR><P><IMG SRC="hotsyncname.gif" WIDTH="160" HEIGHT="160" ALT="HotSync name">Enter the desired HotSync name for this application and tap <B>OK</B>.
+<BR><P>Redo this for the applications which needs a special HotSync name.
+<P><IMG SRC="detect.gif" WIDTH="160" HEIGHT="160" ALT="Detect">On the first run (or by selecting the <B>Detect</B> menu item) the Detect dialog is shown. The detection tries to locate the HotSync record. This record is usually within the first 5 preferences entries for the HotSync application so the default number of slots to search should be safe. The detection only works when you have done a HotSync beforehand where the HotSync name has been set. The outcome of the detection is either:
+<P><UL>
+<LI>Record found - go ahead and use HSNSwitch!</LI>
+<LI>Record not found - try and increase the number of slots to search in (up to 65535). If this still doesn't work ... bad luck, HSNSwitch cannot work on your device.</LI>
+</UL>
+<P>If the record is not found ... use the source!
+
+<P><BR><P><BR><A NAME="refs">&nbsp;</A>
+<H3>References</H3>
+<OL>
+<LI>HSNSwitch: <A HREF="http://www.schau.com/gz/palm/hsnswitch/index.html">www.schau.com/gz/palm/hsnswitch/index.html</A>
+<LI>WinZip can be gotten from - <A HREF="http://www.winzip.com/">www.winzip.com</A>
+<LI>UnZip can be gotten from - <A HREF="http://www.info-zip.org/pub/infozip/UnZip.html">www.info-zip.org/pub/infozip/UnZip.html</A>
+</OL>
+</BODY>
+</HTML>

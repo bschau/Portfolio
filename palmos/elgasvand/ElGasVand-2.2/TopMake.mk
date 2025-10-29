@@ -1,0 +1,2 @@
+APPNAME=ElGasVand
+VERSION=2.2

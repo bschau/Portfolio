@@ -1,0 +1,85 @@
+Hi,
+
+Firstly just realised when I copied part of your original email I left the
+Hi to myself - obviously got a little confused there.
+
+Regarding the bug that I was experiencing I believe I have found when it
+happens and how to duplicate it :
+
+> >* (BUG) I've had one report of iSecur deleting a secret when:
+
+How to duplicate it :
+
+1. Open iSecur
+2. Switch to 'All' category
+3. Edit a record
+4. Press palm application home button (ie. exit iSecur)
+5. On return the record is gone
+
+On a further note, apologies for being a pain on the topic of quickfind.
+I think this might relate to the "!!! DONE !!! * (BUG) Minor bugs with positioning
+in quickfind.". 
+
+Steps
+1. Open isecur
+2. Press a letter for quickfind
+3. Press down on 5 way navigation key
+4. Record at top of displayed list is correctly highlighted
+5. Press another letter for quickfind
+6. Press down on 5 way navigation key
+7. Record after last quickfind is highlighted instead of top of currently
+displayed list
+8. Move focus to category selection
+9. Press a letter for quickfind
+10. Press down on 5 way navigation key
+11. Record at top of displayed list is correctly highlighted
+12. Open any record
+13. Return to list of records
+
+Follow the above steps again and the correct highlighting no longer occurs
+after a quickfind.
+
+Thanks again.
+
+Anthony.
+
+> >-- Original Message --
+> >Date: Fri, 17 Nov 2006 09:53:04 +1100
+> >From: edelfam@iprimus.com.au
+> >Subject: Re: [iSecur] Hmmm ... Answers
+> >To: "Brian Schau" <brian@schau.com>
+> >
+> >
+> >Hi,
+> >
+> >Hi Anthony,
+> >
+> >All of the items you listed work fine. Thanks the search is excellent, the
+> >speed of the search definitely exceeds other programs doing the same thing.
+> >The categories now work as I would expect ie. everything stays where they
+> >should and categories dont follow me as I change it from one screen to the
+> >next.
+> >
+> >==> Regarding the bug you have in your TODO file :
+> >
+> >* (BUG) I've had one report of iSecur deleting a secret when:
+> >
+> >  "1) I am in updating a secret
+> >   2) iSecur exit out either by system timeout or I manually turn off the
+> >Palm"
+> >
+> >I experience this problem all the time, steps to reproduce -
+> >1. Open an existing record
+> >2. Press 'Edit' button
+> >3. Press palm application home button (ie. exit iSecur)
+> >4. On return the record is gone
+> >
+> >==> Regarding the loading of a template while within a record. Nice simple
+> >solution you have implemented. One problem is that the title of the record
+> >is replaced when I selected to append.
+> >
+> >Thanks again.
+> >
+> >Regards
+> >Anthony.
+

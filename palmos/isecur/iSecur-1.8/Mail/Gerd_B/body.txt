@@ -1,0 +1,9 @@
+Hello Brian,
+
+how about integrating iSecur Data with a Desktop-Based Tank (preferably
+KeePass)? Afaik, KeePass has a nice Plugin Interface. If I could get a
+Grip on iSecur's Data Structures, I'd like to give it a try. Do you have
+some Docs about this?
+
+Greetings,
+Gerd

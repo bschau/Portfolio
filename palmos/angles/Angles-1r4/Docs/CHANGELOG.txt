@@ -1,0 +1,11 @@
+v1r4 (2005-06-14)
+	Added the option to include/exclude reflex angles (Tony Vincent).
+
+v1r3 (2005-03-28)
+	Added Edit menu.
+
+v1r2 (2005-03-27)
+	Added the reset Low Scorers list option.
+
+v1r1 (2005-03-23)
+	First release of Angles.

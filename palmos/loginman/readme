@@ -1,0 +1,35 @@
+LoginMan
+========
+
+
+
+Legal Stuff:
+
+LoginMan comes as is - if it breaks you get to keep both pieces.   LoginMan
+is free to use.
+
+
+
+To install LoginMan:
+
+1) Start the standard Palm Install tool.
+2) Select 'Add'.
+3) Browse to 'qalm.prc'.  Highlight 'qalm.prc' and press 'open'.
+4) Make sure that the Hotsync Manager is running.
+5) Insert your Palm in the Craddle and start Hotsync.
+
+
+
+LoginMan can be found at:
+
+	http://www.brisse.dk/palm/qalm
+
+Instructions for how to integrate LoginMan and PQAs (Palm Query Applications)
+can also be found on that site.
+
+
+
+
+Thanks for using LoginMan.
+
+Brian Schau <Brian@Schau.dk>

@@ -1,0 +1,115 @@
+# PLEASE READ THIS FILE - IT MAY HAVE CHANGED SINCE THE LAST TIME YOU CHECKED!
+#
+# Before even thinking of translating you should play around with the english
+# version of TasksSort to get a feeling of how the various screens are laid out.
+# You can install TasksSort to a Palm OS Simulator or Emulator and have the
+# english version running while translating the text.
+#
+# This is the default language file for the English language. This file forms
+# the basis of the other language files.
+#
+# Format of this file is:
+#
+# Left column is keywords. Right column is the actual text. Tabs are a ghost
+# character used to separate columns. In a multiline translation the following
+# lines are indented using tabs.
+#
+# To create a new language translation, copy this file to Language.trl and then
+# translate all text in the right column.
+#
+# Please keep all comments! Do _NOT_ translate comments!
+#
+# And remember - I cannot help you translate the text to your language. But I
+# can help if you have any questions to the meaning of any of the text or the
+# format of this file.
+# Just mail me at:
+#
+#		brian@schau.com
+#
+# This language file is maintained by:
+#
+#	Write your full name here <write your email address here>
+#
+
+# Name of category which TasksSort is installed to
+catSystem			System
+
+# The string in the Help->About form
+# Feel free to add your name, like in: Translated by ...
+strAboutText			TasksSort was made by Brian Schau\n\nPlease visit my website at:\n\n   http://www.schau.com/\n\nOn the website you will find the latest version of TasksSort and a user manual.\n\n\niSecur is released under the Gnu General Public License v2.\n
+
+# The help text on the mainform
+strHelp				In the Sort Tasks Descriptions you can select how the Tasks should be ordered: ascending (a to z) or descending (z to a).\n\nIf \"Launch Tasks after sort\" is checked the Tasks program will be launched after a sort.\n\nIf the \"Enable HotKey\" is checked you can use the menu shortcut with the key within the Tasks program to bring up this page. Please make sure that the key specified is unused in Tasks.\n\nTap the Sort button to sort the Tasks database.
+
+# Alerts
+#
+# These are the generic alert buttons.
+abOK				OK
+
+#
+# All *T keys are the alert title.  All *B keys are the alert body text.
+# ^1, ^2 and ^3 sequences must be left intact.  The ^1 (/2/3) will be
+# substituted at runtime.
+# All *T should be short as they have to fit on one display text line.
+#
+# Shown if the users device is too old.
+aBadRomT			PalmOS Too Old
+aBadRomB			The PalmOS in this device is too old. PalmOS v5.0 or better is required to run this application.
+
+# Brian screwed up and released a debug version of iSecur. Debug versions can
+# only run on Palm OS Emulator/Simulator ...
+aNoPoseT 			Pose/Simulator
+aNoPoseB			Attempt to run a debug version of iSecur outside POSE or a simulator - cannot do that.
+
+# Shown if the Tasks database cannot be found
+aNoTasksDBT			Database Error
+aNoTasksDBB			The Tasks database cannot be found.
+
+# Shown if the Tasks database cannot be opened
+aCannotOpenDBT			Database Error
+aCannotOpenDBB			The Tasks database cannot be opened.
+
+# Shown if the Database Info cannot be gotten
+aNoDBInfoT			Database Error
+aNoDBInfoB			Cannot retrieve database version.
+
+# Shown if this is an invalid version
+aVersionErrorT			Database Error
+aVersionErrorB			Cannot sort this database. Only Classic or New databases can be sorted.
+
+#
+# Forms. These are the actual screens of TasksSort.
+#
+
+###############################################################################
+# The About form
+#
+
+fAboutTitle			About
+fAboutVersion			Version
+
+# Button
+fbDone				Done
+
+###############################################################################
+# The Main form
+#
+
+# Title of form
+fMainTitle			TasksSort
+
+fMainLabel			Sort Tasks Descriptions
+fMainPBAsc			Ascending
+fMainPBDesc			Descending
+fMainChkLaunch			Launch Tasks after sort
+fMainChkHotKey			Enable HotKey
+fMainLblHotKey			HotKey
+
+# Button
+fbSort				Sort
+
+# Main form menu headers
+mMainHelp			Help
+
+# Entries in the Help menu.
+mHelpAboutT			About

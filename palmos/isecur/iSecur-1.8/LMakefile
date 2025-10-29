@@ -1,0 +1,67 @@
+ifndef a
+	include TopMake.mk
+endif
+
+LANGUAGES	=	Danish English Italian
+
+all:	distclean
+	setup
+	< $(LANGUAGES) > make
+
+distclean:
+	lmake -C GenTables distclean
+	lmake -C keyboard distclean
+	lmake -C library distclean
+	lmake -C src distclean
+	lmake -C test distclean
+	find . -name "*~" -exec rm -f {} \;
+	rm -fr releases
+
+setup:
+	lmake -C library initall
+	lmake -C library
+	lmake -C keyboard initall
+	lmake -C keyboard
+	lmake -C src initall
+	lmake -C src -DDEBUG=0
+	mkdir releases
+
+make:
+	resources $<
+	package $<
+
+resources:
+	echo Generating resources for $1
+	lmake -C src/build -f ../LMakefile -DLANGUAGE=$1 resources
+
+package:
+	echo Packaging $1	
+	a = $(APPNAME)\-$1\-$(VERSION)
+	r = releases/$(a)
+	mkdir $(r)
+	mkdir $(r)/icons
+	cp Docs/* $(r)
+	cp -dpR iSecurIcons/* $(r)/icons
+	cp keyboard/iSecur-Keyboard.prc $(r)
+	cp library/iSecur-Library.prc $(r)
+	cp src/iSecur.prc $(r)
+	if -s src/TODO.txt
+		cp src/TODO.txt $(r)
+	endif
+	in releases zip -r $(a).zip $(a)
+
+zipit:
+	zip -r $(a).zip $(a)
+
+archive:	distclean
+	dos2unix *
+	dos2unix Docs/*
+	dos2unix GenTables/*
+	dos2unix api/*
+	dos2unix keyboard/*
+	dos2unix library/*
+	dos2unix src/*
+	dos2unix test/*
+	a = $(APPNAME)\-$(VERSION)
+	tar czf ../$(a).tar.gz ../$(a)
+
